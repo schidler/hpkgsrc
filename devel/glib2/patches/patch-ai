@@ -1,0 +1,32 @@
+$NetBSD: patch-ai,v 1.18 2009/06/05 16:08:25 drochner Exp $
+
+http://bugzilla.gnome.org/show_bug.cgi?id=583321
+
+--- glib/gmain.c.orig	2011-06-05 23:18:49.009699328 +0000
++++ glib/gmain.c
+@@ -79,10 +79,11 @@
+ #include <windows.h>
+ #endif /* G_OS_WIN32 */
+ 
+-#ifdef G_OS_BEOS
++#if defined __HAIKU__
+ #include <sys/socket.h>
+ #include <sys/wait.h>
+-#endif /* G_OS_BEOS */
++#include <fcntl.h>
++#endif /* G_OS_HAIKU */
+ 
+ #ifdef G_OS_UNIX
+ #include <fcntl.h>
+@@ -4352,7 +4353,11 @@ g_child_watch_source_init_multi_threaded
+  
+   action.sa_handler = g_child_watch_signal_handler;
+   sigemptyset (&action.sa_mask);
++#ifdef SA_RESTART
+   action.sa_flags = SA_RESTART | SA_NOCLDSTOP;
++#else /* QNX */
++  action.sa_flags = SA_NOCLDSTOP;
++#endif
+   sigaction (SIGCHLD, &action, NULL);
+ }
+ 

@@ -1,0 +1,10 @@
+$NetBSD: distinfo,v 1.40 2011/03/21 13:45:51 adam Exp $
+
+SHA1 (p7zip_9.20.1_src_all.tar.bz2) = 1cd567e043ee054bf08244ce15f32cb3258306b7
+RMD160 (p7zip_9.20.1_src_all.tar.bz2) = c3ff2dd12459282b46d9a68ab4af7800ff46039f
+Size (p7zip_9.20.1_src_all.tar.bz2) = 3835235 bytes
+SHA1 (patch-CPP_Windows_System.cpp) = fbd5e074d4722843bc65b3b1254709b979e42c09
+SHA1 (patch-CPP_myWindows_config.h) = 35d32f3e74bcc992fc0b9c00f2c1dc741810e1ac
+SHA1 (patch-aa) = 9e3ecb6c335de93854d5dc45363a11f8fb4eb715
+SHA1 (patch-ab) = a92e55a43d2b3914714f4d7de416f04f08b47289
+SHA1 (patch-ac) = 678c390f699e0f1974800df4cd6fc65b1033feca

@@ -1,0 +1,34 @@
+$NetBSD: patch-ac,v 1.1.1.1 2008/08/09 21:22:11 bjs Exp $
+
+--- src/slang.h.orig	2009-12-05 19:03:51.024641536 +0000
++++ src/slang.h
+@@ -43,6 +43,11 @@ USA.  
+ # endif
+ #endif /* __watcomc__ */
+ 
++#if defined(__NetBSD__) || defined(__APPLE__)
++#undef unix
++#define unix 1
++#endif
++
+ #if defined(unix) || defined(__unix)
+ # ifndef __unix__
+ #  define __unix__ 1
+@@ -1377,7 +1382,7 @@ SL_EXTERN int SLang_set_argc_argv (int, 
+ 
+ /*{{{ SLang getkey interface Functions */
+ 
+-#ifdef REAL_UNIX_SYSTEM
++#if defined(REAL_UNIX_SYSTEM) || defined(__HAIKU__)
+ SL_EXTERN int SLang_TT_Baud_Rate;
+ SL_EXTERN int SLang_TT_Read_FD;
+ #else
+@@ -1614,7 +1619,7 @@ SL_EXTERN char *SLtt_Graphics_Char_Pairs
+ #endif
+ 
+ #ifndef __GO32__
+-#if defined(VMS) || defined(REAL_UNIX_SYSTEM)
++#if defined(VMS) || defined(REAL_UNIX_SYSTEM) || defined(__HAIKU__)
+ SL_EXTERN int SLtt_Blink_Mode;
+ SL_EXTERN int SLtt_Use_Blink_For_ACS;
+ SL_EXTERN int SLtt_Newline_Ok;

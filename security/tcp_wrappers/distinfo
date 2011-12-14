@@ -1,0 +1,16 @@
+$NetBSD: distinfo,v 1.16 2007/02/03 18:48:49 schwarz Exp $
+
+SHA1 (tcp_wrappers_7.6-ipv6.1.tar.gz) = d0b70d4f0c0ac0375d8283a18ec2b6d602f82fde
+RMD160 (tcp_wrappers_7.6-ipv6.1.tar.gz) = 948f5ac4ede3999273399b641474ca26fd967b70
+Size (tcp_wrappers_7.6-ipv6.1.tar.gz) = 144708 bytes
+SHA1 (patch-aa) = c1a202c44b869d6b33b0ba9c7dd83fe7c5755f6d
+SHA1 (patch-ab) = 1a8d945cefab5a631d09d742a4b1fca9ae753876
+SHA1 (patch-ac) = 7715e2de60828a849cbcedac1c7292175cbaf18f
+SHA1 (patch-ad) = 688ee2b2e054e44e305d249987b50493de40d659
+SHA1 (patch-ae) = a6bb76687e19e6ef5a88b997cefc1b25860a0460
+SHA1 (patch-af) = 7a3d680e49bbab3d1e018868cafa950298208fef
+SHA1 (patch-ag) = 099dd55247882fba3b623071a7d75ca7fe3da80f
+SHA1 (patch-ah) = 61aacb83e330e88019c350d8abf062e4d684529f
+SHA1 (patch-ai) = 97700746ba1897767879abfa48a7c23d16b809f0
+SHA1 (patch-aj) = f8365911b4521d8b3e9dcbc665bbb133d09c6c23
+SHA1 (patch-options.c) = 185872d75702130f626811bbd9644abfabc64540

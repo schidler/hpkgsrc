@@ -1,0 +1,13 @@
+$NetBSD: distinfo,v 1.55 2011/08/02 17:02:38 joerg Exp $
+
+SHA1 (SDL-1.2.14.tar.gz) = ba625b4b404589b97e92d7acd165992debe576dd
+RMD160 (SDL-1.2.14.tar.gz) = a3a9a691f5510eb5327ca159a034f55a70cb5801
+Size (SDL-1.2.14.tar.gz) = 4014154 bytes
+SHA1 (patch-aa) = 3e5909c892bf8d46ab2b01c0b55e4fd10807df5b
+SHA1 (patch-ab) = 8f7fde9e6c0465b380b4e0eef623925cec845988
+SHA1 (patch-ac) = 822b124315452631745f0138775d023564691714
+SHA1 (patch-configure) = 9450d7f4b355780ae9c41343bf9c3c50a0c4a86b
+SHA1 (patch-include_begin__code.h) = ae6ef669179ada0975cdf8841e3d9ec27b1e84d1
+SHA1 (patch-src_main_beos_SDL__BeApp.cc) = 3cae0792de832e1f065b08f74303a2c29313ebfe
+SHA1 (patch-src_video_bwindow_SDL__sysvideo.cc) = 004d2456c6caa28bb726ee1a80d5e41bbac7cb74
+SHA1 (patch-src_video_bwindow_SDL__sysyuv.h) = 98a0615063f65268e0e856baf1731fae0baea8e8

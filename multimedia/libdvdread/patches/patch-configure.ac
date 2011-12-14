@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- configure.ac.orig	2008-08-30 13:02:17.036438016 +0000
++++ configure.ac
+@@ -145,6 +145,8 @@ case $host in
+   *cygwin*)
+     LDFLAGS="-no-undefined $LDFLAGS"
+     ;;
++  *haiku*)
++    ;;
+   *)
+     AC_CHECK_LIB(c, dlopen,
+ 	         DYNAMIC_LD_LIBS="",

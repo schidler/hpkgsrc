@@ -1,0 +1,57 @@
+$NetBSD: patch-configure,v 1.14 2011/11/07 10:43:35 drochner Exp $
+
+--- configure.orig	2011-11-04 21:30:00.000000000 +0000
++++ configure
+@@ -2412,6 +2412,10 @@ case $target_os in
+         ;;
+     netbsd)
+         disable symver
++	if test "${subarch}" != "x86_32"; then
++	    LIBOBJFLAGS='$(PIC)'
++	    SHFLAGS='-shared'
++	fi
+         oss_indev_extralibs="-lossaudio"
+         oss_outdev_extralibs="-lossaudio"
+         ;;
+@@ -2637,10 +2641,13 @@ check_cc <<EOF && enable attribute_may_a
+ union { int x; } __attribute__((may_alias)) x;
+ EOF
+ 
+-check_cc <<EOF || die "endian test failed"
+-unsigned int endian = 'B' << 24 | 'I' << 16 | 'G' << 8 | 'E';
++check_exec <<EOF || enable bigendian
++int main()
++{
++ long one = 1;
++ return !(*((char *)(&one)));
++}
+ EOF
+-od -t x1 $TMPO | grep -q '42 *49 *47 *45' && enable bigendian
+ 
+ if enabled alpha; then
+ 
+@@ -2974,7 +2981,7 @@ else
+ fi
+ enabled sdl && add_cflags $sdl_cflags && add_extralibs $sdl_libs
+ 
+-texi2html -version > /dev/null 2>&1 && enable texi2html || disable texi2html
++which texi2html > /dev/null 2>&1 && enable texi2html || disable texi2html
+ 
+ check_header linux/fb.h
+ check_header linux/videodev.h
+@@ -3060,6 +3067,7 @@ check_ldflags -Wl,--warn-common
+ check_ldflags -Wl,-rpath-link,libpostproc -Wl,-rpath-link,libswscale -Wl,-rpath-link,libavfilter -Wl,-rpath-link,libavdevice -Wl,-rpath-link,libavformat -Wl,-rpath-link,libavcodec -Wl,-rpath-link,libavutil
+ test_ldflags -Wl,-Bsymbolic && append SHFLAGS -Wl,-Bsymbolic
+ 
++if false; then
+ echo "X{};" > $TMPV
+ if test_ldflags -Wl,--version-script,$TMPV; then
+     append SHFLAGS '-Wl,--version-script,\$(SUBDIR)lib\$(NAME).ver'
+@@ -3072,6 +3080,7 @@ __asm__(".symver ff_foo,av_foo@VERSION")
+ void ff_foo(void) {}
+ EOF
+ fi
++fi
+ 
+ if enabled small; then
+     add_cflags $size_cflags

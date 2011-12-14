@@ -1,0 +1,12 @@
+$NetBSD: distinfo,v 1.11 2010/12/23 12:36:01 fhajny Exp $
+
+SHA1 (js-1.8.0-rc1.tar.gz) = 1577bd39a2ebd9f5e2ec90e72d9a6aa85f840564
+RMD160 (js-1.8.0-rc1.tar.gz) = 27c6cba1185d34cb9095d2da67393025bfe673ca
+Size (js-1.8.0-rc1.tar.gz) = 1310344 bytes
+SHA1 (patch-aa) = 9d4d49a0b19d381bb19fee847d68c5d8162d45d7
+SHA1 (patch-ab) = 65b2faa6657cc0418cda946ab0ad62e551339dc0
+SHA1 (patch-ac) = 0a755b388d141a3bc2bd5d0564df9e1c91473e32
+SHA1 (patch-ad) = a12adc713f8d5fb1af2711e615ae53f1ceea3808
+SHA1 (patch-ae) = e6d8404177de9d9edda5e7869f95ec482736d8e1
+SHA1 (patch-ai) = 8d56352770dd3d5a00f4a618763597f2a7eed764
+SHA1 (patch-config_Haiku.mk) = 15c7bba63359d30023258c4fcdd99cbe48997722

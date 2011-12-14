@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- configure.orig	2011-11-29 17:04:59.971243520 +0000
++++ configure
+@@ -30390,7 +30390,7 @@ _ACEOF
+         fi
+         # The BeOS platform requires special setup.
+         SOURCES="$srcdir/src/main/beos/*.cc $SOURCES"
+-        EXTRA_LDFLAGS="$EXTRA_LDFLAGS -lroot -lbe -lmedia -lgame -ldevice -ltextencoding"
++        EXTRA_LDFLAGS="$EXTRA_LDFLAGS -lroot -lbe -lmedia -lgame -ldevice -ltextencoding -lsupc++"
+         ;;
+     *-*-darwin* )
+         # This could be either full "Mac OS X", or plain "Darwin" which is

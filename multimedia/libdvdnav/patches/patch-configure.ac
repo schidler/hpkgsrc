@@ -1,0 +1,23 @@
+$NetBSD$
+
+--- configure.ac.orig	2011-11-25 03:18:25.011272192 +0000
++++ configure.ac
+@@ -145,6 +145,9 @@ case $host in
+     ;;
+   *mingw32* | *cygwin*)
+     ;;
++  *-*-haiku*)
++    THREAD_LIBS=-lroot
++    ;;
+   *)
+     AC_CHECK_LIB(pthread, pthread_create,
+ 	[THREAD_LIBS="-lpthread"],
+@@ -165,6 +168,8 @@ case $host in
+   *cygwin*)
+     LDFLAGS="-no-undefined $LDFLAGS"
+     ;;
++  *haiku*)
++    ;;
+   *)
+     AC_CHECK_LIB(c, dlopen,
+ 	         DYNAMIC_LD_LIBS="",

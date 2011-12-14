@@ -1,0 +1,32 @@
+$NetBSD: patch-af,v 1.12 2010/11/02 14:52:24 drochner Exp $
+
+--- glib/libcharset/Makefile.in.orig	2011-06-05 23:24:51.019136512 +0000
++++ glib/libcharset/Makefile.in
+@@ -300,7 +300,7 @@ infodir = @infodir@
+ install_sh = @install_sh@
+ libdir = @libdir@
+ libexecdir = @libexecdir@
+-localedir = @localedir@
++localedir = /boot/common/data/locale
+ localstatedir = @localstatedir@
+ mandir = @mandir@
+ mkdir_p = @mkdir_p@
+@@ -713,18 +713,6 @@ lcov-clean:
+ # run tests in cwd as part of make check
+ check-local: test-nonrecursive
+ install-exec-local: all-local
+-	$(mkinstalldirs) $(DESTDIR)$(libdir)
+-	if test -f $(charset_alias); then \
+-	  sed -f ref-add.sed $(charset_alias) > $(charset_tmp) ; \
+-	  $(INSTALL_DATA) $(charset_tmp) $(charset_alias) ; \
+-	  rm -f $(charset_tmp) ; \
+-	else \
+-	  if test @GLIBC21@ = no; then \
+-	    sed -f ref-add.sed charset.alias > $(charset_tmp) ; \
+-	    $(INSTALL_DATA) $(charset_tmp) $(charset_alias) ; \
+-	    rm -f $(charset_tmp) ; \
+-	  fi ; \
+-	fi
+ 
+ uninstall-local: all-local
+ 	if test -f $(charset_alias); then \

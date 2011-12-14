@@ -1,0 +1,25 @@
+$NetBSD: patch-ci,v 1.1 2010/11/10 20:51:46 tez Exp $
+
+needed for calls to major() & minor()
+
+--- gio/gdbusmessage.c.orig	2011-06-05 23:18:49.051118080 +0000
++++ gio/gdbusmessage.c
+@@ -52,6 +52,9 @@
+ 
+ #ifdef G_OS_UNIX
+ #include "gunixfdlist.h"
++#ifdef __sun
++#include <sys/mkdev.h>
++#endif
+ #endif
+ 
+ #include "glibintl.h"
+@@ -3083,7 +3086,7 @@ g_dbus_message_print (GDBusMessage *mess
+       g_string_append (str, "()");
+     }
+   g_string_append (str, "\n");
+-#ifdef G_OS_UNIX
++#if defined (G_OS_UNIX) && !defined (__HAIKU__)
+   g_string_append_printf (str, "%*sUNIX File Descriptors:\n", indent, "");
+   if (message->fd_list != NULL)
+     {
