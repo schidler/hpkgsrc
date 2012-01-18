@@ -1,0 +1,2 @@
+#!/bin/sh
+./bootstrap --prefix /boot/common/pkg --unprivileged --pkgmandir documentation --sysconfdir /boot/common/settings --gzip-binary-kit /boot/bootstrup-gcc4.tgz

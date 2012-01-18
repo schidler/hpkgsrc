@@ -1,0 +1,3 @@
+===> bootstrap command: ./bootstrap --prefix=/boot/develop/pkgsrc/bootstrap/pkg --sysconfdir=/boot/develop/pkgsrc/bootstrap/pkg/etc --pkgdbdir=/boot/develop/pkgsrc/bootstrap/.db --ignore-user-check
+===> bootstrap started: Wed Nov 16 12:11:36 GMT+06:00 2011
+"/boot/develop/pkgsrc/bootstrap/work" already exists, please remove it or use --workdir.
