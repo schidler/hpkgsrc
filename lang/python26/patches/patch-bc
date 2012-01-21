@@ -1,0 +1,92 @@
+$NetBSD: patch-bc,v 1.1 2010/11/23 08:24:04 tron Exp $
+
+Fix for CVE-2010-3492 and CVE-2010-3493, taken from the Python SVN repository:
+
+http://svn.python.org/view?view=rev&revision=86084
+
+--- Lib/smtpd2.6.py.orig	2010-12-07 18:54:43.051642368 +0000
++++ Lib/smtpd2.6.py
+@@ -1,4 +1,4 @@
+-#! /usr/bin/env python
++#!/boot/common/pkg/bin/python2.6
+ """An RFC 2821 smtp proxy.
+ 
+ Usage: %(program)s [options] [localhost:localport [remotehost:remoteport]]
+@@ -35,7 +35,6 @@ given then 8025 is used.  If remotehost 
+ and if remoteport is not given, then 25 is used.
+ """
+ 
+-
+ # Overview:
+ #
+ # This file implements the minimal SMTP protocol as defined in RFC 821.  It
+@@ -96,7 +95,6 @@ EMPTYSTRING = ''
+ COMMASPACE = ', '
+ 
+ 
+-
+ def usage(code, msg=''):
+     print >> sys.stderr, __doc__ % globals()
+     if msg:
+@@ -104,7 +102,6 @@ def usage(code, msg=''):
+     sys.exit(code)
+ 
+ 
+-
+ class SMTPChannel(asynchat.async_chat):
+     COMMAND = 0
+     DATA = 1
+@@ -276,7 +273,6 @@ class SMTPChannel(asynchat.async_chat):
+         self.push('354 End data with <CR><LF>.<CR><LF>')
+ 
+ 
+-
+ class SMTPServer(asyncore.dispatcher):
+     def __init__(self, localaddr, remoteaddr):
+         self._localaddr = localaddr
+@@ -342,7 +338,6 @@ class SMTPServer(asyncore.dispatcher):
+         raise NotImplementedError
+ 
+ 
+-
+ class DebuggingServer(SMTPServer):
+     # Do something with the gathered message
+     def process_message(self, peer, mailfrom, rcpttos, data):
+@@ -358,7 +353,6 @@ class DebuggingServer(SMTPServer):
+         print '------------ END MESSAGE ------------'
+ 
+ 
+-
+ class PureProxy(SMTPServer):
+     def process_message(self, peer, mailfrom, rcpttos, data):
+         lines = data.split('\n')
+@@ -399,7 +393,6 @@ class PureProxy(SMTPServer):
+         return refused
+ 
+ 
+-
+ class MailmanProxy(PureProxy):
+     def process_message(self, peer, mailfrom, rcpttos, data):
+         from cStringIO import StringIO
+@@ -478,13 +471,11 @@ class MailmanProxy(PureProxy):
+                 msg.Enqueue(mlist, torequest=1)
+ 
+ 
+-
+ class Options:
+     setuid = 1
+     classname = 'PureProxy'
+ 
+ 
+-
+ def parseargs():
+     global DEBUGSTREAM
+     try:
+@@ -541,7 +532,6 @@ def parseargs():
+     return options
+ 
+ 
+-
+ if __name__ == '__main__':
+     options = parseargs()
+     # Become nobody

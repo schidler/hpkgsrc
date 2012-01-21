@@ -1,0 +1,23 @@
+$NetBSD: patch-au,v 1.7 2010/09/22 09:13:48 obache Exp $
+
+--- Makefile.pre.in.orig	2010-08-01 22:05:31.047448064 +0000
++++ Makefile.pre.in
+@@ -413,7 +413,7 @@ $(LIBRARY): $(LIBRARY_OBJS)
+ libpython$(VERSION).so: $(LIBRARY_OBJS)
+ 	if test $(INSTSONAME) != $(LDLIBRARY); then \
+ 		$(LDSHARED) $(LDFLAGS) -Wl,-h$(INSTSONAME) -o $(INSTSONAME) $(LIBRARY_OBJS) $(MODLIBS) $(SHLIBS) $(LIBC) $(LIBM) $(LDLAST); \
+-		$(LN) -f $(INSTSONAME) $@; \
++		$(LN) -sf $(INSTSONAME) $@; \
+ 	else \
+ 		$(LDSHARED) $(LDFLAGS) -o $@ $(LIBRARY_OBJS) $(MODLIBS) $(SHLIBS) $(LIBC) $(LIBM) $(LDLAST); \
+ 	fi
+@@ -785,7 +785,8 @@ altbininstall:	$(BUILDPYTHON)
+ 				(cd $(DESTDIR)$(LIBDIR); $(LN) -sf $(INSTSONAME) $(LDLIBRARY)) \
+ 			fi \
+ 		fi; \
+-	else	true; \
++	elif test -f $(INSTSONAME); then \
++		$(INSTALL_SHARED) $(INSTSONAME) $(DESTDIR)$(LIBDIR); \
+ 	fi
+ 
+ # Install the manual page
