@@ -23,12 +23,20 @@ CONFIGURE_ARGS+=	--enable-multibuffer
 CONFIGURE_ARGS+=	--enable-nanorc
 CONFIGURE_ARGS+=	--enable-extra
 
+.if empty(MACHINE_PLATFORM:MHaiku)
+CONFIGURE_ARGS+=	--datarootdir=${PREFIX}/data
+.endif
+
 # Looks like that IRIX 5.x lacks vsnprintf() functions,
 # which are required to make this work, so glib2 is used instead.
 .include "../../mk/bsd.prefs.mk"
 
 .if !empty(MACHINE_PLATFORM:MIRIX-5*)
 .  include "../../devel/glib2/buildlink3.mk"
+.endif
+
+.if ${OPSYS} == "Haiku"
+PLIST_SRC=		${PKGDIR}/PLIST.Haiku
 .endif
 
 .include "options.mk"
