@@ -47,6 +47,7 @@ TOOLS_PLATFORM.gtar?=		/bin/tar
 TOOLS_PLATFORM.gtar?=		/boot/common/bin/tar
 .endif
 TOOLS_PLATFORM.gunzip?=		/bin/gunzip -f
+TOOLS_PLATFORM.gunzip?=		/bin/unzip
 TOOLS_PLATFORM.gzcat?=		/bin/zcat
 TOOLS_PLATFORM.gzip?=		/bin/gzip -nf ${GZIP}
 TOOLS_PLATFORM.head?=		/bin/head
@@ -64,7 +65,7 @@ TOOLS_PLATFORM.lzcat?=		/boot/common/bin/lzcat
 .endif
 TOOLS_PLATFORM.m4?=		${TOOLS_PLATFORM.gm4}
 #TOOLS_PLATFORM.mail?=		/bin/mail
-TOOLS_PLATFORM.makeinfo?=	/boot/common/bin/makeinfo
+#TOOLS_PLATFORM.makeinfo?=	/boot/bin/makeinfo
 TOOLS_PLATFORM.mkdir?=		/bin/mkdir -p
 .if exists(/bin/mktemp)
 TOOLS_PLATFORM.mktemp?=		/bin/mktemp
@@ -98,6 +99,7 @@ TOOLS_PLATFORM.tsort?=		/bin/tsort
 TOOLS_PLATFORM.wc?=		/bin/wc
 TOOLS_PLATFORM.xargs?=		/bin/xargs -r
 TOOLS_PLATFORM.yasm?=		/boot/common/bin/yasm
+TOOLS_PLATFORM.nasm?=		/boot/common/bin/yasm
 #TOOLS_PLATFORM.xgettext?=	/usr/bin/xgettext
 .if exists(/boot/common/bin/xzcat)
 TOOLS_PLATFORM.xzcat?=		/boot/common/bin/xzcat

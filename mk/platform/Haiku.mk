@@ -75,3 +75,7 @@ _OPSYS_CAN_CHECK_SHLIBS=	no # can't use readelf in check/bsd.check-vars.mk
 # to avoid a test required by the libtool script that takes forever.
 # FIXME: Adjust to work on this system and enable the lines below.
 #_OPSYS_MAX_CMDLEN_CMD=	/sbin/sysctl -n kern.argmax
+
+.if defined(GNU_CONFIGURE)
+LIBS.Haiku+=	-lnetwork -lroot
+.endif
