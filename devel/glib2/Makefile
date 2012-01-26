@@ -28,7 +28,7 @@ PKGCONFIG_OVERRIDE+=	gio-unix-2.0.pc.in
 FILES_SUBST+=		GIO_MODULES_DIR=${PREFIX}/lib/gio/modules
 FILES_SUBST+=		GIO_QUERYMODULES=${PREFIX}/bin/gio-querymodules
 FILES_SUBST+=		GLIB_COMPILE_SCHEMAS=${PREFIX}/bin/glib-compile-schemas
-FILES_SUBST+=		GLIB_SCHEMAS_DIR=${PREFIX}/share/glib-2.0/schemas
+FILES_SUBST+=		GLIB_SCHEMAS_DIR=${PREFIX}/data/glib-2.0/schemas
 
 # gtester is the glib unit testing and reporting framework
 # agc doesn't want glib2 to depend on python so we install it

@@ -48,6 +48,13 @@ CONFIGURE_ENV+=		PERL_PATH=${PERL5:Q}
 CONFIGURE_ENV+=		ac_cv_func_statfs=no
 .endif
 
+.if ${OPSYS} == "Haiku"
+CONFIGURE_ARGS+=	--datarootdir=${PREFIX}/data
+CONFIGURE_ENV+=		with_html_dir=${PREFIX}/documentation/gtk-doc/html
+.endif
+
+LIBS.Haiku+=	-lcharset
+
 CPPFLAGS+=		-DPREFIX="\"${PREFIX}\""
 CPPFLAGS+=		-DPKGLOCALEDIR="\"${PKGLOCALEDIR}\""
 CPPFLAGS+=		-DPKG_SYSCONFDIR="\"${PKG_SYSCONFDIR}\""
