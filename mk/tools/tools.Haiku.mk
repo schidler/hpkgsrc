@@ -47,7 +47,7 @@ TOOLS_PLATFORM.gtar?=		/bin/tar
 TOOLS_PLATFORM.gtar?=		/boot/common/bin/tar
 .endif
 TOOLS_PLATFORM.gunzip?=		/bin/gunzip -f
-TOOLS_PLATFORM.gunzip?=		/bin/unzip
+TOOLS_PLATFORM.unzip?=		/bin/unzip
 TOOLS_PLATFORM.gzcat?=		/bin/zcat
 TOOLS_PLATFORM.gzip?=		/bin/gzip -nf ${GZIP}
 TOOLS_PLATFORM.head?=		/bin/head

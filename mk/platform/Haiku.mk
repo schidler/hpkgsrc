@@ -4,6 +4,8 @@
 
 ECHO_N?=	${ECHO} -n
 PKGLOCALEDIR?=	data
+PKGDATADIR?=	data
+#PKGEXMPLDIR?= data
 PS?=		/bin/ps
 # XXX: default from defaults/mk.conf.  Verify/correct for this platform
 # and remove this comment.

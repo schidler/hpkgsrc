@@ -48,7 +48,7 @@ _VARGROUPS+=		configure
 _USER_VARS.configure=	CONFIG_SHELL_FLAGS
 _PKG_VARS.configure=	CONFIGURE_ENV CONFIG_SHELL CONFIGURE_SCRIPT \
 	CONFIGURE_ARGS OVERRIDE_GNU_CONFIG_SCRIPTS HAS_CONFIGURE \
-	GNU_CONFIGURE PKGCONFIG_OVERRIDE USE_PKGLOCALEDIR \
+	GNU_CONFIGURE PKGCONFIG_OVERRIDE USE_PKGLOCALEDIR USE_PKGEXMPLDIR USE_PKGDATADIR\
 	CMAKE_ARGS CMAKE_ARG_PATH
 
 CONFIGURE_SCRIPT?=	./configure
@@ -78,6 +78,12 @@ _BUILD_DEFS+=		CONFIGURE_ENV CONFIGURE_ARGS CMAKE_ARGS
 .include "replace-interpreter.mk"
 .if defined(USE_PKGLOCALEDIR)
 .  include "replace-localedir.mk"
+.endif
+.if defined(USE_PKGEXMPLDIR)
+.  include "replace-examples.mk"
+.endif
+.if defined(USE_PKGDATADIR)
+.  include "replace-datadir.mk"
 .endif
 .if defined(USE_CMAKE)
 .  include "cmake.mk"

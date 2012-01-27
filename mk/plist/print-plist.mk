@@ -32,8 +32,10 @@ _PRINT_PLIST_AWK_SUBST+=						\
 	gsub(/${PKGNAME_NOREV}/, "$${PKGNAME}");			\
 	gsub(/${PKGVERSION:S/./\./g:C/nb[0-9]*$$//}/, "$${PKGVERSION}");\
 	gsub(/^${PKGLOCALEDIR}\/locale/, "share/locale");		\
+	gsub(/^${PKGEXMPLDIR}\/examples/, "share/examples");		\
 	gsub("^${PKGINFODIR}/", "info/");				\
-	gsub("^${PKGMANDIR}/", "man/");
+	gsub("^${PKGMANDIR}/", "man/");				\
+	gsub(/^${PKGDATADIR}\, "share");
 _PRINT_PLIST_AWK_SUBST+=}
 
 _PRINT_PLIST_AWK_IGNORE=	($$0 ~ /^${PKG_DBDIR:S|^${PREFIX}/||:S|/|\\/|g}\//)
