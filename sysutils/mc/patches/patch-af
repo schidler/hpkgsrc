@@ -1,17 +1,8 @@
 $NetBSD: patch-af,v 1.13 2011/01/23 14:36:10 wiz Exp $
 
 for installing configs to share/examples/mc
---- lib/vfs/mc-vfs/extfs/Makefile.in.orig	2010-11-08 11:52:19.016252928 +0000
+--- lib/vfs/mc-vfs/extfs/Makefile.in.orig	2010-11-08 11:52:19.050855936 +0000
 +++ lib/vfs/mc-vfs/extfs/Makefile.in
-@@ -304,7 +304,7 @@ infodir = @infodir@
- install_sh = @install_sh@
- libdir = @libdir@
- libexecdir = @libexecdir@
--localedir = @localedir@
-+localedir = /boot/common/data/locale
- localstatedir = @localstatedir@
- lt_ECHO = @lt_ECHO@
- mandir = @mandir@
 @@ -391,7 +391,7 @@ EXTFS_OUT = \
  
  @ENABLE_VFS_TRUE@extfs_DATA = $(EXTFS_MISC)

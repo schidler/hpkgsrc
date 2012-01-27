@@ -17,6 +17,8 @@ PKG_INSTALLATION_TYPES=	overwrite pkgviews
 USE_TOOLS+=		pkg-config unzip:run
 GNU_CONFIGURE=		YES
 USE_PKGLOCALEDIR=	YES
+#USE_PKGEXMPLDIR=	YES
+USE_PKGDATADIR=	YES
 
 CHECK_INTERPRETER_SKIP=	libexec/mc/extfs.d/s3+
 
@@ -26,20 +28,27 @@ CHECK_INTERPRETER_SKIP=	libexec/mc/extfs.d/s3+
 PLIST_SRC+=		${PKGDIR}/PLIST.cons.saver
 .endif
 
-.if ${OPSYS} == "Haiku"
-CONFIGURE_ARGS+=	LIBS=-lnetwork
-.endif
+LIBS.Haiku+=	-lnetwork
 
 # we need working e2fsprogs and gpm packages first
 CONFIGURE_ARGS+=	--without-ext2undel
 CONFIGURE_ARGS+=	--without-gpm-mouse
 CONFIGURE_ARGS+=	UNZIP=${TOOLS_PATH.unzip} ZIP=${TOOLS_PATH.zip}
 
+.if ${OPSYS} == "Haiku"
+CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/data
+CONFIGURE_ARGS+=	--datarootdir=${PREFIX}/data
+.endif
+
 PLIST_SRC+=		${PKGDIR}/PLIST
 
 .include "options.mk"
 
+.if ${OPSYS} == "Haiku"
+EGDIR=			${PREFIX}/data/examples/mc
+.else
 EGDIR=			${PREFIX}/share/examples/mc
+.endif
 
 CONFFILES=	cedit.menu edit.indent.rc edit.spell.rc filehighlight.ini \
 		mc.ext mc.keymap mc.keymap.default mc.keymap.emacs mc.lib \

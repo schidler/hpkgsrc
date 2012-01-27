@@ -2,7 +2,7 @@ $NetBSD: patch-lib_fs.h,v 1.1 2011/04/08 22:48:04 wiz Exp $
 
 Fix build on DragonFly (missing MAXNAMLEN macro), from upstream.
 
---- lib/fs.h.orig	2010-11-08 11:46:13.000524288 +0000
+--- lib/fs.h.orig	2010-11-08 11:46:13.033554432 +0000
 +++ lib/fs.h
 @@ -44,6 +44,12 @@
  #   define S_ISNAM(x) 0

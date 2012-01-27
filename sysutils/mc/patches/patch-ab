@@ -1,7 +1,7 @@
 $NetBSD: patch-ab,v 1.14 2011/01/23 14:36:10 wiz Exp $
 
 http://midnight-commander.org/ticket/2476
---- lib/vfs/mc-vfs/ftpfs.c.orig	2010-11-08 11:46:13.005242880 +0000
+--- lib/vfs/mc-vfs/ftpfs.c.orig	2010-11-08 11:46:13.039059456 +0000
 +++ lib/vfs/mc-vfs/ftpfs.c
 @@ -115,9 +115,9 @@ What to do with this?
  #define INADDR_NONE 0xffffffff

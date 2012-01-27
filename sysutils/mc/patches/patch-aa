@@ -2,7 +2,7 @@ $NetBSD: patch-aa,v 1.15 2011/01/23 14:36:10 wiz Exp $
 
 https://midnight-commander.org/ticket/2425
 Fixes segmentation fault on NetBSD
---- src/mountlist.c.orig	2010-11-08 11:46:14.029097984 +0000
+--- src/mountlist.c.orig	2010-11-08 11:46:14.000262144 +0000
 +++ src/mountlist.c
 @@ -54,6 +54,7 @@
  
