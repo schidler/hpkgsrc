@@ -19,6 +19,7 @@ PKG_DESTDIR_SUPPORT=	user-destdir
 USE_LANGUAGES=		c c++
 USE_LIBTOOL=		yes
 USE_TOOLS+=		tbl
+USE_PKGDATADIR=	YES
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-libtool
 CONFIGURE_ARGS+=	--enable-bsdpad
@@ -50,6 +51,8 @@ CONFIGURE_ARGS+=	--without-manpage-tbl
 .if ${OPSYS} == "SunOS"
 TERMINFO_SRC=	${WRKSRC}/misc/terminfo.src
 TERMINFODIR=	share/lib/terminfo
+.elif ${OPSYS} == "Haiku"
+TERMINFODIR=	data/terminfo
 .else
 TERMINFODIR=	share/terminfo
 .endif
