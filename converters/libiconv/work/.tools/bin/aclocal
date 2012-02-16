@@ -1,5 +1,0 @@
-#!/bin/sh
-wrapperlog="${TOOLS_WRAPPER_LOG-/boot/develop/hpkgsrc/converters/libiconv/work/.work.log}"
-echo "[*] "/boot/develop/hpkgsrc/converters/libiconv/work/.tools/bin/aclocal" $@" >> $wrapperlog
-echo "<.> /boot/develop/hpkgsrc/mk/gnu-config/missing aclocal" >> $wrapperlog
-/boot/develop/hpkgsrc/mk/gnu-config/missing aclocal

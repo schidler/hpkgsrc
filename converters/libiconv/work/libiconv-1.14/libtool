@@ -1,2 +1,0 @@
-#!/bin/sh
-exec /boot/develop/hpkgsrc/converters/libiconv/work/.wrapper/bin/libtool "$@"

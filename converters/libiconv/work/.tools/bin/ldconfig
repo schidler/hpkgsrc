@@ -1,5 +1,0 @@
-#!/bin/sh
-wrapperlog="${TOOLS_WRAPPER_LOG-/boot/develop/hpkgsrc/converters/libiconv/work/.work.log}"
-echo "[*] "/boot/develop/hpkgsrc/converters/libiconv/work/.tools/bin/ldconfig" $@" >> $wrapperlog
-echo "<.> exit 0" >> $wrapperlog
-exit 0

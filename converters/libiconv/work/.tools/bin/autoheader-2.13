@@ -1,5 +1,0 @@
-#!/bin/sh
-wrapperlog="${TOOLS_WRAPPER_LOG-/boot/develop/hpkgsrc/converters/libiconv/work/.work.log}"
-echo "[*] "/boot/develop/hpkgsrc/converters/libiconv/work/.tools/bin/autoheader-2.13" $@" >> $wrapperlog
-echo "<.> /boot/develop/hpkgsrc/mk/gnu-config/missing autoheader" >> $wrapperlog
-/boot/develop/hpkgsrc/mk/gnu-config/missing autoheader
