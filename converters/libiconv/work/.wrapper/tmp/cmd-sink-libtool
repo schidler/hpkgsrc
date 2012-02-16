@@ -1,0 +1,19 @@
+while ! queue_is_empty cmdbuf; do
+	pop_queue cmdbuf arg
+	$debug_log $wrapperlog "    (cmd-sink-libtool) pop:  $arg"
+	case $arg in
+	-L*|-l*|-Wl,*)
+		case $lt_mode in
+		link)
+			. $buildcmd
+			;;
+		*)
+			$debug_log $wrapperlog "    (cmd-sink-libtool) drop: $arg"
+			;;
+		esac
+		;;
+	*)
+		. $buildcmd
+		;;
+	esac
+done

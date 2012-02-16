@@ -1,0 +1,25 @@
+$NetBSD: distinfo,v 1.33 2011/10/15 07:24:30 adam Exp $
+
+SHA1 (cmake-2.8.6.tar.gz) = 7c2cbd42d27e26580cd4923892197b84b2a90675
+RMD160 (cmake-2.8.6.tar.gz) = c3095a4776367496f895b8075fda373568f01878
+Size (cmake-2.8.6.tar.gz) = 5583905 bytes
+SHA1 (patch-Modules_CMakePlatformId.h.in) = 2a02f6a09b0a1e8f0177d11d3f2e4c5ba69e351e
+SHA1 (patch-Modules_CheckForPthreads.c) = 1e74c526e7109eb5305415d5e4ac87d0c48b9843
+SHA1 (patch-Modules_FindGLUT.cmake) = 262c32e895646a42eef968670c25030e93ab8420
+SHA1 (patch-Modules_FindLua51.cmake) = de8b77313d4fd215791503d5c31f4eae35b261c7
+SHA1 (patch-Modules_FindOpenGL.cmake) = ff610c470bf5ceed5573ca1f484a4c9e511eb92c
+SHA1 (patch-Modules_FindX11.cmake) = 794abf654132beed397d197dacd3c58a2f13c917
+SHA1 (patch-Modules_Platform_Haiku.cmake) = 35a8bca84fb97a3f5ccd1784ac639249b5997250
+SHA1 (patch-Source_CPack_cmCPackGenerator.cxx) = 07e6a9b817d6915878fc67d142731805e7bcc74a
+SHA1 (patch-Source_CPack_cmCPackGeneratorFactory.cxx) = 5812c55ce75ca5eeb6a2d3156488b7c57ad91a9e
+SHA1 (patch-Source_cmCTest.cxx) = e087cf7b8c53794b2e1c20bb6f9a8ca8aea5f015
+SHA1 (patch-Source_cmExportCommand.cxx) = 8a16a42078bed5a0b86739a88b7c562aafd50c66
+SHA1 (patch-Source_cmFindPackageCommand.cxx) = 0455b888374b9e9291a076fa73d3c1d41fb90ef9
+SHA1 (patch-Source_cmLocalGenerator.cxx) = 7d847755ed84acc5b68ec4afe5deb5afbf3e96e5
+SHA1 (patch-Source_kwsys_ProcessUNIX.c) = 3d9f2f5fa74a0869e84ff6fbab6fcd937db02c1d
+SHA1 (patch-Source_kwsys_SystemTools.cxx) = 7011f82d8e64d2664d8b27f905b39df3bfa8625e
+SHA1 (patch-Source_kwsys_testDynamicLoader.cxx) = 50a1ced5c62aae1d20a0bd1e14ed4dbce9ee7085
+SHA1 (patch-Source_kwsys_testProcess.c) = 0284fe1a90535711bfd15bd4490cf541b606f870
+SHA1 (patch-aa) = e1fbef2da967ec02ff6622b6f58ef57b4854c9f7
+SHA1 (patch-ab) = b8173a18d44b129689c45a1db4e9a2012ec44bc7
+SHA1 (patch-ac) = 22a90d8ec3661c2ba490ac75ab0fc8745bb15f9d

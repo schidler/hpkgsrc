@@ -1,0 +1,83 @@
+lt_mode=
+prevopt=
+nonopt=
+lafile=
+for arg do
+	case $arg in
+	-*=*)	optarg=`$echo "X$arg" | $Xsed -e 's/[-_a-zA-Z0-9]*=//'` ;;
+	*)	optarg= ;;
+	esac
+	if $test -n "$prevopt"; then
+		case $prevopt in
+		--mode)
+			lt_mode="$arg"
+			;;
+		-o)
+			case $arg in
+			*.la) lafile="$arg" ;;
+			esac
+			;;
+		esac
+		prevopt=
+		continue
+	fi
+	case $arg in
+	--finish)
+		lt_mode="finish"
+		;;
+	--mode|-o)
+		prevopt="$arg"
+		;;
+	--mode=*)
+		lt_mode="$optarg"
+		;;
+	-*)
+		if $test -n "$nonopt" -a -z "$lt_mode"; then
+			case $arg in
+			-c) lt_mode=compile ;;
+			esac
+		fi
+		;;
+	*)
+		if $test -z "$nonopt" -a -z "$lt_mode"; then
+			nonopt="$arg"
+			case $nonopt in
+			*cc|*++|gcc*|*-gcc*|xlc*|*CC)
+				lt_mode=link
+				for arg do
+					case $arg in
+					-c) lt_mode=compile; break ;;
+					esac
+				done
+				;;
+			*install*|cp|mv)
+				lt_mode=install
+				;;
+			*rm)
+				lt_mode=uninstall
+				;;
+			esac
+		fi
+		;;
+	esac
+done
+if $test -z "$lt_mode"; then
+	lt_mode=link
+fi
+$debug_log $wrapperlog "    (scan-libtool) mode: $lt_mode"
+case $lt_mode in
+unwrap)
+	. $cleanup
+	exit 0
+	;;
+link)
+	append_extra_args=yes
+	;;
+execute|finish|install|uninstall)
+	msg_log $wrapperlog "<.> $cmd $@"
+	exec $cmd "$@"
+	;;
+*)
+	append_extra_args=no
+	;;
+esac

@@ -1,0 +1,22 @@
+=head2 Thu Feb 16 13:51:08 2012: C<Module> L<Git|Git>
+
+=over 4
+
+=item *
+
+C<installed into: /boot/common/pkg/lib/perl5/vendor_perl/5.14.0>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.01>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+

@@ -1,0 +1,5 @@
+#!/bin/sh
+wrapperlog="${TOOLS_WRAPPER_LOG-/boot/develop/hpkgsrc/converters/libiconv/work/.work.log}"
+echo "[*] "/boot/develop/hpkgsrc/converters/libiconv/work/.tools/bin/makeinfo" $@" >> $wrapperlog
+echo "<.> for arg in "$@"; do case "$arg" in --version) exit 1 ;; esac; done; /boot/develop/hpkgsrc/mk/gnu-config/missing makeinfo "$@"" >> $wrapperlog
+for arg in "$@"; do case "$arg" in --version) exit 1 ;; esac; done; /boot/develop/hpkgsrc/mk/gnu-config/missing makeinfo "$@"

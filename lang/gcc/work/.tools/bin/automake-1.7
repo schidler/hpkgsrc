@@ -1,0 +1,5 @@
+#!/bin/sh
+wrapperlog="${TOOLS_WRAPPER_LOG-/boot/develop/hpkgsrc/lang/gcc/work/.work.log}"
+echo "[*] "/boot/develop/hpkgsrc/lang/gcc/work/.tools/bin/automake-1.7" $@" >> $wrapperlog
+echo "<.> /boot/develop/hpkgsrc/mk/gnu-config/missing automake" >> $wrapperlog
+/boot/develop/hpkgsrc/mk/gnu-config/missing automake

@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- Modules/CMakePlatformId.h.in.orig	2011-10-04 16:09:24.056885248 +0000
++++ Modules/CMakePlatformId.h.in
+@@ -35,7 +35,7 @@
+ #elif defined(__hpux) || defined(__hpux__)
+ # define PLATFORM_ID "HP-UX"
+ 
+-#elif defined(__HAIKU) || defined(__HAIKU__) || defined(_HAIKU)
++#elif defined(__HAIKU__)
+ # define PLATFORM_ID "Haiku"
+ /* Haiku also defines __BEOS__ so we must 
+    put it prior to the check for __BEOS__

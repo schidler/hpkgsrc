@@ -1,0 +1,5 @@
+#!/bin/sh
+wrapperlog="${TOOLS_WRAPPER_LOG-/boot/develop/hpkgsrc/converters/libiconv/work/.work.log}"
+echo "[*] "/boot/develop/hpkgsrc/converters/libiconv/work/.tools/bin/rpcgen" $@" >> $wrapperlog
+echo "<.> CPP=/boot/develop/hpkgsrc/converters/libiconv/work/.wrapper/bin/cpp false  "$@"" >> $wrapperlog
+CPP=/boot/develop/hpkgsrc/converters/libiconv/work/.wrapper/bin/cpp false  "$@"

@@ -1,0 +1,207 @@
+#!/bin/sh
+#
+# $NetBSD: header,v 1.2 2006/07/19 22:26:26 jlam Exp $
+
+SELF="$0"
+PKGNAME="$1"
+STAGE="$2"
+shift 2
+
+AWK="/bin/awk"
+BASENAME="/bin/basename"
+CAT="/bin/cat"
+CHGRP="true"
+CHMOD="/bin/chmod"
+CHOWN="true"
+CMP="/bin/cmp"
+CP="/bin/cp"
+DIRNAME="/bin/dirname"
+ECHO="echo"
+ECHO_N="echo -n"
+EGREP="/bin/egrep"
+EXPR="/bin/expr"
+FALSE="false"
+FIND="/bin/find"
+GREP="/bin/grep"
+GTAR=""
+HEAD="/bin/head"
+ID="/bin/id"
+LINKFARM="/boot/common/pkg/bin/linkfarm"
+LN="/bin/ln"
+LS="/bin/ls"
+MKDIR="/bin/mkdir -p"
+MV="/bin/mv"
+PERL5="/boot/common/pkg/bin/perl"
+PKG_ADMIN="/boot/common/pkg/bin/pkg_admin"
+PKG_INFO="/boot/common/pkg/bin/pkg_info"
+PWD_CMD="/bin/pwd"
+RM="/bin/rm"
+RMDIR="/bin/rmdir"
+SED="/boot/common/bin/sed"
+SETENV="/bin/env"
+SH="/bin/sh"
+SORT="/bin/sort"
+SU="/bin/su"
+TEST="test"
+TOUCH="/bin/touch"
+TR="/bin/tr"
+TRUE="true"
+XARGS="/bin/xargs -r"
+
+CURDIR=`${PWD_CMD}`
+: ${PKG_METADATA_DIR=${CURDIR}}
+PKGBASE="scmgit-base"
+
+LOCALBASE="/boot/common/pkg"
+X11BASE="/boot/common/pkg"
+DEPOTBASE="/boot/common/pkg/packages"
+PREFIX="/boot/common/pkg"
+case ${PKG_PREFIX} in
+${LOCALBASE}/*)	VIEW="${PKG_PREFIX#${LOCALBASE}/}" ;;
+*)		VIEW="" ;;
+esac
+
+PKG_SYSCONFBASE="/boot/common/pkg/settings"
+PKG_SYSCONFDEPOTBASE=""
+PKG_SYSCONFBASEDIR="/boot/common/pkg/settings"
+PKG_SYSCONFDIR="/boot/common/pkg/settings/git"
+CONF_DEPENDS=""
+
+case ${VIEW} in
+"")	PKG_SYSCONFVIEWBASE="${PKG_SYSCONFBASE}" ;;
+*)	PKG_SYSCONFVIEWBASE="${PKG_SYSCONFBASE}/${VIEW}" ;;
+esac
+
+CONF_IGNORE_FILES="*[~#] *.OLD *.orig *,v .pkgsrc */.pkgsrc"
+
+PKG_INSTALLATION_TYPE="overwrite"
+
+case "${PKG_CONFIG:-YES}" in
+[Yy][Ee][Ss]|[Tt][Rr][Uu][Ee]|[Oo][Nn]|1)
+	_PKG_CONFIG=yes
+	;;
+[Nn][Oo]|[Ff][Aa][Ll][Ss][Ee]|[Oo][Ff][Ff]|0)
+	_PKG_CONFIG=yes
+	;;
+esac
+
+# $NetBSD: deinstall-pre,v 1.1 2006/05/21 23:50:15 jlam Exp $
+
+# Ensure that the VIEW-DEINSTALL action is called for overwrite packages.
+# This is here to ensure that it's the first DEINSTALL action (before
+# any DEINSTALL_TEMPLATE DEINSTALL actions).
+#
+case ${STAGE} in
+DEINSTALL)
+	if [ "${PKG_INSTALLATION_TYPE}" = "overwrite" ]; then
+		${SETENV} PKG_PREFIX="${PKG_PREFIX}" \
+			$0 ${PKGNAME} VIEW-DEINSTALL
+        fi
+	;;
+esac
+
+# $NetBSD: deinstall.tmpl,v 1.3 2010/02/14 15:10:38 tron Exp $
+
+case ${STAGE} in
+DEINSTALL)
+	eval `${PERL5} -V:prefix -V:archlib -V:scriptdir`
+	PERL5_PACKLIST="/boot/common/pkg/lib/perl5/vendor_perl/5.14.0/i386-haiku/auto/Git/.packlist"
+
+	# Remove the perllocal.pod file.
+	case "$archlib" in
+	$prefix/*)	archlib="${PKG_PREFIX-/boot/common/pkg}/${archlib#$prefix/}" ;;
+	esac
+	${RM} -f $archlib/perllocal.pod
+	${RMDIR} -p $archlib 2>/dev/null || ${TRUE}
+
+	# Remove any symlinked bits that belong to this module.
+	$scriptdir/perllink -f -p ${PKG_PREFIX-/boot/common/pkg} delete ${PERL5_PACKLIST}
+
+	# If this is not the perl package, then re-link any perl bits
+	# back into place.
+	#
+	$scriptdir/perllink -p ${PKG_PREFIX-/boot/common/pkg} add
+	;;
+esac
+# $NetBSD: deinstall,v 1.2 2007/07/18 18:01:03 jlam Exp $
+
+case ${STAGE} in
+VIEW-DEINSTALL)
+	case ${_PKG_CONFIG} in
+	yes)
+		case ${PKG_SYSCONFDEPOTBASE} in
+		"")
+			${TEST} ! -x ./+FILES ||
+				./+FILES VIEW-REMOVE ${PREFIX} ${PKG_PREFIX}
+			;;
+		*)
+			${SETENV} PLIST_IGNORE_FILES="${CONF_IGNORE_FILES}" \
+				${LINKFARM} -D -t ${PKG_SYSCONFVIEWBASE} -d ${PKG_SYSCONFDEPOTBASE} ${PKGNAME}
+			${RMDIR} -p ${PKG_SYSCONFVIEWBASE} 2>/dev/null || ${TRUE}
+			;;
+		esac
+		;;
+	esac
+	#
+	# Unregister info files.
+	#
+	${TEST} ! -x ./+INFO_FILES ||
+		./+INFO_FILES REMOVE ${PKG_METADATA_DIR}
+	#
+	# Remove shells from /etc/shells.
+	#
+	${TEST} ! -x ./+SHELL ||
+		./+SHELL REMOVE ${PKG_METADATA_DIR}
+	${TEST} ! -x ./+SHELL ||
+		./+SHELL CHECK-REMOVE ${PKG_METADATA_DIR}
+	;;
+
+DEINSTALL)
+	# Remove configuration files if they don't differ from the default
+	# config file.
+	#
+	${TEST} ! -x ./+FILES ||
+		./+FILES REMOVE ${PKG_METADATA_DIR}
+	;;
+
+POST-DEINSTALL)
+	if [ "${PKG_INSTALLATION_TYPE}" = "pkgviews" -a			\
+	     "${_PKG_CONFIG}" = "yes" -a -n "${CONF_DEPENDS}" ]; then
+		if [ -h ${PKG_SYSCONFDIR} ]; then
+			${RM} -f ${PKG_SYSCONFDIR}
+		fi
+		${RMDIR} -p `${DIRNAME} ${PKG_SYSCONFDIR}` 2>/dev/null || ${TRUE}
+	fi
+	#
+	# Update any fonts databases.
+	#
+	${TEST} ! -x ./+FONTS ||
+		./+FONTS ${PKG_METADATA_DIR}
+	#
+	# Rebuild the system run-time library search path database.
+	#
+	${TEST} ! -x ./+SHLIBS ||
+		./+SHLIBS REMOVE ${PKG_METADATA_DIR}
+	#
+	# Remove empty directories and unused users/groups.
+	#
+	${TEST} ! -x ./+DIRS ||
+		./+DIRS REMOVE ${PKG_METADATA_DIR}
+	${TEST} ! -x ./+USERGROUP ||
+		./+USERGROUP REMOVE ${PKG_METADATA_DIR}
+	#
+	# Check for any existing bits after we're finished de-installing.
+	#
+	${TEST} ! -x ./+USERGROUP ||
+		./+USERGROUP CHECK-REMOVE ${PKG_METADATA_DIR}
+	${TEST} ! -x ./+FILES ||
+		./+FILES CHECK-REMOVE ${PKG_METADATA_DIR}
+	${TEST} ! -x ./+DIRS ||
+		./+DIRS CHECK-REMOVE ${PKG_METADATA_DIR}
+	;;
+esac
+
+# $NetBSD: footer,v 1.1 2006/05/21 23:50:15 jlam Exp $
+
+exit 0
+

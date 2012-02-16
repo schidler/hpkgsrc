@@ -1,0 +1,88 @@
+$NetBSD: patch-aa,v 1.13 2010/10/28 10:23:08 adam Exp $
+
+--- Makefile.orig	2011-11-02 01:06:28.055312384 +0000
++++ Makefile
+@@ -280,8 +280,6 @@ endif
+ 
+ CFLAGS = -g -O2 -Wall
+ LDFLAGS =
+-ALL_CFLAGS = $(CPPFLAGS) $(CFLAGS)
+-ALL_LDFLAGS = $(LDFLAGS)
+ STRIP ?= strip
+ 
+ # Among the variables below, these:
+@@ -303,7 +301,11 @@ mandir = share/man
+ infodir = share/info
+ gitexecdir = libexec/git-core
+ mergetoolsdir = $(gitexecdir)/mergetools
++ifeq ($(uname_S),Haiku)
++sharedir = $(prefix)/data
++else
+ sharedir = $(prefix)/share
++endif
+ gitwebdir = $(sharedir)/gitweb
+ template_dir = share/git-core/templates
+ htmldir = share/doc/git-doc
+@@ -315,13 +317,9 @@ pathsep = :
+ 
+ export prefix bindir sharedir sysconfdir gitwebdir
+ 
+-CC = gcc
+-AR = ar
+ RM = rm -f
+ DIFF = diff
+-TAR = tar
+ FIND = find
+-INSTALL = install
+ RPMBUILD = rpmbuild
+ TCL_PATH = tclsh
+ TCLTK_PATH = wish
+@@ -879,9 +877,10 @@ ifeq ($(uname_S),Darwin)
+ 	USE_ST_TIMESPEC = YesPlease
+ endif
+ ifeq ($(uname_S),SunOS)
++	NEED_LIBICONV = YesPlease
+ 	NEEDS_SOCKET = YesPlease
+ 	NEEDS_NSL = YesPlease
+-	SHELL_PATH = /bin/bash
++	SHELL_PATH = ${BASH}
+ 	SANE_TOOL_PATH = /usr/xpg6/bin:/usr/xpg4/bin
+ 	NO_STRCASESTR = YesPlease
+ 	NO_MEMMEM = YesPlease
+@@ -922,8 +921,6 @@ ifeq ($(uname_S),SunOS)
+ 		NO_STRTOUMAX = YesPlease
+ 		GIT_TEST_CMP = cmp
+ 	endif
+-	INSTALL = /usr/ucb/install
+-	TAR = gtar
+ 	BASIC_CFLAGS += -D__EXTENSIONS__ -D__sun__ -DHAVE_ALLOCA_H
+ endif
+ ifeq ($(uname_O),Cygwin)
+@@ -1176,6 +1173,16 @@ ifeq ($(uname_S),Minix)
+ 	NO_CURL =
+ 	NO_EXPAT =
+ endif
++ifeq ($(uname_S),Haiku)
++    NO_R_TO_GCC_LINKER = YesPlease
++    NO_LIBGEN_H = YesPlease
++    NO_MEMMEM = YesPlease
++    NO_MKSTEMPS = YesPlease
++    NEEDS_LIBICONV = YesPlease
++    DEFAULT_EDITOR = nano
++    PTHREAD_LIBS =	-lroot
++    NO_CROSS_DIRECTORY_HARDLINKS = YesPlease
++endif
+ ifneq (,$(findstring MINGW,$(uname_S)))
+ 	pathsep = ;
+ 	NO_PREAD = YesPlease
+@@ -1711,8 +1718,8 @@ DEFAULT_PAGER_CQ_SQ = $(subst ','\'',$(D
+ BASIC_CFLAGS += -DDEFAULT_PAGER='$(DEFAULT_PAGER_CQ_SQ)'
+ endif
+ 
+-ALL_CFLAGS += $(BASIC_CFLAGS)
+-ALL_LDFLAGS += $(BASIC_LDFLAGS)
++ALL_CFLAGS = $(BASIC_CFLAGS) $(CPPFLAGS) $(CFLAGS)
++ALL_LDFLAGS = $(BASIC_LDFLAGS) $(LDFLAGS)
+ 
+ export DIFF TAR INSTALL DESTDIR SHELL_PATH
+ 
