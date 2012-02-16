@@ -1,8 +1,0 @@
-bootstrap	digest>=20010302	../../pkgtools/digest
-build	{gettext-tools>=0.14.5,gettext>=0.10.36<0.14.5}	../../devel/gettext-tools
-full	p5-Error>=0.17015	../../devel/p5-Error
-full	perl<5.16.0	../../lang/perl5
-full	perl>=5.14.0	../../lang/perl5
-full	openssl>=0.9.8knb1	../../security/openssl
-full	expat>=2.0.0nb1	../../textproc/expat
-full	curl>=7.21.4nb1	../../www/curl

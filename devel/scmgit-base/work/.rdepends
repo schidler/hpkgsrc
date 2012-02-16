@@ -1,8 +1,0 @@
-bootstrap	digest>=20010302	digest-20111104
-build	{gettext-tools>=0.14.5,gettext>=0.10.36<0.14.5}	gettext-tools-0.18.1.1nb2
-full	p5-Error>=0.17015	p5-Error-0.17016nb2
-full	perl<5.16.0	perl-5.14.2nb1
-full	perl>=5.14.0	perl-5.14.2nb1
-full	openssl>=0.9.8knb1	openssl-1.0.0enb3
-full	expat>=2.0.0nb1	expat-2.0.1nb2
-full	curl>=7.21.4nb1	curl-7.21.7

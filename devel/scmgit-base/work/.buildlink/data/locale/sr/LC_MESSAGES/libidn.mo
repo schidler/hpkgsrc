@@ -1,1 +1,0 @@
-/boot/common/pkg/data/locale/sr/LC_MESSAGES/libidn.mo

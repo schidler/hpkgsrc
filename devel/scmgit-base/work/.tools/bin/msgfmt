@@ -1,5 +1,0 @@
-#!/bin/sh
-wrapperlog="${TOOLS_WRAPPER_LOG-/boot/develop/hpkgsrc/devel/scmgit-base/work/.work.log}"
-echo "[*] "/boot/develop/hpkgsrc/devel/scmgit-base/work/.tools/bin/msgfmt" $@" >> $wrapperlog
-echo "<.> AWK=/bin/awk CAT=/bin/cat		 MSGFMT=/boot/common/pkg/bin/msgfmt		 PKGSRCDIR=/boot/develop/hpkgsrc			 MSGFMT_STRIP_MSGID_PLURAL=no  MSGFMT_STRIP_MSGCTXT=yes  /bin/sh /boot/develop/hpkgsrc/mk/tools/msgfmt.sh "$@"" >> $wrapperlog
-AWK=/bin/awk CAT=/bin/cat		 MSGFMT=/boot/common/pkg/bin/msgfmt		 PKGSRCDIR=/boot/develop/hpkgsrc			 MSGFMT_STRIP_MSGID_PLURAL=no  MSGFMT_STRIP_MSGCTXT=yes  /bin/sh /boot/develop/hpkgsrc/mk/tools/msgfmt.sh "$@"
