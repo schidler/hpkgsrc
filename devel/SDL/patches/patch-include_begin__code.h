@@ -1,6 +1,6 @@
 $NetBSD$
 
---- include/begin_code.h.orig	2009-10-12 23:07:19.009175040 +0000
+--- include/begin_code.h.orig	2009-10-12 23:07:19.007864320 +0000
 +++ include/begin_code.h
 @@ -43,7 +43,7 @@
  #ifndef DECLSPEC

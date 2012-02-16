@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/main/beos/SDL_BeApp.cc.orig	2009-10-12 23:07:13.019398656 +0000
+--- src/main/beos/SDL_BeApp.cc.orig	2009-10-12 23:07:13.028835840 +0000
 +++ src/main/beos/SDL_BeApp.cc
 @@ -39,13 +39,15 @@ static SDL_Thread *SDL_AppThread = NULL;
  

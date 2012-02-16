@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/video/bwindow/SDL_sysyuv.h.orig	2009-10-12 23:07:15.062390272 +0000
+--- src/video/bwindow/SDL_sysyuv.h.orig	2009-10-12 23:07:15.000524288 +0000
 +++ src/video/bwindow/SDL_sysyuv.h
 @@ -62,7 +62,7 @@ struct private_yuvhwdata
  };

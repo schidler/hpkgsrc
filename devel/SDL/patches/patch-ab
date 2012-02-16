@@ -1,6 +1,6 @@
 $NetBSD: patch-ab,v 1.10 2011/08/02 17:02:38 joerg Exp $
 
---- src/video/mmx.h.orig	2009-10-12 23:07:15.047185920 +0000
+--- src/video/mmx.h.orig	2009-10-12 23:07:15.051118080 +0000
 +++ src/video/mmx.h
 @@ -355,7 +355,7 @@ mmx_ok(void)
  
