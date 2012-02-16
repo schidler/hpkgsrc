@@ -7,6 +7,7 @@ SVR4_PKGNAME=	gttli
 COMMENT=	Internationalized Message Handling Library (libintl)
 
 USE_LANGUAGES=		c
+USE_PKGDATADIR=		yes
 CONFIGURE_ARGS+=	--with-included-gettext
 CONFIGURE_ARGS+=	--disable-csharp
 CONFIGURE_ENV+=		PKGLOCALEDIR=${PKGLOCALEDIR}
@@ -18,8 +19,15 @@ CFLAGS.gnu-iconv+=	-DHAVE_GNU_ICONV
 INSTALL_MAKE_FLAGS=	${MAKE_FLAGS} localedir=${EGDIR}
 
 CONFIGURE_DIRS=		gettext-runtime
+
+LIBS.Haiku+=	-lcharset
 BUILD_DIRS=		gettext-runtime/intl
+.include "../../mk/bsd.prefs.mk"
+.if ${OPSYS} != "Haiku"
 EGDIR=			${PREFIX}/share/examples/gettext
+.else
+EGDIR=			${PREFIX}/data/examples/gettext
+.endif
 LOCALEDIR=		${PREFIX}/${PKGLOCALEDIR}/locale
 
 REQD_DIRS+=		${LOCALEDIR}

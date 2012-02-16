@@ -36,6 +36,8 @@ CONFLICTS+=	libtool<=1.3.5nb11
 TEST_TARGET=	check
 PLIST_VARS+=	shlibtool
 
+USE_PKGDATADIR=yes
+
 OVERRIDE_DIRDEPTH.install-sh=	1
 
 .if ${OPSYS} == "AIX"

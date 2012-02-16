@@ -15,7 +15,7 @@ PKG_DESTDIR_SUPPORT=	user-destdir
 
 USE_LIBTOOL=		yes
 USE_PKGLOCALEDIR=	yes
-USE_TOOLS+=		makeinfo pkg-config perl:build
+USE_TOOLS+=		pkg-config perl:build
 TEXINFO_REQD=		4.7
 GNU_CONFIGURE=		yes
 INFO_FILES=		yes

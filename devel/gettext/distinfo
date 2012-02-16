@@ -15,3 +15,4 @@ SHA1 (patch-al) = e0dcee0340fb9fdbd996be885548871ffb34dab2
 SHA1 (patch-am) = b0598906d2d37b5e20edf23123d8dd749dc23edb
 SHA1 (patch-an) = 2429e923e8172d2e6149cf22741e1e01657af19a
 SHA1 (patch-ao) = cd524bc7af4f6b514a7138b0830e901f90a785e0
+SHA1 (patch-gettext-tools_gnulib-lib_binary-io.h) = 66cfb52af6f3a1ccdfb5bb4dbc47fd18e2785d34
