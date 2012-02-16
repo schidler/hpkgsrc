@@ -295,6 +295,7 @@ install-dirs-from-PLIST:
 		-e 's,^man/,${PKGMANDIR}/,'				\
 		-e 's,^info/,${PKGINFODIR}/,'				\
 		-e 's,^share/locale/,${PKGLOCALEDIR}/locale/,'		\
+		-e 's,^share/doc/,${PKGDOCDIR}/,'		\
 		-e 's,^share,${PKGDATADIR},'		\
 		-e 's,^\([^$$@]*\)/[^/]*$$,\1,p'			\
 	| while read dir; do						\

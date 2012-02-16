@@ -1,8 +1,8 @@
-$NetBSD: patch-ab,v 1.16 2011/08/05 18:06:14 adam Exp $
-
---- installperl.orig	2009-12-06 17:14:00.000000000 +0000
-+++ installperl	2009-12-06 17:14:13.000000000 +0000
-@@ -348,7 +348,6 @@
+--- installperl.orig	2011-09-19 19:18:22.042205184 +0600
++++ installperl	2012-02-14 12:56:01.040108032 +0600
+--- installperl.orig	2011-09-19 13:18:22.037748736 +0000
++++ installperl
+@@ -348,7 +348,6 @@ my $vershort = ($Is_Cygwin and !$Config{
  mkpath($installprivlib, $opts{verbose}, 0777);
  mkpath($installarchlib, $opts{verbose}, 0777);
  mkpath($installsitelib, $opts{verbose}, 0777) if ($installsitelib);
@@ -10,3 +10,15 @@ $NetBSD: patch-ab,v 1.16 2011/08/05 18:06:14 adam Exp $
  
  if (chdir "lib") {
      $do_installarchlib = ! samepath($installarchlib, '.');
+@@ -402,6 +401,11 @@ elsif ($Is_Cygwin) { # On Cygwin symlink
+ 	mkpath("$installarchlib/CORE/mpeix", $opts{verbose}, 0777);
+ 	push(@corefiles,'mpeix/mpeixish.h');
+     }
++    if ($^O eq 'haiku') {
++	# Haiku needs haikuish.h installed as well.
++	mkpath("$installarchlib/CORE/haiku", $opts{verbose}, 0777);
++	push(@corefiles,'haiku/haikuish.h');
++    }
+     # If they have built sperl.o...
+     push(@corefiles,'sperl.o') if -f 'sperl.o';
+ }

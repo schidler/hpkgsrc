@@ -3,7 +3,7 @@ $NetBSD: patch-cpan_Digest_Digest.pm,v 1.1 2011/10/16 20:09:42 spz Exp $
 taken from:
 http://http://perl5.git.perl.org/perl.git/commitdiff/a2fa999d41c94d622051667d897fedca90be1828
 
---- cpan/Digest/Digest.pm.orig	2010-12-30 02:07:15.000000000 +0000
+--- cpan/Digest/Digest.pm.orig	2010-12-30 02:07:15.061603840 +0000
 +++ cpan/Digest/Digest.pm
 @@ -3,7 +3,7 @@ package Digest;
  use strict;

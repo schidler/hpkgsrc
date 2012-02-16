@@ -1,8 +1,8 @@
 $NetBSD: patch-aa,v 1.33 2010/08/19 20:47:10 seb Exp $
 
---- cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Unix.pm.orig	2010-05-21 03:45:50.000000000 +0000
-+++ cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Unix.pm	2010-05-21 03:46:44.000000000 +0000
-@@ -28,8 +28,6 @@
+--- cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Unix.pm.orig	2011-09-26 09:44:34.041418752 +0000
++++ cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Unix.pm
+@@ -28,8 +28,6 @@ BEGIN { 
      $Is{VMS}     = $^O eq 'VMS';
      $Is{OSF}     = $^O eq 'dec_osf';
      $Is{IRIX}    = $^O eq 'irix';
@@ -11,7 +11,7 @@ $NetBSD: patch-aa,v 1.33 2010/08/19 20:47:10 seb Exp $
      $Is{SunOS4}  = $^O eq 'sunos';
      $Is{Solaris} = $^O eq 'solaris';
      $Is{SunOS}   = $Is{SunOS4} || $Is{Solaris};
-@@ -931,7 +929,7 @@
+@@ -931,7 +929,7 @@ $(INST_DYNAMIC): $(OBJECT) $(MYEXTLIB) $
  
      my $libs = '$(LDLOADLIBS)';
  

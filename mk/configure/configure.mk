@@ -79,6 +79,9 @@ _BUILD_DEFS+=		CONFIGURE_ENV CONFIGURE_ARGS CMAKE_ARGS
 .if defined(USE_PKGLOCALEDIR)
 .  include "replace-localedir.mk"
 .endif
+.if defined(USE_PKGDOCDIR)
+.  include "replace-docdir.mk"
+.endif
 .if defined(USE_PKGEXMPLDIR)
 .  include "replace-examples.mk"
 .endif

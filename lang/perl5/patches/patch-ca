@@ -1,7 +1,7 @@
-$NetBSD: patch-ca,v 1.10 2011/08/05 18:06:14 adam Exp $
-
---- Configure.orig	2011-06-09 22:04:29.000000000 +0200
-+++ Configure	2011-07-31 12:24:09.000000000 +0200
+--- Configure.orig	2011-09-26 15:44:34.018350080 +0600
++++ Configure	2012-02-14 12:53:04.828375040 +0600
+--- Configure.orig	2011-09-26 09:44:34.014417920 +0000
++++ Configure
 @@ -3256,13 +3256,14 @@ EOM
  			osvers="$3"
  			;;
@@ -46,7 +46,26 @@ $NetBSD: patch-ca,v 1.10 2011/08/05 18:06:14 adam Exp $
  *) dlist="$libpth";;
  esac
  
-@@ -6521,7 +6522,9 @@ rp='Pathname for the site-specific libra
+@@ -5157,18 +5158,6 @@ default|recommended)
+ 		eval $checkccflag
+ 		;;
+ 	esac
+-
+-	# on x86_64 (at least) we require an extra library (libssp) in the
+-	# link command line. This library is not named, so I infer that it is
+-	# an implementation detail that may change. Hence the safest approach
+-	# is to add the flag to the flags passed to the compiler at link time,
+-	# as that way the compiler can do the right implementation dependant
+-	# thing. (NWC)
+-	case "$gccversion" in
+-	?*)	set stack-protector -fstack-protector
+-		eval $checkccflag
+-		;;
+-	esac
+ 	;;
+ esac
+ 
+@@ -6521,7 +6510,9 @@ rp='Pathname for the site-specific libra
  . ./getfile
  prefixvar=sitelib
  . ./setprefixvar
@@ -57,7 +76,7 @@ $NetBSD: patch-ca,v 1.10 2011/08/05 18:06:14 adam Exp $
  
  : Determine list of previous versions to include in @INC
  $cat > getverlist <<EOPL
-@@ -7033,7 +7036,9 @@ case "$vendorprefix" in
+@@ -7033,7 +7024,9 @@ case "$vendorprefix" in
  	vendorlibexp="$ansexp"
  	;;
  esac
@@ -68,7 +87,7 @@ $NetBSD: patch-ca,v 1.10 2011/08/05 18:06:14 adam Exp $
  prefixvar=vendorlib
  . ./installprefix
  
-@@ -7510,6 +7515,15 @@ case "$nm_so_opt" in
+@@ -7510,6 +7503,15 @@ case "$nm_so_opt" in
  	;;
  esac
  
@@ -84,7 +103,7 @@ $NetBSD: patch-ca,v 1.10 2011/08/05 18:06:14 adam Exp $
  : Figure out where the libc is located
  case "$runnm" in
  true)
-@@ -8339,7 +8353,7 @@ if "$useshrplib"; then
+@@ -8339,7 +8341,7 @@ if "$useshrplib"; then
  		# beos doesn't like the default, either.
  		;;
  	haiku)
@@ -93,7 +112,7 @@ $NetBSD: patch-ca,v 1.10 2011/08/05 18:06:14 adam Exp $
  		;;
  	hpux*)
  		# hpux doesn't like the default, either.
-@@ -9410,6 +9424,13 @@ EOCP
+@@ -9410,6 +9412,13 @@ EOCP
  	;;
  esac
  
@@ -107,7 +126,7 @@ $NetBSD: patch-ca,v 1.10 2011/08/05 18:06:14 adam Exp $
  : Set the vendorbin variables
  case "$vendorprefix" in
  '')	d_vendorbin="$undef"
-@@ -19061,7 +19082,15 @@ RCAT(Rei,ser)
+@@ -19061,7 +19070,15 @@ RCAT(Rei,ser)
  ACAT(Cir,cus)
  EOCP
  $cppstdin $cppflags $cppminus <cpp_stuff.c >cpp_stuff.out 2>&1

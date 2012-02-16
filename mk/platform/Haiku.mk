@@ -28,9 +28,13 @@ ROOT_CMD?=		${SU} - root -c
 ROOT_GROUP?=		root
 ROOT_USER?=		user
 SERIAL_DEVICES?=	/dev/tty
-ULIMIT_CMD_datasize?=	ulimit -d `ulimit -H -d`
-ULIMIT_CMD_stacksize?=	ulimit -s `ulimit -H -s`
-ULIMIT_CMD_memorysize?=	ulimit -m `ulimit -H -m`
+#incorrect bash port ulimit
+#ULIMIT_CMD_datasize?=	ulimit -d `ulimit -H -d`
+#ULIMIT_CMD_stacksize?=	ulimit -s `ulimit -H -s`
+#ULIMIT_CMD_memorysize?=	ulimit -m `ulimit -H -m`
+ULIMIT_CMD_datasize?=	ulimit -c `ulimit -c`
+ULIMIT_CMD_stacksize?=	ulimit -c `ulimit -c`
+ULIMIT_CMD_memorysize?=	ulimit -c `ulimit -c`
 USERADD?=		/bin/useradd
 
 # imake installs manpages in weird places

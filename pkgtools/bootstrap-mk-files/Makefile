@@ -20,7 +20,7 @@ NO_BUILD=	yes
 
 USE_TOOLS+=	sed
 
-INSTALLATION_DIRS=	share/mk
+INSTALLATION_DIRS=	data/mk
 
 do-extract:
 	@${CP} -R ${FILESDIR} ${WRKSRC}
@@ -43,7 +43,7 @@ do-configure:
 
 do-install:
 	cd ${WRKSRC} && for file in bsd.* sys.mk; do			\
-		${INSTALL_DATA} $$file ${DESTDIR}${PREFIX}/share/mk/$$file;	\
+		${INSTALL_DATA} $$file ${DESTDIR}${PREFIX}/data/mk/$$file;	\
 	done
 
 .include "../../mk/bsd.pkg.mk"

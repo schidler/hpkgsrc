@@ -40,6 +40,7 @@ SUBST_STAGE.pkgdatadir=	do-configure-pre-hook
 SUBST_MESSAGE.pkgdatadir=	Fixing data directory references.
 SUBST_FILES.pkgdatadir=	${_REPLACE_DATADIR}
 SUBST_SED.pkgdatadir=		\
+	-e 's|^\(datarootdir[ 	:]*=\).*|\1 ${_PKGDATADIR}|'		\
 	-e 's|^\(datadir[ 	:]*=\).*|\1 ${_PKGDATADIR}|'		\
 	-e 's|^\(itdatadir[ 	:]*=\).*|\1 ${_PKGDATADIR}|'		\
 	-e 's|^\(gnudatadir[ 	:]*=\).*|\1 ${_PKGDATADIR}|'		\

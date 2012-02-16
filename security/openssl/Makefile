@@ -28,6 +28,7 @@ EXTRACT_USING=		gtar
 USE_TOOLS+=		gmake perl
 TEST_TARGET=		tests
 MAKE_JOBS_SAFE=		no
+USE_PKGDATADIR=		yes
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	./config

@@ -74,7 +74,7 @@ TOOLS_PLATFORM.mktemp?=		/bin/mktemp
 TOOLS_PLATFORM.mv?=		/bin/mv
 #TOOLS_PLATFORM.nice?=		/bin/nice
 #TOOLS_PLATFORM.nroff?=		/usr/bin/nroff
-TOOLS_PLATFORM.openssl?=	/boot/common/bin/openssl
+#TOOLS_PLATFORM.openssl?=	/boot/common/bin/openssl
 TOOLS_PLATFORM.patch?=		/bin/patch
 TOOLS_PLATFORM.printf?=		/bin/printf
 TOOLS_PLATFORM.pwd?=		/bin/pwd
@@ -99,7 +99,6 @@ TOOLS_PLATFORM.tsort?=		/bin/tsort
 TOOLS_PLATFORM.wc?=		/bin/wc
 TOOLS_PLATFORM.xargs?=		/bin/xargs -r
 TOOLS_PLATFORM.yasm?=		/boot/common/bin/yasm
-TOOLS_PLATFORM.nasm?=		/boot/common/bin/yasm
 #TOOLS_PLATFORM.xgettext?=	/usr/bin/xgettext
 .if exists(/boot/common/bin/xzcat)
 TOOLS_PLATFORM.xzcat?=		/boot/common/bin/xzcat
