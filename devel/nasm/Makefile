@@ -16,6 +16,7 @@ PKG_DESTDIR_SUPPORT=	user-destdir
 AUTO_MKDIRS=		yes
 
 USE_TOOLS+=		gmake makeinfo perl
+USE_PKGDATADIR=	yes
 GCC_REQD+=		3.0
 GNU_CONFIGURE=		yes
 

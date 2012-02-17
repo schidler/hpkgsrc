@@ -6,9 +6,10 @@ PKGNAME=	p5-Locale-libintl-${P5_LIBINTL_VER}
 PKGREVISION=	3
 CATEGORIES=	misc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Locale/}
+EXTRACT_SUFX=   .zip
 
 MAINTAINER=	peter.schuller@infidyne.com
-HOMEPAGE=	http://search.cpan.org/dist/libintl-perl/
+HOMEPAGE=	http://freenet59.ru/
 COMMENT=	Perl internationalization library
 LICENSE=	gnu-lgpl-v2.1
 

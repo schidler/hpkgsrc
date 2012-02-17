@@ -24,6 +24,8 @@ GNU_CONFIGURE=		yes
 #
 CONFIGURE_ARGS+=	--disable-nls
 
+.include "../../mk/bsd.prefs.mk"
+
 .if ${OPSYS} == "Haiku"
 CONFIGURE_ARGS+=	--htmldir=${PREFIX}/data/doc/libiconv
 .else
@@ -50,10 +52,6 @@ CFLAGS+=		-c99
 
 # no patch for libiconv-1.14 available yet
 #.include "options.mk"
-.if ${OPSYS} == "Haiku"
-PLIST_SRC=		${PKGDIR}/PLIST.Haiku
-.endif
-
 PLIST_VARS+=		preload
 
 .if ${OPSYS} == "SunOS" || ${OPSYS} == "Linux" || ${OPSYS} == "OSF1"

@@ -84,4 +84,5 @@ _OPSYS_CAN_CHECK_SHLIBS=	no # can't use readelf in check/bsd.check-vars.mk
 
 .if defined(GNU_CONFIGURE)
 LIBS.Haiku+=	-lnetwork -lroot
+USE_PKGDATADIR=	yes
 .endif

@@ -17,11 +17,6 @@ USE_LIBTOOL=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--disable-threads
 
-.if empty(MACHINE_PLATFORM:MHaiku)
-CONFIGURE_ARGS+=	--datarootdir=${PREFIX}/data
-CONFIGURE_ARGS+=	--docdir=${PREFIX}/data/documentation/pkg-config
-.endif
-
 # old name of the package
 CONFLICTS=		pkgconfig-[0-9]*
 
@@ -62,10 +57,6 @@ CONFIGURE_ARGS+=	--with-pc-path='$${libdir}/pkgconfig:$${datadir}/pkgconfig:${PK
 # needed for fifth test case
 BUILDLINK_PASSTHRU_DIRS= /private-dep /public-dep /requires-test
 TEST_TARGET=		check
-
-.if empty(MACHINE_PLATFORM:MHaiku)
-PLIST_SRC=		${PKGDIR}/PLIST.Haiku
-.endif
 
 .include "../../mk/dlopen.buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
