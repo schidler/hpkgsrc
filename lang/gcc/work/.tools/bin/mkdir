@@ -1,5 +1,0 @@
-#!/bin/sh
-wrapperlog="${TOOLS_WRAPPER_LOG-/boot/develop/hpkgsrc/lang/gcc/work/.work.log}"
-echo "[*] "/boot/develop/hpkgsrc/lang/gcc/work/.tools/bin/mkdir" $@" >> $wrapperlog
-echo "<.> /bin/mkdir -p "$@"" >> $wrapperlog
-/bin/mkdir -p "$@"

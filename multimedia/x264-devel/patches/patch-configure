@@ -1,0 +1,31 @@
+$NetBSD$
+
+--- configure.orig	2011-07-07 20:45:05.011534336 +0000
++++ configure
+@@ -391,7 +391,12 @@ case $host_os in
+         SYS="BEOS"
+         define HAVE_MALLOC_H
+         ;;
+-    darwin*)
++    haiku*)
++        SYS="HAIKU"
++        define HAVE_MALLOC_H
++		LDFLAGS="$LDFLAGS -lroot"
++        ;;
++	darwin*)
+         SYS="MACOSX"
+         CFLAGS="$CFLAGS -falign-loops=16"
+         LDFLAGS="$LDFLAGS -lm"
+@@ -656,7 +661,11 @@ if [ "$thread" = "auto" ]; then
+             thread="beos"
+             define HAVE_BEOSTHREAD
+             ;;
+-        WINDOWS)
++        HAIKU)
++            thread="posix"
++            libpthread="-lroot"
++            ;;
++		WINDOWS)
+             if cc_check pthread.h -lpthread "pthread_create(0,0,0,0);" ; then
+                 thread="posix"
+                 libpthread="-lpthread"

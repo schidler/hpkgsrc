@@ -1,5 +1,0 @@
-#!/bin/sh
-wrapperlog="${TOOLS_WRAPPER_LOG-/boot/develop/hpkgsrc/lang/gcc/work/.work.log}"
-echo "[*] "/boot/develop/hpkgsrc/lang/gcc/work/.tools/bin/chown" $@" >> $wrapperlog
-echo "<.> true chown "$@"" >> $wrapperlog
-true chown "$@"
