@@ -1,6 +1,6 @@
 $NetBSD$
 
---- Modules/CheckForPthreads.c.orig	2011-10-04 16:09:24.048496640 +0000
+--- Modules/CheckForPthreads.c.orig	2011-10-04 16:09:24.017039360 +0000
 +++ Modules/CheckForPthreads.c
 @@ -16,7 +16,7 @@ int main(int ac, char*av[]){
    pthread_create(&tid[0], 0, runner, (void*)1);

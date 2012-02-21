@@ -1,6 +1,6 @@
 $NetBSD$
 
---- Source/CPack/cmCPackGeneratorFactory.cxx.orig	2011-10-04 16:09:25.028573696 +0000
+--- Source/CPack/cmCPackGeneratorFactory.cxx.orig	2011-10-04 16:09:25.064487424 +0000
 +++ Source/CPack/cmCPackGeneratorFactory.cxx
 @@ -32,7 +32,7 @@
  #endif

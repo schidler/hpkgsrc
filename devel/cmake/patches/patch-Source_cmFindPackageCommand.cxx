@@ -1,6 +1,6 @@
 $NetBSD$
 
---- Source/cmFindPackageCommand.cxx.orig	2011-10-04 16:09:25.060817408 +0000
+--- Source/cmFindPackageCommand.cxx.orig	2011-10-04 16:09:25.029622272 +0000
 +++ Source/cmFindPackageCommand.cxx
 @@ -19,7 +19,9 @@
  #endif

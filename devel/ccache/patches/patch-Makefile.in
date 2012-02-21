@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- Makefile.in.orig	2012-02-17 09:51:56.000000000 +0000
++++ Makefile.in
+@@ -16,7 +16,7 @@ LDFLAGS = @LDFLAGS@
+ EXEEXT = @EXEEXT@
+ RANLIB = @RANLIB@
+ 
+-libs = @LIBS@ -lm -lz
++libs = @LIBS@ -lz
+ 
+ base_sources = \
+     ccache.c mdfour.c hash.c execute.c util.c args.c stats.c version.c \

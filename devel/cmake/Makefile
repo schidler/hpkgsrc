@@ -23,13 +23,14 @@ CONFIGURE_SCRIPT=	bootstrap
 
 BUILD_TARGET=		default_target
 
+.include "../../mk/bsd.prefs.mk"
+
 CONFIGURE_HAS_MANDIR=	no
 CONFIGURE_ARGS+=	--mandir=/${PKGMANDIR}
-CONFIGURE_ARGS+=	--docdir=/share/doc/cmake-${CMAKE_API}
+CONFIGURE_ARGS+=	--docdir=/data/doc/cmake-${CMAKE_API}
+CONFIGURE_ARGS+=	--datadir=/data/cmake-${CMAKE_API}
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 CONFIGURE_ARGS+=	--system-libs
-
-.include "../../mk/bsd.prefs.mk"
 
 .if !empty(MAKE_JOBS)
 CONFIGURE_ARGS+=	--parallel=${MAKE_JOBS:Q}
@@ -57,14 +58,19 @@ SUBST_FILES.flags=	Modules/Compiler/*.cmake
 SUBST_SED.flags=	-e 's,-O.,,'
 
 pre-configure:
-#	${RM} ${WRKSRC}/Modules/*.orig ${WRKSRC}/Modules/Platform/*.orig
+	${RM} ${WRKSRC}/Modules/*.orig ${WRKSRC}/Modules/Platform/*.orig
+	
+	
+.if ${OPSYS} == Haiku
+PLIST_SRC= ${PKGDIR}/PLIST.Haiku
+.endif
 
 BUILDLINK_API_DEPENDS.libarchive+=	libarchive>=2.8.4
 .include "../../archivers/libarchive/buildlink3.mk"
 .include "../../devel/ncurses/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"
 .include "../../textproc/expat/buildlink3.mk"
-.include "../../textproc/xmlrpc-c/buildlink3.mk"
+#.include "../../textproc/xmlrpc-c/buildlink3.mk"
 .include "../../www/curl/buildlink3.mk"
 
 .include "../../mk/bsd.pkg.mk"

@@ -1,8 +1,8 @@
 $NetBSD$
 
---- Modules/Platform/Haiku.cmake.orig	2011-10-04 16:09:24.025952256 +0000
+--- Modules/Platform/Haiku.cmake.orig	2011-10-04 16:09:24.061603840 +0000
 +++ Modules/Platform/Haiku.cmake
-@@ -1,18 +1,25 @@
+@@ -1,18 +1,26 @@
 -SET(BEOS 1)
 +SET(HAIKU 1)
 +SET(UNIX 1)
@@ -27,6 +27,7 @@ $NetBSD$
 +LIST(APPEND CMAKE_SYSTEM_PREFIX_PATH
 +  /boot/common/non-packaged
 +  /boot/common
++  /boot/common/pkg
 +  /boot/system
 +  )
 +LIST(APPEND CMAKE_PLATFORM_IMPLICIT_LINK_DIRECTORIES

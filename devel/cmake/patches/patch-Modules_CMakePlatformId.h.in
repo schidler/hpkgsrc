@@ -1,6 +1,6 @@
 $NetBSD$
 
---- Modules/CMakePlatformId.h.in.orig	2011-10-04 16:09:24.056885248 +0000
+--- Modules/CMakePlatformId.h.in.orig	2011-10-04 16:09:24.025427968 +0000
 +++ Modules/CMakePlatformId.h.in
 @@ -35,7 +35,7 @@
  #elif defined(__hpux) || defined(__hpux__)

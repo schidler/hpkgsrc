@@ -1,6 +1,6 @@
 $NetBSD$
 
---- Source/cmCTest.cxx.orig	2011-10-04 16:09:24.047448064 +0000
+--- Source/cmCTest.cxx.orig	2011-10-04 16:09:24.015990784 +0000
 +++ Source/cmCTest.cxx
 @@ -53,7 +53,7 @@
  #include <cm_zlib.h>

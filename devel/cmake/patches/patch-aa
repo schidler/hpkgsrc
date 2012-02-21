@@ -1,17 +1,17 @@
 $NetBSD: patch-aa,v 1.8 2011/09/14 17:54:48 brook Exp $
 
---- Modules/Platform/UnixPaths.cmake.orig	2011-10-04 16:09:24.031981568 +0000
+--- Modules/Platform/UnixPaths.cmake.orig	2011-10-04 16:09:24.000786432 +0000
 +++ Modules/Platform/UnixPaths.cmake
 @@ -48,10 +48,10 @@ LIST(APPEND CMAKE_SYSTEM_INCLUDE_PATH
    /usr/include/w32api
  
    # X11
 -  /usr/X11R6/include /usr/include/X11
-+  @X11BASE@/include /usr/X11R6/include /usr/include/X11
++  /boot/common/pkg/include /usr/X11R6/include /usr/include/X11
  
    # Other
 -  /usr/pkg/include
-+  @LOCALBASE@/include
++  /boot/common/pkg/include
    /opt/csw/include /opt/include  
    /usr/openwin/include
    )
@@ -20,18 +20,18 @@ $NetBSD: patch-aa,v 1.8 2011/09/14 17:54:48 brook Exp $
  
    # X11
 -  /usr/X11R6/lib /usr/lib/X11
-+  @X11BASE@/lib /usr/X11R6/lib /usr/lib/X11
++  /boot/common/pkg/lib /usr/X11R6/lib /usr/lib/X11
  
    # Other
 -  /usr/pkg/lib
-+  @LOCALBASE@/lib
++  /boot/common/pkg/lib
    /opt/csw/lib /opt/lib 
    /usr/openwin/lib
    )
  
  LIST(APPEND CMAKE_SYSTEM_PROGRAM_PATH
 -  /usr/pkg/bin
-+  @LOCALBASE@/bin
++  /boot/common/pkg/bin
    )
  
  LIST(APPEND CMAKE_PLATFORM_IMPLICIT_LINK_DIRECTORIES

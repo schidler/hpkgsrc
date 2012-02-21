@@ -1,6 +1,6 @@
 $NetBSD$
 
---- Source/kwsys/testDynamicLoader.cxx.orig	2011-10-04 16:09:25.056360960 +0000
+--- Source/kwsys/testDynamicLoader.cxx.orig	2011-10-04 16:09:25.025165824 +0000
 +++ Source/kwsys/testDynamicLoader.cxx
 @@ -15,7 +15,7 @@
  #include KWSYS_HEADER(ios/iostream)

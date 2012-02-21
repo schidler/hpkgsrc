@@ -1,6 +1,6 @@
 $NetBSD$
 
---- Source/cmLocalGenerator.cxx.orig	2011-10-04 16:09:25.008650752 +0000
+--- Source/cmLocalGenerator.cxx.orig	2011-10-04 16:09:25.044302336 +0000
 +++ Source/cmLocalGenerator.cxx
 @@ -37,7 +37,8 @@
  #include <assert.h>
