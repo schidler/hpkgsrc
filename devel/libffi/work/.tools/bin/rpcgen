@@ -1,0 +1,5 @@
+#!/bin/sh
+wrapperlog="${TOOLS_WRAPPER_LOG-/boot/develop/hpkgsrc/devel/libffi/work/.work.log}"
+echo "[*] "/boot/develop/hpkgsrc/devel/libffi/work/.tools/bin/rpcgen" $@" >> $wrapperlog
+echo "<.> CPP=/boot/develop/hpkgsrc/devel/libffi/work/.wrapper/bin/cpp false  "$@"" >> $wrapperlog
+CPP=/boot/develop/hpkgsrc/devel/libffi/work/.wrapper/bin/cpp false  "$@"

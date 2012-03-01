@@ -1,0 +1,49 @@
+cache_lookup() {
+case $arg in
+--tag=CC) arg=--tag=CC; split_arg=no; cachehit=yes ;;
+--tag=CC) arg=--tag=CC; split_arg=no; cachehit=yes ;;
+--mode=compile) arg=--mode=compile; split_arg=no; cachehit=yes ;;
+--mode=compile) arg=--mode=compile; split_arg=no; cachehit=yes ;;
+-DHAVE_CONFIG_H) arg=-DHAVE_CONFIG_H; split_arg=no; cachehit=yes ;;
+-I.) arg=-I.; split_arg=no; cachehit=yes ;;
+-I.) arg=-I.; split_arg=no; cachehit=yes ;;
+-I./include) arg=-I./include; split_arg=no; cachehit=yes ;;
+-I./include) arg=-I./include; split_arg=no; cachehit=yes ;;
+-Iinclude) arg=-Iinclude; split_arg=no; cachehit=yes ;;
+-Iinclude) arg=-Iinclude; split_arg=no; cachehit=yes ;;
+-I./src) arg=-I./src; split_arg=no; cachehit=yes ;;
+-Wall) arg=-Wall; split_arg=no; cachehit=yes ;;
+-Wall) arg=-Wall; split_arg=no; cachehit=yes ;;
+-g) arg=-g; split_arg=no; cachehit=yes ;;
+-fexceptions) arg=-fexceptions; split_arg=no; cachehit=yes ;;
+-fexceptions) arg=-fexceptions; split_arg=no; cachehit=yes ;;
+-Wno-error) arg=-Wno-error; split_arg=no; cachehit=yes ;;
+-Wno-error) arg=-Wno-error; split_arg=no; cachehit=yes ;;
+-MT) arg=-MT; split_arg=no; cachehit=yes ;;
+-MT) arg=-MT; split_arg=no; cachehit=yes ;;
+-MD) arg=-MD; split_arg=no; cachehit=yes ;;
+-MD) arg=-MD; split_arg=no; cachehit=yes ;;
+-MP) arg=-MP; split_arg=no; cachehit=yes ;;
+-MP) arg=-MP; split_arg=no; cachehit=yes ;;
+-MF) arg=-MF; split_arg=no; cachehit=yes ;;
+-MF) arg=-MF; split_arg=no; cachehit=yes ;;
+-c) arg=-c; split_arg=no; cachehit=yes ;;
+-c) arg=-c; split_arg=no; cachehit=yes ;;
+-o) arg=-o; split_arg=no; cachehit=yes ;;
+-o) arg=-o; split_arg=no; cachehit=yes ;;
+--mode=link) arg=--mode=link; split_arg=no; cachehit=yes ;;
+--mode=link) arg=--mode=link; split_arg=no; cachehit=yes ;;
+-version-info) arg=-version-info; split_arg=no; cachehit=yes ;;
+-Wl,-R/boot/common/pkg/lib) arg=-Wl,-R/boot/common/pkg/lib; split_arg=no; cachehit=yes ;;
+-Wl,-R/boot/common/pkg/lib) arg=-Wl,-R/boot/common/pkg/lib; split_arg=no; cachehit=yes ;;
+-lnetwork) arg=-lnetwork; split_arg=yes; cachehit=yes ;;
+-rpath) arg=-rpath; split_arg=no; cachehit=yes ;;
+-lroot) arg=-lroot; split_arg=yes; cachehit=yes ;;
+/boot/common/pkg/lib) arg=/boot/common/pkg/lib; split_arg=no; cachehit=yes ;;
+-L/boot/develop/hpkgsrc/devel/libffi/work/.buildlink/lib) arg=-L/boot/develop/hpkgsrc/devel/libffi/work/.buildlink/lib; split_arg=no; cachehit=yes ;;
+-lnetwork) arg=-lnetwork; split_arg=yes; cachehit=yes ;;
+-lroot) arg=-lroot; split_arg=yes; cachehit=yes ;;
+-L/boot/develop/hpkgsrc/devel/libffi/work/.buildlink/lib) arg=-L/boot/develop/hpkgsrc/devel/libffi/work/.buildlink/lib; split_arg=no; cachehit=yes ;;
+*) cachehit=no ;;
+esac
+}

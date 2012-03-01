@@ -1,0 +1,14 @@
+@name libffi-3.0.9nb1
+@blddep digest-20111104
+@blddep libtool-base-2.2.6bnb5
+@blddep pkg-config-0.25nb1
+@comment $NetBSD: PLIST,v 1.3 2008/10/11 22:33:56 dholland Exp $
+include/ffi.h
+include/ffitarget.h
+lib/libffi.la
+lib/libffi.a
+lib/pkgconfig/libffi.pc
+documentation/man3/ffi.3
+documentation/man3/ffi_call.3
+documentation/man3/ffi_prep_cif.3
+info/libffi.info

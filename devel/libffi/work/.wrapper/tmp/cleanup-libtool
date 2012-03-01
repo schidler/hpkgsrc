@@ -1,0 +1,4 @@
+libtool_fix_la="/boot/develop/hpkgsrc/devel/libffi/work/.wrapper/tmp/libtool-fix-la"
+if $test -n "$lafile" && $test -f "$lafile"; then
+        . $libtool_fix_la
+fi

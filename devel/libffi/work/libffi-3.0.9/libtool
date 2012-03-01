@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /boot/develop/hpkgsrc/devel/libffi/work/.wrapper/bin/libtool "$@"
