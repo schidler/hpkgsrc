@@ -1,0 +1,149 @@
+$NetBSD: patch-ab,v 1.23 2011/02/04 12:26:01 obache Exp $
+
+--- dist/configure.orig	2010-04-12 20:25:23.051118080 +0000
++++ dist/configure
+@@ -1028,7 +1028,7 @@ sharedstatedir='${prefix}/com'
+ localstatedir='${prefix}/var'
+ includedir='${prefix}/include'
+ oldincludedir='/usr/include'
+-docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
++docdir='${datarootdir}/doc/db4'
+ infodir='${datarootdir}/info'
+ htmldir='${docdir}'
+ dvidir='${docdir}'
+@@ -4523,7 +4523,7 @@ bsdi3*)	CC=${CC-"shlicc2"}
+ 	LIBSO_LIBS="$LIBSO_LIBS -lipc";;
+ cygwin*)
+ 	CPPFLAGS="$CPPFLAGS -D_GNU_SOURCE -D_REENTRANT";;
+-freebsd*)
++freebsd*|dragonfly*)
+ 	CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE"
+ 	LDFLAGS="$LDFLAGS -pthread";;
+ gnu*|k*bsd*-gnu|linux*)
+@@ -6282,7 +6282,7 @@ fi
+ # we're using.
+ case "$host_os" in
+ sysv5UnixWare*|sysv5OpenUNIX8*)
+-	if test "$GCC" == "yes"; then
++	if test "$GCC" = "yes"; then
+ 		CPPFLAGS="$CPPFLAGS -pthread"
+ 		LDFLAGS="$LDFLAGS -pthread"
+ 	else
+@@ -7343,6 +7343,10 @@ gnu*)
+   lt_cv_deplibs_check_method=pass_all
+   ;;
+ 
++haiku*)
++  lt_cv_deplibs_check_method=pass_all
++  ;;
++
+ hpux10.20* | hpux11*)
+   lt_cv_file_magic_cmd=/usr/bin/file
+   case $host_cpu in
+@@ -10130,6 +10134,12 @@ $as_echo_n "checking for $compiler optio
+       # Common symbols not allowed in MH_DYLIB files
+       lt_prog_compiler_pic='-fno-common'
+       ;;
++    
++    haiku*)
++      # PIC is the default for Haiku.
++      # The "-static" flag exists, but is broken.
++      lt_prog_compiler_static=
++      ;;
+ 
+     hpux*)
+       # PIC is the default for 64-bit PA HP-UX, but not for 32-bit
+@@ -10734,6 +10744,11 @@ _LT_EOF
+ 	ld_shlibs=no
+       fi
+       ;;
++     
++     haiku*)
++      archive_cmds='$CC -shared $libobjs $deplibs $compiler_flags ${wl}-soname $wl$soname -o $lib'
++      link_all_deplibs=yes
++      ;;
+ 
+     cygwin* | mingw* | pw32* | cegcc*)
+       # _LT_TAGVAR(hardcode_libdir_flag_spec, ) is actually meaningless,
+@@ -11976,6 +11991,19 @@ beos*)
+   dynamic_linker="$host_os ld.so"
+   shlibpath_var=LIBRARY_PATH
+   ;;
++  
++haiku*)
++  version_type=linux
++  need_lib_prefix=no
++  need_version=no
++  dynamic_linker="$host_os runtime_loader"
++  library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}${major} ${libname}${shared_ext}'
++  soname_spec='${libname}${release}${shared_ext}$major'
++  shlibpath_var=LIBRARY_PATH
++  shlibpath_overrides_runpath=yes
++  sys_lib_dlsearch_path_spec='/boot/home/config/lib /boot/common/lib /boot/system/lib'
++  hardcode_into_libs=yes
++  ;;
+ 
+ bsdi[45]*)
+   version_type=linux
+@@ -13691,6 +13719,11 @@ if test -z "$aix_libpath"; then aix_libp
+ 	fi
+ 	;;
+ 
++      haiku*)
++      archive_cmds='$CC -shared $libobjs $deplibs $compiler_flags ${wl}-soname $wl$soname -o $lib'
++      link_all_deplibs=yes
++      ;;
++      
+       chorus*)
+         case $cc_basename in
+           *)
+@@ -14666,6 +14699,11 @@ $as_echo_n "checking for $compiler optio
+       # Common symbols not allowed in MH_DYLIB files
+       lt_prog_compiler_pic_CXX='-fno-common'
+       ;;
++    haiku*)
++      # PIC is the default for Haiku.
++      # The "-static" flag exists, but is broken.
++      lt_prog_compiler_static=
++      ;;
+     *djgpp*)
+       # DJGPP does not support shared libraries at all
+       lt_prog_compiler_pic_CXX=
+@@ -15587,6 +15625,19 @@ gnu*)
+   shlibpath_var=LD_LIBRARY_PATH
+   hardcode_into_libs=yes
+   ;;
++  
++haiku*)
++  version_type=linux
++  need_lib_prefix=no
++  need_version=no
++  dynamic_linker="$host_os runtime_loader"
++  library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}${major} ${libname}${shared_ext}'
++  soname_spec='${libname}${release}${shared_ext}$major'
++  shlibpath_var=LIBRARY_PATH
++  shlibpath_overrides_runpath=yes
++  sys_lib_dlsearch_path_spec='/boot/home/config/lib /boot/common/lib /boot/system/lib'
++  hardcode_into_libs=yes
++  ;;
+ 
+ hpux9* | hpux10* | hpux11*)
+   # Give a soname corresponding to the major version so that dld.sl refuses to
+@@ -16161,7 +16212,7 @@ LIBTOOL="./libtool"
+ INSTALLER="\$(LIBTOOL) --mode=install cp -p"
+ 
+ MAKEFILE_CC="\$(LIBTOOL) --mode=compile ${MAKEFILE_CC}"
+-MAKEFILE_SOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK} -avoid-version"
++MAKEFILE_SOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK}"
+ MAKEFILE_CCLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK}"
+ MAKEFILE_CXX="\$(LIBTOOL) --mode=compile ${MAKEFILE_CXX}"
+ MAKEFILE_XSOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK} -avoid-version"
+@@ -16890,7 +16941,7 @@ if test "$_JTOPDIR" != "/usr"; then
+ 	aix*)		_JNI_INC_SUBDIRS="aix";;
+ 	bsdi*)		_JNI_INC_SUBDIRS="bsdos";;
+ 	cygwin*)	_JNI_INC_SUBDIRS="win32";;
+-	freebsd*)	_JNI_INC_SUBDIRS="freebsd";;
++	freebsd*|dragonfly*)	_JNI_INC_SUBDIRS="freebsd";;
+ 	hp*)		_JNI_INC_SUBDIRS="hp-ux";;
+ 	linux*)		_JNI_INC_SUBDIRS="linux genunix";;
+ 	osf*)		_JNI_INC_SUBDIRS="alpha";;
