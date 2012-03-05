@@ -5,7 +5,8 @@ DISTNAME=	libintl-perl-${P5_LIBINTL_VER}
 PKGNAME=	p5-Locale-libintl-${P5_LIBINTL_VER}
 PKGREVISION=	3
 CATEGORIES=	misc devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Locale/}
+#bug with tar on Haiku MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Locale/}
+MASTER_SITES=	http://freenet59.ru/
 EXTRACT_SUFX=   .zip
 
 MAINTAINER=	peter.schuller@infidyne.com
