@@ -1,12 +1,12 @@
 $NetBSD$
 
---- apps/Makefile.orig	2010-12-02 18:26:10.057409536 +0000
+--- apps/Makefile.orig	2010-12-02 18:26:10.050331648 +0000
 +++ apps/Makefile
 @@ -4,6 +4,7 @@
  
  DIR=		apps
  TOP=		..
-+EXAMPLEDIR=	$(INSTALLTOP)/share/examples/openssl
++EXAMPLEDIR=	$(INSTALLTOP)/data/examples/openssl
  CC=		cc
  INCLUDES=	-I$(TOP) -I../include $(KRB5_INCLUDES)
  CFLAG=		-g -static

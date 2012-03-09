@@ -1,6 +1,6 @@
 $NetBSD$
 
---- Makefile.shared.orig	2010-08-21 11:36:49.041418752 +0000
+--- Makefile.shared.orig	2010-08-21 11:36:49.052428800 +0000
 +++ Makefile.shared
 @@ -594,12 +594,10 @@ symlink.hpux:
  symlink.cygwin symlink.alpha-osf1 symlink.tru64 symlink.tru64-rpath symlink.beos:

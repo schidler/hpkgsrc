@@ -1,6 +1,6 @@
 $NetBSD$
 
---- config.orig	2011-07-15 19:59:18.066322432 +0000
+--- config.orig	2011-07-15 19:59:18.060555264 +0000
 +++ config
 @@ -129,6 +129,10 @@ case "${SYSTEM}:${RELEASE}:${VERSION}:${
  		echo "beos-x86-r5"; exit 0

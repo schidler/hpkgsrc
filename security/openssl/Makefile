@@ -115,11 +115,16 @@ PLIST_SUBST+=		SHLIB_VERSION=${OPENSSL_VERS:C/[^0-9]*$//}
 PLIST_SUBST+=		SHLIB_MAJOR=${OPENSSL_VERS:C/\..*$//}
 
 PKG_SYSCONFSUBDIR=	openssl
+.if ${OPSYS} != "Haiku"
 CONF_FILES=		${PREFIX}/share/examples/openssl/openssl.cnf	\
 			${PKG_SYSCONFDIR}/openssl.cnf
-OWN_DIRS=		${PKG_SYSCONFDIR}/certs ${PKG_SYSCONFDIR}/private
-
 INSTALLATION_DIRS+=	share/examples/openssl
+.else
+CONF_FILES=		${PREFIX}/data/examples/openssl/openssl.cnf	\
+			${PKG_SYSCONFDIR}/openssl.cnf		
+INSTALLATION_DIRS+=	data/examples/openssl
+.endif
+OWN_DIRS=		${PKG_SYSCONFDIR}/certs ${PKG_SYSCONFDIR}/private
 
 # Fix the path to perl in various scripts.
 pre-configure:

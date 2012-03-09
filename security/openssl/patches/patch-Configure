@@ -1,6 +1,6 @@
 $NetBSD$
 
---- Configure.orig	2011-11-28 15:09:03.830996480 +0000
+--- Configure.orig	2012-02-27 07:32:12.260308992 +0000
 +++ Configure
 @@ -582,6 +582,10 @@ my %table=(
  "uClinux-dist","$ENV{'CC'}:\$(CFLAGS)::-D_REENTRANT::\$(LDFLAGS) \$(LDLIBS):BN_LLONG:::::::::::::::$ENV{'LIBSSL_dlfcn'}:linux-shared:-fPIC:-shared:.so.\$(SHLIB_MAJOR).\$(SHLIB_MINOR):$ENV{'RANLIB'}::",
