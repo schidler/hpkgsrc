@@ -71,6 +71,6 @@ BUILDLINK_API_DEPENDS.libarchive+=	libarchive>=2.8.4
 .include "../../devel/zlib/buildlink3.mk"
 .include "../../textproc/expat/buildlink3.mk"
 #.include "../../textproc/xmlrpc-c/buildlink3.mk"
-.include "../../www/curl/buildlink3.mk"
+#.include "../../www/curl/buildlink3.mk"
 
 .include "../../mk/bsd.pkg.mk"

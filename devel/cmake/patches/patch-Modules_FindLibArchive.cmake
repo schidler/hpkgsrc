@@ -1,6 +1,6 @@
 $NetBSD$
 
---- Modules/FindLibArchive.cmake.orig	2011-10-04 16:09:24.042991616 +0000
+--- Modules/FindLibArchive.cmake.orig	2011-10-04 16:09:24.038273024 +0000
 +++ Modules/FindLibArchive.cmake
 @@ -62,5 +62,5 @@ unset(LIBARCHIVE_FOUND)
  

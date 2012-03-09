@@ -1,6 +1,6 @@
 $NetBSD: patch-ac,v 1.6 2011/02/22 15:05:34 adam Exp $
 
---- Modules/FindPythonLibs.cmake.orig	2011-10-04 16:09:24.047972352 +0000
+--- Modules/FindPythonLibs.cmake.orig	2011-10-04 16:09:24.043253760 +0000
 +++ Modules/FindPythonLibs.cmake
 @@ -27,11 +27,17 @@ INCLUDE(CMakeFindFrameworks)
  # Search for the python framework on Apple.

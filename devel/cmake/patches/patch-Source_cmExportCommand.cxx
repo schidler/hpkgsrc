@@ -1,6 +1,6 @@
 $NetBSD$
 
---- Source/cmExportCommand.cxx.orig	2011-10-04 16:09:24.025427968 +0000
+--- Source/cmExportCommand.cxx.orig	2011-10-04 16:09:24.020709376 +0000
 +++ Source/cmExportCommand.cxx
 @@ -20,7 +20,8 @@
  #include "cmExportBuildFileGenerator.h"

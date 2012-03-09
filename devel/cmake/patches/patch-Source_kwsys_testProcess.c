@@ -1,6 +1,6 @@
 $NetBSD$
 
---- Source/kwsys/testProcess.c.orig	2011-10-04 16:09:25.025690112 +0000
+--- Source/kwsys/testProcess.c.orig	2011-10-04 16:09:25.020971520 +0000
 +++ Source/kwsys/testProcess.c
 @@ -32,7 +32,7 @@
  # pragma warn -8060 /* possibly incorrect assignment */

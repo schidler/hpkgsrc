@@ -1,6 +1,6 @@
 $NetBSD$
 
---- Modules/FindOpenGL.cmake.orig	2011-10-04 16:09:24.044040192 +0000
+--- Modules/FindOpenGL.cmake.orig	2011-10-04 16:09:24.039321600 +0000
 +++ Modules/FindOpenGL.cmake
 @@ -80,6 +80,7 @@ ELSE (WIN32)
        /usr/share/doc/NVIDIA_GLX-1.0/include

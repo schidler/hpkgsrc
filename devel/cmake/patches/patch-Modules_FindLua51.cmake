@@ -1,6 +1,6 @@
 $NetBSD$
 
---- Modules/FindLua51.cmake.orig	2011-10-04 16:09:24.043253760 +0000
+--- Modules/FindLua51.cmake.orig	2011-10-04 16:09:24.038535168 +0000
 +++ Modules/FindLua51.cmake
 @@ -57,13 +57,13 @@ FIND_LIBRARY(LUA_LIBRARY 
  

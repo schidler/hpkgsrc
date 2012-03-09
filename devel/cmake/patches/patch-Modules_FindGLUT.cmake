@@ -1,6 +1,6 @@
 $NetBSD$
 
---- Modules/FindGLUT.cmake.orig	2011-10-04 16:09:24.040894464 +0000
+--- Modules/FindGLUT.cmake.orig	2011-10-04 16:09:24.036175872 +0000
 +++ Modules/FindGLUT.cmake
 @@ -50,15 +50,18 @@ ELSE (WIN32)
    
