@@ -1,0 +1,163 @@
+$NetBSD$
+
+--- configure.orig	2010-07-29 00:31:57.028311552 +0000
++++ configure
+@@ -140,6 +140,7 @@ issystem() {
+ aix()       { issystem "AIX"; }
+ amigaos()   { issystem "AmigaOS"; }
+ beos()      { issystem "BEOS"; }
++haiku()      { issystem "Haiku"; }
+ bsdos()     { issystem "BSD/OS"; }
+ cygwin()    { issystem "CYGWIN"; }
+ darwin()    { issystem "Darwin"; }
+@@ -400,6 +401,7 @@ Video output:
+   --enable-vesa            enable VESA video output [autodetect]
+   --enable-svga            enable SVGAlib video output [autodetect]
+   --enable-sdl             enable SDL video output [autodetect]
++  --enable-haiku           enable Haiku-OS video and audio output [autodetect]
+   --enable-kva             enable KVA video output [autodetect]
+   --enable-aa              enable AAlib video output [autodetect]
+   --enable-caca            enable CACA  video output [autodetect]
+@@ -609,6 +611,7 @@ _xv=auto
+ _xvmc=no  #auto when complete
+ _vdpau=auto
+ _sdl=auto
++_haiku=auto
+ _kva=auto
+ _direct3d=auto
+ _directx=auto
+@@ -952,6 +955,8 @@ for ac_option do
+   --disable-vdpau)      _vdpau=no       ;;
+   --enable-sdl)         _sdl=yes        ;;
+   --disable-sdl)        _sdl=no         ;;
++  --enable-haiku)       _haiku=yes        ;;
++  --disable-haiku)      _haiku=no         ;;
+   --enable-kva)         _kva=yes        ;;
+   --disable-kva)        _kva=no         ;;
+   --enable-direct3d)    _direct3d=yes   ;;
+@@ -1403,10 +1408,10 @@ if test -z "$_target" ; then
+   # OS name
+   system_name=$(uname -s 2>&1)
+   case "$system_name" in
+-  Linux|FreeBSD|NetBSD|OpenBSD|DragonFly|BSD/OS|Darwin|SunOS|QNX|GNU|BeOS|MorphOS|AIX|AmigaOS)
++  Linux|FreeBSD|NetBSD|OpenBSD|DragonFly|BSD/OS|Darwin|SunOS|QNX|GNU|Haiku|MorphOS|AIX|AmigaOS)
+     ;;
+   Haiku)
+-    system_name=BeOS
++    system_name=Haiku
+     ;;
+   IRIX*)
+     system_name=IRIX
+@@ -1482,6 +1487,7 @@ else # if test -z "$_target"
+     morphos) system_name=MorphOS ;;
+     amigaos) system_name=AmigaOS ;;
+     mingw32*) system_name=MINGW32 ;;
++    haiku) system_name=Haiku ;;
+   esac
+   # We need to convert underscores so that values like k6-2 and pentium-mmx can be passed
+   host_arch=$(echo $_target | cut -d '-' -f 1)
+@@ -1498,6 +1504,10 @@ if freebsd ; then
+   extra_cflags="$extra_cflags -I/usr/local/include"
+ fi
+ 
++if haiku ; then
++  extra_ldflags="$extra_ldflags -liconv -lGL -lroot -lbe -lmedia -lgame -ldevice -ltextencoding -lsupc++"
++fi
++
+ if netbsd || dragonfly ; then
+   extra_ldflags="$extra_ldflags -L/usr/pkg/lib"
+   extra_cflags="$extra_cflags -I/usr/pkg/include"
+@@ -3126,7 +3136,7 @@ cat > $TMPC << EOF
+ int main(void) { (void) gethostbyname(0); (void) socket(AF_INET, SOCK_STREAM, 0); return 0; }
+ EOF
+ _socklib=no
+-for _ld_tmp in "" "-lsocket -lbind" "-lsocket -ldnet" "-lsocket -lnsl" "-lnsl" "-lsocket" ; do
++for _ld_tmp in "" "-lsocket -lbind" "-lsocket -ldnet" "-lsocket -lnsl" "-lnsl" "-lnetwork" ; do
+   cc_check $_ld_tmp && _ld_sock="$_ld_tmp" && _socklib=yes && break
+ done
+ test $_socklib = yes && test $_winsock2_h = auto && _winsock2_h=no
+@@ -3588,7 +3598,7 @@ def_threads='#define HAVE_THREADS 0'
+ echocheck "pthread"
+ if linux ; then
+   THREAD_CFLAGS=-D_REENTRANT
+-elif freebsd || netbsd || openbsd || bsdos ; then
++elif freebsd || netbsd || openbsd || bsdos ||haiku ; then
+   THREAD_CFLAGS=-D_THREAD_SAFE
+ fi
+ if test "$_pthreads" = auto ; then
+@@ -3599,7 +3609,7 @@ int main(void) { pthread_t tid; return p
+ EOF
+ _pthreads=no
+ if ! hpux ; then
+-  for _ld_tmp in "-lpthreadGC2" "" "-lpthread" "-pthread" ; do
++  for _ld_tmp in "-lpthreadGC2" "" "-lpthread" "-pthread" "-lroot" ; do
+     # for crosscompilation, we cannot execute the program, be happy if we can link statically
+     cc_check $THREAD_CFLAGS $_ld_tmp && (tmp_run || test "$_ld_static") && _ld_pthread="$_ld_tmp" && _pthreads=yes && break
+   done
+@@ -5239,7 +5249,7 @@ int main(int argc, char *argv[]) {
+ }
+ EOF
+   _sdl=no
+-  for _ld_tmp in "-lSDL" "-lSDL -lpthread" "-lSDL -lwinmm -lgdi32" "-lSDL -lwinmm -lgdi32 -ldxguid" ; do
++  for _ld_tmp in "-lSDL" "-lSDL -lpthread" "-lSDL -lwinmm -lgdi32" "-lSDL -lwinmm -lgdi32 -ldxguid" "-lSDL -lpthread" ; do
+     if cc_check -DCONFIG_SDL_SDL_H $_inc_tmp $_ld_tmp ; then
+       _sdl=yes
+       def_sdl_sdl_h="#define CONFIG_SDL_SDL_H 1"
+@@ -5254,6 +5264,9 @@ EOF
+     elif mingw32 ; then
+       _inc_tmp=$($_sdlconfig --cflags | sed s/-Dmain=SDL_main//)
+       _ld_tmp=$($_sdlconfig --libs | sed -e s/-mwindows// -e s/-lmingw32//)
++    elif haiku ; then
++      _inc_tmp="$(sdl-config --cflags)"
++      _ld_tmp="-lSDL -liconv -lGL -lroot -lbe -lmedia -lgame -ldevice -ltextencoding -lsupc++"
+     else
+       _inc_tmp="$($_sdlconfig --cflags)"
+       _ld_tmp="$($_sdlconfig --libs)"
+@@ -5572,6 +5585,30 @@ fi
+ echores "$_v4l2"
+ 
+ 
++echocheck "Haiku-OS"
++if test "$_haiku" = auto || test "$_haiku" = yes ; then
++  cat > $TMPC << EOF
++int main(void) {
++#ifdef __HAIKU__
++  return 0;
++#endif
++}
++EOF
++   _haiku=no
++   cc_check && _haiku=yes
++fi 
++if test "$_haiku" = yes ; then
++  def_haiku='#define CONFIG_HAIKU 1'
++  vomodules="haiku $vomodules"
++  aomodules="haiku $aomodules"
++else
++  def_haiku='#undef CONFIG_HAIKU'
++  novomodules="haiku $novomodules"
++  noaomodules="haiku $noaomodules"
++fi
++echores "$_haiku"
++
++
+ 
+ #########
+ # AUDIO #
+@@ -8308,7 +8345,7 @@ fi
+ # (FIXME: 'echocheck "dynamic linking"' above and modify here accordingly)
+ _ld_dl_dynamic=''
+ freebsd || netbsd || openbsd || dragonfly || bsdos && _ld_dl_dynamic='-rdynamic'
+-if test "$_real" = yes || test "$_xanim" = yes && ! win32 && ! qnx && ! darwin && ! os2 && ! sunos; then
++if test "$_real" = yes || test "$_xanim" = yes && ! win32 && ! qnx && ! darwin && ! os2 && ! beos && ! haiku && ! sunos; then
+   _ld_dl_dynamic='-rdynamic'
+ fi
+ 
+@@ -8653,6 +8690,7 @@ RADIO_CAPTURE=$_radio_capture
+ REAL_CODECS = $_real
+ S3FB = $_s3fb
+ SDL = $_sdl
++HAIKU = $_haiku
+ SPEEX = $_speex
+ STREAM_CACHE = $_stream_cache
+ SGIAUDIO = $_sgiaudio

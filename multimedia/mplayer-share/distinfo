@@ -1,0 +1,10 @@
+$NetBSD: distinfo,v 1.74 2011/11/02 16:35:14 drochner Exp $
+
+SHA1 (mplayer/MPlayer-1.0rc4.tar.bz2) = 36dfaeda726896b6831d66b0fe179623e0385fbe
+RMD160 (mplayer/MPlayer-1.0rc4.tar.bz2) = f112c53e43143d6f02850ee3d8326e25e7396cff
+Size (mplayer/MPlayer-1.0rc4.tar.bz2) = 10351350 bytes
+SHA1 (patch-Makefile) = acf5ee38b45f1bde8cb541aff56ea576a89848d4
+SHA1 (patch-configure) = 1796cb90fd4807e6707b8eb33be37b8e4de21080
+SHA1 (patch-libao2_audio__out.c) = 6b25ea08ca3fd076ee6126478dba42b69b69b4bc
+SHA1 (patch-libvo_video__out.c) = 1939aed58444980cd795bed1dc671bc6595976f8
+SHA1 (patch-path.c) = 1acfd5e9619266e476af2e0e73c43108de977444
