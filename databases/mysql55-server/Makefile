@@ -24,6 +24,10 @@ PLIST.embedded=		yes
 BUILDLINK_DEPMETHOD.readline=	build
 .endif
 
+.if ${OPSYS} == "Haiku"
+CMAKE_ARGS+=		-DINSTALL_SHAREDIR="data"
+.endif
+
 # ndb-cluster does not configure with cmake
 #.if !empty(PKG_OPTIONS:Mndb-cluster)
 #CMAKE_ARGS+=		-DWITH_NDBCLUSTER_STORAGE_ENGINE=ON
