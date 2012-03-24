@@ -1,0 +1,24 @@
+$NetBSD: distinfo,v 1.37 2011/11/06 21:54:32 tnn Exp $
+
+SHA1 (boost_1_47_0.tar.bz2) = 6e3eb548b9d955c0bc6f71c51042b713b678136a
+RMD160 (boost_1_47_0.tar.bz2) = 511144eb5ade340115971c372a3c849bd55181f1
+Size (boost_1_47_0.tar.bz2) = 45952657 bytes
+SHA1 (patch-aa) = f2f2394ecfdd62822545e3ecc1e28e13f75aa9a4
+SHA1 (patch-ab) = 766d07a9a299d199aef7c479cfca712adf778365
+SHA1 (patch-ac) = 4b9af33024d8ed55485c0c533dc54abb25972182
+SHA1 (patch-ad) = 63fb66a50c3229c6c3db37a6aa9b44a8626887df
+SHA1 (patch-ae) = 59e25a4cc226c7775e7f12692283b32f5727637b
+SHA1 (patch-af) = ed1e9ae0979f27ad458ff20c5c783d70ee18a096
+SHA1 (patch-ag) = a13c8ce2eb6fdf15c3b2999c0b179dc56bdb4dff
+SHA1 (patch-ah) = 60dfa05e275f80692b5fad5241ff1be7b6cf164b
+SHA1 (patch-ai) = 04e84ae3e570616e68d37d383ce8dd7e8c31ec28
+SHA1 (patch-aq) = a2b4ce5085379254e1d8c9eabf188dfc82fffe8f
+SHA1 (patch-ar) = 7588e104cfc507c96ab4065de1f91bda4eedc8cf
+SHA1 (patch-boost_config_platform_haiku.hpp) = 0369c1eb81e4107f692fa06af7b1bca9fdc4724c
+SHA1 (patch-boost_config_select__platform__config.hpp) = 685ac6d67bec884cfc1dcdd0edf0cb529863bd61
+SHA1 (patch-boost_config_stdlib_libstdcpp3.hpp) = 290dd321116666b207f112235a23a6fb709b2fd1
+SHA1 (patch-libs_signals_src_named__slot__map.cpp) = 18737d922a3a66eb7bc5dd8adf15977419d7da1d
+SHA1 (patch-libs_thread_src_pthread_thread.cpp) = 5b6061d62be64e2b7cd9a1b5f59efb5d5184e7bf
+SHA1 (patch-tools_build_v2_tools_builtin.jam) = 450e777dc8c50b81a6a4cc2324c84cd9b0c7c13d
+SHA1 (patch-tools_build_v2_tools_gcc.jam) = 085c4c3eddd51817f74eccec43901eeb5e051758
+SHA1 (patch-tools_build_v2_tools_gcc.py) = 4c2965de5eab61526f04400756c44879b8115171
