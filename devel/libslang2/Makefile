@@ -29,9 +29,15 @@ CONFIGURE_ARGS+=	--with-iconv=${BUILDLINK_PREFIX.iconv}
 CONFIGURE_ARGS+=	--without-x
 CONFIGURE_ARGS+=	--with-z=${BUILDLINK_PREFIX.zlib}
 
+.include "../../mk/bsd.prefs.mk"
+
 DLOPEN_REQUIRE_PTHREADS=no
 
+.if ${OPSYS} == "Haiku"
+EGDIR=			${PREFIX}/data/examples/libslang2
+.else
 EGDIR=			${PREFIX}/share/examples/libslang2
+.endif
 CONF_FILES+=	${EGDIR}/slsh.rc ${PKG_SYSCONFDIR}/slsh.rc
 
 INSTALL_MAKE_FLAGS+=	DEST_SLSH_CONF_DIR=${DESTDIR}/${EGDIR}

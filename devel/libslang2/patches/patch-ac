@@ -1,6 +1,6 @@
 $NetBSD: patch-ac,v 1.1.1.1 2008/08/09 21:22:11 bjs Exp $
 
---- src/slang.h.orig	2009-12-05 19:03:51.024641536 +0000
+--- src/slang.h.orig	2009-12-05 19:03:51.006553600 +0000
 +++ src/slang.h
 @@ -43,6 +43,11 @@ USA.  
  # endif

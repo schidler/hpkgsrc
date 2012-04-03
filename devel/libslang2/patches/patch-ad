@@ -1,6 +1,6 @@
 $NetBSD: patch-ad,v 1.2 2009/12/16 19:16:58 zafer Exp $
 
---- demo/Makefile.in.orig	2009-12-05 19:03:51.061079552 +0000
+--- demo/Makefile.in.orig	2009-12-05 19:03:51.041680896 +0000
 +++ demo/Makefile.in
 @@ -28,17 +28,17 @@ CONFIG_H = config.h
  

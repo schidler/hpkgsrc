@@ -1,6 +1,6 @@
 $NetBSD: patch-aa,v 1.2 2009/12/16 19:16:58 zafer Exp $
 
---- src/Makefile.in.orig	2009-12-05 19:03:51.024379392 +0000
+--- src/Makefile.in.orig	2009-12-05 19:03:51.006291456 +0000
 +++ src/Makefile.in
 @@ -4,7 +4,7 @@
  #---------------------------------------------------------------------------
@@ -20,6 +20,15 @@ $NetBSD: patch-aa,v 1.2 2009/12/16 19:16:58 zafer Exp $
  ELFDIR = @ELFDIR@# Location of elf objects
  VERSION_SCRIPT	= $(SRCDIR)/slang.ver
  
+@@ -45,7 +45,7 @@ exec_prefix = @exec_prefix@
+ install_lib_dir = @libdir@
+ install_bin_dir = @bindir@
+ install_include_dir = @includedir@
+-install_doc_dir = $(prefix)/share/doc/slang/v@slang_major_version@
++install_doc_dir = $(prefix)/documentation/doc/slang/v@slang_major_version@
+ DOC_FILES = ../changes.txt ../COPY* ../doc/slangdoc.html ../doc/text/*.txt
+ MODULE_INSTALL_DIR = @libdir@/slang/v@slang_major_version@/modules
+ #---------------------------------------------------------------------------
 @@ -87,11 +87,11 @@ INSTALL_ELFLIB_TARGET	= @INSTALL_ELFLIB_
  CONFIG_H		= config.h
  ALL_CFLAGS		= $(CFLAGS) -Dunix $(THIS_LIB_DEFINES)

@@ -1,7 +1,25 @@
 $NetBSD: patch-af,v 1.2 2009/12/16 19:16:58 zafer Exp $
 
---- slsh/Makefile.in.orig	2009-12-05 19:03:51.056623104 +0000
+--- slsh/Makefile.in.orig	2009-12-05 19:03:51.036700160 +0000
 +++ slsh/Makefile.in
+@@ -6,7 +6,7 @@ LDFLAGS		= @LDFLAGS@ @DYNAMIC_LINK_FLAGS
+ #---------------------------------------------------------------------------
+ prefix 		= @prefix@
+ exec_prefix 	= @exec_prefix@
+-datarootdir	= @datarootdir@
++datarootdir	= /boot/common/data
+ INST_LIB_DIR	= @libdir@
+ SLANG_INST_INC	= -I@includedir@
+ SLANG_INST_LIB	= -L$(INST_LIB_DIR)
+@@ -26,7 +26,7 @@ MKINSDIR	= ../autoconf/mkinsdir.sh
+ SLSH_CONF_DIR	= @sysconfdir@
+ SLSH_LIB_DIR	= $(datarootdir)/slsh
+ SLSH_HELP_DIR	= $(SLSH_LIB_DIR)/help
+-SLSH_DOC_DIR	= $(datarootdir)/doc/slsh
++SLSH_DOC_DIR	= $(prefix)/documentation/doc/slsh
+ SLSH_LOCALLIB_DIR = $(SLSH_LIB_DIR)/local-packages
+ SLSH_SCRIPT_DIR	= $(SLSH_LIB_DIR)/scripts
+ SCRIPTS		= jpegsize lsrpm sldb svnsh slprof
 @@ -65,7 +65,7 @@ DEST_SLSH_DOC_DIR= $(DESTDIR)$(SLSH_DOC_
  @SET_MAKE@
  SHELL = /bin/sh
