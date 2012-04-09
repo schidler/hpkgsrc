@@ -4,7 +4,7 @@ Fix for CVE-2010-3492, taken from the Python SVN repository:
 
 http://svn.python.org/view?view=rev&revision=86084
 
---- Doc/library/asyncore.rst.orig	2010-05-19 14:14:45.009699328 +0000
+--- Doc/library/asyncore.rst.orig	2010-05-19 14:14:45.054788096 +0000
 +++ Doc/library/asyncore.rst
 @@ -211,10 +211,13 @@ any that have been added to the map duri
     .. method:: accept()

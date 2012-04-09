@@ -1,6 +1,6 @@
 $NetBSD$
 
---- boost/config/stdlib/libstdcpp3.hpp.orig	2012-03-23 18:32:15.066846720 +0000
+--- boost/config/stdlib/libstdcpp3.hpp.orig	2012-03-24 16:34:11.239075328 +0000
 +++ boost/config/stdlib/libstdcpp3.hpp
 @@ -33,7 +33,8 @@
  

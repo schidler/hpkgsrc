@@ -1,6 +1,6 @@
 $NetBSD: patch-sql_mysqld.cc,v 1.2 2011/07/08 09:32:07 adam Exp $
 
---- sql/mysqld.cc.orig	2011-10-12 12:10:24.056885248 +0000
+--- sql/mysqld.cc.orig	2011-10-12 12:10:24.011272192 +0000
 +++ sql/mysqld.cc
 @@ -163,7 +163,7 @@ extern int memcntl(caddr_t, size_t, int,
  int initgroups(const char *,unsigned int);

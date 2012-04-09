@@ -1,6 +1,6 @@
 $NetBSD$
 
---- configure.cmake.orig	2011-10-12 12:10:25.050069504 +0000
+--- configure.cmake.orig	2011-10-12 12:10:25.001310720 +0000
 +++ configure.cmake
 @@ -135,14 +135,14 @@ IF(UNIX)
    IF(NOT LIBM)

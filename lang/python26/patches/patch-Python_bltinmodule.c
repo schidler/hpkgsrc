@@ -1,6 +1,6 @@
 $NetBSD$
 
---- Python/bltinmodule.c.orig	2010-05-09 15:15:40.055312384 +0000
+--- Python/bltinmodule.c.orig	2010-05-09 15:15:40.033030144 +0000
 +++ Python/bltinmodule.c
 @@ -18,7 +18,7 @@
  */

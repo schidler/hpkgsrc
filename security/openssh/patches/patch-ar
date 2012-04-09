@@ -1,6 +1,6 @@
 $NetBSD: patch-ar,v 1.8 2009/05/21 03:22:29 taca Exp $
 
---- uidswap.c.orig	2009-01-21 14:04:24.000000000 +0900
+--- uidswap.c.orig	2009-01-21 05:04:24.040894464 +0000
 +++ uidswap.c
 @@ -66,13 +66,13 @@ temporarily_use_uid(struct passwd *pw)
  	    (u_int)pw->pw_uid, (u_int)pw->pw_gid,

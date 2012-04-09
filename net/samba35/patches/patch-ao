@@ -1,6 +1,6 @@
 $NetBSD: patch-ao,v 1.1.1.1 2010/12/06 17:01:23 adam Exp $
 
---- libsmb/samlogon_cache.c.orig	2011-08-03 18:24:05.000524288 +0000
+--- libsmb/samlogon_cache.c.orig	2011-08-03 18:24:05.020709376 +0000
 +++ libsmb/samlogon_cache.c
 @@ -217,7 +217,7 @@ struct netr_SamInfo3 *netsamlogon_cache_
  	if (!netsamlogon_cache_init()) {

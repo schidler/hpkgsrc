@@ -21,6 +21,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_DIRS=		builds/unix
 BUILD_DIRS=		.
 CONFIGURE_ARGS+=	--includedir=${PREFIX}/include
+CONFIGURE_ARGS+=	--dataroot=${PREFIX}/data
 CONFIGURE_ARGS+=	--enable-shared
 CONFIGURE_ENV+=		ac_cv_path_GREP=${GREP:Q} ac_cv_path_EGREP=${EGREP:Q}
 

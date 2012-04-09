@@ -1,6 +1,6 @@
 $NetBSD$
 
---- tools/build/v2/tools/gcc.jam.orig	2012-03-23 18:32:42.737148928 +0000
+--- tools/build/v2/tools/gcc.jam.orig	2012-03-24 16:34:29.500695040 +0000
 +++ tools/build/v2/tools/gcc.jam
 @@ -1046,8 +1046,14 @@ rule setup-threading ( targets * : sourc
              case beos :

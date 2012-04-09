@@ -2,7 +2,7 @@ $NetBSD: patch-cmake_libutils.cmake,v 1.1.1.1 2011/04/25 21:12:53 adam Exp $
 
 On Mac OS X, use PkgSrc libtool.
 
---- cmake/libutils.cmake.orig	2011-10-12 12:10:24.062390272 +0000
+--- cmake/libutils.cmake.orig	2011-10-12 12:10:24.017563648 +0000
 +++ cmake/libutils.cmake
 @@ -178,7 +178,7 @@ MACRO(MERGE_STATIC_LIBS TARGET OUTPUT_NA
        "${LINKER_EXTRA_FLAGS}")

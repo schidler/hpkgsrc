@@ -2,7 +2,7 @@ $NetBSD: patch-ae,v 1.7 2011/10/11 10:02:08 adam Exp $
 
 Pass CFLAGS to the compiler.
 
---- tools/build/v2/engine/build.sh.orig	2012-03-23 18:32:42.688914432 +0000
+--- tools/build/v2/engine/build.sh.orig	2012-03-24 16:34:29.440664064 +0000
 +++ tools/build/v2/engine/build.sh
 @@ -237,6 +237,7 @@ case $BOOST_JAM_TOOLSET in
      error_exit "Unknown toolset: $BOOST_JAM_TOOLSET"

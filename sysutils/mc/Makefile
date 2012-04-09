@@ -17,8 +17,6 @@ PKG_INSTALLATION_TYPES=	overwrite pkgviews
 USE_TOOLS+=		pkg-config unzip:run
 GNU_CONFIGURE=		YES
 USE_PKGLOCALEDIR=	YES
-#USE_PKGEXMPLDIR=	YES
-USE_PKGDATADIR=	YES
 
 CHECK_INTERPRETER_SKIP=	libexec/mc/extfs.d/s3+
 
@@ -36,7 +34,7 @@ CONFIGURE_ARGS+=	--without-gpm-mouse
 CONFIGURE_ARGS+=	UNZIP=${TOOLS_PATH.unzip} ZIP=${TOOLS_PATH.zip}
 
 .if ${OPSYS} == "Haiku"
-CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/data
+#CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/data
 CONFIGURE_ARGS+=	--datarootdir=${PREFIX}/data
 .endif
 

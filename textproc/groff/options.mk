@@ -17,7 +17,7 @@ PLIST_SRC+=		PLIST.docs
 CONFIGURE_ARGS+=	--with-x
 CONFIGURE_ARGS+=	--with-appresdir=${PREFIX}/lib/X11/app-defaults
 PLIST_SRC+=		PLIST.x11
-.include "../../mk/xaw.buildlink3.mk"
+#.include "../../mk/xaw.buildlink3.mk"
 .include "../../mk/bsd.fast.prefs.mk"
 .if ${OPSYS} == "Interix"
 CONFIGURE_ENV+=		X_EXTRA_LIBS=-lXext

@@ -1,6 +1,6 @@
 $NetBSD: patch-bb,v 1.1 2011/10/11 20:30:00 jmcneill Exp $
 
---- include/config.h.in.orig	2011-08-03 18:25:13.040370176 +0000
+--- include/config.h.in.orig	2011-08-03 18:25:13.065536000 +0000
 +++ include/config.h.in
 @@ -1688,6 +1688,9 @@
  /* Defined if struct passwd has pw_age field */

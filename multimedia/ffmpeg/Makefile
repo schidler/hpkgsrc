@@ -16,12 +16,17 @@ CONFIGURE_ARGS+=	--enable-libvorbis
 CONFIGURE_ARGS+=	--enable-libmp3lame
 CONFIGURE_ARGS+=	--enable-libx264
 
-INSTALLATION_DIRS=	lib share/examples/ffmpeg share/doc/ffmpeg
+.include "../../mk/bsd.prefs.mk"
 
+.if ${OPSYS} != "Haiku"
+INSTALLATION_DIRS=	lib share/examples/ffmpeg share/doc/ffmpeg
 CONF_FILES+=	${PREFIX}/share/examples/ffmpeg/ffserver.conf \
 		${PKG_SYSCONFDIR}/ffserver.conf
-
-.include "../../mk/bsd.prefs.mk"
+.else
+INSTALLATION_DIRS=	lib data/examples/ffmpeg data/doc/ffmpeg
+CONF_FILES+=	${PREFIX}/data/examples/ffmpeg/ffserver.conf \
+		${PKG_SYSCONFDIR}/ffserver.conf
+.endif
 
 .if ${OPSYS} == "Darwin"
 CONFIGURE_ARGS+=	--disable-asm
@@ -30,12 +35,22 @@ CONFIGURE_ARGS+=	--disable-asm
 TEST_TARGET=	check
 
 post-install:
+.if ${OPSYS} != "Haiku"
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/doc/TODO \
 		${DESTDIR}${PREFIX}/share/doc/ffmpeg
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt \
 		${DESTDIR}${PREFIX}/share/doc/ffmpeg
 	${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf \
 		${DESTDIR}${PREFIX}/share/examples/ffmpeg
+.else
+	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/doc/TODO \
+		${DESTDIR}${PREFIX}/data/doc/ffmpeg
+	${INSTALL_DATA} ${WRKSRC}/doc/*.txt \
+		${DESTDIR}${PREFIX}/data/doc/ffmpeg
+	${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf \
+		${DESTDIR}${PREFIX}/data/examples/ffmpeg
+
+.endif
 
 .include "options.mk"
 

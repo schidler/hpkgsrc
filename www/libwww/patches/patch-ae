@@ -1,8 +1,8 @@
 $NetBSD: patch-ae,v 1.4 2001/04/20 12:33:53 fredb Exp $
 
---- Library/src/SSL/Makefile.am.orig	Tue Jun 20 06:01:34 2000
+--- Library/src/SSL/Makefile.am.orig	2000-06-20 16:01:34.027262976 +0000
 +++ Library/src/SSL/Makefile.am
-@@ -39,13 +39,12 @@
+@@ -39,13 +39,12 @@ libwwwssl_la_SOURCES = \
  	HTSSLhttps.h \
  	HTSSLhttps.c
  

@@ -1,6 +1,6 @@
 $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
 
---- configure.orig	2010-05-25 02:27:03.054001664 +0000
+--- configure.orig	2010-05-25 02:27:03.031981568 +0000
 +++ configure
 @@ -1,14 +1,14 @@
  #! /bin/sh
@@ -935,12 +935,21 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
    $as_echo_n "(cached) " >&6
  else
    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+@@ -4724,7 +4737,7 @@ $as_echo "#define Py_ENABLE_SHARED 1" >>
+ 
+   case $ac_sys_system in
+     BeOS*)
+-          LDLIBRARY='libpython$(VERSION).so'
++          LDLIBRARY='libpython$(VERSION).so.$SOVERSION'
+           ;;
+     CYGWIN*)
+           LDLIBRARY='libpython$(VERSION).dll.a'
 @@ -4736,7 +4749,7 @@ $as_echo "#define Py_ENABLE_SHARED 1" >>
  	  RUNSHARED=LD_LIBRARY_PATH=`pwd`:${LD_LIBRARY_PATH}
  	  INSTSONAME="$LDLIBRARY".$SOVERSION
            ;;
 -    Linux*|GNU*|NetBSD*|FreeBSD*|DragonFly*)
-+    Linux*|GNU*|NetBSD*|FreeBSD*|DragonFly*|Haiku*)
++    Linux*|GNU*|NetBSD*|FreeBSD*|DragonFly|*Haiku*)
  	  LDLIBRARY='libpython$(VERSION).so'
  	  BLDLIBRARY='-L. -lpython$(VERSION)'
  	  RUNSHARED=LD_LIBRARY_PATH=`pwd`:${LD_LIBRARY_PATH}
@@ -2973,7 +2982,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
    *)
      ac_option=$1
      ac_optarg=$2
-@@ -13479,6 +13560,7 @@ do
+@@ -13479,6 +13558,7 @@ do
      $ac_shift
      case $ac_optarg in
      *\'*) ac_optarg=`$as_echo "$ac_optarg" | sed "s/'/'\\\\\\\\''/g"` ;;
@@ -2981,7 +2990,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
      esac
      as_fn_append CONFIG_FILES " '$ac_optarg'"
      ac_need_defaults=false;;
-@@ -13491,7 +13573,7 @@ do
+@@ -13491,7 +13571,7 @@ do
      ac_need_defaults=false;;
    --he | --h)
      # Conflict between --help and --header
@@ -2990,7 +2999,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
  Try \`$0 --help' for more information.";;
    --help | --hel | -h )
      $as_echo "$ac_cs_usage"; exit ;;
-@@ -13500,7 +13582,7 @@ Try \`$0 --help' for more information.";
+@@ -13500,7 +13580,7 @@ Try \`$0 --help' for more information.";
      ac_cs_silent=: ;;
  
    # This is an error.
@@ -2999,7 +3008,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
  Try \`$0 --help' for more information." ;;
  
    *) as_fn_append ac_config_targets " $1"
-@@ -13558,7 +13640,7 @@ do
+@@ -13558,7 +13638,7 @@ do
      "Makefile.pre") CONFIG_FILES="$CONFIG_FILES Makefile.pre" ;;
      "Modules/Setup.config") CONFIG_FILES="$CONFIG_FILES Modules/Setup.config" ;;
  
@@ -3008,7 +3017,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
    esac
  done
  
-@@ -13580,9 +13662,10 @@ fi
+@@ -13580,9 +13660,10 @@ fi
  # after its creation but before its name has been assigned to `$tmp'.
  $debug ||
  {
@@ -3021,7 +3030,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
  ' 0
    trap 'as_fn_exit 1' 1 2 13 15
  }
-@@ -13590,12 +13673,13 @@ $debug ||
+@@ -13590,12 +13671,13 @@ $debug ||
  
  {
    tmp=`(umask 077 && mktemp -d "./confXXXXXX") 2>/dev/null` &&
@@ -3037,7 +3046,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
  
  # Set up the scripts for CONFIG_FILES section.
  # No need to generate them if there are no CONFIG_FILES.
-@@ -13612,12 +13696,12 @@ if test "x$ac_cr" = x; then
+@@ -13612,12 +13694,12 @@ if test "x$ac_cr" = x; then
  fi
  ac_cs_awk_cr=`$AWK 'BEGIN { print "a\rb" }' </dev/null 2>/dev/null`
  if test "$ac_cs_awk_cr" = "a${ac_cr}b"; then
@@ -3052,7 +3061,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
  _ACEOF
  
  
-@@ -13626,18 +13710,18 @@ _ACEOF
+@@ -13626,18 +13708,18 @@ _ACEOF
    echo "$ac_subst_vars" | sed 's/.*/&!$&$ac_delim/' &&
    echo "_ACEOF"
  } >conf$$subs.sh ||
@@ -3075,7 +3084,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
    else
      ac_delim="$ac_delim!$ac_delim _$ac_delim!! "
    fi
-@@ -13645,7 +13729,7 @@ done
+@@ -13645,7 +13727,7 @@ done
  rm -f conf$$subs.sh
  
  cat >>$CONFIG_STATUS <<_ACEOF || ac_write_fail=1
@@ -3084,7 +3093,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
  _ACEOF
  sed -n '
  h
-@@ -13693,7 +13777,7 @@ t delim
+@@ -13693,7 +13775,7 @@ t delim
  rm -f conf$$subs.awk
  cat >>$CONFIG_STATUS <<_ACEOF || ac_write_fail=1
  _ACAWK
@@ -3093,7 +3102,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
    for (key in S) S_is_set[key] = 1
    FS = ""
  
-@@ -13725,21 +13809,29 @@ if sed "s/$ac_cr//" < /dev/null > /dev/n
+@@ -13725,21 +13807,29 @@ if sed "s/$ac_cr//" < /dev/null > /dev/n
    sed "s/$ac_cr\$//; s/$ac_cr/$ac_cs_awk_cr/g"
  else
    cat
@@ -3132,7 +3141,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
  s/^[^=]*=[	 ]*$//
  }'
  fi
-@@ -13751,7 +13843,7 @@ fi # test -n "$CONFIG_FILES"
+@@ -13751,7 +13841,7 @@ fi # test -n "$CONFIG_FILES"
  # No need to generate them if there are no CONFIG_HEADERS.
  # This happens for instance with `./config.status Makefile'.
  if test -n "$CONFIG_HEADERS"; then
@@ -3141,7 +3150,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
  BEGIN {
  _ACEOF
  
-@@ -13763,11 +13855,11 @@ _ACEOF
+@@ -13763,11 +13853,11 @@ _ACEOF
  # handling of long lines.
  ac_delim='%!_!# '
  for ac_last_try in false false :; do
@@ -3156,7 +3165,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
    else
      ac_delim="$ac_delim!$ac_delim _$ac_delim!! "
    fi
-@@ -13852,7 +13944,7 @@ cat >>$CONFIG_STATUS <<_ACEOF || ac_writ
+@@ -13852,7 +13942,7 @@ cat >>$CONFIG_STATUS <<_ACEOF || ac_writ
  _ACAWK
  _ACEOF
  cat >>$CONFIG_STATUS <<\_ACEOF || ac_write_fail=1
@@ -3165,7 +3174,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
  fi # test -n "$CONFIG_HEADERS"
  
  
-@@ -13865,7 +13957,7 @@ do
+@@ -13865,7 +13955,7 @@ do
    esac
    case $ac_mode$ac_tag in
    :[FHL]*:*);;
@@ -3174,7 +3183,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
    :[FH]-) ac_tag=-:-;;
    :[FH]*) ac_tag=$ac_tag:$ac_tag.in;;
    esac
-@@ -13884,7 +13976,7 @@ do
+@@ -13884,7 +13974,7 @@ do
      for ac_f
      do
        case $ac_f in
@@ -3183,7 +3192,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
        *) # Look for the file first in the build tree, then in the source tree
  	 # (if the path is not absolute).  The absolute path cannot be DOS-style,
  	 # because $ac_f cannot contain `:'.
-@@ -13893,7 +13985,7 @@ do
+@@ -13893,7 +13983,7 @@ do
  	   [\\/$]*) false;;
  	   *) test -f "$srcdir/$ac_f" && ac_f="$srcdir/$ac_f";;
  	   esac ||
@@ -3192,7 +3201,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
        esac
        case $ac_f in *\'*) ac_f=`$as_echo "$ac_f" | sed "s/'/'\\\\\\\\''/g"`;; esac
        as_fn_append ac_file_inputs " '$ac_f'"
-@@ -13919,8 +14011,8 @@ $as_echo "$as_me: creating $ac_file" >&6
+@@ -13919,8 +14009,8 @@ $as_echo "$as_me: creating $ac_file" >&6
      esac
  
      case $ac_tag in
@@ -3203,7 +3212,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
      esac
      ;;
    esac
-@@ -14050,23 +14142,24 @@ s&@abs_top_builddir@&$ac_abs_top_builddi
+@@ -14050,23 +14140,24 @@ s&@abs_top_builddir@&$ac_abs_top_builddi
  s&@INSTALL@&$ac_INSTALL&;t t
  $ac_datarootdir_hack
  "
@@ -3238,7 +3247,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
   ;;
    :H)
    #
-@@ -14075,21 +14168,21 @@ which seems to be undefined.  Please mak
+@@ -14075,21 +14166,21 @@ which seems to be undefined.  Please mak
    if test x"$ac_file" != x-; then
      {
        $as_echo "/* $configure_input  */" \
@@ -3268,7 +3277,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
    fi
   ;;
  
-@@ -14104,7 +14197,7 @@ _ACEOF
+@@ -14104,7 +14195,7 @@ _ACEOF
  ac_clean_files=$ac_clean_files_save
  
  test $ac_write_fail = 0 ||
@@ -3277,7 +3286,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
  
  
  # configure is writing to config.log, and then calls config.status.
-@@ -14125,7 +14218,7 @@ if test "$no_create" != yes; then
+@@ -14125,7 +14216,7 @@ if test "$no_create" != yes; then
    exec 5>>config.log
    # Use ||, not &&, to avoid exiting from the if with $? = 1, which
    # would make configure fail if this is the last instruction.
@@ -3286,7 +3295,7 @@ $NetBSD: patch-al,v 1.9 2011/09/14 17:07:01 hans Exp $
  fi
  if test -n "$ac_unrecognized_opts" && test "$enable_option_checking" != no; then
    { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
-@@ -14167,3 +14260,4 @@ $as_echo "$as_me: WARNING:
+@@ -14167,3 +14258,4 @@ $as_echo "$as_me: WARNING:
  esac
  
  mv config.c Modules

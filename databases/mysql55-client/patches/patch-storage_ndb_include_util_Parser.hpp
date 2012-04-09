@@ -2,7 +2,7 @@ $NetBSD: patch-storage_ndb_include_util_Parser.hpp,v 1.1.1.1 2011/04/25 21:12:53
 
 Avoid C++ error (needed for Clang).
 
---- storage/ndb/include/util/Parser.hpp.orig	2011-10-12 12:10:24.035127296 +0000
+--- storage/ndb/include/util/Parser.hpp.orig	2011-10-12 12:10:24.056885248 +0000
 +++ storage/ndb/include/util/Parser.hpp
 @@ -148,12 +148,12 @@ public:
    static const DummyRow* matchArg(Context*, const char *, const DummyRow *);

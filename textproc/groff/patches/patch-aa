@@ -1,17 +1,8 @@
 $NetBSD: patch-aa,v 1.4 2005/12/07 17:51:51 wiz Exp $
 
---- Makefile.in.orig	2009-01-09 14:25:52.015204352 +0000
+--- Makefile.in.orig	2005-08-07 10:03:33.000000000 +0200
 +++ Makefile.in
-@@ -146,7 +146,7 @@ datasubdir=$(dataprogramdir)/$(version)$
- infodir=@infodir@
- 
- # `docdir' says where to install documentation files.
--docdir=$(datadir)/doc/groff/$(version)$(revision)
-+docdir=$(prefix)/documentation/doc/groff/$(version)$(revision)
- 
- # `exampledir' says where to install example files.
- exampledir=$(docdir)/examples
-@@ -228,7 +228,7 @@ tmac_an_prefix=\
+@@ -214,7 +214,7 @@ tmac_an_prefix=\
  indexext=.i
  
  # Directory containing the default index for refer.

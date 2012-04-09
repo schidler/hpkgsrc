@@ -1,6 +1,6 @@
 $NetBSD: patch-aa,v 1.6 2011/04/06 07:45:48 adam Exp $
 
---- common.mk.orig	2011-03-25 16:58:35.000000000 +0000
+--- common.mk.orig	2011-03-25 16:27:50.035913728 +0000
 +++ common.mk
 @@ -31,15 +31,15 @@ GCC_CXX_WARNINGS = $(GCC_WARNINGS) -Wove
  # assertion and crash the program if it isn't really true.  You can add

@@ -1,6 +1,6 @@
 $NetBSD: patch-ba,v 1.1 2011/10/11 20:30:00 jmcneill Exp $
 
---- configure.in.orig	2011-08-03 18:24:05.062914560 +0000
+--- configure.in.orig	2011-08-03 18:24:05.023855104 +0000
 +++ configure.in
 @@ -6239,6 +6239,11 @@ AC_CHECK_MEMBER(struct passwd.pw_age,
  		AC_DEFINE(HAVE_PASSWD_PW_AGE, 1, [Defined if struct passwd has pw_age field]),,

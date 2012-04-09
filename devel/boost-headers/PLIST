@@ -836,6 +836,7 @@ include/boost/config/platform/amigaos.hpp
 include/boost/config/platform/beos.hpp
 include/boost/config/platform/bsd.hpp
 include/boost/config/platform/cygwin.hpp
+include/boost/config/platform/haiku.hpp
 include/boost/config/platform/hpux.hpp
 include/boost/config/platform/irix.hpp
 include/boost/config/platform/linux.hpp

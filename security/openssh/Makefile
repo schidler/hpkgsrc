@@ -82,6 +82,10 @@ CONFIGURE_ARGS+=	--with-pid-dir=${SSH_PID_DIR:Q}
 CONFIGURE_ARGS+=	--with-ssl-dir=${SSLBASE:Q}
 CONFIGURE_ARGS+=	--with-tcp-wrappers=${BUILDLINK_PREFIX.tcp_wrappers}
 
+.if ${OPSYS} == "Haiku"
+CONFIGURE_ARGS+=	--libexecdir=${PREFIX}/bin
+.endif
+
 .if ${OPSYS} != "Interix"
 CONFIGURE_ARGS+=	--with-privsep-path=${OPENSSH_CHROOT:Q}
 CONFIGURE_ARGS+=	--with-privsep-user=${OPENSSH_USER:Q}

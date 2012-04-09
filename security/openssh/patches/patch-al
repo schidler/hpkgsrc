@@ -1,6 +1,6 @@
 $NetBSD: patch-al,v 1.9 2010/02/18 08:04:35 martti Exp $
 
---- auth1.c.orig	2008-07-09 19:54:05.000000000 +0900
+--- auth1.c.orig	2010-08-31 12:36:39.016515072 +0000
 +++ auth1.c
 @@ -320,7 +320,7 @@ do_authloop(Authctxt *authctxt)
  

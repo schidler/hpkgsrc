@@ -22,7 +22,7 @@ Build the 1.85 compat module all the time against the BDB version of choice.
 Add in Debian multiarch support (retrofitted from Python 2.7.2) to
 support building the "nis" and "crypt" modules.
 
---- setup.py.orig	2010-07-17 12:31:09.047185920 +0000
+--- setup.py.orig	2010-07-17 12:31:09.025165824 +0000
 +++ setup.py
 @@ -18,7 +18,7 @@ from distutils.command.install_lib impor
  from distutils.spawn import find_executable
@@ -82,8 +82,8 @@ support building the "nis" and "crypt" modules.
              inc_dirs += os.getenv('C_INCLUDE_PATH', '').split(os.pathsep)
  
 +        if platform == 'haiku1':
-+            inc_dirs += ['/boot/develop/headers/posix', '/boot/develop/headers/3rdparty', '/boot/common/include', '/boot/common/pkg/include']
-+            lib_dirs += ['/boot/system/lib', '/boot/develop/lib/x86', '/boot/common/lib', '/boot/common/pkg/lib']
++            inc_dirs += ['/boot/develop/headers/posix', '/boot/develop/headers/3rdparty', '/boot/common/include']
++            lib_dirs += ['/boot/system/lib', '/boot/develop/lib/x86', '/boot/common/lib']
 +
          # OSF/1 and Unixware have some stuff in /usr/ccs/lib (like -ldb)
          if platform in ['osf1', 'unixware7', 'openunix8']:

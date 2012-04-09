@@ -56,10 +56,6 @@ BUILD_DEFS+=	PAPERSIZE
 CONFIGURE_ENV+=	PAGE=${PAPERSIZE:Q}
 .endif
 
-.if ${OPSYS} == "Haiku"
-CONFIGURE_ARGS+=	--docdir=${PREFIX}/documentation/doc/groff
-CONFIGURE_ARGS+=	--datadir=${PREFIX}/data
-.endif
 
 # Usually the mdoc.local "volume-operating-system" definition is for
 # the operating system name often displayed on top of man pages. And
@@ -99,7 +95,5 @@ post-install:
 	done
 
 # we only want the charset.alias file, so no buildlinkery for libiconv
-.if ${OPSYS} != "Haiku"
 DEPENDS+=	libiconv-[0-9]*:../../converters/libiconv
-.endif
 .include "../../mk/bsd.pkg.mk"

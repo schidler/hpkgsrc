@@ -26,4 +26,6 @@ pkgbase := libwww
 .include "../../security/openssl/buildlink3.mk"
 .endif # LIBWWW_BUILDLINK3_MK
 
+.include "../../textproc/expat/buildlink3.mk"
+
 BUILDLINK_TREE+=	-libwww

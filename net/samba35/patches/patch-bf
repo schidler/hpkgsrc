@@ -1,6 +1,6 @@
 $NetBSD: patch-bf,v 1.1 2011/10/11 20:30:00 jmcneill Exp $
 
---- Makefile.in.orig	2011-08-03 18:24:05.025427968 +0000
+--- Makefile.in.orig	2011-08-03 18:24:05.058195968 +0000
 +++ Makefile.in
 @@ -46,11 +46,11 @@ PICFLAG=@PICFLAG@
  

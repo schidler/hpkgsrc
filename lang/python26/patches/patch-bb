@@ -4,7 +4,7 @@ Fix for CVE-2010-3492, taken from the Python SVN repository:
 
 http://svn.python.org/view?view=rev&revision=86084
 
---- Lib/asyncore.py.orig	2010-08-13 01:30:39.017563648 +0000
+--- Lib/asyncore.py.orig	2010-08-13 01:30:39.062652416 +0000
 +++ Lib/asyncore.py
 @@ -348,12 +348,15 @@ class dispatcher:
          # XXX can return either an address pair or None

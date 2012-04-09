@@ -2,7 +2,7 @@ $NetBSD: patch-client_mysqlbinlog.cc,v 1.1.1.1 2011/04/25 21:12:53 adam Exp $
 
 * Portability: include <bstring.h> if exists.
 
---- client/mysqlbinlog.cc.orig	2011-10-12 12:10:25.013893632 +0000
+--- client/mysqlbinlog.cc.orig	2011-10-12 12:10:25.031981568 +0000
 +++ client/mysqlbinlog.cc
 @@ -37,6 +37,9 @@
  #include "log_event.h"

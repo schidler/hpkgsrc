@@ -57,6 +57,9 @@ PLIST.md5=		yes
 CONFIGURE_ARGS+=	--with-md5=${SSLBASE:Q}
 .  endif
 .endif
+.if ${OPSYS} == "Haiku"
+PRINT_PLIST_AWK+= gsub(/^${PKGDATADIR}\, "share")
+.endif
 
 .include "../../devel/zlib/buildlink3.mk"
 .include "../../security/openssl/buildlink3.mk"

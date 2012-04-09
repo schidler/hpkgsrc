@@ -5,7 +5,7 @@ Patch taken from the Python SVN repository:
 
 http://svn.python.org/view?view=revision&revision=71303
 
---- Lib/CGIHTTPServer.py.orig	2009-11-11 17:24:53.003670016 +0000
+--- Lib/CGIHTTPServer.py.orig	2009-11-11 17:24:53.048758784 +0000
 +++ Lib/CGIHTTPServer.py
 @@ -70,27 +70,20 @@ class CGIHTTPRequestHandler(SimpleHTTPSe
              return SimpleHTTPServer.SimpleHTTPRequestHandler.send_head(self)

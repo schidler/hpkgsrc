@@ -1,6 +1,6 @@
 $NetBSD: patch-af,v 1.10 2006/10/31 03:31:20 taca Exp $
 
---- auth-passwd.c.orig	2006-08-05 11:39:39.000000000 +0900
+--- auth-passwd.c.orig	2009-03-08 00:40:28.015466496 +0000
 +++ auth-passwd.c
 @@ -87,7 +87,7 @@ auth_password(Authctxt *authctxt, const 
  #endif

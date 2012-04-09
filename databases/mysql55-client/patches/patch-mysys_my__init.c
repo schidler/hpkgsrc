@@ -1,6 +1,6 @@
 $NetBSD$
 
---- mysys/my_init.c.orig	2012-02-13 07:06:37.358088704 +0000
+--- mysys/my_init.c.orig	2011-10-12 12:10:24.042205184 +0000
 +++ mysys/my_init.c
 @@ -162,7 +162,7 @@ void my_end(int infoflag)
  

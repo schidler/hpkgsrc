@@ -56,7 +56,12 @@ post-build:
 			$$file.BAK > $$file;				\
 	done
 
+.if ${OPSYS} != "Haiku"
 DOCDIR=			${PREFIX}/share/doc/tcp_wrappers
+else
+DOCDIR=			${PREFIX}/data/doc/tcp_wrappers
+.endif
+
 INSTALLATION_DIRS+=	${DOCDIR}
 
 do-install:

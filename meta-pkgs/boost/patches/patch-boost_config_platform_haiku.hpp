@@ -1,6 +1,6 @@
 $NetBSD$
 
---- boost/config/platform/haiku.hpp.orig	2012-03-23 18:32:15.548667392 +0000
+--- boost/config/platform/haiku.hpp.orig	2012-03-24 16:34:11.237764608 +0000
 +++ boost/config/platform/haiku.hpp
 @@ -0,0 +1,25 @@
 +//  (C) Copyright John Maddock 2001. 

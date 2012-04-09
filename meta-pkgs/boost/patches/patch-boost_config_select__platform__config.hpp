@@ -1,6 +1,6 @@
 $NetBSD$
 
---- boost/config/select_platform_config.hpp.orig	2012-03-23 18:32:15.549453824 +0000
+--- boost/config/select_platform_config.hpp.orig	2012-03-24 16:34:11.238551040 +0000
 +++ boost/config/select_platform_config.hpp
 @@ -45,6 +45,10 @@
  // BeOS

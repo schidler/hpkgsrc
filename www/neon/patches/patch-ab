@@ -1,0 +1,53 @@
+$NetBSD: patch-ab,v 1.2 2009/09/14 16:48:44 tron Exp $
+
+--- src/ne_socket.c.orig	2010-01-11 10:36:14.029097984 +0000
++++ src/ne_socket.c
+@@ -1341,6 +1341,9 @@ static int do_bind(int fd, int peer_fami
+         in6.sin6_port = htons(port);
+         /* fill in the _family field for AIX 4.3, which forgets to do so. */
+         in6.sin6_family = AF_INET6;
++#ifdef __NetBSD__
++	in6.sin6_len = sizeof in6;
++#endif
+ 
+         return bind(fd, (struct sockaddr *)&in6, sizeof in6);
+     } else
+@@ -1359,6 +1362,9 @@ static int do_bind(int fd, int peer_fami
+         }
+         in.sin_port = htons(port);
+         in.sin_family = AF_INET;
++#ifdef __NetBSD__
++	in.sin_len = sizeof in;
++#endif
+ 
+         return bind(fd, (struct sockaddr *)&in, sizeof in);
+     }
+@@ -1478,7 +1484,7 @@ ne_inet_addr *ne_sock_peer(ne_socket *so
+ 
+     ia = ne_calloc(sizeof *ia);
+ #ifdef USE_GETADDRINFO
+-    ia->ai_addr = ne_malloc(sizeof *ia);
++    ia->ai_addr = ne_malloc(len);
+     ia->ai_addrlen = len;
+     memcpy(ia->ai_addr, sad, len);
+     ia->ai_family = saun.sa.sa_family;
+@@ -1514,6 +1520,9 @@ ne_inet_addr *ne_iaddr_make(ne_iaddr_typ
+ 	ia->ai_addr = (struct sockaddr *)in4;
+ 	ia->ai_addrlen = sizeof *in4;
+ 	in4->sin_family = AF_INET;
++#ifdef __NetBSD__
++	in4->sin_len = sizeof *in4;
++#endif
+ 	memcpy(&in4->sin_addr.s_addr, raw, sizeof in4->sin_addr.s_addr);
+     }
+ #ifdef AF_INET6
+@@ -1523,6 +1532,9 @@ ne_inet_addr *ne_iaddr_make(ne_iaddr_typ
+ 	ia->ai_addr = (struct sockaddr *)in6;
+ 	ia->ai_addrlen = sizeof *in6;
+ 	in6->sin6_family = AF_INET6;
++#ifdef __NetBSD__
++	in6->sin6_len = sizeof *in6;
++#endif
+ 	memcpy(&in6->sin6_addr, raw, sizeof in6->sin6_addr.s6_addr);
+     }
+ #endif

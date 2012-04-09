@@ -8,9 +8,9 @@ bin/ssh-agent
 bin/ssh-keygen
 bin/ssh-keyscan
 bin/sshd
-libexec/sftp-server
-libexec/ssh-keysign
-libexec/ssh-pkcs11-helper
+bin/sftp-server
+bin/ssh-keysign
+bin/ssh-pkcs11-helper
 man/man1/scp.1
 man/man1/sftp.1
 man/man1/slogin.1

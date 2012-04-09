@@ -4,7 +4,7 @@ A 'char' cannot be expected to be signed.  PowerPC, for example, defines
 the 'char' type as unsigned.  Fix this piece of code to not deal with
 signed characters.
 
---- boost/archive/iterators/binary_from_base64.hpp.orig	2012-03-23 18:32:15.501481472 +0000
+--- boost/archive/iterators/binary_from_base64.hpp.orig	2012-03-24 16:34:11.149422080 +0000
 +++ boost/archive/iterators/binary_from_base64.hpp
 @@ -39,28 +39,28 @@ template<class CharType>
  struct to_6_bit {

@@ -1,6 +1,6 @@
 $NetBSD: patch-ao,v 1.2 2010/05/02 14:09:12 wiz Exp $
 
---- Lib/distutils/util.py.orig	2010-08-02 21:35:06.049020928 +0000
+--- Lib/distutils/util.py.orig	2010-08-02 21:35:06.027000832 +0000
 +++ Lib/distutils/util.py
 @@ -87,6 +87,8 @@ def get_platform ():
          m = rel_re.match(release)

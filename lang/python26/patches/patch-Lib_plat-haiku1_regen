@@ -1,6 +1,6 @@
 $NetBSD$
 
---- Lib/plat-haiku1/regen.orig	2012-01-12 10:21:09.025952256 +0000
+--- Lib/plat-haiku1/regen.orig	2012-03-26 21:20:53.042991616 +0000
 +++ Lib/plat-haiku1/regen
 @@ -0,0 +1,7 @@
 +#! /bin/sh

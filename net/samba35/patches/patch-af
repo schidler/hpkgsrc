@@ -1,6 +1,6 @@
 $NetBSD: patch-af,v 1.4 2011/10/11 20:30:00 jmcneill Exp $
 
---- configure.orig	2011-08-03 18:25:14.048758784 +0000
+--- configure.orig	2011-08-03 18:25:14.066060288 +0000
 +++ configure
 @@ -3148,7 +3148,7 @@ swatdir="\${prefix}/swat"
  codepagedir="\${MODULESDIR}"

@@ -1,0 +1,24 @@
+$NetBSD$
+
+--- config.mk.in.orig	2011-03-25 16:22:45.055050240 +0000
++++ config.mk.in
+@@ -268,6 +268,19 @@ ifeq ($(patsubst beos%,beos,$(HOST_OS)),
+   LDFLAGS_SHLIB = -nostart
+ endif
+ 
++ifeq ($(patsubst haiku%,haiku,$(HOST_OS)),haiku)
++  SHARED_LIB_TYPE = unix
++  MUST_BUILD_SHLIB = Y
++  MUST_BUILD_SHLIBLE = Y
++  SHLIB_SUFFIX = so
++  shlibfn = $(1:%=%.$(SHLIB_SUFFIX).$(MAJ).$(MIN))
++  shliblefn = $(1:%=%.$(SHLIB_SUFFIX))
++  LDFLAGS_SHLIB = -shared -Wl,-soname,$(SONAME) $(SHLIB_CLIB)
++  LSOCKET = -lnetwork
++  NEED_WL_RPATH=no
++  NEED_RPATH=no
++endif
++
+ ifeq ($(patsubst darwin%,darwin,$(HOST_OS)),darwin)
+   SHARED_LIB_TYPE = dylib
+   MUST_BUILD_SHLIB = Y

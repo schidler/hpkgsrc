@@ -2,7 +2,7 @@ $NetBSD: patch-ah,v 1.4 2011/02/24 11:05:36 adam Exp $
 
 Clang does not have (yet) std::forward.
 
---- boost/unordered/detail/fwd.hpp.orig	2012-03-23 18:32:20.437780480 +0000
+--- boost/unordered/detail/fwd.hpp.orig	2012-03-24 16:34:14.999817216 +0000
 +++ boost/unordered/detail/fwd.hpp
 @@ -32,7 +32,7 @@
  // E = Key Extractor

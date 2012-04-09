@@ -1,7 +1,7 @@
 $NetBSD: patch-ap,v 1.1 2005/11/03 15:51:59 salo Exp $
 
---- Library/src/HTBound.c.orig	1999-02-22 23:10:10.000000000 +0100
-+++ Library/src/HTBound.c	2005-11-03 16:43:25.000000000 +0100
+--- Library/src/HTBound.c.orig	1999-02-23 03:10:10.004194304 +0000
++++ Library/src/HTBound.c
 @@ -11,9 +11,12 @@
  **
  ** Authors
@@ -101,29 +101,6 @@ $NetBSD: patch-ap,v 1.1 2005/11/03 15:51:59 salo Exp $
 -		if (end > start) {
 -		    int status = PUTBLOCK(start, end-start);
 -		    if (status != HT_OK) return status;
--		}
--		HTTRACE(STREAM_TRACE, "Boundary.... Ending\n");
--		start = b;
--		me->dash = 0;
--		me->state = EOL_BEGIN;
--	    }
--	    if (*b == '-') {
--		me->dash++;
--	    } else if (*b != CR && *b != LF) {
--		me->dash = 0;
--		me->state = EOL_BEGIN;
--	    }
--	    me->body = NO;
--	} else if (me->state == EOL_DOT) {
--	    int status;
--	    if (me->body) {
--		if (me->target) FREE_TARGET;
--		me->target = HTStreamStack(WWW_MIME,me->format,
--					   HTMerge(me->orig_target, 2),
--					   me->request, YES);
--		if (end > start) {
--		    if ((status = PUTBLOCK(start, end-start)) != HT_OK)
--			return status;
 +	/*
 +	** The HTBoundary object gets attached downstream of HTMime.
 +	** The HTBoundary object creates another HTMime object downstream of
@@ -229,22 +206,24 @@ $NetBSD: patch-ap,v 1.1 2005/11/03 15:51:59 salo Exp $
 +					     me->boundary_ptr - me->boundary
 +					     + 2);
  		}
--	    } else {
--		if (me->debug)
--		    if ((status = PUTDEBUG(start, end-start)) != HT_OK)
--			return status;
+-		HTTRACE(STREAM_TRACE, "Boundary.... Ending\n");
+-		start = b;
+-		me->dash = 0;
+-		me->state = EOL_BEGIN;
+-	    }
+-	    if (*b == '-') {
+-		me->dash++;
+-	    } else if (*b != CR && *b != LF) {
+-		me->dash = 0;
+-		me->state = EOL_BEGIN;
 +		++me->boundary_ptr;
 +		return 1;
  	    }
--	    start = b;
--	    if (*b == '-') me->dash++;
--	    me->state = EOL_SLF;
--	} else if (*b == CR) {
--	    me->state = EOL_FCR;
--	    end = b;
--	} else if (*b == LF) {
--	    if (me->state != EOL_FCR) end = b;
--	    me->state = EOL_FLF;
+-	    me->body = NO;
+-	} else if (me->state == EOL_DOT) {
+-	    int status;
+-	    if (me->body) {
+-		if (me->target) FREE_TARGET;
 +
 +	/*
 +	** Line: --delimiter
@@ -258,8 +237,7 @@ $NetBSD: patch-ap,v 1.1 2005/11/03 15:51:59 salo Exp $
 +
 +		me->state=seen_delimiter_dash;
 +		return 1;
- 	}
--	b++;
++	}
 +
 +	HTTRACE(STREAM_TRACE,
 +		"Boundary: Found: '--%s'\n" _ me->boundary);
@@ -457,8 +435,7 @@ $NetBSD: patch-ap,v 1.1 2005/11/03 15:51:59 salo Exp $
 +		if (PUTBLOCK("\r", 1) != HT_OK)
 +			return 0;
 +		return seen_nothing(me, b, l);
-     }
--    return (start<b && me->body) ? PUTBLOCK(start, b-start) : HT_OK;
++    }
 +
 +	HTTRACE(STREAM_TRACE, "Boundary: Processed <CR><LF>\n");
 +	me->state=start_of_line;
@@ -475,16 +452,38 @@ $NetBSD: patch-ap,v 1.1 2005/11/03 15:51:59 salo Exp $
 +	me->keptcrlf=NO;
 +
 +	if (!isterminal)
-+		me->target = HTStreamStack(WWW_MIME,me->format,
-+					   HTMerge(me->orig_target, 2),
-+					   me->request, YES);
+ 		me->target = HTStreamStack(WWW_MIME,me->format,
+ 					   HTMerge(me->orig_target, 2),
+ 					   me->request, YES);
+-		if (end > start) {
+-		    if ((status = PUTBLOCK(start, end-start)) != HT_OK)
+-			return status;
+-		}
+-	    } else {
+-		if (me->debug)
+-		    if ((status = PUTDEBUG(start, end-start)) != HT_OK)
+-			return status;
+-	    }
+-	    start = b;
+-	    if (*b == '-') me->dash++;
+-	    me->state = EOL_SLF;
+-	} else if (*b == CR) {
+-	    me->state = EOL_FCR;
+-	    end = b;
+-	} else if (*b == LF) {
+-	    if (me->state != EOL_FCR) end = b;
+-	    me->state = EOL_FLF;
+-	}
+-	b++;
+-    }
+-    return (start<b && me->body) ? PUTBLOCK(start, b-start) : HT_OK;
  }
  
 +
  PRIVATE int HTBoundary_put_string (HTStream * me, const char * s)
  {
      return HTBoundary_put_block(me, s, (int) strlen(s));
-@@ -133,6 +427,8 @@
+@@ -133,6 +427,8 @@ PRIVATE int HTBoundary_put_character (HT
  
  PRIVATE int HTBoundary_flush (HTStream * me)
  {
@@ -493,7 +492,7 @@ $NetBSD: patch-ap,v 1.1 2005/11/03 15:51:59 salo Exp $
      return (*me->target->isa->flush)(me->target);
  }
  
-@@ -182,18 +478,26 @@
+@@ -182,18 +478,26 @@ PUBLIC HTStream * HTBoundary   (HTReques
  	HTResponse_formatParam(response) :
  	HTAnchor_formatParam(anchor);
      char * boundary = HTAssocList_findObject(type_param, "boundary");

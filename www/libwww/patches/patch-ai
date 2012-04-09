@@ -1,8 +1,8 @@
 $NetBSD: patch-ai,v 1.1 2001/04/20 12:33:54 fredb Exp $
 
---- libwww-config.in.orig	Wed Jun 23 13:05:01 1999
+--- libwww-config.in.orig	1999-06-23 23:05:02.043778048 +0000
 +++ libwww-config.in
-@@ -48,7 +48,7 @@
+@@ -48,7 +48,7 @@ while test $# -gt 0; do
        echo -I@includedir@ -I@includedir@/@PACKAGE@ @DEFS@
        ;;
      --libs)

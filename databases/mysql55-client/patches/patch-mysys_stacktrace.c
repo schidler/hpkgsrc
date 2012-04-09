@@ -1,6 +1,6 @@
 $NetBSD: patch-mysys_stacktrace.c,v 1.1.1.1 2011/04/25 21:12:53 adam Exp $
 
---- mysys/stacktrace.c.orig	2011-10-12 12:10:24.022806528 +0000
+--- mysys/stacktrace.c.orig	2011-10-12 12:10:24.044826624 +0000
 +++ mysys/stacktrace.c
 @@ -421,7 +421,7 @@ void my_write_core(int sig)
    __gcov_flush();

@@ -1,6 +1,6 @@
 $NetBSD$
 
---- Modules/timemodule.c.orig	2011-01-02 23:26:12.005242880 +0000
+--- Modules/timemodule.c.orig	2011-01-02 23:26:12.050331648 +0000
 +++ Modules/timemodule.c
 @@ -972,11 +972,11 @@ floatsleep(double secs)
          return -1;

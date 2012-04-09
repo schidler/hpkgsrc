@@ -1,6 +1,6 @@
 $NetBSD: patch-aa,v 1.9 2011/10/11 10:02:08 adam Exp $
 
---- boostcpp.jam.orig	2012-03-23 18:32:20.468189184 +0000
+--- boostcpp.jam.orig	2012-03-24 16:34:15.036700160 +0000
 +++ boostcpp.jam
 @@ -276,6 +276,7 @@ rule declare_install_and_stage_proper_ta
        : <location>$(stage-locate)/lib

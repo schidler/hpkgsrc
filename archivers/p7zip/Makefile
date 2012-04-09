@@ -33,15 +33,22 @@ WRKSRC=			${WRKDIR}/${PKGNAME_NOREV:S/-/_/}
 
 GCC_REQD+=		3.0
 
+.include "../../mk/bsd.prefs.mk"
 INSTALLATION_DIRS=	bin ${PKGMANDIR}/man1
 .if !empty(DYNAMIC_7Z:MYES)
 INSTALLATION_DIRS+=	lib/7z
 INSTALLATION_DIRS+=	lib/7z/Codecs
 INSTALLATION_DIRS+=	lib/7z/Formats
 .endif
+.if ${OPSYS} != "Haiku"
 INSTALLATION_DIRS+=	share/doc/p7zip
 INSTALLATION_DIRS+=	share/doc/p7zip/commands
 INSTALLATION_DIRS+=	share/doc/p7zip/switches
+.else
+INSTALLATION_DIRS+=	data/doc/p7zip
+INSTALLATION_DIRS+=	data/doc/p7zip/commands
+INSTALLATION_DIRS+=	data/doc/p7zip/switches
+.endif
 
 .include "../../mk/endian.mk"
 
@@ -55,6 +62,10 @@ CFLAGS+=		-DLITTLE_ENDIAN
 CFLAGS+=		-DENV_HAIKU
 .endif
 
+.if ${OPSYS} == Haiku
+PLIST_SRC= ${PKGDIR}/PLIST.Haiku
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/7za ${DESTDIR}${PREFIX}/bin
 .if !empty(DYNAMIC_7Z:MYES)
@@ -65,6 +76,7 @@ do-install:
 .else
 	ln -f -s 7za ${DESTDIR}${PREFIX}/bin/7z
 .endif
+.if ${OPSYS} != "Haiku"	
 	${INSTALL_DATA} ${WRKSRC}/README \
 		${DESTDIR}${PREFIX}/share/doc/p7zip
 	${INSTALL_DATA} ${WRKSRC}/DOCS/MANUAL/*.* \
@@ -79,6 +91,22 @@ do-install:
 		${DESTDIR}${PREFIX}/${PKGMANDIR}/man1
 	${INSTALL_MAN} ${WRKSRC}/man1/7zr.1 \
 		${DESTDIR}${PREFIX}/${PKGMANDIR}/man1
+.else
+	${INSTALL_DATA} ${WRKSRC}/README \
+		${DESTDIR}${PREFIX}/data/doc/p7zip
+	${INSTALL_DATA} ${WRKSRC}/DOCS/MANUAL/*.* \
+		${DESTDIR}${PREFIX}/data/doc/p7zip
+	${INSTALL_DATA} ${WRKSRC}/DOCS/MANUAL/commands/*.* \
+		${DESTDIR}${PREFIX}/data/doc/p7zip/commands
+	${INSTALL_DATA} ${WRKSRC}/DOCS/MANUAL/switches/*.* \
+		${DESTDIR}${PREFIX}/data/doc/p7zip/switches
+	${INSTALL_MAN} ${WRKSRC}/man1/7z.1 \
+		${DESTDIR}${PREFIX}/${PKGMANDIR}/man1
+	${INSTALL_MAN} ${WRKSRC}/man1/7za.1 \
+		${DESTDIR}${PREFIX}/${PKGMANDIR}/man1
+	${INSTALL_MAN} ${WRKSRC}/man1/7zr.1 \
+		${DESTDIR}${PREFIX}/${PKGMANDIR}/man1
+.endif				
 
 .include "../../mk/pthread.buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

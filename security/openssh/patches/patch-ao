@@ -4,9 +4,9 @@ One more replacing 0 with ROOTUID is handled by using SUBST framework
 because patch can't handle it when hpn-patch option is enabled.
 So, don't simply update this file with mkpatch command.
 
---- session.c.orig	2011-02-16 01:25:58.000000000 +0000
+--- session.c.orig	2010-12-01 01:02:59.033816576 +0000
 +++ session.c
-@@ -1075,7 +1075,7 @@ read_etc_default_login(char ***env, u_in
+@@ -1074,7 +1074,7 @@ read_etc_default_login(char ***env, u_in
  	if (tmpenv == NULL)
  		return;
  
@@ -15,7 +15,7 @@ So, don't simply update this file with mkpatch command.
  		var = child_get_env(tmpenv, "SUPATH");
  	else
  		var = child_get_env(tmpenv, "PATH");
-@@ -1184,7 +1184,7 @@ do_setup_env(Session *s, const char *she
+@@ -1183,7 +1183,7 @@ do_setup_env(Session *s, const char *she
  #  endif /* HAVE_ETC_DEFAULT_LOGIN */
  		if (path == NULL || *path == '\0') {
  			child_set_env(&env, &envsize, "PATH",
@@ -24,7 +24,7 @@ So, don't simply update this file with mkpatch command.
  				SUPERUSER_PATH : _PATH_STDPATH);
  		}
  # endif /* HAVE_CYGWIN */
-@@ -1298,6 +1298,18 @@ do_setup_env(Session *s, const char *she
+@@ -1297,6 +1297,18 @@ do_setup_env(Session *s, const char *she
  		    strcmp(pw->pw_dir, "/") ? pw->pw_dir : "");
  		read_environment_file(&env, &envsize, buf);
  	}
@@ -43,7 +43,7 @@ So, don't simply update this file with mkpatch command.
  	if (debug_flag) {
  		/* dump the environment */
  		fprintf(stderr, "Environment:\n");
-@@ -1488,11 +1500,13 @@ do_setusercontext(struct passwd *pw)
+@@ -1487,11 +1499,13 @@ do_setusercontext(struct passwd *pw)
  			perror("setgid");
  			exit(1);
  		}
@@ -57,7 +57,7 @@ So, don't simply update this file with mkpatch command.
  		endgrent();
  #endif
  
-@@ -2305,7 +2319,7 @@ session_pty_cleanup2(Session *s)
+@@ -2298,7 +2312,7 @@ session_pty_cleanup2(Session *s)
  		record_logout(s->pid, s->tty, s->pw->pw_name);
  
  	/* Release the pseudo-tty. */

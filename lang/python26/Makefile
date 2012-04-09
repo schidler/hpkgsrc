@@ -27,6 +27,7 @@ CPPFLAGS.Haiku+=	-I${PREFIX}/include
 CHECK_PORTABILITY_SKIP=	Tools/faqwiz/move-faqwiz.sh
 
 USE_LANGUAGES=		c c++
+UDE_PKGDATADIR=		no
 
 PTHREAD_OPTS+=	require
 .include "../../mk/pthread.buildlink3.mk"
@@ -45,7 +46,7 @@ CFLAGS+=	-fwrapv
 
 # fdatasync()
 LIBS.SunOS+=		-lrt
-LIBS.Haiku+=		-lintl -liconv -lcharset
+LIBS.Haiku+=		-lintl -liconv -lcharset -ltextencoding
 
 PY_VER_SUFFIX=		2.6
 
@@ -161,6 +162,12 @@ post-extract:
 post-install:
 	${LN} -fs ${DESTDIR}${PREFIX}/lib/libpython2.6.sl \
 		${DESTDIR}${PREFIX}/lib/libpython2.6.sl.1.0
+.endif
+
+.if ${OPSYS} == "Haiku"
+post-install:
+	${LN} -fs ${DESTDIR}${PREFIX}/bin/python${PY_VER_SUFFIX} \
+		${DESTDIR}${PREFIX}/bin/python
 .endif
 
 USE_GNU_READLINE=			yes

@@ -1,6 +1,6 @@
 $NetBSD$
 
---- Modules/resource.c.orig	2010-05-09 15:15:40.044040192 +0000
+--- Modules/resource.c.orig	2010-05-09 15:15:40.021757952 +0000
 +++ Modules/resource.c
 @@ -86,6 +86,7 @@ resource_getrusage(PyObject *self, PyObj
                      PyFloat_FromDouble(doubletime(ru.ru_utime)));

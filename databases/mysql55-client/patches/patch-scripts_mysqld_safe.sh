@@ -1,6 +1,6 @@
 $NetBSD: patch-scripts_mysqld_safe.sh,v 1.1.1.1 2011/04/25 21:12:53 adam Exp $
 
---- scripts/mysqld_safe.sh.orig	2011-10-12 12:10:24.066060288 +0000
+--- scripts/mysqld_safe.sh.orig	2011-10-12 12:10:24.019660800 +0000
 +++ scripts/mysqld_safe.sh
 @@ -564,7 +564,7 @@ then
    # Change the err log to the right user, if it is in use

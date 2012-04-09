@@ -23,8 +23,8 @@ MAINTAINER_TEST_VOLUNTEERS=
 
 .include "../../devel/subversion/Makefile.version"
 
-SVNEXAMPLES=		${PREFIX}/share/examples/subversion
-SVNDOC=			${PREFIX}/share/doc/subversion
+SVNEXAMPLES=		${PREFIX}/documentation/examples/subversion
+SVNDOC=			${PREFIX}/documentation/doc/subversion
 
 DISTINFO_FILE=		${.CURDIR}/../../devel/subversion/distinfo
 FILESDIR=		${.CURDIR}/../../devel/subversion/files
