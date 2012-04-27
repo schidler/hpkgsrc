@@ -1,0 +1,23 @@
+$NetBSD: distinfo,v 1.71 2011/10/19 18:45:42 ryoon Exp $
+
+SHA1 (qemu-0.15.1.tar.gz) = 30cf3b4dabb4b5d8efadb20f364eb8181f317681
+RMD160 (qemu-0.15.1.tar.gz) = fd1cfde94f96569af671cc96d1c2e4bad524fd61
+Size (qemu-0.15.1.tar.gz) = 9576745 bytes
+SHA1 (patch-aa) = 9dadc4787126b7523694a40fcf539095916be8fb
+SHA1 (patch-ao) = 1bffbd38a82f542787f4825534f285568324f588
+SHA1 (patch-ba) = 22646a2a6f91000b8551c29692992a640c3f514a
+SHA1 (patch-bb) = cdfcf00ae254b31b8916bfbb91f20ef2596eac62
+SHA1 (patch-compatfd.c) = 99e8c83097b203c06ccc23483d0794bfa6a2a70f
+SHA1 (patch-cpus.c) = 2daf68b108dacf361dad57e2fc258da5865bc730
+SHA1 (patch-dd) = 7685804d580e9adb44eff97414041cbaf8cfb665
+SHA1 (patch-ed) = 2a2899e745efe70093a53eeceafef94cd7cbe049
+SHA1 (patch-ef) = 8a94fa2b80ebe73a48be13dd88f81d7743268472
+SHA1 (patch-eg) = a100687c9fefb0c14db5ffd112a13bd5f06c6c10
+SHA1 (patch-eh) = 5a90d681133673aa2994530999f11b3fdc88a93a
+SHA1 (patch-ei) = afe4928250d8e5f398a4cfedbc05fee102226d8f
+SHA1 (patch-en) = 1aa0049360cdeeb45a494f8b2f215432b5183464
+SHA1 (patch-et) = fe0144ae3bd3067c1e152161ecdd11ee1a6b33c2
+SHA1 (patch-hw_ppc__newworld.c) = cc57a9097b916e821d8211ed2fef6bbb107dcfcc
+SHA1 (patch-hw_ppc__oldworld.c) = 8e085558b374bf7db8d60de87844c90aff1d7199
+SHA1 (patch-hw_xilinx__axienet.c) = 6b5a79d7a7ed447d73a1b40dad9fde5b0b4be0ae
+SHA1 (patch-ioport.c) = e5fda8eb149435ed5d71e0e49fc5dd19b98c45fe
