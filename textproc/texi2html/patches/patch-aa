@@ -1,13 +1,24 @@
 $NetBSD: patch-aa,v 1.2 2005/02/07 13:30:11 wiz Exp $
 
---- doc/Makefile.in.orig	2005-02-04 01:16:54.000000000 +0100
+--- doc/Makefile.in.orig	2010-06-30 22:02:25.030408704 +0000
 +++ doc/Makefile.in
-@@ -146,7 +146,7 @@ info_TEXINFOS = texi2html.texi
+@@ -176,8 +176,8 @@ build_cpu = @build_cpu@
+ build_os = @build_os@
+ build_vendor = @build_vendor@
+ builddir = @builddir@
+-datadir = @datadir@
+-datarootdir = @datarootdir@
++datadir = /boot/common/data
++datarootdir = /boot/common/data
+ docdir = @docdir@
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+@@ -219,7 +219,7 @@ info_TEXINFOS = texi2html.texi
  #             texi2html.ascii
  #
  texinfodata = $(datadir)/texinfo
 -texinfohtmldir = $(texinfodata)/html
-+texinfohtmldir = $(datadir)/doc/texi2html
++texinfohtmldir = $(prefix)/documentation/doc/texi2html
  texinfohtml_DATA = texi2html.html
  
  # use the script out of the distribution NOT
