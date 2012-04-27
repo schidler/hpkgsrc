@@ -18,6 +18,7 @@ USE_LANGUAGES=		c c++
 USE_LIBTOOL=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--enable-utf8 --enable-unicode-properties
+CONFIGURE_ARGS+=	--docdir=${PREFIX}/documentation/doc/pcre
 
 SUBST_CLASSES+=		rpath
 SUBST_STAGE.rpath=	pre-configure
