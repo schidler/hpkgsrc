@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- doc/Makefile.in.orig	2010-06-30 22:02:25.000000000 +0000
++++ doc/Makefile.in
+@@ -218,7 +218,7 @@ info_TEXINFOS = texi2html.texi
+ #CLEANFILES = texi2html.ps texi2html.pdf texi2html.html \
+ #             texi2html.ascii
+ #
+-texinfodata = $(datadir)/texinfo
++texinfodata = $(prefix)/documentation/doc/texi2html
+ texinfohtmldir = $(texinfodata)/html
+ texinfohtml_DATA = texi2html.html
+ 

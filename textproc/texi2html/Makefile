@@ -19,9 +19,12 @@ PKG_INSTALLATION_TYPES=	overwrite pkgviews
 PKG_DESTDIR_SUPPORT=	user-destdir
 
 USE_TOOLS+=		gmake perl:run
+USE_PKGDATADIR=	no
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--sysconfdir=${PKG_SYSCONFDIR}
 CONFIGURE_ARGS+=	--disable-nls
+CONFIGURE_ARGS+=	--datarootdir=${PREFIX}/data
+CONFIGURE_ARGS+=	--docdir=${PREFIX}/documentation/doc/texi2html
 INFO_FILES=		yes
 
 REPLACE_PERL+=	MySimple.pm
