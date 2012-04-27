@@ -47,6 +47,7 @@ CFLAGS+=	-fwrapv
 # fdatasync()
 LIBS.SunOS+=		-lrt
 LIBS.Haiku+=		-lintl -liconv -lcharset -ltextencoding
+LDFLAGS.Haiku+=		-lintl -liconv -lcharset -ltextencoding
 
 PY_VER_SUFFIX=		2.6
 
