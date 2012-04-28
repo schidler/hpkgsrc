@@ -1,0 +1,10 @@
+$NetBSD: distinfo,v 1.3 2008/01/06 01:07:04 heinz Exp $
+
+SHA1 (libcfg+-0.6.2.tar.gz) = 856d647bb06e37d3c6e48d356a3e11796ebed35b
+RMD160 (libcfg+-0.6.2.tar.gz) = a4125b16568e1977de3fc4e57a903eaa1638a412
+Size (libcfg+-0.6.2.tar.gz) = 169482 bytes
+SHA1 (patch-aa) = f2a515125a6e91c889b499483c70a2848d7a43c5
+SHA1 (patch-ab) = e33f7b818db0f9ede8bd5cdeb14ba072626a1610
+SHA1 (patch-ac) = 24fe198d352cb0852265f3564ad1b631ddad5c50
+SHA1 (patch-ad) = a9132208524283ce7190d79c0d5ca80201b7b20c
+SHA1 (patch-doc_Makefile.in) = 30c283ccf021642172b8e227cbfc20c4db25c977

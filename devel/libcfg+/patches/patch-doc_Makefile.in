@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- doc/Makefile.in.orig	2012-04-28 07:52:46.000000000 +0000
++++ doc/Makefile.in
+@@ -34,7 +34,7 @@ sharedstatedir    = @sharedstatedir@
+ localstatedir     = @localstatedir@
+ libdir            = @libdir@
+ infodir           = @infodir@
+-docdir            = $(prefix)/share/doc
++docdir            = $(prefix)/documentation/doc
+ mandir            = @mandir@
+ man3dir           = $(mandir)/man@MANVOLNUM@
+ includedir        = @includedir@
