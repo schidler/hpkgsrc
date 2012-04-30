@@ -1,6 +1,6 @@
 # $NetBSD: Makefile,v 1.89 2012/03/15 11:53:26 obache Exp $
 
-DISTNAME=		qemu-0.15.1
+DISTNAME=	qemu-1.0.1
 PKGREVISION=		4
 CATEGORIES=		emulators
 MASTER_SITES=		http://wiki.qemu.org/download/
@@ -27,7 +27,7 @@ BUILD_DEPENDS+=		texi2html-[0-9]*:../../textproc/texi2html
 
 .if ${OPSYS} == "Haiku"
 CONFIGURE_ARGS+=	--extra-ldflags="-liconv -lGL -lroot -lbe -lmedia -lgame -ldevice -ltextencoding -lsupc++ -lbsd -lssl -lcrypto -lz"
-CONFIGURE_ARGS+=	--enable-io-thread
+CONFIGURE_ARGS+=	--disable-curses
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/data/qemu
 CONFIGURE_ARGS+=	--docdir=${PREFIX}/documentation/doc/qemu
 .endif
@@ -38,52 +38,18 @@ CONFIGURE_ARGS+=	--sysconfdir=${PKG_SYSCONFDIR}
 CONFIGURE_ARGS+=	--mandir=${PREFIX}/${PKGMANDIR}
 CONFIGURE_ARGS+=	--python=${PYTHONBIN}
 
-CONF_FILES=		${EGDIR}/target-x86_64.conf \
-			${PKG_SYSCONFDIR}/target-x86_64.conf
-EGDIR=			${PREFIX}/documentation/examples/qemu
-INSTALL_MAKE_FLAGS=	egdir=${EGDIR}
 PKG_SYSCONFSUBDIR=	qemu
-
-# Avoid clash with system include file:
-pre-patch:
-	mv ${WRKSRC}/audio/audio.h ${WRKSRC}/audio/qaudio.h
-
-SUBST_CLASSES+=		qaudio
-SUBST_STAGE.qaudio=	pre-configure
-SUBST_FILES.qaudio=	arch_init.c monitor.c savevm.c vl.c \
-			audio/*.c \
-			hw/ac97.c \
-			hw/adlib.c \
-			hw/cs4231a.c \
-			hw/es1370.c \
-			hw/gus.c \
-			hw/hda-audio.c \
-			hw/marvell_88w8618_audio.c \
-			hw/milkymist-ac97.c \
-			hw/mips_fulong2e.c \
-			hw/mips_jazz.c \
-			hw/mips_malta.c \
-			hw/omap2.c \
-			hw/palm.c \
-			hw/pcspk.c \
-			hw/sb16.c \
-			hw/spitz.c \
-			hw/tsc210x.c \
-			hw/wm8750.c \
-			ui/vnc.h
-SUBST_SED.qaudio=	-e s,audio.h\",qaudio.h\",g
-SUBST_MESSAGE.qaudio=	Fixing audio.h confusion
 
 REPLACE_PERL+=		texi2pod.pl
 
 BUILDLINK_PASSTHRU_DIRS+= /usr/lib
 BUILDLINK_PASSTHRU_RPATHDIRS+= /usr/lib
 
-INSTALLATION_DIRS=	${PKGMANDIR}/man1 share/doc/qemu
+INSTALLATION_DIRS=	${PKGMANDIR}/man1 documentation/doc/qemu
 
-UE_ARCHS+=		alpha arm armeb cris i386 m68k microblaze mips mipsel
-UE_ARCHS+=		ppc ppc64 ppc64abi32 sh4 sh4eb sparc sparc32plus
-UE_ARCHS+=		sparc64 x86_64 microblazeel s390x unicore32
+UE_ARCHS+=		alpha arm armeb cris i386 m68k microblaze mips mips64 mips64el mipsel
+UE_ARCHS+=		ppc ppc64 ppc64abi32 sh4 sh4eb sparc sparc32plus xtensa xtensaeb
+UE_ARCHS+=		sparc64 x86_64 microblazeel s390x unicore32 ppcemb lm32
 
 .if ${OPSYS} == "NetBSD"
 .if (!empty(OS_VERSION:M5.99.*) || !empty(OS_VERSION:M[6-9].*))

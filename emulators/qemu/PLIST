@@ -1,10 +1,4 @@
 @comment $NetBSD: PLIST,v 1.27 2011/08/22 12:00:34 ryoon Exp $
-bin/qemu
-${PLIST.alpha}bin/qemu-alpha
-${PLIST.arm}bin/qemu-arm
-${PLIST.armeb}bin/qemu-armeb
-${PLIST.cris}bin/qemu-cris
-${PLIST.i386}bin/qemu-i386
 bin/qemu-img
 bin/qemu-io
 ${PLIST.m68k}bin/qemu-m68k
@@ -23,6 +17,14 @@ ${PLIST.sparc}bin/qemu-sparc
 ${PLIST.sparc32plus}bin/qemu-sparc32plus
 ${PLIST.sparc64}bin/qemu-sparc64
 ${PLIST.unicore32}bin/qemu-unicore32
+${PLIST.alpha}bin/qemu-alpha
+${PLIST.arm}bin/qemu-arm
+${PLIST.armeb}bin/qemu-armeb
+${PLIST.cris}bin/qemu-cris
+${PLIST.i386}bin/qemu-i386
+${PLIST.x86_64}bin/qemu-x86_64
+bin/qemu-system-alpha
+bin/qemu-system-i386
 bin/qemu-system-arm
 bin/qemu-system-cris
 bin/qemu-system-lm32
@@ -42,14 +44,14 @@ bin/qemu-system-sh4eb
 bin/qemu-system-sparc
 bin/qemu-system-sparc64
 bin/qemu-system-x86_64
-${PLIST.x86_64}bin/qemu-x86_64
+bin/qemu-system-xtensa
+bin/qemu-system-xtensaeb
 man/man1/qemu-img.1
 man/man1/qemu.1
 man/man8/qemu-nbd.8
 documentation/doc/qemu/Makefile.multinode-NetBSD
 documentation/doc/qemu/qemu-doc.html
 documentation/doc/qemu/qemu-tech.html
-documentation/examples/qemu/target-x86_64.conf
 data/qemu/bamboo.dtb
 data/qemu/bios.bin
 data/qemu/keymaps/ar

@@ -1,6 +1,6 @@
 $NetBSD$
 
---- compatfd.c.orig	2012-04-27 10:41:34.275775488 +0000
+--- compatfd.c.orig	2012-04-29 19:00:34.304873472 +0000
 +++ compatfd.c
 @@ -14,7 +14,9 @@
  #include "qemu-common.h"
