@@ -12,13 +12,7 @@ GLIB_COMPILE_SCHEMAS=	${BUILDLINK_PREFIX.glib2}/bin/glib-compile-schemas
 
 FILES_SUBST+=		GLIB_SCHEMAS_DIR=${GLIB_SCHEMAS_DIR:Q}
 FILES_SUBST+=		GLIB_COMPILE_SCHEMAS=${GLIB_COMPILE_SCHEMAS:Q}
-
-.if ${OPSYS} == "Haiku"
-GLIB_SCHEMAS_DIR=${BUILDLINK_PREFIX.glib2}/data/glib-2.0/schemas
-.else
 GLIB_SCHEMAS_DIR=${BUILDLINK_PREFIX.glib2}/share/glib-2.0/schemas
-.endif
-
 INSTALL_TEMPLATES+=	../../devel/glib2/files/schemas.tmpl
 DEINSTALL_TEMPLATES+=	../../devel/glib2/files/schemas.tmpl
 

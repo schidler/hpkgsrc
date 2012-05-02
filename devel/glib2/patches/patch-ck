@@ -1,6 +1,6 @@
 $NetBSD: patch-ck,v 1.1 2011/10/09 19:40:02 jmmv Exp $
 
---- glib/libcharset/Makefile.am.orig	2011-06-05 23:18:49.019660800 +0000
+--- glib/libcharset/Makefile.am.orig	2011-08-16 00:51:30.055050240 +0000
 +++ glib/libcharset/Makefile.am
 @@ -25,18 +25,6 @@ EXTRA_DIST += 			\
  charset_alias = $(DESTDIR)$(libdir)/charset.alias

@@ -1,10 +1,9 @@
-# $NetBSD: Makefile,v 1.187 2011/10/09 19:40:02 jmmv Exp $
+# $NetBSD: Makefile,v 1.198 2012/04/06 10:40:36 taca Exp $
 
 .include "Makefile.common"
 .include "options.mk"
 
 PKGREVISION=		1
-
 CATEGORIES=		devel
 
 COMMENT=		Some useful routines for C programming (glib2)
@@ -28,12 +27,13 @@ PKGCONFIG_OVERRIDE+=	gio-unix-2.0.pc.in
 FILES_SUBST+=		GIO_MODULES_DIR=${PREFIX}/lib/gio/modules
 FILES_SUBST+=		GIO_QUERYMODULES=${PREFIX}/bin/gio-querymodules
 FILES_SUBST+=		GLIB_COMPILE_SCHEMAS=${PREFIX}/bin/glib-compile-schemas
-FILES_SUBST+=		GLIB_SCHEMAS_DIR=${PREFIX}/data/glib-2.0/schemas
+FILES_SUBST+=		GLIB_SCHEMAS_DIR=${PREFIX}/share/glib-2.0/schemas
 
 # gtester is the glib unit testing and reporting framework
 # agc doesn't want glib2 to depend on python so we install it
 # in a broken and useless state.
 CHECK_INTERPRETER_SKIP+=	bin/gtester-report
+CHECK_INTERPRETER_SKIP+=	bin/gdbus-codegen
 
 # need pcre utf8 + unicode-properties
 BUILDLINK_API_DEPENDS.pcre+=	pcre>=8.11
@@ -41,17 +41,15 @@ BUILDLINK_API_DEPENDS.pcre+=	pcre>=8.11
 CONFIGURE_ARGS+=	PCRE_CFLAGS=-I${BUILDLINK_PREFIX.pcre}/include
 CONFIGURE_ARGS+=	PCRE_LIBS="${COMPILER_RPATH_FLAG}${BUILDLINK_PREFIX.pcre}/lib -L${BUILDLINK_PREFIX.pcre}/lib -lpcre"
 
-
 # needs gz_header structure
 BUILDLINK_API_DEPENDS.zlib+=	zlib>=1.2.2.1
 
 LIBS.SunOS+=	-lnsl -lsocket
-
-LIBS.Haiku+=	-lnetwork
-
+LIBS.Haiku+=	-lbsd -lnetwork
 
 .include "../../converters/libiconv/buildlink3.mk"
 .include "../../devel/gettext-lib/buildlink3.mk"
 .include "../../devel/pcre/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"
+.include "../../devel/libffi/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

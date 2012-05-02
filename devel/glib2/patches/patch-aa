@@ -1,8 +1,8 @@
 $NetBSD: patch-aa,v 1.50 2010/11/02 14:52:24 drochner Exp $
 
---- configure.orig	2011-06-05 23:24:53.028835840 +0000
+--- configure.orig	2012-03-11 23:36:26.003670016 +0000
 +++ configure
-@@ -698,6 +698,7 @@ GIO
+@@ -702,6 +702,7 @@ GIO
  GSPAWN
  GLIB_DEBUG_FLAGS
  G_MODULE_NEED_USCORE
@@ -10,18 +10,7 @@ $NetBSD: patch-aa,v 1.50 2010/11/02 14:52:24 drochner Exp $
  G_MODULE_BROKEN_RTLD_GLOBAL
  G_MODULE_HAVE_DLERROR
  G_MODULE_LDFLAGS
-@@ -4660,6 +4661,10 @@ case $host in
-   *-*-beos*)
-     glib_native_beos="yes"
-     ;;
-+  *-*-haiku*)
-+    glib_native_beos="yes"
-+    LIBS="-lnetwork $LIBS"
-+    ;;
-   *)
-     glib_native_beos="no"
-     ;;
-@@ -22251,8 +22256,8 @@ else
+@@ -22621,8 +22625,8 @@ else
  fi
  
  
@@ -32,7 +21,7 @@ $NetBSD: patch-aa,v 1.50 2010/11/02 14:52:24 drochner Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  #if defined(__SUNPRO_C) || (__SUNPRO_C >= 0x550)
-@@ -23493,16 +23498,48 @@ fi
+@@ -23977,16 +23981,48 @@ fi
  
  case $host in
    *-*-solaris* )
@@ -82,7 +71,7 @@ $NetBSD: patch-aa,v 1.50 2010/11/02 14:52:24 drochner Exp $
  esac
  
  if test "$ac_cv_func_statfs" = yes ; then
-@@ -24507,10 +24544,11 @@ if test x"$glib_native_win32" = xyes; th
+@@ -25074,10 +25110,11 @@ if test x"$glib_native_win32" = xyes; th
      G_MODULE_LDFLAGS=
  else
    export SED
@@ -95,7 +84,7 @@ $NetBSD: patch-aa,v 1.50 2010/11/02 14:52:24 drochner Exp $
  G_MODULE_HAVE_DLERROR=0
  if test -z "$G_MODULE_IMPL"; then
    case "$host" in
-@@ -24717,7 +24755,7 @@ if test "$G_MODULE_IMPL" = "G_MODULE_IMP
+@@ -25284,7 +25321,7 @@ if test "$G_MODULE_IMPL" = "G_MODULE_IMP
  	LIBS="$G_MODULE_LIBS $LIBS"
  	LDFLAGS="$LDFLAGS $G_MODULE_LDFLAGS"
  	echo "void glib_plugin_test(void) { }" > plugin.c
@@ -104,7 +93,7 @@ $NetBSD: patch-aa,v 1.50 2010/11/02 14:52:24 drochner Exp $
  		-export-dynamic -o plugin.o plugin.c 2>&1 >/dev/null
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for RTLD_GLOBAL brokenness" >&5
  $as_echo_n "checking for RTLD_GLOBAL brokenness... " >&6; }
-@@ -24827,6 +24865,56 @@ fi
+@@ -25394,6 +25431,56 @@ fi
  
  	LIBS="$LIBS_orig"
  fi
@@ -161,7 +150,7 @@ $NetBSD: patch-aa,v 1.50 2010/11/02 14:52:24 drochner Exp $
  if test -z "$G_MODULE_IMPL"; then
  	G_MODULE_IMPL=0
          G_MODULE_SUPPORTED=false
-@@ -24837,7 +24925,7 @@ fi
+@@ -25404,7 +25491,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for the suffix of module shared libraries" >&5
  $as_echo_n "checking for the suffix of module shared libraries... " >&6; }
  export SED
@@ -170,7 +159,7 @@ $NetBSD: patch-aa,v 1.50 2010/11/02 14:52:24 drochner Exp $
  eval $shrext_cmds
  module=yes eval std_shrext=$shrext_cmds
  # chop the initial dot
-@@ -24861,6 +24949,8 @@ fi
+@@ -25428,6 +25515,8 @@ fi
  
  
  
@@ -179,7 +168,7 @@ $NetBSD: patch-aa,v 1.50 2010/11/02 14:52:24 drochner Exp $
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for gspawn implementation" >&5
  $as_echo_n "checking for gspawn implementation... " >&6; }
  case "$host" in
-@@ -25609,62 +25699,8 @@ if test x"$have_threads" != xno; then
+@@ -26176,62 +26265,8 @@ if test x"$have_threads" != xno; then
          G_THREAD_LIBS="-lpthread -lthread"
          ;;
        *)
@@ -244,7 +233,7 @@ $NetBSD: patch-aa,v 1.50 2010/11/02 14:52:24 drochner Exp $
           ;;
      esac
    fi
-@@ -28271,7 +28307,7 @@ rm -f core conftest.err conftest.$ac_obj
+@@ -29012,7 +29047,7 @@ rm -f core conftest.err conftest.$ac_obj
  fi
  
  
@@ -253,7 +242,7 @@ $NetBSD: patch-aa,v 1.50 2010/11/02 14:52:24 drochner Exp $
    GLIB_LINK_FLAGS=-Wl,-Bsymbolic-functions
  fi
  
-@@ -29892,6 +29930,9 @@ case $host in
+@@ -30640,6 +30675,9 @@ case $host in
    *-*-beos*)
      glib_os="#define G_OS_BEOS"
      ;;

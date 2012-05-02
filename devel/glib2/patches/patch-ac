@@ -2,7 +2,7 @@ $NetBSD: patch-ac,v 1.10 2008/09/06 11:07:20 obache Exp $
 
 http://bugzilla.gnome.org/show_bug.cgi?id=107626
 
---- gmodule/gmodule-dyld.c.orig	2010-09-27 18:48:33.035913728 +0000
+--- gmodule/gmodule-dyld.c.orig	2011-08-16 00:51:30.037224448 +0000
 +++ gmodule/gmodule-dyld.c
 @@ -120,7 +120,13 @@ _g_module_symbol (gpointer     handle,
        if (NSIsSymbolNameDefined (symbol_name))

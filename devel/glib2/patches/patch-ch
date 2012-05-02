@@ -2,7 +2,7 @@ $NetBSD: patch-ch,v 1.1 2010/11/10 20:51:46 tez Exp $
 
 Fix build on Solaris 10
 
---- glib/tests/strfuncs.c.orig	2010-09-27 18:48:33.060555264 +0000
+--- glib/tests/strfuncs.c.orig	2012-03-11 21:43:29.060555264 +0000
 +++ glib/tests/strfuncs.c
 @@ -19,7 +19,11 @@
   * if advised of the possibility of such damage.

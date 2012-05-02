@@ -1,17 +1,8 @@
 $NetBSD: patch-af,v 1.12 2010/11/02 14:52:24 drochner Exp $
 
---- glib/libcharset/Makefile.in.orig	2011-06-05 23:24:51.019136512 +0000
+--- glib/libcharset/Makefile.in.orig	2012-03-11 23:36:24.054788096 +0000
 +++ glib/libcharset/Makefile.in
-@@ -300,7 +300,7 @@ infodir = @infodir@
- install_sh = @install_sh@
- libdir = @libdir@
- libexecdir = @libexecdir@
--localedir = @localedir@
-+localedir = /boot/common/data/locale
- localstatedir = @localstatedir@
- mandir = @mandir@
- mkdir_p = @mkdir_p@
-@@ -713,18 +713,6 @@ lcov-clean:
+@@ -727,18 +727,6 @@ lcov-clean:
  # run tests in cwd as part of make check
  check-local: test-nonrecursive
  install-exec-local: all-local

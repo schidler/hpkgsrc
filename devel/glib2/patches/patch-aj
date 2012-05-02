@@ -2,7 +2,7 @@ $NetBSD: patch-aj,v 1.9 2009/08/03 10:14:00 sketch Exp $
 
 PR 41601, connected to http://bugzilla.gnome.org/show_bug.cgi?id=133344
 
---- glib/giounix.c.orig	2010-12-02 19:54:01.009961472 +0000
+--- glib/giounix.c.orig	2011-08-16 00:51:30.052166656 +0000
 +++ glib/giounix.c
 @@ -33,6 +33,9 @@
  

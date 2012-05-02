@@ -1,8 +1,8 @@
 $NetBSD: patch-ah,v 1.9 2008/09/06 11:07:20 obache Exp $
 
---- glib/gutils.c.orig	2011-06-05 23:18:49.008650752 +0000
+--- glib/gutils.c.orig	2012-03-11 21:43:29.029097984 +0000
 +++ glib/gutils.c
-@@ -492,7 +492,7 @@ g_find_program_in_path (const gchar *pro
+@@ -541,7 +541,7 @@ g_find_program_in_path (const gchar *pro
      }
    
    path = g_getenv ("PATH");
@@ -11,7 +11,7 @@ $NetBSD: patch-ah,v 1.9 2008/09/06 11:07:20 obache Exp $
    if (path == NULL)
      {
        /* There is no `PATH' in the environment.  The default
-@@ -2468,7 +2468,7 @@ load_user_special_dirs (void)
+@@ -2563,7 +2563,7 @@ load_user_special_dirs (void)
  
  static void g_init_user_config_dir (void);
  
@@ -20,7 +20,7 @@ $NetBSD: patch-ah,v 1.9 2008/09/06 11:07:20 obache Exp $
  
  /* adapted from xdg-user-dir-lookup.c
   *
-@@ -2624,7 +2624,7 @@ load_user_special_dirs (void)
+@@ -2719,7 +2719,7 @@ load_user_special_dirs (void)
    g_free (config_file);
  }
  
@@ -29,7 +29,7 @@ $NetBSD: patch-ah,v 1.9 2008/09/06 11:07:20 obache Exp $
  
  
  /**
-@@ -2935,7 +2935,7 @@ g_get_system_data_dirs (void)
+@@ -3030,7 +3030,7 @@ g_get_system_data_dirs (void)
        gchar *data_dirs = (gchar *) g_getenv ("XDG_DATA_DIRS");
  
        if (!data_dirs || !data_dirs[0])
@@ -38,7 +38,7 @@ $NetBSD: patch-ah,v 1.9 2008/09/06 11:07:20 obache Exp $
  
        data_dir_vector = g_strsplit (data_dirs, G_SEARCHPATH_SEPARATOR_S, 0);
  #endif
-@@ -2997,7 +2997,7 @@ g_get_system_config_dirs (void)
+@@ -3092,7 +3092,7 @@ g_get_system_config_dirs (void)
        conf_dirs = (gchar *) g_getenv ("XDG_CONFIG_DIRS");
  
        if (!conf_dirs || !conf_dirs[0])
@@ -47,7 +47,7 @@ $NetBSD: patch-ah,v 1.9 2008/09/06 11:07:20 obache Exp $
  
        conf_dir_vector = g_strsplit (conf_dirs, G_SEARCHPATH_SEPARATOR_S, 0);
  #endif
-@@ -3078,7 +3078,7 @@ unalias_lang (char *lang)
+@@ -3173,7 +3173,7 @@ unalias_lang (char *lang)
    int i;
  
    if (!alias_table)

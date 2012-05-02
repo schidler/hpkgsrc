@@ -1,21 +1,21 @@
-$NetBSD: patch-an,v 1.4 2010/11/02 14:52:24 drochner Exp $
+$NetBSD: patch-an,v 1.6 2012/01/29 17:43:44 drochner Exp $
 
---- gio/Makefile.in.orig	2011-06-05 23:24:50.012058624 +0000
+--- gio/Makefile.in.orig	2012-03-11 23:36:23.036438016 +0000
 +++ gio/Makefile.in
-@@ -584,7 +584,7 @@ infodir = @infodir@
- install_sh = @install_sh@
- libdir = @libdir@
- libexecdir = @libexecdir@
--localedir = @localedir@
-+localedir = /boot/common/data/locale
- localstatedir = @localstatedir@
- mandir = @mandir@
- mkdir_p = @mkdir_p@
-@@ -1905,7 +1905,7 @@ info: info-recursive
+@@ -711,7 +711,7 @@ EXTRA_DIST = strinfo.c gio.symbols gioen
+ 	gschema.dtd $(NULL) $(completion_DATA)
+ TEST_PROGS = 
+ NULL = 
+-SUBDIRS = gdbus-2.0/codegen $(am__append_1) $(am__append_3) \
++SUBDIRS = $(am__append_1) $(am__append_3) \
+ 	$(am__append_7) $(am__append_10) . $(am__append_13) tests
+ @MS_LIB_AVAILABLE_TRUE@@OS_WIN32_AND_DLL_COMPILATION_TRUE@noinst_DATA = gio-2.0.lib
+ @MS_LIB_AVAILABLE_TRUE@@OS_WIN32_AND_DLL_COMPILATION_TRUE@install_ms_lib_cmd = $(INSTALL) gio-2.0.lib $(DESTDIR)$(libdir)
+@@ -3201,7 +3201,7 @@ info: info-recursive
  
  info-am:
  
--install-data-am: install-completionSCRIPTS install-data-local \
+-install-data-am: install-completionDATA install-data-local \
 +install-data-am: install-data-local \
  	install-dist_schemaDATA install-gioincludeHEADERS \
  	install-giounixincludeHEADERS install-giowin32includeHEADERS

@@ -2,7 +2,7 @@ $NetBSD: patch-al,v 1.6 2010/11/02 14:52:24 drochner Exp $
 
 http://bugzilla.gnome.org/show_bug.cgi?id=583329
 
---- glib/tests/convert.c.orig	2010-09-27 18:48:33.060293120 +0000
+--- glib/tests/convert.c.orig	2012-03-11 21:43:29.004718592 +0000
 +++ glib/tests/convert.c
 @@ -76,6 +76,7 @@ test_one_half (void)
    g_assert (strcmp (out, "\xbd") == 0);

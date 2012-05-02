@@ -2,7 +2,7 @@ $NetBSD: patch-ae,v 1.5 2004/04/17 10:37:12 jmmv Exp $
 
 http://bugzilla.gnome.org/show_bug.cgi?id=140329
 
---- gmodule/gmoduleconf.h.in.orig	2010-09-27 18:48:33.035913728 +0000
+--- gmodule/gmoduleconf.h.in.orig	2011-08-16 00:51:30.036700160 +0000
 +++ gmodule/gmoduleconf.h.in
 @@ -45,6 +45,9 @@ extern "C" {
  #if	(@G_MODULE_BROKEN_RTLD_GLOBAL@)

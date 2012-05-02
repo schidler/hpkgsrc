@@ -2,7 +2,7 @@ $NetBSD: patch-cc,v 1.2 2009/05/20 13:07:36 wiz Exp $
 
 http://bugzilla.gnome.org/show_bug.cgi?id=562334
 
---- glib/gbacktrace.h.orig	2010-09-27 18:48:33.009175040 +0000
+--- glib/gbacktrace.h.orig	2012-03-11 21:43:28.019398656 +0000
 +++ glib/gbacktrace.h
 @@ -32,6 +32,9 @@
  #define __G_BACKTRACE_H__

@@ -2,7 +2,7 @@ $NetBSD: patch-ad,v 1.8 2004/04/01 18:13:31 jmmv Exp $
 
 http://bugzilla.gnome.org/show_bug.cgi?id=134119
 
---- gthread/gthread-posix.c.orig	2010-09-27 18:48:34.050331648 +0000
+--- gthread/gthread-posix.c.orig	2012-03-11 21:43:29.043778048 +0000
 +++ gthread/gthread-posix.c
 @@ -97,7 +97,7 @@ static gboolean posix_check_cmd_prio_war
  # error This should not happen. Contact the GLib team.

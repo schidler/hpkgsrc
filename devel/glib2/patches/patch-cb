@@ -1,6 +1,6 @@
 $NetBSD: patch-cb,v 1.2 2008/09/06 11:07:21 obache Exp $
 
---- gio/xdgmime/xdgmime.c.orig	2010-09-27 18:48:33.046399488 +0000
+--- gio/xdgmime/xdgmime.c.orig	2011-08-16 00:51:30.029622272 +0000
 +++ gio/xdgmime/xdgmime.c
 @@ -257,7 +257,7 @@ xdg_run_command_on_dirs (XdgDirectoryFun
  
