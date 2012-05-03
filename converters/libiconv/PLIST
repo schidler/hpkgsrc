@@ -12,10 +12,10 @@ man/man3/iconv_close.3
 man/man3/iconv_open.3
 man/man3/iconv_open_into.3
 man/man3/iconvctl.3
-share/doc/libiconv/iconv.1.html
-share/doc/libiconv/iconv.3.html
-share/doc/libiconv/iconv_close.3.html
-share/doc/libiconv/iconv_open.3.html
-share/doc/libiconv/iconv_open_into.3.html
-share/doc/libiconv/iconvctl.3.html
-share/examples/libiconv/charset.alias
+documentation/doc/libiconv/iconv.1.html
+documentation/doc/libiconv/iconv.3.html
+documentation/doc/libiconv/iconv_close.3.html
+documentation/doc/libiconv/iconv_open.3.html
+documentation/doc/libiconv/iconv_open_into.3.html
+documentation/doc/libiconv/iconvctl.3.html
+documentation/examples/libiconv/charset.alias

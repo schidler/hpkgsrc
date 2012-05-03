@@ -27,7 +27,8 @@ CONFIGURE_ARGS+=	--disable-nls
 .include "../../mk/bsd.prefs.mk"
 
 .if ${OPSYS} == "Haiku"
-CONFIGURE_ARGS+=	--htmldir=${PREFIX}/data/doc/libiconv
+CONFIGURE_ARGS+=	--htmldir=${PREFIX}/documentation/doc/libiconv
+CONFIGURE_ENV+=		gl_cv_func_realpath_works=yes
 .else
 CONFIGURE_ARGS+=	--htmldir=${PREFIX}/share/doc/libiconv
 .endif
@@ -35,7 +36,7 @@ CONFIGURE_ARGS+=	--htmldir=${PREFIX}/share/doc/libiconv
 TEST_TARGET=		check
 
 .if ${OPSYS} == "Haiku"
-EGDIR=			${PREFIX}/data/examples/libiconv
+EGDIR=			${PREFIX}/documentation/examples/libiconv
 .else
 EGDIR=			${PREFIX}/share/examples/libiconv
 .endif
