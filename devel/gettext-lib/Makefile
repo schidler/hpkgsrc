@@ -20,14 +20,9 @@ INSTALL_MAKE_FLAGS=	${MAKE_FLAGS} localedir=${EGDIR}
 
 CONFIGURE_DIRS=		gettext-runtime
 
-LIBS.Haiku+=	-lcharset
 BUILD_DIRS=		gettext-runtime/intl
 .include "../../mk/bsd.prefs.mk"
-.if ${OPSYS} != "Haiku"
-EGDIR=			${PREFIX}/share/examples/gettext
-.else
-EGDIR=			${PREFIX}/data/examples/gettext
-.endif
+EGDIR=			${PREFIX}/documentation/examples/gettext
 LOCALEDIR=		${PREFIX}/${PKGLOCALEDIR}/locale
 
 REQD_DIRS+=		${LOCALEDIR}
