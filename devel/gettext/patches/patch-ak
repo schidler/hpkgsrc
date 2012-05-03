@@ -1,6 +1,6 @@
 $NetBSD: patch-ak,v 1.6 2011/04/12 17:41:28 adam Exp $
 
---- gettext-runtime/intl/Makefile.in.orig	2010-06-06 12:49:57.000000000 +0000
+--- gettext-runtime/intl/Makefile.in.orig	2010-06-06 12:49:57.052428800 +0000
 +++ gettext-runtime/intl/Makefile.in
 @@ -379,7 +379,7 @@ check: all
  # separate library.

@@ -1,6 +1,6 @@
 $NetBSD: patch-ao,v 1.4 2011/04/12 17:41:28 adam Exp $
 
---- gettext-tools/config.h.in.orig	2010-06-06 20:12:24.000000000 +0000
+--- gettext-tools/config.h.in.orig	2010-06-06 20:12:24.062652416 +0000
 +++ gettext-tools/config.h.in
 @@ -1,5 +1,9 @@
  /* config.h.in.  Generated from configure.ac by autoheader.  */

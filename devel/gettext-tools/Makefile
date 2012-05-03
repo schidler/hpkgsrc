@@ -13,8 +13,6 @@ PATCHDIR=	${.CURDIR}/../../devel/gettext/patches
 
 USE_LANGUAGES=		c c++
 USE_PKGLOCALEDIR=	yes
-#USE_PKGDOCDIR=		yes
-USE_PKGDATADIR=		yes
 CONFIGURE_ARGS+=	--without-included-gettext
 CONFIGURE_ARGS+=	--disable-csharp
 CONFIGURE_ARGS+=	--without-git
@@ -24,6 +22,7 @@ CONFIGURE_ENV+=		HAVE_GCJ_IN_PATH=
 CONFIGURE_ENV+=		HAVE_JAVAC_IN_PATH=
 CONFIGURE_ENV+=		HAVE_JIKES_IN_PATH=
 CONFIGURE_ENV+=		ac_cv_libexpat=no
+CONFIGURE_ARGS+=	--docdir=${PREFIX}/documentation/doc/gettext
 
 
 LDFLAGS.AIX+=		-Wl,-brtl
@@ -33,10 +32,6 @@ INFO_FILES=		yes
 
 BROKEN_GETTEXT_DETECTION=	yes
 USE_BUILTIN.gettext=	no # force use of pkgsrc gettext-lib
-
-.if {OPSYS}=="Haiku"
-CONFIGURE_ARGS+=	--docdir=${PREFIX}/doc/gettext
-.endif
 
 
 post-install:

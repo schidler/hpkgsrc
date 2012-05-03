@@ -1,6 +1,6 @@
 $NetBSD$
 
---- gettext-tools/gnulib-lib/binary-io.h.orig	2011-11-17 04:28:46.414973952 +0000
+--- gettext-tools/gnulib-lib/binary-io.h.orig	2010-05-24 09:42:36.012845056 +0000
 +++ gettext-tools/gnulib-lib/binary-io.h
 @@ -31,7 +31,7 @@
  # define O_BINARY _O_BINARY
