@@ -1,0 +1,13 @@
+$NetBSD: patch-ao,v 1.3 2011/12/16 11:05:24 asau Exp $
+
+--- libsmb/samlogon_cache.c.orig	2012-01-29 19:40:43.061865984 +0000
++++ libsmb/samlogon_cache.c
+@@ -212,7 +212,7 @@ struct netr_SamInfo3 *netsamlogon_cache_
+ 	if (!netsamlogon_cache_init()) {
+ 		DEBUG(0,("netsamlogon_cache_get: cannot open %s for write!\n",
+ 			NETSAMLOGON_TDB));
+-		return false;
++		return NULL;
+ 	}
+ 
+ 	/* Prepare key as DOMAIN-SID/USER-RID string */

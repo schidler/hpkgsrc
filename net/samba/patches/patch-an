@@ -1,0 +1,13 @@
+$NetBSD: patch-an,v 1.3 2011/12/16 11:05:24 asau Exp $
+
+--- smbd/ntquotas.c.orig	2012-01-29 19:40:43.063438848 +0000
++++ smbd/ntquotas.c
+@@ -239,7 +239,7 @@ void *init_quota_handle(TALLOC_CTX *mem_
+ 	SMB_NTQUOTA_HANDLE *qt_handle;
+ 
+ 	if (!mem_ctx)
+-		return False;
++		return NULL;
+ 
+ 	qt_handle = TALLOC_ZERO_P(mem_ctx,SMB_NTQUOTA_HANDLE);
+ 	if (qt_handle==NULL) {

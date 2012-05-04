@@ -1,0 +1,14 @@
+$NetBSD: patch-bb,v 1.4 2011/12/16 11:05:24 asau Exp $
+
+--- include/config.h.in.orig	2012-01-29 19:41:29.021495808 +0000
++++ include/config.h.in
+@@ -1587,6 +1587,9 @@
+ /* Defined if struct passwd has pw_age field */
+ #undef HAVE_PASSWD_PW_AGE
+ 
++/* Defined if struct passwd has pw_class field */
++#undef HAVE_PASSWD_PW_CLASS
++
+ /* Defined if struct passwd has pw_comment field */
+ #undef HAVE_PASSWD_PW_COMMENT
+ 
