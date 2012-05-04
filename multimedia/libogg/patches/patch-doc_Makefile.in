@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- doc/Makefile.in.orig	2010-11-01 20:26:58.000000000 +0000
++++ doc/Makefile.in
+@@ -159,7 +159,7 @@ build_os = @build_os@
+ build_vendor = @build_vendor@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = @docdir@
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@

@@ -22,6 +22,8 @@ GCC_REQD+=	2.95.3
 
 PKGCONFIG_OVERRIDE+=	ogg.pc.in
 
+CONFIGURE_ARGS+= --docdir=${PREFIX}/documentation/doc/${DISTNAME}
+
 TEST_TARGET=	check
 
 .include "../../mk/bsd.pkg.mk"
