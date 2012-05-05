@@ -4,5 +4,5 @@ include/expat.h
 include/expat_external.h
 lib/libexpat.la
 man/man1/xmlwf.1
-share/doc/html/expat/reference.html
-share/doc/html/expat/style.css
+documentation/doc/expat/html/reference.html
+documentation/doc/expat/html/style.css

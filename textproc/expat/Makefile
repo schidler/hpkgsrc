@@ -17,7 +17,7 @@ GNU_CONFIGURE=		YES
 USE_LIBTOOL=		YES
 USE_TOOLS+=		gmake
 
-DOCDIR=	${PREFIX}/data/doc/html/expat
+DOCDIR=	${PREFIX}/documentation/doc/expat/html
 
 post-install:
 	${INSTALL_DATA_DIR} ${DESTDIR}${DOCDIR}
