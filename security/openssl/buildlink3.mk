@@ -1,23 +1,28 @@
-# $NetBSD: buildlink3.mk,v 1.42 2010/01/17 12:02:42 wiz Exp $
+# $NetBSD$
+# XXX
+# XXX This file was created automatically using createbuildlink-3.16.
+# XXX After this file has been verified as correct, the comment lines
+# XXX beginning with "XXX" should be removed.  Please do not commit
+# XXX unverified buildlink3.mk files.
+# XXX
+# XXX Packages that only install static libraries or headers should
+# XXX include the following line:
+# XXX
+# XXX	BUILDLINK_DEPMETHOD.openssl?=	build
 
 BUILDLINK_TREE+=	openssl
 
 .if !defined(OPENSSL_BUILDLINK3_MK)
 OPENSSL_BUILDLINK3_MK:=
 
-.  include "../../mk/bsd.fast.prefs.mk"
-
-BUILDLINK_API_DEPENDS.openssl+=	openssl>=0.9.6m
-BUILDLINK_ABI_DEPENDS.openssl+=	openssl>=0.9.8knb1
+BUILDLINK_API_DEPENDS.openssl+=	openssl>=1.0.0enb3
 BUILDLINK_PKGSRCDIR.openssl?=	../../security/openssl
+.endif	# OPENSSL_BUILDLINK3_MK
 
-# Ensure that -lcrypt comes before -lcrypto when linking so that the
-# system crypt() routine is used.
-#
-WRAPPER_REORDER_CMDS+=	reorder:l:crypt:crypto
+WRAPPER_REORDER_CMDS+=  reorder:l:crypt:crypto
 
-SSLBASE=	${BUILDLINK_PREFIX.openssl}
-BUILD_DEFS+=	SSLBASE
+SSLBASE=        ${BUILDLINK_PREFIX.openssl}
+BUILD_DEFS+=    SSLBASE
 
 .endif # OPENSSL_BUILDLINK3_MK
 
