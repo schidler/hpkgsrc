@@ -1,0 +1,12 @@
+$NetBSD: patch-aa,v 1.1.1.1 2004/12/26 15:55:39 wiz Exp $
+
+--- getopt.c.orig	2005-11-07 22:17:01.048234496 +0000
++++ getopt.c
+@@ -44,6 +44,7 @@
+ #include <string.h>
+ #include <unistd.h>
+ #include <ctype.h>
++#include <locale.h>
+ 
+ #if LIBCGETOPT
+ #include <getopt.h>
