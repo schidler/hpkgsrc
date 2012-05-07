@@ -17,7 +17,6 @@ OPENSSL_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.openssl+=	openssl>=1.0.0enb3
 BUILDLINK_PKGSRCDIR.openssl?=	../../security/openssl
-.endif	# OPENSSL_BUILDLINK3_MK
 
 WRAPPER_REORDER_CMDS+=  reorder:l:crypt:crypto
 
