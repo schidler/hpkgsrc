@@ -31,6 +31,7 @@ MAKE_ENV+=		LADD=${LDFLAGS:M*:Q}
 TEST_TARGET=		check
 
 LDFLAGS.Haiku+=		-L${PREFIX}/lib
+LDFLAGS.Haiku+=		-lexpat -lwwwzip -lwwwxml
 PTHREAD_LINKFLAGS=	${PTHREAD_LDFLAGS} ${PTHREAD_LIBS}
 SUBST_CLASSES+=		pthread
 SUBST_STAGE.pthread=	pre-configure

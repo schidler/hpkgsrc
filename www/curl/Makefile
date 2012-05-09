@@ -30,7 +30,7 @@ PKGCONFIG_OVERRIDE=	libcurl.pc.in
 .if ${OPSYS} !="Haiku"
 INSTALLATION_DIRS=	share/doc/curl share/examples/curl
 .else
-INSTALLATION_DIRS=	${PREFIX}/data/doc/curl ${PREFIX}/data/examples/curl
+INSTALLATION_DIRS=	${PREFIX}/documentation/doc/curl ${PREFIX}/documentation/examples/curl
 .endif
 
 .if !empty(PKGSRC_RUN_TEST:M[Yy][Ee][Ss])
@@ -48,12 +48,12 @@ post-install:
 		for _f in MANUAL TheArtOfHttpScripting FAQ			\
 			curl-config.pdf curl.pdf; do				\
 			${INSTALL_DATA} ${WRKSRC}/docs/$${_f}			\
-				 ${DESTDIR}${PREFIX}/data/doc/curl/${_f};	\
+				 ${DESTDIR}${PREFIX}/documentation/doc/curl/${_f};	\
 		done
 		for _f in ${WRKSRC}/docs/examples/*.c				\
 			${WRKSRC}/docs/examples/README; do			\
 			${INSTALL_DATA} $${_f} 					\
-				${DESTDIR}${PREFIX}/data/examples/curl;	\
+				${DESTDIR}${PREFIX}/documentation/examples/curl;	\
 		done
 
 .include "../../devel/libidn/buildlink3.mk"
