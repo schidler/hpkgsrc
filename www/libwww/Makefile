@@ -20,6 +20,7 @@ SITES.libwww-configure-5.4.0nb2.gz=	${MASTER_SITE_LOCAL}
 
 USE_TOOLS+=		automake14 gmake gzcat perl
 USE_LIBTOOL=		YES
+USE_PKGDATADIR= 	NO
 
 GNU_CONFIGURE=		YES
 CONFIGURE_ARGS+=	--with-zlib --without-x
@@ -58,7 +59,8 @@ CONFIGURE_ARGS+=	--with-md5=${SSLBASE:Q}
 .  endif
 .endif
 .if ${OPSYS} == "Haiku"
-PRINT_PLIST_AWK+= gsub(/^${PKGDATADIR}\, "share")
+CONFIGURE_ARGS+=	--datadir=${PREFIX}/data
+#PRINT_PLIST_AWK+= gsub(/^${PKGDATADIR}\, "share")
 .endif
 
 .include "../../devel/zlib/buildlink3.mk"
