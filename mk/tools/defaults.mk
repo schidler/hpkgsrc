@@ -192,6 +192,7 @@ _TOOLS_VARNAME_GNU.true=	TRUE ac_cv_path_TRUE
 _TOOLS_VARNAME_GNU.wish=	WISH
 _TOOLS_VARNAME_GNU.xmkmf=	XMKMF
 _TOOLS_VARNAME_GNU.yacc=	YACC
+_TOOLS_VARNAME_GNU.alert=	ALERT
 
 ######################################################################
 

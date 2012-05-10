@@ -61,7 +61,7 @@ _OPSYS_HAS_JAVA=	no	# Java is not standard
 _OPSYS_HAS_MANZ=	no	# no MANZ for gzipping of man pages
 _OPSYS_HAS_OSSAUDIO=	no	# libossaudio is available
 _OPSYS_PERL_REQD=	no	# no base version of perl required
-_OPSYS_PTHREAD_AUTO=	no	# -lpthread needed for pthreads
+_OPSYS_PTHREAD_AUTO=	yes	# -lpthread no needed for pthreads
 _OPSYS_SHLIB_TYPE=	ELF	# shared lib type
 _PATCH_CAN_BACKUP=	yes	# native patch(1) can make backups
 _PATCH_BACKUP_ARG?= 	-b -V simple -z	# switch to patch(1) for backup suffix
@@ -84,5 +84,7 @@ _OPSYS_CAN_CHECK_SHLIBS=	no # can't use readelf in check/bsd.check-vars.mk
 
 .if defined(GNU_CONFIGURE)
 LIBS.Haiku+=	-lnetwork -lroot
+.if empty(USE_PKGDATADIR:M[nN][oO])
 USE_PKGDATADIR=	yes
+.endif
 .endif
