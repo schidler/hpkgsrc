@@ -40,3 +40,4 @@ SHA1 (patch-cl) = 4ec539a0a104c60e327b27b758d0c4746d924a13
 SHA1 (patch-cm) = e9014f2e941686075c396cbdacfd1000c761f371
 SHA1 (patch-cn) = 9c4cf12ada69ba762efca0573bc6f4fd7a2399eb
 SHA1 (patch-glib_goption.c) = 52faaea8f77ae066ae54d6fa4807ca21e108547c
+SHA1 (patch-glib_gstrfuncs.c) = 9f4906852b1c8a915168b93e2b30b9919818e8f6
