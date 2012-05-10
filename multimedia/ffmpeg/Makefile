@@ -15,6 +15,7 @@ CONFIGURE_ARGS+=	--enable-postproc
 CONFIGURE_ARGS+=	--enable-libvorbis
 CONFIGURE_ARGS+=	--enable-libmp3lame
 CONFIGURE_ARGS+=	--enable-libx264
+CONFIGURE_ARGS+=	--datadir=${PREFIX}/data/ffmpeg
 
 .include "../../mk/bsd.prefs.mk"
 
@@ -23,8 +24,8 @@ INSTALLATION_DIRS=	lib share/examples/ffmpeg share/doc/ffmpeg
 CONF_FILES+=	${PREFIX}/share/examples/ffmpeg/ffserver.conf \
 		${PKG_SYSCONFDIR}/ffserver.conf
 .else
-INSTALLATION_DIRS=	lib data/examples/ffmpeg data/doc/ffmpeg
-CONF_FILES+=	${PREFIX}/data/examples/ffmpeg/ffserver.conf \
+INSTALLATION_DIRS=	lib documentation/examples/ffmpeg documentation/doc/ffmpeg
+CONF_FILES+=	${PREFIX}/documentation/examples/ffmpeg/ffserver.conf \
 		${PKG_SYSCONFDIR}/ffserver.conf
 .endif
 
@@ -44,11 +45,11 @@ post-install:
 		${DESTDIR}${PREFIX}/share/examples/ffmpeg
 .else
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/doc/TODO \
-		${DESTDIR}${PREFIX}/data/doc/ffmpeg
+		${DESTDIR}${PREFIX}/documentation/doc/ffmpeg
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt \
-		${DESTDIR}${PREFIX}/data/doc/ffmpeg
+		${DESTDIR}${PREFIX}/documentation/doc/ffmpeg
 	${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf \
-		${DESTDIR}${PREFIX}/data/examples/ffmpeg
+		${DESTDIR}${PREFIX}/documentation/examples/ffmpeg
 
 .endif
 
