@@ -1,0 +1,14 @@
+$NetBSD$
+
+--- src/sndfile.h.in.orig	2011-06-23 09:13:17.000000000 +0000
++++ src/sndfile.h.in
+@@ -29,6 +29,9 @@
+ /* This is the version 1.0.X header file. */
+ #define	SNDFILE_1
+ 
++#ifdef __HAIKU__
++#include <stdint.h>
++#endif
+ #include <stdio.h>
+ #include <sys/types.h>
+ 

@@ -1,0 +1,19 @@
+$NetBSD$
+
+--- configure.orig	2012-05-12 08:41:17.000000000 +0000
++++ configure
+@@ -18910,12 +18910,12 @@ $as_echo "$as_me: WARNING: Touching file
+ #====================================================================================
+ # Settings for the HTML documentation.
+ 
+-htmldocdir=$prefix/share/doc/libsndfile1-dev/html
++htmldocdir=$prefix/documentation/doc/libsndfile1-dev/html
+ 
+ if test $prefix = "NONE" ; then
+ 	htmldocdir=/usr/local/share/doc/libsndfile1-dev/html
+ else
+-	htmldocdir=$prefix/share/doc/libsndfile1-dev/html
++	htmldocdir=$prefix/documentation/doc/libsndfile1-dev/html
+ 	fi
+ 
+ if test x$enable_bow_docs = "xyes" ; then
