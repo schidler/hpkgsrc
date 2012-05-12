@@ -1,6 +1,6 @@
 $NetBSD: patch-ay,v 1.1 2008/12/29 05:36:40 obache Exp $
 
---- include/share/alloc.h.orig	2007-09-12 05:32:21.000000000 +0000
+--- include/share/alloc.h.orig	2007-09-12 05:32:21.035127296 +0000
 +++ include/share/alloc.h
 @@ -29,8 +29,10 @@
  

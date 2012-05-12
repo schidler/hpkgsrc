@@ -1,7 +1,16 @@
 $NetBSD: patch-ah,v 1.4 2007/11/21 12:47:05 drochner Exp $
 
---- src/libFLAC/Makefile.in.orig	2007-09-16 22:05:12.000000000 +0200
+--- src/libFLAC/Makefile.in.orig	2007-09-16 20:05:12.027787264 +0000
 +++ src/libFLAC/Makefile.in
+@@ -210,7 +210,7 @@ build_alias = @build_alias@
+ build_cpu = @build_cpu@
+ build_os = @build_os@
+ build_vendor = @build_vendor@
+-datadir = @datadir@
++datadir = /boot/common/pkg/data
+ exec_prefix = @exec_prefix@
+ host = @host@
+ host_alias = @host_alias@
 @@ -278,8 +278,9 @@ EXTRA_DIST = \
  @FLaC__HAS_OGG_TRUE@	ogg_helper.c \
  @FLaC__HAS_OGG_TRUE@	ogg_mapping.c

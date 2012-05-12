@@ -1,7 +1,7 @@
 $NetBSD: patch-af,v 1.4 2007/02/22 19:11:26 rillig Exp $
 
---- strip_non_asm_libtool_args.sh.orig	2004-07-29 08:43:23.000000000 +0200
-+++ strip_non_asm_libtool_args.sh	2007-02-22 20:11:41.000000000 +0100
+--- strip_non_asm_libtool_args.sh.orig	2004-07-29 06:43:23.061079552 +0000
++++ strip_non_asm_libtool_args.sh
 @@ -5,15 +5,12 @@
  # Also, on some versions of OS X it tries to pass -fno-common
  # to 'as' which causes problems.

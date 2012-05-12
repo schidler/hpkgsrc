@@ -1,6 +1,6 @@
 $NetBSD: patch-ad,v 1.5 2007/01/07 12:25:05 wiz Exp $
 
---- include/FLAC/ordinals.h.orig	2006-11-20 07:05:18.000000000 +0000
+--- include/FLAC/ordinals.h.orig	2007-02-02 06:41:10.037224448 +0000
 +++ include/FLAC/ordinals.h
 @@ -32,7 +32,7 @@
  #ifndef FLAC__ORDINALS_H

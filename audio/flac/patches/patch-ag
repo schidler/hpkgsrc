@@ -1,6 +1,6 @@
 $NetBSD: patch-ag,v 1.4 2007/11/21 12:47:05 drochner Exp $
 
---- src/libFLAC/Makefile.am.orig	2007-09-14 23:06:17.000000000 +0200
+--- src/libFLAC/Makefile.am.orig	2007-09-14 21:06:17.020185088 +0000
 +++ src/libFLAC/Makefile.am
 @@ -94,9 +94,10 @@ extra_ogg_sources = \
  	ogg_encoder_aspect.c \

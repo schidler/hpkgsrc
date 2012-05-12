@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- doc/html/Makefile.in.orig	2007-09-16 20:04:58.057147392 +0000
++++ doc/html/Makefile.in
+@@ -223,7 +223,7 @@ AUTOMAKE_OPTIONS = foreign
+ 
+ SUBDIRS = ru images
+ 
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)/html
++docdir = $(prefix)/documentation/doc/$(PACKAGE)-$(VERSION)/html
+ 
+ doc_DATA = \
+ 	changelog.html \

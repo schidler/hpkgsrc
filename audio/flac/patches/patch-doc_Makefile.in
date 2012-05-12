@@ -1,0 +1,22 @@
+$NetBSD$
+
+--- doc/Makefile.in.orig	2007-09-16 20:04:58.058720256 +0000
++++ doc/Makefile.in
+@@ -197,7 +197,7 @@ build_alias = @build_alias@
+ build_cpu = @build_cpu@
+ build_os = @build_os@
+ build_vendor = @build_vendor@
+-datadir = @datadir@
++datadir = /boot/common/pkg/data
+ exec_prefix = @exec_prefix@
+ host = @host@
+ host_alias = @host_alias@
+@@ -223,7 +223,7 @@ AUTOMAKE_OPTIONS = foreign
+ 
+ SUBDIRS = . html
+ 
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(prefix)/documentation/doc/$(PACKAGE)-$(VERSION)
+ 
+ doc_DATA = \
+ 	FLAC.tag
