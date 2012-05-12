@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- themes/firefox3/Makefile.am.orig	2011-10-12 18:07:44.035913728 +0000
++++ themes/firefox3/Makefile.am
+@@ -6,7 +6,7 @@ footer.html  \
+ entry.html   \
+ theme.css
+ 
+-cherokeethemesdir = "$(prefix)/share/cherokee/themes/firefox3/"
++cherokeethemesdir = "$(prefix)/data/cherokee/themes/firefox3/"
+ cherokeethemes_DATA = $(THEME)
+ 
+ EXTRA_DIST = $(THEME)

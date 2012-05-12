@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- icons/Makefile.am.orig	2011-10-12 18:07:44.040108032 +0000
++++ icons/Makefile.am
+@@ -3,7 +3,7 @@
+ LICENSE = \
+ README.txt
+ 
+-cherokeeiconsdir = "$(prefix)/share/cherokee/icons/"
++cherokeeiconsdir = "$(prefix)/data/cherokee/icons/"
+ cherokeeicons_DATA = \
+ $(LICENSE) \
+ arrow_turn_left.png \

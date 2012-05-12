@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- themes/plain/Makefile.am.orig	2011-10-12 18:07:44.035389440 +0000
++++ themes/plain/Makefile.am
+@@ -6,7 +6,7 @@ footer.html  \
+ entry.html   \
+ theme.css
+ 
+-cherokeethemesdir = "$(prefix)/share/cherokee/themes/plain/"
++cherokeethemesdir = "$(prefix)/data/cherokee/themes/plain/"
+ cherokeethemes_DATA = $(THEME)
+ 
+ EXTRA_DIST = $(THEME)

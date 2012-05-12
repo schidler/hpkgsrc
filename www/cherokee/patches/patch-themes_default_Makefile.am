@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- themes/default/Makefile.am.orig	2011-10-12 18:07:44.037486592 +0000
++++ themes/default/Makefile.am
+@@ -7,7 +7,7 @@ entry.html   \
+ theme.css    \
+ logo.png
+ 
+-cherokeethemesdir = "$(prefix)/share/cherokee/themes/default/"
++cherokeethemesdir = "$(prefix)/data/cherokee/themes/default/"
+ cherokeethemes_DATA = $(THEME)
+ 
+ EXTRA_DIST = $(THEME)
