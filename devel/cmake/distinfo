@@ -3,8 +3,11 @@ $NetBSD: distinfo,v 1.36 2012/02/16 18:32:25 hans Exp $
 SHA1 (cmake-2.8.7.tar.gz) = d206182b454f4d1ddeb0f11d7d1be8a66e5c2464
 RMD160 (cmake-2.8.7.tar.gz) = 13b188e75152feef4e5692807e3a9e7c34b26fe3
 Size (cmake-2.8.7.tar.gz) = 5667409 bytes
+SHA1 (patch-Modules_CheckForPthreads.c) = a640a7333eb9229e47704d4a182a76707eb12dc8
+SHA1 (patch-Modules_FindThreads.cmake) = a359c981684d4931a47d034cc1c0f8f57a39bf08
 SHA1 (patch-Modules_FindX11.cmake) = a75a6834a376a51a314989b9996a5208cc0682ab
 SHA1 (patch-Modules_Platform_SunOS.cmake) = a873f937568744208fec90f80ebb67ca3150b49a
+SHA1 (patch-Utilities_CMakeLists.txt) = ee5d207acebdbc394facbc10e9aa182e9f1ab3c0
 SHA1 (patch-Utilities_KWIML_CMakeLists.txt) = 4e8cef0eab2ad8cb27cd7076e077bb5e7425a95c
 SHA1 (patch-Utilities_cmcurl_easy.c) = 2e6991f1d8506936a27825a531214e2708559327
 SHA1 (patch-Utilities_cmcurl_multi.c) = c4eae582cf39fdc6233484edf020595485b829a2

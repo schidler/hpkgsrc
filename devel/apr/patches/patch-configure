@@ -1,0 +1,22 @@
+$NetBSD$
+
+--- configure.orig	2012-02-07 23:17:57.000000000 +0000
++++ configure
+@@ -19343,7 +19343,7 @@ if ${apr_cv_pthreads_lib+:} false; then 
+ else
+ 
+   apr_ptc_libs=$LIBS
+-  for lib in -lpthread -lpthreads -lc_r; do
++  for lib in -lpthread -lpthreads -lroot -lc_r; do
+     LIBS="$apr_ptc_libs $lib"
+ 
+ if test "$cross_compiling" = yes; then :
+@@ -19591,7 +19591,7 @@ if ${apr_cv_pthreads_lib+:} false; then 
+ else
+ 
+   apr_ptc_libs=$LIBS
+-  for lib in -lpthread -lpthreads -lc_r; do
++  for lib in -lpthread -lpthreads -lroot -lc_r; do
+     LIBS="$apr_ptc_libs $lib"
+ 
+ if test "$cross_compiling" = yes; then :
