@@ -5,8 +5,7 @@ BUILTIN_PKG:=	terminfo
 BUILTIN_FIND_LIBS:=		terminfo curses tinfo ncurses
 BUILTIN_FIND_FILES_VAR:=	H_TERM
 BUILTIN_FIND_FILES.H_TERM:=	/usr/include/term.h \
-#BUILTIN_FIND_FILES.H_TERM:=	/usr/include/term.h \
-#				/boot/develop/headers/3rdparty/term.h
+				/boot/develop/headers/3rdparty/term.h
 BUILTIN_FIND_GREP.H_TERM:=	tigetstr
 
 .include "buildlink3/bsd.builtin.mk"

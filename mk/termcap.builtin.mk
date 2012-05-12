@@ -4,13 +4,11 @@ BUILTIN_PKG:=	termcap
 
 BUILTIN_FIND_LIBS:=		terminfo curses ncurses termcap termlib tinfo
 BUILTIN_FIND_FILES_VAR:=	H_TERM H_TERMCAP H_TERMLIB
-BUILTIN_FIND_FILES.H_TERM:=	/usr/include/term.h
-#BUILTIN_FIND_FILES.H_TERM:=	/usr/include/term.h \
-#				/boot/develop/headers/3rdparty/term.h
+BUILTIN_FIND_FILES.H_TERM:=	/usr/include/term.h \
+				/boot/develop/headers/3rdparty/term.h
 BUILTIN_FIND_GREP.H_TERM:=	tgetent
-BUILTIN_FIND_FILES.H_TERMCAP:=	/usr/include/termcap.h
-#BUILTIN_FIND_FILES.H_TERMCAP:=	/usr/include/termcap.h\
-#				/boot/develop/headers/3rdparty/termcap.h
+BUILTIN_FIND_FILES.H_TERMCAP:=	/usr/include/termcap.h\
+				/boot/develop/headers/3rdparty/termcap.h
 BUILTIN_FIND_GREP.H_TERMCAP:=	tgetent
 BUILTIN_FIND_FILES.H_TERMLIB:=	/usr/include/termlib.h
 BUILTIN_FIND_GREP.H_TERMLIB:=	tgetent
