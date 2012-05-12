@@ -1,0 +1,9 @@
+$NetBSD: distinfo,v 1.9 2009/10/31 01:29:27 wiz Exp $
+
+SHA1 (gsm-1.0.13.tar.gz) = 668b0a180039a50d379b3d5a22e78da4b1d90afc
+RMD160 (gsm-1.0.13.tar.gz) = e44f70d481328038b3b16a25cc99b7855113db61
+Size (gsm-1.0.13.tar.gz) = 65318 bytes
+SHA1 (patch-aa) = 1bc6584cc74cc664cbc09f13a1d22ca1214cd58e
+SHA1 (patch-ab) = 42a2ebe331ad7fb171fcfbd479c64a11f218d024
+SHA1 (patch-ac) = 6dc329adb9853dfc58d22ad51dacb026e211026a
+SHA1 (patch-src_toast.c) = 551f232c28c7d41b810488affb33c547d3c93dae
