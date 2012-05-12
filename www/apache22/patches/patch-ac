@@ -1,0 +1,12 @@
+$NetBSD: patch-ac,v 1.1.1.1 2006/12/08 23:31:52 xtraeme Exp $
+
+--- configure.orig	2012-01-25 22:26:34.047448064 +0000
++++ configure
+@@ -19129,7 +19129,6 @@ cat >>confdefs.h <<_ACEOF
+ _ACEOF
+ 
+ 
+-perlbin=`$ac_aux_dir/PrintPath perl`
+ if test "x$perlbin" = "x"; then
+     perlbin="/replace/with/path/to/perl/interpreter"
+ fi

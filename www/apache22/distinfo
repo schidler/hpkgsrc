@@ -1,0 +1,18 @@
+$NetBSD: distinfo,v 1.50 2012/02/01 19:53:21 tron Exp $
+
+SHA1 (httpd-2.2.22.tar.bz2) = 766cd0843050a8dfb781e48b976f3ba6ebcf8696
+RMD160 (httpd-2.2.22.tar.bz2) = 237a26a7759e7e1af175900d598e25fb082a4eb9
+Size (httpd-2.2.22.tar.bz2) = 5378934 bytes
+SHA1 (patch-aa) = eff97686dfe36efe20f96df9fe29faae10a252a0
+SHA1 (patch-ab) = c742e82851acf805c11131c583b8c548c05ceec4
+SHA1 (patch-ac) = ae232b2134424cf69854f4d9f786eed235c296ca
+SHA1 (patch-ad) = a4f26a7c63abecab67d408202ca844367314d0b7
+SHA1 (patch-ae) = 8f568275fae7c2e096d41d10929d87938b5f0959
+SHA1 (patch-af) = c33b91f9bd37820d5a1bb4a24a4dff0be2f549b0
+SHA1 (patch-ag) = b3d0ed5d2b5ae2f4ee777515d4daee4ca6175b1b
+SHA1 (patch-ai) = 9dfcb083202d9d6c789ee73f5753f56e9fddbe5a
+SHA1 (patch-al) = 801f9de10a569a7304f64a4bb3fca12d0597fc22
+SHA1 (patch-am) = 987b523b2254ffe1c38dd74e53cec52868c32019
+SHA1 (patch-aw) = 92a8053a820e6297ddf4a9020f50c01ce80bf313
+SHA1 (patch-lock.c) = b262fbe2da587194fdb7eb3b26cd16600d79e0a6
+SHA1 (patch-repos.c) = dee1409a8a0ec3e03ce13f863bd25180ecef3aa2
