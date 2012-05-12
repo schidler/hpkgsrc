@@ -1,3 +1,0 @@
-bootstrap	digest>=20010302	../../pkgtools/digest
-build	libtool-base>=2.2.6bnb3	../../devel/libtool-base
-build	pkg-config>=0.19	../../devel/pkg-config

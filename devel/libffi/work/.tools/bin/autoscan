@@ -1,5 +1,0 @@
-#!/bin/sh
-wrapperlog="${TOOLS_WRAPPER_LOG-/boot/develop/hpkgsrc/devel/libffi/work/.work.log}"
-echo "[*] "/boot/develop/hpkgsrc/devel/libffi/work/.tools/bin/autoscan" $@" >> $wrapperlog
-echo "<.> /boot/develop/hpkgsrc/mk/gnu-config/missing autoscan" >> $wrapperlog
-/boot/develop/hpkgsrc/mk/gnu-config/missing autoscan

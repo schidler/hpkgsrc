@@ -1,5 +1,0 @@
-#!/bin/sh
-wrapperlog="${TOOLS_WRAPPER_LOG-/boot/develop/hpkgsrc/devel/libffi/work/.work.log}"
-echo "[*] "/boot/develop/hpkgsrc/devel/libffi/work/.tools/bin/pkg-config" $@" >> $wrapperlog
-echo "<.> PKG_CONFIG_LIBDIR=/boot/develop/hpkgsrc/devel/libffi/work/.buildlink/lib/pkgconfig:/boot/develop/hpkgsrc/devel/libffi/work/.buildlink/share/pkgconfig PKG_CONFIG_PATH= /boot/common/pkg/bin/pkg-config  "$@"" >> $wrapperlog
-PKG_CONFIG_LIBDIR=/boot/develop/hpkgsrc/devel/libffi/work/.buildlink/lib/pkgconfig:/boot/develop/hpkgsrc/devel/libffi/work/.buildlink/share/pkgconfig PKG_CONFIG_PATH= /boot/common/pkg/bin/pkg-config  "$@"
