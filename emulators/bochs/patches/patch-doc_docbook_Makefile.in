@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- doc/docbook/Makefile.in.orig	2012-01-06 18:50:49.051118080 +0000
++++ doc/docbook/Makefile.in
+@@ -9,7 +9,7 @@
+ 
+ prefix          = @prefix@
+ srcdir          = @srcdir@
+-docdir          = $(prefix)/share/doc/bochs
++docdir          = $(prefix)/documentation/doc/bochs
+ DOCBOOK2HTML = @DOCBOOK2HTML@
+ WGET = @WGET@
+ TARGZ = bochsdoc.tar.gz
