@@ -40,6 +40,10 @@ USE_PKGDATADIR=yes
 
 OVERRIDE_DIRDEPTH.install-sh=	1
 
+.if ${OPSYS} == "Haiku"
+CONFIGURE_ARGS+=	-datarootdir=${PREFIX}/data
+.endif
+
 .if ${OPSYS} == "AIX"
 
 # always build libraries and executables that use the runtime linker.
