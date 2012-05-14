@@ -26,7 +26,7 @@
 ###########################################################################
 ###########################################################################
 
-DISTNAME=	libtool-2.2.6b
+DISTNAME=	libtool-2.4.2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 CATEGORIES=	devel pkgtools
 MASTER_SITES=	${MASTER_SITE_GNU:=libtool/}
