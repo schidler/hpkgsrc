@@ -24,6 +24,8 @@ GNU_CONFIGURE=		YES
 _STRIPFLAG_INSTALL=	# none
 INFO_FILES=		YES
 
+CONFIGURE_ARGS+=	--docdir=${PREFIX}/documentation/doc/automake
+
 # doesn't work because buildlink3 hides scripts
 # from autoconf too well
 #TEST_TARGET=		check

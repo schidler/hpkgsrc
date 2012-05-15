@@ -25,6 +25,8 @@ _STRIPFLAG_INSTALL=	# none
 USE_TOOLS+=		makeinfo perl:run
 INFO_FILES=		# PLIST
 
+CONFIGURE_ARGS+=	= --datadir=${PREFIX}/data
+
 TEST_TARGET=		check
 
 .include "../../mk/bsd.pkg.mk"

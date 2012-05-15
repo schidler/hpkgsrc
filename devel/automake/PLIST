@@ -125,4 +125,4 @@ share/automake-${PKG_DIR_VERSION}/py-compile
 share/automake-${PKG_DIR_VERSION}/symlink-tree
 share/automake-${PKG_DIR_VERSION}/texinfo.tex
 share/automake-${PKG_DIR_VERSION}/ylwrap
-share/doc/automake/amhello-1.0.tar.gz
+documentation/doc/automake/amhello-1.0.tar.gz
