@@ -1,6 +1,6 @@
 $NetBSD: patch-aj,v 1.6 2011/12/16 22:32:06 asau Exp $
 
---- smbd/dir.c.orig	2012-01-29 19:40:43.004456448 +0000
+--- smbd/dir.c.orig	2012-01-29 19:40:43.006553600 +0000
 +++ smbd/dir.c
 @@ -200,7 +200,7 @@ static struct dptr_struct *dptr_get(stru
  					      dptr->wcard, dptr->attr))) {

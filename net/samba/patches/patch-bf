@@ -1,6 +1,6 @@
 $NetBSD: patch-bf,v 1.5 2011/12/16 11:05:24 asau Exp $
 
---- Makefile.in.orig	2012-01-29 19:40:43.033554432 +0000
+--- Makefile.in.orig	2012-01-29 19:40:43.031457280 +0000
 +++ Makefile.in
 @@ -47,7 +47,7 @@ PICFLAG=@PICFLAG@
  

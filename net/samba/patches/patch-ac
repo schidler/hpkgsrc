@@ -1,6 +1,6 @@
 $NetBSD: patch-ac,v 1.14 2011/12/16 11:05:24 asau Exp $
 
---- libads/kerberos.c.orig	2012-01-29 19:40:43.011796480 +0000
+--- libads/kerberos.c.orig	2012-01-29 19:40:43.006029312 +0000
 +++ libads/kerberos.c
 @@ -411,7 +411,7 @@ char* kerberos_secrets_fetch_des_salt( v
  

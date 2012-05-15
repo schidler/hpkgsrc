@@ -1,6 +1,6 @@
 $NetBSD: patch-au,v 1.12 2011/12/16 11:05:24 asau Exp $
 
---- script/installswat.sh.orig	2012-01-29 19:40:43.035389440 +0000
+--- script/installswat.sh.orig	2012-01-29 19:40:43.033292288 +0000
 +++ script/installswat.sh
 @@ -140,7 +140,7 @@ if [ -d $SRCDIR../docs/htmldocs/ ]; then
        

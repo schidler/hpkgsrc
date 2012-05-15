@@ -1,6 +1,6 @@
 $NetBSD: patch-at,v 1.15 2011/12/16 11:05:24 asau Exp $
 
---- script/installscripts.sh.orig	2012-01-29 19:40:43.039059456 +0000
+--- script/installscripts.sh.orig	2012-01-29 19:40:43.036962304 +0000
 +++ script/installscripts.sh
 @@ -12,7 +12,7 @@ echo Installing scripts in $BINDIR
  

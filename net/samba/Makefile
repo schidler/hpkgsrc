@@ -67,6 +67,7 @@ CONFIGURE_ARGS+=	--with-statedir=${SAMBA_STATEDIR}
 CONFIGURE_ARGS+=	--localstatedir=${SAMBA_VARDIR}
 CONFIGURE_ARGS+=	--with-mandir=${PREFIX}/${PKGMANDIR}
 CONFIGURE_ARGS+=	--with-swatdir=${PREFIX}/data/samba/swat
+CONFIGURE_ARGS+=	--with-localedir=${PREFIX}/data/locale
 CONFIGURE_ARGS+=	--with-included-popt
 CONFIGURE_ARGS+=	--datarootdir=${PREFIX}/data
 CONFIGURE_ARGS+=	--sbindir=${PREFIX}/bin

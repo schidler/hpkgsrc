@@ -1,6 +1,6 @@
 $NetBSD: patch-ag,v 1.9 2011/12/16 22:32:06 asau Exp $
 
---- registry/regfio.c.orig	2012-01-29 19:40:43.041680896 +0000
+--- registry/regfio.c.orig	2012-01-29 19:40:43.039845888 +0000
 +++ registry/regfio.c
 @@ -521,7 +521,7 @@ static REGF_HBIN* read_hbin_block( REGF_
  	/* remember that the record_size is in the 4 bytes preceeding the record itself */

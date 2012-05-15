@@ -5,7 +5,7 @@ take from here:
 
 https://bugzilla.samba.org/show_bug.cgi?id=8139
 
---- client/client.c.orig	2012-01-29 19:40:43.014680064 +0000
+--- client/client.c.orig	2012-01-29 19:40:43.009437184 +0000
 +++ client/client.c
 @@ -4844,12 +4844,16 @@ static void readline_callback(void)
  		memset(garbage, 0xf0, sizeof(garbage));

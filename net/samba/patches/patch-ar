@@ -1,6 +1,6 @@
 $NetBSD: patch-ar,v 1.4 2011/12/16 11:05:24 asau Exp $
 
---- script/installman.sh.orig	2012-01-29 19:40:43.034603008 +0000
+--- script/installman.sh.orig	2012-01-29 19:40:43.032243712 +0000
 +++ script/installman.sh
 @@ -33,7 +33,7 @@ for lang in $langs; do
      langdir=$MANDIR/$lang

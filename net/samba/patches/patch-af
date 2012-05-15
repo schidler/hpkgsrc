@@ -1,6 +1,6 @@
 $NetBSD: patch-af,v 1.10 2011/12/16 22:32:06 asau Exp $
 
---- configure.orig	2012-01-29 19:41:30.041156608 +0000
+--- configure.orig	2012-01-29 19:41:30.008388608 +0000
 +++ configure
 @@ -19083,7 +19083,7 @@ $as_echo_n "checking ability to build sh
  

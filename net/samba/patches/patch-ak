@@ -1,6 +1,6 @@
 $NetBSD: patch-ak,v 1.5 2011/12/16 11:05:24 asau Exp $
 
---- intl/lang_tdb.c.orig	2012-01-29 19:40:43.061603840 +0000
+--- intl/lang_tdb.c.orig	2012-01-29 19:40:43.062128128 +0000
 +++ intl/lang_tdb.c
 @@ -142,7 +142,7 @@ bool lang_tdb_init(const char *lang)
  		goto done;
