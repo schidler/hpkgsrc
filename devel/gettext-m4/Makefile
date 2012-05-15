@@ -10,12 +10,12 @@ LICENSE=	gnu-gpl-v2
 NO_BUILD=		yes
 NO_CONFIGURE=		yes
 
-INSTALLATION_DIRS+=	share/aclocal
+INSTALLATION_DIRS+=	data/aclocal
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/gettext-runtime/m4/*.m4 \
-		${DESTDIR}${PREFIX}/share/aclocal
+		${DESTDIR}${PREFIX}/data/aclocal
 	${INSTALL_DATA} ${WRKSRC}/gettext-tools/m4/*.m4 \
-		${DESTDIR}${PREFIX}/share/aclocal
+		${DESTDIR}${PREFIX}/data/aclocal
 
 .include "../../mk/bsd.pkg.mk"
