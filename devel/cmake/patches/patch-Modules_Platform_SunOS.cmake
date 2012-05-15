@@ -5,8 +5,8 @@ unless we are really using a gcc lacking libstdc++.
 
 See http://public.kitware.com/pipermail/cmake/2011-July/045300.html
 
---- Modules/Platform/SunOS.cmake.orig	2011-10-04 18:09:24.000000000 +0200
-+++ Modules/Platform/SunOS.cmake	2012-01-11 17:50:43.768105308 +0100
+--- Modules/Platform/SunOS.cmake.orig	2011-12-30 16:49:56.034340864 +0000
++++ Modules/Platform/SunOS.cmake
 @@ -5,12 +5,20 @@ IF(CMAKE_SYSTEM MATCHES "SunOS-4.*")
     SET(CMAKE_SHARED_LIBRARY_RUNTIME_C_FLAG_SEP ":")  
  ENDIF(CMAKE_SYSTEM MATCHES "SunOS-4.*")

@@ -1,6 +1,6 @@
 $NetBSD: patch-Modules_FindX11.cmake,v 1.2 2011/10/15 07:24:31 adam Exp $
 
---- Modules/FindX11.cmake.orig	2011-10-04 16:09:24.000000000 +0000
+--- Modules/FindX11.cmake.orig	2011-12-30 16:49:56.017825792 +0000
 +++ Modules/FindX11.cmake
 @@ -60,7 +60,8 @@ IF (UNIX)
    SET(CMAKE_FIND_FRAMEWORK_SAVE ${CMAKE_FIND_FRAMEWORK})

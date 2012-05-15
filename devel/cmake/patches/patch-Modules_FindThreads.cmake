@@ -1,6 +1,6 @@
 $NetBSD$
 
---- Modules/FindThreads.cmake.orig	2011-10-04 16:09:24.045350912 +0000
+--- Modules/FindThreads.cmake.orig	2011-12-30 16:49:56.016777216 +0000
 +++ Modules/FindThreads.cmake
 @@ -46,9 +46,17 @@ ELSE()
      IF(NOT THREADS_HAVE_PTHREAD_ARG)
