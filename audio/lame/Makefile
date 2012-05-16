@@ -38,7 +38,7 @@ BUILD_DEPENDS+=		nasm>=0.98:../../devel/nasm
 CONFIGURE_ARGS+=	--enable-nasm
 .endif
 
-CONFIGURE_ARGS+=	--docdir=${PREFIX}/documentation/doc/lame
+CONFIGURE_ARGS+=	--docdir=${PREFIX}/documentation/doc
 
 .if !empty(PKGSRC_COMPILER:Msunpro)
 CONFIGURE_ENV+=		ac_cv_header_xmmintrin_h=no
