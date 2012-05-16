@@ -18,11 +18,7 @@ BUILD_DIRS=	src
 USE_BSD_MAKEFILE=	yes
 MAKE_ENV+=		MKCATPAGES=no
 
-.if empty(MACHINE_PLATFORM:MHaiku)
-INSTALLATION_DIRS=	bin data/doc/f2c ${PKGMANDIR}/man1
-.else
-INSTALLATION_DIRS=	bin share/doc/f2c ${PKGMANDIR}/man1
-.endif
+INSTALLATION_DIRS=	bin documentation/doc/f2c ${PKGMANDIR}/man1
 
 .include "../../mk/bsd.prefs.mk"
 
@@ -32,10 +28,6 @@ INSTALLATION_DIRS=	bin share/doc/f2c ${PKGMANDIR}/man1
 F2C_F77_CPP?=	/usr/bin/cpp
 .else
 F2C_F77_CPP=	${CPP}
-.endif
-
-.if ${OPSYS} == "Haiku"
-PLIST_SRC=		${PKGDIR}/PLIST.Haiku
 .endif
 
 post-extract:
@@ -56,11 +48,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/f2c-f77 ${DESTDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/f2c.1t ${DESTDIR}${PREFIX}/${PKGMANDIR}/man1/f2c.1
 .for f in changes f2c.ps f2c.pdf
-.if 	empty(MACHINE_PLATFORM:MHaiku)
-	${INSTALL_DATA} ${WRKSRC}/$f ${DESTDIR}${PREFIX}/data/doc/f2c/$f
-.else
-	${INSTALL_DATA} ${WRKSRC}/$f ${DESTDIR}${PREFIX}/share/doc/f2c/$f
-.endif
+	${INSTALL_DATA} ${WRKSRC}/$f ${DESTDIR}${PREFIX}/documentation/doc/f2c/$f
 .endfor
 
 # Note.  the distfile is kept locally because it is

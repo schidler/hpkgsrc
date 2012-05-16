@@ -1,7 +1,0 @@
-@comment $NetBSD: PLIST,v 1.7 2009/12/28 11:42:19 tnn Exp $
-bin/f2c
-bin/f2c-f77
-man/man1/f2c.1
-data/doc/f2c/changes
-data/doc/f2c/f2c.pdf
-data/doc/f2c/f2c.ps
