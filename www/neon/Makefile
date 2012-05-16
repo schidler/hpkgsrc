@@ -20,7 +20,7 @@ CONFIGURE_ARGS+=	--enable-shared
 CONFIGURE_ARGS+=	--with-expat
 CONFIGURE_ARGS+=	--with-ssl=yes
 
-LIBS.Haiku+=	-lnetwork
+CONFIGURE_ARGS+=	--docdir=${PREFIX}/documentation
 
 PKGCONFIG_OVERRIDE=	neon.pc.in
 TEST_TARGET=		check

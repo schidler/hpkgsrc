@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- Makefile.in.orig	2009-09-04 07:36:26.000000000 +0000
++++ Makefile.in
+@@ -22,7 +22,7 @@ man1dir = $(mandir)/man1
+ man3dir = $(mandir)/man3
+ datarootdir = @datarootdir@
+ datadir = @datadir@
+-docdir = $(datadir)/doc/neon-@NEON_VERSION@
++docdir = @docdir@/doc/neon-@NEON_VERSION@
+ includedir = @includedir@
+ neonincludes = $(includedir)/neon
+ pkgconfigdir = $(libdir)/pkgconfig

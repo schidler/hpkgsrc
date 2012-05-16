@@ -1,6 +1,6 @@
 $NetBSD: patch-ab,v 1.2 2009/09/14 16:48:44 tron Exp $
 
---- src/ne_socket.c.orig	2010-01-11 10:36:14.029097984 +0000
+--- src/ne_socket.c.orig	2010-01-11 10:36:14.046399488 +0000
 +++ src/ne_socket.c
 @@ -1341,6 +1341,9 @@ static int do_bind(int fd, int peer_fami
          in6.sin6_port = htons(port);
