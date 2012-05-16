@@ -1,6 +1,6 @@
 $NetBSD: patch-ab,v 1.7 2009/07/22 21:21:33 wiz Exp $
 
---- doc/Makefile.in.orig	2009-07-20 05:22:29.017825792 +0000
+--- doc/Makefile.in.orig	2009-07-20 05:22:29.022282240 +0000
 +++ doc/Makefile.in
 @@ -8,15 +8,16 @@ prefix		= @prefix@
  exec_prefix	= @exec_prefix@
@@ -9,7 +9,7 @@ $NetBSD: patch-ab,v 1.7 2009/07/22 21:21:33 wiz Exp $
 -docdir		= $(prefix)/doc/nasm
 -infodir		= @infodir@
  datarootdir	= @datarootdir@
-+docdir		= $(datarootdir)/doc/nasm
++docdir		= @docdir@/doc/nasm
 +htmldocdir	= $(docdir)/html
 +infodir		= @infodir@
  

@@ -24,6 +24,8 @@ INFO_FILES=		yes
 BUILD_TARGET=		everything
 INSTALL_TARGET=		install_everything
 
+CONFIGURE_ARGS+= --docdir=${PREFIX}/documentation
+
 INSTALL_ENV+=	INSTALLROOT=${DESTDIR}
 
 MAKE_ENV+=	PERL5=${PERL5:Q}
