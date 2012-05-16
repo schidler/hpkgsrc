@@ -26,8 +26,11 @@ CONFLICTS=	lzma-[0-9]* lzma-utils-[0-9]* lzmalib-[0-9]*
 CONFIGURE_ARGS+=	--disable-assembler
 .endif
 
+CONFIGURE_ARGS+=	--docdir=${PREFIX}/documentation/doc/xz
+
 LDFLAGS.Haiku+=	-lgetopt
 
 .include "../../devel/gettext-lib/buildlink3.mk"
+.include "../../devel/libgetopt/buildlink3.mk"
 .include "../../mk/pthread.buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
