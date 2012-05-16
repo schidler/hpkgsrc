@@ -34,6 +34,10 @@ CONFIGURE_ENV+=		glib_cv_va_copy=no
 CONFIGURE_ARGS+=	--cache-file=/dev/null
 .endif
 
+.if ${OPSYS} == "Haiku"
+CONFIGURE_ARGS+=	--docdir=${PREFIX}/documentation/doc/pkg-config
+.endif
+
 .if ${OPSYS} == "NetBSD"
 CONFIGURE_ARGS+=	glib_cv_sane_realloc=yes glib_cv_uscore=no
 CONFIGURE_ARGS+=	glib_cv_rtldglobal_broken=no
