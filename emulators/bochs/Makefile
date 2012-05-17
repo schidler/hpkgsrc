@@ -29,7 +29,7 @@ MAKE_ENV+=		GZIP_CMD=${GZIP_CMD:Q}
 MAKE_ENV+=		GUNZIP_CMD=${GUNZIP_CMD:Q}
 MAKE_ENV+=		WGET=${FETCH_CMD:Q}
 
-PLIST_VARS+=		debug notiny nox11 plugins x11
+PLIST_VARS+=		debug notiny nox11 plugins x11 sdl
 
 PKG_OPTIONS_VAR=	PKG_OPTIONS.bochs
 PKG_SUPPORTED_OPTIONS+=	debug tiny x11 sdl
@@ -80,6 +80,7 @@ CONFIGURE_ARGS+=	--enable-plugins
 .  endif
 
 .  if !empty(PKG_OPTIONS:Msdl)
+PLIST.sdl=		yes
 CONFIGURE_ARGS+=	--with-sdl
 .include "../../devel/SDL/buildlink3.mk"
 .  endif

@@ -34,6 +34,7 @@ ${PLIST.notiny}${PLIST.plugins}lib/bochs/plugins/libbx_usb_uhci.la
 ${PLIST.notiny}${PLIST.plugins}lib/bochs/plugins/libbx_vga.la
 ${PLIST.notiny}${PLIST.plugins}${PLIST.x11}lib/bochs/plugins/libbx_x.la
 ${PLIST.notiny}${PLIST.plugins}${PLIST.nox11}lib/bochs/plugins/libbx_term.la
+${PLIST.notiny}${PLIST.plugins}${PLIST.sdl}lib/bochs/plugins/libbx_sdl.la
 man/man1/bochs-dlx.1
 man/man1/bochs.1
 man/man1/bxcommit.1
