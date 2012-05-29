@@ -1,0 +1,7 @@
+$NetBSD$
+
+SHA1 (qscite-r211.tar.gz) = f29dc306a0e75e19d0dc48290596d93a5e915471
+RMD160 (qscite-r211.tar.gz) = b76b2b2115eec779a00853e3704ea661b86bf825
+Size (qscite-r211.tar.gz) = 65660 bytes
+SHA1 (patch-qscite.pro) = f1427269923824eaa884d07095e1db4b641d8576
+SHA1 (patch-src_qterminal__pty.cpp) = 12cb95d25bdb021d7af930e8fef6c61393d2a657
