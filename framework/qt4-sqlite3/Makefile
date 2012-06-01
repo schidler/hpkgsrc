@@ -1,9 +1,9 @@
-# $NetBSD: Makefile,v 1.25 2012/03/03 00:14:20 wiz Exp $
+# $NetBSD: Makefile,v 1.27 2012/04/27 12:32:08 obache Exp $
 
-.include "../../x11/qt4-libs/Makefile.common"
+.include "../../framework/qt4-libs/Makefile.common"
 
 PKGNAME=	qt4-sqlite3-${QTVERSION}
-PKGREVISION=	2
+PKGREVISION=	1
 COMMENT=	QT sqlite3 driver
 
 CONFIGURE_ARGS+=	-I${QTDIR}/include
@@ -25,7 +25,7 @@ do-install:
 	${LIBTOOL} --mode=install ${INSTALL_LIB} ${WRKSRC}/plugins/sqldrivers/libqsqlite.la \
 		${DESTDIR}${SQLDRVDIR}
 
-.include "../../x11/qt4-libs/buildlink3.mk"
-.include "../../x11/qt4-tools/buildlink3.mk"
+.include "../../framework/qt4-libs/buildlink3.mk"
+.include "../../framework/qt4-tools/buildlink3.mk"
 .include "../../databases/sqlite3/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
