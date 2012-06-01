@@ -1,0 +1,7 @@
+$NetBSD$
+
+SHA1 (htmledit.tar.bz2) = 8d2b9d389c802febac48031e9f73ecd5e479abf6
+RMD160 (htmledit.tar.bz2) = ff898a927608b209de6e7cc87aa256774297e747
+Size (htmledit.tar.bz2) = 672113 bytes
+SHA1 (patch-libhtml_include_platform.h) = c6e49ab5f96f171bb04a5b60dc46eac479f5c713
+SHA1 (patch-src_html__loader.h) = 9dc80217d15fb47cde538fd68fba5b3da5d7dd1b
