@@ -78,6 +78,8 @@ BUILDLINK_CPPFLAGS.pthread+=	-D_THREAD_SAFE
 #
 .    if ${OPSYS} == "NetBSD"
 BUILDLINK_LIBS.pthread=		# empty
+.    elif ${OPSYS} == "Haiku"
+BUILDLINK_LIBS.pthread=		-lroot
 .    elif !empty(BUILTIN_LIB_FOUND.pthread:M[yY][eE][sS])
 BUILDLINK_LIBS.pthread=		-lpthread
 .      if !empty(BUILTIN_LIB_FOUND.rt:M[yY][eE][sS])
