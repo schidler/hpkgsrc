@@ -1,15 +1,7 @@
 $NetBSD$
 
---- src/gui/text/qfontengine_p.h.orig	2011-12-08 05:06:02.060555264 +0000
+--- src/gui/text/qfontengine_p.h.orig	2012-03-14 14:01:14.008388608 +0000
 +++ src/gui/text/qfontengine_p.h
-@@ -1,6 +1,6 @@
- /****************************************************************************
- **
--** Copyright (C) 2011 Nokia Corporation and/or its subsidiary(-ies).
-+** Copyright (C) 2012 Nokia Corporation and/or its subsidiary(-ies).
- ** All rights reserved.
- ** Contact: Nokia Corporation (qt-info@nokia.com)
- **
 @@ -180,7 +180,7 @@ public:
      virtual void recalcAdvances(QGlyphLayout *, QTextEngine::ShaperFlags) const {}
      virtual void doKerning(QGlyphLayout *, QTextEngine::ShaperFlags) const;

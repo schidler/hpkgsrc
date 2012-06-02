@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/util/util.pri.orig	2011-12-08 05:06:02.025165824 +0000
+--- src/gui/util/util.pri.orig	2012-03-14 14:01:15.003145728 +0000
 +++ src/gui/util/util.pri
 @@ -59,3 +59,10 @@ symbian {
  

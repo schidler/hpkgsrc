@@ -1,16 +1,8 @@
 $NetBSD: patch-ad,v 1.13 2012/01/12 22:59:58 adam Exp $
 
---- src/corelib/global/qglobal.h.orig	2011-12-08 05:06:03.062914560 +0000
+--- src/corelib/global/qglobal.h.orig	2012-03-14 14:01:18.015728640 +0000
 +++ src/corelib/global/qglobal.h
-@@ -163,6 +163,7 @@ namespace QT_NAMESPACE {}
-      NETBSD   - NetBSD
-      OPENBSD  - OpenBSD
-      BSDI     - BSD/OS
-+     INTERIX  - Interix
-      IRIX     - SGI Irix
-      OSF      - HP Tru64 UNIX
-      SCO      - SCO OpenServer 5
-@@ -176,6 +177,7 @@ namespace QT_NAMESPACE {}
+@@ -176,6 +176,7 @@ namespace QT_NAMESPACE {}
       LYNX     - LynxOS
       BSD4     - Any BSD 4.4 system
       UNIX     - Any UNIX BSD/SYSV system
@@ -18,17 +10,7 @@ $NetBSD: patch-ad,v 1.13 2012/01/12 22:59:58 adam Exp $
  */
  
  #if defined(__APPLE__) && (defined(__GNUC__) || defined(__xlC__) || defined(__xlc__))
-@@ -229,6 +231,9 @@ namespace QT_NAMESPACE {}
- #elif defined(__NetBSD__)
- #  define Q_OS_NETBSD
- #  define Q_OS_BSD4
-+#elif defined(__INTERIX)
-+#  define Q_OS_INTERIX
-+#  define Q_OS_BSD4
- #elif defined(__OpenBSD__)
- #  define Q_OS_OPENBSD
- #  define Q_OS_BSD4
-@@ -261,6 +266,8 @@ namespace QT_NAMESPACE {}
+@@ -261,6 +262,8 @@ namespace QT_NAMESPACE {}
  #  define Q_OS_INTEGRITY
  #elif defined(VXWORKS) /* there is no "real" VxWorks define - this has to be set in the mkspec! */
  #  define Q_OS_VXWORKS
@@ -37,7 +19,7 @@ $NetBSD: patch-ad,v 1.13 2012/01/12 22:59:58 adam Exp $
  #elif defined(__MAKEDEPEND__)
  #else
  #  error "Qt has not been ported to this OS - talk to qt-bugs@trolltech.com"
-@@ -857,6 +864,7 @@ namespace QT_NAMESPACE {}
+@@ -857,6 +860,7 @@ namespace QT_NAMESPACE {}
       S60      - Symbian S60
       PM       - unsupported
       WIN16    - unsupported
@@ -45,7 +27,7 @@ $NetBSD: patch-ad,v 1.13 2012/01/12 22:59:58 adam Exp $
  */
  
  #if defined(Q_OS_MSDOS)
-@@ -864,6 +872,8 @@ namespace QT_NAMESPACE {}
+@@ -864,6 +868,8 @@ namespace QT_NAMESPACE {}
  #  error "Qt requires Win32 and does not work with Windows 3.x"
  #elif defined(_WIN32_X11_)
  #  define Q_WS_X11
@@ -54,7 +36,7 @@ $NetBSD: patch-ad,v 1.13 2012/01/12 22:59:58 adam Exp $
  #elif defined(Q_OS_WIN32)
  #  define Q_WS_WIN32
  #  if defined(Q_OS_WIN64)
-@@ -896,6 +906,10 @@ namespace QT_NAMESPACE {}
+@@ -896,6 +902,10 @@ namespace QT_NAMESPACE {}
  #  endif
  #endif
  

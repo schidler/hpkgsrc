@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/image/qpixmap.h.orig	2011-12-08 05:06:02.036175872 +0000
+--- src/gui/image/qpixmap.h.orig	2012-03-14 14:01:16.040632320 +0000
 +++ src/gui/image/qpixmap.h
 @@ -57,6 +57,10 @@ class CFbsBitmap;
  class RSgImage;

@@ -1,6 +1,6 @@
-$NetBSD: patch-aa,v 1.13 2012/01/12 22:59:58 adam Exp $
+$NetBSD: patch-aa,v 1.14 2012/04/09 09:12:49 adam Exp $
 
---- qmake/generators/unix/unixmake2.cpp.orig	2011-12-08 05:06:02.034078720 +0000
+--- qmake/generators/unix/unixmake2.cpp.orig	2012-03-14 14:01:12.008650752 +0000
 +++ qmake/generators/unix/unixmake2.cpp
 @@ -244,6 +244,8 @@ UnixMakefileGenerator::writeMakeParts(QT
          if(!project->isEmpty("QMAKE_BUNDLE")) {

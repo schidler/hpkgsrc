@@ -1,6 +1,6 @@
 $NetBSD: patch-af,v 1.9 2012/01/12 22:59:58 adam Exp $
 
---- qmake/Makefile.unix.orig	2011-12-08 05:06:02.027525120 +0000
+--- qmake/Makefile.unix.orig	2012-03-14 14:01:12.001835008 +0000
 +++ qmake/Makefile.unix
 @@ -3,7 +3,7 @@ BUILD_PATH = @BUILD_PATH@
  QTOBJS = @QMAKE_QTOBJS@

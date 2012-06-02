@@ -1,8 +1,8 @@
 $NetBSD$
 
---- src/gui/kernel/kernel.pri.orig	2011-12-08 05:06:02.022282240 +0000
+--- src/gui/kernel/kernel.pri.orig	2012-03-14 14:01:16.020971520 +0000
 +++ src/gui/kernel/kernel.pri
-@@ -327,3 +327,18 @@ wince*: {
+@@ -327,3 +327,19 @@ wince*: {
                  ../corelib/kernel/qfunctions_wince.cpp \
                  kernel/qguifunctions_wince.cpp
  }
@@ -21,3 +21,4 @@ $NetBSD$
 +		kernel/qsound_haiku.cpp \
 +		kernel/qeventdispatcher_haiku.cpp
 +}
++

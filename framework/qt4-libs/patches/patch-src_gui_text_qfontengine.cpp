@@ -1,16 +1,8 @@
 $NetBSD$
 
---- src/gui/text/qfontengine.cpp.orig	2011-12-08 05:06:02.048496640 +0000
+--- src/gui/text/qfontengine.cpp.orig	2012-03-14 14:01:14.012845056 +0000
 +++ src/gui/text/qfontengine.cpp
-@@ -1,6 +1,6 @@
- /****************************************************************************
- **
--** Copyright (C) 2011 Nokia Corporation and/or its subsidiary(-ies).
-+** Copyright (C) 2012 Nokia Corporation and/or its subsidiary(-ies).
- ** All rights reserved.
- ** Contact: Nokia Corporation (qt-info@nokia.com)
- **
-@@ -756,7 +756,7 @@ QFontEngineGlyphCache *QFontEngine::glyp
+@@ -762,7 +762,7 @@ QFontEngineGlyphCache *QFontEngine::glyp
      return 0;
  }
  

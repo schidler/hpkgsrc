@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/painting/qwindowsurface_raster.cpp.orig	2011-12-08 05:06:02.043253760 +0000
+--- src/gui/painting/qwindowsurface_raster.cpp.orig	2012-03-14 14:01:15.020709376 +0000
 +++ src/gui/painting/qwindowsurface_raster.cpp
 @@ -69,6 +69,10 @@
  #include <QToolBar>

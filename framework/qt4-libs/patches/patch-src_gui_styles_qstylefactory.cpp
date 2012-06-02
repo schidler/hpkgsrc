@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/styles/qstylefactory.cpp.orig	2011-12-08 05:06:02.049545216 +0000
+--- src/gui/styles/qstylefactory.cpp.orig	2012-03-14 14:01:15.049807360 +0000
 +++ src/gui/styles/qstylefactory.cpp
 @@ -54,6 +54,9 @@
  #ifndef QT_NO_STYLE_CLEANLOOKS

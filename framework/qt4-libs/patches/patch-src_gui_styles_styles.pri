@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/styles/styles.pri.orig	2011-12-08 05:06:02.028049408 +0000
+--- src/gui/styles/styles.pri.orig	2012-03-14 14:01:15.041943040 +0000
 +++ src/gui/styles/styles.pri
 @@ -184,3 +184,11 @@ contains( styles, s60 ):contains(QT_CONF
      }

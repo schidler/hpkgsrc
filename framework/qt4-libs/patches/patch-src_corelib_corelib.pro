@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/corelib/corelib.pro.orig	2011-12-08 05:06:03.046399488 +0000
+--- src/corelib/corelib.pro.orig	2012-03-14 14:01:18.018874368 +0000
 +++ src/corelib/corelib.pro
 @@ -29,6 +29,7 @@ qpa {
  }
@@ -16,5 +16,5 @@ $NetBSD$
  }
 +
 +haiku: {
-+	LIBS_PRIVATE += -llocale -lbe
++	LIBS_PRIVATE += -lbe
 +}

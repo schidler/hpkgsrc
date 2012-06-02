@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/image/qpixmapdatafactory.cpp.orig	2011-12-08 05:06:02.038535168 +0000
+--- src/gui/image/qpixmapdatafactory.cpp.orig	2012-03-14 14:01:16.036700160 +0000
 +++ src/gui/image/qpixmapdatafactory.cpp
 @@ -59,6 +59,9 @@
  #ifdef Q_OS_SYMBIAN
@@ -12,14 +12,12 @@ $NetBSD$
  
  #include "private/qapplication_p.h"
  #include "private/qgraphicssystem_p.h"
-@@ -88,7 +91,9 @@ QPixmapData* QSimplePixmapDataFactory::c
- #elif defined(Q_WS_QPA)
+@@ -89,6 +92,8 @@ QPixmapData* QSimplePixmapDataFactory::c
      return new QRasterPixmapData(type);
  #elif defined(Q_OS_SYMBIAN)
--    return new QSymbianRasterPixmapData(type);    
-+    return new QSymbianRasterPixmapData(type);
+     return new QSymbianRasterPixmapData(type);    
 +#elif defined(Q_WS_HAIKU)
-+    return new QRasterPixmapData(type);    
++    return new QRasterPixmapData(type);
  #else
  #error QSimplePixmapDataFactory::create() not implemented
  #endif

@@ -1,15 +1,7 @@
 $NetBSD$
 
---- src/gui/text/qfontdatabase.cpp.orig	2011-12-08 05:06:02.058458112 +0000
+--- src/gui/text/qfontdatabase.cpp.orig	2012-03-14 14:01:14.007340032 +0000
 +++ src/gui/text/qfontdatabase.cpp
-@@ -1,6 +1,6 @@
- /****************************************************************************
- **
--** Copyright (C) 2011 Nokia Corporation and/or its subsidiary(-ies).
-+** Copyright (C) 2012 Nokia Corporation and/or its subsidiary(-ies).
- ** All rights reserved.
- ** Contact: Nokia Corporation (qt-info@nokia.com)
- **
 @@ -173,7 +173,7 @@ struct  QtFontSize
      unsigned short count : 16;
  #endif // Q_WS_X11

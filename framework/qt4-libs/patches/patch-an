@@ -1,17 +1,8 @@
 $NetBSD: patch-an,v 1.7 2010/01/29 18:19:09 adam Exp $
 
---- src/corelib/concurrent/qtconcurrentiteratekernel.cpp.orig	2011-12-08 05:06:03.025952256 +0000
+--- src/corelib/concurrent/qtconcurrentiteratekernel.cpp.orig	2012-03-14 14:01:18.022020096 +0000
 +++ src/corelib/concurrent/qtconcurrentiteratekernel.cpp
-@@ -41,7 +41,7 @@
- 
- #include "qtconcurrentiteratekernel.h"
- 
--#if defined(Q_OS_MAC)
-+#if defined(Q_OS_MAC) || defined(__APPLE__)
- #include <mach/mach.h>
- #include <mach/mach_time.h>
- #include <unistd.h>
-@@ -67,7 +67,13 @@ enum {
+@@ -67,7 +67,14 @@ enum {
      MedianSize = 7
  };
  
@@ -22,7 +13,8 @@ $NetBSD: patch-an,v 1.7 2010/01/29 18:19:09 adam Exp $
 +{
 +    return system_time();
 +}
-+#elif defined(Q_OS_MAC) || defined(__APPLE__)
++
++#elif defined(Q_OS_MAC)
  
  static qint64 getticks()
  {

@@ -1,7 +1,16 @@
 $NetBSD$
 
---- src/gui/painting/painting.pri.orig	2011-12-08 05:06:02.054788096 +0000
+--- src/gui/painting/painting.pri.orig	2012-03-14 14:01:15.004194304 +0000
 +++ src/gui/painting/painting.pri
+@@ -173,7 +173,7 @@ unix:!mac:!symbian|qpa {
+                 painting/qprinterinfo_unix.cpp
+ }
+ 
+-win32|x11|mac|embedded|qpa|symbian {
++win32|x11|mac|embedded|qpa|symbian|haiku {
+         SOURCES += painting/qbackingstore.cpp
+         HEADERS += painting/qbackingstore_p.h
+ }
 @@ -269,6 +269,12 @@ symbian {
          QMAKE_CXXFLAGS.ARMCC *= -O3
  }

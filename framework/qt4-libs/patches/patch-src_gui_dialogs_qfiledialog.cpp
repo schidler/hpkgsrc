@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/dialogs/qfiledialog.cpp.orig	2011-12-08 05:06:02.009175040 +0000
+--- src/gui/dialogs/qfiledialog.cpp.orig	2012-03-14 14:01:15.064749568 +0000
 +++ src/gui/dialogs/qfiledialog.cpp
 @@ -295,7 +295,7 @@ Q_GUI_EXPORT _qt_filedialog_save_filenam
    This signal is emitted when the user selects a \a filter.
@@ -11,7 +11,7 @@ $NetBSD$
  bool Q_GUI_EXPORT qt_use_native_dialogs = true; // for the benefit of testing tools, until we have a proper API
  #endif
  
-@@ -1681,6 +1681,22 @@ extern QStringList qt_win_get_open_file_
+@@ -1694,6 +1694,22 @@ extern QStringList qt_win_get_open_file_
  extern QString qt_win_get_existing_directory(const QFileDialogArgs &args);
  #endif
  
@@ -34,7 +34,7 @@ $NetBSD$
  /*
      For Symbian file dialogs
  */
-@@ -1778,6 +1794,13 @@ QString QFileDialog::getOpenFileName(QWi
+@@ -1791,6 +1807,12 @@ QString QFileDialog::getOpenFileName(QWi
      }
  #endif
  
@@ -44,11 +44,10 @@ $NetBSD$
 +    }
 +#endif
 +
-+
      // create a qt dialog
      QFileDialog dialog(args);
      if (selectedFilter)
-@@ -1871,6 +1894,13 @@ QStringList QFileDialog::getOpenFileName
+@@ -1884,6 +1906,12 @@ QStringList QFileDialog::getOpenFileName
      }
  #endif
  
@@ -58,11 +57,10 @@ $NetBSD$
 +    }
 +#endif
 +
-+
      // create a qt dialog
      QFileDialog dialog(args);
      if (selectedFilter)
-@@ -1965,6 +1995,13 @@ QString QFileDialog::getSaveFileName(QWi
+@@ -1978,6 +2006,12 @@ QString QFileDialog::getSaveFileName(QWi
      }
  #endif
  
@@ -72,11 +70,10 @@ $NetBSD$
 +    }
 +#endif
 +
-+
      // create a qt dialog
      QFileDialog dialog(args);
      dialog.setAcceptMode(AcceptSave);
-@@ -2049,6 +2086,11 @@ QString QFileDialog::getExistingDirector
+@@ -2062,6 +2096,11 @@ QString QFileDialog::getExistingDirector
      }
  #endif
  

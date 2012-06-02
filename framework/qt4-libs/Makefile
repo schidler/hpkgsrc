@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.72 2012/03/03 12:54:23 wiz Exp $
+# $NetBSD: Makefile,v 1.74 2012/04/10 18:45:28 abs Exp $
 
 PKGNAME=	qt4-libs-${QTVERSION}
-PKGREVISION=	4
+PKGREVISION=	1
 COMMENT=	C++ X GUI toolkit
 
 .include "../../framework/qt4-libs/Makefile.common"
@@ -12,7 +12,7 @@ INSTALL_DIRS+=		src
 BUILD_TARGET=		sub-src
 
 PTHREAD_OPTS+=		require
-UNLIMIT_RESOURCES=	datasize
+#UNLIMIT_RESOURCES=	datasize
 BUILDLINK_PASSTHRU_DIRS+=${QTPREFIX}
 
 PLIST_SRC=		${WRKDIR}/PLIST ${PKGDIR}/PLIST
@@ -21,7 +21,7 @@ PLIST_SRC=		${WRKDIR}/PLIST ${PKGDIR}/PLIST
 CONFIGURE_ARGS+=	-no-dbus
 CONFIGURE_ARGS+=	-no-libmng
 CONFIGURE_ARGS+=	-no-libtiff
-CONFIGURE_ARGS+=	-no-sql-sqlite
+#CONFIGURE_ARGS+=	-no-sql-sqlite
 
 # kdelibs4 requires openssl support!
 CONFIGURE_ARGS+=	-openssl-linked
@@ -72,12 +72,12 @@ do-install:
 	 ${LIBTOOL} --mode=install ${INSTALL_LIB} \
 		${WRKSRC}/imports/QtWebKit/libqmlwebkitplugin.la \
 		${DESTDIR}${QTPREFIX}/imports/QtWebKit/
-.for incl in corelib declarative gui multimedia network opengl qt3support script scripttools sql svg testlib xml xmlpatterns 3rdparty/webkit/Source/WebKit/qt
+.for incl in corelib declarative gui multimedia network qt3support script scripttools sql svg testlib xml xmlpatterns 3rdparty/webkit/Source/WebKit/qt
 	cd ${WRKSRC}/src/${incl} && env ${MAKE_ENV} ${INSTALL_ENV} \
 		${MAKE_PROGRAM} install_flat_headers install_targ_headers install_class_headers
 .endfor
 	cd ${DESTDIR}${PREFIX} && find qt4/include -type f -print > ${WRKDIR}/PLIST
-.for lib in Qt3Support QtCore QtDeclarative QtGui QtMultimedia QtNetwork QtOpenGL QtScript QtScriptTools QtSql QtSvg QtTest QtWebKit QtXml QtXmlPatterns jscore webcore
+.for lib in Qt3Support QtCore QtDeclarative QtGui QtMultimedia QtNetwork QtScript QtScriptTools QtSql QtSvg QtTest QtWebKit QtXml QtXmlPatterns jscore webcore
 	${LIBTOOL} --mode=install ${INSTALL_LIB} ${WRKSRC}/lib/lib${lib}.la \
 		${DESTDIR}${QTPREFIX}/lib/
 	sed	-e "s:${WRKSRC}:${QTPREFIX}:g" \
@@ -99,11 +99,6 @@ do-install:
 		${WRKSRC}/plugins/codecs/lib${codec}.la \
 		${DESTDIR}${QTPREFIX}/plugins/codecs/
 .endfor
-.for plug in qglgraphicssystem qtracegraphicssystem
-	${LIBTOOL} --mode=install ${INSTALL_LIB} \
-		${WRKSRC}/plugins/graphicssystems/lib${plug}.la \
-		${DESTDIR}${QTPREFIX}/plugins/graphicssystems/
-.endfor
 	${LIBTOOL} --mode=install ${INSTALL_LIB} \
 		${WRKSRC}/plugins/iconengines/libqsvgicon.la \
 		${DESTDIR}/${QTPREFIX}/plugins/iconengines/
@@ -121,7 +116,7 @@ do-install:
 		${DESTDIR}/${QTPREFIX}/plugins/inputmethods/
 .endif
 
-.if ${OPSYS} != "Haiku"
+.if ${OPSYS} != "Darwin" &&  ${OPSYS} != "Haiku"
 .include "../../graphics/glu/buildlink3.mk"
 .include "../../x11/libSM/buildlink3.mk"
 .include "../../x11/libXcursor/buildlink3.mk"
@@ -133,8 +128,8 @@ do-install:
 .include "../../devel/zlib/buildlink3.mk"
 #.include "../../fonts/fontconfig/buildlink3.mk"
 #.include "../../graphics/freetype2/buildlink3.mk"
-.include "../../mk/jpeg.buildlink3.mk"
-.include "../../graphics/png/buildlink3.mk"
+#.include "../../mk/jpeg.buildlink3.mk"
+#.include "../../graphics/png/buildlink3.mk"
 .include "../../security/openssl/buildlink3.mk"
 
 .include "../../mk/pthread.buildlink3.mk"

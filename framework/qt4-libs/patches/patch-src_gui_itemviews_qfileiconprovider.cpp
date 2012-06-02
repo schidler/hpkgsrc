@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/itemviews/qfileiconprovider.cpp.orig	2011-12-08 05:06:02.060030976 +0000
+--- src/gui/itemviews/qfileiconprovider.cpp.orig	2012-03-14 14:01:14.057933824 +0000
 +++ src/gui/itemviews/qfileiconprovider.cpp
 @@ -53,6 +53,11 @@
  #  include <objbase.h>

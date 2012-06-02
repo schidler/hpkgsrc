@@ -1,8 +1,8 @@
 $NetBSD$
 
---- src/gui/kernel/qapplication_p.h.orig	2011-12-08 05:06:02.012320768 +0000
+--- src/gui/kernel/qapplication_p.h.orig	2012-03-14 14:01:16.023068672 +0000
 +++ src/gui/kernel/qapplication_p.h
-@@ -309,6 +309,8 @@ public:
+@@ -298,6 +298,8 @@ public:
  #elif defined(Q_WS_QWS)
      static bool qws_apply_settings();
      static QWidget *findWidget(const QObjectList&, const QPoint &, bool rec);
@@ -11,7 +11,7 @@ $NetBSD$
  #endif
      static bool quitOnLastWindowClosed;
      static void emitLastWindowClosed();
-@@ -364,6 +366,10 @@ public:
+@@ -353,6 +355,10 @@ public:
      static void x11_initialize_style();
  #endif
  
@@ -22,7 +22,7 @@ $NetBSD$
      enum KeyPlatform {
          KB_Win = 1,
          KB_Mac = 2,
-@@ -539,7 +545,7 @@ public:
+@@ -530,7 +536,7 @@ public:
      static Qt::NavigationMode navigationMode;
  #endif
  

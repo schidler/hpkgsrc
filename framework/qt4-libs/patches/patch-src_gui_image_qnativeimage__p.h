@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/image/qnativeimage_p.h.orig	2011-12-08 05:06:02.039845888 +0000
+--- src/gui/image/qnativeimage_p.h.orig	2012-03-14 14:01:16.039583744 +0000
 +++ src/gui/image/qnativeimage_p.h
 @@ -64,6 +64,9 @@
  #elif defined(Q_WS_MAC)
@@ -12,13 +12,14 @@ $NetBSD$
  #endif
  
  QT_BEGIN_NAMESPACE
-@@ -95,6 +98,9 @@ public:
+@@ -95,6 +98,10 @@ public:
  
  #elif defined(Q_WS_MAC)
      CGContextRef cg;
-+
++	
 +#elif defined(Q_WS_HAIKU)
 +	BBitmap* bitmap;
++
  #endif
  
  private:

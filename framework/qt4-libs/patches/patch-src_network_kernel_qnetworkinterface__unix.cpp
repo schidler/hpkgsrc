@@ -1,17 +1,19 @@
 $NetBSD$
 
---- src/network/kernel/qnetworkinterface_unix.cpp.orig	2011-12-08 05:06:02.061603840 +0000
+--- src/network/kernel/qnetworkinterface_unix.cpp.orig	2012-03-14 14:01:30.002883584 +0000
 +++ src/network/kernel/qnetworkinterface_unix.cpp
-@@ -52,7 +52,7 @@
+@@ -52,6 +52,10 @@
  #include <sys/types.h>
  #include <sys/socket.h>
  
--#ifdef Q_OS_SOLARIS
-+#if defined(Q_OS_SOLARIS) || defined(Q_OS_HAIKU)
++#ifdef Q_OS_HAIKU
++# include <sys/sockio.h>
++#endif
++
+ #ifdef Q_OS_SOLARIS
  # include <sys/sockio.h>
  #endif
- #include <net/if.h>
-@@ -92,7 +92,9 @@ static QNetworkInterface::InterfaceFlags
+@@ -92,7 +96,9 @@ static QNetworkInterface::InterfaceFlags
  {
      QNetworkInterface::InterfaceFlags flags = 0;
      flags |= (rawFlags & IFF_UP) ? QNetworkInterface::IsUp : QNetworkInterface::InterfaceFlag(0);

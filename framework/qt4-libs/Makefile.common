@@ -55,6 +55,10 @@ PLIST_VARS+=		mac unix
 PLIST.mac=		yes
 QMAKE_CONF=		qmake.conf.mac
 QMAKE_RANLIB=		${RANLIB}
+.elif ${OPSYS} == "Haiku"
+PLIST.unix=		yes
+QMAKE_CONF=		qmake.conf.haiku
+QMAKE_RANLIB=		${TRUE}
 .else
 PLIST.unix=		yes
 QMAKE_CONF=		qmake.conf
@@ -110,12 +114,12 @@ LDFLAGS+=			-lnetwork -lroot
 LDFLAGS+=		-ldl
 .endif
 
-#.if ${OPSYS} != "Haiku" &&!= "Darwin" && ${X11_TYPE} != "native"
-#.include "../../x11/libXinerama/buildlink3.mk"
-#.elif !exists(${X11BASE}/lib/libXinerama.so) && \
-#	!exists(${X11BASE}/lib/libXinerama.dylib)
+.if ${OPSYS} != "Darwin"  && ${OPSYS} != "Haiku" && ${X11_TYPE} != "native" 
+.include "../../x11/libXinerama/buildlink3.mk"
+.elif !exists(${X11BASE}/lib/libXinerama.so) && \
+	!exists(${X11BASE}/lib/libXinerama.dylib)
 CONFIGURE_ARGS+=	-no-xinerama
-#.endif
+.endif
 
 SUBST_CLASSES+=		dnr
 SUBST_MESSAGE.dnr=	Disabling debug_and_release.
@@ -129,12 +133,12 @@ SUBST_STAGE.nib=	pre-configure
 SUBST_FILES.nib=	src/gui/kernel/qapplication_mac.mm
 SUBST_VARS.nib=		QTPREFIX
 
-#SUBST_CLASSES+=		lt
-#SUBST_MESSAGE.lt=	Enabling libtool.
-#SUBST_STAGE.lt=		pre-configure
-#SUBST_FILES.lt=		src/gui/gui.pro
-#SUBST_SED.lt=		-e 's,$$$$QMAKE_CXX -c -W,$${LIBTOOL} --mode=compile &,'
-#SUBST_SED.lt+=		-e 's,$$$${first(QMAKE_EXT_OBJ)},.lo,'
+SUBST_CLASSES+=		lt
+SUBST_MESSAGE.lt=	Enabling libtool.
+SUBST_STAGE.lt=		pre-configure
+SUBST_FILES.lt=		src/gui/gui.pro
+SUBST_SED.lt=		-e 's,$$$$QMAKE_CXX -c -W,$${LIBTOOL} --mode=compile &,'
+SUBST_SED.lt+=		-e 's,$$$${first(QMAKE_EXT_OBJ)},.lo,'
 
 .include "options.mk"
 

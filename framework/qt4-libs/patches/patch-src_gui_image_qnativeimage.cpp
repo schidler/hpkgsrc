@@ -1,8 +1,8 @@
 $NetBSD$
 
---- src/gui/image/qnativeimage.cpp.orig	2011-12-08 05:06:02.038010880 +0000
+--- src/gui/image/qnativeimage.cpp.orig	2012-03-14 14:01:16.036700160 +0000
 +++ src/gui/image/qnativeimage.cpp
-@@ -286,6 +286,28 @@ QImage::Format QNativeImage::systemForma
+@@ -286,6 +286,29 @@ QImage::Format QNativeImage::systemForma
      return QImage::Format_RGB32;
  }
  
@@ -28,6 +28,7 @@ $NetBSD$
 +{
 +    return QImage::Format_RGB32;
 +}
++
  
  #else // other platforms...
  
