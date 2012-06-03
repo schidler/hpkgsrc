@@ -7,10 +7,10 @@ QT4_TOOLS_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.qt4-tools+=	qt4-tools>=4.1.0
 BUILDLINK_ABI_DEPENDS.qt4-tools+=	qt4-tools>=4.8.0nb2
-BUILDLINK_PKGSRCDIR.qt4-tools?=	../../x11/qt4-tools
+BUILDLINK_PKGSRCDIR.qt4-tools?=	../../framework/qt4-tools
 BUILDLINK_DEPMETHOD.qt4-tools?=	build
 
-.include "../../x11/qt4-libs/buildlink3.mk"
+.include "../../framework/qt4-libs/buildlink3.mk"
 
 CONFIGURE_ENV+=		UIC="${QTDIR}/bin/uic"
 MAKE_ENV+=		UIC="${QTDIR}/bin/uic"

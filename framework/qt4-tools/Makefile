@@ -1,15 +1,17 @@
-# $NetBSD: Makefile,v 1.52 2012/03/03 00:12:26 wiz Exp $
+# $NetBSD: Makefile,v 1.53 2012/04/09 09:12:50 adam Exp $
 
-.include "../../x11/qt4-libs/Makefile.common"
+.include "../../framework/qt4-libs/Makefile.common"
 
 PKGNAME=	qt4-tools-${QTVERSION}
-PKGREVISION=	2
 COMMENT=	QT GUI (WYSIWYG) builder and other tools
 
 DEPENDS+=	libtool-base-[0-9]*:../../devel/libtool-base
 
 CONFIGURE_ARGS+=	-I${QTDIR}/include -L${QTDIR}/lib
 CONFIGURE_ARGS+=	-DQT_NO_DBUS
+CONFIGURE_ARGS+=	-no-webkit
+CONFIGURE_ARGS+=	-DQT_NO_WEBKIT
+
 
 # XXX this is to test what really gets installed when 'do-install' is disabled
 INSTALL_DIRS+=		tools
@@ -17,7 +19,7 @@ INSTALL_DIRS+=		tools
 BUILD_TARGET=		sub-tools-bootstrap sub-tools
 
 BUILD_QT4=		yes
-UNLIMIT_RESOURCES=	datasize
+#UNLIMIT_RESOURCES=	datasize
 
 INSTALLATION_DIRS=	lib/pkgconfig
 INSTALLATION_DIRS+=	${QTPREFIX}/bin
@@ -52,6 +54,7 @@ QTPROG_LT+=	assistant designer linguist
 .endif
 
 do-install:
+
 .for prog in ${QTPROG_BIN}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${prog} \
 		${DESTDIR}${QTPREFIX}/bin/${prog:tl}
@@ -66,6 +69,8 @@ do-install:
 		${MAKE_PROGRAM} install_designer_headers
 	cd ${WRKSRC}/tools/designer/src/uitools && env ${MAKE_ENV} ${INSTALL_ENV} \
 		${MAKE_PROGRAM} install_quitools_headers
+	cd ${WRKSRC}/src/3rdparty/haiku-tools/qsystray && env ${MAKE_ENV} ${INSTALL_ENV} \
+		${MAKE_PROGRAM} qsystray 
 .for lib in QtCLucene QtDesigner QtDesignerComponents QtHelp QtUiTools
 	${LIBTOOL} --mode=install ${INSTALL_LIB} ${WRKSRC}/lib/lib${lib}.la \
 		${DESTDIR}${QTPREFIX}/lib/
@@ -73,7 +78,7 @@ do-install:
 		${WRKSRC}/lib/pkgconfig/${lib}.pc > ${WRKDIR}/${lib}.pc
 	${INSTALL_DATA} ${WRKDIR}/${lib}.pc ${DESTDIR}${PREFIX}/lib/pkgconfig/
 .endfor
-.for lib in qdeclarativeview qt3supportwidgets qwebview
+.for lib in qdeclarativeview qt3supportwidgets
 	${LIBTOOL} --mode=install ${INSTALL_LIB} \
 		${WRKSRC}/plugins/designer/lib${lib}.la \
 		${DESTDIR}${QTPREFIX}/plugins/designer/
@@ -81,8 +86,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/tools/linguist/phrasebooks/*.qph \
 		${DESTDIR}${QTPREFIX}/phrasebooks/
 	cp -R ${WRKSRC}/mkspecs ${DESTDIR}${QTPREFIX}
-
+	${MKDIR} ${DESTDIR}${PREFIX}/bin
+	cp ${WRKSRC}/src/3rdparty/haiku-tools/qsystray/qsystray ${DESTDIR}${PREFIX}/bin/
+	${LN} -sf ${DESTDIR}${QTPREFIX}/bin/qmake ${DESTDIR}${PREFIX}/bin/
+	
 .include "../../converters/libiconv/buildlink3.mk"
-.include "../../x11/qt4-libs/buildlink3.mk"
+.include "../../framework/qt4-libs/buildlink3.mk"
 .include "../../security/openssl/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
