@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/kernel/qcursor.h.orig	2012-03-14 14:01:16.008126464 +0000
+--- src/gui/kernel/qcursor.h.orig	2012-03-14 14:01:16.010485760 +0000
 +++ src/gui/kernel/qcursor.h
 @@ -76,6 +76,10 @@ class QCursorData;
  class QBitmap;

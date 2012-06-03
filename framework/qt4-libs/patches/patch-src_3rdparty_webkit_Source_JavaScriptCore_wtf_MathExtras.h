@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/3rdparty/webkit/Source/JavaScriptCore/wtf/MathExtras.h.orig	2012-03-14 14:01:26.007340032 +0000
+--- src/3rdparty/webkit/Source/JavaScriptCore/wtf/MathExtras.h.orig	2012-03-14 14:01:26.009699328 +0000
 +++ src/3rdparty/webkit/Source/JavaScriptCore/wtf/MathExtras.h
 @@ -252,7 +252,7 @@ inline int clampToInteger(unsigned value
      return static_cast<int>(std::min(value, static_cast<unsigned>(std::numeric_limits<int>::max())));

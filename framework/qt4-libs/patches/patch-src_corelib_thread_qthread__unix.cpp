@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/corelib/thread/qthread_unix.cpp.orig	2012-03-14 14:01:18.054263808 +0000
+--- src/corelib/thread/qthread_unix.cpp.orig	2012-03-14 14:01:18.056623104 +0000
 +++ src/corelib/thread/qthread_unix.cpp
 @@ -601,11 +601,12 @@ void QThread::start(Priority priority)
      if (code == EPERM) {

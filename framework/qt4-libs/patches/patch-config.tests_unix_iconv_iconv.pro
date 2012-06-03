@@ -1,6 +1,6 @@
 $NetBSD$
 
---- config.tests/unix/iconv/iconv.pro.orig	2012-03-14 14:01:31.042729472 +0000
+--- config.tests/unix/iconv/iconv.pro.orig	2012-03-14 14:01:31.045350912 +0000
 +++ config.tests/unix/iconv/iconv.pro
 @@ -1,3 +1,3 @@
  SOURCES = iconv.cpp

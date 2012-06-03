@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/text/qfont.cpp.orig	2012-03-14 14:01:14.009437184 +0000
+--- src/gui/text/qfont.cpp.orig	2012-03-14 14:01:14.011796480 +0000
 +++ src/gui/text/qfont.cpp
 @@ -232,6 +232,8 @@ Q_GUI_EXPORT int qt_defaultDpiY()
      }

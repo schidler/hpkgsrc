@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/dialogs/qfiledialog.cpp.orig	2012-03-14 14:01:15.064749568 +0000
+--- src/gui/dialogs/qfiledialog.cpp.orig	2012-03-14 14:01:15.000000000 +0000
 +++ src/gui/dialogs/qfiledialog.cpp
 @@ -295,7 +295,7 @@ Q_GUI_EXPORT _qt_filedialog_save_filenam
    This signal is emitted when the user selects a \a filter.

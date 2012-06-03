@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/opengl/qgl_p.h.orig	2012-03-14 14:01:13.016777216 +0000
+--- src/opengl/qgl_p.h.orig	2012-03-14 14:01:13.019136512 +0000
 +++ src/opengl/qgl_p.h
 @@ -467,7 +467,7 @@ public:
      static inline QGLExtensionFuncs& extensionFuncs(const QGLContext *ctx) { return ctx->d_ptr->group->extensionFuncs(); }

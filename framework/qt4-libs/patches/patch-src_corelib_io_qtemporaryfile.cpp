@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/corelib/io/qtemporaryfile.cpp.orig	2012-03-14 14:01:18.039059456 +0000
+--- src/corelib/io/qtemporaryfile.cpp.orig	2012-03-14 14:01:18.041418752 +0000
 +++ src/corelib/io/qtemporaryfile.cpp
 @@ -194,7 +194,14 @@ static bool createFileFromTemplate(Nativ
          }

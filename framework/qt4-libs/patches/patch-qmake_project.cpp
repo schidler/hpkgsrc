@@ -1,6 +1,6 @@
 $NetBSD$
 
---- qmake/project.cpp.orig	2012-03-14 14:01:12.009699328 +0000
+--- qmake/project.cpp.orig	2012-03-14 14:01:12.012320768 +0000
 +++ qmake/project.cpp
 @@ -546,6 +546,10 @@ QStringList qmake_feature_paths(QMakePro
          case Option::TARG_UNIX_MODE:

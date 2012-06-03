@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/corelib/tools/tools.pri.orig	2012-03-14 14:01:18.004456448 +0000
+--- src/corelib/tools/tools.pri.orig	2012-03-14 14:01:18.006815744 +0000
 +++ src/corelib/tools/tools.pri
 @@ -120,7 +120,7 @@ INCLUDEPATH += ../3rdparty/md5 \
                 ../3rdparty/md4

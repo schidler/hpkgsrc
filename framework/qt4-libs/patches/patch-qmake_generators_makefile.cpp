@@ -1,6 +1,6 @@
 $NetBSD: patch-qmake_generators_makefile.cpp,v 1.2 2012/04/09 09:12:49 adam Exp $
 
---- qmake/generators/makefile.cpp.orig	2012-03-14 14:01:12.009175040 +0000
+--- qmake/generators/makefile.cpp.orig	2012-03-14 14:01:12.011534336 +0000
 +++ qmake/generators/makefile.cpp
 @@ -2208,6 +2208,8 @@ QString MakefileGenerator::buildArgs(con
              ret += " -unix";

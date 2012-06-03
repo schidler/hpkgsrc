@@ -1,6 +1,6 @@
 $NetBSD$
 
---- examples/painting/painterpaths/painterpaths.pro.orig	2012-03-14 14:01:35.016515072 +0000
+--- examples/painting/painterpaths/painterpaths.pro.orig	2012-03-14 14:01:35.019136512 +0000
 +++ examples/painting/painterpaths/painterpaths.pro
 @@ -3,7 +3,7 @@ HEADERS       = renderarea.h \
  SOURCES       = main.cpp \

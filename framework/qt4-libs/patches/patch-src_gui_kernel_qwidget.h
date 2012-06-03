@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/kernel/qwidget.h.orig	2012-03-14 14:01:16.011010048 +0000
+--- src/gui/kernel/qwidget.h.orig	2012-03-14 14:01:16.013631488 +0000
 +++ src/gui/kernel/qwidget.h
 @@ -107,6 +107,9 @@ class QUnifiedToolbarSurface;
  #if defined(Q_WS_X11)

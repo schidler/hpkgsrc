@@ -1,6 +1,6 @@
 $NetBSD$
 
---- examples/ipc/ipc.pro.orig	2012-03-14 14:01:35.031457280 +0000
+--- examples/ipc/ipc.pro.orig	2012-03-14 14:01:35.033816576 +0000
 +++ examples/ipc/ipc.pro
 @@ -1,6 +1,6 @@
  TEMPLATE      = subdirs

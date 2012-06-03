@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/text/qfontengine.cpp.orig	2012-03-14 14:01:14.012845056 +0000
+--- src/gui/text/qfontengine.cpp.orig	2012-03-14 14:01:14.015204352 +0000
 +++ src/gui/text/qfontengine.cpp
 @@ -762,7 +762,7 @@ QFontEngineGlyphCache *QFontEngine::glyp
      return 0;

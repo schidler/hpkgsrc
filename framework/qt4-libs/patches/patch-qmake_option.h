@@ -1,6 +1,6 @@
 $NetBSD$
 
---- qmake/option.h.orig	2012-03-14 14:01:12.002883584 +0000
+--- qmake/option.h.orig	2012-03-14 14:01:12.005505024 +0000
 +++ qmake/option.h
 @@ -162,10 +162,10 @@ struct Option
      enum QMAKE_RECURSIVE { QMAKE_RECURSIVE_DEFAULT, QMAKE_RECURSIVE_YES, QMAKE_RECURSIVE_NO };

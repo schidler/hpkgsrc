@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/3rdparty/libtiff/libtiff/tiff.h.orig	2012-03-14 14:01:18.013631488 +0000
+--- src/3rdparty/libtiff/libtiff/tiff.h.orig	2012-03-14 14:01:18.015990784 +0000
 +++ src/3rdparty/libtiff/libtiff/tiff.h
 @@ -28,6 +28,9 @@
  #define	_TIFF_

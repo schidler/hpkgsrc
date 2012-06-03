@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/kernel/qkeymapper_p.h.orig	2012-03-14 14:01:16.005242880 +0000
+--- src/gui/kernel/qkeymapper_p.h.orig	2012-03-14 14:01:16.007864320 +0000
 +++ src/gui/kernel/qkeymapper_p.h
 @@ -216,6 +216,10 @@ public:
      int mapS60RemConIdToS60Key(int s60RemConId);

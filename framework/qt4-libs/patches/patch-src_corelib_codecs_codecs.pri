@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/corelib/codecs/codecs.pri.orig	2012-03-14 14:01:18.001048576 +0000
+--- src/corelib/codecs/codecs.pri.orig	2012-03-14 14:01:18.003670016 +0000
 +++ src/corelib/codecs/codecs.pri
 @@ -25,7 +25,7 @@ unix {
          contains(QT_CONFIG,iconv) {

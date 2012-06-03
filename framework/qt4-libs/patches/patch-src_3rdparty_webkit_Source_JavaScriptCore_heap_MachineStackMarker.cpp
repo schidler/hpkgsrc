@@ -1,6 +1,6 @@
 $NetBSD: patch-src_3rdparty_webkit_Source_JavaScriptCore_heap_MachineStackMarker.cpp,v 1.2 2012/04/09 09:12:49 adam Exp $
 
---- src/3rdparty/webkit/Source/JavaScriptCore/heap/MachineStackMarker.cpp.orig	2012-03-14 14:01:26.031719424 +0000
+--- src/3rdparty/webkit/Source/JavaScriptCore/heap/MachineStackMarker.cpp.orig	2012-03-14 14:01:26.034340864 +0000
 +++ src/3rdparty/webkit/Source/JavaScriptCore/heap/MachineStackMarker.cpp
 @@ -382,6 +382,8 @@ static size_t getPlatformThreadRegisters
  #if HAVE(PTHREAD_NP_H) || OS(NETBSD)
