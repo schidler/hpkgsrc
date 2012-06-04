@@ -1,0 +1,11 @@
+$NetBSD$
+
+SHA1 (libtorrent-rasterbar-0.16.0.tar.gz) = 212d910f6c06f06ef1b54d7e2dd68de18f6d9c73
+RMD160 (libtorrent-rasterbar-0.16.0.tar.gz) = 8c4fe9e2ba75b87ba9a53ef155c216ad937ee361
+Size (libtorrent-rasterbar-0.16.0.tar.gz) = 2880619 bytes
+SHA1 (patch-configure) = 1c1f465e42e7acd312108ca1820290e8d356d585
+SHA1 (patch-include_libtorrent_config.hpp) = d2e9d161d4e0e4835cfbe9885dfd0c0f2d23f6af
+SHA1 (patch-include_libtorrent_thread.hpp) = 5f84d2ec619bbf4d4aef88c338d19a8c3f0cabcc
+SHA1 (patch-src_allocator.cpp) = d27188b0eb170c7a235c94c0012f1cf06865f632
+SHA1 (patch-src_enum__net.cpp) = 692e72d1261282b9cb160b75538172cd1e350de6
+SHA1 (patch-src_thread.cpp) = 3373df399e4efa2a19eb0b114b669ae3df10c334

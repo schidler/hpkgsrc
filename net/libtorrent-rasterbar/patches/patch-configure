@@ -1,0 +1,15 @@
+$NetBSD$
+
+* Replace == with =, improve compatibility
+
+--- configure.orig	2012-04-11 14:00:43.056098816 +0000
++++ configure
+@@ -15580,7 +15580,7 @@ fi
+ # which indicates that we try without any flags at all, and "pthread-config"
+ # which is a program returning the flags for the Pth emulation library.
+ 
+-ax_pthread_flags="pthreads none -Kthread -kthread lthread -lpthread -pthread -pthreads -mthreads pthread --thread-safe -mt pthread-config"
++ax_pthread_flags="pthreads none -Kthread -kthread lthread -lpthread -lroot -pthread -pthreads -mthreads pthread --thread-safe -mt pthread-config"
+ 
+ # The ordering *is* (sometimes) important.  Some notes on the
+ # individual items follow:
