@@ -1,6 +1,6 @@
 $NetBSD$
 
---- qmake/generators/metamakefile.cpp.orig	2012-03-14 14:01:12.011796480 +0000
+--- qmake/generators/metamakefile.cpp.orig	2012-03-14 14:01:12.057933824 +0000
 +++ qmake/generators/metamakefile.cpp
 @@ -531,6 +531,9 @@ MetaMakefileGenerator::modesForGenerator
  #ifdef Q_OS_MAC

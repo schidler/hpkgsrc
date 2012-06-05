@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/corelib/io/qprocess_unix.cpp.orig	2012-03-14 14:01:18.041156608 +0000
+--- src/corelib/io/qprocess_unix.cpp.orig	2012-03-14 14:01:18.019922944 +0000
 +++ src/corelib/io/qprocess_unix.cpp
 @@ -903,8 +903,12 @@ qint64 QProcessPrivate::bytesAvailableFr
  {

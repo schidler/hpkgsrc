@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/text/qfontdatabase.cpp.orig	2012-03-14 14:01:14.009699328 +0000
+--- src/gui/text/qfontdatabase.cpp.orig	2012-03-14 14:01:14.055836672 +0000
 +++ src/gui/text/qfontdatabase.cpp
 @@ -173,7 +173,7 @@ struct  QtFontSize
      unsigned short count : 16;

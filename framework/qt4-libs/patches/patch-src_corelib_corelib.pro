@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/corelib/corelib.pro.orig	2012-03-14 14:01:18.021233664 +0000
+--- src/corelib/corelib.pro.orig	2012-03-14 14:01:18.000262144 +0000
 +++ src/corelib/corelib.pro
 @@ -29,6 +29,7 @@ qpa {
  }

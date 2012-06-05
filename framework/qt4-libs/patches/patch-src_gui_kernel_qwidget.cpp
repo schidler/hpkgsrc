@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/kernel/qwidget.cpp.orig	2012-03-14 14:01:16.028573696 +0000
+--- src/gui/kernel/qwidget.cpp.orig	2012-03-14 14:01:16.007340032 +0000
 +++ src/gui/kernel/qwidget.cpp
 @@ -1509,6 +1509,20 @@ void QWidget::create(WId window, bool in
      setAttribute(Qt::WA_WState_Created);                        // set created flag

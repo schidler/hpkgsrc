@@ -1,6 +1,6 @@
 $NetBSD$
 
---- tools/qtconfig/mainwindow.cpp.orig	2012-03-14 14:01:12.019922944 +0000
+--- tools/qtconfig/mainwindow.cpp.orig	2012-03-14 14:01:12.065798144 +0000
 +++ tools/qtconfig/mainwindow.cpp
 @@ -384,7 +384,7 @@ MainWindow::MainWindow()
  

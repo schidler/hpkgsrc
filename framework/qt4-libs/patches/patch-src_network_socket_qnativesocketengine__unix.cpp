@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/network/socket/qnativesocketengine_unix.cpp.orig	2012-03-14 14:01:30.011272192 +0000
+--- src/network/socket/qnativesocketengine_unix.cpp.orig	2012-03-14 14:01:30.057409536 +0000
 +++ src/network/socket/qnativesocketengine_unix.cpp
 @@ -875,6 +875,9 @@ qint64 QNativeSocketEnginePrivate::nativ
      memcpy(&sockAddrIPv6.sin6_addr.s6_addr, &tmp, sizeof(tmp));

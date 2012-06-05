@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/kernel/qwindowdefs.h.orig	2012-03-14 14:01:16.029360128 +0000
+--- src/gui/kernel/qwindowdefs.h.orig	2012-03-14 14:01:16.008388608 +0000
 +++ src/gui/kernel/qwindowdefs.h
 @@ -142,6 +142,10 @@ class CCoeControl;
  typedef CCoeControl * WId;
