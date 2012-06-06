@@ -1,6 +1,6 @@
 $NetBSD$
 
---- include/libtorrent/config.hpp.orig	2012-04-04 23:26:39.011796480 +0000
+--- include/libtorrent/config.hpp.orig	2012-04-04 23:26:39.029622272 +0000
 +++ include/libtorrent/config.hpp
 @@ -212,14 +212,15 @@ POSSIBILITY OF SUCH DAMAGE.
  #define TORRENT_USE_IFCONF 1
