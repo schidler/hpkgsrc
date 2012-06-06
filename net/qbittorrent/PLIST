@@ -1,0 +1,14 @@
+bin/qbittorrent
+data/qbittorrent/applications/qBittorrent.desktop
+data/qbittorrent/icons/hicolor/128x128/apps/qbittorrent.png
+data/qbittorrent/icons/hicolor/16x16/apps/qbittorrent.png
+data/qbittorrent/icons/hicolor/192x192/apps/qbittorrent.png
+data/qbittorrent/icons/hicolor/22x22/apps/qbittorrent.png
+data/qbittorrent/icons/hicolor/24x24/apps/qbittorrent.png
+data/qbittorrent/icons/hicolor/32x32/apps/qbittorrent.png
+data/qbittorrent/icons/hicolor/36x36/apps/qbittorrent.png
+data/qbittorrent/icons/hicolor/48x48/apps/qbittorrent.png
+data/qbittorrent/icons/hicolor/64x64/apps/qbittorrent.png
+data/qbittorrent/icons/hicolor/72x72/apps/qbittorrent.png
+data/qbittorrent/icons/hicolor/96x96/apps/qbittorrent.png
+data/qbittorrent/pixmaps/qbittorrent.png

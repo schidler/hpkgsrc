@@ -1,0 +1,8 @@
+$NetBSD$
+
+SHA1 (qbittorrent-3.0.0beta2.tar.gz) = dfe4232092a14a4f377d2428c1cd4dbb9a15a0dd
+RMD160 (qbittorrent-3.0.0beta2.tar.gz) = ee3b56996831d7df8725a5b061f2f905af07eb6b
+Size (qbittorrent-3.0.0beta2.tar.gz) = 3565374 bytes
+SHA1 (patch-src_filesystemwatcher.h) = a998aeb03ae1fbed4da899aec08437a540116acb
+SHA1 (patch-src_fs__utils.cpp) = 71449745c7a82104a7f45efe41a11daa3777e67c
+SHA1 (patch-unixconf.pri) = 6d230d023fa3c51254f32da05f5874167b8ccc03
