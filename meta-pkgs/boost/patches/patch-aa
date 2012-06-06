@@ -1,12 +1,12 @@
 $NetBSD: patch-aa,v 1.9 2011/10/11 10:02:08 adam Exp $
 
---- boostcpp.jam.orig	2012-03-24 16:34:15.036700160 +0000
+--- boostcpp.jam.orig	2012-06-06 04:46:20.500432896 +0000
 +++ boostcpp.jam
 @@ -276,6 +276,7 @@ rule declare_install_and_stage_proper_ta
        : <location>$(stage-locate)/lib
          <install-dependencies>on <install-type>LIB
          <install-no-version-symlinks>on
-+        <dll-path>/boot/common/lib
++        <dll-path>/boot/common/pkg/lib
        ;
      $(p).mark-target-as-explicit stage-proper ;
  

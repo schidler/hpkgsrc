@@ -1,0 +1,14 @@
+$NetBSD$
+
+--- libs/config/test/all/Jamfile.v2.orig	2012-06-06 04:46:23.510132224 +0000
++++ libs/config/test/all/Jamfile.v2
+@@ -25,9 +25,6 @@ run ../abi/abi_test.cpp ../abi/main.cpp 
+ test-suite "BOOST_HAS_TWO_ARG_USE_FACET" : 
+ [ run ../has_2arg_use_facet_pass.cpp ]
+ [ compile-fail ../has_2arg_use_facet_fail.cpp ] ;
+-test-suite "BOOST_HAS_BETHREADS" : 
+-[ run ../has_bethreads_pass.cpp ]
+-[ compile-fail ../has_bethreads_fail.cpp ] ;
+ test-suite "BOOST_HAS_CLOCK_GETTIME" : 
+ [ run ../has_clock_gettime_pass.cpp ]
+ [ compile-fail ../has_clock_gettime_fail.cpp ] ;

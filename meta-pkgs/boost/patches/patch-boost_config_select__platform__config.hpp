@@ -1,15 +1,15 @@
 $NetBSD$
 
---- boost/config/select_platform_config.hpp.orig	2012-03-24 16:34:11.238551040 +0000
+--- boost/config/select_platform_config.hpp.orig	2012-06-06 04:46:16.542113792 +0000
 +++ boost/config/select_platform_config.hpp
-@@ -45,6 +45,10 @@
- // BeOS
- #  define BOOST_PLATFORM_CONFIG "boost/config/platform/beos.hpp"
+@@ -41,6 +41,10 @@
+ // win32:
+ #  define BOOST_PLATFORM_CONFIG "boost/config/platform/win32.hpp"
  
 +#elif defined(__HAIKU__)
 +// Haiku
 +#  define BOOST_PLATFORM_CONFIG "boost/config/platform/haiku.hpp"
 +
- #elif defined(macintosh) || defined(__APPLE__) || defined(__APPLE_CC__)
- // MacOS
- #  define BOOST_PLATFORM_CONFIG "boost/config/platform/macos.hpp"
+ #elif defined(__BEOS__)
+ // BeOS
+ #  define BOOST_PLATFORM_CONFIG "boost/config/platform/beos.hpp"

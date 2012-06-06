@@ -1,13 +1,13 @@
 $NetBSD$
 
---- tools/build/v2/tools/builtin.jam.orig	2012-03-24 16:34:29.498860032 +0000
+--- tools/build/v2/tools/builtin.jam.orig	2012-06-06 04:46:34.573833216 +0000
 +++ tools/build/v2/tools/builtin.jam
 @@ -40,7 +40,7 @@ import generate ;
  
  
  .os-names = aix bsd cygwin darwin freebsd hpux iphone linux netbsd
 -    openbsd osf qnx qnxnto sgi solaris unix unixware windows 
-+    openbsd osf qnx qnxnto sgi solaris unix unixware haiku windows 
++    openbsd osf qnx qnxnto sgi solaris unix unixware windows haiku
      elf # Not actually an OS -- used for targeting bare metal where
          # object format is ELF.  This catches both -elf and -eabi gcc
          # targets and well as other compilers targeting ELF. It is not
@@ -15,7 +15,7 @@ $NetBSD$
              case MACOSX       : host-os = darwin  ;
              case KFREEBSD     : host-os = freebsd ;
              case LINUX        : host-os = linux   ;
-+			case HAIKU        : host-os = haiku   ;
++            case HAIKU        : host-os = haiku   ;
              case SUNOS        : 
                ECHO "SunOS is not a supported operating system." ;
                ECHO "We believe last version of SunOS was released in 1992, " ;

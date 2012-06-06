@@ -1,14 +1,13 @@
 $NetBSD$
 
---- boost/config/stdlib/libstdcpp3.hpp.orig	2012-03-24 16:34:11.239075328 +0000
+--- boost/config/stdlib/libstdcpp3.hpp.orig	2012-06-06 04:46:16.542638080 +0000
 +++ boost/config/stdlib/libstdcpp3.hpp
-@@ -33,7 +33,8 @@
+@@ -32,7 +32,7 @@
+ #endif
  
  #ifdef __GLIBCXX__ // gcc 3.4 and greater:
- #  if defined(_GLIBCXX_HAVE_GTHR_DEFAULT) \
--        || defined(_GLIBCXX__PTHREADS)
-+        || defined(_GLIBCXX__PTHREADS) \
-+		|| defined(__HAIKU__)
-       //
-       // If the std lib has thread support turned on, then turn it on in Boost
-       // as well.  We do this because some gcc-3.4 std lib headers define _REENTANT
+-#  if defined(_GLIBCXX_HAVE_GTHR_DEFAULT) \
++#  if defined(_GLIBCXX_HAVE_GTHR_DEFAULT)  || defined(__HAIKU__) \
+         || defined(_GLIBCXX__PTHREADS) \
+         || defined(_GLIBCXX_HAS_GTHREADS) \
+         || defined(_WIN32)

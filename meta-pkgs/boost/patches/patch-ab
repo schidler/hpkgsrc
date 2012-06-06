@@ -1,6 +1,6 @@
 $NetBSD: patch-ab,v 1.5 2011/10/02 21:23:50 sbd Exp $
 
---- boost/config/platform/bsd.hpp.orig	2012-03-24 16:34:11.237502464 +0000
+--- boost/config/platform/bsd.hpp.orig	2012-06-06 04:46:16.538705920 +0000
 +++ boost/config/platform/bsd.hpp
 @@ -37,7 +37,7 @@
  // and not in <unistd.h>
