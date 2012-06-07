@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/text/qfontengine_p.h.orig	2012-03-14 14:01:14.056885248 +0000
+--- src/gui/text/qfontengine_p.h.orig	2012-04-26 19:46:10.031195136 +0000
 +++ src/gui/text/qfontengine_p.h
 @@ -180,7 +180,7 @@ public:
      virtual void recalcAdvances(QGlyphLayout *, QTextEngine::ShaperFlags) const {}

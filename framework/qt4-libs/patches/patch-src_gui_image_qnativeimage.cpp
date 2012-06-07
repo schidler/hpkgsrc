@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/image/qnativeimage.cpp.orig	2012-03-14 14:01:16.018087936 +0000
+--- src/gui/image/qnativeimage.cpp.orig	2012-04-26 19:46:09.023855104 +0000
 +++ src/gui/image/qnativeimage.cpp
 @@ -286,6 +286,29 @@ QImage::Format QNativeImage::systemForma
      return QImage::Format_RGB32;

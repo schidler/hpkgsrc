@@ -1,8 +1,8 @@
 $NetBSD$
 
---- src/corelib/thread/qthread_unix.cpp.orig	2012-03-14 14:01:18.035651584 +0000
+--- src/corelib/thread/qthread_unix.cpp.orig	2012-04-26 19:46:08.036175872 +0000
 +++ src/corelib/thread/qthread_unix.cpp
-@@ -601,11 +601,12 @@ void QThread::start(Priority priority)
+@@ -610,11 +610,12 @@ void QThread::start(Priority priority)
      if (code == EPERM) {
          // caller does not have permission to set the scheduling
          // parameters/policy

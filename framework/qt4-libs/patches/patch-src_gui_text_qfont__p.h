@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/text/qfont_p.h.orig	2012-03-14 14:01:14.061603840 +0000
+--- src/gui/text/qfont_p.h.orig	2012-04-26 19:46:10.034603008 +0000
 +++ src/gui/text/qfont_p.h
 @@ -285,6 +285,10 @@ public:
      int timer_id;

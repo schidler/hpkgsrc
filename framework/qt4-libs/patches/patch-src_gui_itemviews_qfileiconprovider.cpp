@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/itemviews/qfileiconprovider.cpp.orig	2012-03-14 14:01:14.039321600 +0000
+--- src/gui/itemviews/qfileiconprovider.cpp.orig	2012-04-26 19:46:11.021495808 +0000
 +++ src/gui/itemviews/qfileiconprovider.cpp
 @@ -53,6 +53,11 @@
  #  include <objbase.h>
@@ -23,7 +23,7 @@ $NetBSD$
  #endif
      QFileIconProvider *q_ptr;
      const QString homePath;
-@@ -389,6 +396,33 @@ QIcon QFileIconProviderPrivate::getMacIc
+@@ -391,6 +398,33 @@ QIcon QFileIconProviderPrivate::getMacIc
  
      return retIcon;
  }
@@ -57,7 +57,7 @@ $NetBSD$
  #endif
  
  
-@@ -420,6 +454,10 @@ QIcon QFileIconProvider::icon(const QFil
+@@ -422,6 +456,10 @@ QIcon QFileIconProvider::icon(const QFil
      QIcon icon = d->getWinIcon(info);
      if (!icon.isNull())
          return icon;

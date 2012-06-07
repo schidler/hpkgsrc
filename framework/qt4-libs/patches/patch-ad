@@ -1,6 +1,6 @@
 $NetBSD: patch-ad,v 1.13 2012/01/12 22:59:58 adam Exp $
 
---- src/corelib/global/qglobal.h.orig	2012-03-14 14:01:18.063963136 +0000
+--- src/corelib/global/qglobal.h.orig	2012-04-26 19:46:08.049283072 +0000
 +++ src/corelib/global/qglobal.h
 @@ -176,6 +176,7 @@ namespace QT_NAMESPACE {}
       LYNX     - LynxOS

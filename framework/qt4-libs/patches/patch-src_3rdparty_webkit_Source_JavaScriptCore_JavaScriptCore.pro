@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/3rdparty/webkit/Source/JavaScriptCore/JavaScriptCore.pro.orig	2012-06-04 19:01:52.698089472 +0000
+--- src/3rdparty/webkit/Source/JavaScriptCore/JavaScriptCore.pro.orig	2012-04-26 19:46:13.039321600 +0000
 +++ src/3rdparty/webkit/Source/JavaScriptCore/JavaScriptCore.pro
 @@ -4,7 +4,6 @@ include($$PWD/../WebKit.pri)
  include(JavaScriptCore.pri)

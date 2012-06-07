@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/3rdparty/webkit/Source/WebCore/WebCore.pro.orig	2012-06-04 19:07:20.050069504 +0000
+--- src/3rdparty/webkit/Source/WebCore/WebCore.pro.orig	2012-04-26 19:46:16.028573696 +0000
 +++ src/3rdparty/webkit/Source/WebCore/WebCore.pro
 @@ -1,3 +1,4 @@
 +

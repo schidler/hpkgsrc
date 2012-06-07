@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/kernel/qapplication_p.h.orig	2012-03-14 14:01:16.004456448 +0000
+--- src/gui/kernel/qapplication_p.h.orig	2012-04-26 19:46:10.021757952 +0000
 +++ src/gui/kernel/qapplication_p.h
 @@ -298,6 +298,8 @@ public:
  #elif defined(Q_WS_QWS)
@@ -22,7 +22,7 @@ $NetBSD$
      enum KeyPlatform {
          KB_Win = 1,
          KB_Mac = 2,
-@@ -530,7 +536,7 @@ public:
+@@ -528,7 +534,7 @@ public:
      static Qt::NavigationMode navigationMode;
  #endif
  

@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/3rdparty/clucene/src/CLucene/config/compiler.h.orig	2012-03-14 14:01:29.012320768 +0000
+--- src/3rdparty/clucene/src/CLucene/config/compiler.h.orig	2012-04-26 19:46:23.020971520 +0000
 +++ src/3rdparty/clucene/src/CLucene/config/compiler.h
 @@ -65,7 +65,7 @@
  ////////////////////////////////////////////////////////////////////

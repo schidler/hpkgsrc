@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/kernel/qwidget_p.h.orig	2012-03-14 14:01:16.002097152 +0000
+--- src/gui/kernel/qwidget_p.h.orig	2012-04-26 19:46:10.065536000 +0000
 +++ src/gui/kernel/qwidget_p.h
 @@ -917,6 +917,9 @@ public:
      void registerTouchWindow();

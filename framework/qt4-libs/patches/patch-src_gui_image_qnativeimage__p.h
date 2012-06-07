@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/image/qnativeimage_p.h.orig	2012-03-14 14:01:16.020709376 +0000
+--- src/gui/image/qnativeimage_p.h.orig	2012-04-26 19:46:09.025952256 +0000
 +++ src/gui/image/qnativeimage_p.h
 @@ -64,6 +64,9 @@
  #elif defined(Q_WS_MAC)

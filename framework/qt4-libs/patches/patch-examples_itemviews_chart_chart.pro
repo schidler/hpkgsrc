@@ -1,6 +1,6 @@
 $NetBSD$
 
---- examples/itemviews/chart/chart.pro.orig	2012-03-14 14:01:32.033816576 +0000
+--- examples/itemviews/chart/chart.pro.orig	2012-04-26 19:45:53.051642368 +0000
 +++ examples/itemviews/chart/chart.pro
 @@ -4,7 +4,7 @@ RESOURCES   = chart.qrc
  SOURCES     = main.cpp \

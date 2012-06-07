@@ -1,8 +1,8 @@
 $NetBSD$
 
---- configure.orig	2012-03-14 14:01:12.049020928 +0000
+--- configure.orig	2012-04-26 19:46:24.038273024 +0000
 +++ configure
-@@ -3100,13 +3100,13 @@ if [ -z "${CFG_HOST_ARCH}" ]; then
+@@ -3160,13 +3160,13 @@ if [ -z "${CFG_HOST_ARCH}" ]; then
              CFG_HOST_ARCH=x86_64
          fi
          ;;
@@ -18,7 +18,7 @@ $NetBSD$
          if [ "$OPT_VERBOSE" = "yes" ]; then
              echo "    64-bit PowerPC (powerpc)"
          fi
-@@ -3130,6 +3130,19 @@ if [ -z "${CFG_HOST_ARCH}" ]; then
+@@ -3190,6 +3190,19 @@ if [ -z "${CFG_HOST_ARCH}" ]; then
          fi
          CFG_HOST_ARCH=sparc
          ;;
@@ -38,7 +38,7 @@ $NetBSD$
      QNX:*:*)
          case "$UNAME_MACHINE" in
          x86pc)
-@@ -3466,7 +3479,7 @@ fi
+@@ -3526,7 +3539,7 @@ fi
  if [ "$PLATFORM_MAC" = "yes" ] && [ '!' -z "$CFG_SDK" ]; then
      # get the darwin version. 10.0.0 and up means snow leopard.
      VERSION=`uname -r | tr '.' ' ' | awk '{print $1}'`
@@ -47,16 +47,16 @@ $NetBSD$
          echo
          echo "WARNING: The 10.4u SDK does not support gcc 4.2. Configure with -platform macx-g++40. "
          echo
-@@ -4448,6 +4461,8 @@ elif [ "$PLATFORM_MAC" = "yes" ]; then
+@@ -4508,6 +4521,8 @@ elif [ "$PLATFORM_MAC" = "yes" ]; then
      Platform="Qt for Mac OS X"
  elif [ "$XPLATFORM_MINGW" = "yes" ]; then
      Platform="Qt for Windows"
 +elif [ "$PLATFORM_HAIKU" = "yes" ]; then
-+-     Platform="Qt for Haiku"
- elif [ '!' -z "`getQMakeConf \"$XQMAKESPEC\" | grep QMAKE_LIBS_X11 | awk '{print $3;}'`" ]; then
++    Platform="Qt for Haiku"
+ elif [ -n "`getXQMakeConf grep QMAKE_LIBS_X11`" ]; then
      PLATFORM_X11=yes
      Platform="Qt for Linux/X11"
-@@ -4970,7 +4985,7 @@ if true; then ###[ '!' -f "$outpath/bin/
+@@ -4997,7 +5012,7 @@ if true; then ###[ '!' -f "$outpath/bin/
      done
  
      QMAKE_BUILD_ERROR=no
@@ -65,7 +65,7 @@ $NetBSD$
      [ '!' -z "$QCONFIG_H" ] && mv -f "$QCONFIG_H" "$QMAKE_QCONFIG_H" #move qmake's qconfig.h to qconfig.h.qmake
      [ '!' -z "$OLD_QCONFIG_H" ] && mv -f "${OLD_QCONFIG_H}.old" "$OLD_QCONFIG_H" #put back qconfig.h
      [ "$QMAKE_BUILD_ERROR" = "yes" ] && exit 2
-@@ -5662,7 +5677,7 @@ if [ "$PLATFORM_MAC" = "yes" -a ! -z "$Q
+@@ -5689,7 +5704,7 @@ if [ "$PLATFORM_MAC" = "yes" -a ! -z "$Q
      QT_NAMESPACE_MAC_CRC=`"$mactests/crc.test" "$XQMAKESPEC" "$QMAKE_CONFIG" $OPT_VERBOSE "$relpath" "$outpath" config.tests/mac/crc $QT_NAMESPACE $L_FLAGS $I_FLAGS $l_FLAGS`
  fi
  
@@ -74,7 +74,7 @@ $NetBSD$
  if [ "$PLATFORM_X11" = "yes" -o "$PLATFORM_QWS" = "yes" -o "$PLATFORM_QPA" = "yes" ]; then
  
      # auto-detect Glib support
-@@ -6994,7 +7009,7 @@ fi
+@@ -7021,7 +7036,7 @@ fi
  # select Carbon on 10.4 Tiger.
  if [ "$PLATFORM_MAC" = "yes" ]; then
      VERSION=`uname -r | tr '.' ' ' | awk '{print $1}'`
@@ -83,7 +83,7 @@ $NetBSD$
          CFG_MAC_COCOA="no";
          CFG_MAC_CARBON="yes";
      fi
-@@ -8247,7 +8262,7 @@ QMakeVar set sql-plugins "$SQL_PLUGINS"
+@@ -8274,7 +8289,7 @@ QMakeVar set sql-plugins "$SQL_PLUGINS"
  [ "$CFG_EXCEPTIONS" = "no" ] && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_EXCEPTIONS"
  [ "$CFG_IPV6" = "no" ]       && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_IPV6"
  [ "$CFG_SXE" = "no" ]        && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_SXE"
@@ -92,7 +92,7 @@ $NetBSD$
  
  if [ "$PLATFORM_QWS" != "yes" -a "$PLATFORM_QPA" != "yes" ]; then
      [ "$CFG_GRAPHICS_SYSTEM" = "raster" ] && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_GRAPHICSSYSTEM_RASTER"
-@@ -8452,6 +8467,7 @@ cat >>"$QTCONFIG.tmp" <<EOF
+@@ -8479,6 +8494,7 @@ cat >>"$QTCONFIG.tmp" <<EOF
  #configuration
  CONFIG += $QTCONFIG_CONFIG
  QT_ARCH = $CFG_ARCH

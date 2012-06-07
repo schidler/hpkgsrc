@@ -1,6 +1,6 @@
 $NetBSD$
 
---- qmake/option.cpp.orig	2012-03-14 14:01:12.050855936 +0000
+--- qmake/option.cpp.orig	2012-04-26 19:45:52.006029312 +0000
 +++ qmake/option.cpp
 @@ -263,6 +263,11 @@ Option::parseCommandLine(int argc, char 
                  Option::host_mode = HOST_WIN_MODE;

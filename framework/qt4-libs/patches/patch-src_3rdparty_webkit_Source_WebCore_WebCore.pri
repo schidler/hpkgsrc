@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/3rdparty/webkit/Source/WebCore/WebCore.pri.orig	2012-06-04 19:07:20.049807360 +0000
+--- src/3rdparty/webkit/Source/WebCore/WebCore.pri.orig	2012-04-26 19:46:17.055574528 +0000
 +++ src/3rdparty/webkit/Source/WebCore/WebCore.pri
 @@ -272,6 +272,7 @@ contains(DEFINES, ENABLE_WEBGL=1)|contai
  }

@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/corelib/global/qnamespace.h.orig	2012-03-14 14:01:18.063438848 +0000
+--- src/corelib/global/qnamespace.h.orig	2012-04-26 19:46:08.051118080 +0000
 +++ src/corelib/global/qnamespace.h
 @@ -1677,6 +1677,8 @@ public:
      typedef void * HANDLE;

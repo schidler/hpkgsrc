@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/gui/painting/qregion.h.orig	2012-03-14 14:01:16.060555264 +0000
+--- src/gui/painting/qregion.h.orig	2012-04-26 19:46:09.049545216 +0000
 +++ src/gui/painting/qregion.h
 @@ -59,7 +59,7 @@ QT_MODULE(Gui)
  template <class T> class QVector;
