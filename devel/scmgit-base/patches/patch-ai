@@ -2,7 +2,7 @@ $NetBSD: patch-ai,v 1.3 2008/08/20 03:04:20 bjs Exp $
 
 Beginnings of emacs support, not enabled yet.  We must use mk/emacs.mk.
 
---- contrib/emacs/Makefile.orig	2011-11-02 01:06:28.016252928 +0000
+--- contrib/emacs/Makefile.orig	2012-05-25 19:36:55.018612224 +0000
 +++ contrib/emacs/Makefile
 @@ -12,8 +12,8 @@ RM ?= rm -f
  all: $(ELC)

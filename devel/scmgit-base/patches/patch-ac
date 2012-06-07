@@ -1,6 +1,6 @@
 $NetBSD: patch-ac,v 1.3 2008/08/20 03:04:20 bjs Exp $
 
---- gitk-git/Makefile.orig	2011-11-02 01:06:28.044826624 +0000
+--- gitk-git/Makefile.orig	2012-05-25 19:36:55.049283072 +0000
 +++ gitk-git/Makefile
 @@ -40,9 +40,9 @@ endif
  all:: gitk-wish $(ALL_MSGFILES)

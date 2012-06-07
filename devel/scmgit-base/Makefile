@@ -39,7 +39,7 @@ REPLACE_SH+=		contrib/hooks/post-receive-email
 REPLACE_SH+=		contrib/hooks/pre-auto-gc-battery
 
 .if ${OPSYS} == "Haiku"
-EGDIR=			${PREFIX}/data/examples/scmgit
+EGDIR=			${PREFIX}/documentation/examples/scmgit
 .else
 EGDIR=			${PREFIX}/share/examples/scmgit
 .endif
