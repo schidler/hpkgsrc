@@ -212,6 +212,8 @@ qt4/mkspecs/cygwin-g++/qmake.conf
 qt4/mkspecs/cygwin-g++/qplatformdefs.h
 qt4/mkspecs/darwin-g++/qmake.conf
 qt4/mkspecs/darwin-g++/qplatformdefs.h
+qt4/mkspecs/default/qmake.conf
+qt4/mkspecs/default/qplatformdefs.h
 qt4/mkspecs/features/build_pass.prf
 qt4/mkspecs/features/dbusadaptors.prf
 qt4/mkspecs/features/dbusinterfaces.prf
