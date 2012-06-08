@@ -1,0 +1,6 @@
+$NetBSD$
+
+SHA1 (arora-0.11.0.tar.gz) = 480cfd7482cccbb7ece866fa10afe9acace29b31
+RMD160 (arora-0.11.0.tar.gz) = c8b010d5e540c8ee3a0604c4d24c19c8b8653798
+Size (arora-0.11.0.tar.gz) = 1072898 bytes
+SHA1 (patch-install.pri) = 2150a3cfbcc3e9b076a33a1da6c8293c1901e350
