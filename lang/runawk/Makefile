@@ -31,9 +31,10 @@ SUBST_MESSAGE.runawk=	Fixing path to runawk.
 MAKE_ENV+=	AWK_PROG=${AWK:Q}
 .endif
 
-EGDIR=		${PREFIX}/share/examples/runawk
+EGDIR=		${PREFIX}/documentation/examples/runawk
 
 MAKE_ENV+=	MANDIR=${PREFIX}/${PKGMANDIR}
+MAKE_ENV+=	DATADIR=${PREFIX}/data
 MAKE_ENV+=	EGDIR=${EGDIR}
 MAKE_ENV+=	SUBPRJ_DFLT='runawk modules a_getopt doc examples'
 
