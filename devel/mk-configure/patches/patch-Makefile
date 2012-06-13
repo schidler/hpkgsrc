@@ -1,0 +1,17 @@
+$NetBSD$
+
+--- Makefile.orig	2012-06-13 17:50:49.582746112 +0000
++++ Makefile
+@@ -2,9 +2,9 @@
+ 
+ ##################################################
+ 
+-MKFILESDIR?=		${PREFIX}/share/mkc-mk
+-EXTRAFILESDIR?=		${PREFIX}/share/doc/mk-configure
+-BUILTINSDIR?=		${PREFIX}/share/mk-configure/custom
++MKFILESDIR?=		${PREFIX}/data/mkc-mk
++EXTRAFILESDIR?=		${PREFIX}/documentation/doc/mk-configure
++BUILTINSDIR?=		${PREFIX}/data/mk-configure/custom
+ 
+ BMAKE?=			bmake
+ 
