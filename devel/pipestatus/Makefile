@@ -15,7 +15,7 @@ PKG_DESTDIR_SUPPORT=	user-destdir
 NO_CONFIGURE=		yes
 NO_BUILD=		yes
 
-INSTALLATION_DIRS+=	bin share/doc/pipestatus
+INSTALLATION_DIRS+=	bin documentation/doc/pipestatus
 DOCS=			README NEWS
 
 TEST_TARGET=		test
@@ -24,7 +24,7 @@ MAKE_FLAGS+=		SH=${SH:Q}
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/pipestatus ${DESTDIR}${PREFIX}/bin/
 .for doc in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DESTDIR}${PREFIX}/share/doc/pipestatus/
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DESTDIR}${PREFIX}/documentation/doc/pipestatus/
 .endfor
 
 .include "../../mk/bsd.pkg.mk"
