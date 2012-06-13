@@ -28,9 +28,6 @@ CONFIGURE_ARGS+=	--disable-assembler
 
 CONFIGURE_ARGS+=	--docdir=${PREFIX}/documentation/doc/xz
 
-LDFLAGS.Haiku+=	-lgetopt
-
 .include "../../devel/gettext-lib/buildlink3.mk"
-.include "../../devel/libgetopt/buildlink3.mk"
 .include "../../mk/pthread.buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
