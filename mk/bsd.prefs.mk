@@ -1,4 +1,4 @@
-# $NetBSD: bsd.prefs.mk,v 1.318 2011/10/26 16:01:14 hans Exp $
+# $NetBSD: bsd.prefs.mk,v 1.323 2012/06/14 21:57:37 jperkin Exp $
 #
 # This file includes the mk.conf file, which contains the user settings.
 #
@@ -216,18 +216,11 @@ LOWER_VENDOR?=		sgi
 .elif ${OPSYS} == "Linux"
 OS_VERSION:=		${OS_VERSION:C/-.*$//}
 LOWER_OPSYS?=		linux
-MACHINE_ARCH:=          ${MACHINE_ARCH:C/i.86/i386/}
-MACHINE_ARCH:=		${MACHINE_ARCH:C/ppc/powerpc/}
 .  if !defined(LOWER_ARCH)
 LOWER_ARCH!=		${UNAME} -m | sed -e 's/i.86/i386/' -e 's/ppc/powerpc/'
 .  endif # !defined(LOWER_ARCH)
-.  if ${LOWER_ARCH} == "x86_64"
-MACHINE_ARCH=		x86_64
-.  endif
-.  if ${MACHINE_ARCH} == "unknown" || ${MACHINE_ARCH} == ""
 MACHINE_ARCH=		${LOWER_ARCH}
 MAKEFLAGS+=		LOWER_ARCH=${LOWER_ARCH:Q}
-.  endif
 .  if exists(/etc/debian_version)
 LOWER_VENDOR?=		debian
 .  elif exists(/etc/mandrake-release)
@@ -267,8 +260,12 @@ SPARC_TARGET_ARCH?=	sparcv7
 .  elif ${MACHINE_ARCH} == "sun4"
 MACHINE_ARCH=		sparc
 SPARC_TARGET_ARCH?=	sparcv7
-.  elif ${MACHINE_ARCH} == "i86pc" || ${MACHINE_ARCH} == "i86xpv"
-MACHINE_ARCH=		i386
+.  elif ${MACHINE_ARCH} == "i86pc" || ${MACHINE_ARCH} == "i86xpv" || ${MACHINE_ARCH} == "i386"
+ABI?=			32
+LOWER_ARCH.32=		i386
+LOWER_ARCH.64=		x86_64
+LOWER_ARCH=		${LOWER_ARCH.${ABI}}
+MACHINE_ARCH=		${LOWER_ARCH}
 .  elif ${MACHINE_ARCH} == "unknown"
 .    if !defined(LOWER_ARCH)
 LOWER_ARCH!=		${UNAME} -p
@@ -549,6 +546,8 @@ X11BASE?=	/usr
 .  elif !empty(MACHINE_PLATFORM:MDarwin-9.*-*) || \
         !empty(MACHINE_PLATFORM:MDarwin-??.*-*)
 X11BASE?=	/usr/X11
+.  elif ${OPSYS} == "NetBSD" && ${X11FLAVOUR:U} == "Xorg"
+X11BASE?=	/usr/X11R7
 .  elif exists(/usr/X11R7/lib/libX11.so)
 X11BASE?=	/usr/X11R7
 .  else
@@ -556,18 +555,6 @@ X11BASE?=	/usr/X11R6
 .  endif
 .endif
 CROSSBASE?=	${LOCALBASE}/cross
-
-# If xpkgwedge.def is found, then clearly we're using xpkgwedge.
-.if exists(${LOCALBASE}/lib/X11/config/xpkgwedge.def) || \
-    exists(${X11BASE}/lib/X11/config/xpkgwedge.def)
-USE_XPKGWEDGE=  yes
-.elif ${PKG_INSTALLATION_TYPE} == "pkgviews"
-USE_XPKGWEDGE=		yes
-.elif ${X11_TYPE} == "modular"
-USE_XPKGWEDGE=	no
-.else
-USE_XPKGWEDGE?=	yes
-.endif
 
 .if defined(FIX_SYSTEM_HEADERS) && ${FIX_SYSTEM_HEADERS} == "yes" && \
     !defined(BOOTSTRAP_PKG) && \
@@ -579,14 +566,26 @@ USE_XPKGWEDGE?=	yes
 X11BASE=		${LOCALBASE}
 .endif
 
-.if !empty(USE_XPKGWEDGE:M[Yy][Ee][Ss])
 X11PREFIX=		${LOCALBASE}
-.else
-X11PREFIX=		${X11BASE}
-.endif
 
 # Default directory for font encodings
 X11_ENCODINGSDIR?=	${X11BASE}/lib/X11/fonts/encodings
+
+IMAKE_MAN_SOURCE_PATH=	man/man
+IMAKE_MAN_SUFFIX=	1
+IMAKE_LIBMAN_SUFFIX=	3
+IMAKE_KERNMAN_SUFFIX=	4
+IMAKE_FILEMAN_SUFFIX=	5
+IMAKE_GAMEMAN_SUFFIX=	6
+IMAKE_MISCMAN_SUFFIX=	7
+IMAKE_MAN_DIR=		${IMAKE_MAN_SOURCE_PATH}1
+IMAKE_LIBMAN_DIR=	${IMAKE_MAN_SOURCE_PATH}3
+IMAKE_KERNMAN_DIR=	${IMAKE_MAN_SOURCE_PATH}4
+IMAKE_FILEMAN_DIR=	${IMAKE_MAN_SOURCE_PATH}5
+IMAKE_GAMEMAN_DIR=	${IMAKE_MAN_SOURCE_PATH}6
+IMAKE_MISCMAN_DIR=	${IMAKE_MAN_SOURCE_PATH}7
+IMAKE_MANNEWSUFFIX=	${IMAKE_MAN_SUFFIX}
+IMAKE_MANINSTALL?=	maninstall
 
 DEPOT_SUBDIR?=		packages
 DEPOTBASE=		${LOCALBASE}/${DEPOT_SUBDIR}

@@ -3,30 +3,36 @@
 ######################################################################
 ### get-haiku-attr (PRIVATE)
 ######################################################################
-### get-haiku-attr replaces the path to the locale directory in
-### various Makefiles with the one chosen by pkgsrc (PKGDOCDIR).
+### get-haiku-attr get parametres from .desktop files
+### and add to .rdef.
 ###
+.if !empty(USE_HAIKUATTR:M[yY][eE][sS])
 
-_DESKTOP_FILES_cmd= ${CAT} PLIST | ${SED} -n '/.desktop/p'
-_GET_ATTR_cmd=	\
-	cat ${DESTDIR}${PREFIX}/${_DESKTOP_FILES_cmd:sh} | grep = | sed 's|"||g' | sed 's|@||g' \
-	| sed 's|\[|\_|' | sed 's|\]|\_|' | sed 's|=|="|' | sed 's|$$|\"|g'
+.include "../../mk/bsd.prefs.mk"
+
+_DESKTOP_FILES!= cat PLIST | sed -n '/.desktop/p'
+DESKTOP_FILES=${DESTDIR}${PREFIX}/${_DESKTOP_FILES}
+#_GET_ATTR!=	\
+#	cat ${DESTDIR}${PREFIX}/${_DESKTOP_FILES} | sed 's|"||g' | sed 's|@||g' \
+#	| sed 's|\[|\_|' | sed 's|\]|\_|' | sed 's|=|="|' | sed 's|$$|\"|g'
 #_GET_ATTR_cmd=	\
 #	cat ${DESTDIR}${PREFIX}/${_DESKTOP_FILES_cmd:sh} | grep "="
-NAME_ATTR= ${_GET_ATTR_cmd:sh:MName=*} | sed 's|Name=||g'
-MENU_DIR_ATTR= ${_GET_ATTR_cmd:sh:MCategories=*} | sed 's|Categories=||g'
-MIME_ATTR= ${_GET_ATTR_cmd:sh:MMimeType=*} | sed 's|MimeType=||g' | sed 's|;$$|\"|g' | sed 's|;|\", \"types\" = \"|g'
-ICON_ATTR= ${_GET_ATTR_cmd:sh:MIcon=*} | sed 's|=||g' | sed 's|Icon||'
-BIN_ATTR= ${_GET_ATTR_cmd:sh:MExec=*} | sed 's|Exec=||g' | sed 's| *[0-9A-Za-z]||g'
-SHORT_ATTR= ${_GET_ATTR_cmd:sh:MGenericName=*} | sed 's|GenericName=||g'
+#NAME_ATTR!= ${DESKTOP_FILES:MName=*} | sed 's|Name=||g'
+#ICON_ATTR!= ${DESKTOP_FILES:MIcon=*} | sed 's|Icon=||g'
+#NAME_ATTR= ${_GET_ATTR_cmd:sh:MName=*} | sed 's|Name=||g'
+#MENU_DIR_ATTR= ${_GET_ATTR_cmd:sh:MCategories=*} | sed 's|Categories=||g'
+#MIME_ATTR= ${_GET_ATTR_cmd:sh:MMimeType=*} | sed 's|MimeType=||g' | sed 's|;$$|\"|g' | sed 's|;|\", \"types\" = \"|g'
+#ICON_ATTR= ${_GET_ATTR_cmd:sh:MIcon=*} | sed 's|=||g' | sed 's|Icon||'
+#SHORT_ATTR= ${_GET_ATTR_cmd:sh:MGenericName=*} | sed 's|GenericName=||g'
 
-#_TARGET_BIN_cmd= ${CAT} PLIST | ${SED} -n '|bin/${BIN_ATTR:sh}|p'
+#BIN_ATTR_cmd= cat ${DESTDIR}${PREFIX}/${_DESKTOP_FILES_cmd:sh} | grep "Icon=" | sed 's|Icon=||g'
+#BIN_ATTR_cmd= ${_GET_ATTR_cmd:sh:MExec=*} | sed 's|Exec=||g'
+#TARGET_BIN= ${BIN_ATTR_cmd=:sh}
+#_TARGET_BIN= ${CAT} PLIST | ${SED} -n '|bin/arora|p'
 
 
 
-.if !empty(USE_HAIKUATTR:M[yY][eE][sS])
 post-install: get-haiku-attr
-.endif
 
 .PHONY: get-haiku-attr
 get-haiku-attr:
@@ -34,14 +40,14 @@ get-haiku-attr:
 	@${STEP_MSG} "Get attributes for Haiku"
 
 	cp -f ${FILESDIR}/${PKGBASE}.rdef ${WRKDIR}
-	@${STEP_MSG} ${MIME_ATTR}
+	@${STEP_MSG} ${_DESKTOP_FILES}
 	@${ECHO} -n	"resource app_signature \"application/x-vnd."	>> ${WRKDIR}/${PKGBASE}.rdef
 	@${ECHO} -n ${NAME_ATTR}									>> ${WRKDIR}/${PKGBASE}.rdef
-	@${ECHO}	 "\";"											>> ${WRKDIR}/${PKGBASE}.rdef
+	@${ECHO}	"\";"											>> ${WRKDIR}/${PKGBASE}.rdef
 	@${ECHO}	"resource app_version {"						>> ${WRKDIR}/${PKGBASE}.rdef
 	@${ECHO} -n	"short_info = \""								>> ${WRKDIR}/${PKGBASE}.rdef
 	@${ECHO} -n	${SHORT_ATTR}									>> ${WRKDIR}/${PKGBASE}.rdef
-	@${ECHO} "\","												>> ${WRKDIR}/${PKGBASE}.rdef
+	@${ECHO} 	"\","											>> ${WRKDIR}/${PKGBASE}.rdef
 	@${ECHO}	"long_info  = \"${COMMENT}\""					>> ${WRKDIR}/${PKGBASE}.rdef
 	@${ECHO}	"};"											>> ${WRKDIR}/${PKGBASE}.rdef
 	@${ECHO}	"resource file_types message {"					>> ${WRKDIR}/${PKGBASE}.rdef
@@ -50,5 +56,6 @@ get-haiku-attr:
 	@${ECHO}	"};"											>> ${WRKDIR}/${PKGBASE}.rdef
 	
 	rc	${WRKDIR}/${PKGBASE}.rdef
-	xres ${DESTDIR}${PREFIX}/bin/${BIN_ATTR} ${WRKDIR}/${PKGBASE}.rsrc
+	xres -o ${DESTDIR}${PREFIX}/bin/${TARGET_BIN} ${WRKDIR}/${PKGBASE}.rsrc
 
+.endif

@@ -1,4 +1,4 @@
-# $NetBSD: find-libs.mk,v 1.10 2012/04/23 08:44:00 sbd Exp $
+# $NetBSD: bison.mk,v 1.1 2012/01/14 00:47:53 hans Exp $
 #
 # Copyright (c) 2005 The NetBSD Foundation, Inc.
 # All rights reserved.
@@ -35,60 +35,34 @@
 # POSSIBILITY OF SUCH DAMAGE.
 #
 
-#
-# This is a "subroutine" that can be included to detect the presence of
-# libraries in the base system.
-#
-# The input variable is BUILDLINK_FIND_LIBS, which is a list of library
-# names, e.g. ncurses, iconv, etc., that will be sought in the base
-# system.  BUILTIN_LIB_FOUND.<lib> is set to "yes" or "no" depending
-# on the result of the search.
-#
-# An example use is:
-#
-# BUILDLINK_FIND_LIBS:=	intl iconv
-# .include "../../mk/buildlink3/find-libs.mk"
-# # ${BUILTIN_LIB_FOUND.intl} and ${BUILTIN_LIB_FOUND.iconv} are now
-# # either "yes" or "no".
+BISON_REQD?=		1.875
+
+# If the package does explicitly request bison as a tool, then determine if the
+# platform-provided bison's version is at least ${BISON_REQD}.  If it isn't, then
+# tell the tools framework to use the pkgsrc bison.
 #
 
-.if empty(USE_TOOLS:Mecho)
-USE_TOOLS+=	echo
-.endif
-.if empty(USE_TOOLS:Mtest)
-USE_TOOLS+=	test
-.endif
-
-.for _lib_ in ${BUILTIN_FIND_LIBS}
-.  if !defined(BUILTIN_LIB_FOUND.${_lib_})
-.    if ${OPSYS} == "Haiku" && defined(BELIBRARIES) && !empty(BELIBRARIES)
-BUILTIN_LIB_FOUND.${_lib_}=	no
-.      for _path_ in ${BELIBRARIES:S/:/ /g}
-.        if ${BUILTIN_LIB_FOUND.${_lib_}} == "no"
-BUILTIN_LIB_FOUND.${_lib_}!=    \
-	if ${TEST} "`${ECHO} ${_path_}/lib${_lib_}.*`" != "${_path_}/lib${_lib_}.*"; then \
-		${ECHO} yes;						\
-	else								\
+.if !empty(USE_TOOLS:C/:.*//:Mbison*) && \
+    defined(TOOLS_PLATFORM.bison) && !empty(TOOLS_PLATFORM.bison)
+.  if !defined(_TOOLS_USE_PKGSRC.bison)
+_TOOLS_VERSION.bison!=							\
+	${TOOLS_PLATFORM.bison} --version |				\
+	${SED} -n -e 's/^bison.* \([0-9]\..*\)/\1/p'
+_TOOLS_PKG.bison=		bison-${_TOOLS_VERSION.bison}
+_TOOLS_USE_PKGSRC.bison=	no
+.    for _dep_ in bison>=${BISON_REQD}
+.      if !empty(_TOOLS_USE_PKGSRC.bison:M[nN][oO])
+_TOOLS_USE_PKGSRC.bison!=						\
+	if ${PKG_ADMIN} pmatch ${_dep_:Q} ${_TOOLS_PKG.bison:Q}; then \
 		${ECHO} no;						\
-	fi
-.        endif
-.      endfor
-.    else
-# XXX: Why are we looking in '/usr/lib${ABI}' and '/lib${ABI}', as we should
-# XXX: only be looking in '/usr/lib${LIBABISUFFIX}' and '/lib${LIBABISUFFIX}'
-BUILTIN_LIB_FOUND.${_lib_}!=	\
-	if ${TEST} "`${ECHO} /usr/lib${ABI}/lib${_lib_}.*`" != "/usr/lib${ABI}/lib${_lib_}.*"; then \
-		${ECHO} yes;						\
-	elif ${TEST} "`${ECHO} /lib${ABI}/lib${_lib_}.*`" != "/lib${ABI}/lib${_lib_}.*"; then \
-		${ECHO} yes;						\
-	elif ${TEST} "`${ECHO} /usr/lib${LIBABISUFFIX}/lib${_lib_}.*`" != "/usr/lib${LIBABISUFFIX}/lib${_lib_}.*"; then \
-		${ECHO} yes;						\
-	elif ${TEST} "`${ECHO} /lib${LIBABISUFFIX}/lib${_lib_}.*`" != "/lib${LIBABISUFFIX}/lib${_lib_}.*"; then \
-		${ECHO} yes;						\
 	else								\
-		${ECHO} no;						\
+		${ECHO} yes;						\
 	fi
-.    endif
+.      endif
+.    endfor
 .  endif
-MAKEVARS+=	BUILTIN_LIB_FOUND.${_lib_}
-.endfor
+MAKEVARS+=	_TOOLS_USE_PKGSRC.bison
+.endif
+
+CONFIGURE_ENV+=		BISON=${TOOLS_CMD.bison:Q}
+MAKE_ENV+=		BISON=${TOOLS_CMD.bison:Q}

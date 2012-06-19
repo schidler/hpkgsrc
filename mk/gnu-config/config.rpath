@@ -369,7 +369,7 @@ case "$host_os" in
   amigaos*)
     shlibext=ixlibrary
     ;;
-  beos* |haiku*)
+  beos* | haiku*)
     shlibext=so
     ;;
   bsdi4*)

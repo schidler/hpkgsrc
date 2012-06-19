@@ -1,4 +1,4 @@
-# $NetBSD: MirBSD.mk,v 1.4 2011/09/18 19:11:29 bsiegert Exp $
+# $NetBSD: MirBSD.mk,v 1.7 2012/06/16 20:13:06 bsiegert Exp $
 #
 # Variable definitions for the MirOS BSD operating system.
 
@@ -10,9 +10,9 @@ RSH?=		/usr/bin/false	# not delivered with MirOS any more
 SU?=		/usr/bin/su
 TYPE?=		type				# Shell builtin
 
-USERADD?=	${LOCALBASE}/sbin/useradd
-GROUPADD?=	${LOCALBASE}/sbin/groupadd
-_USER_DEPENDS=	user>=20000313:../../sysutils/user	#XXX make this work
+#USERADD?=	${LOCALBASE}/sbin/useradd
+#GROUPADD?=	${LOCALBASE}/sbin/groupadd
+#_USER_DEPENDS=	user>=20000313:../../sysutils/user	#XXX make this work
 
 CPP_PRECOMP_FLAGS?=	# unset
 DEF_UMASK?=		0022
@@ -29,21 +29,6 @@ ULIMIT_CMD_memorysize?=	ulimit -m `ulimit -H -m`
 
 X11_TYPE?=		modular
 
-# imake installs manpages in weird places
-# these values from /usr/X11R6/lib/X11/config/OpenBSD.cf
-# XXX verify against MirBSD.cf defns
-IMAKE_MAN_SOURCE_PATH=	man/cat
-IMAKE_MANNEWSUFFIX=	0
-IMAKE_MAN_SUFFIX=	${IMAKE_MANNEWSUFFIX}
-IMAKE_LIBMAN_SUFFIX=	${IMAKE_MANNEWSUFFIX}
-IMAKE_FILEMAN_SUFFIX=	${IMAKE_MANNEWSUFFIX}
-IMAKE_GAMEMAN_SUFFIX=	${IMAKE_MANNEWSUFFIX}
-IMAKE_MAN_DIR=		${IMAKE_MAN_SOURCE_PATH}1
-IMAKE_LIBMAN_DIR=	${IMAKE_MAN_SOURCE_PATH}3
-IMAKE_FILEMAN_DIR=	${IMAKE_MAN_SOURCE_PATH}5
-IMAKE_GAMEMAN_DIR=	${IMAKE_MAN_SOURCE_PATH}6
-IMAKE_MANINSTALL?=	maninstall catinstall
-
 _OPSYS_HAS_INET6=	yes	# IPv6 is standard
 _OPSYS_HAS_JAVA=	no	# Java is not standard
 _OPSYS_HAS_MANZ=	no	# MANZ controls gzipping of man pages
@@ -55,6 +40,8 @@ _OPSYS_SHLIB_TYPE=	ELF	# shared lib type
 _PATCH_CAN_BACKUP=	yes	# native patch(1) can make backups
 _PATCH_BACKUP_ARG?=	-V simple -z 	# switch to patch(1) for backup suffix
 _USE_RPATH=		yes	# add rpath to LDFLAGS
+
+BUILDLINK_TRANSFORM+=	rm:-ldl	# libdl.a is an empty static library
 
 # flags passed to the linker to extract all symbols from static archives.
 # this is GNU ld.

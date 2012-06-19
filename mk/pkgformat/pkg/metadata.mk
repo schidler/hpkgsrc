@@ -1,4 +1,4 @@
-# $NetBSD: metadata.mk,v 1.1 2011/10/15 00:23:09 reed Exp $
+# $NetBSD: metadata.mk,v 1.3 2012/05/13 08:20:11 obache Exp $
 
 ######################################################################
 ### The targets below are all PRIVATE.
@@ -38,7 +38,7 @@ ${_BUILD_INFO_FILE}: plist
 .if !empty(USE_TOOLS:Mgmake)
 	${RUN}${ECHO} "GMAKE=`${GMAKE} --version | ${GREP} Make`" >> ${.TARGET}.tmp
 .endif
-	${RUN}${ECHO} "PKGTOOLS_VERSION=${PKGTOOLS_VERSION}" >> ${.TARGET}.tmp
+	${RUN}${ECHO} "PKGTOOLS_VERSION=${PKGTOOLS_VERSION_REQD}" >> ${.TARGET}.tmp
 .if defined(HOMEPAGE)
 	${RUN}${ECHO} "HOMEPAGE=${HOMEPAGE}" >> ${.TARGET}.tmp
 .endif
@@ -66,7 +66,7 @@ ${_BUILD_INFO_FILE}: plist
 	ELF)								\
 		libs=`${AWK} '/\/lib.*\.so(\.[0-9]+)*$$/ { print "${DESTDIR}${PREFIX}/" $$0 } END { exit 0 }' ${_PLIST_NOKEYWORDS}`; \
 		if ${TEST} -n "$$bins" -o -n "$$libs"; then		\
-			requires=`($$ldd $$bins $$libs 2>/dev/null || ${TRUE}) | ${AWK} '$$2 == "=>" && $$3 ~ "/" { print $$3 }' | ${SORT} -u`; \
+			requires=`(${PKGSRC_SETENV} ${LDD_ENV:U} $$ldd $$bins $$libs 2>/dev/null || ${TRUE}) | ${AWK} '$$2 == "=>" && $$3 ~ "/" { print $$3 }' | ${SORT} -u`; \
 		fi;							\
 		linklibs=`${AWK} '/.*\.so(\.[0-9]+)*$$/ { print "${DESTDIR}${PREFIX}/" $$0 }' ${_PLIST_NOKEYWORDS}`; \
 		for i in $$linklibs; do					\
@@ -240,7 +240,6 @@ _pkgformat-register: install-display-message
 install-display-message: ${_MESSAGE_FILE}
 	@${STEP_MSG} "Please note the following:"
 	@${ECHO_MSG} ""
-	@${ALERT} "`@${CAT} ${_MESSAGE_FILE}&`"
 	@${CAT} ${_MESSAGE_FILE}
 	@${ECHO_MSG} ""
 .  if !empty(PKGSRC_MESSAGE_RECIPIENTS)
@@ -249,7 +248,6 @@ install-display-message: ${_MESSAGE_FILE}
 	${ECHO} "";							\
 	${ECHO} "Please note the following:";				\
 	${ECHO} "";							\
-	${ALERT} "`${CAT} ${_MESSAGE_FILE}&`";						\
 	${CAT} ${_MESSAGE_FILE};					\
 	${ECHO} "") |							\
 	${MAIL_CMD} -s"Package ${PKGNAME} installed on `${HOSTNAME_CMD}`" ${PKGSRC_MESSAGE_RECIPIENTS}

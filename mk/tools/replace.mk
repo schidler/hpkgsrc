@@ -1,4 +1,4 @@
-# $NetBSD: replace.mk,v 1.233 2011/09/14 15:31:23 hans Exp $
+# $NetBSD: replace.mk,v 1.249 2012/05/30 12:02:28 cheusov Exp $
 #
 # Copyright (c) 2005 The NetBSD Foundation, Inc.
 # All rights reserved.
@@ -281,7 +281,8 @@ TOOLS_CMD.byacc=		${TOOLS_DIR}/bin/yacc
 .  endif
 .endif
 
-.for _t_ in bzip2 bzcat
+_TOOLS.bzip2=	bzip2 bzcat
+.for _t_ in ${_TOOLS.bzip2}
 .  if !defined(TOOLS_IGNORE.${_t_}) && !empty(_USE_TOOLS:M${_t_})
 .    if !empty(PKGPATH:Marchivers/bzip2)
 MAKEFLAGS+=			TOOLS_IGNORE.${_t_}=
@@ -305,7 +306,8 @@ TOOLS_PATH.chrpath=		${TOOLS_PREFIX.chrpath}/bin/chrpath
 .  endif
 .endif
 
-.for _t_ in cmake cpack
+_TOOLS.cmake=	cmake cpack
+.for _t_ in ${_TOOLS.cmake}
 .  if !defined(TOOLS_IGNORE.${_t_}) && !empty(_USE_TOOLS:M${_t_})
 .    if !empty(PKGPATH:Mdevel/cmake)
 MAKEFLAGS+=			TOOLS_IGNORE.${_t_}=
@@ -357,7 +359,7 @@ MAKEFLAGS+=			TOOLS_IGNORE.find=
 TOOLS_DEPENDS.find?=		findutils>=4.1:../../sysutils/findutils
 TOOLS_CREATE+=			find
 TOOLS_FIND_PREFIX+=		TOOLS_PREFIX.find=findutils
-TOOLS_PATH.find=		${TOOLS_PREFIX.find}/bin/${GNU_PROGRAM_PREFIX}find
+TOOLS_PATH.find=		${TOOLS_PREFIX.find}/bin/gfind
 .  endif
 .endif
 
@@ -395,7 +397,7 @@ MAKEFLAGS+=			TOOLS_IGNORE.gawk=
 TOOLS_DEPENDS.gawk?=		gawk>=3.1.1:../../lang/gawk
 TOOLS_CREATE+=			gawk
 TOOLS_FIND_PREFIX+=		TOOLS_PREFIX.gawk=gawk
-TOOLS_PATH.gawk=		${TOOLS_PREFIX.gawk}/bin/${GNU_PROGRAM_PREFIX}awk
+TOOLS_PATH.gawk=		${TOOLS_PREFIX.gawk}/bin/gawk
 .  endif
 TOOLS_ALIASES.gawk=		awk
 .endif
@@ -404,10 +406,14 @@ TOOLS_ALIASES.gawk=		awk
 .  if !empty(PKGPATH:Mmisc/rubygems)
 MAKEFLAGS+=			TOOLS_IGNORE.gem=
 .  elif !empty(_TOOLS_USE_PKGSRC.gem:M[yY][eE][sS])
-TOOLS_DEPENDS.gem?=		rubygems-[0-9]*:../../misc/rubygems
+.    if !defined(RUBY_VER) || !empty(RUBY_VER:M18)
+TOOLS_DEPENDS.gem?=		${RUBY_PKGPREFIX}-rubygems-[0-9]*:../../misc/rubygems
+.    else
+TOOLS_DEPENDS.gem?=		${RUBY_BASE}>=${RUBY_VERSION}:../../lang/${RUBY_BASE}
+.    endif
 TOOLS_CREATE+=			gem
 TOOLS_FIND_PREFIX+=		TOOLS_PREFIX.gem=gem
-TOOLS_PATH.gem=			${TOOLS_PREFIX.gem}/bin/gem
+TOOLS_PATH.gem=			${TOOLS_PREFIX.gem}/bin/gem${RUBY_VER}
 .  endif
 .endif
 
@@ -441,7 +447,7 @@ MAKEFLAGS+=			TOOLS_IGNORE.gsed=
 TOOLS_DEPENDS.gsed?=		gsed>=3.0.2:../../textproc/gsed
 TOOLS_CREATE+=			gsed
 TOOLS_FIND_PREFIX+=		TOOLS_PREFIX.gsed=gsed
-TOOLS_PATH.gsed=		${TOOLS_PREFIX.gsed}/bin/${GNU_PROGRAM_PREFIX}sed
+TOOLS_PATH.gsed=		${TOOLS_PREFIX.gsed}/bin/gsed
 .  endif
 TOOLS_ALIASES.gsed=		sed
 .endif
@@ -453,13 +459,7 @@ MAKEFLAGS+=			TOOLS_IGNORE.gtar=
 TOOLS_DEPENDS.gtar?=		gtar-base>=1.13.25:../../archivers/gtar-base
 TOOLS_CREATE+=			gtar
 TOOLS_FIND_PREFIX+=		TOOLS_PREFIX.gtar=gtar-base
-.    if defined(GTAR_PROGRAM_PREFIX)
-TOOLS_PATH.gtar=		${TOOLS_PREFIX.gtar}/bin/${GTAR_PROGRAM_PREFIX}tar
-.    elif defined(GNU_PROGRAM_PREFIX) && ${GNU_PROGRAM_PREFIX} != ""
-TOOLS_PATH.gtar=		${TOOLS_PREFIX.gtar}/bin/${GNU_PROGRAM_PREFIX}tar
-.    else
 TOOLS_PATH.gtar=		${TOOLS_PREFIX.gtar}/bin/gtar
-.    endif
 .  endif
 .endif
 
@@ -668,18 +668,6 @@ TOOLS_PATH.pax=			${TOOLS_PREFIX.pax}/bin/${NBPAX_PROGRAM_PREFIX}pax
 .  endif
 .endif
 
-.if !defined(TOOLS_IGNORE.perl) && !empty(_USE_TOOLS:Mperl)
-.  if !empty(PKGPATH:Mlang/perl5)
-MAKEFLAGS+=			TOOLS_IGNORE.perl=
-.  elif !empty(_TOOLS_USE_PKGSRC.perl:M[yY][eE][sS])
-.    include "../../lang/perl5/version.mk"
-TOOLS_DEPENDS.perl?=		perl>=${PERL5_REQD}:../../lang/perl5
-TOOLS_CREATE+=			perl
-TOOLS_FIND_PREFIX+=		TOOLS_PREFIX.perl=perl
-TOOLS_PATH.perl=		${TOOLS_PREFIX.perl}/bin/perl
-.  endif
-.endif
-
 .if !defined(TOOLS_IGNORE.pkg-config) && !empty(_USE_TOOLS:Mpkg-config)
 .  if !empty(PKGPATH:Mdevel/pkg-config)
 MAKEFLAGS+=			TOOLS_IGNORE.pkg-config=
@@ -689,19 +677,7 @@ TOOLS_CREATE+=			pkg-config
 TOOLS_FIND_PREFIX+=		TOOLS_PREFIX.pkg-config=pkg-config
 TOOLS_PATH.pkg-config=		${TOOLS_PREFIX.pkg-config}/bin/pkg-config
 .  else
-AUTORECONF_ARGS+=		-I ${TOOLS_PLATFORM.pkg-config:S/\/bin\/pkg-config//}/data/aclocal
-.  endif
-.endif
-
-.if !defined(TOOLS_IGNORE.pod2man) && !empty(_USE_TOOLS:Mpod2man)
-.  if !empty(PKGPATH:Mlang/perl5)
-MAKEFLAGS+=			TOOLS_IGNORE.pod2man=
-.  elif !empty(_TOOLS_USE_PKGSRC.pod2man:M[yY][eE][sS])
-.    include "../../lang/perl5/version.mk"
-TOOLS_DEPENDS.pod2man?=		perl>=${PERL5_REQD}:../../lang/perl5
-TOOLS_CREATE+=			pod2man
-TOOLS_FIND_PREFIX+=		TOOLS_PREFIX.pod2man=perl
-TOOLS_PATH.pod2man=		${TOOLS_PREFIX.pod2man}/bin/pod2man
+AUTORECONF_ARGS+=		-I ${TOOLS_PLATFORM.pkg-config:S/\/bin\/pkg-config//}/share/aclocal
 .  endif
 .endif
 
@@ -757,7 +733,7 @@ MAKEFLAGS+=			TOOLS_IGNORE.tar=
 TOOLS_DEPENDS.tar?=		pax>=20040802:../../archivers/pax
 TOOLS_CREATE+=			tar
 TOOLS_FIND_PREFIX+=		TOOLS_PREFIX.tar=pax
-TOOLS_PATH.tar=			${TOOLS_PREFIX.tar}/bin/tar
+TOOLS_PATH.tar=			${TOOLS_PREFIX.tar}/bin/${NBPAX_PROGRAM_PREFIX}tar
 .  endif
 .endif
 
@@ -856,7 +832,7 @@ MAKEFLAGS+=			TOOLS_IGNORE.xargs=
 TOOLS_DEPENDS.xargs?=		findutils>=4.1:../../sysutils/findutils
 TOOLS_CREATE+=			xargs
 TOOLS_FIND_PREFIX+=		TOOLS_PREFIX.xargs=findutils
-TOOLS_PATH.xargs=		${TOOLS_PREFIX.xargs}/bin/${GNU_PROGRAM_PREFIX}xargs
+TOOLS_PATH.xargs=		${TOOLS_PREFIX.xargs}/bin/gxargs
 TOOLS_ARGS.xargs=		-r	# don't run command if stdin is empty
 .  endif
 .endif
@@ -891,7 +867,42 @@ TOOLS_VALUE_GNU.yacc=		${TOOLS_CMDLINE.yacc}
 .  endif
 .endif
 
+_TOOLS.zip=	zip zipcloak zipnote zipsplit
+.for _t_ in ${_TOOLS.zip}
+.  if !defined(TOOLS_IGNORE.${_t_}) && !empty(_USE_TOOLS:M${_t_})
+.    if !empty(PKGPATH:Marchivers/zip)
+MAKEFLAGS+=			TOOLS_IGNORE.${_t_}=
+.    elif !empty(_TOOLS_USE_PKGSRC.${_t_}:M[yY][eE][sS])
+TOOLS_DEPENDS.${_t_}?=		zip-[0-9]*:../../archivers/zip
+TOOLS_CREATE+=			${_t_}
+TOOLS_FIND_PREFIX+=		TOOLS_PREFIX.${_t_}=zip
+TOOLS_PATH.${_t_}=		${TOOLS_PREFIX.${_t_}}/bin/${_t_}
+.    endif
+.  endif
+.endfor
+
 ######################################################################
+
+# These tools are all supplied by the lang/perl5 package if there is
+# no native tool available.
+#
+_TOOLS.perl=			perl perldoc pod2html pod2man pod2text
+
+.for _t_ in ${_TOOLS.perl}
+.  if !defined(TOOLS_IGNORE.${_t_}) && !empty(_USE_TOOLS:M${_t_})
+.    if !empty(PKGPATH:Mlang/perl5)
+MAKEFLAGS+=			TOOLS_IGNORE.${_t_}=
+.    elif !empty(_TOOLS_USE_PKGSRC.${_t_}:M[yY][eE][sS]) || \
+     !empty(DEPENDS:Mp5-*) || !empty(PERL5_PREFIX:M${PREFIX})
+.      include "../../lang/perl5/version.mk"
+_TOOLS_USE_PKGSRC.perl=		yes
+TOOLS_DEPENDS.${_t_}?=		perl>=${PERL5_REQD}:../../lang/perl5
+TOOLS_CREATE+=			${_t_}
+TOOLS_FIND_PREFIX+=		TOOLS_PREFIX.${_t_}=perl
+TOOLS_PATH.${_t_}=		${TOOLS_PREFIX.${_t_}}/bin/${_t_}
+.    endif
+.  endif
+.endfor
 
 # These tools are all supplied by the sysutils/coreutils package if
 # there is no native tool available.
@@ -909,7 +920,7 @@ MAKEFLAGS+=		TOOLS_IGNORE.${_t_}=
 TOOLS_DEPENDS.${_t_}?=	coreutils>=5.2.1:../../sysutils/coreutils
 TOOLS_CREATE+=		${_t_}
 TOOLS_FIND_PREFIX+=	TOOLS_PREFIX.${_t_}=coreutils
-TOOLS_PATH.${_t_}=	${TOOLS_PREFIX.${_t_}}/bin/${GNU_PROGRAM_PREFIX}${_t_}
+TOOLS_PATH.${_t_}=	${TOOLS_PREFIX.${_t_}}/bin/g${_t_}
 .    endif
 .  endif
 .endfor
@@ -924,7 +935,7 @@ MAKEFLAGS+=		TOOLS_IGNORE.[=
 TOOLS_DEPENDS.[?=	coreutils>=5.2.1:../../sysutils/coreutils
 TOOLS_CREATE+=		[
 TOOLS_FIND_PREFIX+=	TOOLS_PREFIX.[=coreutils
-TOOLS_PATH.[=		${TOOLS_PREFIX.[}/bin/${GNU_PROGRAM_PREFIX}[
+TOOLS_PATH.[=		${TOOLS_PREFIX.[}/bin/g[
 .  endif
 .endif
 
@@ -943,7 +954,7 @@ MAKEFLAGS+=		TOOLS_IGNORE.${_t_}=
 TOOLS_DEPENDS.${_t_}?=	grep>=2.5.1:../../textproc/grep
 TOOLS_CREATE+=		${_t_}
 TOOLS_FIND_PREFIX+=	TOOLS_PREFIX.${_t_}=grep
-TOOLS_PATH.${_t_}=	${TOOLS_PREFIX.${_t_}}/bin/${GNU_PROGRAM_PREFIX}${_t_}
+TOOLS_PATH.${_t_}=	${TOOLS_PREFIX.${_t_}}/bin/g${_t_}
 .    endif
 .  endif
 .endfor
@@ -1012,7 +1023,7 @@ MAKEFLAGS+=		TOOLS_IGNORE.${_t_}=
 TOOLS_DEPENDS.${_t_}?=	diffutils>=2.8.1:../../devel/diffutils
 TOOLS_CREATE+=		${_t_}
 TOOLS_FIND_PREFIX+=	TOOLS_PREFIX.${_t_}=diffutils
-TOOLS_PATH.${_t_}=	${TOOLS_PREFIX.${_t_}}/bin/${GNU_PROGRAM_PREFIX}${_t_}
+TOOLS_PATH.${_t_}=	${TOOLS_PREFIX.${_t_}}/bin/g${_t_}
 .    endif
 .  endif
 .endfor
@@ -1035,7 +1046,7 @@ GHOSTSCRIPT_REQD?=	6.01
 .if !defined(TOOLS_DEPENDS.ghostscript)
 _TOOLS_DEP.ghostscript:=	ghostscript
 TOOLS_DEPENDS.ghostscript=	ghostscript>=${GHOSTSCRIPT_REQD}:../../print/ghostscript
-MAKEVARS+=			${TOOLS_DEPENDS.ghostscript}
+MAKEVARS+=			TOOLS_DEPENDS.ghostscript
 .endif
 
 .for _t_ in ${_TOOLS.ghostscript}
@@ -1191,18 +1202,10 @@ TOOLS_CREATE+=		${_t_}
 TOOLS_DEPENDS.${_t_}?=	nbitools>=6.3nb4:../../devel/nbitools
 TOOLS_FIND_PREFIX+=	TOOLS_PREFIX.${_t_}=nbitools
 TOOLS_PATH.${_t_}=	${TOOLS_PREFIX.${_t_}}/libexec/itools/${_t_}
-.      elif defined(X11_TYPE) && !empty(X11_TYPE:Mmodular)
+.      else
 TOOLS_DEPENDS.${_t_}?=	imake-[0-9]*:../../devel/imake
 TOOLS_FIND_PREFIX+=	TOOLS_PREFIX.${_t_}=imake
 TOOLS_PATH.${_t_}=	${TOOLS_PREFIX.${_t_}}/bin/${_t_}
-.      else # !empty(X11_TYPE:Mnative)
-.        if exists(${X11BASE}/bin/${_t_})
-TOOLS_PATH.${_t_}=	${X11BASE}/bin/${_t_}
-.        else # X11_TYPE native, but tool does not exist, so fall back
-TOOLS_DEPENDS.${_t_}?=	imake-[0-9]*:../../devel/imake
-TOOLS_FIND_PREFIX+=	TOOLS_PREFIX.${_t_}=imake
-TOOLS_PATH.${_t_}=	${TOOLS_PREFIX.${_t_}}/bin/${_t_}
-.        endif
 .      endif
 .    endif
 .  endif
@@ -1225,17 +1228,6 @@ TOOLS_PATH.makedepend=	${TOOLS_PREFIX.makedepend}/bin/makedepend
 .    else # !empty(X11_TYPE:Mnative)
 TOOLS_PATH.makedepend=	${X11BASE}/bin/makedepend
 .    endif
-.  endif
-.endif
-#
-# If we're using xpkgwedge, then we need to invoke the special xmkmf
-# script that will find imake config files in both ${PREFIX} and in
-# ${X11BASE}.
-#
-.if !defined(TOOLS_IGNORE.xmkmf) && !empty(_USE_TOOLS:Mxmkmf)
-.  if !empty(USE_XPKGWEDGE:M[yY][eE][sS]) && empty(_USE_TOOLS:Mitools)
-TOOLS_FIND_PREFIX+=	TOOLS_PREFIX.xpkgwedge=xpkgwedge
-TOOLS_PATH.xmkmf=	${TOOLS_PREFIX.xpkgwedge}/bin/pkgxmkmf
 .  endif
 .endif
 

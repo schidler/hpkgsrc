@@ -1,8 +1,11 @@
-# $NetBSD: OpenBSD.mk,v 1.31 2011/09/10 16:30:02 abs Exp $
+# $NetBSD: OpenBSD.mk,v 1.35 2012/05/13 08:20:11 obache Exp $
 #
 # Variable definitions for the OpenBSD operating system.
 
 ECHO_N?=	${ECHO} -n
+LDD?=		/usr/bin/ldd
+LDD_ENV?=	LD_TRACE_LOADED_OBJECTS_FMT1='\t-l%o => %p\n' \
+		LD_TRACE_LOADED_OBJECTS_FMT2=
 IMAKE_MAKE?=	${MAKE}		# program which gets invoked by imake
 PKGLOCALEDIR?=	share
 PS?=		/bin/ps
@@ -35,19 +38,7 @@ ULIMIT_CMD_memorysize?=	ulimit -m `ulimit -H -m`
 
 X11_TYPE?=		native
 
-# imake installs manpages in weird places
-# these values from /usr/X11R6/lib/X11/config/OpenBSD.cf
-IMAKE_MAN_SOURCE_PATH=	man/cat
-IMAKE_MANNEWSUFFIX=	0
-IMAKE_MAN_SUFFIX=	${IMAKE_MANNEWSUFFIX}
-IMAKE_LIBMAN_SUFFIX=	${IMAKE_MANNEWSUFFIX}
-IMAKE_FILEMAN_SUFFIX=	${IMAKE_MANNEWSUFFIX}
-IMAKE_GAMEMAN_SUFFIX=	${IMAKE_MANNEWSUFFIX}
-IMAKE_MAN_DIR=		${IMAKE_MAN_SOURCE_PATH}1
-IMAKE_LIBMAN_DIR=	${IMAKE_MAN_SOURCE_PATH}3
-IMAKE_FILEMAN_DIR=	${IMAKE_MAN_SOURCE_PATH}5
-IMAKE_GAMEMAN_DIR=	${IMAKE_MAN_SOURCE_PATH}6
-IMAKE_MANINSTALL?=	maninstall catinstall
+_OPSYS_SYSTEM_RPATH?=	/usr/lib
 
 .if exists(/usr/include/netinet6)
 _OPSYS_HAS_INET6=	yes	# IPv6 is standard
@@ -97,7 +88,12 @@ DEFAULT_SERIAL_DEVICE?=	/dev/null
 SERIAL_DEVICES?=	/dev/null
 .endif
 
-_OPSYS_CAN_CHECK_SHLIBS=	no # can't use readelf in check/bsd.check-vars.mk
+# check for kqueue(2) support, added in OpenBSD-2.9
+.if exists(/usr/include/sys/event.h)
+PKG_HAVE_KQUEUE=	# defined
+.endif
+
+_OPSYS_CAN_CHECK_SHLIBS=	yes # use readelf in check/bsd.check-vars.mk
 
 # check for maximum command line length and set it in configure's environment,
 # to avoid a test required by the libtool script that takes forever.

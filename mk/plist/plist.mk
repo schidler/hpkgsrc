@@ -1,4 +1,4 @@
-# $NetBSD: plist.mk,v 1.40 2011/09/08 20:17:16 abs Exp $
+# $NetBSD: plist.mk,v 1.43 2012/05/27 14:32:28 cheusov Exp $
 #
 # This Makefile fragment handles the creation of PLISTs for use by
 # pkg_create(8).
@@ -16,6 +16,10 @@
 #	automatic variable is named PLIST.var.  If PLIST.var is defined,
 #	then in the PLIST generation, the ${PLIST.var} symbol is replaced
 #	with the empty string, or "@comment " otherwise.
+#
+#    PLIST_AWK_ENV holds the shell environment passed to PLIST_AWK.
+#
+#    PLIST_AWK is the awk script that does post-processing of the PLIST.
 #
 #    PLIST_SRC is the list of source files from which the PLIST file of
 #	the binary package will be generated. By default, its value is
@@ -43,6 +47,8 @@ _PKG_VARS.plist=	PLIST_SUBST PLIST_VARS PLIST_SRC GENERATE_PLIST
 _SYS_VARS.plist=	PLIST_TYPE PLIST
 
 PLIST_VARS?=		# empty
+PLIST_AWK?=		# empty
+PLIST_AWK_ENV?=		# empty
 
 .if ${PKG_INSTALLATION_TYPE} == "pkgviews"
 PLIST_TYPE?=	dynamic
@@ -96,8 +102,10 @@ _PLIST_NOKEYWORDS=${PLIST}_nokeywords
 
 .if (defined(USE_IMAKE) || !empty(USE_TOOLS:Mimake))
 _IMAKE_MANINSTALL=	${IMAKE_MANINSTALL}
+_PLIST_MANINSTALL=	${IMAKE_MANINSTALL}
 .else
 _IMAKE_MANINSTALL=	# empty
+_PLIST_MANINSTALL=	${MANINSTALL}
 .endif
 
 _LIBTOOL_EXPAND=							\
@@ -119,10 +127,6 @@ MAKEVARS+=		_IGNORE_INFO_PATH
 #
 _PLIST_AWK_ENV+=	PKGLOCALEDIR=${PKGLOCALEDIR:Q}
 _PLIST_AWK_ENV+=	USE_PKGLOCALEDIR=${USE_PKGLOCALEDIR:Dyes:Uno}
-_PLIST_AWK_ENV+=	PKGDOCDIR=${PKGDOCDIR:Q}
-_PLIST_AWK_ENV+=	USE_PKGDOCDIR=${USE_PKGDOCDIR:Dyes:Uno}
-_PLIST_AWK_ENV+=	PKGEXMPLDIR=${PKGEXMPLDIR:Q}
-_PLIST_AWK_ENV+=	USE_PKGEXMPLDIR=${USE_PKGEXMPLDIR:Dyes:Uno}
 _PLIST_AWK_ENV+=	PKGDATADIR=${PKGDATADIR:Q}
 _PLIST_AWK_ENV+=	USE_PKGDATADIR=${USE_PKGDATADIR:Dyes:Uno}
 _PLIST_AWK_ENV+=	IMAKE_MANINSTALL=${_IMAKE_MANINSTALL:Q}
@@ -132,11 +136,12 @@ _PLIST_AWK_ENV+=	IGNORE_LIBTOOLIZE=${IGNORE_LIBTOOLIZE:Q}
 _PLIST_AWK_ENV+=	LIBTOOLIZE_PLIST=${LIBTOOLIZE_PLIST:Q}
 _PLIST_AWK_ENV+=	LIBTOOL_EXPAND=${_LIBTOOL_EXPAND:Q}
 _PLIST_AWK_ENV+=	LS=${TOOLS_LS:Q}
-_PLIST_AWK_ENV+=	MANINSTALL=${MANINSTALL:Q}
+_PLIST_AWK_ENV+=	MANINSTALL=${_PLIST_MANINSTALL:Q}
 _PLIST_AWK_ENV+=	MANZ=${_MANZ:Q}
 _PLIST_AWK_ENV+=	PKGMANDIR=${PKGMANDIR:Q}
 _PLIST_AWK_ENV+=	PREFIX=${DESTDIR:Q}${PREFIX:Q}
 _PLIST_AWK_ENV+=	TEST=${TOOLS_TEST:Q}
+_PLIST_AWK_ENV+=	${PLIST_AWK_ENV}
 
 # PLIST_SUBST contains package-settable "${variable}" to "value"
 # substitutions for PLISTs
@@ -153,8 +158,6 @@ PLIST_SUBST+=	OPSYS=${OPSYS:Q}					\
 		PKGBASE=${PKGBASE:Q}					\
 		PKGNAME=${PKGNAME_NOREV:Q}				\
 		PKGLOCALEDIR=${PKGLOCALEDIR:Q}				\
-		PKGDOCDIR=${PKGDOCDIR:Q}				\
-		PKGEXMPLDIR=${PKGEXMPLDIR:Q}				\
 		PKGDATADIR=${PKGDATADIR:Q}				\
 		PKGVERSION=${PKGVERSION:C/nb[0-9]*$//:Q}		\
 		LOCALBASE=${LOCALBASE:Q}				\
@@ -187,11 +190,11 @@ _PLIST_1_AWK+=		-f ${PKGSRCDIR}/mk/plist/plist-macros.awk
 
 _PLIST_AWK+=		-f ${.CURDIR}/../../mk/plist/plist-functions.awk
 _PLIST_AWK+=		-f ${.CURDIR}/../../mk/plist/plist-locale.awk
-_PLIST_AWK+=		-f ${.CURDIR}/../../mk/plist/plist-docdir.awk
 _PLIST_AWK+=		-f ${.CURDIR}/../../mk/plist/plist-datadir.awk
 _PLIST_AWK+=		-f ${.CURDIR}/../../mk/plist/plist-info.awk
 _PLIST_AWK+=		-f ${.CURDIR}/../../mk/plist/plist-man.awk
 _PLIST_AWK+=		-f ${.CURDIR}/../../mk/plist/plist-libtool.awk
+_PLIST_AWK+=		${PLIST_AWK}
 _PLIST_AWK+=		-f ${.CURDIR}/../../mk/plist/plist-default.awk
 
 _PLIST_INFO_AWK+=	-f ${.CURDIR}/../../mk/plist/plist-functions.awk
@@ -293,3 +296,13 @@ INFO_FILES_cmd=								\
 	${PKGSRC_SETENV} ${_PLIST_AWK_ENV} ${AWK} ${_PLIST_INFO_AWK} |	\
 	${AWK} '($$0 !~ "-[0-9]*(\\.gz)?$$") { print }'
 .endif
+
+######################################################################
+### plist-clean (PRIVATE)
+######################################################################
+### plist-clean removes the files for the "plist"
+### so that the "plist" target may be re-invoked.
+###
+.PHONY: plist-clean
+plist-clean:
+	${RUN} ${RM} -f ${PLIST} ${_PLIST_NOKEYWORDS} ${_DEPENDS_PLIST}

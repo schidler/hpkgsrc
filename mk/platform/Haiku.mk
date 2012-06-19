@@ -1,11 +1,9 @@
-# $NetBSD: Haiku.mk,v 1.5 2011/09/10 16:30:02 abs Exp $
+# $NetBSD: Haiku.mk,v 1.6 2012/03/19 12:34:17 joerg Exp $
 #
 # Variable definitions for the Haiku operating system.
 
 ECHO_N?=	${ECHO} -n
 PKGLOCALEDIR?=	data
-PKGDATADIR?=	data
-#PKGEXMPLDIR?= data
 PS?=		/bin/ps
 # XXX: default from defaults/mk.conf.  Verify/correct for this platform
 # and remove this comment.
@@ -37,31 +35,12 @@ ULIMIT_CMD_stacksize?=	ulimit -c `ulimit -c`
 ULIMIT_CMD_memorysize?=	ulimit -c `ulimit -c`
 USERADD?=		/bin/useradd
 
-# imake installs manpages in weird places
-# these values from /boot/common/X11/lib/X11/config/Haiku.cf
-#IMAKE_MAN_SOURCE_PATH=	man/man
-#IMAKE_MAN_SUFFIX=	1
-#IMAKE_LIBMAN_SUFFIX=	3
-#IMAKE_KERNMAN_SUFFIX=	4
-#IMAKE_FILEMAN_SUFFIX=	5
-#IMAKE_GAMEMAN_SUFFIX=	6
-#IMAKE_MISCMAN_SUFFIX=	7
-#IMAKE_MAN_DIR=		${IMAKE_MAN_SOURCE_PATH}1
-#IMAKE_LIBMAN_DIR=	${IMAKE_MAN_SOURCE_PATH}3
-#IMAKE_KERNMAN_DIR=	${IMAKE_MAN_SOURCE_PATH}4
-#IMAKE_FILEMAN_DIR=	${IMAKE_MAN_SOURCE_PATH}5
-#IMAKE_GAMEMAN_DIR=	${IMAKE_MAN_SOURCE_PATH}6
-#IMAKE_MISCMAN_DIR=	${IMAKE_MAN_SOURCE_PATH}7
-#IMAKE_MANNEWSUFFIX=	${IMAKE_MAN_SUFFIX}
-#IMAKE_MANINSTALL?=	maninstall catinstall
-#IMAKE_TOOLS=		gmake	# extra tools required when we use imake
-
 _OPSYS_HAS_INET6=	yes	# IPv6 is standard
 _OPSYS_HAS_JAVA=	no	# Java is not standard
 _OPSYS_HAS_MANZ=	no	# no MANZ for gzipping of man pages
 _OPSYS_HAS_OSSAUDIO=	no	# libossaudio is available
-_OPSYS_PERL_REQD=	no	# no base version of perl required
-_OPSYS_PTHREAD_AUTO=	yes	# -lpthread no needed for pthreads
+_OPSYS_PERL_REQD=		# no base version of perl required
+_OPSYS_PTHREAD_AUTO=	yes	# -lpthread needed for pthreads
 _OPSYS_SHLIB_TYPE=	ELF	# shared lib type
 _PATCH_CAN_BACKUP=	yes	# native patch(1) can make backups
 _PATCH_BACKUP_ARG?= 	-b -V simple -z	# switch to patch(1) for backup suffix

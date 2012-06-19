@@ -34,8 +34,8 @@ CHECK_INTERPRETER?=		no
 .endif
 CHECK_INTERPRETER_SKIP?=	# empty
 
-_CHECK_INTERP_SKIP=		data/doc/*
-_CHECK_INTERP_SKIP+=		data/examples/*
+_CHECK_INTERP_SKIP=		share/doc/*
+_CHECK_INTERP_SKIP+=		share/examples/*
 _CHECK_INTERP_SKIP+=		${CHECK_INTERPRETER_SKIP}
 
 _CHECK_INTERP_FILELIST_CMD?=	${SED} -e '/^@/d' ${PLIST}

@@ -1,4 +1,4 @@
-#	$NetBSD: bsd.pkg.mk,v 1.1979 2011/10/15 00:23:07 reed Exp $
+#	$NetBSD: bsd.pkg.mk,v 1.1981 2012/05/24 11:34:15 abs Exp $
 #
 # This file is in the public domain.
 #
@@ -152,7 +152,7 @@ ${_var_}+=	${${_var_}.*}
 CPPFLAGS+=	${CPP_PRECOMP_FLAGS}
 
 # To sanitise environment set PKGSRC_SETENV=${SETENV} -i
-PKGSRC_SETENV=	${SETENV}
+PKGSRC_SETENV?=	${SETENV}
 
 ALL_ENV+=	CC=${CC:Q}
 ALL_ENV+=	CFLAGS=${CFLAGS:M*:Q}
@@ -189,6 +189,7 @@ BSD_MAKE_ENV+=	LIBDIR=${PREFIX}/lib
 BSD_MAKE_ENV+=	MANDIR=${PREFIX}/${PKGMANDIR}
 BSD_MAKE_ENV+=	STRIPFLAG=${_STRIPFLAG_INSTALL:Q}
 BSD_MAKE_ENV+=	MANINSTALL=${MANINSTALL:Q}
+BSD_MAKE_ENV+=	MKCATPAGES=${MKCATPAGES:Q}
 BSD_MAKE_ENV+=	MKHTML=no
 
 _BUILD_DEFS=		${BUILD_DEFS}

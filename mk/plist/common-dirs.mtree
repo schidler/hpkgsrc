@@ -490,7 +490,7 @@
     ..
     sbin
     ..
-    data
+    share
 	aclocal
 	..
         dict

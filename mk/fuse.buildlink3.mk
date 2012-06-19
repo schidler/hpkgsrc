@@ -1,11 +1,12 @@
-# $NetBSD: fuse.buildlink3.mk,v 1.12 2011/07/09 12:33:40 tron Exp $
+# $NetBSD: fuse.buildlink3.mk,v 1.13 2012/02/28 15:05:07 hans Exp $
 #
 # Makefile fragment for packages using the FUSE framework.
 #
 
 # The symbol FUSE_BUILDLINK3_MK is used by filesystems/fuse's bl3.mk,
 # so use something else for our include guard.
-
+.if !defined(MK_FUSE_BUILDLINK3_MK)
+MK_FUSE_BUILDLINK3_MK=	# defined
 
 .include "bsd.fast.prefs.mk"
 
@@ -29,46 +30,15 @@ override-fuse-pkgconfig:
 
 BUILDLINK_PASSTHRU_DIRS+=	/usr/local/include/fuse
 
-.  elif ${OPSYS} == "Haiku"
-
-.    if !exists(/boot/develop/headers/userlandfs/fuse/fuse.h)
-PKG_FAIL_REASON+=	"Couldn't find fuse headers; please install UserlandFS."
-.    endif
-
-.    if !empty(USE_TOOLS:C/:.*//:Mpkg-config)
-do-configure-pre-hook: override-fuse-pkgconfig
-
-BLKDIR_PKGCFG=	${BUILDLINK_DIR}/lib/pkgconfig
-FUSE_PKGCFGF=	fuse.pc
-
-override-fuse-pkgconfig: override-message-fuse-pkgconfig
-override-message-fuse-pkgconfig:
-	@${STEP_MSG} "Magical transformations for fuse on Haiku."
-
-override-fuse-pkgconfig:
-	${RUN}						\
-	${MKDIR} ${BLKDIR_PKGCFG};			\
-	{						\
-	${ECHO} "prefix=/boot";				\
-	${ECHO} "exec_prefix=\$${prefix}";		\
-	${ECHO} "libdir=\$${exec_prefix}/system/lib";		\
-	${ECHO} "includedir=\$${prefix}/develop/headers/userlandfs/fuse";	\
-	${ECHO}	"";					\
-	${ECHO} "Name: FuSE";				\
-	${ECHO} "Description: Filesystem USEr Space";	\
-	${ECHO} "Version: 2.6.0";			\
-	${ECHO} "Libs: -Wl,-R\$${libdir} -L\$${libdir} -luserlandfs_fuse";	\
-	${ECHO} "Cflags: -I\$${includedir}";		\
-	} >> ${BLKDIR_PKGCFG}/${FUSE_PKGCFGF};
-
-.    endif # pkg-config
-
-# To make sure
-BUILDLINK_TRANSFORM+=	l:fuse:userlandfs_fuse
-BUILDLINK_PASSTHRU_DIRS+=	/boot/develop/headers/userlandfs/fuse
-
 .  elif ${OPSYS} == "Linux"
 
+.    include "../../filesystems/fuse/buildlink3.mk"
+
+.  elif !empty(MACHINE_PLATFORM:MSunOS-5.11-*)
+
+.    if !exists(/usr/include/fuse/fuse.h)
+PKG_FAIL_REASON+=	"Couldn't find fuse headers, please install libfuse."
+.    endif
 .    include "../../filesystems/fuse/buildlink3.mk"
 
 .  elif ${OPSYS} == "NetBSD"
@@ -121,4 +91,4 @@ PKG_FAIL_REASON+=	"Your OS is not supported by the FUSE pkgsrc framework."
 
 .  endif # end of Operating Systems
 
-
+.endif # MK_FUSE_BUILDLINK3_MK

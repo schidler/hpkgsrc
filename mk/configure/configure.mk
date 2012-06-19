@@ -1,4 +1,4 @@
-# $NetBSD: configure.mk,v 1.24 2011/09/08 20:17:15 abs Exp $
+# $NetBSD: configure.mk,v 1.25 2012/06/01 12:52:37 jperkin Exp $
 #
 # = Package-settable variables =
 #
@@ -48,7 +48,7 @@ _VARGROUPS+=		configure
 _USER_VARS.configure=	CONFIG_SHELL_FLAGS
 _PKG_VARS.configure=	CONFIGURE_ENV CONFIG_SHELL CONFIGURE_SCRIPT \
 	CONFIGURE_ARGS OVERRIDE_GNU_CONFIG_SCRIPTS HAS_CONFIGURE \
-	GNU_CONFIGURE PKGCONFIG_OVERRIDE USE_PKGLOCALEDIR USE_PKGEXMPLDIR USE_PKGDATADIR\
+	GNU_CONFIGURE PKGCONFIG_OVERRIDE USE_PKGLOCALEDIR USE_PKGDATADIR \
 	CMAKE_ARGS CMAKE_ARG_PATH
 
 CONFIGURE_SCRIPT?=	./configure
@@ -78,12 +78,6 @@ _BUILD_DEFS+=		CONFIGURE_ENV CONFIGURE_ARGS CMAKE_ARGS
 .include "replace-interpreter.mk"
 .if defined(USE_PKGLOCALEDIR)
 .  include "replace-localedir.mk"
-.endif
-.if defined(USE_PKGDOCDIR)
-.  include "replace-docdir.mk"
-.endif
-.if defined(USE_PKGEXMPLDIR)
-.  include "replace-examples.mk"
 .endif
 .if defined(USE_PKGDATADIR)
 .  include "replace-datadir.mk"
@@ -214,7 +208,7 @@ do-configure-script:
 .for _dir_ in ${CONFIGURE_DIRS}
 	${RUN}${_ULIMIT_CMD}						\
 	cd ${WRKSRC} && cd ${_dir_} &&					\
-	${PKGSRC_SETENV} ${_CONFIGURE_SCRIPT_ENV}				\
+	${PKGSRC_SETENV} ${_CONFIGURE_SCRIPT_ENV}			\
 		${CONFIG_SHELL} ${CONFIG_SHELL_FLAGS}			\
 			${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 .endfor
@@ -251,7 +245,7 @@ do-configure-cmake:
 .for _dir_ in ${CONFIGURE_DIRS}
 	${RUN}${_ULIMIT_CMD}						\
 	cd ${WRKSRC} && cd ${_dir_} &&					\
-	${PKGSRC_SETENV} ${_CONFIGURE_CMAKE_ENV}				\
+	${PKGSRC_SETENV} ${_CONFIGURE_CMAKE_ENV}			\
 		cmake ${CMAKE_ARGS} ${CMAKE_ARG_PATH}
 .endfor
 

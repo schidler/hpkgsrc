@@ -1,4 +1,4 @@
-# $NetBSD: tools.SunOS.mk,v 1.35 2011/10/04 13:08:42 hans Exp $
+# $NetBSD: tools.SunOS.mk,v 1.39 2012/06/15 09:54:41 jperkin Exp $
 #
 # System-supplied tools for the Solaris operating system.
 #
@@ -132,6 +132,7 @@ TOOLS_PLATFORM.install?=	/usr/bin/ginstall
 .else
 TOOLS_PLATFORM.install?=	/usr/ucb/install
 .endif
+TOOLS_PLATFORM.ksh?=		/bin/ksh
 TOOLS_PLATFORM.ln?=		/usr/bin/ln
 TOOLS_PLATFORM.ls?=		/usr/bin/ls
 TOOLS_PLATFORM.m4?=		/usr/ccs/bin/m4
@@ -153,10 +154,10 @@ TOOLS_PLATFORM.nroff?=		/usr/bin/gnroff
 .if exists(/usr/bin/openssl)
 TOOLS_PLATFORM.openssl?=	/usr/bin/openssl
 .endif
-.if exists(/usr/bin/gpatch)
-TOOLS_PLATFORM.gpatch?=		/usr/bin/gpatch
-TOOLS_PLATFORM.patch?=		/usr/bin/gpatch
-.endif
+# Don't use GNU patch
+#TOOLS_PLATFORM.gpatch?=		/usr/bin/gpatch
+#TOOLS_PLATFORM.patch?=		/usr/bin/gpatch
+TOOLS_PLATFORM.pax?=		/bin/pax
 #.if exists(/usr/bin/perl)
 #TOOLS_PLATFORM.perl?=		/usr/bin/perl
 #TOOLS_PLATFORM.pod2man?=	/usr/perl5/bin/pod2man
@@ -210,4 +211,10 @@ TOOLS_PLATFORM.wc?=		/usr/bin/wc
 TOOLS_PLATFORM.xargs?=		/usr/bin/xargs
 .if exists(/usr/bin/yacc)
 TOOLS_PLATFORM.yacc?=		/usr/bin/yacc
+.endif
+.if exists(/usr/bin/zip)
+TOOLS_PLATFORM.zip?=		/usr/bin/zip
+TOOLS_PLATFORM.zipcloak?=	/usr/bin/zipcloak
+TOOLS_PLATFORM.zipnote?=	/usr/bin/zipnote
+TOOLS_PLATFORM.zipsplit?=	/usr/bin/zipsplit
 .endif

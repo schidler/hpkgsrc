@@ -1,4 +1,4 @@
-# $NetBSD: gcc.mk,v 1.112 2011/11/03 19:11:37 hans Exp $
+# $NetBSD: gcc.mk,v 1.120 2012/04/25 16:28:18 hans Exp $
 #
 # This is the compiler definition for the GNU Compiler Collection.
 #
@@ -8,6 +8,12 @@
 #	When set to "yes", the native gcc is used, no matter which
 #	compiler version a package requires.
 #
+# USE_PKGSRC_GCC
+#	Force using the appropriate version of GCC from pkgsrc based on
+#	GCC_REQD instead of the native compiler.
+#
+#	This should be disabled only for debugging.
+#
 # Package-settable variables:
 #
 # GCC_REQD
@@ -16,6 +22,11 @@
 #	change the compiler that is used for building packages. See
 #	ONLY_FOR_COMPILER for that purpose. This is a list of version
 #	numbers, of which the maximum version is the definitive one.
+#
+#	NOTE: Be conservative when setting GCC_REQD, as lang/gcc3 is
+#	known not to build on some platforms, e.g. Darwin.  If gcc3 is
+#	required, set GCC_REQD=3.0 so that we do not try to pull in
+#	lang/gcc3 unnecessarily and have it fail.
 #
 # System-defined variables:
 #
@@ -33,7 +44,7 @@
 COMPILER_GCC_MK=	defined
 
 _VARGROUPS+=	gcc
-_USER_VARS.gcc=	USE_NATIVE_GCC
+_USER_VARS.gcc=	USE_NATIVE_GCC USE_PKGSRC_GCC
 _PKG_VARS.gcc=	GCC_REQD
 _SYS_VARS.gcc=	CC_VERSION CC_VERSION_STRING LANGUAGES.gcc
 _DEF_VARS.gcc=	\
@@ -62,6 +73,7 @@ _DEF_VARS.gcc=	\
 .include "../../mk/bsd.prefs.mk"
 
 USE_NATIVE_GCC?=	no
+USE_PKGSRC_GCC?=	no
 
 GCC_REQD+=	2.8.0
 
@@ -73,7 +85,8 @@ GCC_REQD+=	3.0
 # _GCC_DIST_VERSION is the highest version of GCC installed by the pkgsrc
 # without the PKGREVISIONs.
 #
-_GCC_DIST_VERSION=	4.6.2
+.include "../../lang/gcc47/version.mk"
+_GCC_DIST_VERSION:=	${GCC_DIST_VERSION}
 
 # _GCC2_PATTERNS matches N s.t. N <= 2.95.3.
 _GCC2_PATTERNS=	[0-1].* 2.[0-9] 2.[0-9].* 2.[1-8][0-9] 2.[1-8][0-9].*	\
@@ -92,8 +105,11 @@ _GCC44_PATTERNS= 4.4 4.4.*
 # _GCC45_PATTERNS matches N s.t. 4.5 <= N < 4.6.
 _GCC45_PATTERNS= 4.5 4.5.*
 
-# _GCC46_PATTERNS matches N s.t. 4.6 <= N.
-_GCC46_PATTERNS= 4.[6-9] 4.[6-9].* 4.[1-9][0-9]* [4-9]*
+# _GCC46_PATTERNS matches N s.t. 4.6 <= N < 4.7.
+_GCC46_PATTERNS= 4.6 4.6.*
+
+# _GCC46_PATTERNS matches N s.t. 4.7 <= N.
+_GCC47_PATTERNS= 4.[7-9] 4.[7-9].* 4.[1-9][0-9]* [4-9]*
 
 # _CC is the full path to the compiler named by ${CC} if it can be found.
 .if !defined(_CC)
@@ -212,10 +228,16 @@ _NEED_GCC46?=	no
 _NEED_GCC46=	yes
 .  endif
 .endfor
+.for _pattern_ in ${_GCC47_PATTERNS}
+.  if !empty(_GCC_REQD:M${_pattern_})
+_NEED_GCC47=	yes
+.  endif
+.endfor
 .if !empty(_NEED_GCC2:M[nN][oO]) && !empty(_NEED_GCC3:M[nN][oO]) && \
     !empty(_NEED_GCC34:M[nN][oO]) && !empty(_NEED_GCC44:M[nN][oO]) && \
-    !empty(_NEED_GCC45:M[nN][oO]) && !empty(_NEED_GCC46:M[nN][oO])
-_NEED_GCC46=	yes
+    !empty(_NEED_GCC45:M[nN][oO]) && !empty(_NEED_GCC46:M[nN][oO]) && \
+    !empty(_NEED_GCC47:M[nN][oO])
+_NEED_GCC47=	yes
 .endif
 
 # Assume by default that GCC will only provide a C compiler.
@@ -232,6 +254,8 @@ LANGUAGES.gcc=	c c++ fortran fortran77 java objc
 LANGUAGES.gcc=	c c++ fortran fortran77 java objc
 .elif !empty(_NEED_GCC46:M[yY][eE][sS])
 LANGUAGES.gcc=	c c++ fortran fortran77 java objc
+.elif !empty(_NEED_GCC47:M[yY][eE][sS])
+LANGUAGES.gcc=	c c++ fortran fortran77 go java objc obj-c++
 .endif
 _LANGUAGES.gcc=		# empty
 .for _lang_ in ${USE_LANGUAGES}
@@ -360,6 +384,27 @@ _GCC_DEPENDENCY=	gcc46>=${_GCC_REQD}:../../lang/gcc46
 _USE_GCC_SHLIB?=	yes
 .    endif
 .  endif
+.elif !empty(_NEED_GCC47:M[yY][eE][sS])
+#
+# We require gcc-4.7.x in the lang/gcc47 directory.
+#
+_GCC_PKGBASE=		gcc47
+.  if !empty(PKGPATH:Mlang/gcc47)
+_IGNORE_GCC=		yes
+MAKEFLAGS+=		_IGNORE_GCC=yes
+.  endif
+.  if !defined(_IGNORE_GCC) && !empty(_LANGUAGES.gcc)
+_GCC_PKGSRCDIR=		../../lang/gcc47
+_GCC_DEPENDENCY=	gcc47>=${_GCC_REQD}:../../lang/gcc47
+.    if !empty(_LANGUAGES.gcc:Mc++) || \
+        !empty(_LANGUAGES.gcc:Mfortran) || \
+        !empty(_LANGUAGES.gcc:Mfortran77) || \
+        !empty(_LANGUAGES.gcc:Mgo) || \
+        !empty(_LANGUAGES.gcc:Mobjc) || \
+        !empty(_LANGUAGES.gcc:Mobj-c++)
+_USE_GCC_SHLIB?=	yes
+.    endif
+.  endif
 .endif
 _GCC_DEPENDS=		${_GCC_PKGBASE}>=${_GCC_REQD}
 
@@ -393,8 +438,12 @@ _USE_GCC_SHLIB?=	yes
 .  endif
 .endif
 
-.if !empty(USE_NATIVE_GCC:M[yY][eE][sS])
+.if !empty(USE_NATIVE_GCC:M[yY][eE][sS]) && !empty(_IS_BUILTIN_GCC:M[yY][eE][sS])
 _USE_PKGSRC_GCC=	no
+.elif !empty(USE_PKGSRC_GCC:M[yY][eE][sS])
+# For environments where there is an external gcc too, but pkgsrc
+# should use the pkgsrc one for consistency.
+_USE_PKGSRC_GCC=	yes
 .endif
 
 .if defined(_IGNORE_GCC)
@@ -458,6 +507,7 @@ _GCC_SUBPREFIX!=	\
 	if ${PKG_INFO} -qe ${_GCC_PKGBASE}; then			\
 		${PKG_INFO} -f ${_GCC_PKGBASE} |			\
 		${GREP} "File:.*bin/gcc" |				\
+		${GREP} -v "/gcc[0-9][0-9]*-.*" |			\
 		${SED} -e "s/.*File: *//;s/bin\/gcc.*//;q";		\
 	else								\
 		case ${_CC} in						\
@@ -539,6 +589,7 @@ _ALIASES.FC=	f77 g77
 FCPATH=		${_GCCBINDIR}/${_GCC_BIN_PREFIX}g77
 F77PATH=	${_GCCBINDIR}/${_GCC_BIN_PREFIX}g77
 PKG_FC:=	${_GCC_FC}
+PKGSRC_FORTRAN?=	g77
 .endif
 .if exists(${_GCCBINDIR}/${_GCC_BIN_PREFIX}gfortran)
 _GCC_VARS+=	FC
@@ -547,6 +598,7 @@ _ALIASES.FC=	gfortran
 FCPATH=		${_GCCBINDIR}/${_GCC_BIN_PREFIX}gfortran
 F77PATH=	${_GCCBINDIR}/${_GCC_BIN_PREFIX}gfortran
 PKG_FC:=	${_GCC_FC}
+PKGSRC_FORTRAN?=	gfortran
 .endif
 _COMPILER_STRIP_VARS+=	${_GCC_VARS}
 
@@ -560,6 +612,11 @@ _COMPILER_ABI_FLAG.64=  -m64
 .endif
 
 .if ${OPSYS} == "Darwin"
+_COMPILER_ABI_FLAG.32=  -m32
+_COMPILER_ABI_FLAG.64=  -m64
+.endif
+
+.if ${OPSYS} == "Linux"
 _COMPILER_ABI_FLAG.32=  -m32
 _COMPILER_ABI_FLAG.64=  -m64
 .endif
@@ -630,7 +687,7 @@ PKGSRC_FORTRAN?=f2c
 #.endif
 
 _GCC_NEEDS_A_FORTRAN=	no
-.if !exists(${FCPATH})
+.if empty(_USE_PKGSRC_GCC:M[yY][eE][sS]) && !exists(${FCPATH})
 _GCC_NEEDS_A_FORTRAN=	yes
 .else
 .  for _pattern_ in 0.* 1.[0-4] 1.[0-4].*

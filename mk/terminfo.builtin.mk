@@ -2,10 +2,9 @@
 
 BUILTIN_PKG:=	terminfo
 
-BUILTIN_FIND_LIBS:=		terminfo curses tinfo ncurses
+BUILTIN_FIND_LIBS:=		terminfo curses tinfo
 BUILTIN_FIND_FILES_VAR:=	H_TERM
-BUILTIN_FIND_FILES.H_TERM:=	/usr/include/term.h \
-				/boot/develop/headers/3rdparty/term.h
+BUILTIN_FIND_FILES.H_TERM:=	/usr/include/term.h
 BUILTIN_FIND_GREP.H_TERM:=	tigetstr
 
 .include "buildlink3/bsd.builtin.mk"
@@ -19,7 +18,6 @@ IS_BUILTIN.terminfo=	no
 .  if empty(H_TERM:M__nonexistent__) && empty(H_TERM:M${LOCALBASE}/*)
 .    if !empty(BUILTIN_LIB_FOUND.terminfo:M[yY[eE][sS]) || \
         !empty(BUILTIN_LIB_FOUND.curses:M[yY][eE][sS]) || \
-        !empty(BUILTIN_LIB_FOUND.ncurses:M[yY][eE][sS]) || \
         !empty(BUILTIN_LIB_FOUND.tinfo:M[yY][eE][sS])
 IS_BUILTIN.terminfo=	yes
 .    endif
@@ -57,8 +55,6 @@ BUILTIN_LIBNAME.terminfo=	terminfo
 BUILTIN_LIBNAME.terminfo=	tinfo
 .  elif !empty(BUILTIN_LIB_FOUND.curses:M[yY][eE][sS])
 BUILTIN_LIBNAME.terminfo=	curses
-.  elif !empty(BUILTIN_LIB_FOUND.ncurses:M[yY][eE][sS])
-BUILTIN_LIBNAME.terminfo=	ncurses
 .  else
 BUILTIN_LIBNAME.terminfo=	c
 .  endif

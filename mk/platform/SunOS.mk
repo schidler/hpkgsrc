@@ -1,9 +1,9 @@
-# $NetBSD: SunOS.mk,v 1.40 2011/09/10 16:30:02 abs Exp $
+# $NetBSD: SunOS.mk,v 1.44 2012/06/01 09:47:49 jperkin Exp $
 #
 # Variable definitions for the SunOS/Solaris operating system.
 
 ECHO_N?=	${ECHO} -n
-IMAKE_MAKE?=	/usr/ccs/bin/make	# program which gets invoked by imake
+IMAKE_MAKE?=	${MAKE}	# program which gets invoked by imake
 PKGLOCALEDIR?=	lib
 PS?=		/bin/ps
 # XXX: default from defaults/mk.conf.  Verify/correct for this platform
@@ -16,7 +16,6 @@ DEF_UMASK?=		022
 DEFAULT_SERIAL_DEVICE?=	/dev/null
 EXPORT_SYMBOLS_LDFLAGS?=	# Don't add symbols to the dynamic symbol table
 GROUPADD?=		/usr/sbin/groupadd
-MOTIF_TYPE_DEFAULT?=	dt		# default 2.0 compatible libs type
 NOLOGIN?=		/usr/bin/false
 ROOT_CMD?=		${SU} - root -c
 ROOT_GROUP?=		root
@@ -27,28 +26,16 @@ ULIMIT_CMD_stacksize?=	ulimit -s `${SETENV} LC_MESSAGES=C ulimit -H -s`
 ULIMIT_CMD_memorysize?=	ulimit -v `${SETENV} LC_MESSAGES=C ulimit -H -v`
 USERADD?=		/usr/sbin/useradd
 
+.if exists(/usr/openwin/include/X11/X.h)
 X11_TYPE?=		native
-
-# imake installs manpages in weird places
-.if !defined(X11_TYPE) || defined(X11_TYPE) && !empty(X11_TYPE:Mnative)
-# openwindows
-IMAKE_MAN_SOURCE_PATH=	share/man/man
-IMAKE_MAN_SUFFIX=	1
-IMAKE_LIBMAN_SUFFIX=	3
 .else
-# xfree86, xorg
-IMAKE_MAN_SOURCE_PATH=	man/man
-IMAKE_MAN_SUFFIX=	1x
-IMAKE_LIBMAN_SUFFIX=	3x
+X11_TYPE?=		modular
 .endif
-IMAKE_FILEMAN_SUFFIX=	4
-IMAKE_GAMEMAN_SUFFIX=	6
-IMAKE_MAN_DIR=		${IMAKE_MAN_SOURCE_PATH}1
-IMAKE_LIBMAN_DIR=	${IMAKE_MAN_SOURCE_PATH}3
-IMAKE_FILEMAN_DIR=	${IMAKE_MAN_SOURCE_PATH}4
-IMAKE_GAMEMAN_DIR=	${IMAKE_MAN_SOURCE_PATH}6
-IMAKE_MANNEWSUFFIX=	${IMAKE_MAN_SUFFIX}
-IMAKE_MANINSTALL?=	maninstall
+.if ${X11_TYPE} == native
+MOTIF_TYPE_DEFAULT?=	dt		# default 2.0 compatible libs type
+.else
+MOTIF_TYPE_DEFAULT?=	lesstif
+.endif
 
 _OPSYS_EMULDIR.solaris=		# empty
 _OPSYS_EMULDIR.solaris32=	# empty

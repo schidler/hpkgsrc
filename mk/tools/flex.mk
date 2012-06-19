@@ -1,4 +1,4 @@
-# $NetBSD: find-libs.mk,v 1.10 2012/04/23 08:44:00 sbd Exp $
+# $NetBSD: flex.mk,v 1.1 2011/11/26 14:58:45 hans Exp $
 #
 # Copyright (c) 2005 The NetBSD Foundation, Inc.
 # All rights reserved.
@@ -35,60 +35,34 @@
 # POSSIBILITY OF SUCH DAMAGE.
 #
 
-#
-# This is a "subroutine" that can be included to detect the presence of
-# libraries in the base system.
-#
-# The input variable is BUILDLINK_FIND_LIBS, which is a list of library
-# names, e.g. ncurses, iconv, etc., that will be sought in the base
-# system.  BUILTIN_LIB_FOUND.<lib> is set to "yes" or "no" depending
-# on the result of the search.
-#
-# An example use is:
-#
-# BUILDLINK_FIND_LIBS:=	intl iconv
-# .include "../../mk/buildlink3/find-libs.mk"
-# # ${BUILTIN_LIB_FOUND.intl} and ${BUILTIN_LIB_FOUND.iconv} are now
-# # either "yes" or "no".
+FLEX_REQD?=		2.5.4
+
+# If the package does explicitly request flex as a tool, then determine if the
+# platform-provided flex's version is at least ${FLEX_REQD}.  If it isn't, then
+# tell the tools framework to use the pkgsrc flex.
 #
 
-.if empty(USE_TOOLS:Mecho)
-USE_TOOLS+=	echo
-.endif
-.if empty(USE_TOOLS:Mtest)
-USE_TOOLS+=	test
-.endif
-
-.for _lib_ in ${BUILTIN_FIND_LIBS}
-.  if !defined(BUILTIN_LIB_FOUND.${_lib_})
-.    if ${OPSYS} == "Haiku" && defined(BELIBRARIES) && !empty(BELIBRARIES)
-BUILTIN_LIB_FOUND.${_lib_}=	no
-.      for _path_ in ${BELIBRARIES:S/:/ /g}
-.        if ${BUILTIN_LIB_FOUND.${_lib_}} == "no"
-BUILTIN_LIB_FOUND.${_lib_}!=    \
-	if ${TEST} "`${ECHO} ${_path_}/lib${_lib_}.*`" != "${_path_}/lib${_lib_}.*"; then \
-		${ECHO} yes;						\
-	else								\
+.if !empty(USE_TOOLS:C/:.*//:Mflex) && \
+    defined(TOOLS_PLATFORM.flex) && !empty(TOOLS_PLATFORM.flex)
+.  if !defined(_TOOLS_USE_PKGSRC.flex)
+_TOOLS_VERSION.flex!=							\
+	${TOOLS_PLATFORM.flex} --version |				\
+	${SED} -e 's/\(.*\) \(.*\)$$/\2/'
+_TOOLS_PKG.flex=		flex-${_TOOLS_VERSION.flex}
+_TOOLS_USE_PKGSRC.flex=	no
+.    for _dep_ in flex>=${FLEX_REQD}
+.      if !empty(_TOOLS_USE_PKGSRC.flex:M[nN][oO])
+_TOOLS_USE_PKGSRC.flex!=						\
+	if ${PKG_ADMIN} pmatch ${_dep_:Q} ${_TOOLS_PKG.flex:Q}; then \
 		${ECHO} no;						\
-	fi
-.        endif
-.      endfor
-.    else
-# XXX: Why are we looking in '/usr/lib${ABI}' and '/lib${ABI}', as we should
-# XXX: only be looking in '/usr/lib${LIBABISUFFIX}' and '/lib${LIBABISUFFIX}'
-BUILTIN_LIB_FOUND.${_lib_}!=	\
-	if ${TEST} "`${ECHO} /usr/lib${ABI}/lib${_lib_}.*`" != "/usr/lib${ABI}/lib${_lib_}.*"; then \
-		${ECHO} yes;						\
-	elif ${TEST} "`${ECHO} /lib${ABI}/lib${_lib_}.*`" != "/lib${ABI}/lib${_lib_}.*"; then \
-		${ECHO} yes;						\
-	elif ${TEST} "`${ECHO} /usr/lib${LIBABISUFFIX}/lib${_lib_}.*`" != "/usr/lib${LIBABISUFFIX}/lib${_lib_}.*"; then \
-		${ECHO} yes;						\
-	elif ${TEST} "`${ECHO} /lib${LIBABISUFFIX}/lib${_lib_}.*`" != "/lib${LIBABISUFFIX}/lib${_lib_}.*"; then \
-		${ECHO} yes;						\
 	else								\
-		${ECHO} no;						\
+		${ECHO} yes;						\
 	fi
-.    endif
+.      endif
+.    endfor
 .  endif
-MAKEVARS+=	BUILTIN_LIB_FOUND.${_lib_}
-.endfor
+MAKEVARS+=	_TOOLS_USE_PKGSRC.flex
+.endif
+
+CONFIGURE_ENV+=		FLEX=${TOOLS_CMD.flex:Q}
+MAKE_ENV+=		FLEX=${TOOLS_CMD.flex:Q}

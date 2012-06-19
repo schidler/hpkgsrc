@@ -2,13 +2,11 @@
 
 BUILTIN_PKG:=	termcap
 
-BUILTIN_FIND_LIBS:=		terminfo curses ncurses termcap termlib tinfo
+BUILTIN_FIND_LIBS:=		terminfo curses termcap termlib tinfo
 BUILTIN_FIND_FILES_VAR:=	H_TERM H_TERMCAP H_TERMLIB
-BUILTIN_FIND_FILES.H_TERM:=	/usr/include/term.h \
-				/boot/develop/headers/3rdparty/term.h
+BUILTIN_FIND_FILES.H_TERM:=	/usr/include/term.h
 BUILTIN_FIND_GREP.H_TERM:=	tgetent
-BUILTIN_FIND_FILES.H_TERMCAP:=	/usr/include/termcap.h\
-				/boot/develop/headers/3rdparty/termcap.h
+BUILTIN_FIND_FILES.H_TERMCAP:=	/usr/include/termcap.h
 BUILTIN_FIND_GREP.H_TERMCAP:=	tgetent
 BUILTIN_FIND_FILES.H_TERMLIB:=	/usr/include/termlib.h
 BUILTIN_FIND_GREP.H_TERMLIB:=	tgetent
@@ -25,7 +23,6 @@ IS_BUILTIN.termcap=	no
       !empty(BUILTIN_LIB_FOUND.curses:M[yY][eE][sS]) || \
       !empty(BUILTIN_LIB_FOUND.termcap:M[yY][eE][sS]) || \
       !empty(BUILTIN_LIB_FOUND.termlib:M[yY][eE][sS]) || \
-      !empty(BUILTIN_LIB_FOUND.ncurses:M[yY][eE][sS]) || \
       !empty(BUILTIN_LIB_FOUND.tinfo:M[yY][eE][sS])
 IS_BUILTIN.termcap=	yes
 .  endif
@@ -66,8 +63,6 @@ BUILTIN_LIBNAME.termcap=	terminfo
 BUILTIN_LIBNAME.termcap=	tinfo
 .  elif !empty(BUILTIN_LIB_FOUND.curses:M[yY][eE][sS])
 BUILTIN_LIBNAME.termcap=	curses
-.  elif !empty(BUILTIN_LIB_FOUND.curses:M[yY][eE][sS])
-BUILTIN_LIBNAME.termcap=	ncurses
 .  else
 BUILTIN_LIBNAME.termcap=	c
 .  endif
