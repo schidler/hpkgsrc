@@ -1,6 +1,6 @@
-# $NetBSD: Makefile,v 1.106 2011/06/28 10:11:08 obache Exp $
+# $NetBSD: Makefile,v 1.113 2012/05/29 14:58:05 wiz Exp $
 
-DISTNAME=	curl-7.21.7
+DISTNAME=	curl-7.26.0
 CATEGORIES=	www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		ftp://ftp.sunet.se/pub/www/utilities/curl/
@@ -30,7 +30,7 @@ PKGCONFIG_OVERRIDE=	libcurl.pc.in
 .if ${OPSYS} !="Haiku"
 INSTALLATION_DIRS=	share/doc/curl share/examples/curl
 .else
-INSTALLATION_DIRS=	${PREFIX}/documentation/doc/curl ${PREFIX}/documentation/examples/curl
+INSTALLATION_DIRS=	${PREFIX}/${PKGDOCDIR}/curl ${PREFIX}/${PKGEXAMPLEDIR}/curl
 .endif
 
 .if !empty(PKGSRC_RUN_TEST:M[Yy][Ee][Ss])
@@ -45,16 +45,16 @@ PRIVILEGED_STAGES+=	clean
 .include "options.mk"
 
 post-install:
-		for _f in MANUAL TheArtOfHttpScripting FAQ			\
-			curl-config.pdf curl.pdf; do				\
-			${INSTALL_DATA} ${WRKSRC}/docs/$${_f}			\
-				 ${DESTDIR}${PREFIX}/documentation/doc/curl/${_f};	\
-		done
-		for _f in ${WRKSRC}/docs/examples/*.c				\
-			${WRKSRC}/docs/examples/README; do			\
-			${INSTALL_DATA} $${_f} 					\
-				${DESTDIR}${PREFIX}/documentation/examples/curl;	\
-		done
+	for _f in MANUAL TheArtOfHttpScripting FAQ			\
+		curl-config.pdf curl.pdf; do				\
+		${INSTALL_DATA} ${WRKSRC}/docs/$${_f}			\
+				 ${DESTDIR}${PREFIX}/${PKGDOCDIR}/curl/${_f};	\
+	done
+	for _f in ${WRKSRC}/docs/examples/*.c				\
+		${WRKSRC}/docs/examples/README; do			\
+		${INSTALL_DATA} $${_f} 					\
+				${DESTDIR}${PREFIX}/${PKGEXAMPLEDIR}/curl;	\
+	done
 
 .include "../../devel/libidn/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"
