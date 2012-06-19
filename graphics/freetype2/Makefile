@@ -1,8 +1,7 @@
-# $NetBSD: Makefile,v 1.84 2011/11/01 05:57:41 sbd Exp $
+# $NetBSD: Makefile,v 1.86 2012/03/09 10:41:14 drochner Exp $
 
-DISTNAME=	freetype-2.4.7
+DISTNAME=	freetype-2.4.9
 PKGNAME=	${DISTNAME:S/-/2-/}
-PKGREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freetype/}
 EXTRACT_SUFX=	.tar.bz2
@@ -21,7 +20,6 @@ GNU_CONFIGURE=		yes
 CONFIGURE_DIRS=		builds/unix
 BUILD_DIRS=		.
 CONFIGURE_ARGS+=	--includedir=${PREFIX}/include
-CONFIGURE_ARGS+=	--dataroot=${PREFIX}/data
 CONFIGURE_ARGS+=	--enable-shared
 CONFIGURE_ENV+=		ac_cv_path_GREP=${GREP:Q} ac_cv_path_EGREP=${EGREP:Q}
 
@@ -34,6 +32,9 @@ PKGCONFIG_OVERRIDE=	builds/unix/freetype2.in
 .include "../../mk/bsd.prefs.mk"
 .include "../../mk/compiler.mk"
 
+.if ${OPSYS} == "Haiku"
+CONFIGURE_ARGS+=        --dataroot=${PREFIX}/data
+.endif
 PKG_OPTIONS_VAR=	PKG_OPTIONS.freetype2
 PKG_SUPPORTED_OPTIONS=	subpixel
 
