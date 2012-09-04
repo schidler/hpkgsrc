@@ -1,6 +1,6 @@
 $NetBSD$
 
---- termination.cc.orig	2010-12-03 21:12:46.051118080 +0000
+--- termination.cc.orig	2010-12-03 21:12:46.025690112 +0000
 +++ termination.cc
 @@ -7,7 +7,7 @@
  #include <cxxabi.h>

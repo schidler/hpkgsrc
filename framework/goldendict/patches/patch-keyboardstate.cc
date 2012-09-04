@@ -1,6 +1,6 @@
 $NetBSD$
 
---- keyboardstate.cc.orig	2012-03-29 11:59:17.000000000 +0000
+--- keyboardstate.cc.orig	2010-12-03 21:12:46.008912896 +0000
 +++ keyboardstate.cc
 @@ -7,10 +7,12 @@
  #ifdef Q_OS_WIN32

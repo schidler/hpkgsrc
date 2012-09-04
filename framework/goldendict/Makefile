@@ -23,10 +23,14 @@ USE_LANGUAGES=	c c++
 pre-extract:
 	@cd ${WRKDIR} && ${MKDIR} ${EXTRACT_DIR}
 
-do-configure:
-	(cd ${WRKSRC} && /boot/common/bin/qmake PREFIX=${PREFIX} goldendict.pro)
+pre-build:
+	(cd ${WRKSRC} && PREFIX=${DESTDIR}${PREFIX} ${QTDIR$}/bin/qmake)	
+
+#do-configure:
+#	(cd ${WRKSRC} && && ${QTDIR$}/bin/qmake goldendict.pro)
 
 .include "../../textproc/hunspell/buildlink3.mk"
+.include "../../audio/libvorbis/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"
 BUILDLINK_API_DEPENDS.qt4-libs+=	qt4-libs>=4.4.0
 .include "../../framework/qt4-libs/buildlink3.mk"
