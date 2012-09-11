@@ -1,0 +1,5 @@
+#!/bin/sh
+wrapperlog="${TOOLS_WRAPPER_LOG-/source/build/hpkgsrc/math/muparser/work/.work.log}"
+echo "[*] "/source/build/hpkgsrc/math/muparser/work/.tools/bin/ldconfig" $@" >> $wrapperlog
+echo "<.> exit 0" >> $wrapperlog
+exit 0

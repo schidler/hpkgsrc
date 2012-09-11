@@ -1,0 +1,11 @@
+prefix=/boot/common/pkg
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: muParser
+Description: Mathematical expressions parser library
+Version: 1.34
+Requires:
+Libs: -Wl,-R${libdir} -L${libdir} -lmuparser
+Cflags: -I${includedir}

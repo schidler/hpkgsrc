@@ -1,0 +1,39 @@
+$NetBSD: patch-aa,v 1.2 2011/12/16 17:16:11 marino Exp $
+
+--- configure.orig	2010-09-04 13:01:39.010223616 +0000
++++ configure
+@@ -6733,7 +6733,7 @@ $as_echo "$bakefile_cv_gcc31" >&6; }
+             SHARED_LD_CXX="\${CXX} -dynamiclib -single_module -headerpad_max_install_names -o"
+         fi
+ 
+-        if test "x$GCC" == "xyes"; then
++        if test "x$GCC" = "xyes"; then
+             PIC_FLAG="-dynamic -fPIC"
+         fi
+         if test "x$XLCC" = "xyes"; then
+@@ -7301,12 +7301,14 @@ EOF
+       ;;
+ 
+       powerpc-apple-macos* | \
++      *-*-dragonfly* | \
+       *-*-freebsd* | *-*-openbsd* | *-*-netbsd* | *-*-k*bsd*-gnu | \
+       *-*-mirbsd* | \
+       *-*-sunos4* | \
+       *-*-osf* | \
+       *-*-dgux5* | \
+       *-*-sysv5* | \
++	  *-*-haiku* | \
+       *-pc-msdosdjgpp )
+               ;;
+ 
+@@ -7342,8 +7344,8 @@ EOF
+     SONAME_FLAG=
+ 
+     case "${BAKEFILE_HOST}" in
+-      *-*-linux* | *-*-freebsd* | *-*-openbsd* | *-*-netbsd* | \
+-      *-*-k*bsd*-gnu | *-*-mirbsd* )
++      *-*-linux* | *-*-haiku* | *-*-freebsd* | *-*-openbsd* | *-*-netbsd* | \
++      *-*-dragonfly* | *-*-k*bsd*-gnu | *-*-mirbsd* )
+         if test "x$SUNCXX" = "xyes"; then
+             SONAME_FLAG="-h "
+         else

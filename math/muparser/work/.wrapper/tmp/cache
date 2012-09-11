@@ -1,0 +1,31 @@
+cache_lookup() {
+case $arg in
+--version) arg=--version; split_arg=no; cachehit=yes ;;
+-I/source/build/hpkgsrc/math/muparser/work/.buildlink/include) arg=-I/source/build/hpkgsrc/math/muparser/work/.buildlink/include; split_arg=no; cachehit=yes ;;
+-L/source/build/hpkgsrc/math/muparser/work/.buildlink/lib) arg=-L/source/build/hpkgsrc/math/muparser/work/.buildlink/lib; split_arg=no; cachehit=yes ;;
+-v) arg=-v; split_arg=no; cachehit=yes ;;
+-V) arg=-V; split_arg=no; cachehit=yes ;;
+-Wl,-R/boot/common/pkg/lib) arg=-Wl,-R/boot/common/pkg/lib; split_arg=no; cachehit=yes ;;
+-lnetwork) arg=-lnetwork; split_arg=yes; cachehit=yes ;;
+-lroot) arg=-lroot; split_arg=yes; cachehit=yes ;;
+-o) arg=-o; split_arg=no; cachehit=yes ;;
+-c) arg=-c; split_arg=no; cachehit=yes ;;
+-g) arg=-g; split_arg=no; cachehit=yes ;;
+-E) arg=-E; split_arg=no; cachehit=yes ;;
+-O2) arg=-O2; split_arg=no; cachehit=yes ;;
+-DNDEBUG) arg=-DNDEBUG; split_arg=no; cachehit=yes ;;
+-DMUPARSER_DLL) arg=-DMUPARSER_DLL; split_arg=no; cachehit=yes ;;
+-DMUPARSERLIB_EXPORTS) arg=-DMUPARSERLIB_EXPORTS; split_arg=no; cachehit=yes ;;
+-I./include) arg=-I./include; split_arg=no; cachehit=yes ;;
+-fPIC) arg=-fPIC; split_arg=no; cachehit=yes ;;
+-DPIC) arg=-DPIC; split_arg=no; cachehit=yes ;;
+-MMD) arg=-MMD; split_arg=no; cachehit=yes ;;
+-shared) arg=-shared; split_arg=no; cachehit=yes ;;
+-L./lib) arg=-L./lib; split_arg=no; cachehit=yes ;;
+-L./lib) arg=-L./lib; split_arg=no; cachehit=yes ;;
+-lmuparser) arg=-lmuparser; split_arg=yes; cachehit=yes ;;
+-Wl,-soname) arg=-Wl,-soname; split_arg=no; cachehit=yes ;;
+-Wl,libmuparser.so.0) arg=-Wl,libmuparser.so.0; split_arg=no; cachehit=yes ;;
+*) cachehit=no ;;
+esac
+}

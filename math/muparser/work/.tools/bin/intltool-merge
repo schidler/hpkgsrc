@@ -1,0 +1,5 @@
+#!/bin/sh
+wrapperlog="${TOOLS_WRAPPER_LOG-/source/build/hpkgsrc/math/muparser/work/.work.log}"
+echo "[*] "/source/build/hpkgsrc/math/muparser/work/.tools/bin/intltool-merge" $@" >> $wrapperlog
+echo "<.> exit 1" >> $wrapperlog
+exit 1
