@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.74 2011/11/07 10:45:36 drochner Exp $
+# $NetBSD: Makefile,v 1.87 2012/07/02 18:44:31 drochner Exp $
 
-# XXX This is release 0.7.7 but we had date-based pkgnames before.
-PKGNAME=	ffmpeg-20111104.${DISTVERSION}
+# XXX This is release 0.7.13 but we had date-based pkgnames before.
+PKGNAME=	ffmpeg-20120609.${DISTVERSION}
 
 MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://ffmpeg.mplayerhq.hu/
@@ -12,10 +12,6 @@ PKG_DESTDIR_SUPPORT=	user-destdir
 CONFIGURE_ARGS+=	--enable-avfilter
 #CONFIGURE_ARGS+=	--enable-avfilter-lavf
 CONFIGURE_ARGS+=	--enable-postproc
-CONFIGURE_ARGS+=	--enable-libvorbis
-CONFIGURE_ARGS+=	--enable-libmp3lame
-CONFIGURE_ARGS+=	--enable-libx264
-CONFIGURE_ARGS+=	--datadir=${PREFIX}/data/ffmpeg
 
 .include "../../mk/bsd.prefs.mk"
 
@@ -24,6 +20,7 @@ INSTALLATION_DIRS=	lib share/examples/ffmpeg share/doc/ffmpeg
 CONF_FILES+=	${PREFIX}/share/examples/ffmpeg/ffserver.conf \
 		${PKG_SYSCONFDIR}/ffserver.conf
 .else
+CONFIGURE_ARGS+=	--datadir=${PREFIX}/data/ffmpeg
 INSTALLATION_DIRS=	lib documentation/examples/ffmpeg documentation/doc/ffmpeg
 CONF_FILES+=	${PREFIX}/documentation/examples/ffmpeg/ffserver.conf \
 		${PKG_SYSCONFDIR}/ffserver.conf
@@ -44,19 +41,15 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf \
 		${DESTDIR}${PREFIX}/share/examples/ffmpeg
 .else
-	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/doc/TODO \
+	${INSTALL_DATA} ${WRKSRC}/README \
 		${DESTDIR}${PREFIX}/documentation/doc/ffmpeg
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt \
 		${DESTDIR}${PREFIX}/documentation/doc/ffmpeg
 	${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf \
 		${DESTDIR}${PREFIX}/documentation/examples/ffmpeg
-
-.endif
-
+.endif		
+		
 .include "options.mk"
-
-# "lame-3.98" isn't compatible with "ffmpeg" which breaks audio encoding.
-BUILDLINK_ABI_DEPENDS.lame+=	lame>=3.98.2nb1
 
 .include "../../mk/compiler.mk"
 
@@ -64,6 +57,4 @@ BUILDLINK_ABI_DEPENDS.lame+=	lame>=3.98.2nb1
 CFLAGS+=	-no-integrated-as
 .endif
 
-.include "../../audio/lame/buildlink3.mk"
-.include "../../audio/libvorbis/buildlink3.mk"
 .include "../../multimedia/ffmpeg/Makefile.common"
