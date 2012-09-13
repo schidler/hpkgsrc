@@ -2,7 +2,7 @@ $NetBSD: patch-ac,v 1.1 2010/12/03 12:23:26 wiz Exp $
 
 Make it find libintl-perl.
 
---- texi2html.pl.orig	2010-06-30 22:01:27.000000000 +0000
+--- texi2html.pl.orig	2010-06-30 22:01:27.035651584 +0000
 +++ texi2html.pl
 @@ -48,6 +48,8 @@ use File::Basename;
  use File::Spec;

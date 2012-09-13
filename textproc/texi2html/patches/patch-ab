@@ -2,7 +2,7 @@ $NetBSD: patch-ab,v 1.1 2010/12/03 12:23:26 wiz Exp $
 
 Don't install included libintl-perl, use pkgsrc one.
 
---- Makefile.in.orig	2010-06-30 22:02:28.000000000 +0000
+--- Makefile.in.orig	2010-06-30 22:02:28.045350912 +0000
 +++ Makefile.in
 @@ -1080,14 +1080,6 @@ distclean-local:
  install-data-local: i18n
