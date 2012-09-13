@@ -1,5 +1,0 @@
-#!/bin/sh
-wrapperlog="${TOOLS_WRAPPER_LOG-/source/build/hpkgsrc/math/muparser/work/.work.log}"
-echo "[*] "/source/build/hpkgsrc/math/muparser/work/.tools/bin/autoconf-2.13" $@" >> $wrapperlog
-echo "<.> /source/build/hpkgsrc/mk/gnu-config/missing autoconf" >> $wrapperlog
-/source/build/hpkgsrc/mk/gnu-config/missing autoconf

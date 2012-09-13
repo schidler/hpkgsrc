@@ -1,5 +1,0 @@
-#!/bin/sh
-wrapperlog="${TOOLS_WRAPPER_LOG-/source/build/hpkgsrc/math/muparser/work/.work.log}"
-echo "[*] "/source/build/hpkgsrc/math/muparser/work/.tools/bin/rpcgen" $@" >> $wrapperlog
-echo "<.> CPP=/source/build/hpkgsrc/math/muparser/work/.wrapper/bin/cpp false  "$@"" >> $wrapperlog
-CPP=/source/build/hpkgsrc/math/muparser/work/.wrapper/bin/cpp false  "$@"
