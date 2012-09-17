@@ -1,0 +1,81 @@
+$NetBSD: patch-ac,v 1.2 2011/12/07 16:13:51 drochner Exp $
+
+--- configure.in.orig	2011-12-26 17:03:31.024117248 +0000
++++ configure.in
+@@ -165,29 +165,12 @@ if test "$EMXOS2" = yes; then
+ 
+ else
+ 
+-  $ID privoxy >/dev/null 2>/dev/null
+-  if test $? -ne 0 ; then
+-   AC_MSG_WARN(There is no user 'privoxy' on this system)
+-  fi
+   AC_MSG_CHECKING([for user])
+   AC_ARG_WITH(user,
+         [  --with-user=privoxy          Set user under which privoxy will run],
+         [
+-                if test "x$withval" != "xyes"; then
+-                  if test $ID = no ; then
+-                    AC_MSG_ERROR(There is no 'id' program on this system)
+-                  else
+                     AC_MSG_RESULT($with_user)
+-                    $ID $with_user 2>/dev/null >/dev/null
+-                    if test $? -eq 0 ; then
+                       USER=$with_user;
+-                    else
+-                      AC_MSG_ERROR(There is no user '$with_user' on this system)
+-                    fi
+-                  fi
+-                  else
+-                   AC_MSG_ERROR(We need a user if you give me this parameter)
+-                fi
+         ],
+         [
+           if test $ID = no ; then
+@@ -204,27 +187,8 @@ else
+   AC_ARG_WITH(group,
+         [  --with-group=privoxy         Set group for privoxy],
+         [
+-                if test "x$withval" != "xyes"; then
+-                  if test $BGROUPS = no ; then
+-                    AC_MSG_ERROR(There is no 'groups' program on this system)
+-                  else
+                     AC_MSG_RESULT($with_group)
+-                    $BGROUPS $USER >/dev/null
+-                    if test $? -eq 0 ; then
+-                    # FIXME: this fails if valid group, but not first group
+-                    # listed.
+-                      if test "$with_group" != "`$BGROUPS $USER | sed 's/.*: //' 2>/dev/null |$AWK '{print $1}'`" ; then
+-                        AC_MSG_ERROR(The given value '$withval' does not match group entry)
+-                      else
+                         GROUP=$with_group;
+-                      fi
+-                    else
+-                      AC_MSG_ERROR(There is no group entry for user '$USER')
+-                    fi
+-                  fi
+-                else
+-                   AC_MSG_ERROR(We need a group if you give me this parameter)
+-                fi
+         ],
+         [
+           if test $BGROUPS = no ; then
+@@ -310,8 +274,16 @@ else
+     PTHREAD_LIB=
+     echo "Using Cygnus (Win32 command line)"
+   else
+-    SPECIAL_CFLAGS=
+-    PTHREAD_LIB=-lpthread
++	if test $target_type = unix; then
++		case "$host_os" in
++		haiku*)
++			PTHREAD_LIB=-lroot
++		;;
++		esac
++	else
++		SPECIAL_CFLAGS=
++		PTHREAD_LIB=-lpthread
++	fi
+   fi
+ fi
+ AC_SUBST(WIN_ONLY)
