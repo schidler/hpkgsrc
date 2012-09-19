@@ -1,0 +1,52 @@
+$NetBSD$
+
+--- Makefile.orig	2012-04-03 01:42:34.037224448 +0000
++++ Makefile
+@@ -81,7 +81,7 @@ ifneq ($(findstring Darwin,${os}),)
+ 	cd qwt; qmake -spec macx-g++ qwt.pro
+ else
+ 	# Linux/BSD
+-	cd qwt; qmake-qt4 qwt.pro
++	cd qwt; ${QTDIR}/bin/qmake qwt.pro
+ endif
+ endif
+ 
+@@ -101,22 +101,22 @@ endif
+ 
+ install:
+ 	$(INSTALL) -v -d ${INSTALL_PREFIX}/bin ${INSTALL_PREFIX}/${SHARE}/snmpb/mibs ${INSTALL_PREFIX}/${SHARE}/snmpb/pibs
+-	$(INSTALL) -v -m 4755 -D -s -o root app/snmpb ${INSTALL_PREFIX}/bin
+-	$(INSTALL) -v -m 444 -o root libsmi/mibs/iana/* ${INSTALL_PREFIX}/${SHARE}/snmpb/mibs
+-	$(INSTALL) -v -m 444 -o root libsmi/mibs/ietf/* ${INSTALL_PREFIX}/${SHARE}/snmpb/mibs
+-	$(INSTALL) -v -m 444 -o root libsmi/mibs/tubs/* ${INSTALL_PREFIX}/${SHARE}/snmpb/mibs
+-	$(INSTALL) -v -m 444 -o root libsmi/pibs/ietf/* ${INSTALL_PREFIX}/${SHARE}/snmpb/pibs
+-	$(INSTALL) -v -m 444 -o root libsmi/pibs/tubs/* ${INSTALL_PREFIX}/${SHARE}/snmpb/pibs
++	$(INSTALL) -v -m 4755 -D -s app/snmpb ${INSTALL_PREFIX}/bin
++	$(INSTALL) -v -m 444 libsmi/mibs/iana/* ${INSTALL_PREFIX}/${SHARE}/snmpb/mibs
++	$(INSTALL) -v -m 444 libsmi/mibs/ietf/* ${INSTALL_PREFIX}/${SHARE}/snmpb/mibs
++	$(INSTALL) -v -m 444 libsmi/mibs/tubs/* ${INSTALL_PREFIX}/${SHARE}/snmpb/mibs
++	$(INSTALL) -v -m 444 libsmi/pibs/ietf/* ${INSTALL_PREFIX}/${SHARE}/snmpb/pibs
++	$(INSTALL) -v -m 444 libsmi/pibs/tubs/* ${INSTALL_PREFIX}/${SHARE}/snmpb/pibs
+ 	rm -f ${INSTALL_PREFIX}/${SHARE}/snmpb/mibs/Makefile* ${INSTALL_PREFIX}/${SHARE}/snmpb/pibs/Makefile*
+-	$(INSTALL) -v -d ${INSTALL_PREFIX}/share/applications ${INSTALL_PREFIX}/share/mime/packages
+-	$(INSTALL) -v -m 444 -o root app/snmpb.desktop ${INSTALL_PREFIX}/share/applications
+-	$(INSTALL) -v -m 444 -o root app/snmpb.xml ${INSTALL_PREFIX}/share/mime/packages
+-	cat ${INSTALL_PREFIX}/share/applications/defaults.list | grep -v "text\/x-mib=" | grep -v "text\/x-mib2=" | grep -v "text\/x-pib=" | grep -v "text\/x-pib2=" | grep -v "text\/x-smi=" | grep -v "text\/x-smi2=" | grep -v "text\/x-smi3=" | grep -v "text\/x-smi4=" | grep -v "text\/x-smi5=" > /tmp/snmpb-assoc; cat app/defaults.list >> /tmp/snmpb-assoc;
+-	$(INSTALL) -v -m 444 -o root /tmp/snmpb-assoc ${INSTALL_PREFIX}/share/applications/defaults.list
++	$(INSTALL) -v -d ${INSTALL_PREFIX}/${SHARE}/applications ${INSTALL_PREFIX}/${SHARE}/mime/packages
++	$(INSTALL) -v -m 444 app/snmpb.desktop ${INSTALL_PREFIX}/${SHARE}/applications
++	$(INSTALL) -v -m 444 app/snmpb.xml ${INSTALL_PREFIX}/${SHARE}/mime/packages
++	cat ${INSTALL_PREFIX}/${SHARE}/applications/defaults.list | grep -v "text\/x-mib=" | grep -v "text\/x-mib2=" | grep -v "text\/x-pib=" | grep -v "text\/x-pib2=" | grep -v "text\/x-smi=" | grep -v "text\/x-smi2=" | grep -v "text\/x-smi3=" | grep -v "text\/x-smi4=" | grep -v "text\/x-smi5=" > /tmp/snmpb-assoc; cat app/defaults.list >> /tmp/snmpb-assoc;
++	$(INSTALL) -v -m 444 /tmp/snmpb-assoc ${INSTALL_PREFIX}/${SHARE}/applications/defaults.list
+ 	rm -f /tmp/snmpb-assoc
+-	update-mime-database ${INSTALL_PREFIX}/share/mime
+-	$(INSTALL) -v -d ${INSTALL_PREFIX}/share/icons/hicolor/128x128/apps ${INSTALL_PREFIX}/share/pixmaps ${INSTALL_PREFIX}/share/icons/hicolor/scalable/apps
+-	$(INSTALL) -v -m 444 -o root app/images/snmpb.png ${INSTALL_PREFIX}/share/icons/hicolor/128x128/apps
+-	$(INSTALL) -v -m 444 -o root app/images/snmpb.png ${INSTALL_PREFIX}/share/pixmaps
+-	$(INSTALL) -v -m 444 -o root app/images/snmpb.svg ${INSTALL_PREFIX}/share/icons/hicolor/scalable/apps
++#	update-mime-database ${INSTALL_PREFIX}/share/mime
++	$(INSTALL) -v -d ${INSTALL_PREFIX}/${SHARE}/icons/hicolor/128x128/apps ${INSTALL_PREFIX}/${SHARE}/pixmaps ${INSTALL_PREFIX}/${SHARE}/icons/hicolor/scalable/apps
++	$(INSTALL) -v -m 444 app/images/snmpb.png ${INSTALL_PREFIX}/${SHARE}/icons/hicolor/128x128/apps
++	$(INSTALL) -v -m 444 app/images/snmpb.png ${INSTALL_PREFIX}/${SHARE}/pixmaps
++	$(INSTALL) -v -m 444 app/images/snmpb.svg ${INSTALL_PREFIX}/${SHARE}/icons/hicolor/scalable/apps
+ 

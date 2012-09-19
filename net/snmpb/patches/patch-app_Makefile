@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- app/Makefile.orig	2011-05-06 06:21:57.000000000 +0000
++++ app/Makefile
+@@ -33,7 +33,7 @@ ifneq ($(findstring Darwin,${os}),)
+ 	qmake -spec macx-g++ -o makefile.snmpb snmpb.pro
+ else
+ 	# Linux/BSD
+-	qmake-qt4 -o makefile.snmpb snmpb.pro
++	${QTDIR}/bin/qmake -o makefile.snmpb snmpb.pro
+ endif
+ endif
+ 

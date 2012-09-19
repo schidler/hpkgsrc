@@ -1,0 +1,10 @@
+$NetBSD$
+
+SHA1 (snmpb-trunk.tar.gz) = 69f4d467acc9291b869d21250ef0668a8a8cea5c
+RMD160 (snmpb-trunk.tar.gz) = 8a5889e2a1ece049b44433792a972f1dc2c9f6dc
+Size (snmpb-trunk.tar.gz) = 5818031 bytes
+SHA1 (patch-Makefile) = 9c87a40e3975ea9cf339ac7e6a324307b59e04f8
+SHA1 (patch-app_Makefile) = 606a644f0a9b4c01090d85c8cdc21d687ef43c6f
+SHA1 (patch-libsmi_tools_Makefile.in) = e340c98e66c668cd2fde0ebee0ea4b61420903c3
+SHA1 (patch-snmp++_include_snmp__pp_address.h) = 48c3f9fe9909c0e8f70db6df4865b299aa4cc747
+SHA1 (patch-snmp++_src_address.cpp) = a8ad55c7f21dd7138b60522a892ef0915c928b8e

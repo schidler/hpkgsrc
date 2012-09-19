@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- libsmi/tools/Makefile.in.orig	2008-05-20 06:44:27.040108032 +0000
++++ libsmi/tools/Makefile.in
+@@ -271,7 +271,7 @@ smidump_SOURCES = smidump.c smidump.h sh
+ 			  dstring.h dstring.c \
+ 			  fortopat.h fortopat.c fprint.h fprint.c
+ 
+-smidump_LDADD = ../lib/libsmi.la -lm
++smidump_LDADD = ../lib/libsmi.la
+ smidiff_SOURCES = smidiff.c shhopt.c
+ smidiff_LDADD = ../lib/libsmi.la
+ MOSTLYCLEANFILES = dump-svg-script.h
