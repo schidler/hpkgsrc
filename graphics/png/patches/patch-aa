@@ -1,4 +1,4 @@
-$NetBSD: patch-aa,v 1.32 2011/11/06 23:53:46 wiz Exp $
+$NetBSD: patch-aa,v 1.31 2011/10/05 16:23:39 hans Exp $
 
 Don't install compat links to libpng. Programs should use
 the pkg-config or libpng-config scripts to get the correct png library

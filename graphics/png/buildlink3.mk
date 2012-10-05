@@ -1,4 +1,4 @@
-# $NetBSD: buildlink3.mk,v 1.26 2011/01/24 08:08:37 adam Exp $
+# $NetBSD: buildlink3.mk,v 1.25 2011/01/13 13:27:21 wiz Exp $
 
 BUILDLINK_TREE+=	png
 
