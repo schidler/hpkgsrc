@@ -15,6 +15,7 @@ INSTALL_ENV+=		INSTALL_ROOT=${DESTDIR}
 
 USE_LIBTOOL=		yes
 USE_LANGUAGES=		c++
+USE_HAIKUATTR=	yes
 
 CHECK_PORTABILITY_SKIP=	autotests/runTests.sh
 
@@ -37,6 +38,6 @@ SUBST_STAGE.target=	post-build
 SUBST_FILES.target=	src/Makefile
 SUBST_SED.target=	-e 's,^QMAKE_TARGET.*$$,QMAKE_TARGET=${ARORA_BIN},g'
 
-.include "../../framework/qt4-libs/buildlink3.mk"
-.include "../../framework/qt4-tools/buildlink3.mk"
+.include "../../x11/qt4-libs/buildlink3.mk"
+.include "../../x11/qt4-tools/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

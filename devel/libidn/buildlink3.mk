@@ -1,4 +1,4 @@
-# $NetBSD: buildlink3.mk,v 1.13 2011/04/22 13:42:06 obache Exp $
+# $NetBSD: buildlink3.mk,v 1.12 2009/03/20 19:24:19 joerg Exp $
 
 BUILDLINK_TREE+=	libidn
 

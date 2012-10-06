@@ -1,6 +1,7 @@
-# $NetBSD: Makefile,v 1.77 2011/05/05 07:46:44 adam Exp $
+# $NetBSD: Makefile,v 1.80 2012/05/29 14:43:06 wiz Exp $
 
-DISTNAME=	libidn-1.22
+DISTNAME=	libidn-1.25
+PKGREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://alpha.gnu.org/pub/gnu/libidn/ \
 		http://ftp.gnu.org/gnu/libidn/
@@ -15,7 +16,7 @@ PKG_DESTDIR_SUPPORT=	user-destdir
 
 USE_LIBTOOL=		yes
 USE_PKGLOCALEDIR=	yes
-USE_TOOLS+=		pkg-config perl:build
+USE_TOOLS+=		makeinfo pkg-config perl:build
 TEXINFO_REQD=		4.7
 GNU_CONFIGURE=		yes
 INFO_FILES=		yes
