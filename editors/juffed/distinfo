@@ -1,0 +1,6 @@
+$NetBSD$
+
+SHA1 (juffed-0.9.1137-1.tar.gz) = f0b5c795049856dde3be565cb3cbd3befa759b2e
+RMD160 (juffed-0.9.1137-1.tar.gz) = 10ca491eb79491c5ae5d874635980d74c249a711
+Size (juffed-0.9.1137-1.tar.gz) = 936386 bytes
+SHA1 (patch-src_3rd__party_qtsingleapplication_qtlocalpeer.cpp) = d7647e7c017ef637cda7016b3feca429db27ba39
