@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/qterminal_pty.cpp.orig	2012-05-29 08:59:56.946864128 +0000
+--- src/qterminal_pty.cpp.orig	2011-03-22 12:20:40.062390272 +0000
 +++ src/qterminal_pty.cpp
 @@ -1,5 +1,5 @@
  #include <cstdlib>

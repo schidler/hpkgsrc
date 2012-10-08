@@ -20,9 +20,9 @@ pre-build:
 	
 do-install:
 	${MKDIR} ${DESTDIR}${PREFIX}/bin
-	cp -R ${WRKSRC}/build/qscite ${DESTDIR}${PREFIX}/bin
+	cp -R ${WRKSRC}/build/QSciTE ${DESTDIR}${PREFIX}/bin/qscite
 
 BUILDLINK_API_DEPENDS.qt4-libs+=	qt4-libs>=4.4.0
-.include "../../framework/qt4-qscintilla/buildlink3.mk"
-.include "../../framework/qt4-tools/buildlink3.mk"
+.include "../../x11/qt4-qscintilla/buildlink3.mk"
+.include "../../x11/qt4-tools/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
