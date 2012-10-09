@@ -127,7 +127,9 @@ MAKEVARS+=		_IGNORE_INFO_PATH
 #
 _PLIST_AWK_ENV+=	PKGLOCALEDIR=${PKGLOCALEDIR:Q}
 _PLIST_AWK_ENV+=	USE_PKGLOCALEDIR=${USE_PKGLOCALEDIR:Dyes:Uno}
+_PLIST_AWK_ENV+=	PKGDOCDIR=${PKGDOCDIR:Q}
 _PLIST_AWK_ENV+=	PKGDATADIR=${PKGDATADIR:Q}
+_PLIST_AWK_ENV+=	USE_PKGDOCDIR=${USE_PKGDOCDIR:Dyes:Uno}
 _PLIST_AWK_ENV+=	USE_PKGDATADIR=${USE_PKGDATADIR:Dyes:Uno}
 _PLIST_AWK_ENV+=	IMAKE_MANINSTALL=${_IMAKE_MANINSTALL:Q}
 _PLIST_AWK_ENV+=	IGNORE_INFO_PATH=${_IGNORE_INFO_PATH:Q}
@@ -159,6 +161,7 @@ PLIST_SUBST+=	OPSYS=${OPSYS:Q}					\
 		PKGNAME=${PKGNAME_NOREV:Q}				\
 		PKGLOCALEDIR=${PKGLOCALEDIR:Q}				\
 		PKGDATADIR=${PKGDATADIR:Q}				\
+		PKGDOCDIR=${PKGDOCDIR:Q}				\
 		PKGVERSION=${PKGVERSION:C/nb[0-9]*$//:Q}		\
 		LOCALBASE=${LOCALBASE:Q}				\
 		VIEWBASE=${VIEWBASE:Q}					\
@@ -190,6 +193,7 @@ _PLIST_1_AWK+=		-f ${PKGSRCDIR}/mk/plist/plist-macros.awk
 
 _PLIST_AWK+=		-f ${.CURDIR}/../../mk/plist/plist-functions.awk
 _PLIST_AWK+=		-f ${.CURDIR}/../../mk/plist/plist-locale.awk
+_PLIST_AWK+=		-f ${.CURDIR}/../../mk/plist/plist-docdir.awk
 _PLIST_AWK+=		-f ${.CURDIR}/../../mk/plist/plist-datadir.awk
 _PLIST_AWK+=		-f ${.CURDIR}/../../mk/plist/plist-info.awk
 _PLIST_AWK+=		-f ${.CURDIR}/../../mk/plist/plist-man.awk

@@ -1,4 +1,4 @@
-# $NetBSD: buildlink3.mk,v 1.25 2011/10/05 02:14:19 obache Exp $
+# $NetBSD: buildlink3.mk,v 1.24 2011/04/22 13:42:07 obache Exp $
 
 BUILDLINK_TREE+=	curl
 

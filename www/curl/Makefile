@@ -1,6 +1,7 @@
-# $NetBSD: Makefile,v 1.113 2012/05/29 14:58:05 wiz Exp $
+# $NetBSD: Makefile,v 1.115 2012/08/01 12:27:11 drochner Exp $
 
-DISTNAME=	curl-7.26.0
+DISTNAME=	curl-7.27.0
+PKGREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		ftp://ftp.sunet.se/pub/www/utilities/curl/
@@ -25,13 +26,9 @@ CONFIGURE_ARGS+=	--with-ca-path=${SSLCERTS}
 CONFIGURE_ARGS+=	--with-zlib=${BUILDLINK_PREFIX.zlib}
 PKGCONFIG_OVERRIDE=	libcurl.pc.in
 
-.include "../../mk/bsd.prefs.mk"
+INSTALLATION_DIRS=	${PKGDOCDIR}/doc/curl ${PKGDOCDIR}/examples/curl
 
-.if ${OPSYS} !="Haiku"
-INSTALLATION_DIRS=	share/doc/curl share/examples/curl
-.else
-INSTALLATION_DIRS=	${PREFIX}/${PKGDOCDIR}/curl ${PREFIX}/${PKGEXAMPLEDIR}/curl
-.endif
+.include "../../mk/bsd.prefs.mk"
 
 .if !empty(PKGSRC_RUN_TEST:M[Yy][Ee][Ss])
 TEST_TARGET=		check
@@ -48,12 +45,12 @@ post-install:
 	for _f in MANUAL TheArtOfHttpScripting FAQ			\
 		curl-config.pdf curl.pdf; do				\
 		${INSTALL_DATA} ${WRKSRC}/docs/$${_f}			\
-				 ${DESTDIR}${PREFIX}/${PKGDOCDIR}/curl/${_f};	\
+			 ${DESTDIR}${PREFIX}/${PKGDOCDIR}/doc/curl/${_f};	\
 	done
 	for _f in ${WRKSRC}/docs/examples/*.c				\
 		${WRKSRC}/docs/examples/README; do			\
 		${INSTALL_DATA} $${_f} 					\
-				${DESTDIR}${PREFIX}/${PKGEXAMPLEDIR}/curl;	\
+			${DESTDIR}${PREFIX}/${PKGDOCDIR}/examples/curl;	\
 	done
 
 .include "../../devel/libidn/buildlink3.mk"

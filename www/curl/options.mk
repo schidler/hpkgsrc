@@ -2,6 +2,8 @@
 
 PKG_OPTIONS_VAR=	PKG_OPTIONS.curl
 PKG_SUPPORTED_OPTIONS=	inet6 libssh2 gssapi ldap rtmp
+PKG_SUGGESTED_OPTIONS=	inet6
+
 .include "../../mk/bsd.prefs.mk"
 .if ${OPSYS} == NetBSD
 # Kerberos is built in - no additional dependency
