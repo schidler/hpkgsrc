@@ -1,6 +1,6 @@
-$NetBSD: patch-ac,v 1.7 2001/04/20 12:33:53 fredb Exp $
+$NetBSD$
 
---- Library/src/HTStyle.c.orig	1999-02-23 03:10:12.021233664 +0000
+--- Library/src/HTStyle.c.orig	Mon Feb 22 16:10:12 1999
 +++ Library/src/HTStyle.c
 @@ -18,6 +18,8 @@
  #include "WWWUtil.h"

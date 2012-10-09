@@ -1,4 +1,4 @@
-# $NetBSD: buildlink3.mk,v 1.16 2010/01/17 12:02:49 wiz Exp $
+# $NetBSD: buildlink3.mk,v 1.15 2009/03/20 19:25:37 joerg Exp $
 
 BUILDLINK_TREE+=	libwww
 
@@ -25,7 +25,5 @@ pkgbase := libwww
 .include "../../devel/zlib/buildlink3.mk"
 .include "../../security/openssl/buildlink3.mk"
 .endif # LIBWWW_BUILDLINK3_MK
-
-.include "../../textproc/expat/buildlink3.mk"
 
 BUILDLINK_TREE+=	-libwww

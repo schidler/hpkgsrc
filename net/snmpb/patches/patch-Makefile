@@ -1,6 +1,6 @@
 $NetBSD$
 
---- Makefile.orig	2012-04-03 01:42:34.037224448 +0000
+--- Makefile.orig	2012-04-03 01:42:34.065273856 +0000
 +++ Makefile
 @@ -81,7 +81,7 @@ ifneq ($(findstring Darwin,${os}),)
  	cd qwt; qmake -spec macx-g++ qwt.pro

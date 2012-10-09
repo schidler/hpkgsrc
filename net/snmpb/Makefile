@@ -46,6 +46,6 @@ do-install:
 	${CP} ${WRKSRC}/app/images/snmpb.svg ${DESTDIR}${PREFIX}/data/icons/hicolor/scalable/apps
 
 
-.include "../../framework/qt4-tools/buildlink3.mk"
-.include "../../framework/qt4-libs/buildlink3.mk"
+.include "../../x11/qt4-tools/buildlink3.mk"
+.include "../../x11/qt4-libs/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

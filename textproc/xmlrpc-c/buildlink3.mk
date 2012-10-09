@@ -1,4 +1,4 @@
-# $NetBSD: buildlink3.mk,v 1.9 2011/04/22 13:42:09 obache Exp $
+# $NetBSD: buildlink3.mk,v 1.8 2011/04/06 07:45:47 adam Exp $
 
 BUILDLINK_TREE+=	xmlrpc-c
 

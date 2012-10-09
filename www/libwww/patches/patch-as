@@ -1,8 +1,8 @@
-$NetBSD: patch-as,v 1.1 2010/01/26 18:38:27 drochner Exp $
+$NetBSD$
 
 CVE-2009-3560
 
---- modules/expat/xmlparse/xmlparse.c.orig	2000-08-28 13:52:02.048234496 +0000
+--- modules/expat/xmlparse/xmlparse.c.orig	2000-08-28 08:52:01.000000000 +0000
 +++ modules/expat/xmlparse/xmlparse.c
 @@ -2199,6 +2199,9 @@ doProlog(XML_Parser parser,
  	return XML_ERROR_UNCLOSED_TOKEN;

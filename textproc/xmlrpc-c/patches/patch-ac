@@ -1,6 +1,6 @@
-$NetBSD: patch-ac,v 1.4 2011/04/06 07:45:48 adam Exp $
+$NetBSD$
 
---- src/cpp/Makefile.orig	2011-03-25 16:23:17.056098816 +0000
+--- src/cpp/Makefile.orig	2011-03-25 16:58:35.051118080 +0000
 +++ src/cpp/Makefile
 @@ -283,7 +283,7 @@ $(LIBXMLRPC_PACKETSOCKET_MODS:%=%.o) \
  $(LIBXMLRPC_PACKETSOCKET_MODS:%=%.osh): \

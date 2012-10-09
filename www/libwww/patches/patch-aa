@@ -1,8 +1,8 @@
-$NetBSD: patch-aa,v 1.4 2001/04/20 12:33:53 fredb Exp $
+$NetBSD$
 
---- Library/Makefile.am.orig	1998-08-06 06:54:52.001572864 +0000
+--- Library/Makefile.am.orig	Wed Aug  5 20:54:52 1998
 +++ Library/Makefile.am
-@@ -5,5 +5,5 @@ DOCS :=	$(wildcard *.html *.gif)
+@@ -5,5 +5,5 @@
  EXTRA_DIST = \
  	$(DOCS)
  

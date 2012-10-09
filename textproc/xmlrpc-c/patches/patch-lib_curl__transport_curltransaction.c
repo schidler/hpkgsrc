@@ -1,8 +1,8 @@
-$NetBSD: patch-lib_curl__transport_curltransaction.c,v 1.1 2011/06/30 01:03:26 obache Exp $
+$NetBSD$
 
 * curl/types.h is not used (empty) since curl-7.12.0 and removed at curl-7.21.7.
 
---- lib/curl_transport/curltransaction.c.orig	2011-03-25 16:24:56.028311552 +0000
+--- lib/curl_transport/curltransaction.c.orig	2011-08-11 01:28:08.029884416 +0000
 +++ lib/curl_transport/curltransaction.c
 @@ -15,7 +15,6 @@
  #include "version.h"

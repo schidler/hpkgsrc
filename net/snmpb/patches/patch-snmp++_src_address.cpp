@@ -1,6 +1,6 @@
 $NetBSD$
 
---- snmp++/src/address.cpp.orig	2010-11-27 04:48:28.000000000 +0000
+--- snmp++/src/address.cpp.orig	2010-11-27 04:48:28.023330816 +0000
 +++ snmp++/src/address.cpp
 @@ -822,12 +822,12 @@ bool IpAddress::parse_address(const char
      char buf[2048]; // TODO: Too big buffer?

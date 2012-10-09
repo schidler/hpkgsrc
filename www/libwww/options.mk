@@ -1,4 +1,4 @@
-# $NetBSD: options.mk,v 1.2 2006/10/04 19:45:58 rillig Exp $
+# $NetBSD: options.mk,v 1.1 2005/12/02 17:05:04 wiz Exp $
 
 PKG_OPTIONS_VAR=	PKG_OPTIONS.libwww
 PKG_OPTIONS_OPTIONAL_GROUPS+=	socks

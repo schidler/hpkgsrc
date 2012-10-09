@@ -1,4 +1,4 @@
-@comment $NetBSD: PLIST,v 1.7 2009/06/14 22:00:25 joerg Exp $
+@comment $NetBSD: PLIST,v 1.6 2008/04/12 22:43:13 jlam Exp $
 bin/libwww-config
 bin/w3c
 bin/webbot

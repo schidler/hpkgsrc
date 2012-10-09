@@ -1,4 +1,4 @@
-@comment $NetBSD: PLIST,v 1.4 2011/04/06 07:45:47 adam Exp $
+@comment $NetBSD: PLIST,v 1.3 2009/10/27 18:50:39 drochner Exp $
 bin/xmlrpc-c-config
 include/XmlRpcCpp.h
 include/xmlrpc-c/abyss.h

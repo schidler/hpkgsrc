@@ -1,6 +1,6 @@
-# $NetBSD: Makefile,v 1.21 2011/05/09 13:39:16 adam Exp $
+# $NetBSD: Makefile,v 1.25 2012/07/25 15:49:34 jperkin Exp $
 
-DISTNAME=	xmlrpc-c-1.16.35
+DISTNAME=	xmlrpc-c-1.16.42
 # the "super stable" branch
 PKGNAME=	${DISTNAME:S/-c-/-c-ss-/}
 CATEGORIES=	textproc devel
@@ -30,8 +30,6 @@ MAKE_ENV+=		CXXFLAGS_COMMON=${CXXFLAGS:M*:Q}
 MAKE_ENV+=		LADD=${LDFLAGS:M*:Q}
 TEST_TARGET=		check
 
-LDFLAGS.Haiku+=		-L${PREFIX}/lib
-LDFLAGS.Haiku+=		-lexpat -lwwwzip -lwwwxml
 PTHREAD_LINKFLAGS=	${PTHREAD_LDFLAGS} ${PTHREAD_LIBS}
 SUBST_CLASSES+=		pthread
 SUBST_STAGE.pthread=	pre-configure

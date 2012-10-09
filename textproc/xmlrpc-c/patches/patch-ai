@@ -1,6 +1,6 @@
-$NetBSD: patch-ai,v 1.2 2011/04/06 07:45:48 adam Exp $
+$NetBSD$
 
---- tools/xmlrpc/Makefile.orig	2011-03-25 16:23:59.044564480 +0000
+--- tools/xmlrpc/Makefile.orig	2011-03-25 16:58:35.000262144 +0000
 +++ tools/xmlrpc/Makefile
 @@ -45,7 +45,7 @@ LIBS = $(LIBXMLRPC_CLIENT) $(LIBXMLRPC) 
  XMLRPC_OBJS = xmlrpc.o $(DUMPVALUE)

@@ -1,6 +1,6 @@
 $NetBSD$
 
---- libsmi/tools/Makefile.in.orig	2008-05-20 06:44:27.040108032 +0000
+--- libsmi/tools/Makefile.in.orig	2008-05-20 06:44:27.001048576 +0000
 +++ libsmi/tools/Makefile.in
 @@ -271,7 +271,7 @@ smidump_SOURCES = smidump.c smidump.h sh
  			  dstring.h dstring.c \

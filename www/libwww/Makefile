@@ -2,7 +2,7 @@
 
 DISTNAME=		w3c-libwww-5.4.0
 PKGNAME=		libwww-5.4.0
-PKGREVISION=		9
+PKGREVISION=		10
 CATEGORIES=		www devel
 MASTER_SITES=		http://www.w3.org/Library/Distribution/
 EXTRACT_SUFX=		.zip
@@ -20,13 +20,10 @@ SITES.libwww-configure-5.4.0nb2.gz=	${MASTER_SITE_LOCAL}
 
 USE_TOOLS+=		automake14 gmake gzcat perl
 USE_LIBTOOL=		YES
-USE_PKGDATADIR= 	NO
 
 GNU_CONFIGURE=		YES
 CONFIGURE_ARGS+=	--with-zlib --without-x
 CONFIGURE_ARGS+=	--with-ssl=${SSLBASE:Q}
-
-LIBS.Haiku+=	-lnetwork
 
 .include "options.mk"
 
@@ -58,9 +55,9 @@ PLIST.md5=		yes
 CONFIGURE_ARGS+=	--with-md5=${SSLBASE:Q}
 .  endif
 .endif
+
 .if ${OPSYS} == "Haiku"
-CONFIGURE_ARGS+=	--datadir=${PREFIX}/data
-#PRINT_PLIST_AWK+= gsub(/^${PKGDATADIR}\, "share")
+CONFIGURE_ARGS+=	--datadir=${PREFIX}/${PKGDATADIR}
 .endif
 
 .include "../../devel/zlib/buildlink3.mk"

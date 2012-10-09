@@ -1,15 +1,17 @@
-$NetBSD: distinfo,v 1.18 2011/06/30 01:03:24 obache Exp $
+$NetBSD: distinfo,v 1.24 2012/07/25 15:49:34 jperkin Exp $
 
-SHA1 (xmlrpc-c-1.16.35.tgz) = f79d44d533eb38fb012e0e0af429798f5f404c59
-RMD160 (xmlrpc-c-1.16.35.tgz) = 1decb5c8c9ce3d9276e174f8e96a96043f8bb816
-Size (xmlrpc-c-1.16.35.tgz) = 1876492 bytes
-SHA1 (patch-aa) = 6f757aeccdf504cda35099142298787abab61c5e
-SHA1 (patch-ac) = c4f1ae538c175a7d5e2be18a17593d6fa8eacec3
-SHA1 (patch-ae) = e5f99ab3a1dbc76f5571915ce0e0da56675dd103
-SHA1 (patch-ai) = 571d60322b517ece0b7382fa878b704b695e248c
-SHA1 (patch-aj) = f211eb440de94b373aeba954e5101e903ab1c72e
-SHA1 (patch-ak) = 273e63f7b7b2e61e452ba598f41a2eda798d2268
-SHA1 (patch-config.mk.in) = 1d8b76248a8c9caa16fa4bbbdbd801931dc6c235
-SHA1 (patch-lib_curl__transport_curlmulti.c) = 5be5bbd3d242b6f6e06f177adf5a8356bd7a8fd4
-SHA1 (patch-lib_curl__transport_curltransaction.c) = 5e323a9359e9969f9902cb764d7a3730318963f4
-SHA1 (patch-lib_curl__transport_xmlrpc__curl__transport.c) = 657d94d4f7f963ea8f55ec8131bffe42947f5162
+SHA1 (xmlrpc-c-1.16.42.tgz) = 7a71fabc652c2848a7226605432a2e420a02dff0
+RMD160 (xmlrpc-c-1.16.42.tgz) = 945fb092152a8ff139407ce1e80da9803b5afdce
+Size (xmlrpc-c-1.16.42.tgz) = 758724 bytes
+SHA1 (patch-GNUmakefile) = f72e8e211dc1cc6f25c0bb327801f77f9d20a30b
+SHA1 (patch-aa) = e46ba35e58bb61329058b53bdcc736016602487b
+SHA1 (patch-ac) = b9a849e6f536b6226427c6057dacd6e534f42527
+SHA1 (patch-ae) = 860d891d8c3b2b0d280497ea8f4cfdedde1cc204
+SHA1 (patch-ai) = 709dc2d6ce544fe88a891accbbf606758d39bc37
+SHA1 (patch-aj) = 89886ea3d6a4306c9dd0c332f52f56410566bcbb
+SHA1 (patch-ak) = 93fe3134288d7538070c51d33594ce6653637bc3
+SHA1 (patch-config.mk.in) = 3e561bd46868bd21e7ecccb126c9c8a1c96dab0b
+SHA1 (patch-examples_cpp_Makefile) = 5430e5733f0848dacb7b48387450b5458f8d6791
+SHA1 (patch-lib_curl__transport_curlmulti.c) = 8c00010cac515f79309b830f48a5a0d6b4725fda
+SHA1 (patch-lib_curl__transport_curltransaction.c) = dbd59fc6d6ea36267cd690ea24bed3482d3deb4f
+SHA1 (patch-lib_curl__transport_xmlrpc__curl__transport.c) = ba8e1edaec688bc2d29789a278dabd7a735f2595
