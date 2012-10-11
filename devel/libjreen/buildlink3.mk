@@ -25,7 +25,7 @@ BUILDLINK_PKGSRCDIR.libjreen?=	../../devel/libjreen
 # XXX buildlink3 lines below to dependencies, remove them.
 # XXX
 #.include "../../x11/qt4-tools/buildlink3.mk"
-#.include "../../security/qca2/buildlink3.mk"
+.include "../../security/qca2/buildlink3.mk"
 .endif	# LIBJREEN_BUILDLINK3_MK
 
 BUILDLINK_TREE+=	-libjreen
