@@ -41,6 +41,7 @@ BUILDLINK_API_DEPENDS.pcre+=	pcre>=8.11
 CONFIGURE_ARGS+=	PCRE_CFLAGS=-I${BUILDLINK_PREFIX.pcre}/include
 CONFIGURE_ARGS+=	PCRE_LIBS="${COMPILER_RPATH_FLAG}${BUILDLINK_PREFIX.pcre}/lib -L${BUILDLINK_PREFIX.pcre}/lib -lpcre"
 
+CONFIGURE_ARGS+=	--enable-debug=yes
 # needs gz_header structure
 BUILDLINK_API_DEPENDS.zlib+=	zlib>=1.2.2.1
 

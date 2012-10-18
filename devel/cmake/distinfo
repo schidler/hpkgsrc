@@ -1,14 +1,15 @@
-$NetBSD: distinfo,v 1.36 2012/02/16 18:32:25 hans Exp $
+$NetBSD: distinfo,v 1.39 2012/08/11 11:10:54 marino Exp $
 
-SHA1 (cmake-2.8.7.tar.gz) = d206182b454f4d1ddeb0f11d7d1be8a66e5c2464
-RMD160 (cmake-2.8.7.tar.gz) = 13b188e75152feef4e5692807e3a9e7c34b26fe3
-Size (cmake-2.8.7.tar.gz) = 5667409 bytes
-SHA1 (patch-Modules_FindThreads.cmake) = a5f0b487144e1193580fe8787a8f83c4d7c77370
-SHA1 (patch-Modules_FindX11.cmake) = f2e75a29cee15ed3d1071383463c14c111c9c65d
-SHA1 (patch-Modules_Platform_Haiku.cmake) = 9dbef9a2a102b6349bf55870103e855e5a7f285d
-SHA1 (patch-Modules_Platform_SunOS.cmake) = eaf3f605d1e7c4bbc946d36e3ce5009ee1983eb0
-SHA1 (patch-Utilities_cmcurl_easy.c) = ad01b1346096cb78fa98265875e4862e0e127948
-SHA1 (patch-Utilities_cmcurl_multi.c) = b441a35723bcccef6bb61fc8014500ecb59fc7b7
-SHA1 (patch-aa) = 39872f4714cee8c9d9f3cdb5fdf948532ec4f6fb
-SHA1 (patch-ab) = 4722b1da1a5fc45cb3ea854e3d106ab0c4c9aa82
-SHA1 (patch-ac) = 3824e23b11ca7514b52ae06c914491579ab1391a
+SHA1 (cmake-2.8.9.tar.gz) = b96663c0757a5edfbddc410aabf7126a92131e2b
+RMD160 (cmake-2.8.9.tar.gz) = 66808a280eb8e4ae798df3283fab8bcc3f512777
+Size (cmake-2.8.9.tar.gz) = 5658837 bytes
+SHA1 (patch-Modules_FindThreads.cmake) = 5e093a2cbb2e9a0770ee3ba486525e9d8dd1d5bb
+SHA1 (patch-Modules_FindX11.cmake) = 18ae67f5432f27bc9f077b3d36c2c398ce4eea2e
+SHA1 (patch-Modules_Platform_Haiku.cmake) = af9c640d136279c269a8ed1fde0ea31c45698338
+SHA1 (patch-Modules_Platform_SunOS.cmake) = 8c2236f131f53fab8fb4abf9aa0743390a66280e
+SHA1 (patch-Utilities_CMakeLists.txt) = e4c66aba54b89628a47be2bdef027e8835ec8e08
+SHA1 (patch-Utilities_KWIML_ABI.h.in) = 5bfcfae924fb0f2d5c433e93dd611e10d33a2f8f
+SHA1 (patch-Utilities_KWIML_CMakeLists.txt) = 2ceaa6da9f007395c6d0608b3d668a2457299f0a
+SHA1 (patch-aa) = bf6c2af98ecf6018583ae75e2d2b3016a4cfbdfa
+SHA1 (patch-ab) = 21187a79126da928f158d492b08fb5ee0c21492e
+SHA1 (patch-ac) = 4dfbf6e4c05aef08f546b598bb9f85c7f38e008d

@@ -1,6 +1,8 @@
 $NetBSD: patch-aa,v 1.8 2011/09/14 17:54:48 brook Exp $
 
---- Modules/Platform/UnixPaths.cmake.orig	2011-12-30 16:49:56.034603008 +0000
+Patch in pkgsrc paths for finding stuff.
+
+--- Modules/Platform/UnixPaths.cmake.orig	2012-08-09 18:15:19.036175872 +0000
 +++ Modules/Platform/UnixPaths.cmake
 @@ -48,10 +48,10 @@ LIST(APPEND CMAKE_SYSTEM_INCLUDE_PATH
    /usr/include/w32api

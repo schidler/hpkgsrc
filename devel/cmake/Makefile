@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.62 2012/01/08 09:47:42 adam Exp $
+# $NetBSD: Makefile,v 1.63 2012/08/07 16:18:26 adam Exp $
 
-DISTNAME=	cmake-${CMAKE_API}.7
+DISTNAME=	cmake-${CMAKE_API}.9
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cmake.org/files/v2.8/
+MASTER_SITES=	http://www.cmake.org/files/v${CMAKE_API}/
 
 CMAKE_API=	2.8
 
@@ -14,20 +14,21 @@ LICENSE=	modified-bsd
 PKG_DESTDIR_SUPPORT=	user-destdir
 
 USE_TOOLS+=		gmake
+USE_PKGDOCDIR=		yes
 USE_LANGUAGES=		c c++
 # wants wsyncup and wcursyncup
 USE_NCURSES=		yes
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	bootstrap
-
 BUILD_TARGET=		default_target
 
 CONFIGURE_HAS_MANDIR=	no
+
 CONFIGURE_ARGS+=	--mandir=/${PKGMANDIR}
-CONFIGURE_ARGS+=	--datadir=/data/cmake-${CMAKE_API}
-CONFIGURE_ARGS+=	--docdir=/documentation/doc/cmake-${CMAKE_API}
+CONFIGURE_ARGS+=	--docdir=/${PKGDOCDIR}/doc/cmake-${CMAKE_API}
+CONFIGURE_ARGS+=    --datadir=/${PKGDATADIR}/cmake-${CMAKE_API}
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
-CONFIGURE_ARGS+=	--no-system-libs
+CONFIGURE_ARGS+=	--system-libs
 
 .include "../../mk/bsd.prefs.mk"
 
@@ -36,9 +37,10 @@ CONFIGURE_ARGS+=	--parallel=${MAKE_JOBS:Q}
 .endif
 
 PLIST_SUBST+=		CMAKE_API=${CMAKE_API}
+PLIST_AWK+=	-f ${PKGSRCDIR}/mk/plist/plist-datadir.awk
 
 # for Source/cmDependsJavaParser.cxx
-#UNLIMIT_RESOURCES=	datasize
+UNLIMIT_RESOURCES=	datasize
 
 # as of 2.4.6, x11 and fortran tests fail in pkgsrc
 TEST_TARGET=		test
@@ -59,12 +61,11 @@ SUBST_SED.flags=	-e 's,-O.,,'
 pre-configure:
 	${RM} ${WRKSRC}/Modules/*.orig ${WRKSRC}/Modules/Platform/*.orig
 
-#BUILDLINK_API_DEPENDS.libarchive+=	libarchive>=2.8.4
-#.include "../../archivers/libarchive/buildlink3.mk"
+BUILDLINK_API_DEPENDS.libarchive+=	libarchive>=2.8.4
+.include "../../archivers/libarchive/buildlink3.mk"
 .include "../../devel/ncurses/buildlink3.mk"
-#.include "../../devel/zlib/buildlink3.mk"
-#.include "../../textproc/expat/buildlink3.mk"
+.include "../../devel/zlib/buildlink3.mk"
+.include "../../textproc/expat/buildlink3.mk"
 .include "../../textproc/xmlrpc-c/buildlink3.mk"
-#.include "../../www/curl/buildlink3.mk"
-
+.include "../../www/curl/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

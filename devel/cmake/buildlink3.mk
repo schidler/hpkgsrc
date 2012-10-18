@@ -1,4 +1,4 @@
-# $NetBSD: buildlink3.mk,v 1.11 2011/09/14 17:54:48 brook Exp $
+# $NetBSD: buildlink3.mk,v 1.10 2009/03/20 19:24:11 joerg Exp $
 
 BUILDLINK_TREE+=	cmake
 

@@ -1,50 +1,16 @@
 $NetBSD$
 
---- Modules/FindThreads.cmake.orig	2011-12-30 16:49:56.016777216 +0000
+--- Modules/FindThreads.cmake.orig	2012-08-09 18:15:19.017825792 +0000
 +++ Modules/FindThreads.cmake
-@@ -46,9 +46,17 @@ ELSE()
-     IF(NOT THREADS_HAVE_PTHREAD_ARG)
+@@ -130,6 +130,11 @@ IF(CMAKE_SYSTEM MATCHES "Windows")
+   SET(Threads_FOUND TRUE)
+ ENDIF()
  
-       # Do we have -lpthreads
--      CHECK_LIBRARY_EXISTS(pthreads pthread_create "" CMAKE_HAVE_PTHREADS_CREATE)
-+      if (HAIKU)
-+      	CHECK_LIBRARY_EXISTS(root pthread_create "" CMAKE_HAVE_PTHREADS_CREATE)
-+      else (HAIKU)
-+      	CHECK_LIBRARY_EXISTS(pthreads pthread_create "" CMAKE_HAVE_PTHREADS_CREATE)
-+      endif(HAIKU)
-       IF(CMAKE_HAVE_PTHREADS_CREATE)
--        SET(CMAKE_THREAD_LIBS_INIT "-lpthreads")
-+      	if (HAIKU)
-+        	SET (CMAKE_THREAD_LIBS_INIT "-lroot")
-+    	else (HAIKU)
-+        	SET(CMAKE_THREAD_LIBS_INIT "-lpthreads")
-+        endif(HAIKU)
-         SET(CMAKE_HAVE_THREADS_LIBRARY 1)
-         SET(Threads_FOUND TRUE)
-       ENDIF()
-@@ -56,7 +64,11 @@ ELSE()
-       # Ok, how about -lpthread
-       CHECK_LIBRARY_EXISTS(pthread pthread_create "" CMAKE_HAVE_PTHREAD_CREATE)
-       IF(CMAKE_HAVE_PTHREAD_CREATE)
--        SET(CMAKE_THREAD_LIBS_INIT "-lpthread")
-+        if (HAIKU)
-+        	SET (CMAKE_THREAD_LIBS_INIT "-lroot")
-+    	else (HAIKU)
-+        	SET(CMAKE_THREAD_LIBS_INIT "-lpthread")
-+        endif(HAIKU)
-         SET(Threads_FOUND TRUE)
-         SET(CMAKE_HAVE_THREADS_LIBRARY 1)
-       ENDIF()
-@@ -104,7 +116,11 @@ ELSE()
- 
-       IF(THREADS_HAVE_PTHREAD_ARG)
-         SET(Threads_FOUND TRUE)
--        SET(CMAKE_THREAD_LIBS_INIT "-pthread")
-+        if (HAIKU)
-+        	SET (CMAKE_THREAD_LIBS_INIT "-lroot")
-+        else (HAIKU)
-+        	SET(CMAKE_THREAD_LIBS_INIT "-pthread")
-+       	endif(HAIKU)
-       ENDIF()
- 
-     ENDIF(NOT CMAKE_HAVE_THREADS_LIBRARY)
++IF(HAIKU)
++  SET (CMAKE_THREAD_LIBS_INIT "-lroot")
++  SET(Threads_FOUND TRUE)
++ENDIF(HAIKU)
++
+ IF(CMAKE_USE_PTHREADS_INIT)
+   IF(CMAKE_SYSTEM MATCHES "HP-UX-*")
+     # Use libcma if it exists and can be used.  It provides more

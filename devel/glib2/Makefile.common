@@ -35,7 +35,9 @@ CONFIGURE_ARGS+=	--disable-fam	# See sysutils/gio-fam.
 CONFIGURE_ARGS+=	--includedir=${PREFIX}/include/glib
 CONFIGURE_ARGS+=	${CONFIGURE_ARGS.${ICONV_TYPE}-iconv}
 CONFIGURE_ARGS+=	--with-pcre=system
-CONFIGURE_ARGS+=	--disable-dtrace
+#CONFIGURE_ARGS+=	--disable-dtrace
+CONFIGURE_ARGS+=	--enable-systemtap
+CONFIGURE_ARGS+=	--disable-mem-pools
 
 CONFIGURE_ARGS.gnu-iconv+=	--with-libiconv=gnu
 
