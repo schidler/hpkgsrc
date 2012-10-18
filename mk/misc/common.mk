@@ -1,4 +1,4 @@
-# $NetBSD: common.mk,v 1.3 2007/10/13 11:04:19 dsl Exp $
+# $NetBSD: common.mk,v 1.2 2007/08/13 08:45:17 rillig Exp $
 #
 # This file contains the definitions that are used in all directories of
 # pkgsrc -- the top-level, the categories and the packages themselves.

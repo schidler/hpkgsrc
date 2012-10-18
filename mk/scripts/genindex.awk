@@ -1,5 +1,5 @@
 #!/usr/bin/awk -f
-# $NetBSD: genindex.awk,v 1.7 2008/09/07 11:13:51 wiz Exp $
+# $NetBSD: genindex.awk,v 1.6 2006/12/15 13:15:06 martti Exp $
 #
 # Copyright (c) 2002, 2003 The NetBSD Foundation, Inc.
 # All rights reserved.

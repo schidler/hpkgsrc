@@ -1,4 +1,4 @@
-# $NetBSD: pcc.mk,v 1.5 2010/12/26 14:23:47 asau Exp $
+# $NetBSD: pcc.mk,v 1.4 2010/12/26 14:20:01 asau Exp $
 #
 # This is the compiler definition for the PCC compiler.
 #

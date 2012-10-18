@@ -1,4 +1,4 @@
-# $NetBSD: AIX.mk,v 1.38 2012/03/19 12:34:16 joerg Exp $
+# $NetBSD: AIX.mk,v 1.37 2011/09/18 12:42:23 abs Exp $
 #
 # Variable definitions for the AIX operating system.
 

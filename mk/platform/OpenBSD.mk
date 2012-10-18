@@ -1,4 +1,4 @@
-# $NetBSD: OpenBSD.mk,v 1.35 2012/05/13 08:20:11 obache Exp $
+# $NetBSD: OpenBSD.mk,v 1.34 2012/05/04 11:46:02 obache Exp $
 #
 # Variable definitions for the OpenBSD operating system.
 

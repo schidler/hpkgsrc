@@ -1,4 +1,4 @@
-# $NetBSD: category.mk,v 1.2 2007/10/13 11:04:18 dsl Exp $
+# $NetBSD: category.mk,v 1.1 2007/08/13 08:12:51 rillig Exp $
 #
 # This file contains the variables and targets for category Makefiles.
 #

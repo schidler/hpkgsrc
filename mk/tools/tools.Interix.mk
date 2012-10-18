@@ -1,4 +1,4 @@
-# $NetBSD: tools.Interix.mk,v 1.23 2009/12/19 11:56:11 obache Exp $
+# $NetBSD: tools.Interix.mk,v 1.22 2009/12/13 08:30:01 obache Exp $
 #
 # System-supplied tools for the Interix operating system.
 

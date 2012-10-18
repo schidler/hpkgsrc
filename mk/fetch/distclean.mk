@@ -1,4 +1,4 @@
-# $NetBSD: distclean.mk,v 1.5 2007/12/16 02:51:24 obache Exp $
+# $NetBSD: distclean.mk,v 1.4 2007/10/13 13:49:19 rillig Exp $
 #
 # === make targets for pkgsrc users ===
 #

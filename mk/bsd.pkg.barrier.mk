@@ -1,4 +1,4 @@
-# $NetBSD: bsd.pkg.barrier.mk,v 1.18 2010/02/24 22:53:34 joerg Exp $
+# $NetBSD: bsd.pkg.barrier.mk,v 1.17 2009/05/16 01:27:30 joerg Exp $
 
 _COOKIE.barrier=	${WRKDIR}/.barrier_cookie
 

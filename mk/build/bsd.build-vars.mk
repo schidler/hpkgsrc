@@ -1,4 +1,4 @@
-# $NetBSD: bsd.build-vars.mk,v 1.7 2011/09/08 20:17:15 abs Exp $
+# $NetBSD: bsd.build-vars.mk,v 1.6 2010/02/01 00:16:54 joerg Exp $
 #
 # Package-settable variables:
 #

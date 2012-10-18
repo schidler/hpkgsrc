@@ -1,4 +1,4 @@
-# $NetBSD: shlib-som.awk,v 1.3 2007/04/22 19:54:44 tnn Exp $
+# $NetBSD: shlib-som.awk,v 1.2 2007/04/21 14:15:59 tnn Exp $
 #
 ###
 ### PLIST shlib filter for Spectrum Object Module format, SOM, on HP-UX.

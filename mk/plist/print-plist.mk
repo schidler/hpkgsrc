@@ -1,4 +1,4 @@
-# $NetBSD: print-plist.mk,v 1.20 2012/03/08 23:12:16 wiz Exp $
+# $NetBSD: print-plist.mk,v 1.19 2011/08/30 11:19:51 obache Exp $
 
 ###
 ### Automatic PLIST generation

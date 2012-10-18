@@ -1,4 +1,4 @@
-# $NetBSD: tools.BSDOS.mk,v 1.17 2006/10/17 06:13:51 rillig Exp $
+# $NetBSD: tools.BSDOS.mk,v 1.16 2005/11/04 20:02:01 jlam Exp $
 #
 # System-supplied tools for the BSD/OS operating system.
 

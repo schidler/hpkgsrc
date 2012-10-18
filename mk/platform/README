@@ -1,4 +1,4 @@
-$NetBSD: README,v 1.1 2007/11/20 17:53:40 rillig Exp $
+$NetBSD$
 
 These files contain platform-specific definitions that are used by the
 pkgsrc infrastructure.

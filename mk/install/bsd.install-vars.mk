@@ -1,4 +1,4 @@
-# $NetBSD: bsd.install-vars.mk,v 1.8 2009/09/02 14:40:40 joerg Exp $
+# $NetBSD: bsd.install-vars.mk,v 1.7 2007/07/02 14:54:10 joerg Exp $
 #
 # This Makefile fragment is included separately by bsd.pkg.mk and
 # defines some variables which must be defined earlier than where

@@ -1,4 +1,4 @@
-# $NetBSD: cmd-sink-osf1-ld,v 1.2 2006/11/03 07:28:53 rillig Exp $
+# $NetBSD: cmd-sink-osf1-ld,v 1.1 2004/11/20 04:37:08 grant Exp $
 
 # Empty out the command buffer and build up the command line in $cmd.
 osf1runpath=

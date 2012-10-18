@@ -1,4 +1,4 @@
-# $NetBSD: tools.NetBSD.mk,v 1.46 2012/05/26 13:09:54 obache Exp $
+# $NetBSD: tools.NetBSD.mk,v 1.45 2012/01/14 07:44:34 obache Exp $
 #
 # System-supplied tools for the NetBSD operating system.
 

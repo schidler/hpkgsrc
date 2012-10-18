@@ -1,4 +1,4 @@
-$NetBSD: README,v 1.2 2007/07/29 09:24:33 jlam Exp $
+$NetBSD: README,v 1.1 2007/07/29 08:58:52 jlam Exp $
 
 The emulator framework handles binary-only packages that require binary
 "emulation" (or ABI re-implementation) on the native operating system.

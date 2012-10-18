@@ -1,4 +1,4 @@
-# $NetBSD: install.mk,v 1.1 2011/10/15 00:23:09 reed Exp $
+# $NetBSD: install.mk,v 1.14 2009/04/24 14:02:41 joerg Exp $
 #
 # _pkgformat-check-conflicts:
 #	Checks for conflicts between the package and installed packages.

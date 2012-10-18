@@ -1,4 +1,4 @@
-# $NetBSD: tools.OpenBSD.mk,v 1.33 2012/05/03 06:52:01 obache Exp $
+# $NetBSD: tools.OpenBSD.mk,v 1.32 2011/06/20 09:12:19 obache Exp $
 #
 # System-supplied tools for the OpenBSD operating system.
 

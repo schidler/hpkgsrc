@@ -1,4 +1,4 @@
-# $NetBSD: krb5.buildlink3.mk,v 1.11 2007/03/07 10:42:30 rillig Exp $
+# $NetBSD: krb5.buildlink3.mk,v 1.10 2006/11/04 22:18:58 rillig Exp $
 #
 # This Makefile fragment is meant to be included by packages that
 # require a Kerberos 5 implementation.  krb5.buildlink3.mk will:

@@ -1,4 +1,4 @@
-# $NetBSD: bsd.pkg.clean.mk,v 1.13 2007/11/15 12:09:52 rillig Exp $
+# $NetBSD: bsd.pkg.clean.mk,v 1.12 2007/11/15 12:05:09 rillig Exp $
 #
 # This Makefile fragment is included to bsd.pkg.mk and defines the
 # relevant variables and targets for the "clean" phase.

@@ -1,4 +1,4 @@
-# $NetBSD: omf-scrollkeeper.mk,v 1.2 2009/06/14 22:58:05 joerg Exp $
+# $NetBSD: omf-scrollkeeper.mk,v 1.1 2007/11/12 20:45:52 drochner Exp $
 #
 # This Makefile fragment is intended to be included by packages that install
 # OMF files. It redirects callers to compatibility scripts provided

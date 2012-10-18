@@ -1,4 +1,4 @@
-# $NetBSD: config-override.mk,v 1.6 2008/02/07 21:36:13 rillig Exp $
+# $NetBSD: config-override.mk,v 1.5 2006/11/05 12:40:01 rillig Exp $
 
 ######################################################################
 ### config-{guess,sub,rpath}-override (PRIVATE)

@@ -1,4 +1,4 @@
-# $NetBSD: tools.Haiku.mk,v 1.5 2010/08/25 10:43:34 obache Exp $
+# $NetBSD: tools.Haiku.mk,v 1.4 2010/08/21 12:32:25 obache Exp $
 #
 # System-supplied tools for the Haiku operating system.
 
@@ -7,7 +7,7 @@ TOOLS_PLATFORM.awk?=		/bin/awk
 TOOLS_PLATFORM.basename?=	/bin/basename
 TOOLS_PLATFORM.bash?=		/bin/bash
 TOOLS_PLATFORM.bison?=		/boot/common/bin/bison
-TOOLS_PLATFORM.bison-yacc?=	/boot/common/bin/bison -y
+#TOOLS_PLATFORM.bison-yacc?=	/boot/common/bin/bison -y
 TOOLS_PLATFORM.bzcat?=		/boot/common/bin/bzip2 -cd
 TOOLS_PLATFORM.bzip2?=		/boot/common/bin/bzip2
 TOOLS_PLATFORM.cat?=		/bin/cat
@@ -97,6 +97,7 @@ TOOLS_PLATFORM.tr?=		/bin/tr
 TOOLS_PLATFORM.true?=		true			# shell builtin
 TOOLS_PLATFORM.tsort?=		/bin/tsort
 TOOLS_PLATFORM.wc?=		/bin/wc
+TOOLS_PLATFORM.zip?=	/bin/zip
 TOOLS_PLATFORM.xargs?=		/bin/xargs -r
 #TOOLS_PLATFORM.xgettext?=	/usr/bin/xgettext
 .if exists(/boot/common/bin/xzcat)

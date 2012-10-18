@@ -1,4 +1,4 @@
-# $NetBSD: developer.mk,v 1.19 2011/09/15 21:45:52 wiz Exp $
+# $NetBSD: developer.mk,v 1.18 2009/08/23 18:09:45 joerg Exp $
 #
 # Public targets for developers:
 #

@@ -1,4 +1,4 @@
-# $NetBSD: x11.buildlink3.mk,v 1.11 2007/12/02 12:57:32 wiz Exp $
+# $NetBSD: x11.buildlink3.mk,v 1.10 2007/10/09 19:19:12 martti Exp $
 #
 # This file should only be included from the buildlink3.mk files from
 # the modular Xorg packages and only in the case that the native X11

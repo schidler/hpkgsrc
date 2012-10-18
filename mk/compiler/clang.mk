@@ -1,4 +1,4 @@
-# $NetBSD: clang.mk,v 1.7 2011/07/19 14:02:47 joerg Exp $
+# $NetBSD: clang.mk,v 1.6 2010/12/26 14:09:01 asau Exp $
 #
 # This is the compiler definition for the clang compiler.
 #

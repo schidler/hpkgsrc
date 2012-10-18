@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $NetBSD: show-buildlink3.sh,v 1.3 2009/10/05 02:40:06 obache Exp $
+# $NetBSD: show-buildlink3.sh,v 1.2 2009/03/20 19:25:01 joerg Exp $
 #
 # This script is a helper for the show-buildlink3 target and outputs
 # the arguments as tree.

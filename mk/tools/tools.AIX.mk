@@ -1,4 +1,4 @@
-# $NetBSD: tools.AIX.mk,v 1.16 2009/02/05 19:03:29 joerg Exp $
+# $NetBSD: tools.AIX.mk,v 1.15 2009/02/02 11:14:11 joerg Exp $
 #
 # System-supplied tools for the AIX operating system.
 

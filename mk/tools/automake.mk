@@ -1,4 +1,4 @@
-# $NetBSD: automake.mk,v 1.19 2009/06/10 15:31:45 wiz Exp $
+# $NetBSD: automake.mk,v 1.18 2007/03/01 22:29:15 wiz Exp $
 #
 # Copyright (c) 2005 The NetBSD Foundation, Inc.
 # All rights reserved.

@@ -1,6 +1,6 @@
 #! @WRAPPER_SHELL@
 #
-# $NetBSD: gen-reorder.sh,v 1.1 2004/09/21 15:01:41 jlam Exp $
+# $NetBSD$
 #
 # Copyright (c) 2004 The NetBSD Foundation, Inc.
 # All rights reserved.

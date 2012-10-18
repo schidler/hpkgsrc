@@ -1,4 +1,4 @@
-# $NetBSD: deinstall.mk,v 1.1 2011/10/15 00:23:09 reed Exp $
+# $NetBSD: deinstall.mk,v 1.10 2009/06/17 12:54:57 joerg Exp $
 
 # Set the appropriate flags to pass to pkg_delete(1) based on the value
 # of DEINSTALLDEPENDS (see pkgsrc/mk/install/deinstall.mk).

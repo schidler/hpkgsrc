@@ -1,4 +1,4 @@
-# $NetBSD: checksum.mk,v 1.16 2011/09/08 20:17:15 abs Exp $
+# $NetBSD: checksum.mk,v 1.15 2009/07/15 09:40:30 joerg Exp $
 #
 # See bsd.checksum.mk for helpful comments.
 #

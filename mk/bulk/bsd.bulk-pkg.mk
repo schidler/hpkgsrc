@@ -1,4 +1,4 @@
-#	$NetBSD: bsd.bulk-pkg.mk,v 1.152 2011/09/08 20:17:15 abs Exp $
+#	$NetBSD: bsd.bulk-pkg.mk,v 1.151 2010/05/11 18:36:15 mbalmer Exp $
 
 #
 # Copyright (c) 1999, 2000 Hubert Feyrer <hubertf@NetBSD.org>

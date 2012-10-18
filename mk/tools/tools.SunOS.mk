@@ -1,4 +1,4 @@
-# $NetBSD: tools.SunOS.mk,v 1.39 2012/06/15 09:54:41 jperkin Exp $
+# $NetBSD: tools.SunOS.mk,v 1.40 2012/06/25 22:05:17 jperkin Exp $
 #
 # System-supplied tools for the Solaris operating system.
 #
@@ -38,6 +38,9 @@ TOOLS_PLATFORM.cmp?=		/usr/bin/cmp
 .endif
 TOOLS_PLATFORM.cp?=		/bin/cp
 TOOLS_PLATFORM.csh?=		/bin/csh
+.if exists(/usr/bin/curl)
+TOOLS_PLATFORM.curl?=		/usr/bin/curl
+.endif
 TOOLS_PLATFORM.cut?=		/usr/bin/cut
 TOOLS_PLATFORM.date?=		/usr/xpg4/bin/date
 .if exists(/usr/bin/gdiff)
@@ -188,7 +191,11 @@ TOOLS_PLATFORM.sleep?=		/bin/sleep
 TOOLS_PLATFORM.soelim?=		/usr/bin/soelim
 .endif
 TOOLS_PLATFORM.sort?=		/usr/bin/sort
+.if exists(/usr/ccs/bin/strip)
 TOOLS_PLATFORM.strip?=		/usr/ccs/bin/strip
+.elif exists(/usr/bin/strip)
+TOOLS_PLATFORM.strip?=		/usr/bin/strip
+.endif
 TOOLS_PLATFORM.tail?=		/usr/xpg4/bin/tail
 .if exists(/usr/bin/tbl)
 TOOLS_PLATFORM.tbl?=		/usr/bin/tbl

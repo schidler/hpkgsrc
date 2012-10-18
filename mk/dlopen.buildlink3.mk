@@ -1,4 +1,4 @@
-# $NetBSD: dlopen.buildlink3.mk,v 1.17 2009/03/20 19:25:01 joerg Exp $
+# $NetBSD: dlopen.buildlink3.mk,v 1.16 2007/10/17 10:43:38 rillig Exp $
 #
 # This Makefile fragment is included by package Makefiles and
 # buildlink3.mk files for the packages that use dlopen().

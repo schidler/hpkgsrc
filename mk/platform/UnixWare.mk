@@ -1,4 +1,4 @@
-# $NetBSD: UnixWare.mk,v 1.32 2012/03/19 12:34:18 joerg Exp $
+# $NetBSD: UnixWare.mk,v 1.31 2011/09/17 08:10:33 abs Exp $
 #
 # Variable definitions for the UnixWare 7 operating system.
 

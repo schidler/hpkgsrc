@@ -1,4 +1,4 @@
-# $NetBSD: darwin.mk,v 1.3 2007/10/13 11:04:17 dsl Exp $
+# $NetBSD: darwin.mk,v 1.2 2007/08/23 17:39:47 jlam Exp $
 #
 # Darwin (Mac OS X) binary emulation framework
 #

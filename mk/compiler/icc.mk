@@ -1,4 +1,4 @@
-# $NetBSD: icc.mk,v 1.8 2011/05/19 22:37:55 alnsn Exp $
+# $NetBSD: icc.mk,v 1.7 2009/06/02 22:32:49 joerg Exp $
 #
 # This is the compiler definition for the Intel compilers.
 #

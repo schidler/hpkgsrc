@@ -1,4 +1,4 @@
-# $NetBSD: locking.mk,v 1.9 2007/03/16 20:41:44 rillig Exp $
+# $NetBSD: locking.mk,v 1.8 2007/03/16 20:38:40 rillig Exp $
 #
 # User-settable variables:
 #

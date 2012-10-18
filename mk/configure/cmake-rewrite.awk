@@ -1,4 +1,4 @@
-# $NetBSD: cmake-rewrite.awk,v 1.2 2007/12/20 18:51:18 abs Exp $
+# $NetBSD: cmake-rewrite.awk,v 1.1 2007/12/12 01:00:38 markd Exp $
 #
 # cleanup references to libraries in the buildlink tree in files
 # written by cmake's  export_library_dependencies() function

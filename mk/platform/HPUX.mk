@@ -1,4 +1,4 @@
-# $NetBSD: HPUX.mk,v 1.20 2012/03/19 12:34:17 joerg Exp $
+# $NetBSD: HPUX.mk,v 1.19 2011/09/10 16:30:02 abs Exp $
 #
 # Variable definitions for the HP-UX operating system.
 

@@ -1,6 +1,6 @@
 #!/usr/bin/awk -f
 #
-# $NetBSD: chkdatabase.awk,v 1.3 2006/12/15 12:46:24 martti Exp $
+# $NetBSD: chkdatabase.awk,v 1.2 2003/05/06 17:42:04 jmmv Exp $
 #
 # Copyright (c) 2002, 2003 The NetBSD Foundation, Inc.
 # All rights reserved.

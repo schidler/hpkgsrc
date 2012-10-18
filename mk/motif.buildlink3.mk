@@ -1,4 +1,4 @@
-# $NetBSD: motif.buildlink3.mk,v 1.15 2012/01/12 15:51:14 hans Exp $
+# $NetBSD: motif.buildlink3.mk,v 1.14 2011/12/07 16:58:54 drochner Exp $
 #
 # Package-settable variables:
 #

@@ -1,4 +1,4 @@
-# $NetBSD: perms,v 1.3 2007/07/12 19:41:46 jlam Exp $
+# $NetBSD: perms,v 1.2 2006/07/19 22:26:26 jlam Exp $
 #
 # Generate a +PERMS script that sets the special permissions on files
 # and directories used by the package.

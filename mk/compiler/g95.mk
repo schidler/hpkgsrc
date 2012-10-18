@@ -1,4 +1,4 @@
-# $NetBSD: g95.mk,v 1.3 2011/09/28 19:31:09 markd Exp $
+# $NetBSD: g95.mk,v 1.2 2010/07/30 07:58:59 asau Exp $
 #
 # Copyright (c) 2005 The NetBSD Foundation, Inc.
 # All rights reserved.

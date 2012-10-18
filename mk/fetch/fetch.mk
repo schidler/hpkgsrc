@@ -229,7 +229,7 @@ _FETCH_BEFORE_ARGS.curl=	${PASSIVE_FETCH:D--ftp-pasv} \
 _FETCH_AFTER_ARGS.curl=		-O # must be here to honor -o option
 _FETCH_RESUME_ARGS.curl=	-C -
 _FETCH_OUTPUT_ARGS.curl=	-o
-_FETCH_CMD.curl=		${PREFIX}/bin/curl
+_FETCH_CMD.curl=		${TOOLS_PATH.curl}
 
 _FETCH_CMD.manual=		${TOOLS_PATH.false}
 

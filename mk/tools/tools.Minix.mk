@@ -1,4 +1,4 @@
-# $NetBSD: tools.Minix.mk,v 1.1 2011/11/05 17:10:04 tcort Exp $
+# $NetBSD$
 #
 # System-supplied tools for the Minix operating system.
 

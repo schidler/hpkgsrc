@@ -1,4 +1,4 @@
-# $NetBSD: zip.mk,v 1.1 2012/01/14 01:52:14 hans Exp $
+# $NetBSD$
 #
 
 # This file needs to be included before replace.mk as it modifies the

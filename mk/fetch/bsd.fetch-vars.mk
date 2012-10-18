@@ -80,7 +80,7 @@ USE_TOOLS+=	digest:bootstrap
 _FETCH_TOOLS.ftp=		ftp
 _FETCH_TOOLS.fetch=		fetch
 _FETCH_DEPENDS.wget=		wget-[0-9]*:../../net/wget
-_FETCH_DEPENDS.curl=		curl-[0-9]*:../../www/curl
+_FETCH_TOOLS.curl=		curl
 _FETCH_TOOLS.manual=		false
 
 .if !empty(_ALLFILES)

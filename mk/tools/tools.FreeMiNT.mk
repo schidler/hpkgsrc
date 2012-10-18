@@ -1,4 +1,4 @@
-# $NetBSD: tools.FreeMiNT.mk,v 1.1 2009/03/05 00:02:44 abs Exp $
+# $NetBSD: tools.NetBSD.mk,v 1.41 2008/05/22 20:11:55 joerg Exp $
 #
 # System-supplied tools for the FreeMiNT operating system.
 

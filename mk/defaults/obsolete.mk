@@ -1,4 +1,4 @@
-# $NetBSD: obsolete.mk,v 1.29 2012/06/13 14:29:16 gdt Exp $
+# $NetBSD: obsolete.mk,v 1.28 2007/01/30 07:09:40 wiz Exp $
 #
 # This file holds make(1) logic to allow obsolete or deprecated variables
 # still to be used.  These may eventually disappear over time as the contents

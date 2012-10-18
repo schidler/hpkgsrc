@@ -1,4 +1,4 @@
-# $NetBSD: tex.buildlink3.mk,v 1.17 2006/10/01 14:53:30 rillig Exp $
+# $NetBSD: tex.buildlink3.mk,v 1.16 2006/08/11 13:32:28 wiz Exp $
 #
 # This file is included by packages that need a TeX package to work.
 #

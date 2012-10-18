@@ -1,4 +1,4 @@
-# $NetBSD: terminfo.builtin.mk,v 1.2 2010/02/08 22:11:43 roy Exp $
+# $NetBSD: terminfo.builtin.mk,v 1.1 2010/02/07 09:46:14 roy Exp $
 
 BUILTIN_PKG:=	terminfo
 

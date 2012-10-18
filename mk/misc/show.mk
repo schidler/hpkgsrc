@@ -1,4 +1,4 @@
-# $NetBSD: show.mk,v 1.10 2009/07/28 07:01:56 rillig Exp $
+# $NetBSD: show.mk,v 1.9 2008/11/19 08:06:36 rillig Exp $
 #
 # This file contains some targets that print information gathered from
 # variables. They do not modify any variables.

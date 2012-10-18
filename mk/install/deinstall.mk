@@ -1,4 +1,4 @@
-# $NetBSD: deinstall.mk,v 1.11 2011/10/15 00:23:09 reed Exp $
+# $NetBSD: deinstall.mk,v 1.10 2009/06/17 12:54:57 joerg Exp $
 
 # DEINSTALLDEPENDS controls whether dependencies and dependents are also
 # removed when a package is de-installed.  The valid values are:

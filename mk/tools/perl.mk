@@ -1,4 +1,4 @@
-# $NetBSD: perl.mk,v 1.23 2007/11/19 04:08:58 minskim Exp $
+# $NetBSD: perl.mk,v 1.22 2007/11/19 00:40:14 minskim Exp $
 #
 # Copyright (c) 2005 The NetBSD Foundation, Inc.
 # All rights reserved.

@@ -1,9 +1,14 @@
 aalib			Enable aalib support.
 abook			Enable abook support.
 acl			Enable POSIX ACL support.
+adobe-cidfonts		Select Adobe-fonts.
 ads			Enable Windows Active Directory support.
 agg			Enable agg support.
 alsa			Enable ALSA support.
+amanda-dump-snap	If dump supports -X, use it.
+amanda-fqdn		Use FQDN's in Amanda.
+amanda-smb		Enable SMB backup support.
+amanda-ssh		Enable ssh as a transport.
 amtterm-gamt		Build amtterm GUI version (gamt).
 amule-alc		Build aMule LinkCreator GUI version.
 amule-alcc		Build aMule LinkCreator for console.
@@ -53,6 +58,7 @@ bugzilla-xmlimportbugs	Bulk import/export of bugs in XML format.
 bzip2			Enable compression using bzip2.
 caca			Enable libcaca support.
 cairo			Enable cairo support.
+camlzip			Enable camlzip support (for zip/gz/jar).
 canna			Use Canna as Japanese conversion program.
 cares			Use the c-ares library for asynchronous name resolution.
 catalog-mysql		Store Bacula catalog in MySQL database.
@@ -88,6 +94,7 @@ dbh			Enable DBH support.
 dbus			Enable dbus (desktop bus) support.
 debug			Enable debugging facilities in the package.
 deliver-suid		Install deliver executable setuid root.
+disable-compile-inits	Disable compile time implicit initialization.
 djbdns-cachestats	Patch to add stats for cache hits/misses.
 djbdns-ignoreip2	Patch to treat certain responses as NXDOMAIN.
 djbdns-qmerge1		Initial patches to address dnscache poisoning weakness.
@@ -110,6 +117,7 @@ drupal-xmlservices	Enable XML-based services.
 dspam-preferences-extension	Enable preferences extension.
 dspam-verbose-debug	Enable verbose debugging support.
 dspam-virtualusers	Enable support for virtual users.
+dtrace			Enable DTrace support.
 dts			Enable DTS Coherent Acoustics support.
 dv			Enable usage of the libdv library.
 dvdnav			Enable libdvdnav support to navigate DVDs.
@@ -157,6 +165,8 @@ firefox3		Use firefox3 as gecko rendering engine.
 flac			Enable FLAC support.
 floppyd			Use floppyd to access floppy device.
 fluidsynth		Enable MIDI support using fluidsynth.
+fontconfig		Enable FONTCONFIG (fonts/fontconfig) support.
+freediameter-all-extensions	Build all extensions for freeDiameter (except test and debug).
 freeradius-simul-use	Enable Simultaneous-Use.
 freetype		Enable freetype support.
 fribidi			Enable BIDI support using fribidi.
@@ -182,10 +192,12 @@ ghostscript		Enable GhostScript support.
 gif			Enable GIF support.
 gimp			Enable GIMP support.
 gimp1-helpbrowser	Link against gnome1 to get a help browser.
+glade			Enable Glade support
 gmp			Enable gmp (GNU Multiple Precision Arithmetic Library) support.
 gmp-fat			Build-in all x86 assembler code, detecting CPU at run-time.
 gnome			Enable GNOME support.
 gnome-keyring		Enable GNOME keyring support.
+gnomecanvas		Enable GNOME canvas support
 gnutls			Enable GNU TLS support.
 goffice			Enable goffice support.
 gopher			Enable support for the Gopher information system.
@@ -201,6 +213,8 @@ gssapi			Enable gssapi (Kerberos V) support.
 gstreamer		Enable gstreamer support.
 gtk			Enable support for GTK.
 gtk2			Enable support for GTK2.
+gtksourceview		Enable gtksourceview support.
+gtksourceview2		Enable gtksourceview2 support.
 gtkspell		Enable gtkspell support.
 guile			Enable support for GUILE.
 gzip			Enable compression using gzip.
@@ -232,6 +246,7 @@ inspircd-sqloper	Enable storage of oper credentials in an SQL table.
 inspircd-sqlutils	Enable developer utilities which allow certain other SQL modules to be implemented easily.
 inspircd-ziplinks	Compress data before transmitting it between servers.
 iodbc			Enable ODBC support via iODBC.
+ipa			Select IPA fonts.
 ipa-memfunc-debug	Enable ipa_memfunc debugging.
 ipa-without-autorules	Disable dynamic rules support.
 ipa-without-limits	Disable limits support.
@@ -379,6 +394,7 @@ modperl1		Use modperl 1.x as the CGI manager (with Apache 1.x).
 modperl2		Use modperl 2.x as the CGI manager (with Apache 2.x).
 modplug			Use for decoding mod-like music formats.
 motif			Enable motif support.
+motoya			Add motoya fonts.
 mozilla			Use mozilla as gecko rendering engine.
 mozilla-enigmail	Enable the Enigmail OpenPGP extension.
 mozilla-jemalloc	Enable building with Mozilla'a jemalloc.
@@ -423,7 +439,6 @@ nntp			Enable Network News Transport Protocol (NNTP) support.
 nntpcache-pgp		Enable pgp signed nocem support.
 nspluginwrapper		Enable running non native netscape compatible plugins.
 nss			Enable Network Security Services (NSS) support.
-ocamlduce		Enable OcamlDuce support.
 octave			Enable Octave support.
 odbc			Enable ODBC support.
 official-mozilla-branding	Use official Mozilla reg. trademarks and logos.
@@ -578,6 +593,7 @@ ucspi-tcp-nodefaultrbl	Remove the (nonexistent) default RBL from rblsmtpd.
 uds			Enable support for Unix domain sockets.
 uim			Enable UIM support.
 uim-fep			Enable UIM FEP support.
+umefont			Add Umefont.
 unicode			Enable support for Unicode.
 unixodbc		Enable ODBC support via unixODBC.
 unrealircd-chroot	Enable support for running in a chroot jail.
@@ -626,6 +642,7 @@ xaw			Enable Xaw support.
 xblast-mini		Use a 480x392 window instead a 960x784 window in xblast.
 xft2			Enable Xft support.
 xim			Enable X Input Method support.
+xinerama		Enable Xinerama support.
 xjdic-locale		Honor LOCALE env var, instead of requiring ISO-2022-JP.
 xlockmore-allow-root	Allow root to get access.
 xlockmore-dpms		Use DPMS.

@@ -1,4 +1,4 @@
-# $NetBSD: tools.HPUX.mk,v 1.5 2008/03/11 17:50:14 tnn Exp $
+# $NetBSD: tools.HPUX.mk,v 1.4 2008/03/11 17:01:07 tnn Exp $
 #
 # System-supplied tools for the HP-UX operating system.
 

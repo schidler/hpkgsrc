@@ -1,4 +1,4 @@
-# $NetBSD: bsd.makevars.mk,v 1.5 2010/02/24 22:53:34 joerg Exp $
+# $NetBSD: bsd.makevars.mk,v 1.4 2006/07/10 22:59:27 jlam Exp $
 #
 # This Makefile fragment is included by bsd.prefs.mk to set all of
 # the variables saved through MAKEVARS.  Typical usage is:

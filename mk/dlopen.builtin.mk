@@ -1,4 +1,4 @@
-# $NetBSD: dlopen.builtin.mk,v 1.24 2012/05/04 08:31:14 obache Exp $
+# $NetBSD: dlopen.builtin.mk,v 1.23 2010/07/04 16:25:13 obache Exp $
 
 BUILTIN_PKG:=	dl
 

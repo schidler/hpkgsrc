@@ -35,6 +35,9 @@
 #	  ownership or permissions. The installation is done by the
 #	  privileged user.
 #
+#	* "none" means that all files of the packages will be installed
+#	  by the privileged user.
+#
 # This variable must be set before including bsd.prefs.mk directly or
 # indirectly.
 #

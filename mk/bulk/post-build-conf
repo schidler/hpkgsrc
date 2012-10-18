@@ -1,4 +1,4 @@
-# $NetBSD: post-build-conf,v 1.14 2007/03/06 10:57:11 rillig Exp $
+# $NetBSD: post-build-conf,v 1.13 2007/01/30 07:11:19 wiz Exp $
 #
 
 # This file is included after the build.conf file by the "build" and

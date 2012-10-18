@@ -1,4 +1,4 @@
-# $NetBSD: rpcgen.mk,v 1.11 2009/12/07 02:36:51 dholland Exp $
+# $NetBSD: rpcgen.mk,v 1.10 2005/07/17 23:19:04 jlam Exp $
 #
 # Copyright (c) 2005 The NetBSD Foundation, Inc.
 # All rights reserved.

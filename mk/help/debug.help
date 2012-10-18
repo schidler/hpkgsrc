@@ -1,4 +1,4 @@
-# $NetBSD: debug.help,v 1.1 2007/02/05 14:27:34 rillig Exp $
+# $NetBSD$
 #
 # Since pkgsrc is a quite large and complex software system, it
 # sometimes isn't obvious what it is doing exactly. For that reason,

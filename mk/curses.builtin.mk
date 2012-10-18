@@ -1,4 +1,4 @@
-# $NetBSD: curses.builtin.mk,v 1.5 2008/02/27 15:26:34 jlam Exp $
+# $NetBSD: curses.builtin.mk,v 1.4 2008/02/27 06:14:23 jlam Exp $
 
 BUILTIN_PKG:=	curses
 

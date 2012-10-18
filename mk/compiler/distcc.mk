@@ -1,4 +1,4 @@
-# $NetBSD: distcc.mk,v 1.30 2008/02/07 20:59:05 rillig Exp $
+# $NetBSD: distcc.mk,v 1.29 2006/12/15 12:46:24 martti Exp $
 #
 # Copyright (c) 2004 The NetBSD Foundation, Inc.
 # All rights reserved.

@@ -1,4 +1,4 @@
-# $NetBSD: wrapper-defs.mk,v 1.3 2009/05/06 10:28:01 tron Exp $
+# $NetBSD: wrapper-defs.mk,v 1.2 2005/10/10 12:33:29 tv Exp $
 #
 # Copyright (c) 2004 The NetBSD Foundation, Inc.
 # All rights reserved.

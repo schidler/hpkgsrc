@@ -1,4 +1,4 @@
-# $NetBSD: help.mk,v 1.10 2007/08/13 05:58:44 rillig Exp $
+# $NetBSD: help.mk,v 1.9 2007/05/24 05:33:49 rillig Exp $
 #
 
 # This is the integrated pkgsrc online help system. To query for the

@@ -1,4 +1,4 @@
-# $NetBSD: digest.mk,v 1.1 2006/07/13 14:02:34 jlam Exp $
+# $NetBSD$
 #
 # Copyright (c) 2006 The NetBSD Foundation, Inc.
 # All rights reserved.

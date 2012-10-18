@@ -1,5 +1,5 @@
 #!/bin/sh
-# $NetBSD: printdepends,v 1.25 2008/01/04 15:49:08 rillig Exp $
+# $NetBSD: printdepends,v 1.24 2007/01/08 21:36:07 rillig Exp $
 #
 
 # Copyright (c) 1999, 2000 Hubert Feyrer <hubertf@NetBSD.org>

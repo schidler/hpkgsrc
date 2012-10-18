@@ -1,4 +1,4 @@
-# $NetBSD: netbsd-compat.mk,v 1.3 2007/12/31 20:06:41 jlam Exp $
+# $NetBSD: netbsd-compat.mk,v 1.2 2007/08/23 18:20:32 jlam Exp $
 #
 # COMPAT_* for NetBSD -- see options(4).
 #

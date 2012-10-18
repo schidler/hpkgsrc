@@ -1,4 +1,4 @@
-# $NetBSD: can-be-built-here.mk,v 1.6 2008/11/05 08:24:23 rillig Exp $
+# $NetBSD: can-be-built-here.mk,v 1.5 2008/05/26 22:05:46 tnn Exp $
 #
 # This file checks whether a package can be built in the current pkgsrc
 # environment. It checks the following variables:

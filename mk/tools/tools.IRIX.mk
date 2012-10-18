@@ -1,4 +1,4 @@
-# $NetBSD: tools.IRIX.mk,v 1.20 2012/03/19 12:34:19 joerg Exp $
+# $NetBSD: tools.IRIX.mk,v 1.19 2007/01/08 08:55:52 rillig Exp $
 #
 # System-supplied tools for the IRIX operating system.
 

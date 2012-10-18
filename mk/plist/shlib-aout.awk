@@ -1,4 +1,4 @@
-# $NetBSD: shlib-aout.awk,v 1.3 2006/02/07 18:42:38 jlam Exp $
+# $NetBSD: shlib-aout.awk,v 1.2 2006/02/05 16:21:07 rillig Exp $
 #
 # Copyright (c) 2006 The NetBSD Foundation, Inc.
 # All rights reserved.

@@ -1,4 +1,4 @@
-# $NetBSD: bdb.buildlink3.mk,v 1.24 2010/06/02 12:11:52 adam Exp $
+# $NetBSD: bdb.buildlink3.mk,v 1.23 2009/03/20 19:25:01 joerg Exp $
 #
 # This Makefile fragment is meant to be included by packages that
 # require a Berkeley DB (BDB) implementation and that are not restricted

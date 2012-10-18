@@ -174,7 +174,7 @@ WRAPPER_${_wrappee_}=	${WRAPPER_BINDIR}/${${_wrappee_}}
 .endfor	# _WRAPPEES
 
 _WRAP_ALIASES.AS=	as
-_WRAP_ALIASES.CC=	cc gcc
+_WRAP_ALIASES.CC=	cc gcc ada
 _WRAP_ALIASES.CXX=	c++ g++ CC cxx
 _WRAP_ALIASES.CPP=	cpp
 _WRAP_ALIASES.FC=	f77 g77

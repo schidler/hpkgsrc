@@ -1,4 +1,4 @@
-#	$NetBSD: bsd.pkg.subdir.mk,v 1.70 2008/10/14 22:35:19 joerg Exp $
+#	$NetBSD: bsd.pkg.subdir.mk,v 1.69 2007/10/13 11:04:16 dsl Exp $
 #	Derived from: FreeBSD Id: bsd.port.subdir.mk,v 1.19 1997/03/09 23:10:56 wosch Exp
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
 #

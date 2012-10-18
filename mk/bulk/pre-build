@@ -1,5 +1,5 @@
 #!/bin/sh
-# $NetBSD: pre-build,v 1.76 2010/05/11 18:36:15 mbalmer Exp $
+# $NetBSD: pre-build,v 1.75 2009/07/02 22:34:16 sketch Exp $
 #
 # Clean up system to be ready for bulk pkg build
 #

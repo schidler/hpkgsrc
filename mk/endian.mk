@@ -1,4 +1,4 @@
-# $NetBSD: endian.mk,v 1.6 2009/01/14 17:27:37 sketch Exp $
+# $NetBSD: endian.mk,v 1.5 2007/03/08 23:11:20 rillig Exp $
 #
 # Determine the endianness of the platform by checking header files.
 #

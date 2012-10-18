@@ -1,4 +1,4 @@
-# $NetBSD: termcap.buildlink3.mk,v 1.8 2010/02/07 09:46:14 roy Exp $
+# $NetBSD: termcap.buildlink3.mk,v 1.7 2009/03/20 19:25:01 joerg Exp $
 #
 # This Makefile fragment is meant to be included by packages that require
 # a termcap implementation that supports the basic termcap functions:

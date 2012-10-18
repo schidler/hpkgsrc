@@ -1,4 +1,4 @@
-# $NetBSD: NetBSD.mk,v 1.37 2012/03/19 12:34:18 joerg Exp $
+# $NetBSD: NetBSD.mk,v 1.36 2012/02/28 19:35:58 tron Exp $
 #
 # Variable definitions for the NetBSD operating system.
 

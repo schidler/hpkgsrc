@@ -1,4 +1,4 @@
-# $NetBSD: pkg-config-override.mk,v 1.3 2007/07/25 18:07:34 rillig Exp $
+# $NetBSD: pkg-config-override.mk,v 1.2 2006/07/10 16:12:20 jlam Exp $
 
 # Package-settable variables:
 #

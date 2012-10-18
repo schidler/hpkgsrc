@@ -1,4 +1,4 @@
-# $NetBSD: Haiku.mk,v 1.6 2012/03/19 12:34:17 joerg Exp $
+# $NetBSD: Haiku.mk,v 1.5 2011/09/10 16:30:02 abs Exp $
 #
 # Variable definitions for the Haiku operating system.
 
@@ -65,5 +65,8 @@ _OPSYS_CAN_CHECK_SHLIBS=	no # can't use readelf in check/bsd.check-vars.mk
 LIBS.Haiku+=	-lnetwork -lroot
 .if empty(USE_PKGDATADIR:M[nN][oO])
 USE_PKGDATADIR=	yes
+.endif
+.if empty(USE_PKGDOCDIR:M[nN][oO])
+USE_PKGDOCDIR=	yes
 .endif
 .endif

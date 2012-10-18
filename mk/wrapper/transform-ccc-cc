@@ -1,4 +1,4 @@
-# $NetBSD: transform-ccc-cc,v 1.6 2007/05/28 11:07:01 martti Exp $
+# $NetBSD: transform-ccc-cc,v 1.5 2007/04/28 21:32:30 tnn Exp $
 #
 
 transform_setname "transform-ccc-cc"

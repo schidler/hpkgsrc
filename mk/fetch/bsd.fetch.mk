@@ -1,4 +1,4 @@
-# $NetBSD: bsd.fetch.mk,v 1.7 2009/07/15 09:40:30 joerg Exp $
+# $NetBSD: bsd.fetch.mk,v 1.6 2007/10/30 23:35:51 rillig Exp $
 #
 # This Makefile fragment is included by bsd.pkg.mk and defines the
 # relevant variables and targets for the "fetch" step.

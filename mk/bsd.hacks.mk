@@ -1,4 +1,4 @@
-# $NetBSD: bsd.hacks.mk,v 1.3 2006/07/15 23:58:52 rillig Exp $
+# $NetBSD: bsd.hacks.mk,v 1.2 2004/11/30 15:09:45 tv Exp $
 #
 # Copyright (c) 2004 The NetBSD Foundation, Inc.
 # All rights reserved.

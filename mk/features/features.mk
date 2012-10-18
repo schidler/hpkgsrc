@@ -1,4 +1,4 @@
-# $NetBSD: features.mk,v 1.7 2012/03/02 16:19:17 hans Exp $
+# $NetBSD: features.mk,v 1.6 2008/01/14 23:06:26 tnn Exp $
 #
 # This file is included by bsd.pkg.mk.
 #

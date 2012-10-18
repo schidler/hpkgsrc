@@ -1,4 +1,4 @@
-# $NetBSD: bin-install.mk,v 1.23 2011/11/05 17:04:42 tcort Exp $
+# $NetBSD: bin-install.mk,v 1.22 2011/10/15 00:23:09 reed Exp $
 #
 
 # This file provides the following targets:

@@ -1,4 +1,4 @@
-# $NetBSD: check-fakehome.mk,v 1.3 2010/08/24 19:08:29 bad Exp $
+# $NetBSD: check-fakehome.mk,v 1.2 2008/02/05 11:17:00 tnn Exp $
 #
 # This file checks that the package does not install files to $HOME.
 #

@@ -1,4 +1,4 @@
-# $NetBSD: c-functions.help,v 1.2 2008/01/19 23:00:49 rillig Exp $
+# $NetBSD: c-functions.help,v 1.1 2008/01/19 22:37:47 rillig Exp $
 
 # The mremap function is not covered by POSIX, so operating systems are
 # free to define the function as they want:

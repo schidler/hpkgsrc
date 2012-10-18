@@ -1,4 +1,4 @@
-# $NetBSD: shell-lib,v 1.4 2006/10/22 00:35:26 rillig Exp $
+# $NetBSD: shell-lib,v 1.3 2005/08/24 21:51:10 rillig Exp $
 #
 # Copyright (c) 2004 The NetBSD Foundation, Inc.
 # All rights reserved.

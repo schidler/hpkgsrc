@@ -18,6 +18,10 @@ case $arg in
 -v			|\
 --version		) transform_pass ;;
 
+# We occasionally override specs to force particular options.
+-specs=*		|\
+-specs			) transform_pass ;;
+
 # GCC extensions.
 -			|\
 -dynamic		|\

@@ -1,4 +1,4 @@
-# $NetBSD: pkg-rpm.mk,v 1.4 2010/09/07 17:33:40 tron Exp $
+# $NetBSD: pkg-rpm.mk,v 1.3 2010/09/05 16:13:41 tron Exp $
 #
 # RPM package format
 #

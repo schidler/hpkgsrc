@@ -1,4 +1,4 @@
-# $NetBSD: check-wrkref.mk,v 1.21 2010/08/24 19:08:29 bad Exp $
+# $NetBSD: check-wrkref.mk,v 1.20 2009/09/02 14:43:06 joerg Exp $
 #
 # This file checks that the installed files don't contain any strings
 # that point to the directory where the package had been built, to make

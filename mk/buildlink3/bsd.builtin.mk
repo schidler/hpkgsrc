@@ -1,4 +1,4 @@
-# $NetBSD: bsd.builtin.mk,v 1.11 2010/05/19 09:12:15 sbd Exp $
+# $NetBSD: bsd.builtin.mk,v 1.10 2009/03/20 19:25:01 joerg Exp $
 #
 # Copyright (c) 2004-2005 The NetBSD Foundation, Inc.
 # All rights reserved.

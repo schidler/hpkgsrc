@@ -1,4 +1,4 @@
-# $NetBSD: plist.mk,v 1.43 2012/05/27 14:32:28 cheusov Exp $
+# $NetBSD: plist.mk,v 1.42 2012/05/13 12:39:47 obache Exp $
 #
 # This Makefile fragment handles the creation of PLISTs for use by
 # pkg_create(8).

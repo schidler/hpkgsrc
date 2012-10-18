@@ -1,4 +1,4 @@
-# $NetBSD: bsd.install.mk,v 1.13 2010/02/24 22:53:34 joerg Exp $
+# $NetBSD: bsd.install.mk,v 1.12 2008/01/04 01:46:27 rillig Exp $
 #
 # This Makefile fragment is included by bsd.pkg.mk and provides all
 # variables and targets related to installing packages.

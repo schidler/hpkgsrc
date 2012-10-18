@@ -1,4 +1,4 @@
-# $NetBSD: gmake.mk,v 1.1 2011/11/26 16:11:11 hans Exp $
+# $NetBSD: gmake.mk,v 1.1 2011/11/26 14:58:45 hans Exp $
 #
 # Copyright (c) 2005 The NetBSD Foundation, Inc.
 # All rights reserved.

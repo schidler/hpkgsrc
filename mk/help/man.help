@@ -1,4 +1,4 @@
-# $NetBSD: man.help,v 1.2 2007/09/30 12:56:24 rillig Exp $
+# $NetBSD: man.help,v 1.1 2007/09/29 13:49:21 rillig Exp $
 #
 # The installation of manual pages (manpages) can be handled very flexibly
 # with pkgsrc, and is therefore quite complex.

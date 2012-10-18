@@ -1,4 +1,4 @@
-# $NetBSD: apache.mk,v 1.27 2012/04/14 12:58:19 adam Exp $
+# $NetBSD: apache.mk,v 1.26 2011/03/12 14:07:13 wiz Exp $
 #
 # This file is meant to be included by packages that require an apache
 # web server.

@@ -6,7 +6,7 @@
 sub(/\r$/, "")
 if (/^$/) { entry_end(); }
 else if ($1 == "msgctxt" || $2 == "msgctxt") { skip = 1; }
-else if ($1 == "#~|") { skip = 1; }
+else if ($1 == "#~") { skip = 1; }
 else { entry = entry $0 "\n" }
 }
 

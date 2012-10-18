@@ -1,4 +1,4 @@
-# $NetBSD: Minix.mk,v 1.2 2012/03/19 12:34:17 joerg Exp $
+# $NetBSD: Minix.mk,v 1.1 2011/11/05 17:09:15 tcort Exp $
 #
 # Variable definitions for the Minix operating system.
 

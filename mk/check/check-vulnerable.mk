@@ -1,4 +1,4 @@
-# $NetBSD: check-vulnerable.mk,v 1.5 2011/10/15 00:23:08 reed Exp $
+# $NetBSD: check-vulnerable.mk,v 1.4 2007/03/09 00:39:54 rillig Exp $
 #
 # Public targets:
 #

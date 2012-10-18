@@ -1,4 +1,4 @@
-# $NetBSD: emulator.mk,v 1.11 2009/04/04 12:16:45 rillig Exp $
+# $NetBSD: emulator.mk,v 1.10 2007/10/13 11:04:17 dsl Exp $
 #
 # This file is included by bsd.pkg.mk.
 #

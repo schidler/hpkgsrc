@@ -1,4 +1,4 @@
-# $NetBSD: bsd.pkg.error.mk,v 1.4 2008/02/07 21:36:13 rillig Exp $
+# $NetBSD: bsd.pkg.error.mk,v 1.3 2006/10/06 19:05:43 rillig Exp $
 
 ERROR_DIR=		${WRKDIR}/.error
 WARNING_DIR=		${WRKDIR}/.warning

@@ -1,6 +1,6 @@
 #!/usr/bin/awk -f
 #
-# $NetBSD: distinfo.awk,v 1.4 2007/08/16 16:29:27 jlam Exp $
+# $NetBSD: distinfo.awk,v 1.3 2007/08/14 19:22:31 jlam Exp $
 #
 # Copyright (c) 2007 The NetBSD Foundation, Inc.
 # All rights reserved.
@@ -57,7 +57,7 @@
 #
 #	For example:
 #
-#	$NetBSD: distinfo.awk,v 1.4 2007/08/16 16:29:27 jlam Exp $
+#	$NetBSD: distinfo.awk,v 1.3 2007/08/14 19:22:31 jlam Exp $
 #
 #	SHA1 (make-3.81.tar.gz) = cd4fa5a3184176492bf0799593a8f250a728210c
 #	RMD160 (make-3.81.tar.gz) = a713a72875cb9a29568677c98022465c6f55cbbf

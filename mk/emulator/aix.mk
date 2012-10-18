@@ -1,4 +1,4 @@
-# $NetBSD: aix.mk,v 1.1 2009/03/22 22:31:46 sno Exp $
+# $NetBSD$
 #
 # AIX binary emulation framework
 #

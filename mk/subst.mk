@@ -1,4 +1,4 @@
-# $NetBSD: subst.mk,v 1.53 2008/01/26 15:23:21 rillig Exp $
+# $NetBSD: subst.mk,v 1.52 2008/01/23 01:44:28 rillig Exp $
 #
 # This Makefile fragment implements a general text replacement facility.
 # Package makefiles define a ``class'', for each of which a particular

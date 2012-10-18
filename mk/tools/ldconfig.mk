@@ -1,4 +1,4 @@
-# $NetBSD: ldconfig.mk,v 1.5 2005/07/17 21:36:24 jlam Exp $
+# $NetBSD: ldconfig.mk,v 1.4 2005/06/24 20:40:53 jlam Exp $
 #
 # Copyright (c) 2005 The NetBSD Foundation, Inc.
 # All rights reserved.

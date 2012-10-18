@@ -1,4 +1,4 @@
-# $NetBSD: imake.mk,v 1.19 2007/09/10 06:36:25 rillig Exp $
+# $NetBSD: imake.mk,v 1.18 2006/07/05 04:32:10 jlam Exp $
 #
 # Copyright (c) 2005 The NetBSD Foundation, Inc.
 # All rights reserved.

@@ -1,4 +1,4 @@
-# $NetBSD: djbware.mk,v 1.23 2010/03/15 17:27:32 schmonz Exp $
+# $NetBSD: djbware.mk,v 1.22 2008/05/20 19:39:48 tnn Exp $
 #
 # Makefile fragment for packages with djb-style build machinery
 #

@@ -83,3 +83,7 @@ USE_TOOLS+=	rpm2pkg
 .if !empty(EXTRACT_ONLY:M*.gem)
 USE_TOOLS+=	gem
 .endif
+.if !empty(EXTRACT_ONLY:M*.7z)
+USE_TOOLS+=    7za
+.endif
+

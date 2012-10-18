@@ -1,4 +1,4 @@
-# $NetBSD: check-headers.mk,v 1.6 2010/08/24 19:08:29 bad Exp $
+# $NetBSD: check-headers.mk,v 1.5 2008/02/20 10:43:55 rillig Exp $
 #
 # This file checks the C and C++ header files for possible problems.
 #

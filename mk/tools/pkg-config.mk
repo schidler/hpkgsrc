@@ -1,4 +1,4 @@
-# $NetBSD: pkg-config.mk,v 1.10 2010/08/24 19:08:29 bad Exp $
+# $NetBSD: pkg-config.mk,v 1.9 2008/04/20 19:32:31 jmmv Exp $
 #
 # Copyright (c) 2005 The NetBSD Foundation, Inc.
 # All rights reserved.

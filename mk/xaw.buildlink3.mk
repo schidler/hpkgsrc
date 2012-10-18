@@ -1,4 +1,4 @@
-# $NetBSD: xaw.buildlink3.mk,v 1.5 2007/03/09 02:04:04 rillig Exp $
+# $NetBSD: xaw.buildlink3.mk,v 1.4 2006/11/06 10:51:51 joerg Exp $
 #
 # This file selects the X Athena Widgets (Xaw) implementation.
 #

@@ -1,4 +1,4 @@
-# $NetBSD: patch.mk,v 1.18 2009/03/17 21:43:54 rillig Exp $
+# $NetBSD: patch.mk,v 1.17 2007/09/19 08:37:37 rillig Exp $
 #
 # The following variables may be set in a package Makefile and control
 # how pkgsrc patches are applied.

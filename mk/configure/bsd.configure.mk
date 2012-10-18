@@ -1,4 +1,4 @@
-# $NetBSD: bsd.configure.mk,v 1.11 2008/01/04 01:46:26 rillig Exp $
+# $NetBSD: bsd.configure.mk,v 1.10 2007/03/07 01:27:28 rillig Exp $
 #
 # This Makefile fragment is included by bsd.pkg.mk and provides all
 # variables and targets related to configuring packages for building.

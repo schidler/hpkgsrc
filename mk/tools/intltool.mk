@@ -1,4 +1,4 @@
-# $NetBSD: intltool.mk,v 1.5 2009/03/17 22:13:36 rillig Exp $
+# $NetBSD: intltool.mk,v 1.4 2008/12/05 08:25:15 wiz Exp $
 #
 # Copyright (c) 2006 The NetBSD Foundation, Inc.
 # All rights reserved.

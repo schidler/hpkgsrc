@@ -1,4 +1,4 @@
-# $NetBSD: test.mk,v 1.18 2012/05/27 14:32:29 cheusov Exp $
+# $NetBSD: test.mk,v 1.17 2012/05/02 13:44:27 obache Exp $
 #
 # After the "build" phase, many packages provide some sort of self-test
 # that can be run on the not-yet installed package. To enable these

@@ -1,4 +1,4 @@
-# $NetBSD: create.mk,v 1.4 2009/03/17 22:13:36 rillig Exp $
+# $NetBSD: create.mk,v 1.3 2008/02/13 09:11:01 rillig Exp $
 #
 # Copyright (c) 2005, 2006 The NetBSD Foundation, Inc.
 # All rights reserved.

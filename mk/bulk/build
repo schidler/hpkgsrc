@@ -1,5 +1,5 @@
 #!/bin/sh
-# $NetBSD: build,v 1.106 2009/07/09 12:46:49 he Exp $
+# $NetBSD: build,v 1.105 2008/06/13 21:52:16 sketch Exp $
 
 #
 # Copyright (c) 1999, 2000 Hubert Feyrer <hubertf@NetBSD.org>

@@ -1,4 +1,4 @@
-# $NetBSD: FreeMiNT.mk,v 1.2 2009/07/26 05:32:43 agc Exp $
+# $NetBSD: FreeMiNT.mk,v 1.1 2009/03/05 00:02:44 abs Exp $
 #
 # Variable definitions for the FreeMiNT operating system.
 

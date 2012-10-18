@@ -1,4 +1,4 @@
-# $NetBSD: plist-info.awk,v 1.17 2009/06/14 23:10:39 joerg Exp $
+# $NetBSD: plist-info.awk,v 1.16 2009/06/14 22:58:05 joerg Exp $
 #
 # Copyright (c) 2006 The NetBSD Foundation, Inc.
 # All rights reserved.

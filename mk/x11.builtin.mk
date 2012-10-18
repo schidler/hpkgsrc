@@ -1,4 +1,4 @@
-# $NetBSD: x11.builtin.mk,v 1.4 2008/10/06 12:58:11 cube Exp $
+# $NetBSD: x11.builtin.mk,v 1.3 2008/10/05 21:36:35 cube Exp $
 #
 # x11.builtin.mk will include the builtin.mk file from the appropriate
 # X11 distribution.

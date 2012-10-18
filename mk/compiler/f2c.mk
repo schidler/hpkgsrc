@@ -1,4 +1,4 @@
-# $NetBSD: f2c.mk,v 1.15 2010/07/30 07:58:59 asau Exp $
+# $NetBSD: f2c.mk,v 1.14 2009/12/20 12:32:55 jmmv Exp $
 #
 # Copyright (c) 2005 The NetBSD Foundation, Inc.
 # All rights reserved.

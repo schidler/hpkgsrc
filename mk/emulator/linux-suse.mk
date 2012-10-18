@@ -16,9 +16,6 @@ EMUL_TYPE.linux=	suse-${SUSE_VERSION}
 .if !empty(EMUL_TYPE.linux:Msuse-10.[0x])
 .  include "${PKGSRCDIR}/emulators/suse100_linux/emulator.mk"
 
-.elif !empty(EMUL_TYPE.linux:Msuse-11.[3x])
-.  include "${PKGSRCDIR}/emulators/suse113_linux/emulator.mk"
-
 .elif !empty(EMUL_TYPE.linux:Msuse-12.[1x])
 .  include "${PKGSRCDIR}/emulators/suse121_linux/emulator.mk"
 

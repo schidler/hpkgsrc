@@ -1,4 +1,4 @@
-# $NetBSD: bsd.depends-vars.mk,v 1.4 2006/07/13 14:02:34 jlam Exp $
+# $NetBSD: bsd.depends-vars.mk,v 1.3 2006/07/07 21:24:28 jlam Exp $
 #
 # This Makefile fragment is included separately by bsd.pkg.mk and
 # defines some variables which must be defined earlier than where

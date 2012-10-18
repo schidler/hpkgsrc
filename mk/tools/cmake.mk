@@ -1,4 +1,4 @@
-# $NetBSD: cmake.mk,v 1.1 2007/12/18 10:18:44 markd Exp $
+# $NetBSD$
 #
 
 # This file needs to be included before replace.mk as it modifies the

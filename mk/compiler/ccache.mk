@@ -1,4 +1,4 @@
-# $NetBSD: ccache.mk,v 1.33 2012/03/06 02:44:54 sbd Exp $
+# $NetBSD: ccache.mk,v 1.32 2009/08/31 08:38:50 tnn Exp $
 #
 # Copyright (c) 2004 The NetBSD Foundation, Inc.
 # All rights reserved.

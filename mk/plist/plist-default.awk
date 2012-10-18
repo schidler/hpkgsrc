@@ -1,4 +1,4 @@
-# $NetBSD: plist-default.awk,v 1.1 2006/01/12 23:43:57 jlam Exp $
+# $NetBSD$
 #
 # Copyright (c) 2006 The NetBSD Foundation, Inc.
 # All rights reserved.

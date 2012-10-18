@@ -1,4 +1,4 @@
-# $NetBSD: x11.version.mk,v 1.11 2010/09/11 20:46:11 wiz Exp $
+# $NetBSD: x11.version.mk,v 1.10 2007/10/01 07:21:44 rillig Exp $
 #
 # This file must not be included directly.
 # It is included automatically by mk/x11.buildlink3.mk.

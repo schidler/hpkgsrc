@@ -1,4 +1,4 @@
-# $NetBSD: sunpro.mk,v 1.47 2010/07/30 07:58:59 asau Exp $
+# $NetBSD: sunpro.mk,v 1.46 2009/10/25 17:15:44 sno Exp $
 #
 # This is the compiler definition for the SUNWspro C compiler.
 #

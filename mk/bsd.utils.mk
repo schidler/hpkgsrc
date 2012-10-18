@@ -1,4 +1,4 @@
-# $NetBSD: bsd.utils.mk,v 1.9 2011/09/08 20:17:15 abs Exp $
+# $NetBSD: bsd.utils.mk,v 1.8 2006/07/27 22:01:28 jlam Exp $
 #
 # This Makefile fragment is included by bsd.pkg.mk and defines utility
 # and otherwise miscellaneous variables and targets.

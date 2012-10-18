@@ -1,4 +1,4 @@
-# $NetBSD: gnu-configure.mk,v 1.13 2012/01/26 06:33:43 sbd Exp $
+# $NetBSD: gnu-configure.mk,v 1.12 2012/01/17 21:19:43 sbd Exp $
 
 _VARGROUPS+=			gnu-configure
 _USER_VARS.gnu-configure=	# none

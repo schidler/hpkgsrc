@@ -1,4 +1,4 @@
-# $NetBSD: DragonFly.mk,v 1.42 2012/03/19 12:34:16 joerg Exp $
+# $NetBSD: DragonFly.mk,v 1.41 2011/12/17 16:20:01 marino Exp $
 #
 # Variable definitions for the DragonFly operating system.
 

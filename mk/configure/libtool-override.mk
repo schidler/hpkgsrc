@@ -1,4 +1,4 @@
-# $NetBSD: libtool-override.mk,v 1.10 2008/02/07 21:36:13 rillig Exp $
+# $NetBSD: libtool-override.mk,v 1.9 2006/11/05 12:40:01 rillig Exp $
 
 ######################################################################
 ### {libtool,shlibtool}-override (PRIVATE)

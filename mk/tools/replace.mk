@@ -1,4 +1,4 @@
-# $NetBSD: replace.mk,v 1.249 2012/05/30 12:02:28 cheusov Exp $
+# $NetBSD: replace.mk,v 1.251 2012/07/27 10:48:36 jperkin Exp $
 #
 # Copyright (c) 2005 The NetBSD Foundation, Inc.
 # All rights reserved.
@@ -205,6 +205,17 @@ _TOOLS_USE_PKGSRC.${_t_}?=	yes
 # command, e.g., TOOLS_TBL, TOOLS_YACC, etc., provided that "TOOL" has
 # been associated with <tool>.
 #
+.if !defined(TOOLS_IGNORE.7za) && !empty(_USE_TOOLS:M7za)
+.  if !empty(PKGPATH:Marchivers/p7zip)
+MAKEFLAGS+=			TOOLS_IGNORE.7za=
+.  elif !empty(_TOOLS_USE_PKGSRC.7za:M[yY][eE][sS])
+TOOLS_DEPENDS.7za?=		p7zip>=9.04:../../archivers/p7zip
+TOOLS_CREATE+=			7za
+TOOLS_FIND_PREFIX+=		TOOLS_PREFIX.7za=7za
+TOOLS_PATH.7za=			${TOOLS_PREFIX.7za}/bin/7za
+.  endif
+.endif
+
 .if !defined(TOOLS_IGNORE.awk) && !empty(_USE_TOOLS:Mawk)
 .  if !empty(PKGPATH:Mlang/nawk)
 MAKEFLAGS+=			TOOLS_IGNORE.awk=
@@ -328,6 +339,16 @@ TOOLS_DEPENDS.csh?=		tcsh-[0-9]*:../../shells/tcsh
 TOOLS_CREATE+=			csh
 TOOLS_FIND_PREFIX+=		TOOLS_PREFIX.csh=tcsh
 TOOLS_PATH.csh=			${TOOLS_PREFIX.csh}/bin/tcsh
+.  endif
+.endif
+
+.if !defined(TOOLS_IGNORE.curl) && !empty(_USE_TOOLS:Mcurl)
+.  if !empty(PKGPATH:Mwww/curl)
+MAKEFLAGS+=			TOOLS_IGNORE.curl=
+.  elif !empty(_TOOLS_USE_PKGSRC.curl:M[yY][eE][sS])
+TOOLS_DEPENDS.curl?=		curl-[0-9]*:../../www/curl
+TOOLS_FIND_PREFIX+=		TOOLS_PREFIX.curl=curl
+TOOLS_PATH.curl=		${TOOLS_PREFIX.curl}/bin/curl
 .  endif
 .endif
 
@@ -672,7 +693,7 @@ TOOLS_PATH.pax=			${TOOLS_PREFIX.pax}/bin/${NBPAX_PROGRAM_PREFIX}pax
 .  if !empty(PKGPATH:Mdevel/pkg-config)
 MAKEFLAGS+=			TOOLS_IGNORE.pkg-config=
 .  elif !empty(_TOOLS_USE_PKGSRC.pkg-config:M[yY][eE][sS])
-TOOLS_DEPENDS.pkg-config?=	pkg-config>=0.19:../../devel/pkg-config
+TOOLS_DEPENDS.pkg-config?=	pkg-config>=0.25:../../devel/pkg-config
 TOOLS_CREATE+=			pkg-config
 TOOLS_FIND_PREFIX+=		TOOLS_PREFIX.pkg-config=pkg-config
 TOOLS_PATH.pkg-config=		${TOOLS_PREFIX.pkg-config}/bin/pkg-config

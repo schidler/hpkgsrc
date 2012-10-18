@@ -1,4 +1,4 @@
-# $NetBSD: strip.mk,v 1.4 2005/07/17 21:36:24 jlam Exp $
+# $NetBSD: strip.mk,v 1.3 2005/05/21 04:53:17 jlam Exp $
 #
 # Copyright (c) 2005 The NetBSD Foundation, Inc.
 # All rights reserved.

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $NetBSD: upload,v 1.48 2010/04/10 21:44:44 wiz Exp $
+# $NetBSD: upload,v 1.46 2010/03/21 10:52:29 wiz Exp $
 
 #
 # Upload non-restricted binary pkgs to ftp server

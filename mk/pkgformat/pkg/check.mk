@@ -1,4 +1,4 @@
-# $NetBSD: check.mk,v 1.1 2011/10/15 00:23:09 reed Exp $
+# $NetBSD: check.mk,v 1.13 2009/04/04 19:07:58 joerg Exp $
 #
 
 # _pkgformat-check-vulnerable:

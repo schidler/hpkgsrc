@@ -1,4 +1,4 @@
-# $NetBSD: bsd.checksum.mk,v 1.10 2009/07/15 09:40:30 joerg Exp $
+# $NetBSD: bsd.checksum.mk,v 1.9 2008/05/22 16:27:22 joerg Exp $
 #
 # This Makefile fragment is included by bsd.pkg.mk and defines the
 # relevant variables and targets for the "checksum" phase.

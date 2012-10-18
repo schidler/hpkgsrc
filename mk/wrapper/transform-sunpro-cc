@@ -1,4 +1,4 @@
-# $NetBSD: transform-sunpro-cc,v 1.31 2012/02/07 09:42:05 shattered Exp $
+# $NetBSD: transform-sunpro-cc,v 1.30 2008/06/17 12:58:28 sketch Exp $
 #
 # Copyright (c) 2004 The NetBSD Foundation, Inc.
 # All rights reserved.

@@ -1,4 +1,4 @@
-# $NetBSD: merge-distinfo.awk,v 1.1 2007/07/29 05:19:43 jlam Exp $
+# $NetBSD$
 #
 # This awk script sorts the contents of several distinfo files into a
 # single distinfo file.

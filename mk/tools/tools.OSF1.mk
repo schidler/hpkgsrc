@@ -1,4 +1,4 @@
-# $NetBSD: tools.OSF1.mk,v 1.14 2008/08/10 15:17:25 ahoka Exp $
+# $NetBSD: tools.OSF1.mk,v 1.13 2007/08/05 12:38:22 tnn Exp $
 #
 # System-supplied tools for the OSF/1 operating system.
 #

@@ -1,4 +1,4 @@
-# $NetBSD: termcap.builtin.mk,v 1.7 2010/02/07 09:46:14 roy Exp $
+# $NetBSD: termcap.builtin.mk,v 1.6 2009/03/20 19:25:01 joerg Exp $
 
 BUILTIN_PKG:=	termcap
 

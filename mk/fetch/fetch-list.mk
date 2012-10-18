@@ -1,4 +1,4 @@
-# $NetBSD: fetch-list.mk,v 1.14 2011/06/19 10:23:56 plunky Exp $
+# $NetBSD: fetch-list.mk,v 1.13 2009/03/06 10:54:42 tnn Exp $
 
 ######################################################################
 ### fetch-list (PUBLIC)

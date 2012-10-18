@@ -1,4 +1,4 @@
-# $NetBSD: oss.builtin.mk,v 1.3 2009/03/17 22:13:36 rillig Exp $
+# $NetBSD: oss.builtin.mk,v 1.2 2006/04/06 06:23:06 reed Exp $
 
 BUILTIN_PKG:=	oss
 

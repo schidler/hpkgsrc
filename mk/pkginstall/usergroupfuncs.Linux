@@ -1,4 +1,4 @@
-# $NetBSD: usergroupfuncs.Linux,v 1.5 2009/03/08 19:39:03 joerg Exp $
+# $NetBSD: usergroupfuncs.Linux,v 1.4 2009/02/02 19:54:22 joerg Exp $
 #
 # Platform-specific adduser and addgroup functionality
 # on top of shadow-utils.  (Not libuser)

@@ -1,4 +1,4 @@
-# $NetBSD: pf.buildlink3.mk,v 1.2 2011/01/16 02:18:36 obache Exp $
+# $NetBSD: pf.buildlink3.mk,v 1.1 2008/06/26 20:58:48 peter Exp $
 #
 # Makefile fragment for packages using pf.
 #

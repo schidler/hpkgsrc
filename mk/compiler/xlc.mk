@@ -1,4 +1,4 @@
-# $NetBSD: xlc.mk,v 1.26 2011/10/30 23:11:33 wiz Exp $
+# $NetBSD: xlc.mk,v 1.25 2011/10/30 22:04:39 wiz Exp $
 #
 # Copyright (c) 2005 The NetBSD Foundation, Inc.
 # All rights reserved.

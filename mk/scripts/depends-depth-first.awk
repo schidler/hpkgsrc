@@ -1,6 +1,6 @@
 #!/usr/bin/awk -f
 #
-# $NetBSD: depends-depth-first.awk,v 1.6 2009/01/05 02:37:05 dbj Exp $
+# $NetBSD: depends-depth-first.awk,v 1.5 2006/01/21 22:16:13 jlam Exp $
 #
 # Copyright (c) 2006 The NetBSD Foundation, Inc.
 # All rights reserved.

@@ -1,4 +1,4 @@
-# $NetBSD: check-subr.sh,v 1.5 2007/01/02 17:58:11 rillig Exp $
+# $NetBSD: check-subr.sh,v 1.4 2006/11/11 23:08:00 rillig Exp $
 #
 # This file contains shell functions that are used by the various shell
 # programs that check things in pkgsrc. All these programs must be

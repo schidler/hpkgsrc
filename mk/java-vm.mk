@@ -104,6 +104,8 @@ _PKG_JVM_DEFAULT?=	sun-jdk6
 _PKG_JVM_DEFAULT?=	sun-jdk6
 .  elif !empty(MACHINE_PLATFORM:MSunOS-5.11-i386)
 _PKG_JVM_DEFAULT?=	sun-jdk6
+.  elif !empty(MACHINE_PLATFORM:MDragonFly-*-*)
+_PKG_JVM_DEFAULT?=	openjdk7
 .  else
 _PKG_JVM_DEFAULT?=	kaffe
 .  endif

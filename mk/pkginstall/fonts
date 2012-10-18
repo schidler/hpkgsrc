@@ -1,4 +1,4 @@
-# $NetBSD: fonts,v 1.6 2010/04/23 12:47:14 jmmv Exp $
+# $NetBSD: fonts,v 1.5 2007/07/12 19:41:46 jlam Exp $
 #
 # Generate a +FONTS script that updates font databases for the package.
 #

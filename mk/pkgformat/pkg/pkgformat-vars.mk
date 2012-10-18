@@ -1,4 +1,4 @@
-# $NetBSD: pkgformat-vars.mk,v 1.2 2011/12/13 16:35:48 joerg Exp $
+# $NetBSD: pkgformat-vars.mk,v 1.1 2011/10/15 00:23:09 reed Exp $
 #
 # This Makefile fragment is included indirectly by bsd.prefs.mk and
 # defines some variables which must be defined earlier than where

@@ -1,4 +1,4 @@
-# $NetBSD: transform-mipspro-cc,v 1.11 2007/06/15 15:34:31 rillig Exp $
+# $NetBSD: transform-mipspro-cc,v 1.10 2007/03/07 22:02:34 rillig Exp $
 #
 # Copyright (c) 2004 The NetBSD Foundation, Inc.
 # All rights reserved.

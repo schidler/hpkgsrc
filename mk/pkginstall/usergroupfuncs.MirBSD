@@ -1,4 +1,4 @@
-# $NetBSD: usergroupfuncs.MirBSD,v 1.1 2012/06/19 05:43:24 bsiegert Exp $
+# $NetBSD$
 #
 # Platform-specific adduser and addgroup functionality.
 

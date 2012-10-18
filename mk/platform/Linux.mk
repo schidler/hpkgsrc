@@ -1,4 +1,4 @@
-# $NetBSD: Linux.mk,v 1.51 2012/04/23 08:14:36 sbd Exp $
+# $NetBSD: Linux.mk,v 1.50 2012/04/09 04:19:24 sbd Exp $
 #
 # Variable definitions for the Linux operating system.
 

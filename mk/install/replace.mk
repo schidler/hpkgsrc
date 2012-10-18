@@ -1,4 +1,4 @@
-# $NetBSD: replace.mk,v 1.14 2011/10/15 00:23:09 reed Exp $
+# $NetBSD: replace.mk,v 1.13 2011/08/01 11:00:13 apb Exp $
 #
 # Public targets:
 #

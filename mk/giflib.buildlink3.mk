@@ -1,4 +1,4 @@
-# $NetBSD: giflib.buildlink3.mk,v 1.1 2011/03/09 16:22:01 drochner Exp $
+# $NetBSD$
 
 # choose a GIF library implemtation:
 # "libungif" was used to avoid patent problems. The patents are

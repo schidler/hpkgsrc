@@ -1,4 +1,4 @@
-# $NetBSD: c.help,v 1.2 2008/01/10 02:34:09 rillig Exp $
+# $NetBSD: c.help,v 1.1 2008/01/06 19:13:31 rillig Exp $
 
 # This file contains typical error messages from C++ compilers and
 # instructions how to fix them properly.

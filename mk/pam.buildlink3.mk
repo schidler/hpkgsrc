@@ -1,4 +1,4 @@
-# $NetBSD: pam.buildlink3.mk,v 1.11 2009/03/20 19:25:01 joerg Exp $
+# $NetBSD: pam.buildlink3.mk,v 1.10 2007/10/13 11:04:16 dsl Exp $
 #
 # This Makefile fragment is meant to be included by packages that
 # require a PAM implementation.

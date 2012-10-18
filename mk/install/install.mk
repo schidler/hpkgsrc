@@ -29,7 +29,7 @@
 #	This option is not supported by all packages.
 #
 # STRIP_DEBUG
-#	If set to "yes", call ${STRI} -g to remove debug information
+#	If set to "yes", call ${STRIP} -g to remove debug information
 #	from all files. The symbol tables are still preserved.
 #
 # Keywords: strip unstripped

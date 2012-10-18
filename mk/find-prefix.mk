@@ -1,4 +1,4 @@
-# $NetBSD: find-prefix.mk,v 1.7 2008/02/10 10:30:58 rillig Exp $
+# $NetBSD: find-prefix.mk,v 1.6 2008/02/10 10:12:13 rillig Exp $
 #
 # This is a "subroutine" that can be included to find the installation
 # prefix of an installed package.

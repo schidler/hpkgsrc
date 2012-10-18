@@ -1,4 +1,4 @@
-# $NetBSD: check-headers.sh,v 1.10 2008/01/21 06:11:09 rillig Exp $
+# $NetBSD: check-headers.sh,v 1.9 2007/01/02 17:58:11 rillig Exp $
 #
 # This program checks the header files for possible problems.
 #

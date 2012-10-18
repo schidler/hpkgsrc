@@ -1,4 +1,4 @@
-# $NetBSD: cmake.mk,v 1.8 2011/01/12 07:21:30 adam Exp $
+# $NetBSD: cmake.mk,v 1.7 2010/10/19 09:45:16 adam Exp $
 #
 # This file handles packages that use CMake as their primary build
 # system. For more information about CMake, see http://www.cmake.org/.

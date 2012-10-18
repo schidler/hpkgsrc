@@ -1,4 +1,4 @@
-# $NetBSD: MirBSD.mk,v 1.7 2012/06/16 20:13:06 bsiegert Exp $
+# $NetBSD: MirBSD.mk,v 1.6 2012/05/18 14:15:17 bsiegert Exp $
 #
 # Variable definitions for the MirOS BSD operating system.
 

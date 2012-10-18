@@ -1,4 +1,4 @@
-# $NetBSD: resolv.buildlink3.mk,v 1.5 2011/02/13 16:17:54 taca Exp $
+# $NetBSD: resolv.buildlink3.mk,v 1.4 2010/02/10 17:28:57 joerg Exp $
 #
 # This Makefile fragment is included by package Makefiles and
 # buildlink3.mk files for the packages that need a thread-safe

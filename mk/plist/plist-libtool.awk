@@ -1,4 +1,4 @@
-# $NetBSD: plist-libtool.awk,v 1.5 2012/05/16 14:54:57 jperkin Exp $
+# $NetBSD: plist-libtool.awk,v 1.4 2006/04/15 04:25:17 minskim Exp $
 #
 # Copyright (c) 2006 The NetBSD Foundation, Inc.
 # All rights reserved.

@@ -1,4 +1,4 @@
-# $NetBSD: curses.buildlink3.mk,v 1.17 2010/02/07 10:28:13 roy Exp $
+# $NetBSD: curses.buildlink3.mk,v 1.16 2010/02/07 10:20:37 roy Exp $
 #
 # This Makefile fragment is meant to be included by packages that require
 # any curses implementation instead of one particular one.  The available

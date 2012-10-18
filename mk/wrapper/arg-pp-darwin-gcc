@@ -1,4 +1,4 @@
-# $NetBSD: arg-pp-darwin-gcc,v 1.2 2005/02/14 21:33:36 jlam Exp $
+# $NetBSD: arg-pp-darwin-gcc,v 1.1 2005/01/18 17:25:13 jlam Exp $
 #
 # Copyright (c) 2005 The NetBSD Foundation, Inc.
 # All rights reserved.

@@ -94,12 +94,12 @@ MSGFMT_STRIP_MSGCTXT!=							\
 _TOOLS_USE_PKGSRC.msgfmt=	yes
 .    endif
 MSGFMT_STRIP_MSGID_PLURAL?=	no
-MSGFMT_STRIP_MSGCTXT?=		yes # pkgsrc version is too old
-.if ${MSGFMT_STRIP_MSGID_PLURAL} == "yes" || ${MSGFMT_STRIP_MSGCTXT} == "yes"
+MSGFMT_STRIP_MSGCTXT?=		no
+.    if ${MSGFMT_STRIP_MSGID_PLURAL} == "yes" || ${MSGFMT_STRIP_MSGCTXT} == "yes"
 _TOOLS_USE_MSGFMT_SH=		yes
-.else
+.    else
 _TOOLS_USE_MSGFMT_SH=		no
-.endif
+.    endif
 MAKEVARS+=	_TOOLS_USE_MSGFMT_SH
 
 # If we're not using the builtin gettext implementation, then we should

@@ -1,4 +1,4 @@
-# $NetBSD: pkgconfig-builtin.mk,v 1.5 2009/07/11 07:56:25 rillig Exp $
+# $NetBSD: pkgconfig-builtin.mk,v 1.4 2008/10/06 13:19:11 cube Exp $
 
 # This file is used to factor out a common pattern in builtin.mk files
 # backed up by the existence of a pkgconfig file.

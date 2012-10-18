@@ -1,6 +1,6 @@
 #! @WRAPPER_SHELL@
 #
-# $NetBSD: wrapper.sh,v 1.21 2009/05/30 19:18:01 joerg Exp $
+# $NetBSD: wrapper.sh,v 1.20 2009/05/30 17:48:20 joerg Exp $
 #
 # Copyright (c) 2004 The NetBSD Foundation, Inc.
 # All rights reserved.

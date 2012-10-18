@@ -1,4 +1,4 @@
-# $NetBSD: unprivileged.mk,v 1.22 2012/04/21 19:29:47 cheusov Exp $
+# $NetBSD: unprivileged.mk,v 1.21 2010/07/08 04:57:36 dholland Exp $
 #
 # This file collects definitions that are useful when using pkgsrc as an
 # unprivileged (non-root) user. It is included automatically by the

@@ -1,4 +1,4 @@
-# $NetBSD: alternatives.mk,v 1.11 2009/06/14 22:58:05 joerg Exp $
+# $NetBSD: alternatives.mk,v 1.10 2007/09/29 15:56:04 rillig Exp $
 #
 # This Makefile fragment handles the alternatives system, registering a
 # package in the database.

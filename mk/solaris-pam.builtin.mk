@@ -1,4 +1,4 @@
-# $NetBSD: solaris-pam.builtin.mk,v 1.4 2006/04/06 06:23:06 reed Exp $
+# $NetBSD: solaris-pam.builtin.mk,v 1.3 2005/06/01 18:03:06 jlam Exp $
 
 BUILTIN_PKG:=	solaris-pam
 

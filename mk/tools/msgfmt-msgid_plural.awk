@@ -1,4 +1,4 @@
-# $NetBSD: msgfmt-msgid_plural.awk,v 1.1 2009/03/20 16:13:02 joerg Exp $
+# $NetBSD$
 #
 # Strip msgid_plural which is not understood by msgfmt before 0.10.36.
 #

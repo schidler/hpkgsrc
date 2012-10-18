@@ -1,4 +1,4 @@
-# $NetBSD: replace.mk,v 1.1 2011/10/15 00:23:09 reed Exp $
+# $NetBSD: replace.mk,v 1.31 2010/09/14 22:30:42 gdt Exp $
 #
 
 # _pkgformat-replace:

@@ -1,4 +1,4 @@
-# $NetBSD: bsd.configure-vars.mk,v 1.4 2007/07/12 18:59:15 jlam Exp $
+# $NetBSD: bsd.configure-vars.mk,v 1.3 2007/06/04 12:10:20 rillig Exp $
 #
 # CONFIGURE_DIRS is the list of directories in which to run the
 #	configure process.  If the directories are relative paths,

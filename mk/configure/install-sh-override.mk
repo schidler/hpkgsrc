@@ -1,4 +1,4 @@
-# $NetBSD: install-sh-override.mk,v 1.2 2008/02/07 21:36:13 rillig Exp $
+# $NetBSD: install-sh-override.mk,v 1.1 2007/07/12 18:59:15 jlam Exp $
 
 ######################################################################
 ### install-sh-override (PRIVATE)

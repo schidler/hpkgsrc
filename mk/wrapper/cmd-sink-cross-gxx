@@ -1,4 +1,4 @@
-# $NetBSD: cmd-sink-cross-gxx,v 1.1 2011/08/04 13:32:05 obache Exp $
+# $NetBSD$
 #
 # Copyright (c) 2007 Joerg Sonnenberger <joerg@NetBSD.org>.
 # All rights reserved.

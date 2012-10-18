@@ -1,4 +1,4 @@
-# $NetBSD: bsd.pkg.debug.mk,v 1.21 2008/02/07 21:36:13 rillig Exp $
+# $NetBSD: bsd.pkg.debug.mk,v 1.20 2007/09/27 12:49:14 rillig Exp $
 #
 # Public targets:
 #

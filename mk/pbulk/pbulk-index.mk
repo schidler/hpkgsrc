@@ -1,4 +1,4 @@
-#	$NetBSD: pbulk-index.mk,v 1.14 2011/11/12 15:21:53 dholland Exp $
+#	$NetBSD: pbulk-index.mk,v 1.13 2011/10/04 11:41:20 hans Exp $
 
 # This Makefile fragment is included by bsd.pkg.mk and provides all
 # variables and targets related to the parallel bulk build

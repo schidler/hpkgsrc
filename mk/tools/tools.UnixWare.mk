@@ -1,4 +1,4 @@
-# $NetBSD: tools.UnixWare.mk,v 1.13 2009/02/05 19:03:29 joerg Exp $
+# $NetBSD: tools.UnixWare.mk,v 1.12 2005/06/24 20:59:59 jlam Exp $
 #
 # System-supplied tools for the UnixWare 7 operating system.
 

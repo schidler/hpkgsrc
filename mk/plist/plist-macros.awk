@@ -1,4 +1,4 @@
-# $NetBSD: plist-macros.awk,v 1.2 2008/01/05 17:03:04 rillig Exp $
+# $NetBSD: plist-macros.awk,v 1.1 2007/10/31 21:09:03 rillig Exp $
 
 BEGIN {
 	IMAKE_MANINSTALL = getenv_or_die("IMAKE_MANINSTALL")

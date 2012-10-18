@@ -1,4 +1,4 @@
-# $NetBSD: package.mk,v 1.23 2011/10/15 00:23:09 reed Exp $
+# $NetBSD: package.mk,v 1.22 2010/02/24 22:53:34 joerg Exp $
 #
 # This file provides the code for the "package" phase.
 #

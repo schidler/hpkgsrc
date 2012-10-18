@@ -1,4 +1,4 @@
-# $NetBSD: irix.mk,v 1.3 2007/10/13 11:04:17 dsl Exp $
+# $NetBSD: irix.mk,v 1.2 2007/08/23 17:39:47 jlam Exp $
 #
 # IRIX binary emulation framework
 #

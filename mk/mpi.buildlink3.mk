@@ -1,4 +1,4 @@
-# $NetBSD: mpi.buildlink3.mk,v 1.1 2010/05/16 11:07:39 asau Exp $
+# $NetBSD$
 #
 # This Makefile fragment is meant to be included by packages
 # that use any MPI implementation instead of one particular one.

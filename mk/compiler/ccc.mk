@@ -1,4 +1,4 @@
-# $NetBSD: ccc.mk,v 1.19 2009/06/02 22:32:49 joerg Exp $
+# $NetBSD: ccc.mk,v 1.18 2009/05/30 18:16:26 joerg Exp $
 #
 # This is the compiler definition for the Compaq C Compilers.
 #

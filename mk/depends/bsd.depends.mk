@@ -22,9 +22,7 @@ SKIP_DEPENDS?=	no
 # dependencies.  This variable is user-settable in /etc/mk.conf.
 #
 .if !defined(DEPENDS_TARGET)
-.  if !empty(USE_DESTDIR:M[Yy][Ee][Ss]) || make(package) || make(package-install)
-DEPENDS_TARGET=		package-install
-.  elif make(update)
+.  if make(update)
 .    if defined(UPDATE_TARGET) && (${UPDATE_TARGET} == "replace")
 DEPENDS_TARGET=		${UPDATE_TARGET}
 .    else
@@ -32,6 +30,8 @@ DEPENDS_TARGET=		update
 .    endif
 .  elif make(bin-install) || make(su-bin-install)
 DEPENDS_TARGET=		bin-install
+.  elif !empty(USE_DESTDIR:M[Yy][Ee][Ss]) || make(package) || make(package-install)
+DEPENDS_TARGET=		package-install
 .  else
 DEPENDS_TARGET=		reinstall
 .  endif

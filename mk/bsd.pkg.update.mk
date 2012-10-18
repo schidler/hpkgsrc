@@ -1,4 +1,4 @@
-# $NetBSD: bsd.pkg.update.mk,v 1.23 2011/05/04 09:49:34 obache Exp $
+# $NetBSD: bsd.pkg.update.mk,v 1.22 2010/07/03 04:24:14 darcy Exp $
 #
 # This Makefile fragment is included by bsd.pkg.mk and contains the targets
 # and variables for "make update".

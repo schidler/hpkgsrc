@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $NetBSD: missing,v 1.2 2006/10/29 23:57:48 wiz Exp $
+# $NetBSD: missing,v 1.1 2002/11/21 00:13:34 jlam Exp $
 #
 # Common stub for a few missing GNU programs while installing.
 

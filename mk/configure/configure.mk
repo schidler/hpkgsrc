@@ -1,4 +1,4 @@
-# $NetBSD: configure.mk,v 1.25 2012/06/01 12:52:37 jperkin Exp $
+# $NetBSD: configure.mk,v 1.24 2011/09/08 20:17:15 abs Exp $
 #
 # = Package-settable variables =
 #

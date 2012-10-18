@@ -1,4 +1,4 @@
-# $NetBSD: bsd.tools.mk,v 1.54 2012/01/14 01:52:14 hans Exp $
+# $NetBSD: bsd.tools.mk,v 1.53 2012/01/14 00:47:53 hans Exp $
 #
 # Copyright (c) 2005, 2006 The NetBSD Foundation, Inc.
 # All rights reserved.

@@ -1,4 +1,4 @@
-# $NetBSD: bsdi.mk,v 1.1 2007/07/29 05:19:42 jlam Exp $
+# $NetBSD$
 #
 # BSD/OS binary emulation framework
 #

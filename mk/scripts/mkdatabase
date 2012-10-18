@@ -1,5 +1,5 @@
 #!/bin/sh
-# $NetBSD: mkdatabase,v 1.9 2005/11/18 11:07:27 rillig Exp $
+# $NetBSD: mkdatabase,v 1.8 2005/11/18 10:58:37 rillig Exp $
 #
 # Script for generating a database with complete dependency information
 # for a particular package

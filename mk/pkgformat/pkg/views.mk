@@ -1,4 +1,4 @@
-# $NetBSD: views.mk,v 1.1 2011/10/15 00:23:09 reed Exp $
+# $NetBSD: views.mk,v 1.6 2009/03/17 22:13:36 rillig Exp $
 
 # By default, all packages attempt to link into the views.
 .if ${PKG_INSTALLATION_TYPE} == "pkgviews"

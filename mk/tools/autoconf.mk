@@ -1,4 +1,4 @@
-# $NetBSD: autoconf.mk,v 1.15 2009/03/17 22:13:36 rillig Exp $
+# $NetBSD: autoconf.mk,v 1.14 2006/12/15 13:15:07 martti Exp $
 #
 # Copyright (c) 2005 The NetBSD Foundation, Inc.
 # All rights reserved.

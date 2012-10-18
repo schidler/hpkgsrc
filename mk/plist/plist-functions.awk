@@ -1,4 +1,4 @@
-# $NetBSD: plist-functions.awk,v 1.2 2007/10/31 21:09:03 rillig Exp $
+# $NetBSD: plist-functions.awk,v 1.1 2006/01/12 23:43:57 jlam Exp $
 #
 # Copyright (c) 2006 The NetBSD Foundation, Inc.
 # All rights reserved.

@@ -1,4 +1,4 @@
-# $NetBSD: import.mk,v 1.5 2011/11/13 23:09:17 joerg Exp $
+# $NetBSD: import.mk,v 1.4 2011/11/13 23:04:41 joerg Exp $
 #
 
 # import:

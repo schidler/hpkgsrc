@@ -1,4 +1,4 @@
-# $NetBSD: fam.buildlink3.mk,v 1.7 2009/03/17 14:45:19 jmcneill Exp $
+# $NetBSD: fam.buildlink3.mk,v 1.6 2009/03/15 21:47:44 jmcneill Exp $
 #
 # This Makefile fragment is meant to be included by packages that
 # require a FAM implementation.  fam.buildlink3.mk will:

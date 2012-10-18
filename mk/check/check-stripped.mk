@@ -1,4 +1,4 @@
-# $NetBSD: check-stripped.mk,v 1.4 2010/08/24 19:08:29 bad Exp $
+# $NetBSD: check-stripped.mk,v 1.3 2008/12/15 12:28:49 rillig Exp $
 #
 # This file checks that after installation, all binaries conform to the
 # setting of INSTALL_UNSTRIPPED.

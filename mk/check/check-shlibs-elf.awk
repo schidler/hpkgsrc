@@ -1,4 +1,4 @@
-# $NetBSD: check-shlibs-elf.awk,v 1.5 2012/06/16 11:58:07 obache Exp $
+# $NetBSD: check-shlibs-elf.awk,v 1.4 2012/06/15 14:46:53 obache Exp $
 #
 # Copyright (c) 2007 Joerg Sonnenberger <joerg@NetBSD.org>.
 # All rights reserved.

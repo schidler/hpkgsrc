@@ -1,4 +1,4 @@
-# $NetBSD: bsd.pkg.readme.mk,v 1.25 2011/09/08 20:17:15 abs Exp $
+# $NetBSD: bsd.pkg.readme.mk,v 1.24 2011/06/03 10:25:04 spz Exp $
 #
 # This Makefile fragment is included by bsd.pkg.mk and encapsulates the
 # code to produce README.html files in each package directory.

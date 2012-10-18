@@ -1,4 +1,4 @@
-# $NetBSD: plist-man.awk,v 1.8 2010/02/20 07:05:52 rillig Exp $
+# $NetBSD: plist-man.awk,v 1.7 2009/06/14 23:10:39 joerg Exp $
 #
 # Copyright (c) 2006 The NetBSD Foundation, Inc.
 # All rights reserved.

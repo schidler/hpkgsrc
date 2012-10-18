@@ -1,4 +1,4 @@
-# $NetBSD: texinfo.mk,v 1.11 2006/04/07 14:52:55 jlam Exp $
+# $NetBSD: texinfo.mk,v 1.10 2006/03/06 05:25:45 jlam Exp $
 #
 # Copyright (c) 2005 The NetBSD Foundation, Inc.
 # All rights reserved.

@@ -1,4 +1,4 @@
-# $NetBSD: metadata.mk,v 1.3 2012/05/13 08:20:11 obache Exp $
+# $NetBSD: metadata.mk,v 1.2 2011/12/13 16:35:48 joerg Exp $
 
 ######################################################################
 ### The targets below are all PRIVATE.

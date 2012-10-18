@@ -1,4 +1,4 @@
-# $NetBSD: db1.builtin.mk,v 1.22 2012/02/05 12:16:56 obache Exp $
+# $NetBSD: db1.builtin.mk,v 1.21 2007/11/16 08:14:20 rillig Exp $
 
 BUILTIN_PKG:=	db1
 

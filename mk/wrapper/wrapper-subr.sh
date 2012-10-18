@@ -1,4 +1,4 @@
-# $NetBSD: wrapper-subr.sh,v 1.10 2007/02/22 14:54:32 rillig Exp $
+# $NetBSD: wrapper-subr.sh,v 1.9 2007/02/21 09:43:26 rillig Exp $
 #
 # This file contains shell functions that are useful to the wrapper
 # scripts.

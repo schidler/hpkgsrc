@@ -1,4 +1,4 @@
-# $NetBSD: toplevel.mk,v 1.5 2011/09/08 20:17:16 abs Exp $
+# $NetBSD: toplevel.mk,v 1.4 2007/10/13 11:04:19 dsl Exp $
 #
 # This file contains the make targets that can be used from the
 # top-level Makefile. They are in this separate file to keep the

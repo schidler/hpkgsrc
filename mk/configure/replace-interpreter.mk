@@ -1,4 +1,4 @@
-# $NetBSD: replace-interpreter.mk,v 1.11 2012/02/06 06:18:36 sbd Exp $
+# $NetBSD: replace-interpreter.mk,v 1.10 2011/05/20 15:02:27 wiz Exp $
 
 # This file provides common templates for replacing #! interpreters
 # in script files.

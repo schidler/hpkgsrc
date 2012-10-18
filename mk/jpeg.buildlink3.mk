@@ -1,4 +1,4 @@
-# $NetBSD: jpeg.buildlink3.mk,v 1.1 2010/12/19 11:22:59 dsainty Exp $
+# $NetBSD$
 #
 # This Makefile fragment is meant to be included by packages that
 # require a libjpeg implementation.  jpeg.buildlink3.mk will:
