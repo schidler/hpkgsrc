@@ -1,6 +1,6 @@
 $NetBSD$
 
---- install.cmake.orig	2012-10-17 20:47:47.648019968 +0000
+--- install.cmake.orig	2011-08-08 08:59:38.008650752 +0000
 +++ install.cmake
 @@ -7,14 +7,6 @@ if (WIN32)
  	set(INSTALL_DOCUMENTS ".")

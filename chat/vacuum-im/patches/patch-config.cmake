@@ -1,6 +1,6 @@
 $NetBSD$
 
---- config.cmake.orig	2012-10-17 20:47:44.403701760 +0000
+--- config.cmake.orig	2012-07-07 16:23:12.037748736 +0000
 +++ config.cmake
 @@ -11,9 +11,9 @@ if (APPLE)
  	set(INSTALL_LIB_DIR "Frameworks")

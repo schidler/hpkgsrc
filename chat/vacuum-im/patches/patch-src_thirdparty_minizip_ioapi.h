@@ -1,13 +1,13 @@
 $NetBSD$
 
---- src/thirdparty/minizip/ioapi.h.orig	2012-10-18 09:10:34.000000000 +0000
+--- src/thirdparty/minizip/ioapi.h.orig	2012-02-15 10:01:26.065798144 +0000
 +++ src/thirdparty/minizip/ioapi.h
-@@ -54,7 +54,7 @@
+@@ -49,7 +49,7 @@
+ #else
+ #  include <thirdparty/zlib/zlib.h>
+ #endif
+-#if defined(USE_FILE32API)
++#if defined(USE_FILE32API) || defined(__HAIKU__)
+ #define fopen64 fopen
  #define ftello64 ftell
  #define fseeko64 fseek
- #else
--#ifdef __FreeBSD__
-+#ifdef __FreeBSD__ || defined(__HAIKU__)
- #define fopen64 fopen
- #define ftello64 ftello
- #define fseeko64 fseeko
