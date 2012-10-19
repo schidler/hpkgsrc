@@ -1,4 +1,4 @@
-$NetBSD: patch-ab,v 1.6 2009/10/21 16:51:46 tnn Exp $
+$NetBSD$
 
 --- src/libs/libgroff/Makefile.sub.orig	2009-01-09 15:25:52.000000000 +0100
 +++ src/libs/libgroff/Makefile.sub

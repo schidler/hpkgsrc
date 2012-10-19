@@ -1,4 +1,4 @@
-$NetBSD: patch-ae,v 1.2 2009/02/24 20:41:46 wiz Exp $
+$NetBSD: patch-ae,v 1.1 2003/07/01 10:12:55 wiz Exp $
 
 --- tmac/troffrc.orig	2009-01-09 14:25:52.000000000 +0000
 +++ tmac/troffrc

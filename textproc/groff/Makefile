@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.59 2011/07/27 16:33:25 tez Exp $
+# $NetBSD: Makefile,v 1.64 2012/05/31 09:24:53 fhajny Exp $
 #
 
 DISTNAME=	groff-1.20.1
-PKGREVISION=	5
+PKGREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU:=groff/}
 
@@ -14,7 +14,7 @@ CHECK_PERMS=		NO
 MAKE_JOBS_SAFE=		NO
 
 PKG_DESTDIR_SUPPORT=	user-destdir
-INSTALLATION_DIRS=	data/groff/site-tmac
+INSTALLATION_DIRS=	share/groff/site-tmac
 
 USE_LANGUAGES=		c c++
 GNU_CONFIGURE=		YES
@@ -44,18 +44,15 @@ PLIST_SRC+=		PLIST
 
 .include "../../mk/bsd.prefs.mk"
 
-.if ${OPSYS} == "SunOS"
-PLIST_SUBST+=	GNU_PREFIX="g"
-
-.else
-PLIST_SUBST+=	GNU_PREFIX=""
-.endif
-
 BUILD_DEFS+=	PAPERSIZE
 .if defined(PAPERSIZE)
 CONFIGURE_ENV+=	PAGE=${PAPERSIZE:Q}
 .endif
 
+.include "../../mk/compiler.mk"
+.if !empty(CC_VERSION:Mgcc-4.[6-9].*)
+CFLAGS.SunOS+=		-std=c99 -D_XOPEN_SOURCE=600
+.endif
 
 # Usually the mdoc.local "volume-operating-system" definition is for
 # the operating system name often displayed on top of man pages. And
@@ -80,13 +77,13 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/mdoc.local \
-		${DESTDIR}${PREFIX}/data/groff/site-tmac
+		${DESTDIR}${PREFIX}/share/groff/site-tmac
 	${FIND} ${DESTDIR}${PREFIX}/lib/groff/site-tmac -type f -print | \
 		${SED} 's;${DESTDIR}${PREFIX}/;;g' > ${WRKDIR}/PLIST-local
 	${RUN}set -e; for f in an.tmac m.tmac mm.tmac mmse.tmac		\
 	  mse.tmac s.tmac; do						\
 	  for p in "" g; do						\
-	    line="data/groff/${PKGVERSION_NOREV}/tmac/$$p$$f";		\
+	    line="share/groff/${PKGVERSION_NOREV}/tmac/$$p$$f";		\
 	    if [ -e "${DESTDIR}${PREFIX}/$$line" ]; then		\
 	      break;							\
 	    fi;								\

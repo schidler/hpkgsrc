@@ -1,4 +1,4 @@
-$NetBSD: patch-src_roff_groff_pipeline.c,v 1.1 2011/07/19 21:09:40 tez Exp $
+$NetBSD$
 
 Fix many temporary file handling issues, including in pdfroff
 (resolves CVE-2009-5044 / SA44999)

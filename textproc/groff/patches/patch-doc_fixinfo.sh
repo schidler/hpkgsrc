@@ -1,4 +1,4 @@
-$NetBSD: patch-doc_fixinfo.sh,v 1.1 2011/07/19 21:09:39 tez Exp $
+$NetBSD$
 
 Fix many temporary file handling issues, including in pdfroff
 (resolves CVE-2009-5044 / SA44999)

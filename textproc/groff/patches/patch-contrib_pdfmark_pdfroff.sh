@@ -1,4 +1,4 @@
-$NetBSD: patch-contrib_pdfmark_pdfroff.sh,v 1.2 2011/07/27 16:33:25 tez Exp $
+$NetBSD$
 
 Fix many temporary file handling issues, including in pdfroff
 (resolves CVE-2009-5044 / SA44999)
