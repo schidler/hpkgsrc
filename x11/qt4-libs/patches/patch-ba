@@ -1,0 +1,15 @@
+$NetBSD: patch-ba,v 1.5 2010/07/04 06:00:14 adam Exp $
+
+http://bugreports.qt.nokia.com/browse/QTBUG-6932
+
+--- src/gui/graphicsview/qgraphicsitem_p.h.orig	2012-09-11 01:36:51.028311552 +0000
++++ src/gui/graphicsview/qgraphicsitem_p.h
+@@ -762,7 +762,7 @@ inline bool qt_closestItemFirst(const QG
+     // item1Ancestor is now at the same level as item2Ancestor, but not the same.
+     const QGraphicsItem *p1 = t1;
+     const QGraphicsItem *p2 = t2;
+-    while (t1 && t1 != t2) {
++    while (t1 && t2 && t1 != t2) {
+         p1 = t1;
+         p2 = t2;
+         t1 = t1->d_ptr->parent;
