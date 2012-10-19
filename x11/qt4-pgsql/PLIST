@@ -1,0 +1,2 @@
+@comment $NetBSD: PLIST,v 1.1.1.1 2006/06/14 15:51:38 adam Exp $
+qt4/plugins/sqldrivers/libqsqlpsql.la
