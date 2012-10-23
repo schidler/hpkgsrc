@@ -1,4 +1,4 @@
-# $NetBSD: Policy.sh,v 1.2 2011/05/16 07:59:04 abs Exp $
+# $NetBSD: Policy.sh,v 1.1 2010/08/19 20:47:10 seb Exp $
 #
 # Site-wide policy settings for pkgsrc Perl
 #
@@ -85,8 +85,8 @@ cat > UU/pkgsrc.cbu <<EOCBU
 
 # Sets the correct LDFLAGS for linking against pkgsrc-installed
 # libraries
-#ldflags="@LOCLIBRPATHFLAGS@ \$ldflags"
-#lddlflags="@LOCLIBRPATHFLAGS@ \$lddlflags"
+ldflags="@LOCLIBRPATHFLAGS@ \$ldflags"
+lddlflags="@LOCLIBRPATHFLAGS@ \$lddlflags"
 
 # Set pkgsrc defaults for library and header search paths:
 # nail down the directories in which headers and libraries of

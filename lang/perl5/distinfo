@@ -1,20 +1,23 @@
-$NetBSD: distinfo,v 1.79 2011/10/16 20:09:42 spz Exp $
+$NetBSD: distinfo,v 1.85 2012/06/14 16:12:11 jperkin Exp $
 
-SHA1 (perl-5.14.2.tar.gz) = df1549d65cdef2b20023af83ecaa2a024109a5ad
-RMD160 (perl-5.14.2.tar.gz) = bed043edbebd69e1279e9a70424e2552389bea79
-Size (perl-5.14.2.tar.gz) = 15223598 bytes
-SHA1 (patch-aa) = bfbf6f09278a010706475cc23049112a90b3d895
-SHA1 (patch-ab) = ba1026bf2f9b2a91d19577947f594b1ef2ec0edf
-SHA1 (patch-ac) = 7dd29f103386d43b55c65966ee9abc185c30d2a1
-SHA1 (patch-ah) = 74b1050143e002aa36e638b05feafe55d2bd4fe7
-SHA1 (patch-aq) = c8308f9da2ba87bcb7e00ac7a0e6bb267060d6d4
-SHA1 (patch-ca) = f1290f00e98b5a6983427369646d035b7b6467f7
-SHA1 (patch-ch) = 76dbe28eb9fcc5144bccef93b8f6cfcbedcdd216
-SHA1 (patch-ck) = dcb06926fbd512be55c41e37c836857764e9d977
-SHA1 (patch-cn) = 619a2c09af079999ff64360f0935251179c1c00e
-SHA1 (patch-cpan_Digest_Digest.pm) = 151b820b0036a986e04c0abfad8df81ac8f41817
-SHA1 (patch-haiku_haikuish.h) = 1b71831a1e1c0e197931b0600732b8fa646c17ea
-SHA1 (patch-hints_haiku.sh) = 3a5888b9db192f092476159d6068edf69550a37b
-SHA1 (patch-ta) = ba4a6296bdd73cdd70802e14989df54d1756c143
-SHA1 (patch-zd) = 6f8e06776a7e1e2aa6197646baf31dc7ceb3916b
-SHA1 (patch-ze) = f641d5a708404741d7b802332429fe98815f00ef
+SHA1 (perl-5.16.1.tar.gz) = 60f2b81e3ffaff3030962ccbc02cd04f91f69ad5
+RMD160 (perl-5.16.1.tar.gz) = c1e69440727c773d5f012e735e77bf3d6a6fa342
+Size (perl-5.16.1.tar.gz) = 15733676 bytes
+SHA1 (patch-aa) = 87ab250ddb48ad2d6cd9dfcb81a83abedb49821e
+SHA1 (patch-ab) = 4dfeba9e33977465089b6209969e2c40d18a29c6
+SHA1 (patch-ac) = 6266135b59c34ae0f7fce7ecc89e6a06983f86ba
+SHA1 (patch-ah) = 498ddba10f198ec99db718e580d2b14f9e0aa310
+SHA1 (patch-aq) = e75f58a92e63e6c15d4576f64dc60613552c79c9
+SHA1 (patch-ca) = 1b6a074d41a61259af1ea76142808beb17526d0d
+SHA1 (patch-ch) = 20cda4ac7b6cc7ebbe0f08ff6dcb26ce201f503e
+SHA1 (patch-ck) = 758faade0a5095a8db4441c8949d102da821fff2
+SHA1 (patch-cn) = 9a6a53edd93b5e8f8917de2d2ac45f019eaf2c4c
+SHA1 (patch-cp) = f932620b423c5f44ce801d84c7294e14f71670f7
+SHA1 (patch-cpan_File-Temp_Temp.pm) = 8983d21b11d3c0ecb00f711892238e129262de2b
+SHA1 (patch-cpan_File-Temp_t_lock.t) = 97b11602b05f8018da2b184ac505c239102ae31e
+SHA1 (patch-haiku_haikuish.h) = 466df65ec44d5d5a55d6afdd4b8519808285c375
+SHA1 (patch-hints_solaris_2.sh) = f929c36850d9f72864e6a1b06a4522e788806fb8
+SHA1 (patch-install__lib.pl) = b199fc0d808e025fad272cd9e091f4428b52ab76
+SHA1 (patch-ta) = 91523bc5e7b78ba4bf384beeef879a533077ba0e
+SHA1 (patch-zd) = 6d6dce3444be430ffcbc5138e0b0a8892607efe7
+SHA1 (patch-ze) = 0e1df1156a4b23452ab3d77802dc0234fc81424f

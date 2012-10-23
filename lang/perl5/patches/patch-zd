@@ -1,6 +1,6 @@
-$NetBSD: patch-zd,v 1.3 2010/08/19 20:47:10 seb Exp $
+$NetBSD$
 
---- cpan/Module-Build/t/tilde.t.orig	2011-09-26 09:44:34.065798144 +0000
+--- cpan/Module-Build/t/tilde.t.orig	2012-04-25 00:18:31.051642368 +0000
 +++ cpan/Module-Build/t/tilde.t
 @@ -44,6 +44,9 @@ SKIP: {
          $home =~ s#/$##;
@@ -11,4 +11,4 @@ $NetBSD: patch-zd,v 1.3 2010/08/19 20:47:10 seb Exp $
 +    }
      unless (defined $home) {
        my @info = eval { getpwuid $> };
-       skip "No home directory for tilde-expansion tests", 15 if $@;
+       skip "No home directory for tilde-expansion tests", 15 if $@

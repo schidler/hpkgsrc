@@ -1,4 +1,4 @@
-# $NetBSD: dirs.mk,v 1.2 2011/05/16 07:59:04 abs Exp $
+# $NetBSD: dirs.mk,v 1.1 2010/08/27 05:27:37 sno Exp $
 #
 # Provide typical required Perl directories
 

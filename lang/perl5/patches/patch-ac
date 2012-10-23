@@ -4,9 +4,9 @@ We intentionally wire down the 'libswanted' list in the package Makefile,
 so don't let the hints file add new libraries that may be found outside
 Pkgsrc control.
 
---- hints/linux.sh.orig	2011-09-26 09:44:34.029097984 +0000
+--- hints/linux.sh.orig	2012-06-05 12:45:26.007077888 +0000
 +++ hints/linux.sh
-@@ -54,9 +54,6 @@ set `echo X "$libswanted "| sed -e 's/ b
+@@ -57,9 +57,6 @@ set `echo X "$libswanted "| sed -e 's/ b
  shift
  libswanted="$*"
  

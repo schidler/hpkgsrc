@@ -1,4 +1,4 @@
-# $NetBSD: version.mk,v 1.4 2011/08/05 18:06:14 adam Exp $
+# $NetBSD: version.mk,v 1.3 2005/05/27 22:15:53 jlam Exp $
 #
 # Distill the PERL5_REQD list into a single value that is the highest
 # version of Perl required.

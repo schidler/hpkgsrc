@@ -1,12 +1,9 @@
-# $NetBSD: Makefile,v 1.176 2011/10/16 20:43:56 wiz Exp $
+# $NetBSD: Makefile,v 1.181 2012/10/02 20:11:48 asau Exp $
 
 .include "license.mk"
 .include "Makefile.common"
 
 COMMENT=	Practical Extraction and Report Language
-PKGREVISION=	1
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 CONFLICTS=	perl-base-[0-9]* perl-thread-[0-9]*			\
 		p5-CGI-2.66{,nb*} p5-CGI-2.75{,nb*} p5-CGI-2.75.[0-2]	\
@@ -48,8 +45,8 @@ PERL5_API_VERS_cmd=	\
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	./Configure
 CONFIGURE_ARGS+=	-sde
-#CONFIGURE_ARGS+=	-D ccflags=${CFLAGS:Q}
-#CONFIGURE_ARGS+=	-D ldflags=${LDFLAGS:Q}
+CONFIGURE_ARGS+=	-D ccflags=${CFLAGS:Q}
+CONFIGURE_ARGS+=	-D ldflags=${LDFLAGS:Q}
 MAKE_ENV+=		LC_ALL="C"
 
 TEST_TARGET=		test
@@ -96,10 +93,6 @@ USE_TOOLS+=	gmake
 # Darwin < 9.0.
 #
 .if empty(MACHINE_PLATFORM:MDarwin-9.*-*)
-CONFIGURE_ARGS+=	-Duseshrplib
-.endif
-
-.if empty(MACHINE_PLATFORM:MHaiku)
 CONFIGURE_ARGS+=	-Duseshrplib
 .endif
 
@@ -220,6 +213,10 @@ PKG_SUGGESTED_OPTIONS+=		64bitauto
 
 .include "../../mk/bsd.options.mk"
 
+.if ${OPSYS} == "Haiku"
+CONFIGURE_ARGS+=        -Uusenm
+.endif
+
 .if !empty(PKG_OPTIONS:Mthreads)
 .  include "../../mk/pthread.buildlink3.mk"
 CONFIGURE_ARGS+=	-Duseithreads
@@ -283,10 +280,10 @@ SUBST_SED.rm=	-e "s!^rm_try='/.*/\\.tools/bin/rm -f!rm_try='/bin/rm -f!"
 
 # Replace our perl as the interpreter
 REPLACE_PERL+=		lib/File/DosGlob.pm
-REPLACE_PERL+=		lib/version.pm
-REPLACE_PERL+=		cpan/bignum/lib/Math/BigFloat/Trace.pm
-REPLACE_PERL+=		cpan/bignum/lib/Math/BigInt/Trace.pm
 REPLACE_PERL+=		lib/unicore/mktables
+REPLACE_PERL+=		lib/version.pm
+REPLACE_PERL+=		dist/bignum/lib/Math/BigFloat/Trace.pm
+REPLACE_PERL+=		dist/bignum/lib/Math/BigInt/Trace.pm
 
 # And replace a perl interpreter during the pre-install stage
 # I think this may be a bootstrap script, so can't use REPLACE_PERL
@@ -328,7 +325,7 @@ pre-configure:
 post-build:
 	${SED}	-e "s,@PERL5@,"${PERL5:Q}",g"				\
 		-e "s,@SH@,"${SH:Q}",g"					\
-		-e "s,@PKGMANDIR@,"${PKGMANDIR:Q}",g"			\
+		-e "s,@PKGMANDIR@,"${PKGMANDIR}",g"			\
 		${FILESDIR}/perllink.in > ${WRKDIR}/perllink.sh
 
 INSTALLATION_DIRS=	bin ${PKGMANDIR}/man1
@@ -359,8 +356,7 @@ perl5-post-install:
 	} | ${SED} -e "s,^"${PREFIX:Q}"/,," > ${PLIST_SRC}
 .if ${OPSYS} == "Haiku"
 	${CHMOD} a+x ${DESTDIR}${PREFIX}/bin/perl;
-	${MKDIR} ${PREFIX}/lib;
-	${LN} -sf ${PREFIX}/lib/perl5/5.14.0/i386-haiku/CORE/libperl.so ${PREFIX}/lib/
+	cd ${DESTDIR}${PREFIX}/lib && ${LN} -sf perl5/5.16.0/i386-haiku/CORE/libperl.so
 .endif
 
 .include "packlist.mk"

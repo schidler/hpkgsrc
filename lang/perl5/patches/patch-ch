@@ -1,6 +1,6 @@
-$NetBSD: patch-ch,v 1.4 2008/10/10 21:58:43 he Exp $
+$NetBSD$
 
---- hints/dec_osf.sh.orig	2011-09-26 09:44:34.034078720 +0000
+--- hints/dec_osf.sh.orig	2012-04-25 00:18:34.004456448 +0000
 +++ hints/dec_osf.sh
 @@ -79,7 +79,7 @@ case "$unamer" in
  		      # fixed in 4.0E or better.

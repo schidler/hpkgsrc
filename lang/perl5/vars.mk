@@ -1,4 +1,4 @@
-# $NetBSD: vars.mk,v 1.5 2011/10/28 07:41:52 obache Exp $
+# $NetBSD: vars.mk,v 1.4 2008/01/29 16:41:36 tnn Exp $
 #
 # This Makefile fragment exposes several Perl configuration variables
 # to the package Makefiles.  The variables are only defined if the

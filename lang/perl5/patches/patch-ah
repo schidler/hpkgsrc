@@ -2,17 +2,17 @@ $NetBSD: patch-ah,v 1.13 2011/08/05 18:06:14 adam Exp $
 
 NetBSD's implementation sometimes returns "/"; reject that too.
 
---- perl.c.orig	2011-09-26 09:44:34.060817408 +0000
+--- perl.c.orig	2012-08-03 17:35:26.007864320 +0000
 +++ perl.c
-@@ -1422,8 +1422,10 @@ S_procself_val(pTHX_ SV *sv, const char 
-        to the executable (or returning an error from the readlink).  Any valid
-        path has a '/' in it somewhere, so use that to validate the result.
-        See http://www.freebsd.org/cgi/query-pr.cgi?pr=35703
+@@ -1451,8 +1451,10 @@ S_set_caret_X(pTHX) {
+ 	   to the executable (or returning an error from the readlink). Any
+ 	   valid path has a '/' in it somewhere, so use that to validate the
+ 	   result. See http://www.freebsd.org/cgi/query-pr.cgi?pr=35703
 +
-+       NetBSD's implementation sometimes returns "/"; reject that too.
-     */
--    if (len > 0 && memchr(buf, '/', len)) {
-+    if (len > 1 && memchr(buf, '/', len)) {
- 	sv_setpvn(sv,buf,len);
-     }
-     else {
++	   NetBSD's implementation sometimes returns "/"; reject that too.
+ 	*/
+-	if (len > 0 && memchr(buf, '/', len)) {
++	if (len > 1 && memchr(buf, '/', len)) {
+ 	    sv_setpvn(caret_x, buf, len);
+ 	    return;
+ 	}

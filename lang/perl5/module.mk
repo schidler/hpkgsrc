@@ -26,9 +26,9 @@
 # PERL5_LDFLAGS		extra linker flags to pass on to the build
 #			process.
 #
-# PERL5_MODULE_TYPE	"MakeMaker", "Module::Build" or "Module::Install"
-#			depending on which framework is used to build/install
-#			the module.
+# PERL5_MODULE_TYPE	"MakeMaker", "Module::Build", "Module::Install"
+#			or "Module::Install::Bundled" depending on which
+#			framework is used to build/install the module.
 
 .include "../../lang/perl5/license.mk"
 

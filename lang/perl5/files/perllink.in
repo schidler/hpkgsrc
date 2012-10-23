@@ -136,6 +136,10 @@ destman1dir="$opt_prefix/$pkgmandir/man1"
 
 echo __dummy__ | $perlprog -pe '0' $opt_packlists |
 { while read file junk; do
+	if [ ! -f "$file" ] && [ -f "$file.gz" ]; then
+		file="$file.gz"
+	fi
+
 	case "$file" in
 	$scriptdir/*|$sitescript/*|$vendorscript/*)  destdir="$destbindir" ;;
 	$man1dir/*|$siteman1dir/*|$vendorman1dir/*)  destdir="$destman1dir" ;;

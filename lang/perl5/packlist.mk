@@ -91,7 +91,7 @@ _PERL5_PACKLIST_AWK_STRIP_DESTDIR=
 ###
 
 _PERL5_PACKLIST_MANPAGE_RE=	\
-	^(\/[^ \/]*)+\/(man[1-9ln]\/[^ \/]*\.[1-9ln]|cat[1-9ln]\/[^ \/]*\.[0-9])
+  ^(\/[^ \/]*)+\/(man[1-9ln]\/[^ \/]*\.[1-9ln]|cat[1-9ln]\/[^ \/]*\.[0-9])(\.gz)?$$
 
 _PERL5_PACKLIST_AWK_STRIP_MANZ=						\
 	/${_PERL5_PACKLIST_MANPAGE_RE}\.gz/				\
