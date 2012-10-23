@@ -1,0 +1,22 @@
+$NetBSD$
+
+Allow to install our prefix.
+
+--- hints/haiku.sh.orig	2012-08-03 17:35:26.006029312 +0000
++++ hints/haiku.sh
+@@ -3,9 +3,11 @@
+ 
+-prefix="/boot/common"
++case "$prefix" in
++'') prefix="/boot/common" ;;
++esac
+ 
+-libpth='/boot/home/config/lib /boot/common/lib /system/lib'
++libpth='/boot/home/config/lib /boot/system/lib'
+ usrinc='/boot/develop/headers/posix'
+-locinc='/boot/home/config/include /boot/common/include /boot/develop/headers'
++locinc='/boot/home/config/include /boot/develop/headers'
+ 
+-libc='/system/lib/libroot.so'
++libc='/boot/system/lib/libroot.so'
+ libs='-lnetwork'
