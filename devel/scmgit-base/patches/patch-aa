@@ -1,8 +1,8 @@
-$NetBSD: patch-aa,v 1.13 2010/10/28 10:23:08 adam Exp $
+$NetBSD$
 
---- Makefile.orig	2012-05-25 19:36:55.056623104 +0000
+--- Makefile.orig	2012-09-30 08:03:21.052690944 +0000
 +++ Makefile
-@@ -310,8 +310,6 @@ endif
+@@ -325,8 +325,6 @@ endif
  
  CFLAGS = -g -O2 -Wall
  LDFLAGS =
@@ -11,20 +11,7 @@ $NetBSD: patch-aa,v 1.13 2010/10/28 10:23:08 adam Exp $
  STRIP ?= strip
  
  # Among the variables below, these:
-@@ -333,7 +331,11 @@ mandir = share/man
- infodir = share/info
- gitexecdir = libexec/git-core
- mergetoolsdir = $(gitexecdir)/mergetools
--sharedir = $(prefix)/share
-+ifeq ($(uname_S),Haiku)
-+ sharedir = $(prefix)/data
-+else
-+ sharedir = $(prefix)/share
-+endif
- gitwebdir = $(sharedir)/gitweb
- localedir = $(sharedir)/locale
- template_dir = share/git-core/templates
-@@ -343,13 +341,9 @@ pathsep = :
+@@ -361,13 +359,9 @@ pathsep = :
  
  export prefix bindir sharedir sysconfdir gitwebdir localedir
  
@@ -38,7 +25,19 @@ $NetBSD: patch-aa,v 1.13 2010/10/28 10:23:08 adam Exp $
  RPMBUILD = rpmbuild
  TCL_PATH = tclsh
  TCLTK_PATH = wish
-@@ -985,8 +987,6 @@ ifeq ($(uname_S),SunOS)
+@@ -1004,9 +998,10 @@ ifeq ($(uname_S),Darwin)
+ 	BASIC_CFLAGS += -DPRECOMPOSE_UNICODE
+ endif
+ ifeq ($(uname_S),SunOS)
++	NEED_LIBICONV = YesPlease
+ 	NEEDS_SOCKET = YesPlease
+ 	NEEDS_NSL = YesPlease
+-	SHELL_PATH = /bin/bash
++	SHELL_PATH = ${BASH}
+ 	SANE_TOOL_PATH = /usr/xpg6/bin:/usr/xpg4/bin
+ 	NO_STRCASESTR = YesPlease
+ 	NO_MEMMEM = YesPlease
+@@ -1049,8 +1044,6 @@ ifeq ($(uname_S),SunOS)
  		NO_STRTOUMAX = YesPlease
  		GIT_TEST_CMP = cmp
  	endif
@@ -47,9 +46,9 @@ $NetBSD: patch-aa,v 1.13 2010/10/28 10:23:08 adam Exp $
  	BASIC_CFLAGS += -D__EXTENSIONS__ -D__sun__ -DHAVE_ALLOCA_H
  endif
  ifeq ($(uname_O),Cygwin)
-@@ -1242,6 +1242,16 @@ ifeq ($(uname_S),Minix)
- 	NO_CURL =
- 	NO_EXPAT =
+@@ -1211,6 +1204,16 @@ ifeq ($(uname_S),HP-UX)
+ 	endif
+ 	GIT_TEST_CMP = cmp
  endif
 +ifeq ($(uname_S),Haiku)
 +    NO_R_TO_GCC_LINKER = YesPlease
@@ -58,14 +57,14 @@ $NetBSD: patch-aa,v 1.13 2010/10/28 10:23:08 adam Exp $
 +    NO_MKSTEMPS = YesPlease
 +    NEEDS_LIBICONV = YesPlease
 +    DEFAULT_EDITOR = nano
-+    PTHREAD_LIBS =	-lroot
++    PTHREAD_LIBS =    -lroot
 +    NO_CROSS_DIRECTORY_HARDLINKS = YesPlease
 +endif
- ifneq (,$(findstring MINGW,$(uname_S)))
+ ifeq ($(uname_S),Windows)
+ 	GIT_VERSION := $(GIT_VERSION).MSVC
  	pathsep = ;
- 	NO_PREAD = YesPlease
-@@ -1849,8 +1859,8 @@ DEFAULT_PAGER_CQ_SQ = $(subst ','\'',$(D
- BASIC_CFLAGS += -DDEFAULT_PAGER='$(DEFAULT_PAGER_CQ_SQ)'
+@@ -1942,8 +1945,8 @@ ifdef DEFAULT_HELP_FORMAT
+ BASIC_CFLAGS += -DDEFAULT_HELP_FORMAT='"$(DEFAULT_HELP_FORMAT)"'
  endif
  
 -ALL_CFLAGS += $(BASIC_CFLAGS)
@@ -75,7 +74,7 @@ $NetBSD: patch-aa,v 1.13 2010/10/28 10:23:08 adam Exp $
  
  export DIFF TAR INSTALL DESTDIR SHELL_PATH
  
-@@ -2464,7 +2456,6 @@ ifndef NO_GETTEXT
+@@ -2635,7 +2638,6 @@ ifndef NO_GETTEXT
  endif
  ifndef NO_PERL
  	$(MAKE) -C perl prefix='$(prefix_SQ)' DESTDIR='$(DESTDIR_SQ)' install

@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.36 2011/10/11 12:01:25 adam Exp $
+# $NetBSD: Makefile,v 1.50 2012/10/03 21:55:55 wiz Exp $
 
 .include "../../devel/scmgit/Makefile.common"
 
@@ -10,6 +10,12 @@ PKG_DESTDIR_SUPPORT=	user-destdir
 CONFLICTS+=		git<4.9.5nb1		# misc/git
 
 DEPENDS+=		p5-Error>=0.17015:../../devel/p5-Error
+# for git-send-email
+DEPENDS+=		p5-MIME-Base64>=3.13:../../converters/p5-MIME-Base64
+DEPENDS+=		p5-Email-Valid>=0.190:../../mail/p5-Email-Valid
+DEPENDS+=		p5-MailTools>=2.11:../../mail/p5-MailTools
+DEPENDS+=		p5-Net-SMTP-SSL>=1.01:../../mail/p5-Net-SMTP-SSL
+#DEPENDS+=		p5-Authen-SASL>=1.0:../../security/p5-Authen-SASL
 
 USE_LANGUAGES=		c99
 USE_TOOLS+=		perl:run sh:run msgfmt
@@ -19,30 +25,26 @@ PERL5_PACKLIST=		auto/Git/.packlist
 REPLACE_PERL+=		*.perl */*.perl */*/*.perl
 REPLACE_PERL+=		contrib/hooks/update-paranoid
 
-USE_PKGDATADIR=		yes
 CFLAGS.NetBSD+=		-D_NETBSD_SOURCE
 
-LDFLAGS.Haiku+=		-L${PREFIX}/lib -lroot -lnetwork -lbsd -lcharset -lssl -lcrypto -lz
 .if ${OPSYS}=="Haiku"
-CONFIGURE_ARGS+=	--datarootdir=${PREFIX}/data
-CONFIGURE_ENV+=		ac_cv_lib_c_socket=yes ac_cv_lib_c_basename=yes git_cv_ld_dashr=no
+CONFIGURE_ENV+=     ac_cv_lib_c_socket=yes ac_cv_lib_c_basename=yes 
 .endif
+
 CONFIGURE_ARGS+=	--with-curl=${BUILDLINK_PREFIX.curl}
 CONFIGURE_ARGS+=	--with-expat=${BUILDLINK_PREFIX.expat}
 CONFIGURE_ARGS+=	--with-iconv=${BUILDLINK_PREFIX.iconv}
 CONFIGURE_ARGS+=	--with-openssl=${SSLBASE}
+CONFIGURE_ARGS+=	--with-perl=${PERL5:Q}
 CONFIGURE_ARGS+=	--with-zlib=${BUILDLINK_PREFIX.zlib}
+CONFIGURE_ARGS+=	--without-tcltk
 
 BUILD_TARGET=		all
 
 REPLACE_SH+=		contrib/hooks/post-receive-email
 REPLACE_SH+=		contrib/hooks/pre-auto-gc-battery
 
-.if ${OPSYS} == "Haiku"
-EGDIR=			${PREFIX}/documentation/examples/scmgit
-.else
 EGDIR=			${PREFIX}/share/examples/scmgit
-.endif
 
 GIT_COREDIR=		git-core
 GIT_TEMPLATEDIR=	templates
@@ -55,11 +57,7 @@ GIT_TEMPLATES+=		hooks/prepare-commit-msg.sample hooks/update.sample
 
 # XXX unused as of now
 #GIT_CORE_EXECDIR=	libexec/${GIT_COREDIR}
-.if ${OPSYS} != "Haiku"
 GIT_CORE_DATADIR=	share/${GIT_COREDIR}
-.else
-GIT_CORE_DATADIR=	data/${GIT_COREDIR}
-.endif
 GIT_CORE_TEMPLATEDIR=	${GIT_CORE_DATADIR}/${GIT_TEMPLATEDIR}
 
 MAKE_DIRS=		${GIT_CORE_TEMPLATEDIR}
@@ -96,6 +94,15 @@ SUBST_MESSAGE.fix-cd-P=	Fixing cd arguments.
 SUBST_STAGE.fix-cd-P=	pre-build
 SUBST_SED.fix-cd-P=	-e "s/cd -P/cd/g"
 .endif
+
+LDFLAGS.SunOS+=		-lintl -lnsl
+LDFLAGS.Haiku+=     -lbsd -lroot -lnetwork
+
+
+post-install:
+	${INSTALL_DATA_DIR} ${DESTDIR}${EGDIR}
+	${INSTALL_DATA} ${WRKSRC}/contrib/completion/git-completion.bash \
+		${DESTDIR}${EGDIR}
 
 .include "options.mk"
 

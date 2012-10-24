@@ -1,6 +1,6 @@
-$NetBSD: patch-ag,v 1.8 2010/10/28 10:23:08 adam Exp $
+$NetBSD$
 
---- templates/Makefile.orig	2012-05-25 19:36:55.003932160 +0000
+--- templates/Makefile.orig	2012-09-30 08:03:21.004194304 +0000
 +++ templates/Makefile
 @@ -8,7 +8,7 @@ INSTALL ?= install
  TAR ?= tar
