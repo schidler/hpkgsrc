@@ -1,8 +1,8 @@
-$NetBSD: patch-include_my_net.h,v 1.1.1.1 2011/04/25 21:12:53 adam Exp $
+$NetBSD: patch-am,v 1.2 2010/09/21 15:57:30 taca Exp $
 
 * Define SHUT_RDWR for Irix 5.
 
---- include/my_net.h.orig	2011-10-12 12:10:24.022544384 +0000
+--- include/my_net.h.orig	2010-02-04 11:37:06.000000000 +0000
 +++ include/my_net.h
 @@ -64,6 +64,15 @@ C_MODE_START
  

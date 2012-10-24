@@ -9,6 +9,7 @@ BUILDLINK_API_DEPENDS.mysql-client+=	mysql-client>=5.5.10
 BUILDLINK_ABI_DEPENDS.mysql-client+=	mysql-client>=5.5.10
 BUILDLINK_PKGSRCDIR.mysql-client?=	../../databases/mysql55-client
 BUILDLINK_INCDIRS.mysql-client?=	include/mysql
+BUILDLINK_LIBDIRS.mysql-client?=	lib
 
 .include "../../devel/zlib/buildlink3.mk"
 .include "../../security/openssl/buildlink3.mk"

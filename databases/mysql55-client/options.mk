@@ -1,4 +1,4 @@
-# $NetBSD: options.mk,v 1.1.1.1 2011/04/25 21:12:53 adam Exp $
+# $NetBSD: options.mk,v 1.4 2011/03/17 13:26:04 adam Exp $
 
 PKG_OPTIONS_VAR=	PKG_OPTIONS.mysql5
 

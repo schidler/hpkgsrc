@@ -2,9 +2,9 @@ $NetBSD: patch-client_sql_string.cc,v 1.1.1.1 2011/04/25 21:12:53 adam Exp $
 
 * Portability: include <bstring.h> if exists.
 
---- client/sql_string.cc.orig	2011-10-12 12:10:25.030932992 +0000
+--- client/sql_string.cc.orig	2010-02-04 11:36:53.000000000 +0000
 +++ client/sql_string.cc
-@@ -29,6 +29,10 @@
+@@ -29,6 +29,10 @@ extern void sql_element_free(void *ptr);
  
  #include "sql_string.h"
  
