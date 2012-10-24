@@ -1,6 +1,6 @@
 #!@RCD_SCRIPTS_SHELL@
 #
-# $NetBSD: sshd.sh,v 1.13 2011/05/17 03:26:52 taca Exp $
+# $NetBSD: sshd.sh,v 1.12 2011/05/16 05:06:49 taca Exp $
 #
 # PROVIDE: sshd
 # REQUIRE: DAEMON LOGIN

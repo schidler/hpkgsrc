@@ -1,0 +1,64 @@
+# $NetBSD: INSTALL,v 1.9 2003/03/28 21:24:25 wiz Exp $
+
+case ${STAGE} in
+POST-INSTALL)
+
+_progress () {
+        notify --type progress --group ssh-keygen \
+                --icon /boot/system/kernel_x86 \
+                --messageID $0_$$ \
+                --title "Generating ssh keys..." \
+                --progress "$1" "$2" >/dev/null
+}
+
+# generate SSH host keys
+
+keygen_command="@PREFIX@/bin/ssh-keygen"
+
+	
+if [ ! -f @PKG_SYSCONFDIR@/ssh_host_key ]; then
+		_progress 0.2 "rsa1"
+		${keygen_command} -t rsa1 -b 1024 -f @PKG_SYSCONFDIR@/ssh_host_key -N ''
+	else
+		_progress 0.2 "rsa1"
+		if [ "$(alert "You already have an RSA host key in @PKG_SYSCONFDIR@/ssh_host_key. Overwrite?" "Yes" "No")" == "Yes" ]; then
+			rm @PKG_SYSCONFDIR@/ssh_host_key*
+			${keygen_command} -t rsa1 -b 1024 -f @PKG_SYSCONFDIR@/ssh_host_key -N ''
+		fi
+fi
+
+if [ ! -f @PKG_SYSCONFDIR@/ssh_host_dsa_key ]; then
+		_progress 0.4 "dsa"
+		${keygen_command} -t dsa -f @PKG_SYSCONFDIR@/ssh_host_dsa_key -N ''
+	else
+		_progress 0.4 "dsa"
+		if [ "$(alert "You already have a DSA host key in @PKG_SYSCONFDIR@/ssh_host_dsa_key. Overwrite?" "Yes" "No")" == "Yes" ]; then
+			rm @PKG_SYSCONFDIR@/ssh_host_dsa_key*
+			${keygen_command} -t dsa -f @PKG_SYSCONFDIR@/ssh_host_dsa_key -N ''
+		fi
+fi
+
+if [ ! -f @PKG_SYSCONFDIR@/ssh_host_rsa_key ]; then
+		_progress 0.6 "ecdsa"
+		${keygen_command} -t rsa -f @PKG_SYSCONFDIR@/ssh_host_rsa_key -N ''
+	else
+		_progress 0.6 "ecdsa"
+		if [ "$(alert "You already have a RSA host key in @PKG_SYSCONFDIR@/ssh_host_rsa_key. Overwrite?" "Yes" "No")" == "Yes" ]; then
+			rm @PKG_SYSCONFDIR@/ssh_host_rsa_key*
+			${keygen_command} -t rsa -f @PKG_SYSCONFDIR@/ssh_host_rsa_key -N ''
+		fi
+fi
+
+if [ ! -f @PKG_SYSCONFDIR@/ssh_host_ecdsa_key ]; then
+		_progress 0.8 "rsa"
+		${keygen_command} -t ecdsa -f @PKG_SYSCONFDIR@/ssh_host_ecdsa_key -N ''
+		_progress 1.0 ""
+	else
+		_progress 0.8 "rsa"
+		if [ "$(alert "You already have a ECDSA host key in @PKG_SYSCONFDIR@/ssh_host_ecdsa_key. Overwrite?" "Yes" "No")" == "Yes" ]; then
+			rm @PKG_SYSCONFDIR@/ssh_host_ecdsa_key*
+			${keygen_command} -t ecdsa -f @PKG_SYSCONFDIR@/ssh_host_ecdsa_key -N ''
+		fi
+		_progress 1.0 ""
+fi
+esac

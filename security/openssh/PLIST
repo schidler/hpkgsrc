@@ -1,4 +1,4 @@
-@comment $NetBSD: PLIST,v 1.14 2010/06/11 20:41:41 martti Exp $
+@comment $NetBSD: PLIST,v 1.13 2009/06/14 18:13:34 joerg Exp $
 bin/scp
 bin/sftp
 bin/slogin
@@ -25,8 +25,9 @@ man/man8/sftp-server.8
 man/man8/ssh-keysign.8
 man/man8/ssh-pkcs11-helper.8
 man/man8/sshd.8
-sbin/sshd
+${PLIST.notHaiku}sbin/sshd
+${PLIST.Haiku}bin/sshd
 share/examples/openssh/moduli
 share/examples/openssh/ssh_config
 share/examples/openssh/sshd_config
-
+share/examples/rc.d/sshd

@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.204 2011/08/18 09:22:01 taca Exp $
+# $NetBSD: Makefile,v 1.206 2012/05/31 11:58:37 imil Exp $
 
 DISTNAME=		openssh-5.8p2
 PKGNAME=		openssh-5.8.2
-PKGREVISION=		4
+PKGREVISION=		6
 SVR4_PKGNAME=		ossh
 CATEGORIES=		security
 MASTER_SITES=		ftp://ftp.openssh.com/pub/OpenBSD/OpenSSH/portable/ \
@@ -82,10 +82,6 @@ CONFIGURE_ARGS+=	--with-pid-dir=${SSH_PID_DIR:Q}
 CONFIGURE_ARGS+=	--with-ssl-dir=${SSLBASE:Q}
 CONFIGURE_ARGS+=	--with-tcp-wrappers=${BUILDLINK_PREFIX.tcp_wrappers}
 
-.if ${OPSYS} == "Haiku"
-CONFIGURE_ARGS+=	--libexecdir=${PREFIX}/bin
-.endif
-
 .if ${OPSYS} != "Interix"
 CONFIGURE_ARGS+=	--with-privsep-path=${OPENSSH_CHROOT:Q}
 CONFIGURE_ARGS+=	--with-privsep-user=${OPENSSH_USER:Q}
@@ -127,10 +123,12 @@ CONFIGURE_ARGS+=	--disable-utmp --disable-wtmp
 .if ${OPSYS} == "Linux" || ${OPSYS} == "Haiku"
 CONFIGURE_ARGS+=	--enable-md5-password
 .endif
+
 .if ${OPSYS} == "Haiku"
 CONFIGURE_ARGS+=	--disable-utmpx
 CONFIGURE_ARGS+=	--sbindir=${PREFIX}/bin
-PLIST_SRC=	${PKGDIR}/PLIST.Haiku
+MAKE_ENV+=	_PATH_SSH_USER_DIR=config/settings/ssh
+INSTALL_TEMPLATES+= INSTALL.Haiku
 .endif
 
 # The ssh-askpass program is in ${X11BASE}/bin or ${X11PREFIX}/bin depending
@@ -164,11 +162,7 @@ CONFS+=			ssh_prng_cmds
 PLIST_SRC+=		${.CURDIR}/PLIST.prng
 .endif
 
-.if ${OPSYS} != "Haiku"
 EGDIR=			${PREFIX}/share/examples/${PKGBASE}
-.else
-EGDIR=			${PREFIX}/data/examples/${PKGBASE}
-.endif
 CONF_FILES=		# empty
 .for f in ${CONFS}
 CONF_FILES+=		${EGDIR}/${f} ${PKG_SYSCONFDIR}/${f}
@@ -177,12 +171,15 @@ OWN_DIRS=		${OPENSSH_CHROOT}
 RCD_SCRIPTS=		sshd
 RCD_SCRIPT_SRC.sshd=	${WRKDIR}/sshd.sh
 
-.if ${OPSYS} != "Haiku"
 PLIST_SRC+=		${.CURDIR}/PLIST
-.else
-PLIST_SRC+=	${PKGDIR}/PLIST.Haiku
-.endif
 FILES_SUBST+=		SSH_PID_DIR=${SSH_PID_DIR:Q}
+
+PLIST_VARS+=	notHaiku Haiku
+.if ${OPSYS} != "Haiku"
+PLIST.notHaiku=	yes
+.else
+PLIST.Haiku=	yes
+.endif
 
 SUBST_CLASSES+=		patch
 SUBST_STAGE.patch=	pre-configure
@@ -193,6 +190,14 @@ SUBST_MESSAGE.patch=	More patch a file.
 .include "../../devel/zlib/buildlink3.mk"
 .include "../../security/openssl/buildlink3.mk"
 .include "../../security/tcp_wrappers/buildlink3.mk"
+
+.if !empty(PKG_OPTIONS:Mldap)
+DOCDIR=			${PREFIX}/share/doc/openssh
+INSTALLATION_DIRS+=	${DOCDIR}
+
+pre-configure:
+	cd ${WRKSRC} && autoconf
+.endif
 
 #
 # type of key "ecdsa" isn't always supported depends on OpenSSL.
@@ -215,6 +220,13 @@ post-install:
 .if !empty(PKG_OPTIONS:Mpam) && ${OPSYS} == "Linux"
 	${INSTALL_DATA} ${WRKSRC}/contrib/sshd.pam.generic \
 	  ${DESTDIR}${EGDIR}/sshd.pam
+.endif
+.if !empty(PKG_OPTIONS:Mldap)
+	${INSTALL_DATA} ${WRKSRC}/README.lpk \
+		${DESTDIR}${DOCDIR}
+	cd ${WRKSRC}; for file in ${LPK_CONFS}; do			\
+		${INSTALL_DATA} $${file} ${DESTDIR}${EGDIR}/$${file};	\
+	done
 .endif
 
 .include "../../mk/bsd.pkg.mk"

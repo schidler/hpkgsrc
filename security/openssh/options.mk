@@ -1,13 +1,9 @@
-# $NetBSD: options.mk,v 1.21 2011/09/01 19:24:01 shattered Exp $
+# $NetBSD: options.mk,v 1.22 2012/01/09 05:25:36 manu Exp $
 
 .include "../../mk/bsd.prefs.mk"
 
 PKG_OPTIONS_VAR=	PKG_OPTIONS.openssh
-PKG_SUPPORTED_OPTIONS=	kerberos hpn-patch
-
-.if !empty(OPSYS:MLinux)
-PKG_SUPPORTED_OPTIONS+= pam
-.endif
+PKG_SUPPORTED_OPTIONS=	kerberos hpn-patch ldap pam
 
 .include "../../mk/bsd.options.mk"
 
@@ -26,11 +22,25 @@ PATCH_DIST_STRIP=	-p1
 .endif
 
 .if !empty(PKG_OPTIONS:Mpam)
-# XXX: PAM authentication causes memory faults, and haven't tracked down
-# XXX: why yet.  For the moment, disable PAM authentication for non-Linux.
 .include "../../mk/pam.buildlink3.mk"
 CONFIGURE_ARGS+=	--with-pam
 PLIST_SRC+=		${.CURDIR}/PLIST.pam
 MESSAGE_SRC+=		${.CURDIR}/MESSAGE.pam
 MESSAGE_SUBST+=		EGDIR=${EGDIR}
+.endif
+
+.if !empty(PKG_OPTIONS:Mldap)
+.include "../../databases/openldap-client/buildlink3.mk"
+USE_TOOLS+=		autoconf
+CONFIGURE_ARGS+=	--with-ldap
+LPK_CONFS+=		lpk-user-example.txt		\
+			openssh-lpk_openldap.schema	\
+			openssh-lpk_sun.schema
+PLIST_SRC+=		${.CURDIR}/PLIST.ldap
+
+LPK_VERS=		0.3.14
+OPENSSH_VERS=		${DISTNAME:S/openssh-//}
+PATCHFILES=		openssh-lpk-${OPENSSH_VERS}-${LPK_VERS}.patch.gz
+PATCH_SITES=		http://gentoo.mirrors.tera-byte.com/distfiles/
+PATCH_DIST_STRIP=	-p1
 .endif

@@ -1,5 +1,5 @@
 ===========================================================================
-$NetBSD: MESSAGE.Interix,v 1.1 2005/03/07 23:29:49 tv Exp $
+$NetBSD$
 
 OpenSSH on Interix has some important caveats:
 
