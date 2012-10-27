@@ -1,6 +1,6 @@
-$NetBSD: patch-ae,v 1.5 2011/08/05 00:36:10 adam Exp $
+$NetBSD$
 
---- gettext-tools/configure.orig	2010-06-06 20:12:20.040894464 +0000
+--- gettext-tools/configure.orig	2010-06-06 20:12:20.000000000 +0000
 +++ gettext-tools/configure
 @@ -20035,10 +20035,6 @@ $as_echo "$ac_res" >&6; }
  

@@ -3,7 +3,7 @@
 .include "../../devel/gettext/Makefile.common"
 
 PKGNAME=	${DISTNAME:S/-/-tools-/}
-PKGREVISION=	2
+PKGREVISION=	3
 COMMENT=	Tools for providing messages in different languages
 
 #MAKE_JOBS_SAFE=		no
@@ -22,9 +22,6 @@ CONFIGURE_ENV+=		HAVE_GCJ_IN_PATH=
 CONFIGURE_ENV+=		HAVE_JAVAC_IN_PATH=
 CONFIGURE_ENV+=		HAVE_JIKES_IN_PATH=
 CONFIGURE_ENV+=		ac_cv_libexpat=no
-CONFIGURE_ARGS+=	--docdir=${PREFIX}/documentation/doc/gettext
-
-
 LDFLAGS.AIX+=		-Wl,-brtl
 
 SHLIBTOOL_OVERRIDE=	# empty
@@ -33,7 +30,6 @@ INFO_FILES=		yes
 BROKEN_GETTEXT_DETECTION=	yes
 USE_BUILTIN.gettext=	no # force use of pkgsrc gettext-lib
 
-
 post-install:
 	cd ${WRKSRC}/gettext-tools/misc && ${MAKE} install DESTDIR=${DESTDIR}
 	${INSTALL_MAN} ${WRKSRC}/gettext-tools/man/autopoint.1 \
@@ -41,5 +37,6 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/gettext-tools/man/gettextize.1 \
 		${DESTDIR}${PREFIX}/${PKGMANDIR}/man1
 
+.include "../../mk/termcap.buildlink3.mk"
 .include "../../devel/gettext-lib/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

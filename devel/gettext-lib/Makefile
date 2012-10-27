@@ -3,11 +3,11 @@
 .include "../../devel/gettext/Makefile.common"
 
 PKGNAME=	${DISTNAME:S/-/-lib-/}
+PKGREVISION=	1
 SVR4_PKGNAME=	gttli
 COMMENT=	Internationalized Message Handling Library (libintl)
 
 USE_LANGUAGES=		c
-USE_PKGDATADIR=		yes
 CONFIGURE_ARGS+=	--with-included-gettext
 CONFIGURE_ARGS+=	--disable-csharp
 CONFIGURE_ENV+=		PKGLOCALEDIR=${PKGLOCALEDIR}
@@ -17,12 +17,11 @@ CFLAGS+=		${CFLAGS.${ICONV_TYPE}-iconv}
 CFLAGS.gnu-iconv+=	-DHAVE_GNU_ICONV
 
 INSTALL_MAKE_FLAGS=	${MAKE_FLAGS} localedir=${EGDIR}
+INSTALL_MAKE_FLAGS+=	includedir=${PREFIX}/include/gettext
 
 CONFIGURE_DIRS=		gettext-runtime
-
 BUILD_DIRS=		gettext-runtime/intl
-.include "../../mk/bsd.prefs.mk"
-EGDIR=			${PREFIX}/documentation/examples/gettext
+EGDIR=			${PREFIX}/share/examples/gettext
 LOCALEDIR=		${PREFIX}/${PKGLOCALEDIR}/locale
 
 REQD_DIRS+=		${LOCALEDIR}

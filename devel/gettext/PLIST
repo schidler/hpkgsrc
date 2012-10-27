@@ -1,4 +1,4 @@
-@comment $NetBSD: PLIST,v 1.14 2011/10/20 10:22:51 adam Exp $
+@comment $NetBSD: PLIST,v 1.13 2011/04/12 17:41:28 adam Exp $
 lib/gettext/hostname
 lib/gettext/project-id
 lib/gettext/urlget

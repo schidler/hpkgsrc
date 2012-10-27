@@ -1,6 +1,6 @@
-$NetBSD: patch-ah,v 1.8 2011/04/12 17:41:28 adam Exp $
+$NetBSD$
 
---- gettext-tools/src/Makefile.in.orig	2010-06-06 20:12:32.011534336 +0000
+--- gettext-tools/src/Makefile.in.orig	2010-06-06 20:12:32.000000000 +0000
 +++ gettext-tools/src/Makefile.in
 @@ -2763,7 +2763,7 @@ install-dvi: install-dvi-am
  

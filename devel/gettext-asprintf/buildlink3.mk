@@ -1,4 +1,4 @@
-# $NetBSD: buildlink3.mk,v 1.6 2011/04/12 17:41:28 adam Exp $
+# $NetBSD: buildlink3.mk,v 1.5 2009/03/20 19:24:13 joerg Exp $
 
 BUILDLINK_TREE+=	gettext-asprintf
 

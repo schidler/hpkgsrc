@@ -15,6 +15,9 @@ share/aclocal/intlmacosx.m4
 share/aclocal/intmax.m4
 share/aclocal/inttypes-pri.m4
 share/aclocal/inttypes_h.m4
+share/aclocal/lib-ld.m4
+share/aclocal/lib-link.m4
+share/aclocal/lib-prefix.m4
 share/aclocal/lcmessage.m4
 share/aclocal/lock.m4
 share/aclocal/longlong.m4

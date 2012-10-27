@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.80 2011/10/20 10:22:51 adam Exp $
+# $NetBSD: Makefile,v 1.79 2011/04/12 17:41:28 adam Exp $
 
 .include "../../devel/gettext/Makefile.common"
 
