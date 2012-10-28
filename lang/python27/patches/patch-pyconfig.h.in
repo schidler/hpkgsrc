@@ -1,0 +1,29 @@
+$NetBSD$
+
+--- pyconfig.h.in.orig	2012-04-09 23:07:36.057147392 +0000
++++ pyconfig.h.in
+@@ -874,10 +874,14 @@
+ #undef HAVE_UTIME_H
+ 
+ /* Define to 1 if you have the `wait3' function. */
++#ifndef __HAIKU__
+ #undef HAVE_WAIT3
++#endif
+ 
+ /* Define to 1 if you have the `wait4' function. */
++#ifndef __HAIKU__
+ #undef HAVE_WAIT4
++#endif
+ 
+ /* Define to 1 if you have the `waitpid' function. */
+ #undef HAVE_WAITPID
+@@ -1179,7 +1183,9 @@
+ #undef _UINT64_T
+ 
+ /* Define to the level of X/Open that your system supports */
++#if !defined(__sun) || (defined(__sun) && !defined(_XOPEN_SOURCE))
+ #undef _XOPEN_SOURCE
++#endif
+ 
+ /* Define to activate Unix95-and-earlier features */
+ #undef _XOPEN_SOURCE_EXTENDED

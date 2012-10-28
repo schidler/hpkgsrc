@@ -1,0 +1,12 @@
+$NetBSD$
+
+--- Modules/makesetup.orig	2012-04-09 23:07:34.029884416 +0000
++++ Modules/makesetup
+@@ -164,6 +164,7 @@ sed -e 's/[ 	]*#.*//' -e '/^[ 	]*$/d' |
+ 			-rpath)		libs="$libs $arg"; skip=libs;;
+ 			--rpath)	libs="$libs $arg"; skip=libs;;
+ 			-[A-Zl]*)	libs="$libs $arg";;
++			-pthread)	libs="$libs $arg";;
+ 			*.a)		libs="$libs $arg";;
+ 			*.so)		libs="$libs $arg";;
+ 			*.sl)		libs="$libs $arg";;
