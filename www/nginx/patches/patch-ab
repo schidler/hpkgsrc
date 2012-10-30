@@ -1,0 +1,16 @@
+$NetBSD$
+
+Workaround for /bin/sh bug on NetBSD
+
+--- auto/install.orig	2012-08-06 15:47:15.017301504 +0000
++++ auto/install
+@@ -141,9 +141,6 @@ install:	$NGX_OBJS${ngx_dirsep}nginx${ng
+ 		|| cp conf/nginx.conf '\$(DESTDIR)$NGX_CONF_PATH'
+ 	cp conf/nginx.conf '\$(DESTDIR)$NGX_CONF_PREFIX/nginx.conf.default'
+ 
+-	test -d '\$(DESTDIR)`dirname "$NGX_PID_PATH"`' \
+-		|| mkdir -p '\$(DESTDIR)`dirname "$NGX_PID_PATH"`'
+-
+ 	test -d '\$(DESTDIR)`dirname "$NGX_HTTP_LOG_PATH"`' || \
+ 		mkdir -p '\$(DESTDIR)`dirname "$NGX_HTTP_LOG_PATH"`'
+ 

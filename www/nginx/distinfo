@@ -1,0 +1,18 @@
+$NetBSD: distinfo,v 1.20 2012/08/07 10:42:08 imil Exp $
+
+SHA1 (naxsi-core-0.48.tgz) = 7391532e7026179c0c9e52e15c5d645259f94fa6
+RMD160 (naxsi-core-0.48.tgz) = 6c1c3934bb35976e7b40b39b26b07bfc6ea3cda0
+Size (naxsi-core-0.48.tgz) = 42816 bytes
+SHA1 (nginx-1.2.3.tar.gz) = 98059ae08ebbfaaead868128f7b66ebce16be9af
+RMD160 (nginx-1.2.3.tar.gz) = 49f9a8ede7ab68a067ba562b9917f84db427b2a1
+Size (nginx-1.2.3.tar.gz) = 723294 bytes
+SHA1 (nginx_http_push_module-0.692.tar.gz) = 72103084cad8f4d3d9a49a6b04cf780e4541605d
+RMD160 (nginx_http_push_module-0.692.tar.gz) = 9d2be16074cf28115af0f1d8f3646937cda649ad
+Size (nginx_http_push_module-0.692.tar.gz) = 29119 bytes
+SHA1 (nginx_upload_module-2.2.0.tar.gz) = 93d6e83e613a0ce2ed057a434b344fa1b6609b47
+RMD160 (nginx_upload_module-2.2.0.tar.gz) = 5734af837be3fe8ec444a7e5e7f6707118594098
+Size (nginx_upload_module-2.2.0.tar.gz) = 25796 bytes
+SHA1 (patch-aa) = b6e81f720b1338201f591cccfbdfd60fe743edf2
+SHA1 (patch-ab) = 367689889e25ee631c3e7e6d12a55aca7fe0111a
+SHA1 (patch-src_os_unix_ngx__process.c) = 5318b263d978b89a3be7f1f2161a66a1d0c3a1d1
+SHA1 (patch-src_os_unix_ngx__process__cycle.c) = 56ed585d9e3e877dbad805577ad2f8b5ef94dfe1
