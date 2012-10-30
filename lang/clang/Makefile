@@ -31,6 +31,7 @@ REPLACE_PERL+= 		utils/UpdateCMakeLists.pl \
 					tools/clang/tools/scan-build/*					
 					
 REPLACE_PYTHON+=	test/Scripts/* \
+					tools/clang/bindings/python/examples/cindex/*.py \
 					tools/clang/tools/scan-view/scan-view \
 					tools/clang/utils/C++Tests/LLVM-Code-Symbols/check-symbols \
 					tools/clang/utils/CaptureCmd \
