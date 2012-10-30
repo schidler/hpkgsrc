@@ -1,4 +1,4 @@
-# $NetBSD: buildlink3.mk,v 1.1 2010/02/13 16:13:52 tnn Exp $
+# $NetBSD$
 
 BUILDLINK_TREE+=	clang
 
