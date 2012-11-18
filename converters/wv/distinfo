@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.17 2008/04/14 23:49:43 wiz Exp $
+
+SHA1 (wv-1.2.9.tar.gz) = db4717a151742dbdb492318f104504a92075543a
+RMD160 (wv-1.2.9.tar.gz) = c1299c4bb43034d5df244f2452753eafab496857
+Size (wv-1.2.9.tar.gz) = 616256 bytes

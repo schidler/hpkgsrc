@@ -1,0 +1,14 @@
+$NetBSD: patch-ad,v 1.1.1.1 2003/07/15 21:46:26 wennmach Exp $
+
+--- etc/Makefile.in.orig	2007-03-27 20:09:32 +0200
++++ etc/Makefile.in
+@@ -64,7 +64,8 @@ PDFFILES = standards.pdf configure.pdf
+ HTMLFILES = standards.html configure.html
+ 
+ all: info
+-install: install-info
++#install: install-info
++install:
+ 
+ uninstall:
+ 

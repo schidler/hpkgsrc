@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $Id$
+#
+
+VIPECHOME=@prefix@/vipec
+export VIPECHOME
+
+${VIPECHOME}/vipec $*
+

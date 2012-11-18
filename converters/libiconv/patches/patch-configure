@@ -1,0 +1,12 @@
+$NetBSD$
+
+--- configure.orig	2011-08-07 17:49:02.000000000 +0000
++++ configure
+@@ -6973,6 +6973,7 @@ gnu*)
+ 
+ haiku*)
+   lt_cv_deplibs_check_method=pass_all
++  gl_cv_func_realpath_works="guessing yes"
+   ;;
+ 
+ hpux10.20* | hpux11*)

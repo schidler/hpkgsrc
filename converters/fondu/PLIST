@@ -1,0 +1,13 @@
+@comment $NetBSD$
+bin/dfont2res
+bin/fondu
+bin/frombin
+bin/showfond
+bin/tobin
+bin/ufond
+man/man1/dfont2res.1
+man/man1/fondu.1
+man/man1/frombin.1
+man/man1/showfond.1
+man/man1/tobin.1
+man/man1/ufond.1

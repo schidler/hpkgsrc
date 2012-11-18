@@ -1,0 +1,2 @@
+@comment $NetBSD$
+lib/asterisk/modules/chan_oss.so

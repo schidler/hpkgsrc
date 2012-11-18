@@ -1,0 +1,9 @@
+@comment $NetBSD$
+bin/wpg2raw
+bin/wpg2svg
+bin/wpg2svgbatch.pl
+include/libwpg-0.2/libwpg/WPGPaintInterface.h
+include/libwpg-0.2/libwpg/WPGraphics.h
+include/libwpg-0.2/libwpg/libwpg.h
+lib/libwpg-0.2.la
+lib/pkgconfig/libwpg-0.2.pc

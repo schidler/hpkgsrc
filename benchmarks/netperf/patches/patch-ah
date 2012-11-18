@@ -1,0 +1,12 @@
+$NetBSD$
+
+--- src/netlib.h.orig	2008-10-30 20:48:46.000000000 +0000
++++ src/netlib.h
+@@ -476,6 +476,7 @@ extern  int     lib_num_rem_cpus;
+ extern  SOCKET  server_sock;
+ extern  int     times_up;
+ extern  FILE    *where;
++extern	 int     fd;
+ extern  int     loops_per_msec;
+ extern  float   lib_local_per_cpu_util[];
+   

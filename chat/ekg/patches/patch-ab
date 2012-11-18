@@ -1,0 +1,12 @@
+$NetBSD$
+
+--- Makefile.in.orig	2006-08-05 17:46:21.000000000 +0200
++++ Makefile.in
+@@ -42,7 +42,6 @@ dep-ekg:
+ #
+ 
+ configure:	configure.in m4/*
+-	./autogen.sh
+ 
+ #
+ 
