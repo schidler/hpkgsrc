@@ -1,0 +1,9 @@
+$NetBSD: distinfo,v 1.29 2010/12/16 10:12:53 wiz Exp $
+
+SHA1 (tar-1.26.tar.bz2) = 70f298c3cd997b694864c55e6d8655324c87a0cc
+RMD160 (tar-1.26.tar.bz2) = d507dc5a57a823701cae5cdd2b98aba48ec74d3f
+Size (tar-1.26.tar.bz2) = 2339773 bytes
+SHA1 (patch-ad) = 0b4613e20d74a6b04f0d68aab7e1f51ec2b814b7
+SHA1 (patch-src_common.h) = a64fa49696a1a43d3e1c4f5aa57b43e3071c0a8c
+SHA1 (patch-src_extract.c) = c3c43f77a1f6fe33d456d6418cd58739402bb1d7
+SHA1 (patch-src_tar.c) = 2e50d3b49b9dc6306618871d67627412400ba8ea

@@ -1,0 +1,15 @@
+$NetBSD$
+
+--- Makefile.am.orig	2004-07-27 08:52:20.039845888 +0000
++++ Makefile.am
+@@ -1,7 +1,9 @@
+-SUBDIRS = libfaad common frontend plugins
++SUBDIRS = libfaad common frontend include
+ 
+ EXTRA_DIST = faad2.spec
+ 
++include_HEADERS = faad2-config.h
++
+ rpm:	Makefile
+ 	make dist
+ 	$(RPMBUILD) -ta $(PACKAGE)-$(VERSION).tar.gz

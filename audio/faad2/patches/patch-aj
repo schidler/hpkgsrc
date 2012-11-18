@@ -1,0 +1,6 @@
+$NetBSD$
+
+--- include/Makefile.am.orig	2012-11-06 18:22:06.352845824 +0000
++++ include/Makefile.am
+@@ -0,0 +1 @@
++include_HEADERS = faad.h

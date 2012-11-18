@@ -1,0 +1,9 @@
+@comment $NetBSD: PLIST,v 1.4 2011/10/15 10:41:29 obache Exp $
+${PYSITELIB}/${EGG_FILE}
+${PYSITELIB}/CDDB.py
+${PYSITELIB}/CDDB.pyc
+${PYSITELIB}/CDDB.pyo
+${PYSITELIB}/DiscID.py
+${PYSITELIB}/DiscID.pyc
+${PYSITELIB}/DiscID.pyo
+${PYSITELIB}/cdrom.so

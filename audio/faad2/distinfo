@@ -1,0 +1,16 @@
+$NetBSD: distinfo,v 1.20 2009/08/10 00:01:56 tnn Exp $
+
+SHA1 (faad2-2.7.tar.gz) = 80eaaa5cc576c35dd28863767b795c50cbcc0511
+RMD160 (faad2-2.7.tar.gz) = 3f0ca461e2953014d5b17edccb3337767d478b8d
+Size (faad2-2.7.tar.gz) = 1137407 bytes
+SHA1 (patch-aa) = 8a23f80772927016c412cd0a1b4f935fab9eeffd
+SHA1 (patch-ab) = 28b94aa0d313f6e24ceabbac5b1b51b79cd17d31
+SHA1 (patch-ac) = c453ae7164bd3ae2ae20ac3b774eb7e1d62ce409
+SHA1 (patch-ad) = 93ff6764dcf251f04cd14c340fc39c41594b42d1
+SHA1 (patch-af) = d76d6b8326ec16d65dc7d6ad897322b1d251a4ef
+SHA1 (patch-aj) = 1310e3a8c71b6b89ddb611d4a51dc438cae14b93
+SHA1 (patch-ak) = 936e195319d1fdc23e57758f9b5394f64431256c
+SHA1 (patch-ar) = be17412bf47b7f863352be2ea41c9a84051dfb99
+SHA1 (patch-as) = 1379831f4d380fd29ed80d3ed39bd71e189f453b
+SHA1 (patch-au) = 33bd4961cd08c64c2016011c5790ec8caec9a278
+SHA1 (patch-av) = f623eb245c23b185bc244d57fb649f63bb2eaf4b

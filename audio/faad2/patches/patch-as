@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- plugins/xmms/src/libmp4.c.orig	2007-06-05 19:00:18.061865984 +0000
++++ plugins/xmms/src/libmp4.c
+@@ -23,7 +23,7 @@
+ #include <xmms/titlestring.h>
+ #endif /*HAVE_BMP*/
+ 
+-#include "neaacdec.h"
++#include <neaacdec.h>
+ #include "mp4ff.h"
+ 
+ #define MP4_DESCRIPTION	"MP4 & MPEG2/4-AAC audio player - 1.2.x"

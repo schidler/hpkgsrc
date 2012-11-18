@@ -1,0 +1,39 @@
+$NetBSD$
+
+--- configure.in.orig	2009-02-05 00:51:03.040370176 +0000
++++ configure.in
+@@ -9,7 +9,7 @@ dnl - mpeg4ip plugin (requires mpeg4ip's
+ 
+ AC_INIT
+ AC_CONFIG_AUX_DIR(.)
+-AM_INIT_AUTOMAKE(faad2, 2.7.0)
++AM_INIT_AUTOMAKE(faad2, 2.7.0, do-not-define-PACKAGE-or-VERSION)
+ 
+ AC_PROG_LIBTOOL
+ AC_SUBST(LIBTOOL_DEPS)
+@@ -24,6 +24,7 @@ AC_PROG_INSTALL
+ AC_PROG_LN_S
+ AC_PROG_MAKE_SET
+ AC_CHECK_PROGS(RPMBUILD, rpmbuild, rpm)
++AC_CHECK_LIBM
+ 
+ AM_CONFIG_HEADER(config.h)
+ 
+@@ -91,7 +92,7 @@ AC_DEFUN([AC_C99_FUNC_LRINTF],
+   ac_cv_c99_lrintf,
+ [
+ lrintf_save_CFLAGS=$CFLAGS
+-CFLAGS="-O -lm"
++CFLAGS="-O $LIBM"
+ AC_TRY_LINK([
+ #define         _ISOC9X_SOURCE  1
+ #define         _ISOC99_SOURCE  1
+@@ -163,6 +164,8 @@ AC_CONFIG_FILES(plugins/xmms/src/Makefil
+ AC_CONFIG_FILES(plugins/mpeg4ip/Makefile)
+ AC_CONFIG_FILES(faad2.spec)
+ AC_CONFIG_FILES(frontend/Makefile)
++AC_CONFIG_FILES(include/Makefile)
+ AC_CONFIG_FILES(Makefile)
+ 
+ AC_OUTPUT
++cp config.h faad2-config.h

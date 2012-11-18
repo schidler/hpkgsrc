@@ -1,0 +1,16 @@
+$NetBSD$
+
+--- common/mp4ff/mp4ff.h.orig	2009-01-29 00:41:08.042729472 +0000
++++ common/mp4ff/mp4ff.h
+@@ -35,11 +35,7 @@
+ extern "C" {
+ #endif /* __cplusplus */
+ 
+-#ifdef HAVE_STDINT_H
+-#include <stdint.h>
+-#else
+ #include "mp4ff_int_types.h"
+-#endif
+ 
+ /* file callback structure */
+ typedef struct

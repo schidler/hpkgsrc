@@ -1,0 +1,58 @@
+$NetBSD: patch-ab,v 1.13 2007/05/05 21:31:10 markd Exp $
+
+--- server/Imakefile.orig	2007-06-16 19:03:22.000000000 +0000
++++ server/Imakefile
+@@ -61,7 +61,7 @@ XCOMM $NCDId: @(#)Imakefile,v 1.17 1995/
+ #endif
+ 
+ #ifdef NetBSDArchitecture
+-        SYSLIBS = -lossaudio
++        SYSLIBS = $(LIBOSSAUDIO)
+ #endif
+ 
+            CBRT =
+@@ -96,7 +96,7 @@ ALL1 = nasd
+ #endif
+ 
+ 
+-#if defined(i386SVR4Architecture) || defined(__FreeBSD_kernel__) || defined(__FreeBSD__) || defined(FreeBSDArchitecture) || defined(LinuxArchitecture) || defined(i386BsdArchitecture) || defined(USLArchitecture) || defined(cygwinArchitecture) || defined(__DragonFly__)
++#if defined(i386SVR4Architecture) || defined(__FreeBSD_kernel__) || defined(__FreeBSD__) || defined(NetBSDArchitecture) || defined(FreeBSDArchitecture) || defined(LinuxArchitecture) || defined(i386BsdArchitecture) || defined(USLArchitecture) || defined(cygwinArchitecture) || defined(__DragonFly__)
+ # define CanBuildAuServer	YES
+ 
+ # if defined(cygwinArchitecture)
+@@ -204,23 +204,34 @@ dirs: FRC								@@\
+ 	$(MAKE) $(MFLAGS) PassCDebugFlags all				@@\
+ 									@@\
+ FRC:
++
+ #endif /* ForceSubdirs */
+ #endif /* Project X < 5 */
+ 
+ ForceSubdirs($(DEPDIRS) $(SUBDIRS))
+ 
++$(VOXWARELIBS):
++	@echo "making all in $(CURRENT_DIR)/${@D}..."
++	@(cd ${@D} && $(MAKE) $(MFLAGS) $(PARALLELMFLAGS) \		@@\ 
++		PassCDebugFlags all) || exit $$?
++
+ clean::
+ 	$(RM) $(ALL)
+ 
+  ETCDIR = NasConfigSearchPath
++ EGDIR = ${PREFIX}/share/examples/nas
+ 
+ InstallManPage(nasd,$(MANDIR))
+ #ifdef InstallGenManPage
+ InstallGenManPage(nasd.conf,$(FILEMANDIR),$(FILEMANSUFFIX))
+ #else
++#ifdef InstallNamedTarget
++InstallNamedTarget(install.man,nasd.conf.man,$(INSTMANFLAGS),$(FILEMANDIR),nasd.conf.$(FILEMANSUFFIX))
++#else
+ InstallManPage(nasd.conf,$(FILEMANDIR))
+ #endif
+-InstallNonExecFile(nasd.conf.eg,$(ETCDIR))
++#endif
++InstallNonExecFile(nasd.conf.eg,$(EGDIR))
+ 
+ #else /* CanBuildAuServer */
+ 

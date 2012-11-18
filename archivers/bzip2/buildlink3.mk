@@ -1,0 +1,13 @@
+# $NetBSD: buildlink3.mk,v 1.20 2006/07/08 23:10:35 jlam Exp $
+
+BUILDLINK_TREE+=	bzip2
+
+.if !defined(BZIP2_BUILDLINK3_MK)
+BZIP2_BUILDLINK3_MK:=
+
+BUILDLINK_API_DEPENDS.bzip2+=	bzip2>=1.0.1
+BUILDLINK_PKGSRCDIR.bzip2?=	../../archivers/bzip2
+BUILDLINK_ABI_DEPENDS.bzip2+=	bzip2>=1.0.3
+.endif # BZIP2_BUILDLINK3_MK
+
+BUILDLINK_TREE+=	-bzip2

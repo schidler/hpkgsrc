@@ -1,0 +1,7 @@
+@comment $NetBSD$
+bin/timidity
+${PLIST.x11}lib/X11/app-defaults/TiMidity
+${PLIST.x11}lib/X11/ja_JP.eucJP/app-defaults/TiMidity
+man/man1/timidity.1
+man/man5/timidity.cfg.5
+share/examples/timidity/timidity.cfg

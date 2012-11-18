@@ -1,0 +1,13 @@
+$NetBSD: patch-ab,v 1.1 2007/02/07 20:18:41 drochner Exp $
+
+--- configure.orig	2008-04-11 14:09:14.000000000 +0000
++++ configure
+@@ -31765,7 +31765,7 @@ fi
+ 
+ 
+ 
+-ac_enable_alsa=yes
++ac_enable_alsa=no
+ # Check whether --enable-alsa was given.
+ if test "${enable_alsa+set}" = set; then
+   enableval=$enable_alsa;  ac_enable_alsa=no

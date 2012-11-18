@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- mmkeys/Makefile.orig	2007-07-18 22:46:30.000000000 +0200
++++ mmkeys/Makefile
+@@ -4,7 +4,7 @@ mmkeys.so: build
+ 	cp build/lib*/mmkeys.so .
+ 
+ build: mmkeyspy.c
+-	./setup.py build
++	${PYTHONBIN} ./setup.py build
+ 
+ DEFS=`pkg-config --variable=defsdir pygtk-2.0`
+ 

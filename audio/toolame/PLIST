@@ -1,0 +1,7 @@
+@comment $NetBSD: PLIST,v 1.3 2009/06/14 17:32:23 joerg Exp $
+bin/toolame
+share/doc/toolame/changes.html
+share/doc/toolame/default.html
+share/doc/toolame/psycho.html
+share/doc/toolame/readme.html
+share/doc/toolame/vbr.html
