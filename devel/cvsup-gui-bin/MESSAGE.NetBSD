@@ -1,0 +1,9 @@
+===========================================================================
+$NetBSD: MESSAGE.NetBSD,v 1.1.1.1 2004/01/05 23:50:20 xtraeme Exp $
+
+In order to use ${PKGNAME}, you must have the following options
+built into your kernel:
+
+	COMPAT_43, COMPAT_13, COMPAT_14
+
+===========================================================================

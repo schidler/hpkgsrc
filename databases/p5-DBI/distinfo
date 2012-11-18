@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.33 2012/05/08 20:53:53 rhaen Exp $
+
+SHA1 (DBI-1.622.tar.gz) = 9845257712bdb3e7a123f53c53ed1f5b63a16d08
+RMD160 (DBI-1.622.tar.gz) = 49c5b9d593cfd128aa969f0ad0f7eb79fc864337
+Size (DBI-1.622.tar.gz) = 585651 bytes

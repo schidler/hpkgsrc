@@ -1,0 +1,9 @@
+@comment $NetBSD: PLIST,v 1.2 2011/08/12 16:33:05 taca Exp $
+${GEM_HOME}/cache/${GEM_NAME}.gem
+${GEM_LIBDIR}/History.txt
+${GEM_LIBDIR}/License.txt
+${GEM_LIBDIR}/README.txt
+${GEM_LIBDIR}/Rakefile
+${GEM_LIBDIR}/lib/polyglot.rb
+${GEM_LIBDIR}/lib/polyglot/version.rb
+${GEM_HOME}/specifications/${GEM_NAME}.gemspec

@@ -1,0 +1,6 @@
+$NetBSD: patch-ah,v 1.1 2003/07/22 18:09:03 agc Exp $
+
+--- contrib/tetreport/tetreport.pl	2003/07/22 17:27:03	1.1
++++ contrib/tetreport/tetreport.pl	2003/07/22 17:27:18
+@@ -1,0 +1,1 @@
++#! /usr/bin/perl

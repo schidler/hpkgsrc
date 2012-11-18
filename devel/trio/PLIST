@@ -1,0 +1,7 @@
+@comment $NetBSD$
+include/trio.h
+include/triodef.h
+include/trionan.h
+include/triop.h
+include/triostr.h
+lib/libtrio.la

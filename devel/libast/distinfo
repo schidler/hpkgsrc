@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2006/03/07 02:30:41 joerg Exp $
+
+SHA1 (libast-0.7.tar.gz) = 8449049642c5a945336a326b8d512e4d261232d0
+RMD160 (libast-0.7.tar.gz) = 82dedafc23668f0bbecbf09433676d4b31e9e154
+Size (libast-0.7.tar.gz) = 508654 bytes

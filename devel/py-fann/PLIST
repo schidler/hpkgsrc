@@ -1,0 +1,9 @@
+@comment $NetBSD: PLIST,v 1.5 2011/10/15 12:17:26 obache Exp $
+${PYSITELIB}/${EGG_FILE}
+${PYSITELIB}/pyfann/__init__.py
+${PYSITELIB}/pyfann/__init__.pyc
+${PYSITELIB}/pyfann/__init__.pyo
+${PYSITELIB}/pyfann/_libfann.so
+${PYSITELIB}/pyfann/libfann.py
+${PYSITELIB}/pyfann/libfann.pyc
+${PYSITELIB}/pyfann/libfann.pyo

@@ -1,0 +1,8 @@
+@comment $NetBSD$
+bin/dba
+bin/dbd
+bin/dbe
+bin/dbu
+include/sdbm.h
+lib/libsdbm.la
+man/man3/sdbm.3

@@ -1,0 +1,11 @@
+$NetBSD: distinfo,v 1.20 2011/01/17 14:17:29 is Exp $
+
+SHA1 (make-3.82.tar.bz2) = b8a8a99e4cb636a213aad3816dda827a92b9bbed
+RMD160 (make-3.82.tar.bz2) = e3d1f7019549553b9fc7a88884c9b85d25a60d21
+Size (make-3.82.tar.bz2) = 1242186 bytes
+SHA1 (patch-aa) = 5b0f3e23ebbb6ff8703d15331076e8902293f7d9
+SHA1 (patch-ac) = 805c6b0ddc3e0c5a47bbd0f05969c730a2fab3c2
+SHA1 (patch-af) = adb44427d96c99054482e9456f72ef2984449eb7
+SHA1 (patch-ah) = 952723ace889a979374d989decaeccc6604d74aa
+SHA1 (patch-arscan.c) = 52661becdfeba917f9e8cde609ec369b059d8c71
+SHA1 (patch-pa) = 733114ffbc0a61c4842696ed62be5333a319e491

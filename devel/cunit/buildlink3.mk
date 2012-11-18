@@ -1,0 +1,12 @@
+# $NetBSD: buildlink3.mk,v 1.1.1.1 2009/01/10 21:03:58 agc Exp $
+
+BUILDLINK_TREE+=	CUnit
+
+.if !defined(CUNIT_BUILDLINK3_MK)
+CUNIT_BUILDLINK3_MK:=
+
+BUILDLINK_API_DEPENDS.CUnit+=	CUnit>=2.1
+BUILDLINK_PKGSRCDIR.CUnit?=	../../devel/cunit
+.endif # CUNIT_BUILDLINK3_MK
+
+BUILDLINK_TREE+=	-CUnit

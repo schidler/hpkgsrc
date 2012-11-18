@@ -1,0 +1,6 @@
+$NetBSD: patch-ae,v 1.1 2003/07/22 18:09:02 agc Exp $
+
+--- src/perl/api.pl	2003/07/22 17:24:43	1.1
++++ src/perl/api.pl	2003/07/22 17:25:04
+@@ -1,0 +1,1 @@
++#! /usr/bin/perl

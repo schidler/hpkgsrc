@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2009/12/10 19:26:22 fhajny Exp $
+
+SHA1 (eventmachine-1.0.0.gem) = 032c91df3cca6927cb147d5be4dc4a42072453d0
+RMD160 (eventmachine-1.0.0.gem) = 250ed6c2d7368e372b57ff8d4b87a69d17e5d0ab
+Size (eventmachine-1.0.0.gem) = 224256 bytes

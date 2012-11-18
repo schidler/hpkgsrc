@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.3 2005/02/23 22:24:26 agc Exp $
+
+SHA1 (IO-Stty-0.03.tar.gz) = e7ca2246c381b6ff950dec90dbea39a8f1abbc2d
+RMD160 (IO-Stty-0.03.tar.gz) = ffacc6c7cdcb54ea1055e723800425993ad7addf
+Size (IO-Stty-0.03.tar.gz) = 10251 bytes

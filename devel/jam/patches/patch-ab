@@ -1,0 +1,14 @@
+$NetBSD$
+
+Beware of DOS linebreaks.
+
+--- execunix.c.orig	2006-06-05 10:52:27.062128128 +0000
++++ execunix.c
+@@ -42,6 +42,7 @@
+ # include "lists.h"
+ # include "execcmd.h"
+ # include <errno.h>
++# include <unistd.h>
+ 
+ # ifdef USE_EXECUNIX
+ 

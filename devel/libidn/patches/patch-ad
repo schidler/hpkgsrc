@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- doc/Makefile.in.orig	2012-01-10 20:21:06.000000000 +0000
++++ doc/Makefile.in
+@@ -1107,7 +1107,7 @@ GDOC_MAN_EXTRA_ARGS = -module $(PACKAGE)
+ 	-copyright "2002-2012 Simon Josefsson" \
+ 	-verbatimcopying
+ 
+-BUILT_SOURCES = Makefile.gdoc
++BUILT_SOURCES = # Makefile.gdoc
+ 
+ #
+ ### idna.c

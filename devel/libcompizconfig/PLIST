@@ -1,0 +1,9 @@
+@comment $NetBSD$
+include/compizconfig/ccs-backend.h
+include/compizconfig/ccs.h
+lib/compiz/libccp.la
+lib/compizconfig/backends/libini.la
+lib/libcompizconfig.la
+lib/pkgconfig/libcompizconfig.pc
+share/compiz/ccp.xml
+share/examples/compizconfig/config

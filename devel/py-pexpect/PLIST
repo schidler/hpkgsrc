@@ -1,0 +1,20 @@
+@comment $NetBSD: PLIST,v 1.4 2012/01/28 08:30:55 obache Exp $
+${PYSITELIB}/ANSI.py
+${PYSITELIB}/ANSI.pyc
+${PYSITELIB}/ANSI.pyo
+${PYSITELIB}/FSM.py
+${PYSITELIB}/FSM.pyc
+${PYSITELIB}/FSM.pyo
+${PYSITELIB}/fdpexpect.py
+${PYSITELIB}/fdpexpect.pyc
+${PYSITELIB}/fdpexpect.pyo
+${PYSITELIB}/${EGG_FILE}
+${PYSITELIB}/pexpect.py
+${PYSITELIB}/pexpect.pyc
+${PYSITELIB}/pexpect.pyo
+${PYSITELIB}/pxssh.py
+${PYSITELIB}/pxssh.pyc
+${PYSITELIB}/pxssh.pyo
+${PYSITELIB}/screen.py
+${PYSITELIB}/screen.pyc
+${PYSITELIB}/screen.pyo

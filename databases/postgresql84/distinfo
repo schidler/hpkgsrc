@@ -1,0 +1,18 @@
+$NetBSD: distinfo,v 1.21 2012/08/23 16:56:38 adam Exp $
+
+SHA1 (postgresql-8.4.14.tar.bz2) = d82817a28c7b645e989b48e59d40a5045d37408a
+RMD160 (postgresql-8.4.14.tar.bz2) = 119c50a260a95a8c0798016e6615ffa084cc5a33
+Size (postgresql-8.4.14.tar.bz2) = 14679559 bytes
+SHA1 (patch-aa) = 72437773d67939c8d8c8e9a99caf430590fd726f
+SHA1 (patch-ab) = aa46d88c8a72edaf95880de48474ea484d6d2bf5
+SHA1 (patch-ac) = 0b82797d0b80bdd1e9b5f3de4989fe3848adf6cb
+SHA1 (patch-ad) = fb75df841bbcc25e840ed9c2fed59232d7189200
+SHA1 (patch-af) = a73769cf05223d2ee06249c9e69c85038c2cd936
+SHA1 (patch-ag) = 85dac95e40efc16270885087f868aeb76e1b9214
+SHA1 (patch-ah) = 25102dce1b9b22385353af23500636fb18e3bf64
+SHA1 (patch-ai) = 0d6f536f7593e362ec216eafa73c718ad6bed8fc
+SHA1 (patch-ao) = b098032408fc951865966710554667a249db6320
+SHA1 (patch-ba) = f8de4ee18a433b65a54280d047d18b161d3e9ca8
+SHA1 (patch-bb) = 22859530d2694cf4c347f5e4c02eff0483d536d1
+SHA1 (patch-src_pl_plperl_plperl.h) = 8d448cc8e0e0dbc4d15dad369d3ca7a796874ac2
+SHA1 (patch-src_pl_plpgsql_src_Makefile) = 1592ecb85d6ef1bd691f77b320f639b6fc822e14

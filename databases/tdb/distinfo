@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.3 2005/02/23 16:33:10 agc Exp $
+
+SHA1 (tdb-1.2.10.tar.gz) = 0f2bb5f9a633ca1a8e172152a031e1dacc26a118
+RMD160 (tdb-1.2.10.tar.gz) = 651ec3b898d6e115bc9ca284eeede0b93b269e68
+Size (tdb-1.2.10.tar.gz) = 497924 bytes

@@ -1,0 +1,8 @@
+$NetBSD$
+
+SHA1 (ftjam-2.5.2.tar.bz2) = 08bad35e74ec85c4592d378014586174d22297b5
+RMD160 (ftjam-2.5.2.tar.bz2) = fd1d1161963ba85be09aecffe832cf1db8a7b70f
+Size (ftjam-2.5.2.tar.bz2) = 196631 bytes
+SHA1 (patch-aa) = a3e0b69994613d2d1bc505eb17724446be08b84c
+SHA1 (patch-ab) = d555e871c7c868a3fc8e2e7d60d8712ca85f1e5e
+SHA1 (patch-fileunix.c) = b59e0bb6920086fdf117043785d6e7a818fab8b5

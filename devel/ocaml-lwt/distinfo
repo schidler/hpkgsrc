@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.3 2012/05/30 13:40:59 wiz Exp $
+
+SHA1 (lwt-2.4.0.tar.gz) = 036883d33965a8507e1e42bbb0b99bb2441a7b7a
+RMD160 (lwt-2.4.0.tar.gz) = 3691593e2874c20ab2926d3fa105fc06eb240aaf
+Size (lwt-2.4.0.tar.gz) = 501062 bytes

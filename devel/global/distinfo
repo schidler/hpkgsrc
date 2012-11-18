@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.9 2011/01/19 04:24:15 uebayasi Exp $
+
+SHA1 (global-6.2.4.tar.gz) = fff915079e7099de0174c47a1a8f6a5b870517d5
+RMD160 (global-6.2.4.tar.gz) = bd6a75c7b034e555f4d769438325e319c8fa5324
+Size (global-6.2.4.tar.gz) = 1224019 bytes

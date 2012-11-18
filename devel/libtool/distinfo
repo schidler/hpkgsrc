@@ -1,0 +1,6 @@
+$NetBSD$
+
+SHA1 (libtool-2.4.2.tar.gz) = 22b71a8b5ce3ad86e1094e7285981cae10e6ff88
+RMD160 (libtool-2.4.2.tar.gz) = b7153f3f1e1c50d8c04787cafccd4e19af62ec7d
+Size (libtool-2.4.2.tar.gz) = 2632347 bytes
+SHA1 (patch-libltdl_m4_libtool.m4) = fe9b42fcf19f75019d78ec57b16b9ff1da7893c6

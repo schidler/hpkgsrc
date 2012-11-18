@@ -1,0 +1,7 @@
+@comment $NetBSD: PLIST,v 1.1.1.1 2006/08/03 18:53:21 jmmv Exp $
+lib/hugs/packages/HUnit/Test/HUnit.lhs
+lib/hugs/packages/HUnit/Test/HUnit/Base.lhs
+lib/hugs/packages/HUnit/Test/HUnit/Lang.lhs
+lib/hugs/packages/HUnit/Test/HUnit/Terminal.lhs
+lib/hugs/packages/HUnit/Test/HUnit/Text.lhs
+lib/hugs/packages/HUnit/packages/HUnit/package.conf

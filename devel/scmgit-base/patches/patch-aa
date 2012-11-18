@@ -1,0 +1,84 @@
+$NetBSD$
+
+--- Makefile.orig	2012-09-30 08:03:21.024379392 +0000
++++ Makefile
+@@ -325,8 +325,6 @@ endif
+ 
+ CFLAGS = -g -O2 -Wall
+ LDFLAGS =
+-ALL_CFLAGS = $(CPPFLAGS) $(CFLAGS)
+-ALL_LDFLAGS = $(LDFLAGS)
+ STRIP ?= strip
+ 
+ # Among the variables below, these:
+@@ -361,13 +359,9 @@ pathsep = :
+ 
+ export prefix bindir sharedir sysconfdir gitwebdir localedir
+ 
+-CC = cc
+-AR = ar
+ RM = rm -f
+ DIFF = diff
+-TAR = tar
+ FIND = find
+-INSTALL = install
+ RPMBUILD = rpmbuild
+ TCL_PATH = tclsh
+ TCLTK_PATH = wish
+@@ -1004,9 +998,10 @@ ifeq ($(uname_S),Darwin)
+ 	BASIC_CFLAGS += -DPRECOMPOSE_UNICODE
+ endif
+ ifeq ($(uname_S),SunOS)
++	NEED_LIBICONV = YesPlease
+ 	NEEDS_SOCKET = YesPlease
+ 	NEEDS_NSL = YesPlease
+-	SHELL_PATH = /bin/bash
++	SHELL_PATH = ${BASH}
+ 	SANE_TOOL_PATH = /usr/xpg6/bin:/usr/xpg4/bin
+ 	NO_STRCASESTR = YesPlease
+ 	NO_MEMMEM = YesPlease
+@@ -1049,8 +1044,6 @@ ifeq ($(uname_S),SunOS)
+ 		NO_STRTOUMAX = YesPlease
+ 		GIT_TEST_CMP = cmp
+ 	endif
+-	INSTALL = /usr/ucb/install
+-	TAR = gtar
+ 	BASIC_CFLAGS += -D__EXTENSIONS__ -D__sun__ -DHAVE_ALLOCA_H
+ endif
+ ifeq ($(uname_O),Cygwin)
+@@ -1211,6 +1204,16 @@ ifeq ($(uname_S),HP-UX)
+ 	endif
+ 	GIT_TEST_CMP = cmp
+ endif
++ifeq ($(uname_S),Haiku)
++    NO_R_TO_GCC_LINKER = YesPlease
++    NO_LIBGEN_H = YesPlease
++    NO_MEMMEM = YesPlease
++    NO_MKSTEMPS = YesPlease
++    NEEDS_LIBICONV = YesPlease
++    DEFAULT_EDITOR = nano
++    PTHREAD_LIBS =    -lroot
++    NO_CROSS_DIRECTORY_HARDLINKS = YesPlease
++endif
+ ifeq ($(uname_S),Windows)
+ 	GIT_VERSION := $(GIT_VERSION).MSVC
+ 	pathsep = ;
+@@ -1942,8 +1945,8 @@ ifdef DEFAULT_HELP_FORMAT
+ BASIC_CFLAGS += -DDEFAULT_HELP_FORMAT='"$(DEFAULT_HELP_FORMAT)"'
+ endif
+ 
+-ALL_CFLAGS += $(BASIC_CFLAGS)
+-ALL_LDFLAGS += $(BASIC_LDFLAGS)
++ALL_CFLAGS = $(BASIC_CFLAGS) $(CPPFLAGS) $(CFLAGS)
++ALL_LDFLAGS = $(BASIC_LDFLAGS) $(LDFLAGS)
+ 
+ export DIFF TAR INSTALL DESTDIR SHELL_PATH
+ 
+@@ -2635,7 +2638,6 @@ ifndef NO_GETTEXT
+ endif
+ ifndef NO_PERL
+ 	$(MAKE) -C perl prefix='$(prefix_SQ)' DESTDIR='$(DESTDIR_SQ)' install
+-	$(MAKE) -C gitweb install
+ endif
+ ifndef NO_PYTHON
+ 	$(MAKE) -C git_remote_helpers prefix='$(prefix_SQ)' DESTDIR='$(DESTDIR_SQ)' install

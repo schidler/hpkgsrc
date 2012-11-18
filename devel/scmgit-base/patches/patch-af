@@ -1,0 +1,41 @@
+$NetBSD: patch-af,v 1.8 2012/09/04 12:17:12 adam Exp $
+
+* Use BSR_INSTALL_*.
+* FIXME: Add "--skip-validation" to xmlto command.
+
+--- Documentation/Makefile.orig	2012-09-30 08:03:21.042991616 +0000
++++ Documentation/Makefile
+@@ -169,16 +169,16 @@ pdf: user-manual.pdf
+ install: install-man
+ 
+ install-man: man
+-	$(INSTALL) -d -m 755 $(DESTDIR)$(man1dir)
+-	$(INSTALL) -d -m 755 $(DESTDIR)$(man5dir)
+-	$(INSTALL) -d -m 755 $(DESTDIR)$(man7dir)
+-	$(INSTALL) -m 644 $(DOC_MAN1) $(DESTDIR)$(man1dir)
+-	$(INSTALL) -m 644 $(DOC_MAN5) $(DESTDIR)$(man5dir)
+-	$(INSTALL) -m 644 $(DOC_MAN7) $(DESTDIR)$(man7dir)
++	$(BSD_INSTALL_MAN_DIR) $(DESTDIR)$(man1dir)
++	$(BSD_INSTALL_MAN_DIR) $(DESTDIR)$(man5dir)
++	$(BSD_INSTALL_MAN_DIR) $(DESTDIR)$(man7dir)
++	$(BSD_INSTALL_MAN) $(DOC_MAN1) $(DESTDIR)$(man1dir)
++	$(BSD_INSTALL_MAN) $(DOC_MAN5) $(DESTDIR)$(man5dir)
++	$(BSD_INSTALL_MAN) $(DOC_MAN7) $(DESTDIR)$(man7dir)
+ 
+ install-info: info
+-	$(INSTALL) -d -m 755 $(DESTDIR)$(infodir)
+-	$(INSTALL) -m 644 git.info gitman.info $(DESTDIR)$(infodir)
++	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(infodir)
++	$(BSD_INSTALL_DATA) git.info gitman.info $(DESTDIR)$(infodir)
+ 	if test -r $(DESTDIR)$(infodir)/dir; then \
+ 	  $(INSTALL_INFO) --info-dir=$(DESTDIR)$(infodir) git.info ;\
+ 	  $(INSTALL_INFO) --info-dir=$(DESTDIR)$(infodir) gitman.info ;\
+@@ -245,7 +245,7 @@ manpage-base-url.xsl: manpage-base-url.x
+ 
+ %.1 %.5 %.7 : %.xml manpage-base-url.xsl
+ 	$(QUIET_XMLTO)$(RM) $@ && \
+-	xmlto -m $(MANPAGE_XSL) $(XMLTO_EXTRA) man $<
++	xmlto --skip-validation -m $(MANPAGE_XSL) $(XMLTO_EXTRA) man $<
+ 
+ %.xml : %.txt
+ 	$(QUIET_ASCIIDOC)$(RM) $@+ $@ && \

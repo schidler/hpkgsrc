@@ -1,0 +1,12 @@
+$NetBSD: distinfo,v 1.4 2010/08/09 12:21:48 drochner Exp $
+
+SHA1 (slang-2.2.4.tar.bz2) = 34e68a993888d0ae2ebc7bc31b40bc894813a7e2
+RMD160 (slang-2.2.4.tar.bz2) = fc023080f021201a99263d686ab4a8b87bbb575a
+Size (slang-2.2.4.tar.bz2) = 1427363 bytes
+SHA1 (patch-aa) = c711d219b65206c566790704931b1836696c73ef
+SHA1 (patch-ab) = 0910e0ee988affe5c647bf30e81c045bde7881d3
+SHA1 (patch-ac) = 45998a9b45a5f9e7940a33c491ede600f462347a
+SHA1 (patch-ad) = 8eace396352b2de4ca688418bacdfdf586fb4303
+SHA1 (patch-ae) = d7b913ba1cb6102c5b1cd9790ff6dcf59bcd1e1b
+SHA1 (patch-af) = 3c0811997cb26429ade3d8c050919edf1ecd281b
+SHA1 (patch-ag) = 21b56688164d1bab52c4696cd4359fe786ce795a

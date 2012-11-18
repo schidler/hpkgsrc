@@ -1,0 +1,5 @@
+@comment $NetBSD$
+include/bdd.h
+include/bvec.h
+include/fdd.h
+lib/libbdd.la

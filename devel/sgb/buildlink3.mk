@@ -1,0 +1,12 @@
+# $NetBSD: buildlink3.mk,v 1.3 2006/07/08 23:10:48 jlam Exp $
+
+BUILDLINK_TREE+=	sgb
+
+.if !defined(SGB_BUILDLINK3_MK)
+SGB_BUILDLINK3_MK:=
+
+BUILDLINK_API_DEPENDS.sgb+=	sgb>=0pre20050409
+BUILDLINK_PKGSRCDIR.sgb?=	../../devel/sgb
+.endif # SGB_BUILDLINK3_MK
+
+BUILDLINK_TREE+=	-sgb

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2010/05/28 08:25:07 obache Exp $
+
+SHA1 (ruby-ldap-0.9.12.gem) = e1398c053654ceba435b2d3ef2853748bbbee446
+RMD160 (ruby-ldap-0.9.12.gem) = b4ddf7e78a5be7614bac7ab2d3f7c09c8d3c29d0
+Size (ruby-ldap-0.9.12.gem) = 71680 bytes

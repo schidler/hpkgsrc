@@ -1,0 +1,15 @@
+$NetBSD$
+
+Use proper installer for script files.
+
+--- src/couchdb/priv/Makefile.in.orig	2012-03-29 21:05:38.000000000 +0000
++++ src/couchdb/priv/Makefile.in
+@@ -85,7 +85,7 @@ couch_icu_driver_la_OBJECTS = $(am_couch
+ couch_icu_driver_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(couch_icu_driver_la_LDFLAGS) $(LDFLAGS) -o $@
+-couchprivPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
++couchprivPROGRAMS_INSTALL = $(INSTALL_SCRIPT)
+ locallibbinPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ PROGRAMS = $(couchpriv_PROGRAMS) $(locallibbin_PROGRAMS)
+ am__objects_1 = couchjs-http.$(OBJEXT) couchjs-main.$(OBJEXT) \

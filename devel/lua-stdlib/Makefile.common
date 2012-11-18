@@ -1,0 +1,18 @@
+# $NetBSD: Makefile.common,v 1.4 2011/10/09 10:02:47 cheusov Exp $
+# used by devel/lua-stdlib-doc/Makefile
+# used by devel/lua-stdlib/Makefile
+
+DISTNAME=		stdlib-11
+CATEGORIES=		devel
+MASTER_SITES=		http://luaforge.net/frs/download.php/3987/
+
+MAINTAINER=		cheusov@NetBSD.org
+HOMEPAGE=		http://luaforge.net/projects/stdlib/
+LICENSE=		mit
+
+DISTINFO_FILE=		${.CURDIR}/../../devel/lua-stdlib/distinfo
+
+WRKSRC=			${WRKDIR}/stdlib
+
+NO_BUILD=		yes
+NO_CONFIGURE=		yes

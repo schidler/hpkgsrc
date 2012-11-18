@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.3 2010/06/14 10:15:15 joerg Exp $
+
+SHA1 (dulwich-0.8.3.tar.gz) = d22041d2b7be93d11042087749d4203062b6d12e
+RMD160 (dulwich-0.8.3.tar.gz) = 915ad05a7653d88439c287b1a49a2e44122fdcf8
+Size (dulwich-0.8.3.tar.gz) = 200480 bytes

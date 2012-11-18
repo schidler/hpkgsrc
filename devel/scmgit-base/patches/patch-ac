@@ -1,0 +1,17 @@
+$NetBSD: patch-ac,v 1.2 2008/06/24 08:21:04 bjs Exp $
+
+--- gitk-git/Makefile.orig	2012-09-30 08:03:21.020185088 +0000
++++ gitk-git/Makefile
+@@ -40,9 +40,9 @@ endif
+ all:: gitk-wish $(ALL_MSGFILES)
+ 
+ install:: all
+-	$(INSTALL) -m 755 gitk-wish '$(DESTDIR_SQ)$(bindir_SQ)'/gitk
+-	$(INSTALL) -d -m 755 '$(DESTDIR_SQ)$(msgsdir_SQ)'
+-	$(foreach p,$(ALL_MSGFILES), $(INSTALL) -m 644 $p '$(DESTDIR_SQ)$(msgsdir_SQ)' &&) true
++	$(BSD_INSTALL_SCRIPT) gitk-wish '$(DESTDIR_SQ)$(bindir_SQ)'/gitk
++	$(BSD_INSTALL_DATA_DIR) '$(DESTDIR_SQ)$(msgsdir_SQ)'
++	$(foreach p,$(ALL_MSGFILES), $(BSD_INSTALL_DATA) $p '$(DESTDIR_SQ)$(msgsdir_SQ)' &&) true
+ 
+ uninstall::
+ 	$(foreach p,$(ALL_MSGFILES), $(RM) '$(DESTDIR_SQ)$(msgsdir_SQ)'/$(notdir $p) &&) true

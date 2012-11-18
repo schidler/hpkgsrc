@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2007/11/07 12:28:59 rillig Exp $
+
+SHA1 (xdelta-1.1.4.tar.gz) = 7cfc3e4ea6b27d199de02906beb6c80a04facb91
+RMD160 (xdelta-1.1.4.tar.gz) = 394a1e46a48328eed951fccb7b4b16b1feb682cc
+Size (xdelta-1.1.4.tar.gz) = 423529 bytes

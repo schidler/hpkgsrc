@@ -1,0 +1,6 @@
+@comment $NetBSD: PLIST,v 1.2 2008/10/14 08:35:18 minskim Exp $
+bin/ragel
+man/man1/ragel.1
+share/doc/ragel/CREDITS
+share/doc/ragel/ChangeLog
+share/doc/ragel/ragel-guide.pdf

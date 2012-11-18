@@ -1,0 +1,31 @@
+$NetBSD: distinfo,v 1.18 2012/08/03 13:46:49 adam Exp $
+
+SHA1 (mysql-5.5.28.tar.gz) = 7b029e61db68866eeea0bec40d47fcdced30dd36
+RMD160 (mysql-5.5.28.tar.gz) = dbd2a75a2b55e54f5216d0ea1376b97fd7a107de
+Size (mysql-5.5.28.tar.gz) = 24739429 bytes
+SHA1 (patch-BUILD_compile-pentium-gcov) = d174c0244267a1e93820c816b9010f6dc67fd5b0
+SHA1 (patch-CMakeLists.txt) = 36e5298ba2e20a2844601d5d26354d6b65fe3f76
+SHA1 (patch-client_completion_hash.cc) = 66780479f683e671c95689104362121b18d7ce41
+SHA1 (patch-client_mysqladmin.cc) = 25145a8be433406ef7ab3de93449256fba71ed04
+SHA1 (patch-client_mysqlbinlog.cc) = c836d27fb5253103b27bfc8bda37b0e1a7af549b
+SHA1 (patch-client_sql_string.cc) = 4170db937286ce833abb59afb83966bc0bdc2b6f
+SHA1 (patch-cmake_libutils.cmake) = 52b403438c2eb833d049f0debc3000ee00fc4ca5
+SHA1 (patch-include_CMakeLists.txt) = 0558ce639823e7d6ed21962f495bffe05a32b89f
+SHA1 (patch-include_my_compare.h) = 6ea2cf0d33b099b3d1a5ef8ed45d4c660935bc25
+SHA1 (patch-include_my_net.h) = 5895492a925c5cc3b1cc43e045104c21c9748d08
+SHA1 (patch-include_my_pthread.h) = a7d7f84e5f7d46d0a5b839424e01dfa8e021c5ac
+SHA1 (patch-include_myisam.h) = aa15fcd630c28ebf843ee5a1e5fee52b733b0167
+SHA1 (patch-mysql-test_CMakeLists.txt) = 564a6085b017f2ae692469690137f6f48128357d
+SHA1 (patch-mysys_my__init.c) = 9a789a487bee055b15947cc36fad86e0c42ff3c4
+SHA1 (patch-mysys_stacktrace.c) = 1a693981ad73cae9436a2d9c431b055d22f54884
+SHA1 (patch-scripts_CMakeLists.txt) = b79c4b900ea57707f969da0a09b68d56af608664
+SHA1 (patch-scripts_mysqld_safe.sh) = 6badc6969caad57b3fd782bf07ed281fd3f35092
+SHA1 (patch-sql_CMakeLists.txt) = 1bccd0c81c59a31aec2e5330d53229d67cfc25cb
+SHA1 (patch-sql_log_event.cc) = f3ad45f134020845455ff5c4b6ee72853d23b519
+SHA1 (patch-sql_log_event.h) = 3a5923a09ce9c2eb3ebc2a06bf17e31598137b6a
+SHA1 (patch-sql_mysqld.cc) = 17024a68fc5a35ed04339806d85b75dee3aabfe1
+SHA1 (patch-sql_sql__profile.cc) = 2f62ed2fa9a851a162b88645b16fb044be6b3bf8
+SHA1 (patch-sql_sql_string.cc) = 58305fe381693849c27e95a0b324445905873829
+SHA1 (patch-storage_innobase_include_os0sync.h) = 476bfeee0d5aba43b83c7c10d40fc0d29043e087
+SHA1 (patch-storage_ndb_include_util_Parser.hpp) = 01c766b22806287aa9781041412684b8e0c0a394
+SHA1 (patch-strings_decimal.c) = 9290767a98cfdeb29b906cfdf830bae604336f91

@@ -1,0 +1,21 @@
+$NetBSD$
+
+--- ldap-nss.c.orig	2009-11-06 10:28:08.000000000 +0000
++++ ldap-nss.c
+@@ -33,6 +33,7 @@ static char rcsId[] =
+ #include <pthread.h>
+ #endif
+ 
++#include <sys/param.h> /* for PATH_MAX */
+ #include <assert.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+@@ -1256,8 +1257,6 @@ do_init (void)
+     __pid = pid;
+   else
+     __libc_once (__once, do_atfork_setup);
+-#else
+-  __pid = pid;
+ #endif
+ 
+   __euid = euid;
