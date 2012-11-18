@@ -1,4 +1,4 @@
-/*	$NetBSD: engine.c,v 1.1 2004/08/16 17:24:56 jlam Exp $	*/
+/*	$NetBSD: engine.c,v 1.18 2004/04/03 17:00:00 christos Exp $	*/
 
 /*-
  * Copyright (c) 1992, 1993, 1994

@@ -8,7 +8,6 @@ DISTFILES=	# empty
 MAINTAINER=	pkgsrc-users@NetBSD.org
 COMMENT=	Extra bootstrap files and scripts for ${OPSYS}
 
-PKG_DESTDIR_SUPPORT=	user-destdir
 BOOTSTRAP_PKG=	yes
 
 NO_CONFIGURE=	yes
@@ -16,18 +15,14 @@ NO_BUILD=	yes
 
 .include "../../mk/bsd.prefs.mk"
 
-EXTRA_FILES=	fakeldd fakeldd_haiku mkdir strip xargs
+EXTRA_FILES=	fakeldd mkdir strip xargs
 PLIST_VARS+=	${EXTRA_FILES}
 
 .PHONY: ${EXTRA_FILES:S/^/do-install-/}
 
 NEED_FAKELDD=		Haiku IRIX
 .if !empty(NEED_FAKELDD:M${OPSYS})
-.if ${OPSYS} == "Haiku"
-PLIST.fakeldd_haiku=		yes
-.else
 PLIST.fakeldd=		yes
-.endif
 do-install:		do-install-fakeldd
 .endif
 
@@ -56,11 +51,10 @@ do-install:
 	@${ECHO} ${.ALLSRC}
 
 do-install-fakeldd:
-.if ${OPSYS} == "Haiku"
-	${INSTALL_SCRIPT_DIR} ${DESTDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/fakeldd-${OPSYS} ${DESTDIR}${PREFIX}/bin/fakeldd
-.else
 	${INSTALL_SCRIPT_DIR} ${DESTDIR}${PREFIX}/sbin
+.if ${OPSYS} == "Haiku"
+	${INSTALL_SCRIPT} ${WRKSRC}/fakeldd-${OPSYS} ${DESTDIR}${PREFIX}/sbin/fakeldd
+.else
 	${INSTALL_SCRIPT} ${WRKSRC}/fakeldd ${DESTDIR}${PREFIX}/sbin/fakeldd
 .endif
 

@@ -1,4 +1,4 @@
-#	$NetBSD: HPUX.sys.mk,v 1.4 2008/01/14 05:55:30 tnn Exp $
+#	$NetBSD: HPUX.sys.mk,v 1.3 2008/01/14 05:14:59 tnn Exp $
 #	@(#)sys.mk	8.2 (Berkeley) 3/21/94
 
 unix?=		We run Unix

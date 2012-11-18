@@ -1,16 +1,15 @@
-# $NetBSD: Makefile,v 1.43 2011/10/28 10:38:07 dsainty Exp $
+# $NetBSD: Makefile,v 1.50 2012/09/15 10:05:20 obache Exp $
 
 .include "dist.mk"
 
 PKGNAME=	python26-${PY_DISTVERSION}
+PKGREVISION=	2
 CATEGORIES=	lang python
 
 MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://www.python.org/
 COMMENT=	Interpreted, interactive, object-oriented programming language
 LICENSE=	python-software-foundation
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 CONFLICTS+=	python-[0-9]*
 
@@ -21,13 +20,11 @@ CONFIGURE_ARGS+=	OPT=${CFLAGS:Q}
 CONFIGURE_ARGS+=	--with-system-ffi
 
 LDFLAGS+=		-L${WRKSRC}
-CPPFLAGS.Haiku+=	-I${PREFIX}/include
 
 # $RANDOM usage there is fine
 CHECK_PORTABILITY_SKIP=	Tools/faqwiz/move-faqwiz.sh
 
 USE_LANGUAGES=		c c++
-UDE_PKGDATADIR=		no
 
 PTHREAD_OPTS+=	require
 .include "../../mk/pthread.buildlink3.mk"
@@ -46,13 +43,10 @@ CFLAGS+=	-fwrapv
 
 # fdatasync()
 LIBS.SunOS+=		-lrt
-LIBS.Haiku+=		-lintl -liconv -lcharset -ltextencoding
-LDFLAGS.Haiku+=		-lintl -liconv -lcharset -ltextencoding
 
 PY_VER_SUFFIX=		2.6
 
 .if ${OPSYS} == "NetBSD"
-PRIVILEGED_STAGES+=	clean
 # XXX work around a botched autoconf check which ignores libintl
 CONFIGURE_ENV+=		ac_cv_func_bind_textdomain_codeset=yes
 .endif
@@ -101,9 +95,9 @@ PLIST.dl=	yes
 
 # builds additional modules if OpenSSL < 0.9.8
 PLIST_VARS+=		openssl097
-CHECK_BUILTIN.openssl:=	no
-.include "../../security/openssl/builtin.mk"
 CHECK_BUILTIN.openssl:=	yes
+.include "../../security/openssl/builtin.mk"
+CHECK_BUILTIN.openssl:=	no
 .if !empty(USE_BUILTIN.openssl:M[yY][eE][sS]) && \
     !empty(BUILTIN_PKG.openssl:Mopenssl-0.9.[67]*)
 PLIST.openssl097=	yes
@@ -120,7 +114,23 @@ PLIST.extra-so=	yes
 INSTALL_UNSTRIPPED=	yes
 .endif
 
-PLIST_VARS+=	dll nis
+PLIST_VARS+=	dll nis no-nis
+.if ${OPSYS} == "IRIX"
+.  if ${ABI} == "64"
+PLIST.no-nis=	yes
+.  else
+PLIST.nis=	yes
+.  endif
+.else
+PLIST.dll=	yes
+.  if ${OPSYS} == "MirBSD"
+# neither nis nor no-nis
+.  elif ${OPSYS} != "NetBSD" || exists(/usr/bin/ypcat)
+PLIST.nis=	yes
+.  else
+PLIST.no-nis=	yes
+.  endif
+.endif
 
 .include "../../mk/bdb.buildlink3.mk"
 MAKE_ENV+=	PY_BDB_TYPE=${BDB_TYPE}
@@ -163,12 +173,6 @@ post-extract:
 post-install:
 	${LN} -fs ${DESTDIR}${PREFIX}/lib/libpython2.6.sl \
 		${DESTDIR}${PREFIX}/lib/libpython2.6.sl.1.0
-.endif
-
-.if ${OPSYS} == "Haiku"
-post-install:
-	${LN} -fs ${DESTDIR}${PREFIX}/bin/python${PY_VER_SUFFIX} \
-		${DESTDIR}${PREFIX}/bin/python
 .endif
 
 USE_GNU_READLINE=			yes

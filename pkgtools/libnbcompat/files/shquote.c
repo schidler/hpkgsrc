@@ -1,4 +1,4 @@
-/* $NetBSD: shquote.c,v 1.1 2008/10/06 12:36:20 joerg Exp $ */
+/* $NetBSD: shquote.c,v 1.8 2006/03/19 02:33:02 christos Exp $ */
 
 /*
  * Copyright (c) 2001 Christopher G. Demetriou

@@ -1,4 +1,4 @@
-#	$NetBSD: bsd.dep.mk,v 1.2 2008/04/15 16:49:56 joerg Exp $
+#	$NetBSD: bsd.dep.mk,v 1.1.1.1 2006/07/14 23:13:00 jlam Exp $
 
 .PHONY:		cleandepend
 cleandir: cleandepend

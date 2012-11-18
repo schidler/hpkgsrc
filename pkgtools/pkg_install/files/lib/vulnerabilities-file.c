@@ -1,4 +1,4 @@
-/*	$NetBSD: vulnerabilities-file.c,v 1.7 2010/06/16 23:02:49 joerg Exp $	*/
+/*	$NetBSD: vulnerabilities-file.c,v 1.6 2010/04/14 18:24:58 joerg Exp $	*/
 
 /*-
  * Copyright (c) 2008, 2010 Joerg Sonnenberger <joerg@NetBSD.org>.
@@ -38,7 +38,7 @@
 #if HAVE_SYS_CDEFS_H
 #include <sys/cdefs.h>
 #endif
-__RCSID("$NetBSD: vulnerabilities-file.c,v 1.7 2010/06/16 23:02:49 joerg Exp $");
+__RCSID("$NetBSD: vulnerabilities-file.c,v 1.6 2010/04/14 18:24:58 joerg Exp $");
 
 #if HAVE_SYS_STAT_H
 #include <sys/stat.h>

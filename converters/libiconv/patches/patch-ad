@@ -1,4 +1,4 @@
-$NetBSD: patch-ad,v 1.8 2008/01/13 09:30:57 joerg Exp $
+$NetBSD$
 
 Always export locale_alias as e.g. libintl expects it.
 

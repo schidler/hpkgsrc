@@ -1,4 +1,4 @@
-$NetBSD: patch-ae,v 1.7 2010/11/10 21:00:50 adam Exp $
+$NetBSD$
 
 --- libcharset/lib/Makefile.in.orig	2009-06-21 11:17:33.000000000 +0000
 +++ libcharset/lib/Makefile.in

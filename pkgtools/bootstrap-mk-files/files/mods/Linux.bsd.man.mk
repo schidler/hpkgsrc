@@ -1,4 +1,4 @@
-#	$NetBSD: Linux.bsd.man.mk,v 1.10 2011/10/30 22:12:45 wiz Exp $
+#	$NetBSD: Linux.bsd.man.mk,v 1.9 2011/01/17 15:12:46 ghen Exp $
 #	@(#)bsd.man.mk	8.1 (Berkeley) 6/8/93
 
 .if !target(__initialized__)

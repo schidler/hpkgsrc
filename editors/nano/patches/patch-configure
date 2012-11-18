@@ -1,4 +1,4 @@
-$NetBSD: patch-configure,v 1.1 2011/08/01 05:56:30 dholland Exp $
+$NetBSD$
 
 Disable the groff html check to prevent random PLIST variation.
 

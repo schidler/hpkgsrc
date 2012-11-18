@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.184 2011/10/28 21:19:42 cheusov Exp $
+# $NetBSD: Makefile,v 1.188 2012/10/09 07:36:08 marino Exp $
 
 # Notes to package maintainers:
 #
@@ -16,7 +16,6 @@ HOMEPAGE=		http://www.pkgsrc.org/
 COMMENT=		Package management and administration tools for pkgsrc
 LICENSE=		modified-bsd
 
-PKG_DESTDIR_SUPPORT=	user-destdir
 BOOTSTRAP_PKG=	yes
 SKIP_LICENSE_CHECK=	yes
 
@@ -64,6 +63,7 @@ CPPFLAGS+=		-DDEF_UMASK=${DEF_UMASK}
 
 MAKE_ENV+=		MACHINE_ARCH=${MACHINE_ARCH:Q}
 MAKE_ENV+=		OPSYS=${OPSYS:Q}
+MAKE_ENV+=		MANINSTALL=${MANINSTALL:Q}
 
 PKG_DBDIR?=		/var/db/pkg
 EGDIR=			${PREFIX}/share/examples/pkg_install
@@ -121,6 +121,12 @@ LDFLAGS+=	-L${WRKDIR}/zlib
 CPPFLAGS+=	-I${WRKDIR}/libarchive/libarchive
 LDFLAGS+=	-L${WRKDIR}/libarchive/.libs
 
+# Until we support pkgsrc openssl at bootstrap time, disable it completely
+# if asked to avoid the builtin.
+.if empty(USE_BUILTIN.openssl:M[Yy][Ee][Ss])
+LIBARCHIVE_CONFIGURE_ARGS=	--without-openssl
+.endif
+
 LIBARCHIVE_LIBS=	${SED} -n -e 's/^Libs://p' -e 's/^Libs.private://p' \
     ${WRKDIR}/libarchive/build/pkgconfig/libarchive.pc 2>/dev/null || echo
 LIBS+=		${LIBARCHIVE_LIBS:sh}
@@ -139,13 +145,6 @@ LDFLAGS+=	-Wl,-search_paths_first
 CONFIGURE_ENV+=	ac_cv_header_ext2fs_ext2_fs_h=no
 .endif
 
-.if ${OPSYS} == Haiku
-CONFIGURE_ARGS+=	--sbindir=${PREFIX}/bin
-.endif
-
-.if ${OPSYS} == Haiku
-PLIST_SRC= ${PKGDIR}/PLIST.Haiku
-.endif
 # Hack to make sure that the libarchive version is replaced
 pre-configure: config-guess-override config-sub-override
 .else
@@ -182,7 +181,8 @@ pre-configure:
 		${CONFIG_SHELL} ${CONFIG_SHELL_FLAGS}			\
 		./configure --disable-shared --disable-bsdtar		\
 		--disable-bsdcpio --without-expat --without-xml2	\
-		--disable-dependency-tracking
+		--disable-dependency-tracking				\
+		${LIBARCHIVE_CONFIGURE_ARGS}
 	cd ${WRKDIR}/libarchive && ${BUILD_MAKE_CMD}
 .endif
 	cd ${WRKDIR}/libfetch && ${SETENV} ${MAKE_ENV} ${BSD_MAKE_ENV}	\

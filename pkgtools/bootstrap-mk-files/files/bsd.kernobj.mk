@@ -1,4 +1,4 @@
-#	$NetBSD: bsd.kernobj.mk,v 1.1.1.1 2006/07/14 23:13:00 jlam Exp $
+#	$NetBSD: bsd.kernobj.mk,v 1.1.1.1 2004/03/11 13:04:17 grant Exp $
 
 # KERNSRCDIR	Is the location of the top of the kernel src.
 # 		It defaults to ${BSDSRCDIR}/sys, but the top-level

@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.2 2009/10/12 21:35:05 ahoka Exp $
+# $NetBSD: Makefile,v 1.1.1.1 2009/10/12 21:28:37 ahoka Exp $
 
 VERSION=	20040406
 DISTNAME=	ru_RU

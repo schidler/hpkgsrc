@@ -1,6 +1,6 @@
 #!@PERL5@
 #
-# $NetBSD: patchdiff.pl,v 1.15 2011/03/04 15:57:07 wiz Exp $
+# $NetBSD: patchdiff.pl,v 1.14 2011/02/02 23:35:11 wiz Exp $
 #
 # patchdiff: compares a set of patches in the patch dir with their predecessors
 #

@@ -1,4 +1,4 @@
-$NetBSD: patch-ag,v 1.2 2010/01/04 19:43:39 joerg Exp $
+$NetBSD$
 
 --- Makefile.in.orig	2009-06-14 16:25:39.000000000 +0000
 +++ Makefile.in

@@ -1,4 +1,4 @@
-/*	$NetBSD: fnmatch.c,v 1.3 2004/08/23 03:32:12 jlam Exp $	*/
+/*	$NetBSD: fnmatch.c,v 1.2 2004/08/16 17:24:56 jlam Exp $	*/
 
 /*
  * Copyright (c) 1989, 1993, 1994
@@ -38,7 +38,7 @@
 #if 0
 static char sccsid[] = "@(#)fnmatch.c  8.2 (Berkeley) 4/16/94";
 #else
-__RCSID("$NetBSD: fnmatch.c,v 1.3 2004/08/23 03:32:12 jlam Exp $");
+__RCSID("$NetBSD: fnmatch.c,v 1.2 2004/08/16 17:24:56 jlam Exp $");
 #endif
 #endif /* LIBC_SCCS and not lint */
 

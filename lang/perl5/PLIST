@@ -1,4 +1,7 @@
 @comment $NetBSD: PLIST,v 1.4 2005/06/24 06:43:45 jlam Exp $
+bin/a2p
+bin/perl
+bin/perl5.16.1
 bin/perllink
 lib/libperl.so
 man/man1/perllink.1

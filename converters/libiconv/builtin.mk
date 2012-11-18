@@ -1,4 +1,4 @@
-# $NetBSD: builtin.mk,v 1.22 2011/01/16 11:16:28 wiz Exp $
+# $NetBSD: builtin.mk,v 1.21 2010/11/10 21:00:49 adam Exp $
 
 BUILTIN_PKG:=	iconv
 

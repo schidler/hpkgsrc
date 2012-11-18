@@ -1,4 +1,4 @@
-#	$NetBSD: bsd.README,v 1.2 2009/12/30 20:46:22 abs Exp $
+#	$NetBSD: bsd.README,v 1.1.1.1 2006/07/14 23:13:00 jlam Exp $
 #	@(#)bsd.README	8.2 (Berkeley) 4/2/94
 
 This is the README file for the new make "include" files for the BSD

@@ -1,4 +1,4 @@
-#	$NetBSD: Interix.bsd.lib.mk,v 1.2 2007/08/10 13:04:13 joerg Exp $
+#	$NetBSD: Interix.bsd.lib.mk,v 1.1.1.1 2006/07/14 23:13:01 jlam Exp $
 #	@(#)bsd.lib.mk	8.3 (Berkeley) 4/22/94
 
 .if !target(__initialized__)

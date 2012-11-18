@@ -1,4 +1,4 @@
-# $NetBSD: inplace.mk,v 1.10 2011/08/20 16:13:05 cheusov Exp $
+# $NetBSD: inplace.mk,v 1.9 2009/08/17 18:43:49 joerg Exp $
 #
 # This file should not be included directly. Use USE_FEATURES instead.
 #

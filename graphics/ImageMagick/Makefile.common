@@ -1,9 +1,9 @@
-# $NetBSD: Makefile.common,v 1.91 2011/10/22 14:55:51 ryoon Exp $
+# $NetBSD: Makefile.common,v 1.95 2012/04/20 15:22:37 adam Exp $
 #
 # used by graphics/p5-PerlMagick/Makefile
 
-IM_MAJOR_VER=		6.7.3
-IM_MINOR_VER=		1
+IM_MAJOR_VER=		6.7.6
+IM_MINOR_VER=		6
 IM_MAJOR_LIB_VER=	${IM_MAJOR_VER}
 
 .if (${IM_MINOR_VER} != NONE)
@@ -18,7 +18,6 @@ DISTVERSION=	${DISTSUFFIX:S/-/./}
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://ftp.nluug.nl/pub/ImageMagick/ \
-		http://image_magick.veidrodis.com/image_magick/ \
 		ftp://ftp.sunet.se/pub/multimedia/graphics/ImageMagick/ \
 		http://mirror.is.co.za/pub/imagemagick/ \
 		ftp://ftp.kddlabs.co.jp/graphics/ImageMagick/ \
@@ -26,6 +25,7 @@ MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.imagemagick.org/
+LICENSE=	gnu-gpl-v3
 
 WRKSRC=		${WRKDIR}/ImageMagick-${DISTSUFFIX}
 
@@ -36,7 +36,6 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--without-dps
 CONFIGURE_ARGS+=	--without-fpx
 CONFIGURE_ARGS+=	--without-gvc
-CONFIGURE_ARGS+=	--without-hdf
 CONFIGURE_ARGS+=	--without-jbig
 CONFIGURE_ARGS+=	--without-lqr
 CONFIGURE_ARGS+=	--without-modules

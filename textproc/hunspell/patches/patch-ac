@@ -1,4 +1,4 @@
-$NetBSD: patch-ac,v 1.1 2009/09/22 09:16:51 sketch Exp $
+$NetBSD$
 
 --- src/hunspell/replist.cxx.orig	Sat Nov  1 14:09:51 2008
 +++ src/hunspell/replist.cxx	Tue Sep 22 10:12:37 2009

@@ -1,7 +1,7 @@
 #! /bin/sh
 #
 # From
-# $NetBSD: regress.sh,v 1.4 2006/08/29 13:43:11 joerg Exp $
+# $NetBSD: regress.sh,v 1.3 2005/03/22 10:16:15 agc Exp $
 
 # one can do, for example to test with openssl: 
 #  DIGESTDIR=/path/to DIGESTCMD=openssl sh regress.sh

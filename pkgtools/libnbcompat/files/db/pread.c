@@ -1,4 +1,4 @@
-/* $NetBSD: pread.c,v 1.1 2010/04/20 00:32:22 joerg Exp $ */
+/* $NetBSD$ */
 
 static ssize_t
 working_pread(int fd, void *buf, size_t nbytes, off_t off)

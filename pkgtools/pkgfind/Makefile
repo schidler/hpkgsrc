@@ -9,7 +9,6 @@ MAINTAINER=	pkgsrc-users@NetBSD.org
 COMMENT=	Find packages by package name in pkgsrc
 
 PKG_INSTALLATION_TYPES=	overwrite pkgviews
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 USE_FEATURES=	err getprogname setprogname snprintf warn
 

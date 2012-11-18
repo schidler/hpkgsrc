@@ -1,4 +1,4 @@
-dnl $NetBSD: aclocal.m4,v 1.4 2006/03/01 16:47:54 joerg Exp $
+dnl $NetBSD: aclocal.m4,v 1.3 2004/02/01 00:07:56 snj Exp $
 dnl
 
 dnl

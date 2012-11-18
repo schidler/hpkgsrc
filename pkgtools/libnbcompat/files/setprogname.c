@@ -1,4 +1,4 @@
-/* $NetBSD: setprogname.c,v 1.3 2004/08/23 03:32:12 jlam Exp $ */
+/* $NetBSD: setprogname.c,v 1.3 2003/07/26 19:24:44 salo Exp $ */
 
 /*
  * Copyright (c) 2001 Christopher G. Demetriou
@@ -37,7 +37,7 @@
 #include <nbcompat.h>
 #include <nbcompat/cdefs.h>
 #if defined(LIBC_SCCS) && !defined(lint)
-__RCSID("$NetBSD: setprogname.c,v 1.3 2004/08/23 03:32:12 jlam Exp $");
+__RCSID("$NetBSD: setprogname.c,v 1.3 2003/07/26 19:24:44 salo Exp $");
 #endif /* LIBC_SCCS and not lint */
 
 /* In NetBSD, the program name is set by crt0.  It can't be overridden. */

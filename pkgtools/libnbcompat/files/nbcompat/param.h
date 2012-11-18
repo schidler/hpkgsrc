@@ -1,4 +1,4 @@
-/*	$NetBSD: param.h,v 1.3 2009/02/19 00:51:12 abs Exp $	*/
+/*	$NetBSD: param.h,v 1.2 2008/04/29 05:46:08 martin Exp $	*/
 
 /*-
  * Copyright (c) 2004 The NetBSD Foundation, Inc.

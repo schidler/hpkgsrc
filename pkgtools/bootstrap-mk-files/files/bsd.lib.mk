@@ -392,8 +392,11 @@ lib${LIB}.so.${SHLIB_FULLVERSION}: ${SOLIB} ${DPADD} \
 	    ${SHLIB_LDENDFILE}
 .endif
 .if ${OBJECT_FMT} == "ELF"
+.if defined(SHLIB_FULLVERSION) && defined(SHLIB_MAJOR) && \
+    "${SHLIB_FULLVERSION}" != "${SHLIB_MAJOR}"
 	ln -sf lib${LIB}.so.${SHLIB_FULLVERSION} lib${LIB}.so.${SHLIB_MAJOR}.tmp
 	mv -f lib${LIB}.so.${SHLIB_MAJOR}.tmp lib${LIB}.so.${SHLIB_MAJOR}
+.endif
 	ln -sf lib${LIB}.so.${SHLIB_FULLVERSION} lib${LIB}.so.tmp
 	mv -f lib${LIB}.so.tmp lib${LIB}.so
 .endif

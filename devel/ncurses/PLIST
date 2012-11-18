@@ -1,4 +1,4 @@
-@comment $NetBSD: PLIST,v 1.20 2011/02/28 11:02:46 adam Exp $
+@comment $NetBSD: PLIST,v 1.19 2010/06/21 14:49:00 tron Exp $
 bin/captoinfo
 bin/clear
 bin/infocmp

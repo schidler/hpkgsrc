@@ -111,9 +111,7 @@ INSTALL_UNSTRIPPED=	yes
 .endif
 
 PLIST_VARS+=	dll nis no-nis
-.if ${OPSYS} == "Haiku"
 PLIST.dll=	yes
-.else
 .if ${OPSYS} == "IRIX" 
 .  if ${ABI} == "64"
 PLIST.no-nis=	yes
@@ -129,7 +127,6 @@ PLIST.nis=	yes
 .  else
 PLIST.no-nis=	yes
 .  endif
-.endif
 .endif
 
 .include "../../mk/bdb.buildlink3.mk"

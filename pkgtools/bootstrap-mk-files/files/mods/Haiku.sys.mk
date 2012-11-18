@@ -1,4 +1,4 @@
-#	$NetBSD: Haiku.sys.mk,v 1.1 2010/02/06 10:50:40 obache Exp $
+#	$NetBSD$
 #	NetBSD: sys.mk,v 1.58 2000/08/22 17:38:49 bjh21 Exp 
 #	@(#)sys.mk	8.2 (Berkeley) 3/21/94
 

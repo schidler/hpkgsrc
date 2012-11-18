@@ -1,4 +1,4 @@
-# $NetBSD: hacks.mk,v 1.3 2010/11/05 16:43:55 shattered Exp $
+# $NetBSD: hacks.mk,v 1.2 2007/10/16 23:48:58 tnn Exp $
 
 .if !defined(LIBICONV_HACKS_MK)
 LIBICONV_HACKS_MK=	# defined

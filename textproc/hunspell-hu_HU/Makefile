@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.4 2011/02/22 11:46:54 ahoka Exp $
+# $NetBSD: Makefile,v 1.3 2009/10/11 11:17:07 ahoka Exp $
 
 VERSION=		1.6.1
 DICTNAME=		hu_HU

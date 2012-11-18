@@ -1,6 +1,6 @@
-# $NetBSD: Makefile,v 1.39 2011/04/22 13:43:26 obache Exp $
+# $NetBSD: Makefile,v 1.44 2012/09/15 10:04:29 obache Exp $
 
-DISTNAME=	nano-2.2.4
+DISTNAME=	nano-2.2.6
 PKGREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.nano-editor.org/dist/v2.2/
@@ -16,8 +16,6 @@ USE_TOOLS+=		msgfmt
 
 INFO_FILES=		yes
 
-PKG_DESTDIR_SUPPORT=	user-destdir
-
 CONFIGURE_ARGS+=	--enable-color
 CONFIGURE_ARGS+=	--enable-multibuffer
 CONFIGURE_ARGS+=	--enable-nanorc
@@ -31,8 +29,23 @@ CONFIGURE_ARGS+=	--enable-extra
 .  include "../../devel/glib2/buildlink3.mk"
 .endif
 
-
 .include "options.mk"
+
+.if ${OPSYS} != "Haiku"
+INSTALLATION_DIRS+=	share/examples/nano
+CONF_FILES+=		share/examples/nano/nanorc ${PKG_SYSCONFDIR}/nanorc
+.else
+INSTALLATION_DIRS+=	documentation/examples/nano
+CONF_FILES+=		documentation/examples/nano/nanorc ${PKG_SYSCONFDIR}/nanorc
+.endif
+
+post-install:
+	
+.if ${OPSYS} != "Haiku"	
+	${INSTALL_DATA} ${WRKSRC}/doc/nanorc.sample ${DESTDIR}${PREFIX}/share/examples/nano/nanorc
+.else
+	${INSTALL_DATA} ${WRKSRC}/doc/nanorc.sample ${DESTDIR}${PREFIX}/documentation/examples/nano/nanorc
+.endif
 
 .include "../../devel/gettext-lib/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

@@ -62,11 +62,11 @@ _OPSYS_CAN_CHECK_SHLIBS=	no # can't use readelf in check/bsd.check-vars.mk
 #_OPSYS_MAX_CMDLEN_CMD=	/sbin/sysctl -n kern.argmax
 
 .if defined(GNU_CONFIGURE)
-LIBS.Haiku+=	-lnetwork -lroot
-.if empty(USE_PKGDATADIR:M[nN][oO])
-USE_PKGDATADIR=	yes
-.endif
-.if empty(USE_PKGDOCDIR:M[nN][oO])
-USE_PKGDOCDIR=	yes
-.endif
+LIBS.Haiku+=	-lnetwork -lroot -lbsd
+#.if empty(USE_PKGDATADIR:M[nN][oO])
+#USE_PKGDATADIR=	yes
+#.endif
+#.if empty(USE_PKGDOCDIR:M[nN][oO])
+#USE_PKGDOCDIR=	yes
+#.endif
 .endif

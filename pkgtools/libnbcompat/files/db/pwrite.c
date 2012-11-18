@@ -1,4 +1,4 @@
-/* $NetBSD: pwrite.c,v 1.1 2010/04/20 00:32:23 joerg Exp $ */
+/* $NetBSD$ */
 
 static ssize_t
 working_pwrite(int fd, const void *buf, size_t nbytes, off_t off)

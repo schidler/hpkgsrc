@@ -1,4 +1,4 @@
-/*	$NetBSD: gettemp.c,v 1.2 2007/07/31 13:17:33 joerg Exp $	*/
+/*	$NetBSD: gettemp.c,v 1.1 2004/08/23 03:32:12 jlam Exp $	*/
 
 /*
  * Copyright (c) 1987, 1993
@@ -41,7 +41,7 @@
 #if 0
 static char sccsid[] = "@(#)mktemp.c	8.1 (Berkeley) 6/4/93";
 #else
-__RCSID("$NetBSD: gettemp.c,v 1.2 2007/07/31 13:17:33 joerg Exp $");
+__RCSID("$NetBSD: gettemp.c,v 1.1 2004/08/23 03:32:12 jlam Exp $");
 #endif
 #endif /* LIBC_SCCS and not lint */
 

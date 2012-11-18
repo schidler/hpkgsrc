@@ -6,6 +6,7 @@ BUILDLINK_TREE+=	hunspell
 HUNSPELL_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.hunspell+=	hunspell>=1.2.2
+BUILDLINK_ABI_DEPENDS.hunspell+=	hunspell>=1.3.2
 BUILDLINK_PKGSRCDIR.hunspell?=		../../textproc/hunspell
 .endif # HUNSPELL_BUILDLINK3_MK
 

@@ -1,4 +1,4 @@
-/*	$NetBSD: build.c,v 1.15 2010/04/20 00:39:13 joerg Exp $	*/
+/*	$NetBSD: build.c,v 1.14 2009/11/05 16:22:32 joerg Exp $	*/
 
 #if HAVE_CONFIG_H
 #include "config.h"
@@ -7,7 +7,7 @@
 #if HAVE_SYS_CDEFS_H
 #include <sys/cdefs.h>
 #endif
-__RCSID("$NetBSD: build.c,v 1.15 2010/04/20 00:39:13 joerg Exp $");
+__RCSID("$NetBSD: build.c,v 1.14 2009/11/05 16:22:32 joerg Exp $");
 
 /*-
  * Copyright (c) 2007 Joerg Sonnenberger <joerg@NetBSD.org>.

@@ -2,6 +2,7 @@
 #
 
 DISTNAME=	cherokee-1.2.101
+PKGREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/1.2/${PKGVERSION_NOREV}/
 
@@ -16,14 +17,9 @@ GNU_CONFIGURE=		yes
 USE_LIBTOOL=		yes
 USE_TOOLS+=		gmake msgfmt autoconf automake autoreconf
 
-AUTOCONF_REQD=	2.50
-
 CONFIGURE_ARGS+=	--localstatedir=${VARBASE}
 CONFIGURE_ARGS+=	--sysconfdir=${PKG_SYSCONFDIR}
-CONFIGURE_ARGS+=	--with-wwwroot=${PREFIX}/data/cherokee
-CONFIGURE_ARGS+=	--datarootdir=${PREFIX}/data
-CONFIGURE_ARGS+=	--docdir=${PREFIX}/documentation/doc/cherokee
-CONFIGURE_ARGS+=	--sbindir=${PREFIX}/bin
+CONFIGURE_ARGS+=	--with-wwwroot=${PREFIX}/share/cherokee
 
 PKGCONFIG_OVERRIDE=	cherokee.pc.in
 
@@ -31,7 +27,7 @@ INSTALL_MAKE_FLAGS+=	sysconfdir=${EGDIR}
 OWN_DIRS=		${PKG_SYSCONFDIR}/cherokee
 OWN_DIRS+=		${VARBASE}/log
 OWN_DIRS+=		${VARBASE}/run
-EGDIR=			${PREFIX}/documentation/examples/cherokee
+EGDIR=			${PREFIX}/share/examples/cherokee
 MESSAGE_SUBST+=		EGDIR=${EGDIR}
 CONF_FILES+=		${EGDIR}/cherokee/cherokee.conf \
 			${PKG_SYSCONFDIR}/cherokee/cherokee.conf
@@ -48,13 +44,13 @@ REPLACE_PYTHON=		admin/CTK/CTK-run.pre \
 			admin/server.py admin/upgrade_config.py \
 			cherokee/cherokee-admin-launcher \
 			cherokee/cherokee-tweak
+			
+pre-configure:
+		cd ${WRKSRC} && autoreconf -if			
 
 # Needs installation:
 TEST_TARGET=		test
 
-pre-configure:
-		cd ${WRKSRC} && autoreconf -if
-	
 .include "../../devel/pcre/buildlink3.mk"
 .include "../../lang/python/application.mk"
 .include "../../mk/bsd.pkg.mk"

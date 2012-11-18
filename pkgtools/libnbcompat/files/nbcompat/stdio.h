@@ -1,4 +1,4 @@
-/*	$NetBSD: stdio.h,v 1.4 2008/04/29 05:46:08 martin Exp $	*/
+/*	$NetBSD: stdio.h,v 1.3 2008/04/21 22:24:43 joerg Exp $	*/
 
 /*-
  * Copyright (c) 2004 The NetBSD Foundation, Inc.

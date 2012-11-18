@@ -1,4 +1,4 @@
-/*	$NetBSD: recno.h,v 1.1 2008/10/10 00:21:44 joerg Exp $	*/
+/*	$NetBSD: recno.h,v 1.6 2003/08/07 16:42:44 agc Exp $	*/
 /*	NetBSD: recno.h,v 1.6 2003/08/07 16:42:44 agc Exp 	*/
 
 /*-

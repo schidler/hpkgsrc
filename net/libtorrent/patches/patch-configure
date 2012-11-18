@@ -1,8 +1,8 @@
 $NetBSD$
 
---- configure.orig	2012-02-23 07:01:40.050593792 +0000
+--- configure.orig	2012-04-11 14:00:43.007864320 +0000
 +++ configure
-@@ -15594,7 +15594,7 @@ fi
+@@ -15580,7 +15580,7 @@ fi
  # which indicates that we try without any flags at all, and "pthread-config"
  # which is a program returning the flags for the Pth emulation library.
  
@@ -11,7 +11,7 @@ $NetBSD$
  
  # The ordering *is* (sometimes) important.  Some notes on the
  # individual items follow:
-@@ -16116,7 +16116,7 @@ $as_echo_n "checking for boostlib >= $bo
+@@ -16103,7 +16103,7 @@ $as_echo_n "checking for boostlib >= $bo
  		BOOST_LDFLAGS="-L$ac_boost_path/lib"
  		BOOST_CPPFLAGS="-I$ac_boost_path/include"
  	else
@@ -20,7 +20,7 @@ $NetBSD$
  			if test -d "$ac_boost_path_tmp/include/boost" && test -r "$ac_boost_path_tmp/include/boost"; then
  				BOOST_LDFLAGS="-L$ac_boost_path_tmp/lib"
  				BOOST_CPPFLAGS="-I$ac_boost_path_tmp/include"
-@@ -16196,7 +16196,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+@@ -16183,7 +16183,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  				done
  			fi
  		else
@@ -29,7 +29,7 @@ $NetBSD$
  				if test -d "$ac_boost_path" && test -r "$ac_boost_path"; then
  					for i in `ls -d $ac_boost_path/include/boost-* 2>/dev/null`; do
  						_version_tmp=`echo $i | sed "s#$ac_boost_path##" | sed 's/\/include\/boost-//' | sed 's/_/./'`
-@@ -19398,7 +19398,7 @@ fi
+@@ -18805,7 +18805,7 @@ fi
  
  else
  

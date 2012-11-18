@@ -1,4 +1,4 @@
-#	$NetBSD: IRIX.sys.mk,v 1.4 2011/08/29 10:43:35 cheusov Exp $
+#	$NetBSD: IRIX.sys.mk,v 1.3 2008/02/21 15:51:50 tnn Exp $
 #	@(#)sys.mk	8.2 (Berkeley) 3/21/94
 
 unix?=		We run Unix

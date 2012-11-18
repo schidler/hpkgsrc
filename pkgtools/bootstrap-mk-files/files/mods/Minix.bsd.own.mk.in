@@ -1,4 +1,4 @@
-#	$NetBSD: Minix.bsd.own.mk.in,v 1.1 2011/11/06 21:01:30 tcort Exp $
+#	$NetBSD$
 
 .if !defined(_BSD_OWN_MK_)
 _BSD_OWN_MK_=1

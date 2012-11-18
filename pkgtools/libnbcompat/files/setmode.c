@@ -1,4 +1,4 @@
-/*	$NetBSD: setmode.c,v 1.10 2007/07/31 13:17:33 joerg Exp $	*/
+/*	$NetBSD: setmode.c,v 1.9 2004/08/23 03:32:12 jlam Exp $	*/
 
 /*
  * Copyright (c) 1989, 1993, 1994
@@ -38,7 +38,7 @@
 #if 0
 static char sccsid[] = "@(#)setmode.c	8.2 (Berkeley) 3/25/94";
 #else
-__RCSID("$NetBSD: setmode.c,v 1.10 2007/07/31 13:17:33 joerg Exp $");
+__RCSID("$NetBSD: setmode.c,v 1.9 2004/08/23 03:32:12 jlam Exp $");
 #endif
 #endif /* LIBC_SCCS and not lint */
 

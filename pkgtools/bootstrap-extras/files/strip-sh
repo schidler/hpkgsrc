@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $NetBSD: strip-sh,v 1.1.1.1 2006/07/17 14:21:31 jlam Exp $
+# $NetBSD$
 #
 # On some platforms strip complains too much if the file is not writable,
 # or if it's already stripped.

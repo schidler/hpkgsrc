@@ -1,4 +1,4 @@
-#	$NetBSD: Darwin.bsd.man.mk,v 1.2 2007/11/04 08:08:52 minskim Exp $
+#	$NetBSD: Darwin.bsd.man.mk,v 1.1.1.1 2006/07/14 23:13:01 jlam Exp $
 #	@(#)bsd.man.mk	8.1 (Berkeley) 6/8/93
 
 .if !target(__initialized__)

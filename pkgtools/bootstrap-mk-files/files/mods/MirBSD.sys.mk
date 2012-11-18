@@ -1,4 +1,4 @@
-#	$NetBSD: MirBSD.sys.mk,v 1.1 2011/01/23 19:07:26 agc Exp $
+#	$NetBSD$
 #	$MirOS: src/share/mk/sys.mk,v 1.103 2007/04/28 00:12:46 tg Exp $
 #	@(#)sys.mk    5.11 (Berkeley) 3/13/91
 

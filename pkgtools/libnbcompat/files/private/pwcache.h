@@ -1,4 +1,4 @@
-/*	$NetBSD: pwcache.h,v 1.1 2004/08/23 03:32:13 jlam Exp $	*/
+/*	$NetBSD: pwcache.h,v 1.5 2003/11/10 08:51:51 wiz Exp $	*/
 
 /*-
  * Copyright (c) 1992 Keith Muller.

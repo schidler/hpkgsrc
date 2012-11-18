@@ -1,4 +1,4 @@
-# $NetBSD: buildlink3.mk,v 1.2 2010/11/03 14:21:49 adam Exp $
+# $NetBSD: buildlink3.mk,v 1.1 2009/12/13 13:26:17 wiz Exp $
 
 BUILDLINK_TREE+=	xz
 

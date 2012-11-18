@@ -1,4 +1,4 @@
-@comment $NetBSD: PLIST,v 1.17 2012/04/26 20:41:17 wiz Exp $
+@comment $NetBSD$
 bin/aclocal
 bin/aclocal-${PKG_DIR_VERSION}
 bin/automake
@@ -123,4 +123,4 @@ share/automake-${PKG_DIR_VERSION}/tap-driver.sh
 share/automake-${PKG_DIR_VERSION}/test-driver
 share/automake-${PKG_DIR_VERSION}/texinfo.tex
 share/automake-${PKG_DIR_VERSION}/ylwrap
-documentation/doc/automake/amhello-1.0.tar.gz
+share/doc/automake/amhello-1.0.tar.gz

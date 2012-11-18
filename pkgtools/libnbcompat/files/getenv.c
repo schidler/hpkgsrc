@@ -1,4 +1,4 @@
-/*	$NetBSD: getenv.c,v 1.4 2004/08/23 03:32:12 jlam Exp $	*/
+/*	$NetBSD: getenv.c,v 1.17 2003/08/07 16:43:39 agc Exp $	*/
 
 /*
  * Copyright (c) 1987, 1993
@@ -35,7 +35,7 @@
 #if 0
 static char sccsid[] = "@(#)getenv.c	8.1 (Berkeley) 6/4/93";
 #else
-__RCSID("$NetBSD: getenv.c,v 1.4 2004/08/23 03:32:12 jlam Exp $");
+__RCSID("$NetBSD: getenv.c,v 1.17 2003/08/07 16:43:39 agc Exp $");
 #endif
 #endif /* LIBC_SCCS and not lint */
 

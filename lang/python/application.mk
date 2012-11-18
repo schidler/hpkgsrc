@@ -1,4 +1,4 @@
-# $NetBSD: application.mk,v 1.10 2010/07/24 18:12:11 gdt Exp $
+# $NetBSD: application.mk,v 1.9 2007/02/20 11:30:43 rillig Exp $
 #
 # Replace the #! interpreter for Python scripts.
 #

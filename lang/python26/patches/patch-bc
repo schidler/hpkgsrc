@@ -1,18 +1,12 @@
-$NetBSD: patch-bc,v 1.1 2010/11/23 08:24:04 tron Exp $
+$NetBSD$
 
 Fix for CVE-2010-3492 and CVE-2010-3493, taken from the Python SVN repository:
 
 http://svn.python.org/view?view=rev&revision=86084
 
---- Lib/smtpd2.6.py.orig	2010-12-07 18:54:43.029622272 +0000
-+++ Lib/smtpd2.6.py
-@@ -1,4 +1,4 @@
--#! /usr/bin/env python
-+#!/boot/common/pkg/bin/python2.6
- """An RFC 2821 smtp proxy.
- 
- Usage: %(program)s [options] [localhost:localport [remotehost:remoteport]]
-@@ -35,7 +35,6 @@ given then 8025 is used.  If remotehost 
+--- Lib/smtpd2.6.py.orig	2010-11-22 18:18:59.000000000 +0000
++++ Lib/smtpd2.6.py	2010-11-22 18:19:03.000000000 +0000
+@@ -35,7 +35,6 @@
  and if remoteport is not given, then 25 is used.
  """
  
@@ -20,7 +14,7 @@ http://svn.python.org/view?view=rev&revision=86084
  # Overview:
  #
  # This file implements the minimal SMTP protocol as defined in RFC 821.  It
-@@ -96,7 +95,6 @@ EMPTYSTRING = ''
+@@ -96,7 +95,6 @@
  COMMASPACE = ', '
  
  
@@ -28,7 +22,7 @@ http://svn.python.org/view?view=rev&revision=86084
  def usage(code, msg=''):
      print >> sys.stderr, __doc__ % globals()
      if msg:
-@@ -104,7 +102,6 @@ def usage(code, msg=''):
+@@ -104,7 +102,6 @@
      sys.exit(code)
  
  
@@ -36,7 +30,7 @@ http://svn.python.org/view?view=rev&revision=86084
  class SMTPChannel(asynchat.async_chat):
      COMMAND = 0
      DATA = 1
-@@ -276,7 +273,6 @@ class SMTPChannel(asynchat.async_chat):
+@@ -276,7 +273,6 @@
          self.push('354 End data with <CR><LF>.<CR><LF>')
  
  
@@ -44,7 +38,7 @@ http://svn.python.org/view?view=rev&revision=86084
  class SMTPServer(asyncore.dispatcher):
      def __init__(self, localaddr, remoteaddr):
          self._localaddr = localaddr
-@@ -342,7 +338,6 @@ class SMTPServer(asyncore.dispatcher):
+@@ -331,7 +327,6 @@
          raise NotImplementedError
  
  
@@ -52,7 +46,7 @@ http://svn.python.org/view?view=rev&revision=86084
  class DebuggingServer(SMTPServer):
      # Do something with the gathered message
      def process_message(self, peer, mailfrom, rcpttos, data):
-@@ -358,7 +353,6 @@ class DebuggingServer(SMTPServer):
+@@ -347,7 +342,6 @@
          print '------------ END MESSAGE ------------'
  
  
@@ -60,7 +54,7 @@ http://svn.python.org/view?view=rev&revision=86084
  class PureProxy(SMTPServer):
      def process_message(self, peer, mailfrom, rcpttos, data):
          lines = data.split('\n')
-@@ -399,7 +393,6 @@ class PureProxy(SMTPServer):
+@@ -388,7 +382,6 @@
          return refused
  
  
@@ -68,7 +62,7 @@ http://svn.python.org/view?view=rev&revision=86084
  class MailmanProxy(PureProxy):
      def process_message(self, peer, mailfrom, rcpttos, data):
          from cStringIO import StringIO
-@@ -478,13 +471,11 @@ class MailmanProxy(PureProxy):
+@@ -467,13 +460,11 @@
                  msg.Enqueue(mlist, torequest=1)
  
  
@@ -82,7 +76,7 @@ http://svn.python.org/view?view=rev&revision=86084
  def parseargs():
      global DEBUGSTREAM
      try:
-@@ -541,7 +532,6 @@ def parseargs():
+@@ -530,7 +521,6 @@
      return options
  
  

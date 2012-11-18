@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1.1.1 2009/10/12 21:33:10 ahoka Exp $
+# $NetBSD$
 
 VERSION=	20071029
 DISTNAME=	ga_IE

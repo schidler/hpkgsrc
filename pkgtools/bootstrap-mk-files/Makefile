@@ -1,6 +1,6 @@
-# $NetBSD: Makefile,v 1.27 2011/11/06 21:01:30 tcort Exp $
+# $NetBSD: Makefile,v 1.31 2012/04/15 13:03:11 obache Exp $
 
-DISTNAME=	bootstrap-mk-files-20111106
+DISTNAME=	bootstrap-mk-files-20120415
 CATEGORIES=	pkgtools
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -11,8 +11,6 @@ MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://www.pkgsrc.org/
 COMMENT=	*.mk files for the bootstrap bmake utility
 
-PKG_DESTDIR_SUPPORT=	user-destdir
-
 NO_PKGTOOLS_REQD_CHECK=	# defined
 BOOTSTRAP_PKG=	yes
 
@@ -20,7 +18,7 @@ NO_BUILD=	yes
 
 USE_TOOLS+=	sed
 
-INSTALLATION_DIRS=	data/mk
+INSTALLATION_DIRS=	share/mk
 
 do-extract:
 	@${CP} -R ${FILESDIR} ${WRKSRC}
@@ -43,7 +41,7 @@ do-configure:
 
 do-install:
 	cd ${WRKSRC} && for file in bsd.* sys.mk; do			\
-		${INSTALL_DATA} $$file ${DESTDIR}${PREFIX}/data/mk/$$file;	\
+		${INSTALL_DATA} $$file ${DESTDIR}${PREFIX}/share/mk/$$file;	\
 	done
 
 .include "../../mk/bsd.pkg.mk"

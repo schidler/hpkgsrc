@@ -1,6 +1,6 @@
 $NetBSD$
 
---- config.orig	2011-07-15 19:59:18.060555264 +0000
+--- config.orig	2011-11-14 21:12:53.037224448 +0000
 +++ config
 @@ -129,6 +129,10 @@ case "${SYSTEM}:${RELEASE}:${VERSION}:${
  		echo "beos-x86-r5"; exit 0
@@ -13,7 +13,7 @@ $NetBSD$
  
      dgux:*)
  	echo "${MACHINE}-dg-dgux"; exit 0
-@@ -799,6 +803,7 @@ case "$GUESSOS" in
+@@ -829,6 +833,7 @@ case "$GUESSOS" in
  	    options="$options no-asm"
  	fi
  	;;

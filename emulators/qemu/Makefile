@@ -37,6 +37,7 @@ CONFIGURE_ARGS+=	--interp-prefix=${PREFIX}/data/qemu
 CONFIGURE_ARGS+=	--sysconfdir=${PKG_SYSCONFDIR}
 CONFIGURE_ARGS+=	--mandir=${PREFIX}/${PKGMANDIR}
 CONFIGURE_ARGS+=	--python=${PYTHONBIN}
+CONFIGURE_ARGS+=	--enable-debug
 
 PKG_SYSCONFSUBDIR=	qemu
 

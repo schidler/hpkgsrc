@@ -12,6 +12,8 @@ PKG_DESTDIR_SUPPORT=	user-destdir
 
 CONFLICTS=	egcs-current-19980608
 
+#USE_TOOLS+=    nroff
+
 WRKSRC=		${WRKDIR}/f2c
 
 BUILD_DIRS=	src

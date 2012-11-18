@@ -1,4 +1,4 @@
-@comment $NetBSD: PLIST.common,v 1.13 2010/09/16 11:09:50 obache Exp $
+@comment $NetBSD: PLIST.common,v 1.12 2010/09/06 17:33:57 drochner Exp $
 bin/2to3-${PY_VER_SUFFIX}
 bin/pydoc${PY_VER_SUFFIX}
 bin/python${PY_VER_SUFFIX}
@@ -1736,6 +1736,7 @@ lib/python${PY_VER_SUFFIX}/lib-dynload/itertools.so
 lib/python${PY_VER_SUFFIX}/lib-dynload/math.so
 lib/python${PY_VER_SUFFIX}/lib-dynload/mmap.so
 ${PLIST.nis}lib/python${PY_VER_SUFFIX}/lib-dynload/nis.so
+${PLIST.no-nis}lib/python${PY_VER_SUFFIX}/lib-dynload/nis_failed.so
 lib/python${PY_VER_SUFFIX}/lib-dynload/operator.so
 lib/python${PY_VER_SUFFIX}/lib-dynload/parser.so
 lib/python${PY_VER_SUFFIX}/lib-dynload/resource.so

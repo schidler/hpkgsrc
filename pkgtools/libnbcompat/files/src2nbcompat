@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#	$NetBSD: src2nbcompat,v 1.10 2007/09/06 21:19:42 jlam Exp $
+#	$NetBSD: src2nbcompat,v 1.9 2007/06/19 00:45:13 joerg Exp $
 #
 # Copyright (c) 2003 The NetBSD Foundation, Inc.
 # All rights reserved.

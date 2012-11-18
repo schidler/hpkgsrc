@@ -1,4 +1,4 @@
-#	$NetBSD: Minix.bsd.lib.mk,v 1.1 2011/11/06 21:01:30 tcort Exp $
+#	$NetBSD$
 #	@(#)bsd.lib.mk	8.3 (Berkeley) 4/22/94
 
 .if !target(__initialized__)

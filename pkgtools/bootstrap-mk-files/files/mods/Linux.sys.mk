@@ -1,4 +1,4 @@
-#	$NetBSD: Linux.sys.mk,v 1.3 2011/10/31 23:41:21 sbd Exp $
+#	$NetBSD: Linux.sys.mk,v 1.2 2009/02/19 00:51:12 abs Exp $
 #	NetBSD: sys.mk,v 1.58 2000/08/22 17:38:49 bjh21 Exp 
 #	@(#)sys.mk	8.2 (Berkeley) 3/21/94
 

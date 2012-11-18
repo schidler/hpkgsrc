@@ -1,4 +1,4 @@
-@comment $NetBSD: PLIST.IRIX,v 1.1.1.1 2009/04/19 14:42:48 wiz Exp $
+@comment $NetBSD: PLIST.IRIX,v 1.1.1.1 2008/04/24 01:50:55 tnn Exp $
 lib/python${PY_VER_SUFFIX}/plat-${PY_PLATNAME}/AL.py
 lib/python${PY_VER_SUFFIX}/plat-${PY_PLATNAME}/AL.pyc
 lib/python${PY_VER_SUFFIX}/plat-${PY_PLATNAME}/AL.pyo

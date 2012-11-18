@@ -2,7 +2,7 @@
 
 PKG_OPTIONS_VAR=	PKG_OPTIONS.nano
 PKG_SUPPORTED_OPTIONS=	wide-curses
-PKG_LEGACY_OPTS+=	ncursesw:wide-curses
+PKG_OPTIONS_LEGACY_OPTS+=	ncursesw:wide-curses
 
 .include "../../mk/bsd.options.mk"
 

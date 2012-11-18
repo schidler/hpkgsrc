@@ -1,4 +1,4 @@
-/*	$NetBSD: endian.h,v 1.3 2010/01/24 12:41:21 obache Exp $	*/
+/*	$NetBSD: endian.h,v 1.2 2008/04/29 05:46:08 martin Exp $	*/
 
 /*-
  * Copyright (c) 2004 The NetBSD Foundation, Inc.

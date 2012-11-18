@@ -1,4 +1,4 @@
-# $NetBSD: buildlink3.mk,v 1.6 2009/03/20 19:24:13 joerg Exp $
+# $NetBSD: buildlink3.mk,v 1.5 2006/07/08 23:10:42 jlam Exp $
 #
 
 BUILDLINK_TREE+=	flex

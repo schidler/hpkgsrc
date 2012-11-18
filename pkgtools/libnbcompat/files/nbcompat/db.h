@@ -1,4 +1,4 @@
-/*	$NetBSD: db.h,v 1.3 2010/03/03 06:03:45 obache Exp $	*/
+/*	$NetBSD: db.h,v 1.2 2010/01/24 08:52:01 obache Exp $	*/
 
 /*-
  * Copyright (c) 1990, 1993, 1994

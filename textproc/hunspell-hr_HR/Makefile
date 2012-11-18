@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1.1.1 2009/10/12 21:43:20 ahoka Exp $
+# $NetBSD$
 
 VERSION=	20060607
 DISTNAME=	hr_HR

@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1.1.1 2008/07/19 18:06:15 ahoka Exp $
+# $NetBSD$
 
 VERSION=	20050505
 DISTNAME=	es_MX

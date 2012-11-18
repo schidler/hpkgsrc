@@ -1,4 +1,4 @@
-/*	$NetBSD: unistd.h,v 1.4 2008/04/29 05:46:08 martin Exp $	*/
+/*	$NetBSD: unistd.h,v 1.3 2008/03/21 23:28:09 joerg Exp $	*/
 
 /*-
  * Copyright (c) 2004 The NetBSD Foundation, Inc.

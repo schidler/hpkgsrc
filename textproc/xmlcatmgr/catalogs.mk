@@ -48,15 +48,15 @@ XML_ENTRIES+=	nextCatalog ${PREFIX:=${c}} --
 #
 .if !empty(SGML_ENTRIES) || !empty(XML_ENTRIES)
 FILES_SUBST+=	XMLCATMGR=${XMLCATMGR:Q}
-FILES_SUBST+=	SGML_CATALOG="${XMLCATMGR_PREFIX}/share/sgml/catalog"
-FILES_SUBST+=	XML_CATALOG="${XMLCATMGR_PREFIX}/share/xml/catalog"
+FILES_SUBST+=	SGML_CATALOG="${XMLCATMGR_PREFIX}/data/sgml/catalog"
+FILES_SUBST+=	XML_CATALOG="${XMLCATMGR_PREFIX}/data/xml/catalog"
 FILES_SUBST+=	SGML_ENTRIES=${SGML_ENTRIES:Q}
 FILES_SUBST+=	XML_ENTRIES=${XML_ENTRIES:Q}
 INSTALL_TEMPLATES+=	../../textproc/xmlcatmgr/files/install.tmpl
 DEINSTALL_TEMPLATES+=	../../textproc/xmlcatmgr/files/deinstall.tmpl
 .endif # !empty(SGML_ENTRIES) || !empty(XML_ENTRIES)
 
-PRINT_PLIST_AWK+=	/^share\/(sgml|xml)\/catalog$$/ \
+PRINT_PLIST_AWK+=	/^data\/(sgml|xml)\/catalog$$/ \
 				{ print "@comment in xmlcatmgr: " $$0; next; }
 
 .include "../../textproc/xmlcatmgr/buildlink3.mk"

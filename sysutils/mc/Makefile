@@ -33,17 +33,12 @@ CONFIGURE_ARGS+=	--without-ext2undel
 CONFIGURE_ARGS+=	--without-gpm-mouse
 CONFIGURE_ARGS+=	UNZIP=${TOOLS_PATH.unzip} ZIP=${TOOLS_PATH.zip}
 
-.if ${OPSYS} == "Haiku"
-#CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/data
-CONFIGURE_ARGS+=	--datarootdir=${PREFIX}/data
-.endif
-
 PLIST_SRC+=		${PKGDIR}/PLIST
 
 .include "options.mk"
 
 .if ${OPSYS} == "Haiku"
-EGDIR=			${PREFIX}/data/examples/mc
+EGDIR=			${PREFIX}/documentation/examples/mc
 .else
 EGDIR=			${PREFIX}/share/examples/mc
 .endif

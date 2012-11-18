@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.60 2011/09/08 16:29:48 bsiegert Exp $
+# $NetBSD: Makefile,v 1.61 2012/05/12 07:37:50 wiz Exp $
 
 DISTNAME=	libiconv-1.14
 PKGREVISION=	2
@@ -11,12 +11,13 @@ COMMENT=	Character set conversion library
 LICENSE=	gnu-gpl-v3 AND gnu-lgpl-v2
 
 PKG_INSTALLATION_TYPES=	overwrite pkgviews
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 USE_LANGUAGES+=		c c++
 USE_LIBTOOL=		yes
 USE_TOOLS+=	pax
 GNU_CONFIGURE=		yes
+
+CONFLICTS=	man-pages-[0-9]*
 
 # Explicitly disable NLS since libiconv is a dependency for gettext-lib
 # and we don't want libiconv to pick up any NLS functions from libc
@@ -24,22 +25,11 @@ GNU_CONFIGURE=		yes
 #
 CONFIGURE_ARGS+=	--disable-nls
 
-.include "../../mk/bsd.prefs.mk"
-
-.if ${OPSYS} == "Haiku"
-CONFIGURE_ARGS+=	--htmldir=${PREFIX}/documentation/doc/libiconv
-CONFIGURE_ENV+=		gl_cv_func_realpath_works=yes
-.else
 CONFIGURE_ARGS+=	--htmldir=${PREFIX}/share/doc/libiconv
-.endif
 
 TEST_TARGET=		check
 
-.if ${OPSYS} == "Haiku"
-EGDIR=			${PREFIX}/documentation/examples/libiconv
-.else
 EGDIR=			${PREFIX}/share/examples/libiconv
-.endif
 REQD_FILES=		${EGDIR}/charset.alias ${PREFIX}/lib/charset.alias
 
 MAKE_ENV+=		PAX=${PAX:Q}
@@ -53,6 +43,7 @@ CFLAGS+=		-c99
 
 # no patch for libiconv-1.14 available yet
 #.include "options.mk"
+
 PLIST_VARS+=		preload
 
 .if ${OPSYS} == "SunOS" || ${OPSYS} == "Linux" || ${OPSYS} == "OSF1"

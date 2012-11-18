@@ -576,6 +576,7 @@ SUBDIR+=	neon
 #SUBDIR+=	py-webcolors
 #SUBDIR+=	py-webpy
 #SUBDIR+=	qDecoder
+SUBDIR+=	qupzilla
 #SUBDIR+=	raggle
 #SUBDIR+=	ramaze
 #SUBDIR+=	ruby-actionpack3

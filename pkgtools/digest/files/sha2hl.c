@@ -1,4 +1,4 @@
-/* $NetBSD: sha2hl.c,v 1.7 2007/09/21 18:44:38 joerg Exp $	 */
+/* $NetBSD: sha2hl.c,v 1.6 2007/09/14 08:12:30 joerg Exp $	 */
 
 /*
  * sha2hl.c
@@ -45,7 +45,7 @@
 #endif
 
 #ifndef lint
-__RCSID("$NetBSD: sha2hl.c,v 1.7 2007/09/21 18:44:38 joerg Exp $");
+__RCSID("$NetBSD: sha2hl.c,v 1.6 2007/09/14 08:12:30 joerg Exp $");
 #endif				/* not lint */
 
 

@@ -1,4 +1,4 @@
-# $NetBSD: builtin.mk,v 1.2 2011/02/09 09:12:16 adam Exp $
+# $NetBSD: builtin.mk,v 1.1 2010/08/25 10:44:40 obache Exp $
 
 BUILTIN_PKG:=	xz
 

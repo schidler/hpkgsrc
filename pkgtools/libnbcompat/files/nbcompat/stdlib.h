@@ -1,4 +1,4 @@
-/*	$NetBSD: stdlib.h,v 1.4 2008/10/06 12:36:20 joerg Exp $	*/
+/*	$NetBSD: stdlib.h,v 1.3 2008/04/29 05:46:08 martin Exp $	*/
 
 /*-
  * Copyright (c) 2004 The NetBSD Foundation, Inc.

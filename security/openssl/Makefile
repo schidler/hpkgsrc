@@ -1,16 +1,31 @@
-# $NetBSD: Makefile,v 1.158 2011/11/02 22:51:07 jnemeth Exp $
+# $NetBSD: Makefile,v 1.169 2012/10/05 09:36:31 wiz Exp $
 
 OPENSSL_SNAPSHOT?=	# empty
 OPENSSL_STABLE?=	# empty
-OPENSSL_VERS?=		1.0.0e
+OPENSSL_VERS?=		0.9.8x
 
+.if empty(OPENSSL_SNAPSHOT)
 DISTNAME=	openssl-${OPENSSL_VERS}
-MASTER_SITES=	http://www.openssl.org/source/
+MASTER_SITES=	ftp://ftp.openssl.org/source/ \
+				ftp://sunsite.cnlab-switch.ch/mirror/openssl/source/ \
+				ftp://sunsite.uio.no/pub/security/openssl/source/
+.else
+.  if !empty(OPENSSL_STABLE:M[yY][eE][sS])
+DISTNAME=	openssl-${OPENSSL_VERS:C/[a-z]$//}-stable-SNAP-${OPENSSL_SNAPSHOT}
+PKGNAME=	openssl-${OPENSSL_VERS}beta${OPENSSL_SNAPSHOT}
+MASTER_SITES=	ftp://ftp.openssl.org/snapshot/
+.  else
+DISTNAME=	openssl-SNAP-${OPENSSL_SNAPSHOT}
+PKGNAME=	openssl-${OPENSSL_VERS}alpha${OPENSSL_SNAPSHOT}
+MASTER_SITES=	ftp://ftp.openssl.org/snapshot/
+.  endif
+.endif
 
+PKGREVISION=	1
 SVR4_PKGNAME=	ossl
-PKGREVISION=	3
 CATEGORIES=	security
-MAINTAINER=	admin@freenet59.ru
+
+MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://www.openssl.org/
 COMMENT=	Secure Socket Layer and cryptographic library
 
@@ -19,7 +34,8 @@ CONFLICTS=	SSLeay-[0-9]* ssleay-[0-9]*
 CRYPTO=		yes
 
 PKG_INSTALLATION_TYPES=	overwrite pkgviews
-PKG_DESTDIR_SUPPORT=	user-destdir
+
+BUILD_DEPENDS+=	p5-Perl4-CoreLibs-[0-9]*:../../devel/p5-Perl4-CoreLibs
 
 .include "../../mk/bsd.prefs.mk"
 .include "../../mk/compiler.mk"
@@ -28,7 +44,6 @@ EXTRACT_USING=		gtar
 USE_TOOLS+=		gmake perl
 TEST_TARGET=		tests
 MAKE_JOBS_SAFE=		no
-USE_PKGDATADIR=		yes
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	./config
@@ -77,6 +92,8 @@ CONFIGURE_ARGS+=	tru64-alpha-cc
 CONFIGURE_SCRIPT=	./Configure
 .  if defined(ABI) && ${ABI} == "64"
 CONFIGURE_ARGS+=	darwin64-${MACHINE_ARCH}-cc
+.  elif ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ARGS+=	darwin-ppc-cc
 .  else
 CONFIGURE_ARGS+=	darwin-${MACHINE_ARCH}-cc
 .  endif
@@ -96,6 +113,25 @@ SUBST_CLASSES+=		soname
 SUBST_STAGE.soname=	post-configure
 SUBST_FILES.soname=	Makefile.shared
 SUBST_SED.soname=	-e 's/-Wl,-soname=/-Wl,-h,/g'
+
+.elif ${OPSYS} == "HPUX"
+
+CONFIGURE_SCRIPT=	./Configure
+
+.  if ${ABI} == "64"
+.    if ${MACHINE_ARCH} == "hppa"
+CONFIGURE_ARGS+=	hpux64-parisc2-${CC}
+.    else
+CONFIGURE_ARGS+=	hpux64-ia64-${CC}
+.    endif
+.  else
+.    if ${MACHINE_ARCH} == "hppa"
+CONFIGURE_ARGS+=	hpux-parisc-${CC}
+.    else
+CONFIGURE_ARGS+=	hpux-ia64-${CC}
+.    endif
+.  endif
+
 .endif
 
 .include "../../security/openssl/options.mk"
@@ -115,16 +151,11 @@ PLIST_SUBST+=		SHLIB_VERSION=${OPENSSL_VERS:C/[^0-9]*$//}
 PLIST_SUBST+=		SHLIB_MAJOR=${OPENSSL_VERS:C/\..*$//}
 
 PKG_SYSCONFSUBDIR=	openssl
-.if ${OPSYS} != "Haiku"
 CONF_FILES=		${PREFIX}/share/examples/openssl/openssl.cnf	\
 			${PKG_SYSCONFDIR}/openssl.cnf
-INSTALLATION_DIRS+=	share/examples/openssl
-.else
-CONF_FILES=		${PREFIX}/data/examples/openssl/openssl.cnf	\
-			${PKG_SYSCONFDIR}/openssl.cnf		
-INSTALLATION_DIRS+=	data/examples/openssl
-.endif
 OWN_DIRS=		${PKG_SYSCONFDIR}/certs ${PKG_SYSCONFDIR}/private
+
+INSTALLATION_DIRS+=	share/examples/openssl
 
 # Fix the path to perl in various scripts.
 pre-configure:

@@ -1,4 +1,4 @@
-/*	$NetBSD: unsetenv.c,v 1.1 2004/08/23 03:32:13 jlam Exp $	*/
+/*	$NetBSD: unsetenv.c,v 1.2 2003/07/26 19:24:54 salo Exp $	*/
 
 /*
  * Written by Klaus Klein <kleink@NetBSD.org>, April 1, 2003.

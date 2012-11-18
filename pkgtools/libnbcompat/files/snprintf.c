@@ -1,4 +1,4 @@
-/*	$NetBSD: snprintf.c,v 1.7 2008/06/19 17:28:09 joerg Exp $	*/
+/*	$NetBSD: snprintf.c,v 1.6 2008/02/14 19:14:54 tnn Exp $	*/
 
 /*-
  * Copyright (c) 2007 Tobias Nygren <tnn@NetBSD.org>

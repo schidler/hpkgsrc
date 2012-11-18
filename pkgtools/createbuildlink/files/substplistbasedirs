@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#	$NetBSD: substplistbasedirs,v 1.3 2009/06/14 22:40:45 joerg Exp $
+#	$NetBSD: substplistbasedirs,v 1.2 2004/09/27 00:31:30 rh Exp $
 #
 # Copyright (c) 2002 The NetBSD Foundation, Inc.
 # All rights reserved.
@@ -40,7 +40,7 @@
 # in a base package
 #
 
-REV=`echo '$Revision: 1.3 $' | sed 's/\\$//g'`
+REV=`echo '$Revision: 1.2 $' | sed 's/\\$//g'`
 CURDIR=`pwd | sed 's|^.*/\([^/]*/[^/]*\)$|\1|'`
 PLIST=PLIST
 MDFLAG=true

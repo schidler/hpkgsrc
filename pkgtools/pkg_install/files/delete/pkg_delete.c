@@ -34,7 +34,7 @@
 #if HAVE_SYS_CDEFS_H
 #include <sys/cdefs.h>
 #endif
-__RCSID("$NetBSD: pkg_delete.c,v 1.12 2011/09/29 23:30:21 wiz Exp $");
+__RCSID("$NetBSD: pkg_delete.c,v 1.11 2010/02/03 14:20:14 joerg Exp $");
 
 #if HAVE_ERR_H
 #include <err.h>

@@ -1,4 +1,4 @@
-# $NetBSD: tool.mk,v 1.1 2011/10/14 08:55:54 obache Exp $
+# $NetBSD$
 #
 # Create `python' interpreter wrapper for applicable Python bin.
 #

@@ -1,4 +1,4 @@
-$NetBSD: patch-cxx_cursesm.h,v 1.1 2011/02/28 11:02:46 adam Exp $
+$NetBSD$
 
 --- c++/cursesm.h.orig	2011-02-28 09:25:22.000000000 +0000
 +++ c++/cursesm.h

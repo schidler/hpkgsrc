@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $NetBSD: xargs-sh,v 1.1 2007/07/01 23:27:43 tnn Exp $
+# $NetBSD$
 #
 # xargs(1) on Interix is broken. It executes the utility on the command line
 # even if standard input is the empty string.

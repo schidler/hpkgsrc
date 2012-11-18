@@ -1,7 +1,6 @@
-# $NetBSD: Makefile,v 1.18 2010/09/28 04:52:41 dsainty Exp $
+# $NetBSD: Makefile,v 1.25 2012/08/26 18:10:25 adam Exp $
 
-DISTNAME=	pkg-config-0.25
-PKGREVISION=	1
+DISTNAME=	pkg-config-0.27.1
 CATEGORIES=	devel
 MASTER_SITES=	http://pkgconfig.freedesktop.org/releases/
 
@@ -15,33 +14,31 @@ PKG_DESTDIR_SUPPORT=	user-destdir
 
 USE_LIBTOOL=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--disable-threads
+CONFIGURE_ARGS+=	--with-internal-glib
 
 # old name of the package
 CONFLICTS=		pkgconfig-[0-9]*
 
 .include "../../mk/bsd.prefs.mk"
 
-.if ${OPSYS} == "FreeBSD"
-.  if ${OS_VERSION:R} < 5
-# configure checks but does not fail on warning
-CONFIGURE_ENV+=		glib_cv_va_copy=no
-.  endif
-.endif
-
 .if ${OPSYS} == "IRIX"
 # configure bails out in subdir after re-parsing the cache
 CONFIGURE_ARGS+=	--cache-file=/dev/null
 .endif
 
-.if ${OPSYS} == "Haiku"
-CONFIGURE_ARGS+=	--docdir=${PREFIX}/documentation/doc/pkg-config
+.if ${OPSYS} == "NetBSD"
+post-configure:
+	cd ${WRKSRC}/glib; \
+	${GREP} -v HAVE_DTRACE config.h >config.h.new; \
+	${MV} config.h.new config.h
 .endif
 
-.if ${OPSYS} == "NetBSD"
-CONFIGURE_ARGS+=	glib_cv_sane_realloc=yes glib_cv_uscore=no
-CONFIGURE_ARGS+=	glib_cv_rtldglobal_broken=no
+.if ${OPSYS} == "SunOS"
+CONFIGURE_ARGS+=	--disable-dtrace
 .endif
+
+CONFIGURE_ARGS+=	${CONFIGURE_ARGS.${ICONV_TYPE}-iconv}
+CONFIGURE_ARGS.gnu-iconv=	--with-libiconv=gnu
 
 PKGCONFIG_EXTRA_PATHS=	# empty
 
@@ -55,12 +52,13 @@ PKGCONFIG_EXTRA_PATHS+=	/usr/lib/pkgconfig
 
 .if !empty(PKGCONFIG_EXTRA_PATHS)
 # First part of the value is taken from configure.in
-CONFIGURE_ARGS+=	--with-pc-path='$${libdir}/pkgconfig:$${datadir}/pkgconfig:${PKGCONFIG_EXTRA_PATHS:ts:}'
+CONFIGURE_ARGS+=	--with-pc-path='$${libdir}/pkgconfig:$${datadir}/pkgconfig:${PKGCONFIG_EXTRA_PATHS:ts::Q}'
 .endif
 
 # needed for fifth test case
-BUILDLINK_PASSTHRU_DIRS= /private-dep /public-dep /requires-test
+BUILDLINK_PASSTHRU_DIRS+=	/private-dep /public-dep /requires-test
 TEST_TARGET=		check
 
+.include "../../converters/libiconv/buildlink3.mk"
 .include "../../mk/dlopen.buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

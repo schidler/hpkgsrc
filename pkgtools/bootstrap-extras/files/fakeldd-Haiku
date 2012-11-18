@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $NetBSD: fakeldd-Haiku,v 1.1 2010/02/06 10:26:09 obache Exp $
+# $NetBSD$
 #
 
 read_rpath_needed_from_obj ()

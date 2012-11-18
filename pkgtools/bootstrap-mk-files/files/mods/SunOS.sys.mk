@@ -65,7 +65,7 @@ LINK.F?=	${FC} ${FFLAGS} ${CPPFLAGS} ${LDFLAGS}
 COMPILE.r?=	${FC} ${FFLAGS} ${RFLAGS} -c
 LINK.r?=	${FC} ${FFLAGS} ${RFLAGS} ${LDFLAGS}
 
-INSTALL?=	/usr/ucb/install
+INSTALL?=	${PREFIX}/bin/install-sh
 
 LEX?=		lex
 LFLAGS?=

@@ -1,4 +1,4 @@
-/*	$NetBSD: nbcompat.h,v 1.43 2009/04/13 11:30:46 joerg Exp $	*/
+/*	$NetBSD: nbcompat.h,v 1.42 2008/10/19 21:02:07 joerg Exp $	*/
 
 /*-
  * Copyright (c) 2003 The NetBSD Foundation, Inc.

@@ -1,4 +1,4 @@
-/*	$NetBSD: mpool.h,v 1.1 2008/10/26 12:52:00 joerg Exp $	*/
+/*	$NetBSD: mpool.h,v 1.13 2008/08/26 21:18:38 joerg Exp $	*/
 
 /*-
  * Copyright (c) 1991, 1993, 1994

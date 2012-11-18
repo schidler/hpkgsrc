@@ -55,6 +55,7 @@ CONFIGURE_ENV.SunOS+=	ac_cv_header_vis_h=no
 CONFIGURE_ARGS+=	--with-readline=${BUILDLINK_PREFIX.readline}
 CPPFLAGS+=		-I${BUILDLINK_PREFIX.readline}/include/readline
 
+LDFLAGS.Haiku+=		-lnetwork
 PLIST_VARS+=		afskauth hcrypto
 .if ${OPSYS} == "IRIX"
 PLIST.afskauth=		yes

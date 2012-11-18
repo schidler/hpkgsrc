@@ -1,4 +1,4 @@
-/*	$NetBSD: types.h,v 1.4 2008/12/14 07:50:49 obache Exp $	*/
+/*	$NetBSD: types.h,v 1.3 2008/10/08 14:28:14 joerg Exp $	*/
 
 /*-
  * Copyright (c) 2004 The NetBSD Foundation, Inc.

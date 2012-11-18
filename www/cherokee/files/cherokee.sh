@@ -1,6 +1,6 @@
 #!@RCD_SCRIPTS_SHELL@
 #
-# $NetBSD: cherokee.sh,v 1.3 2010/07/11 12:18:55 obache Exp $
+# $NetBSD: cherokee.sh,v 1.2 2006/05/01 10:32:51 jmmv Exp $
 #
 # PROVIDE: cherokee
 # REQUIRE: DAEMON

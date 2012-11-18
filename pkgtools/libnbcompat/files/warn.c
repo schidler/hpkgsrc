@@ -1,4 +1,4 @@
-/*	$NetBSD: warn.c,v 1.1 2004/08/23 03:32:13 jlam Exp $	*/
+/*	$NetBSD: err.c,v 1.3 2003/09/15 07:39:34 grant Exp $	*/
 
 /*
  * Copyright 1997-2000 Luke Mewburn <lukem@netbsd.org>.
@@ -37,7 +37,7 @@
 #if 0
 static char sccsid[] = "@(#)err.c	8.1 (Berkeley) 6/4/93";
 #else
-__RCSID("$NetBSD: warn.c,v 1.1 2004/08/23 03:32:13 jlam Exp $");
+__RCSID("$NetBSD: warnx.c,v 1.10 2003/10/27 00:12:42 lukem Exp $");
 #endif
 #endif /* LIBC_SCCS and not lint */
 

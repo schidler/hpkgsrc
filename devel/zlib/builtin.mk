@@ -3,8 +3,7 @@
 BUILTIN_PKG:=	zlib
 
 BUILTIN_FIND_FILES_VAR:=	H_ZLIB
-BUILTIN_FIND_FILES.H_ZLIB=	/usr/include/zlib.h \
-				/boot/develop/headers/3rdparty/zlib.h
+BUILTIN_FIND_FILES.H_ZLIB=	/usr/include/zlib.h
 
 .include "../../mk/buildlink3/bsd.builtin.mk"
 

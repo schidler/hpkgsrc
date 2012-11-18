@@ -1,4 +1,4 @@
-#	$NetBSD: bsd.subdir.mk,v 1.1.1.1 2006/07/14 23:13:01 jlam Exp $
+#	$NetBSD: bsd.subdir.mk,v 1.1.1.1 2004/03/11 13:04:17 grant Exp $
 #	@(#)bsd.subdir.mk	8.1 (Berkeley) 6/8/93
 
 .if !target(__initialized__)

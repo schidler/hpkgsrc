@@ -1,6 +1,6 @@
 # $NetBSD: Makefile,v 1.42 2011/11/07 13:10:31 hans Exp $
 
-DISTNAME=	libtorrent-rasterbar-0.15.10
+DISTNAME=	libtorrent-rasterbar-0.16.0
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE:=files/}
 

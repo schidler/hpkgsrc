@@ -1,4 +1,4 @@
-/*	$NetBSD: perform.c,v 1.26 2009/11/05 16:22:32 joerg Exp $	*/
+/*	$NetBSD: perform.c,v 1.25 2009/08/02 17:56:44 joerg Exp $	*/
 
 #if HAVE_CONFIG_H
 #include "config.h"
@@ -7,7 +7,7 @@
 #if HAVE_SYS_CDEFS_H
 #include <sys/cdefs.h>
 #endif
-__RCSID("$NetBSD: perform.c,v 1.26 2009/11/05 16:22:32 joerg Exp $");
+__RCSID("$NetBSD: perform.c,v 1.25 2009/08/02 17:56:44 joerg Exp $");
 
 /*
  * FreeBSD install - a package for the installation and maintainance

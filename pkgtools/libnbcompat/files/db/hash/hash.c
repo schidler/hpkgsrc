@@ -58,7 +58,9 @@ __RCSID("$NetBSD: hash.c,v 1.3 2010/04/20 00:32:23 joerg Exp $");
 #include "../pwrite.c"
 #endif
 
+#ifndef __UNCONST
 #define __UNCONST(a)	((void *)(size_t)(const void *)(a))
+#endif
 
 static int   alloc_segs(HTAB *, int);
 static int   flush_meta(HTAB *);

@@ -1,4 +1,4 @@
-/*	$NetBSD: getopt.h,v 1.5 2008/04/29 05:46:08 martin Exp $	*/
+/*	$NetBSD: getopt.h,v 1.4 2004/08/23 03:32:13 jlam Exp $	*/
 
 /*-
  * Copyright (c) 2000 The NetBSD Foundation, Inc.

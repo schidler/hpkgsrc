@@ -1,4 +1,4 @@
-#	$NetBSD: Haiku.bsd.lib.mk,v 1.1 2010/02/06 10:50:40 obache Exp $
+#	$NetBSD$
 #	@(#)bsd.lib.mk	8.3 (Berkeley) 4/22/94
 
 .if !target(__initialized__)

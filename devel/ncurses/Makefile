@@ -1,14 +1,10 @@
-# $NetBSD: Makefile,v 1.86 2011/04/01 20:27:03 tez Exp $
+# $NetBSD: Makefile,v 1.84 2010/06/21 14:49:00 tron Exp $
 
 .include "Makefile.common"
 
 COMMENT=	CRT screen handling and optimization package
 
-.if ${OPSYS} == "Haiku"
-INSTALLATION_DIRS+=	data/examples
-.else
 INSTALLATION_DIRS+=	share/examples
-.endif
 
 .if ${OPSYS} == "SunOS"
 # misc/screen installs screen, screen-bce and screen-s, so we need to remove
@@ -52,13 +48,8 @@ post-configure:
 	done
 
 post-install:
-.if ${OPSYS} == "Haiku"
 	${INSTALL_DATA} ${WRKSRC}/c++/demo.cc \
-		${DESTDIR}${PREFIX}/data/examples/ncurses++demo.cc
-.else
-	{INSTALL_DATA} ${WRKSRC}/c++/demo.cc \
 		${DESTDIR}${PREFIX}/share/examples/ncurses++demo.cc
-.endif
 	${FIND} ${DESTDIR}${PREFIX}/${TERMINFODIR} -type f -print | ${SORT} | \
 	${SED} -e "s,^${DESTDIR}${PREFIX}/,," >${WRKDIR}/PLIST.terminfo
 

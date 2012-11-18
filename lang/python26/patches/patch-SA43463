@@ -1,13 +1,13 @@
-$NetBSD: patch-SA43463,v 1.1 2011/02/28 22:35:53 tron Exp $
+$NetBSD$
 
 Fix information disclosure vulnerability reported in SA43463.
 Patch taken from the Python SVN repository:
 
 http://svn.python.org/view?view=revision&revision=71303
 
---- Lib/CGIHTTPServer.py.orig	2009-11-11 17:24:53.048758784 +0000
-+++ Lib/CGIHTTPServer.py
-@@ -70,27 +70,20 @@ class CGIHTTPRequestHandler(SimpleHTTPSe
+--- Lib/CGIHTTPServer.py.orig	2009-11-11 17:24:53.000000000 +0000
++++ Lib/CGIHTTPServer.py	2011-02-28 22:16:27.000000000 +0000
+@@ -70,27 +70,20 @@
              return SimpleHTTPServer.SimpleHTTPRequestHandler.send_head(self)
  
      def is_cgi(self):
@@ -47,7 +47,7 @@ http://svn.python.org/view?view=revision&revision=71303
          return False
  
      cgi_directories = ['/cgi-bin', '/htbin']
-@@ -299,6 +292,46 @@ class CGIHTTPRequestHandler(SimpleHTTPSe
+@@ -299,6 +292,46 @@
                  self.log_message("CGI script exited OK")
  
  

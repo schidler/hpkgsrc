@@ -1,4 +1,4 @@
-#	$NetBSD: Darwin.bsd.sys.mk,v 1.1.1.1 2006/07/14 23:13:01 jlam Exp $
+#	$NetBSD: Darwin.bsd.sys.mk,v 1.1 2004/11/27 14:42:28 grant Exp $
 
 #OBJCOPY?=	objcopy
 STRIP?=		strip

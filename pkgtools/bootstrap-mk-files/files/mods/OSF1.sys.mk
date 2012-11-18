@@ -1,4 +1,4 @@
-#	$NetBSD: OSF1.sys.mk,v 1.2 2008/01/16 03:05:57 tnn Exp $
+#	$NetBSD: OSF1.sys.mk,v 1.1.1.1 2006/07/14 23:13:01 jlam Exp $
 #	@(#)sys.mk	8.2 (Berkeley) 3/21/94
 
 unix?=		We run Unix

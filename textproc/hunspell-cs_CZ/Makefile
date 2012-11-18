@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1.1.1 2008/07/19 17:08:35 ahoka Exp $
+# $NetBSD$
 
 VERSION=	20061030
 DISTNAME=	cs_CZ

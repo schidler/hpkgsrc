@@ -1,16 +1,7 @@
-$NetBSD: distinfo,v 1.5 2012/03/22 22:40:18 asau Exp $
+$NetBSD$
 
 SHA1 (cherokee-1.2.101.tar.gz) = b27f149c7d7111207ac8c3cd8a4856c05490d136
 RMD160 (cherokee-1.2.101.tar.gz) = dd3dedc352ba17bdcefd8e200143b8ffa19ad035
 Size (cherokee-1.2.101.tar.gz) = 6320209 bytes
-SHA1 (patch-admin_SystemStats.py) = fc3680b312ea50cd6e14754c994f30749df25e45
-SHA1 (patch-cherokee.conf.sample.pre) = e96a45daa0cbf81a77656d81e095ef93f47142a1
-SHA1 (patch-cherokee_common-internal.h) = 515b1d0ab3e5f4eb6d7314d043371b74a03ddd51
-SHA1 (patch-cherokee_main__admin.c) = 030f3827af05daf4f4a3de93d4d4103946040789
+SHA1 (patch-cherokee_common-internal.h) = 730b67aa0cdf4990686e9529cec3a7fc1ddd90a5
 SHA1 (patch-configure.in) = 5281f58b97f9f6db78515862e492382ecded7992
-SHA1 (patch-constants.h.pre) = be1972862a1db70380e49fc244a98998645a79c6
-SHA1 (patch-icons_Makefile.am) = 3b9f445994c8e9c8eec6b48a1f66865635743860
-SHA1 (patch-themes_default_Makefile.am) = d1dac706d094b324384f6e6c60bb0b45d3a1d05e
-SHA1 (patch-themes_firefox3_Makefile.am) = ba01c382d48d903fa958926a8f6bdf24b90d5b29
-SHA1 (patch-themes_plain_Makefile.am) = cfd7e3f79909740ba322998a90a8e04342e5f353
-SHA1 (patch-themes_white_Makefile.am) = e7a12a86aa3c4583b9a5a82fa5e860383f2bfe31

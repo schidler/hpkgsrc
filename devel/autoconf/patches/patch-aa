@@ -1,4 +1,4 @@
-$NetBSD: patch-aa,v 1.11 2010/07/29 15:49:36 joerg Exp $
+$NetBSD$
 
 Do not fall through to the implicit prototype as it conflicts with
 stdlib.h.

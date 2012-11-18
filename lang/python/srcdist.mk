@@ -1,4 +1,4 @@
-# $NetBSD: srcdist.mk,v 1.34 2010/09/17 07:11:41 obache Exp $
+# $NetBSD: srcdist.mk,v 1.33 2010/09/04 15:31:29 tron Exp $
 
 .include "../../lang/python/pyversion.mk"
 

@@ -9,7 +9,6 @@ MAINTAINER=	rh@NetBSD.org
 COMMENT=	Shell script to help creating buildlink3.mk files
 
 PKG_INSTALLATION_TYPES=	overwrite pkgviews
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 WRKSRC=		${WRKDIR}
 USE_LANGUAGES=	# empty

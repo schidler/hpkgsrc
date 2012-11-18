@@ -1,4 +1,4 @@
-# $NetBSD: options.mk,v 1.1 2010/07/11 12:18:55 obache Exp $
+# $NetBSD$
 #
 
 PKG_OPTIONS_VAR=		PKG_OPTIONS.cherokee

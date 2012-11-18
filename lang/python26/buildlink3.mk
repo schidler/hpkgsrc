@@ -6,7 +6,7 @@ BUILDLINK_TREE+=	python26
 PYTHON26_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.python26+=	python26>=2.6
-BUILDLINK_ABI_DEPENDS.python26?=		python26>=2.6.6nb8
+BUILDLINK_ABI_DEPENDS.python26+=		python26>=2.6.6nb8
 BUILDLINK_PKGSRCDIR.python26?=		../../lang/python26
 
 .  if defined(BUILDLINK_DEPMETHOD.python)

@@ -1,4 +1,4 @@
-/*	$NetBSD: mpool.c,v 1.5 2010/04/20 00:32:23 joerg Exp $	*/
+/*	$NetBSD: mpool.c,v 1.4 2010/01/24 12:29:48 obache Exp $	*/
 /*	NetBSD: mpool.c,v 1.18 2008/09/11 12:58:00 joerg Exp 	*/
 
 /*-
@@ -33,7 +33,7 @@
 #include <nbcompat.h>
 #include <nbcompat/cdefs.h>
 
-__RCSID("$NetBSD: mpool.c,v 1.5 2010/04/20 00:32:23 joerg Exp $");
+__RCSID("$NetBSD: mpool.c,v 1.4 2010/01/24 12:29:48 obache Exp $");
 
 #include <nbcompat/queue.h>
 #include <sys/stat.h>

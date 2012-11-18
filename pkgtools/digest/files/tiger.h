@@ -1,4 +1,4 @@
-/* $NetBSD: tiger.h,v 1.6 2010/01/23 13:25:12 obache Exp $ */
+/* $NetBSD: tiger.h,v 1.5 2008/05/09 15:00:32 joerg Exp $ */
 
 /*
  * Copyright © 2005 Alistair Crooks.  All rights reserved.

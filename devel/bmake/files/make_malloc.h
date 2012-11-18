@@ -1,4 +1,4 @@
-/*	$NetBSD: make_malloc.h,v 1.1.1.1 2009/09/18 20:55:23 joerg Exp $	*/
+/*	$NetBSD: make_malloc.h,v 1.4 2009/01/24 14:43:29 dsl Exp $	*/
 
 /*-
  * Copyright (c) 2009 The NetBSD Foundation, Inc.

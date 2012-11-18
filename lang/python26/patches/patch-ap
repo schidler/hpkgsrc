@@ -1,6 +1,6 @@
-$NetBSD: patch-ap,v 1.3 2010/09/04 05:12:00 obache Exp $
+$NetBSD: patch-ap,v 1.2 2009/04/24 01:32:50 hasso Exp $
 
---- Modules/socketmodule.c.orig	2010-05-23 15:22:08.022544384 +0000
+--- Modules/socketmodule.c.orig	2010-05-23 15:22:08.000000000 +0000
 +++ Modules/socketmodule.c
 @@ -379,7 +379,7 @@ const char *inet_ntop(int af, const void
  #define SOCKETCLOSE close
@@ -79,15 +79,4 @@ $NetBSD: patch-ap,v 1.3 2010/09/04 05:12:00 obache Exp $
 +#endif
      PyModule_AddIntConstant(m, "HCI_DATA_DIR", HCI_DATA_DIR);
      PyModule_AddIntConstant(m, "BTPROTO_SCO", BTPROTO_SCO);
- #endif
-@@ -4661,7 +4684,9 @@ init_socket(void)
- #ifndef __BEOS__
- /* We have incomplete socket support. */
-     PyModule_AddIntConstant(m, "SOCK_RAW", SOCK_RAW);
--    PyModule_AddIntConstant(m, "SOCK_SEQPACKET", SOCK_SEQPACKET);
-+#ifndef __HAIKU__
-+  	PyModule_AddIntConstant(m, "SOCK_SEQPACKET", SOCK_SEQPACKET);
-+#endif
- #if defined(SOCK_RDM)
-     PyModule_AddIntConstant(m, "SOCK_RDM", SOCK_RDM);
  #endif

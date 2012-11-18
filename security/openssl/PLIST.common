@@ -1,4 +1,4 @@
-@comment $NetBSD: PLIST.common,v 1.17 2010/03/01 08:15:40 taca Exp $
+@comment $NetBSD: PLIST.common,v 1.16 2009/06/14 21:21:16 joerg Exp $
 bin/c_rehash
 bin/openssl
 include/openssl/aes.h
@@ -33,6 +33,7 @@ ${PLIST.idea}include/openssl/idea.h
 include/openssl/krb5_asn.h
 include/openssl/kssl.h
 include/openssl/lhash.h
+include/openssl/md2.h
 include/openssl/md4.h
 include/openssl/md5.h
 ${PLIST.mdc2}include/openssl/mdc2.h
@@ -46,6 +47,7 @@ include/openssl/pem.h
 include/openssl/pem2.h
 include/openssl/pkcs12.h
 include/openssl/pkcs7.h
+include/openssl/pq_compat.h
 include/openssl/pqueue.h
 include/openssl/rand.h
 include/openssl/rc2.h
@@ -60,8 +62,10 @@ include/openssl/ssl2.h
 include/openssl/ssl23.h
 include/openssl/ssl3.h
 include/openssl/stack.h
+include/openssl/store.h
 include/openssl/symhacks.h
 include/openssl/tls1.h
+include/openssl/tmdiff.h
 include/openssl/txt_db.h
 include/openssl/ui.h
 include/openssl/ui_compat.h
@@ -384,6 +388,7 @@ man/man3/CRYPTO_set_dynlock_create_callback.3
 man/man3/CRYPTO_set_dynlock_destroy_callback.3
 man/man3/CRYPTO_set_dynlock_lock_callback.3
 man/man3/CRYPTO_set_ex_data.3
+man/man3/CRYPTO_set_id_callback.3
 man/man3/CRYPTO_set_locking_callback.3
 man/man3/DES_cbc_cksum.3
 man/man3/DES_cfb64_encrypt.3

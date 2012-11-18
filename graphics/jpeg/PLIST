@@ -1,4 +1,4 @@
-@comment $NetBSD: PLIST,v 1.8 2009/08/26 16:50:46 sno Exp $
+@comment $NetBSD: PLIST,v 1.7 2009/06/14 17:59:19 joerg Exp $
 bin/cjpeg
 bin/djpeg
 bin/exifautotran

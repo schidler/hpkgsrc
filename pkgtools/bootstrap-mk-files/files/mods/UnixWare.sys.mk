@@ -1,4 +1,4 @@
-#	$NetBSD: UnixWare.sys.mk,v 1.2 2006/11/11 18:24:52 jschauma Exp $
+#	$NetBSD: UnixWare.sys.mk,v 1.1.1.1 2006/07/14 23:13:01 jlam Exp $
 #	NetBSD: SunOS.sys.mk,v 1.1.1.1 2004/03/11 13:04:00 grant Exp
 #	NetBSD: sys.mk,v 1.58 2000/08/22 17:38:49 bjh21 Exp 
 #	@(#)sys.mk	8.2 (Berkeley) 3/21/94

@@ -1,4 +1,4 @@
-#	$NetBSD: bsd.sys.mk,v 1.1.1.1 2006/07/14 23:13:01 jlam Exp $
+#	$NetBSD: bsd.sys.mk,v 1.1.1.1 2004/03/11 13:04:17 grant Exp $
 #
 # Overrides used for NetBSD source tree builds.
 

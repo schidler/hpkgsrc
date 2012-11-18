@@ -1,9 +1,5 @@
 bin/qutim
-include/qutim/abstractchatform.h
-include/qutim/abstractchatwidget.h
 include/qutim/abstractcontact.h
-include/qutim/abstractcontactlist.h
-include/qutim/abstractcontactmodel.h
 include/qutim/abstractsearchrequest.h
 include/qutim/abstractwizardpage.h
 include/qutim/account.h
@@ -26,18 +22,9 @@ include/qutim/adiumchat/sessionlistwidget.h
 include/qutim/authorizationdialog.h
 include/qutim/avatarfilter.h
 include/qutim/buddy.h
-include/qutim/chatedit.h
-include/qutim/chatlayer_global.h
-include/qutim/chatlayerimpl.h
-include/qutim/chatlayerplugin.h
 include/qutim/chatsession.h
-include/qutim/chatsessionimpl.h
-include/qutim/chatsessionmodel.h
 include/qutim/chatunit.h
-include/qutim/chatviewfactory.h
 include/qutim/conference.h
-include/qutim/conferencecontactsview.h
-include/qutim/conferencetabcompletion.h
 include/qutim/config.h
 include/qutim/configbase.h
 include/qutim/contact.h
@@ -60,7 +47,6 @@ include/qutim/json.h
 include/qutim/jsonfile.h
 include/qutim/libqutim_global.h
 include/qutim/libqutim_version.h
-include/qutim/lineedit.h
 include/qutim/localizedstring.h
 include/qutim/menucontroller.h
 include/qutim/message.h
@@ -83,7 +69,6 @@ include/qutim/qtwin.h
 include/qutim/rosterstorage.h
 include/qutim/scripttools.h
 include/qutim/servicemanager.h
-include/qutim/sessionlistwidget.h
 include/qutim/settingslayer.h
 include/qutim/settingswidget.h
 include/qutim/shortcut.h
@@ -95,11 +80,6 @@ include/qutim/simplecontactlist/simplecontactlistitem.h
 include/qutim/simplecontactlist/simplecontactlistsettings.h
 include/qutim/simplecontactlist/simplecontactlistview.h
 include/qutim/simplecontactlist/simplestatusdialog.h
-include/qutim/simplecontactlist.h
-include/qutim/simplecontactlistitem.h
-include/qutim/simplecontactlistsettings.h
-include/qutim/simplecontactlistview.h
-include/qutim/simplestatusdialog.h
 include/qutim/sound.h
 include/qutim/spellchecker.h
 include/qutim/startupmodule.h

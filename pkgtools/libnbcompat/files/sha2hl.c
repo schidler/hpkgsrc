@@ -1,4 +1,4 @@
-/* $NetBSD: sha2hl.c,v 1.8 2011/11/08 18:20:03 joerg Exp $	 */
+/* $NetBSD: sha2hl.c,v 1.7 2007/07/31 13:17:34 joerg Exp $	 */
 
 /*
  * sha2hl.c

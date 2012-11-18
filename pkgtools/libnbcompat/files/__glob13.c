@@ -1,4 +1,4 @@
-/*	$NetBSD: __glob13.c,v 1.3 2008/10/30 16:00:54 joerg Exp $	*/
+/*	$NetBSD: __glob13.c,v 1.2 2007/07/31 13:17:33 joerg Exp $	*/
 
 /*
  * Copyright (c) 1989, 1993
@@ -38,7 +38,7 @@
 #if 0
 static char sccsid[] = "@(#)glob.c	8.3 (Berkeley) 10/13/93";
 #else
-__RCSID("$NetBSD: __glob13.c,v 1.3 2008/10/30 16:00:54 joerg Exp $");
+__RCSID("$NetBSD: __glob13.c,v 1.2 2007/07/31 13:17:33 joerg Exp $");
 #endif
 #endif /* LIBC_SCCS and not lint */
 

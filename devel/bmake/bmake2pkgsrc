@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $NetBSD: bmake2pkgsrc,v 1.1 2006/07/14 15:58:08 jlam Exp $
+# $NetBSD$
 #
 # This script should be run after the import-bmake-sh script is run to
 # generate the bmake.1 manpage for the bootstrap script.

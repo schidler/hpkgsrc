@@ -1,6 +1,6 @@
 $NetBSD$
 
---- apps/Makefile.orig	2010-12-02 18:26:10.050331648 +0000
+--- apps/Makefile.orig	2011-12-27 14:38:26.027000832 +0000
 +++ apps/Makefile
 @@ -4,6 +4,7 @@
  

@@ -1,4 +1,4 @@
-/*	$NetBSD: queue.h,v 1.8 2009/03/02 13:54:56 joerg Exp $	*/
+/*	$NetBSD: queue.h,v 1.7 2009/02/26 16:14:18 joerg Exp $	*/
 
 /*
  * Copyright (c) 1991, 1993

@@ -1,4 +1,4 @@
-dnl $NetBSD: configure.ac,v 1.36 2011/04/20 09:57:25 morr Exp $
+dnl $NetBSD: configure.ac,v 1.35 2010/04/20 00:39:12 joerg Exp $
 dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.52)
 AC_INIT([pkg_install], [20090911], [joerg@NetBSD.org])

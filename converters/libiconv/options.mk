@@ -1,4 +1,4 @@
-# $NetBSD: options.mk,v 1.4 2011/08/22 14:03:36 wiz Exp $
+# $NetBSD: options.mk,v 1.3 2010/11/10 21:00:49 adam Exp $
 #
 
 PKG_OPTIONS_VAR=	PKG_OPTIONS.libiconv

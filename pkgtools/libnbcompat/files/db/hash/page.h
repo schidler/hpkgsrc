@@ -1,4 +1,4 @@
-/*	$NetBSD: page.h,v 1.1 2008/10/10 00:21:44 joerg Exp $	*/
+/*	$NetBSD: page.h,v 1.8 2008/08/26 21:18:38 joerg Exp $	*/
 /*	NetBSD: page.h,v 1.8 2008/08/26 21:18:38 joerg Exp 	*/
 
 /*-

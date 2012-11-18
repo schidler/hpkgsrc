@@ -1,4 +1,4 @@
-#	$NetBSD: OpenBSD.sys.mk,v 1.1.1.1 2006/07/14 23:13:01 jlam Exp $
+#	$NetBSD: OpenBSD.sys.mk,v 1.1.1.1 2004/03/11 13:04:00 grant Exp $
 #	@(#)sys.mk	8.2 (Berkeley) 3/21/94
 
 unix?=		We run OpenBSD.

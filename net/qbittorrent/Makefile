@@ -1,14 +1,15 @@
 # $NetBSD$
 #
 
-DISTNAME=	qbittorrent-3.0.0beta2
+DISTNAME=	qbittorrent-3.0.5
 CATEGORIES=	net
-MASTER_SITES=	http://ftp.heanet.ie/disk1/sourceforge/q/qb/qbittorrent/qbittorrent-unstable/
+MASTER_SITES=	http://libtorrent.googlecode.com/files/ \
+		${MASTER_SITE_SOURCEFORGE:=libtorrent/}
+LICENSE=	modified-bsd
 
 MAINTAINER=	INSERT_YOUR_MAIL_ADDRESS_HERE
-HOMEPAGE=	http://ftp.heanet.ie/disk1/sourceforge/q/qb/qbittorrent/qbittorrent-unstable/
-COMMENT=	TODO: Short description of the package
-#LICENSE=	# TODO: (see mk/license.mk)
+HOMEPAGE=	http://www.qbittorrent.org
+COMMENT=	qBittorrent is based on Qt4 toolkit and libtorrent-rasterbar
 
 PKG_DESTDIR_SUPPORT=	user-destdir
 
@@ -46,7 +47,7 @@ INSTALL_MAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
 
 
 .include "../../devel/boost-libs/buildlink3.mk"
-.include "../../framework/qt4-tools/buildlink3.mk"
+.include "../../x11/qt4-tools/buildlink3.mk"
 .include "../libtorrent-rasterbar/buildlink3.mk"
 .include "../GeoIP/buildlink3.mk"
 

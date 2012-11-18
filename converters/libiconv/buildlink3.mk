@@ -1,4 +1,4 @@
-# $NetBSD: buildlink3.mk,v 1.26 2009/03/20 19:24:03 joerg Exp $
+# $NetBSD: buildlink3.mk,v 1.25 2008/02/27 22:10:34 jlam Exp $
 
 BUILDLINK_TREE+=	iconv
 

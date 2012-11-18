@@ -1,4 +1,4 @@
-/*	$NetBSD: nonints.h,v 1.7 2011/06/18 22:39:46 bsiegert Exp $	*/
+/*	$NetBSD: nonints.h,v 1.1.1.8 2011/06/18 22:18:04 bsiegert Exp $	*/
 
 /*-
  * Copyright (c) 1988, 1989, 1990, 1993

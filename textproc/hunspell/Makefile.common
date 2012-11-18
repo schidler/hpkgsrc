@@ -1,4 +1,4 @@
-# $NetBSD: Makefile.common,v 1.3 2009/10/29 22:57:10 ahoka Exp $
+# $NetBSD: Makefile.common,v 1.2 2009/08/25 11:57:46 wiz Exp $
 # used by textproc/hunspell-af_ZA/Makefile
 # used by textproc/hunspell-bg_BG/Makefile
 # used by textproc/hunspell-ca_ES/Makefile

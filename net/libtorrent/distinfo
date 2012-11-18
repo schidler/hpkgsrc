@@ -1,9 +1,11 @@
 $NetBSD: distinfo,v 1.28 2011/07/30 17:06:33 tron Exp $
 
-SHA1 (libtorrent-rasterbar-0.15.10.tar.gz) = 3e461d9ede5fab3fb59be6a9f0cbc52121d536c4
-RMD160 (libtorrent-rasterbar-0.15.10.tar.gz) = 924e5ae80ebb8e5f94ec947159438eac289fb7ba
-Size (libtorrent-rasterbar-0.15.10.tar.gz) = 2623718 bytes
-SHA1 (patch-configure) = e9a4132bb90bf3848fe3b8418828369a33750a4a
-SHA1 (patch-include_libtorrent_config.hpp) = 6547c33c6a53236c843b19cef13e73bcaf1fc2bc
-SHA1 (patch-src_allocator.cpp) = e821bacc04e20516c7ffcd80c4829d89c347e3d4
-SHA1 (patch-src_enum__net.cpp) = 954333272848b57a4ef20d5bb75169c4237174d9
+SHA1 (libtorrent-rasterbar-0.16.0.tar.gz) = 212d910f6c06f06ef1b54d7e2dd68de18f6d9c73
+RMD160 (libtorrent-rasterbar-0.16.0.tar.gz) = 8c4fe9e2ba75b87ba9a53ef155c216ad937ee361
+Size (libtorrent-rasterbar-0.16.0.tar.gz) = 2880619 bytes
+SHA1 (patch-configure) = 9311794693e3483d8fd831ccdea7b28e90b75842
+SHA1 (patch-include_libtorrent_config.hpp) = 092607983c2f50d3c60de910b4e846a74a2be54a
+SHA1 (patch-include_libtorrent_thread.hpp) = 1c91eea01e8e3213fb7df6372d0ed4bcf04dd2d6
+SHA1 (patch-src_allocator.cpp) = f0faf6db1aaeb8796418c9ee0233da0a448d92c0
+SHA1 (patch-src_enum__net.cpp) = d9022c271eaac8a7d4b0dae0ec314579b9377e20
+SHA1 (patch-src_thread.cpp) = 36ec88dcd0f4ae476dd13a28b278742f85345137

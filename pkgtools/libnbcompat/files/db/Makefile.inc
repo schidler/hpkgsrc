@@ -1,4 +1,4 @@
-# $NetBSD: Makefile.inc,v 1.1 2008/10/10 00:21:43 joerg Exp $
+# $NetBSD$
 
 .PATH: ${.PARSEDIR}/btree ${.PARSEDIR}/db ${.PARSEDIR}/hash \
     ${.PARSEDIR}/mpool ${.PARSEDIR}/recno

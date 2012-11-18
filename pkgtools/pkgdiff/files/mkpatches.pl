@@ -1,6 +1,6 @@
 #!@PERL5@
 #
-# $NetBSD: mkpatches.pl,v 1.17 2011/06/26 12:11:39 wiz Exp $
+# $NetBSD: mkpatches.pl,v 1.16 2011/03/04 15:57:07 wiz Exp $
 #
 # mkpatches: creates a set of patches patch-aa, patch-ab, ...
 #   in work/.newpatches by looking for *.orig files in and below

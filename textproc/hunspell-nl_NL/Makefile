@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1.1.1 2009/10/12 22:03:03 ahoka Exp $
+# $NetBSD$
 
 VERSION=	20070607
 DISTNAME=	nl_NL

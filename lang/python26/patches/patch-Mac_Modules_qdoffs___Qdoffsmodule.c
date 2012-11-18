@@ -1,8 +1,8 @@
-$NetBSD: patch-Mac_Modules_qdoffs___Qdoffsmodule.c,v 1.1 2011/09/30 08:34:26 yyamano Exp $
+$NetBSD$
 
 Fix build errors on Mac OS XLion.
 
---- Mac/Modules/qdoffs/_Qdoffsmodule.c.orig	2010-05-09 15:15:40.005767168 +0000
+--- Mac/Modules/qdoffs/_Qdoffsmodule.c.orig	2010-05-09 15:15:40.000000000 +0000
 +++ Mac/Modules/qdoffs/_Qdoffsmodule.c
 @@ -3,8 +3,14 @@
  

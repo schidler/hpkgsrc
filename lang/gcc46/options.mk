@@ -44,7 +44,7 @@ LANGS+=			java
 REPLACE_PYTHON=		libjava/contrib/aot-compile.in
 
 USE_TOOLS+=		unzip
-DEPENDS+=		zip-[0-9]*:../../archivers/zip
+#DEPENDS+=		zip-[0-9]*:../../archivers/zip
 CONFIGURE_ARGS+=	--with-system-zlib
 
 # ${WRKSRC}/gcc-4.6.1/libjava/contrib/aotcompile.py.in stores the path to

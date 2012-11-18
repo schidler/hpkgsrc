@@ -1,4 +1,4 @@
-/*	$NetBSD: rmd160hl.c,v 1.5 2007/09/14 08:12:29 joerg Exp $	*/
+/*	$NetBSD: rmd160hl.c,v 1.4 2007/07/03 18:54:04 joerg Exp $	*/
 
 /* rmd160hl.c
  * ----------------------------------------------------------------------------
@@ -16,7 +16,7 @@
 #endif
 
 #ifndef lint
-__RCSID("$NetBSD: rmd160hl.c,v 1.5 2007/09/14 08:12:29 joerg Exp $");
+__RCSID("$NetBSD: rmd160hl.c,v 1.4 2007/07/03 18:54:04 joerg Exp $");
 #endif	/* not lint */
 
 

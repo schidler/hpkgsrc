@@ -1,4 +1,4 @@
-/*	$NetBSD: strerror.c,v 1.2 2004/08/23 03:32:12 jlam Exp $ */
+/*	$NetBSD: strerror.c,v 1.1.1.1 2003/03/31 05:02:57 grant Exp $ */
 
 #include <nbcompat.h>
 #include <nbcompat/string.h>

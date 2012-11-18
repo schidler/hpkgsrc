@@ -1,4 +1,4 @@
-/*	$NetBSD: sha1hl.c,v 1.8 2011/11/04 23:58:14 cheusov Exp $	*/
+/*	$NetBSD: sha1hl.c,v 1.7 2007/09/21 18:44:37 joerg Exp $	*/
 
 /* sha1hl.c
  * ----------------------------------------------------------------------------
@@ -33,7 +33,7 @@
 #endif
 
 #if defined(LIBC_SCCS) && !defined(lint)
-__RCSID("$NetBSD: sha1hl.c,v 1.8 2011/11/04 23:58:14 cheusov Exp $");
+__RCSID("$NetBSD: sha1hl.c,v 1.7 2007/09/21 18:44:37 joerg Exp $");
 #endif /* LIBC_SCCS and not lint */
 
 #ifndef _DIAGASSERT

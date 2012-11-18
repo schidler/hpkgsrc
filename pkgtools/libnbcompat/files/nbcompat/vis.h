@@ -1,4 +1,4 @@
-/*	$NetBSD: vis.h,v 1.3 2004/08/23 03:32:13 jlam Exp $	*/
+/*	$NetBSD: vis.h,v 1.2 2004/08/16 17:24:57 jlam Exp $	*/
 
 /*-
  * Copyright (c) 1990, 1993

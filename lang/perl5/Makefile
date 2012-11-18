@@ -356,7 +356,7 @@ perl5-post-install:
 	} | ${SED} -e "s,^"${PREFIX:Q}"/,," > ${PLIST_SRC}
 .if ${OPSYS} == "Haiku"
 	${CHMOD} a+x ${DESTDIR}${PREFIX}/bin/perl;
-	cd ${DESTDIR}${PREFIX}/lib && ${LN} -sf perl5/5.16.0/i386-haiku/CORE/libperl.so
+	cp -f ${DESTDIR}${PREFIX}/lib/perl5/5.16.0/i386-haiku/CORE/libperl.so ${DESTDIR}${PREFIX}/lib/
 .endif
 
 .include "packlist.mk"

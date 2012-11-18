@@ -1,8 +1,8 @@
-$NetBSD: patch-Mac_Modules_fm___Fmmodule.c,v 1.1 2011/09/30 08:34:26 yyamano Exp $
+$NetBSD$
 
 Fix build errors on Mac OS XLion.
 
---- Mac/Modules/fm/_Fmmodule.c.orig	2010-05-09 15:15:40.063963136 +0000
+--- Mac/Modules/fm/_Fmmodule.c.orig	2010-05-09 15:15:40.000000000 +0000
 +++ Mac/Modules/fm/_Fmmodule.c
 @@ -3,8 +3,14 @@
  

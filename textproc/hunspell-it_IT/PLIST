@@ -1,4 +1,4 @@
-@comment $NetBSD: PLIST,v 1.1.1.1 2009/10/12 21:49:37 ahoka Exp $
+@comment $NetBSD$
 share/doc/hunspell-${DICTNAME}/${DICTNAME}_AUTHORS
 share/doc/hunspell-${DICTNAME}/${DICTNAME}_COPYING
 share/doc/hunspell-${DICTNAME}/${DICTNAME}_ChangeLog

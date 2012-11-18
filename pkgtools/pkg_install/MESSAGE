@@ -1,5 +1,5 @@
 ===========================================================================
-$NetBSD: MESSAGE,v 1.5 2009/02/02 12:34:59 joerg Exp $
+$NetBSD: MESSAGE,v 1.4.4.1 2009/02/02 11:55:15 joerg Exp $
 
 You may wish to have the vulnerabilities file downloaded daily so that
 it remains current.  This may be done by adding an appropriate entry

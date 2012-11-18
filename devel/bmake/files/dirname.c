@@ -1,4 +1,4 @@
-/*	$NetBSD: dirname.c,v 1.1.1.1 2011/06/18 22:17:55 bsiegert Exp $	*/
+/*	$NetBSD: dirname.c,v 1.11 2009/11/24 13:34:20 tnozaki Exp $	*/
 
 /*-
  * Copyright (c) 1997, 2002 The NetBSD Foundation, Inc.

@@ -14,7 +14,6 @@ COMMENT?=	Message digest wrapper utility
 LICENSE=	original-bsd
 
 PKG_INSTALLATION_TYPES=	overwrite pkgviews
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 CHECK_PERMS=		no
 

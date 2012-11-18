@@ -104,6 +104,7 @@ BUILTIN_VERSION.openssl=	0.9.7h
 BUILTIN_PKG.openssl=	openssl-${BUILTIN_VERSION.openssl}
 .endif
 MAKEVARS+=	BUILTIN_PKG.openssl
+MAKEVARS+=	BUILTIN_VERSION.openssl
 
 .if !defined(BUILTIN_OPENSSL_HAS_THREADS) && \
     !empty(IS_BUILTIN.openssl:M[yY][eE][sS]) && \

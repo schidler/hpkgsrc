@@ -1,4 +1,4 @@
-/*	$NetBSD: md5hl.c,v 1.7 2011/11/04 23:58:14 cheusov Exp $	*/
+/*	$NetBSD: md5hl.c,v 1.6 2007/09/21 18:44:37 joerg Exp $	*/
 
 /*
  * Written by Jason R. Thorpe <thorpej@netbsd.org>, April 29, 1997.
@@ -18,7 +18,7 @@
 #define _DIAGASSERT(cond)	assert(cond)
 #endif
 
-/*	$NetBSD: md5hl.c,v 1.7 2011/11/04 23:58:14 cheusov Exp $	*/
+/*	$NetBSD: md5hl.c,v 1.6 2007/09/21 18:44:37 joerg Exp $	*/
 
 /*
  * ----------------------------------------------------------------------------

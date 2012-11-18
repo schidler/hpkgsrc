@@ -1,4 +1,4 @@
-/*	$NetBSD: getopt.c,v 1.1 2009/03/22 22:33:13 joerg Exp $	*/
+/*	$NetBSD: getopt.c,v 1.28 2009/03/20 13:56:57 joerg Exp $	*/
 
 /*
  * Copyright (c) 1987, 1993, 1994
@@ -36,7 +36,7 @@
 #include <nbcompat.h>
 #include <nbcompat/cdefs.h>
 
-__RCSID("$NetBSD: getopt.c,v 1.1 2009/03/22 22:33:13 joerg Exp $");
+__RCSID("$NetBSD: getopt.c,v 1.28 2009/03/20 13:56:57 joerg Exp $");
 
 #if 0
 #include "namespace.h"

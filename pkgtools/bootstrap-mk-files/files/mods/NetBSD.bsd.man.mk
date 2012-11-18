@@ -1,4 +1,4 @@
-#	$NetBSD: NetBSD.bsd.man.mk,v 1.1.1.1 2006/07/14 23:13:01 jlam Exp $
+#	$NetBSD: NetBSD.bsd.man.mk,v 1.3 2004/08/15 20:00:05 jlam Exp $
 #	@(#)bsd.man.mk	8.1 (Berkeley) 6/8/93
 
 .if !target(__initialized__)

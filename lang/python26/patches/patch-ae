@@ -1,9 +1,9 @@
-$NetBSD: patch-ae,v 1.2 2010/09/04 05:12:00 obache Exp $
+$NetBSD: patch-ae,v 1.1.1.1 2009/04/19 14:42:50 wiz Exp $
 
 XXXbjs:  I use amd64, and audioop is broken on 64-bit platforms.
 Thus, this needs to be tested.
 
---- Modules/sunaudiodev.c.orig	2010-05-09 15:15:40.060555264 +0000
+--- Modules/sunaudiodev.c.orig	2010-05-09 15:15:40.000000000 +0000
 +++ Modules/sunaudiodev.c
 @@ -224,7 +224,11 @@ sad_ibufcount(sadobject *self)
  {

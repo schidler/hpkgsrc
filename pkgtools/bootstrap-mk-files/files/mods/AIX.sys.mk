@@ -1,4 +1,4 @@
-#	$NetBSD: AIX.sys.mk,v 1.1 2008/07/03 20:06:21 joerg Exp $
+#	$NetBSD: sys.mk,v 1.1.1.1 2006/07/14 23:13:01 jlam Exp $
 #	@(#)sys.mk	8.2 (Berkeley) 3/21/94
 
 unix?=		We run Unix

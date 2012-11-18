@@ -1,4 +1,4 @@
-/*	$NetBSD: strtoll.c,v 1.7 2004/08/31 17:55:17 jlam Exp $	*/
+/*	$NetBSD: strtoll.c,v 1.6 2004/08/23 03:49:05 jlam Exp $	*/
 
 /*-
  * Copyright (c) 1992, 1993
@@ -39,7 +39,7 @@
 #if 0
 static char sccsid[] = "from: @(#)strtoq.c	8.1 (Berkeley) 6/4/93";
 #else
-__RCSID("$NetBSD: strtoll.c,v 1.7 2004/08/31 17:55:17 jlam Exp $");
+__RCSID("$NetBSD: strtoll.c,v 1.6 2004/08/23 03:49:05 jlam Exp $");
 #endif
 #endif /* LIBC_SCCS and not lint */
 

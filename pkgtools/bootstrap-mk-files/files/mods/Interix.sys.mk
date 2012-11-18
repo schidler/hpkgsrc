@@ -1,4 +1,4 @@
-#	$NetBSD: Interix.sys.mk,v 1.2 2006/11/11 18:24:52 jschauma Exp $
+#	$NetBSD: Interix.sys.mk,v 1.1.1.1 2006/07/14 23:13:01 jlam Exp $
 
 unix?=		We run Unix
 OS!=		uname -s

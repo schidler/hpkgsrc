@@ -1,4 +1,4 @@
-/*	$NetBSD: isblank.c,v 1.5 2004/08/23 03:32:12 jlam Exp $	*/
+/*	$NetBSD: isblank.c,v 1.4 2003/09/06 23:03:03 grant Exp $	*/
 
 /*
  * Copyright (c) 1989 The Regents of the University of California.
@@ -40,7 +40,7 @@
 #if 0
 static char sccsid[] = "@(#)isctype.c	5.2 (Berkeley) 6/1/90";
 #else
-__RCSID("$NetBSD: isblank.c,v 1.5 2004/08/23 03:32:12 jlam Exp $");
+__RCSID("$NetBSD: isctype.c,v 1.16 2003/08/07 16:42:52 agc Exp $");
 #endif
 #endif /* LIBC_SCCS and not lint */
 

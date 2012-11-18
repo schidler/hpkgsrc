@@ -1,8 +1,8 @@
-$NetBSD: patch-Mac_Modules_qd___Qdmodule.c,v 1.1 2011/09/30 08:34:26 yyamano Exp $
+$NetBSD$
 
 Fix build errors on Mac OS XLion.
 
---- Mac/Modules/qd/_Qdmodule.c.orig	2010-05-09 15:15:40.002621440 +0000
+--- Mac/Modules/qd/_Qdmodule.c.orig	2010-05-09 15:15:40.000000000 +0000
 +++ Mac/Modules/qd/_Qdmodule.c
 @@ -3,8 +3,14 @@
  

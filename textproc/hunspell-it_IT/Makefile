@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1.1.1 2009/10/12 21:49:37 ahoka Exp $
+# $NetBSD$
 
 DISTNAME=	italiano_2_4_2007_09_01
 CATEGORIES=	textproc

@@ -1,4 +1,4 @@
-/*	$NetBSD: lchflags.c,v 1.4 2008/04/29 05:46:08 martin Exp $	*/
+/*	$NetBSD: lchflags.c,v 1.3 2007/07/31 13:17:33 joerg Exp $	*/
 
 /*-
  * Copyright (c) 2002 The NetBSD Foundation, Inc.

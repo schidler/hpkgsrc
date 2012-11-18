@@ -1,4 +1,4 @@
-#	$NetBSD: IRIX.bsd.own.mk.in,v 1.1.1.1 2006/07/14 23:13:01 jlam Exp $
+#	$NetBSD: IRIX.own.mk.in,v 1.1 2004/04/07 12:05:38 jmmv Exp $
 
 .if !defined(_IRIX_OWN_MK_)
 _IRIX_OWN_MK_=1

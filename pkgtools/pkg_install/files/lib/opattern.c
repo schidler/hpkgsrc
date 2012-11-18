@@ -204,6 +204,10 @@ pkg_order(const char *pattern, const char *first_pkg, const char *second_pkg)
 
 	if (dewey_cmp(first_version + 1, DEWEY_GT, second_version + 1))
 		return 1;
+	else if (dewey_cmp(first_version + 1, DEWEY_LT, second_version + 1))
+		return 2;
+	else if (strcmp(first_pkg, second_pkg) < 0)
+		return 1;
 	else
 		return 2;
 }

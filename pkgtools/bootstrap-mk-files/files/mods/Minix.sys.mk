@@ -1,4 +1,4 @@
-#	$NetBSD: Minix.sys.mk,v 1.1 2011/11/06 21:01:30 tcort Exp $
+#	$NetBSD$
 #	@(#)sys.mk	8.2 (Berkeley) 3/21/94
 
 unix?=		We run Unix.

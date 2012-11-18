@@ -1,4 +1,4 @@
-/*	$NetBSD: bt_debug.c,v 1.1 2008/10/10 00:21:43 joerg Exp $	*/
+/*	$NetBSD: bt_debug.c,v 1.15 2008/09/10 17:52:35 joerg Exp $	*/
 /*	NetBSD: bt_debug.c,v 1.15 2008/09/10 17:52:35 joerg Exp 	*/
 
 /*-
@@ -36,7 +36,7 @@
 #include <nbcompat.h>
 #include <nbcompat/cdefs.h>
 
-__RCSID("$NetBSD: bt_debug.c,v 1.1 2008/10/10 00:21:43 joerg Exp $");
+__RCSID("$NetBSD: bt_debug.c,v 1.15 2008/09/10 17:52:35 joerg Exp $");
 
 #include <assert.h>
 #include <stdio.h>

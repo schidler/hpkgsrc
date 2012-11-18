@@ -1,4 +1,4 @@
-/*	$NetBSD: fnmatch.h,v 1.2 2004/08/10 18:47:55 jlam Exp $	*/
+/*	$NetBSD: fnmatch.h,v 1.1 2004/08/06 16:55:09 jlam Exp $	*/
 
 /*-
  * Copyright (c) 1992, 1993

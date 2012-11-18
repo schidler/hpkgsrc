@@ -1,4 +1,4 @@
-/*	$NetBSD: statvfs.c,v 1.5 2008/09/08 20:20:23 joerg Exp $	*/
+/*	$NetBSD: statvfs.c,v 1.4 2008/04/29 05:46:08 martin Exp $	*/
 
 /*-
  * Copyright (c) 2004 The NetBSD Foundation, Inc.

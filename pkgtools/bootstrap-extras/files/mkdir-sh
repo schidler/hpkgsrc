@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $NetBSD: mkdir-sh,v 1.1.1.1 2006/07/17 14:21:31 jlam Exp $
+# $NetBSD: mkdir-sh,v 1.2 2005/10/09 20:12:29 heinz Exp $
 #
 
 PATH=/bin:/sbin:/usr/bin:/usr/sbin; export PATH

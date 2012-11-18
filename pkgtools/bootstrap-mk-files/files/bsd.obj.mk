@@ -1,4 +1,4 @@
-#	$NetBSD: bsd.obj.mk,v 1.1.1.1 2006/07/14 23:13:01 jlam Exp $
+#	$NetBSD: bsd.obj.mk,v 1.1.1.1 2004/03/11 13:04:17 grant Exp $
 
 .if !target(__initialized_obj__)
 __initialized_obj__:

@@ -1,12 +1,12 @@
-$NetBSD: patch-ba,v 1.1 2010/11/23 08:24:04 tron Exp $
+$NetBSD$
 
 Fix for CVE-2010-3492, taken from the Python SVN repository:
 
 http://svn.python.org/view?view=rev&revision=86084
 
---- Doc/library/asyncore.rst.orig	2010-05-19 14:14:45.054788096 +0000
-+++ Doc/library/asyncore.rst
-@@ -211,10 +211,13 @@ any that have been added to the map duri
+--- Doc/library/asyncore.rst.orig	2010-05-19 15:14:45.000000000 +0100
++++ Doc/library/asyncore.rst	2010-11-22 18:11:58.000000000 +0000
+@@ -211,10 +211,13 @@
     .. method:: accept()
  
        Accept a connection.  The socket must be bound to an address and listening
@@ -24,7 +24,7 @@ http://svn.python.org/view?view=rev&revision=86084
  
  
     .. method:: close()
-@@ -224,6 +227,12 @@ any that have been added to the map duri
+@@ -224,6 +227,12 @@
        flushed).  Sockets are automatically closed when they are
        garbage-collected.
  
@@ -37,7 +37,7 @@ http://svn.python.org/view?view=rev&revision=86084
  .. class:: file_dispatcher()
  
     A file_dispatcher takes a file descriptor or file object along with an
-@@ -240,7 +249,7 @@ any that have been added to the map duri
+@@ -240,7 +249,7 @@
     socket for use by the :class:`file_dispatcher` class.  Availability: UNIX.
  
  
@@ -46,7 +46,7 @@ http://svn.python.org/view?view=rev&revision=86084
  
  asyncore Example basic HTTP client
  ----------------------------------
-@@ -250,7 +259,7 @@ implement its socket handling::
+@@ -250,7 +259,7 @@
  
     import asyncore, socket
  
@@ -55,7 +55,7 @@ http://svn.python.org/view?view=rev&revision=86084
  
         def __init__(self, host, path):
             asyncore.dispatcher.__init__(self)
-@@ -274,6 +283,45 @@ implement its socket handling::
+@@ -274,6 +283,45 @@
             sent = self.send(self.buffer)
             self.buffer = self.buffer[sent:]
  

@@ -1,4 +1,4 @@
-/*	$NetBSD: rmd160.c,v 1.8 2008/10/06 12:36:20 joerg Exp $	*/
+/*	$NetBSD: rmd160.c,v 1.7 2007/07/31 13:17:33 joerg Exp $	*/
 
 /********************************************************************\
  *
@@ -25,7 +25,7 @@
 #include <nbcompat.h>
 #include <nbcompat/cdefs.h>
 #ifndef lint
-__RCSID("$NetBSD: rmd160.c,v 1.8 2008/10/06 12:36:20 joerg Exp $");
+__RCSID("$NetBSD: rmd160.c,v 1.7 2007/07/31 13:17:33 joerg Exp $");
 #endif	/* not lint */
 
 /* header files */

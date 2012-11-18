@@ -1,4 +1,4 @@
-/*	$NetBSD: strlist.h,v 1.1.1.1 2009/09/18 20:55:27 joerg Exp $	*/
+/*	$NetBSD: strlist.h,v 1.3 2009/01/16 21:15:34 dsl Exp $	*/
 
 /*-
  * Copyright (c) 2008 - 2009 The NetBSD Foundation, Inc.

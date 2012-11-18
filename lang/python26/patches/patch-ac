@@ -1,6 +1,6 @@
-$NetBSD: patch-ac,v 1.2 2010/09/04 05:12:00 obache Exp $
+$NetBSD: patch-ac,v 1.1.1.1 2009/04/19 14:42:50 wiz Exp $
 
---- Misc/build.sh.orig	2010-03-12 21:29:25.047185920 +0000
+--- Misc/build.sh.orig	2010-03-12 21:29:25.000000000 +0000
 +++ Misc/build.sh
 @@ -269,7 +269,7 @@ fi
  

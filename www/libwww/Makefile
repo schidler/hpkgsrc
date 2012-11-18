@@ -5,7 +5,7 @@ PKGNAME=		libwww-5.4.0
 PKGREVISION=		10
 CATEGORIES=		www devel
 MASTER_SITES=		http://www.w3.org/Library/Distribution/
-EXTRACT_SUFX=		.zip
+EXTRACT_SUFX=          .tgz
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} libwww-configure-5.4.0nb2.gz
 
 MAINTAINER=		pkgsrc-users@NetBSD.org

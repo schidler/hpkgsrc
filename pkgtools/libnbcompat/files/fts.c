@@ -1,4 +1,4 @@
-/*	$NetBSD: fts.c,v 1.1 2004/08/23 03:32:12 jlam Exp $	*/
+/*	$NetBSD: fts.c,v 1.23 2003/12/04 23:39:18 keihan Exp $	*/
 
 /*
  * Written by Jason R. Thorpe <thorpej@NetBSD.org>, October 21, 1997.

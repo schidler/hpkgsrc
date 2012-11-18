@@ -3,7 +3,6 @@
 PKG_OPTIONS_VAR=		PKG_OPTIONS.hunspell
 PKG_SUPPORTED_OPTIONS=		wide-curses
 PKG_SUGGESTED_OPTIONS=		# empty
-PKG_LEGACY_OPTS+=		ncursesw:wide-curses
 
 .include "../../mk/bsd.options.mk"
 

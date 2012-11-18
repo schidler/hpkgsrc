@@ -1,4 +1,4 @@
-/*	$NetBSD: ndbm.h,v 1.2 2008/10/29 16:39:03 joerg Exp $	*/
+/*	$NetBSD: ndbm.h,v 1.1 2008/10/29 11:23:17 joerg Exp $	*/
 
 /*-
  * Copyright (c) 1990, 1993

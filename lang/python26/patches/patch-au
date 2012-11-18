@@ -1,16 +1,10 @@
-$NetBSD: patch-au,v 1.7 2010/09/22 09:13:48 obache Exp $
+$NetBSD: patch-au,v 1.8 2012/03/25 09:09:05 tron Exp $
 
---- Makefile.pre.in.orig	2010-08-01 22:05:31.025165824 +0000
+1.) Fix for unpriviliged build.
+
+--- Makefile.pre.in.orig	2010-08-01 22:05:31.000000000 +0000
 +++ Makefile.pre.in
-@@ -413,7 +413,6 @@ $(LIBRARY): $(LIBRARY_OBJS)
- libpython$(VERSION).so: $(LIBRARY_OBJS)
- 	if test $(INSTSONAME) != $(LDLIBRARY); then \
- 		$(LDSHARED) $(LDFLAGS) -Wl,-h$(INSTSONAME) -o $(INSTSONAME) $(LIBRARY_OBJS) $(MODLIBS) $(SHLIBS) $(LIBC) $(LIBM) $(LDLAST); \
--		$(LN) -f $(INSTSONAME) $@; \
- 	else \
- 		$(LDSHARED) $(LDFLAGS) -o $@ $(LIBRARY_OBJS) $(MODLIBS) $(SHLIBS) $(LIBC) $(LIBM) $(LDLAST); \
- 	fi
-@@ -785,7 +784,8 @@ altbininstall:	$(BUILDPYTHON)
+@@ -785,7 +785,8 @@ altbininstall:	$(BUILDPYTHON)
  				(cd $(DESTDIR)$(LIBDIR); $(LN) -sf $(INSTSONAME) $(LDLIBRARY)) \
  			fi \
  		fi; \

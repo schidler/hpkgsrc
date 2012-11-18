@@ -1,4 +1,4 @@
-/*	$NetBSD: vis.c,v 1.11 2008/10/06 12:36:20 joerg Exp $	*/
+/*	$NetBSD: vis.c,v 1.10 2007/07/31 13:17:34 joerg Exp $	*/
 
 /*-
  * Copyright (c) 1989, 1993
@@ -68,7 +68,7 @@
 #include <nbcompat.h>
 #include <nbcompat/cdefs.h>
 #if defined(LIBC_SCCS) && !defined(lint)
-__RCSID("$NetBSD: vis.c,v 1.11 2008/10/06 12:36:20 joerg Exp $");
+__RCSID("$NetBSD: vis.c,v 1.10 2007/07/31 13:17:34 joerg Exp $");
 #endif /* LIBC_SCCS and not lint */
 
 #if 0
