@@ -1,0 +1,21 @@
+$NetBSD$
+
+--- conf.d/Makefile.in.orig	2012-07-27 02:24:50.000000000 +0000
++++ conf.d/Makefile.in
+@@ -218,7 +218,7 @@ build_cpu = @build_cpu@
+ build_os = @build_os@
+ build_vendor = @build_vendor@
+ builddir = @builddir@
+-configdir = $(CONFIGDIR)
++configdir = $(prefix)/share/examples/fontconfig/conf.d
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+ docdir = @docdir@
+@@ -541,6 +541,7 @@ uninstall-am: uninstall-configDATA unins
+ 
+ 
+ install-data-hook:
++xinstall-data-hook:
+ 	mkdir -p $(DESTDIR)$(configdir)
+ 	@(echo cd $(DESTDIR)$(configdir);			\
+ 	  cd $(DESTDIR)$(configdir);				\

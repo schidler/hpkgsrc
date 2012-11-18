@@ -1,0 +1,4 @@
+@comment $NetBSD$
+share/texmf-dist/doc/latex/euenc/README
+share/texmf-dist/doc/latex/euenc/euenc.pdf
+share/texmf-dist/doc/latex/euenc/test-euxlm.ltx

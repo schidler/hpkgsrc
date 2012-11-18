@@ -1,0 +1,10 @@
+$NetBSD$
+
+--- tools/arabridge.orig	2006-02-11 10:46:41.000000000 +0100
++++ tools/arabridge
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # ARAnyM - bridging network
+ # STanda (c) 2004

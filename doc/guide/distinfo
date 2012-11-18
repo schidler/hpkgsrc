@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.11 2007/10/10 11:36:11 dmcmahill Exp $
+
+SHA1 (pkgsrc-guide/htdocs-share-20111201.tar.gz) = b64f542c5611765836f6c467177d91bf07ef6905
+RMD160 (pkgsrc-guide/htdocs-share-20111201.tar.gz) = a772eaef953034284ddf6af02db951a05437d327
+Size (pkgsrc-guide/htdocs-share-20111201.tar.gz) = 103709 bytes

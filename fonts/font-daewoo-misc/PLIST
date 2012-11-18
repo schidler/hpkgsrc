@@ -1,0 +1,4 @@
+@comment $NetBSD: PLIST,v 1.2 2009/06/14 17:54:13 joerg Exp $
+share/fonts/X11/misc/hanglg16.pcf.gz
+share/fonts/X11/misc/hanglm16.pcf.gz
+share/fonts/X11/misc/hanglm24.pcf.gz

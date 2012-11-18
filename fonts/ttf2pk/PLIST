@@ -1,0 +1,5 @@
+@comment $NetBSD: PLIST,v 1.5 2009/01/14 06:16:19 minskim Exp $
+bin/ttf2pk
+bin/ttf2tfm
+man/man1/ttf2pk.1
+man/man1/ttf2tfm.1
