@@ -1,0 +1,4 @@
+@comment $NetBSD$
+bin/freeciv-server
+lib/libfreeciv-srv.la
+share/applications/freeciv-server.desktop

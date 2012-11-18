@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2007/10/05 22:54:23 joerg Exp $
+
+SHA1 (grig-0.8.0.tar.gz) = 4de0b484dcc868eddf82ead66ef6a337592b9aee
+RMD160 (grig-0.8.0.tar.gz) = a4854280717ac38419848b70c8e4f457c3c2d7ca
+Size (grig-0.8.0.tar.gz) = 514072 bytes

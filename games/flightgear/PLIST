@@ -1,0 +1,19 @@
+@comment $NetBSD: PLIST,v 1.2 2010/08/27 07:54:22 adam Exp $
+bin/GPSsmooth
+bin/MIDGsmooth
+bin/UGsmooth
+bin/fgfs
+bin/fgjs
+bin/fgpanel
+bin/fgviewer
+bin/js_demo
+bin/metar
+bin/terrasync
+bin/yasim
+bin/yasim-proptest
+man/man1/fgfs.1
+man/man1/fgjs.1
+man/man1/fgpanel.1
+man/man1/gl-info.1
+man/man1/js_demo.1
+man/man1/terrasync.1

@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- configure.orig	2009-10-19 23:43:46.000000000 +0200
++++ configure
+@@ -26244,7 +26244,7 @@ else
+ fi
+ 
+ 
+-scoredir='${localstatedir}/games'
++scoredir='${prefix}/share/gnome-games/scorefile-templates'
+ scores_group=games
+ scores_user=games
+ 

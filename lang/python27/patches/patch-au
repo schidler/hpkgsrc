@@ -1,0 +1,36 @@
+$NetBSD: patch-au,v 1.4 2012/03/24 12:04:37 tron Exp $
+
+Fix for unpriviliged build.
+
+http://hg.python.org/cpython/rev/a0f43f4481e0
+
+--- Makefile.pre.in.orig	2012-04-09 23:07:33.013107200 +0000
++++ Makefile.pre.in
+@@ -427,7 +427,7 @@ $(LIBRARY): $(LIBRARY_OBJS)
+ libpython$(VERSION).so: $(LIBRARY_OBJS)
+ 	if test $(INSTSONAME) != $(LDLIBRARY); then \
+ 		$(BLDSHARED) -Wl,-h$(INSTSONAME) -o $(INSTSONAME) $(LIBRARY_OBJS) $(MODLIBS) $(SHLIBS) $(LIBC) $(LIBM) $(LDLAST); \
+-		$(LN) -f $(INSTSONAME) $@; \
++		$(LN) -sf $(INSTSONAME) $@; \
+ 	else \
+ 		$(BLDSHARED) -o $@ $(LIBRARY_OBJS) $(MODLIBS) $(SHLIBS) $(LIBC) $(LIBM) $(LDLAST); \
+ 	fi
+@@ -448,7 +448,7 @@ gdbhooks: $(BUILDPYTHON)-gdb.py
+ 
+ SRC_GDB_HOOKS=$(srcdir)/Tools/gdb/libpython.py
+ $(BUILDPYTHON)-gdb.py: $(SRC_GDB_HOOKS)
+-	$(INSTALL_DATA) $(SRC_GDB_HOOKS) $(BUILDPYTHON)-gdb.py
++	cp $(SRC_GDB_HOOKS) $(BUILDPYTHON)-gdb.py
+ 
+ # This rule is here for OPENSTEP/Rhapsody/MacOSX. It builds a temporary
+ # minimal framework (not including the Lib directory and such) in the current
+@@ -829,7 +829,8 @@ altbininstall:	$(BUILDPYTHON)
+ 				(cd $(DESTDIR)$(LIBDIR); $(LN) -sf $(INSTSONAME) $(LDLIBRARY)) \
+ 			fi \
+ 		fi; \
+-	else	true; \
++	elif test -f $(INSTSONAME); then \
++		$(INSTALL_SHARED) $(INSTSONAME) $(DESTDIR)$(LIBDIR); \
+ 	fi
+ 
+ # Install the manual page

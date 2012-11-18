@@ -1,0 +1,4 @@
+@comment $NetBSD$
+include/evas-1/Evas_Engine_SDL.h
+lib/evas/modules/engines/software_sdl/${MODULE_ARCH}/module.la
+lib/pkgconfig/evas-software-sdl.pc

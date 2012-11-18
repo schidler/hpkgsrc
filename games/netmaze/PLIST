@@ -1,0 +1,11 @@
+@comment $NetBSD: PLIST,v 1.2 2003/02/26 04:07:48 jschauma Exp $
+bin/betterbot
+bin/dummy
+bin/follower
+bin/netmaze
+bin/netserv
+${IMAKE_GAMEMAN_DIR}/betterbot.${IMAKE_GAMEMAN_SUFFIX}
+${IMAKE_GAMEMAN_DIR}/dummy.${IMAKE_GAMEMAN_SUFFIX}
+${IMAKE_GAMEMAN_DIR}/follower.${IMAKE_GAMEMAN_SUFFIX}
+${IMAKE_GAMEMAN_DIR}/netmaze.${IMAKE_GAMEMAN_SUFFIX}
+${IMAKE_GAMEMAN_DIR}/netserv.${IMAKE_GAMEMAN_SUFFIX}

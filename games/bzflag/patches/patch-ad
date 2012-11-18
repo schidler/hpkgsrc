@@ -1,0 +1,12 @@
+$NetBSD: patch-ad,v 1.4 2005/06/02 14:24:04 blymn Exp $
+--- configure.orig	2010-04-01 05:53:25.000000000 +0000
++++ configure
+@@ -975,7 +975,7 @@ no_recursion=
+ prefix=NONE
+ program_prefix=NONE
+ program_suffix=NONE
+-program_transform_name=s,x,x,
++program_transform_name=
+ silent=
+ site=
+ srcdir=

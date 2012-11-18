@@ -1,0 +1,8 @@
+# $NetBSD: INSTALL,v 1.3 2007/09/20 00:05:56 wiz Exp $
+
+case ${STAGE} in
+POST-INSTALL)
+	(cd ${PREFIX}/share/gnome-games/scorefile-templates && \
+	 pax -rw -k -pop . /var/games)
+	;;
+esac

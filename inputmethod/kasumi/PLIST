@@ -1,0 +1,7 @@
+@comment $NetBSD$
+bin/kasumi
+man/man1/kasumi.1
+share/applications/kasumi.desktop
+share/locale/it/LC_MESSAGES/kasumi.mo
+share/locale/ja/LC_MESSAGES/kasumi.mo
+share/pixmaps/kasumi.png

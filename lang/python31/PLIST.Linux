@@ -1,0 +1,12 @@
+@comment $NetBSD: PLIST.Linux,v 1.2 2011/09/06 09:52:04 cheusov Exp $
+${PLIST.linux2}lib/python${PY_VER_SUFFIX}/lib-dynload/ossaudiodev.so
+lib/python${PY_VER_SUFFIX}/lib-dynload/spwd.so
+${PLIST.linux2}lib/python${PY_VER_SUFFIX}/plat-${PY_PLATNAME}/CDROM.py
+${PLIST.linux2}lib/python${PY_VER_SUFFIX}/plat-${PY_PLATNAME}/CDROM.pyc
+${PLIST.linux2}lib/python${PY_VER_SUFFIX}/plat-${PY_PLATNAME}/CDROM.pyo
+${PLIST.linux2}lib/python${PY_VER_SUFFIX}/plat-${PY_PLATNAME}/DLFCN.py
+${PLIST.linux2}lib/python${PY_VER_SUFFIX}/plat-${PY_PLATNAME}/DLFCN.pyc
+${PLIST.linux2}lib/python${PY_VER_SUFFIX}/plat-${PY_PLATNAME}/DLFCN.pyo
+${PLIST.linux2}lib/python${PY_VER_SUFFIX}/plat-${PY_PLATNAME}/TYPES.py
+${PLIST.linux2}lib/python${PY_VER_SUFFIX}/plat-${PY_PLATNAME}/TYPES.pyc
+${PLIST.linux2}lib/python${PY_VER_SUFFIX}/plat-${PY_PLATNAME}/TYPES.pyo

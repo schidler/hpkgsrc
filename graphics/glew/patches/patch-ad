@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- config/Makefile.darwin.orig	2011-04-27 16:16:34.000000000 +0000
++++ config/Makefile.darwin
+@@ -13,7 +13,7 @@ endif
+ LDFLAGS.STATIC =
+ LDFLAGS.DYNAMIC =
+ WARN = -Wall -W
+-POPT = -O2
++POPT ?= -O2
+ BIN.SUFFIX =
+ LIB.SONAME    = lib$(NAME).$(SO_MAJOR).dylib
+ LIB.DEVLNK    = lib$(NAME).dylib

@@ -1,0 +1,7 @@
+@comment $NetBSD$
+bin/pcc
+libexec/ccom
+libexec/cpp
+man/man1/ccom.1
+man/man1/cpp.1
+man/man1/pcc.1

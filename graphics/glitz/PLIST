@@ -1,0 +1,10 @@
+@comment $NetBSD: PLIST,v 1.4 2006/07/23 03:42:43 minskim Exp $
+${PLIST.agl}include/glitz-agl.h
+${PLIST.x11}include/glitz-glx.h
+include/glitz.h
+${PLIST.agl}lib/libglitz-agl.la
+${PLIST.x11}lib/libglitz-glx.la
+lib/libglitz.la
+${PLIST.agl}lib/pkgconfig/glitz-agl.pc
+${PLIST.x11}lib/pkgconfig/glitz-glx.pc
+lib/pkgconfig/glitz.pc

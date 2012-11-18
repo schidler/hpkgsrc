@@ -1,0 +1,37 @@
+$NetBSD$
+
+--- configure.orig	2012-08-23 18:41:09.000000000 +0000
++++ configure
+@@ -19098,13 +19098,13 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&
+   gimp_ok=yes
+ fi
+ rm -f conftest*
++  fi
+ 
+       if test "x$gimp_ok" = xyes; then
+ 
+ $as_echo "#define HAVE_SYS_SELECT_H 1" >>confdefs.h
+ 
+       fi
+-  fi
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: $gimp_ok" >&5
+ $as_echo "$gimp_ok" >&6; }
+   if test "x$gimp_ok" = xno; then
+@@ -22886,7 +22886,7 @@ fi
+     have_xvfb_run="no (not found)"
+   fi
+ fi
+- if test "x$have_xvfb_run" == "xyes"; then
++ if test "x$have_xvfb_run" = "xyes"; then
+   HAVE_XVFB_RUN_TRUE=
+   HAVE_XVFB_RUN_FALSE='#'
+ else
+@@ -23309,7 +23309,7 @@ fi
+ 
+ gimpdatadir="$datadir/$PACKAGE/2.0"
+ gimpplugindir="$libdir/$PACKAGE/2.0"
+-gimpsysconfdir="$sysconfdir/$PACKAGE/2.0"
++gimpsysconfdir="$sysconfdir"
+ 
+ 
+ 

@@ -1,0 +1,3 @@
+@comment $NetBSD: PLIST,v 1.1.1.1 2009/02/18 21:19:15 ahoka Exp $
+bin/dvigif
+bin/dvipng
