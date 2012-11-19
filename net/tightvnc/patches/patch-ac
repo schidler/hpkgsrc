@@ -1,0 +1,18 @@
+$NetBSD: patch-ac,v 1.3 2003/11/27 17:27:29 abs Exp $
+
+--- Xvnc/config/cf/vnc.def.orig	2009-02-05 09:48:09.000000000 +0000
++++ Xvnc/config/cf/vnc.def
+@@ -117,13 +117,7 @@
+  * You may need to change this.
+  */
+ 
+-#ifdef SunArchitecture
+-#define ProjectRoot /usr/openwin
+-#else
+-#ifdef LinuxArchitecture
+ #define ProjectRoot /usr/X11R6
+-#endif
+-#endif
+ 
+ #endif /* BeforeVendorCF */
+ 

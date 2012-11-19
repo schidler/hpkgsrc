@@ -1,0 +1,20 @@
+# $NetBSD: Makefile,v 1.5 2012/02/15 12:30:06 obache Exp $
+#
+
+DISTNAME=		nload-0.7.4
+CATEGORIES=		net sysutils
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nload/}
+
+MAINTAINER=		bartosz.kuzma@gmail.com
+HOMEPAGE=		http://www.roland-riegel.de/nload/
+COMMENT=		Monitoring network traffic and bandwidth usage
+LICENSE=		gnu-gpl-v2
+
+USE_LANGUAGES=		c c++
+MANCOMPRESSED=		yes
+GNU_CONFIGURE=		yes
+
+CONFIGURE_ARGS+=	--sysconfdir=${PKG_SYSCONFDIR}
+
+.include "../../devel/ncurses/buildlink3.mk"
+.include "../../mk/bsd.pkg.mk"

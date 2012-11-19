@@ -1,0 +1,28 @@
+$NetBSD$
+
+SHA1 (samba-3.6.6.tar.gz) = f1516ce332fe11c68a052855edd745368ac4d8e9
+RMD160 (samba-3.6.6.tar.gz) = 70a520012a1c02085f0d6209c2acac84512d9f8b
+Size (samba-3.6.6.tar.gz) = 34061741 bytes
+
+SHA1 (patch-ac) = 2722193688394cb7c6b99a254dac3c0a01112164
+SHA1 (patch-ad) = 442aa072f45068a17b4cf0b78b2afbfb5cd21d8f
+SHA1 (patch-ae) = 187a73bc5920b3e121189d8983284ec6d8cf2554
+SHA1 (patch-af) = f73fe6fe3368ec53ab9fd5d6dde6bbe695d97615
+SHA1 (patch-ag) = 0b9bf9379538f0a343bc9c718a0b0e56436c3bdb
+SHA1 (patch-ah) = 7b15dc88a0c81f3fc52f5d60a27e70e5b4a5ff24
+SHA1 (patch-ai) = 4c8927f21553114d496637ed63f763a61231c4e3
+SHA1 (patch-aj) = 6b0e9eec5cc118d37202bcab4b75c4a55bc8ed3b
+SHA1 (patch-ak) = 81bab113bff3c03f6a9f1fb6788abda724c6e75e
+SHA1 (patch-an) = 638eb2bd294890dd5a60d2f02afdfc2035426e45
+SHA1 (patch-ao) = 32112a6cdc3a4173ef8adfade6917a1ed1ca36c1
+SHA1 (patch-aq) = ce3699f58a207bb18c7e141af2a545a328c6f327
+SHA1 (patch-ar) = f1c1441cbbdbde16572c4d3a9a43fd88a9da04ce
+SHA1 (patch-as) = d7823c27c300aa57276c53b0e11740dc94dfab3b
+SHA1 (patch-at) = e270691d6b178be186d980cb44e25d8b98eaa73a
+SHA1 (patch-au) = 4bd0c0bf3fc2bbcb6b6ad89484dbe9e4c685ce7f
+SHA1 (patch-av) = 04f6aebd7281cb63fd9091c704abb43e68056042
+SHA1 (patch-aw) = 2fb590e734d9c700ee1034de3842744f393642b1
+SHA1 (patch-ba) = 904cb6fd363f88256803dea0f14cf68f21771cc2
+SHA1 (patch-bb) = 4434103d848ad453fe3b940bb14e806494b533db
+SHA1 (patch-bf) = 93496c3ec51cc921fb896a56d2718f9b73f479d9
+SHA1 (patch-utils_net__time.c) = f455b1b0aa9c800d424cd5511ae2f3d03fe6351e

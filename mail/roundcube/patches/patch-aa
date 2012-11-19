@@ -1,0 +1,19 @@
+$NetBSD: patch-aa,v 1.8 2011/01/13 12:19:19 adam Exp $
+
+Use proper directories for log and temporary.
+
+--- config/main.inc.php.dist.orig	2011-11-30 13:11:34.000000000 +0000
++++ config/main.inc.php.dist
+@@ -174,10 +174,10 @@ $rcmail_config['enable_installer'] = fal
+ 
+ // use this folder to store log files (must be writeable for apache user)
+ // This is used by the 'file' log driver.
+-$rcmail_config['log_dir'] = 'logs/';
++$rcmail_config['log_dir'] = '@VARBASE@/log/roundcube/';
+ 
+ // use this folder to store temp files (must be writeable for apache user)
+-$rcmail_config['temp_dir'] = 'temp/';
++$rcmail_config['temp_dir'] = '@VARBASE@/spool/roundcube/';
+ 
+ // lifetime of message cache
+ // possible units: s, m, h, d, w

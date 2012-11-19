@@ -1,0 +1,2 @@
+@comment $NetBSD: PLIST.sflow,v 1.1.1.1 2007/07/29 21:33:42 seb Exp $
+bin/sfcapd

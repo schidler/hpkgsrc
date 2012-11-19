@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- src/or/Makefile.in.orig	2012-11-10 07:23:46.842530816 +0000
++++ src/or/Makefile.in
+@@ -272,7 +272,7 @@ AM_CPPFLAGS = -DSHARE_DATADIR="\"$(datad
+ tor_LDFLAGS = @TOR_LDFLAGS_zlib@ @TOR_LDFLAGS_openssl@ @TOR_LDFLAGS_libevent@
+ tor_LDADD = ./libtor.a ../common/libor.a ../common/libor-crypto.a \
+ 	../common/libor-event.a \
+-	@TOR_ZLIB_LIBS@ -lm @TOR_LIBEVENT_LIBS@ @TOR_OPENSSL_LIBS@ @TOR_LIB_WS32@ @TOR_LIB_GDI@
++	@TOR_ZLIB_LIBS@ @LIBM@ @TOR_LIBEVENT_LIBS@ @TOR_OPENSSL_LIBS@ @TOR_LIB_WS32@ @TOR_LIB_GDI@
+ 
+ noinst_HEADERS = buffers.h circuitbuild.h circuitlist.h circuituse.h \
+ 	command.h config.h connection_edge.h connection.h connection_or.h \

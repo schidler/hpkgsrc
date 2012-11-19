@@ -1,0 +1,13 @@
+$NetBSD: patch-ac,v 1.1 2002/10/13 04:42:13 hubertf Exp $
+
+--- src/plugbase.h.orig	2009-05-06 22:28:18.000000000 +0000
++++ src/plugbase.h
+@@ -50,7 +50,7 @@
+ # undef Free
+ #endif
+ 
+-#if defined(SOLARIS) || defined(FREEBSD) || defined(OPENBSD)
++#if defined(SOLARIS) || defined(FREEBSD) || defined(OPENBSD) || defined(NETBSD)
+ # include <sys/param.h>
+ #endif
+ 

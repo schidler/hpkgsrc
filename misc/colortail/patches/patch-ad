@@ -1,0 +1,21 @@
+$NetBSD: patch-ad,v 1.2 2004/05/23 23:28:29 danw Exp $
+
+--- CfgFileParser.cc.orig	1999-08-03 19:40:44.000000000 +0000
++++ CfgFileParser.cc
+@@ -20,10 +20,14 @@
+ #include "CfgFileParser.h"
+ 
+ #include <stdio.h>
+-#include <fstream.h>
++#include <fstream>
+ #include <assert.h>
+ #include <string.h>
+-#include <malloc.h>
++#include <stdlib.h>
++
++#include <iostream>
++
++using namespace std;
+ 
+ 
+ // ## class SearchData ##

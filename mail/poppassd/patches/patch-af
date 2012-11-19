@@ -1,0 +1,12 @@
+$NetBSD: patch-af,v 1.2 2009/12/27 14:17:38 obache Exp $
+
+--- configure.orig	2010-10-02 00:22:09.000000000 +0000
++++ configure
+@@ -11221,6 +11221,7 @@ gethostbyname \
+ gettimeofday \
+ getusershell \
+ mkdir \
++setlogin \
+ socket \
+ strdup \
+ strerror \

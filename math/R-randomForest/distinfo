@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.1.1.1 2009/12/11 19:06:17 adam Exp $
+
+SHA1 (R/randomForest_4.6-6.tar.gz) = 142f68dcfae31bd69927a11506fdbf795cba07af
+RMD160 (R/randomForest_4.6-6.tar.gz) = 59e795d2a09c382c016c5d5b11b366425ca73292
+Size (R/randomForest_4.6-6.tar.gz) = 76960 bytes

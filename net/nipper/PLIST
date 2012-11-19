@@ -1,0 +1,3 @@
+@comment $NetBSD$
+bin/nipper
+man/man1/nipper.1

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.2 2012/03/17 16:54:57 taca Exp $
+
+SHA1 (amq-client-0.9.4.gem) = 45e6147c69068adbc1bae6224f319b266b04473d
+RMD160 (amq-client-0.9.4.gem) = cce673fc91885502ba801048fa815d49cc7a713f
+Size (amq-client-0.9.4.gem) = 74752 bytes

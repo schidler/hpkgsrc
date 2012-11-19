@@ -1,0 +1,13 @@
+$NetBSD: patch-as,v 1.1.1.1 2010/12/06 17:01:23 adam Exp $
+
+--- script/installmodules.sh.orig	2012-06-24 17:21:16.052166656 +0000
++++ script/installmodules.sh
+@@ -11,7 +11,7 @@ shift
+ 
+ for d in $prefix $LIBDIR; do
+ if [ ! -d $DESTDIR/$d ]; then
+-mkdir $DESTDIR/$d
++mkdir -p $DESTDIR/$d
+ if [ ! -d $DESTDIR/$d ]; then
+   echo Failed to make directory $DESTDIR/$d
+   exit 1

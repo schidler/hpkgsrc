@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.1.1.1 2005/11/12 04:13:12 minskim Exp $
+
+SHA1 (esmtp-1.2.tar.bz2) = 01405c2ea5821c080edb37b16b1523234a442915
+RMD160 (esmtp-1.2.tar.bz2) = 3fcd5908273087858dca8162c8440760774d8bf0
+Size (esmtp-1.2.tar.bz2) = 127921 bytes

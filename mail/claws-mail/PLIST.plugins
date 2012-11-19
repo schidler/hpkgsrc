@@ -1,0 +1,2 @@
+@comment $NetBSD: PLIST.plugins,v 1.1 2007/08/03 02:34:40 smb Exp $
+lib/claws-mail/plugins/${PLUGIN_NAME}.la

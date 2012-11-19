@@ -1,0 +1,15 @@
+$NetBSD: patch-ab,v 1.1.1.1 2009/04/06 10:17:32 wiz Exp $
+
+--- src/coroutine_ucontext.c.orig	2012-07-12 08:37:05.000000000 +0000
++++ src/coroutine_ucontext.c
+@@ -26,6 +26,10 @@
+ #include <stdlib.h>
+ #include "coroutine.h"
+ 
++#ifndef MAP_ANONYMOUS
++#define MAP_ANONYMOUS MAP_ANON
++#endif
++
+ int coroutine_release(struct coroutine *co)
+ {
+     return cc_release(&co->cc);

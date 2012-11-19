@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- libsmb/cliconnect.c.orig	2012-06-24 17:21:16.044564480 +0000
++++ libsmb/cliconnect.c
+@@ -3536,7 +3536,7 @@ struct cli_state *get_ipc_connect_master
+         if (!NT_STATUS_IS_OK(status)) {
+                 DEBUG(99, ("No master browsers responded: %s\n",
+ 			   nt_errstr(status)));
+-                return False;
++                return NULL;
+         }
+ 
+ 	for (i = 0; i < count; i++) {

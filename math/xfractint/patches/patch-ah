@@ -1,0 +1,52 @@
+$NetBSD: patch-ah,v 1.1 2006/06/14 09:07:45 rillig Exp $
+
+--- fractint.c.orig	1999-09-06 10:38:10.000000000 +0000
++++ fractint.c
+@@ -3,14 +3,17 @@
+                         Main Routine
+ */
+ 
++#if !defined(USE_VARARGS)
++#include <stdarg.h>
++#else
++#include <varargs.h>
++#endif
++
+ #include <string.h>
+ #include <time.h>
+ #include <signal.h>
+ #ifndef XFRACT
+ #include <io.h>
+-#include <stdarg.h>
+-#else
+-#include <varargs.h>
+ #endif
+ #include <ctype.h>
+ 
+@@ -202,7 +205,7 @@ static void my_floating_point_err(int si
+       overflow = 1;
+ }
+ 
+-void main(int argc, char **argv)
++int main(int argc, char **argv)
+ {
+    int     resumeflag;
+    int     kbdchar;                     /* keyboard key-hit value       */
+@@ -540,7 +543,7 @@ int check_key()
+      timer(1,NULL,int width)            decoder
+      timer(2)                           encoder
+   */
+-#ifndef XFRACT
++#if !defined(USE_VARARGS)
+ int timer(int timertype,int(*subrtn)(),...)
+ #else
+ int timer(va_alist)
+@@ -555,7 +558,7 @@ va_dcl
+    int i;
+    int do_bench;
+ 
+-#ifndef XFRACT
++#if !defined(USE_VARARGS)
+    va_start(arg_marker,subrtn);
+ #else
+    int timertype;

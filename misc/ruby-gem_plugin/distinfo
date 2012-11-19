@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.2 2007/04/27 19:57:53 minskim Exp $
+
+SHA1 (gem_plugin-0.2.3.gem) = 14cb572dbee665b19ecac26dfcd1150d1f35de1e
+RMD160 (gem_plugin-0.2.3.gem) = 963a3d7a3aa052a31213555f46c100f7ce8b82ce
+Size (gem_plugin-0.2.3.gem) = 33280 bytes

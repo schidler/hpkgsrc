@@ -1,0 +1,17 @@
+$NetBSD$
+
+--- setup.py.orig	2011-07-30 00:04:23.000000000 +0000
++++ setup.py
+@@ -235,10 +235,10 @@ setup(
+       license = 'BSD',
+       url = 'http://code.google.com/p/sympy',
+       packages = ['sympy'] + modules + tests,
+-      scripts = ['bin/isympy'],
++      scripts = ['bin/isympy' + sys.version[0:3]],
+       ext_modules = [],
+       package_data = { 'sympy.utilities.mathml' : ['data/*.xsl'] },
+-      data_files = [('share/man/man1', ['doc/man/isympy.1'])],
++      data_files = [('man/man1', ['doc/man/isympy' + sys.version[0:3] + '.1'])],
+       cmdclass    = {'test': test_sympy,
+                      'bench': run_benchmarks,
+                      'clean': clean,

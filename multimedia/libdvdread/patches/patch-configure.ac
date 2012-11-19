@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- configure.ac.orig	2011-10-07 20:20:59.004980736 +0000
++++ configure.ac
+@@ -145,6 +145,8 @@ case $host in
+   *cygwin*)
+     LDFLAGS="-no-undefined $LDFLAGS"
+     ;;
++  *haiku*)
++    ;;
+   *os2*)
+     LDFLAGS="-no-undefined -Zbin-files $LDFLAGS"
+     ;;

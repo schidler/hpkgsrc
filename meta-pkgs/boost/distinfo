@@ -1,0 +1,32 @@
+$NetBSD: distinfo,v 1.48 2012/08/31 12:20:56 adam Exp $
+
+SHA1 (boost_1_51_0.tar.bz2) = 52ef06895b97cc9981b8abf1997c375ca79f30c5
+RMD160 (boost_1_51_0.tar.bz2) = e92733c82785a38049f2d6a8126eadd3f8ac0c40
+Size (boost_1_51_0.tar.bz2) = 50811407 bytes
+SHA1 (patch-aa) = 3e53e028f2932120b766debdbc1154312a09c9bd
+SHA1 (patch-ab) = ebd2b65c15ae90ac753354ba91b366836fce5c3a
+SHA1 (patch-ac) = f5ab7516e9ab1c777dc40e6cef359a1c8bba6014
+SHA1 (patch-ad) = a1dfe602982bbb77601655215071b5a98c68aac5
+SHA1 (patch-ae) = ce9b50b1a05ffa76366ce1464a4533b02ececdfd
+SHA1 (patch-ag) = 343ecf0b522503be83e87e7e2bace2dc3c782311
+SHA1 (patch-ai) = d004f6cf1339beaf3836842bca000bfe224d3b15
+SHA1 (patch-aq) = a57ba9c01349d6f7970760b3cc7478084556f8ad
+SHA1 (patch-ar) = 86cc47a298bff55ef003f3610a425223bd2c7342
+SHA1 (patch-boost_config_platform_haiku.hpp) = a1b3bb69323a4884225ea1fab8f7bca55a76b5b1
+SHA1 (patch-boost_config_select__platform__config.hpp) = 8a0d80d7644d6a0492341e2ee1ca0ad2f0e15311
+SHA1 (patch-boost_config_stdlib_libstdcpp3.hpp) = 8ebbec96e6380c6de539337e0997066fdd46fce5
+SHA1 (patch-boost_foreach.hpp) = f4d4c27ca77644ab5debdbea74f970dcf317a723
+SHA1 (patch-boost_foreach_fwd.hpp) = 30eb88bec8b5a408ac49521e49073df39fdea09c
+SHA1 (patch-boost_functional_hash_hash.hpp) = f8ec4aa46e2d83dbd27b5d6ce27cc24d2c4b0d69
+SHA1 (patch-boost_interprocess_detail_workaround.hpp) = 87632243a715b5ac20ff4655d4d1c12ef22b51da
+SHA1 (patch-boost_interprocess_mapped__region.hpp) = 4f6a113db934a79e6c888e590429a6a2e68a2b65
+SHA1 (patch-boost_math_tools_config.hpp) = b86762a027bf28d2c97e404960ae76a73c90c84f
+SHA1 (patch-libs_config_test_all_Jamfile.v2) = ea7a111797a01a8b13d3be197e3c8dc167900060
+SHA1 (patch-libs_context_build_Jamfile.v2) = ca75161873140de83dc6294a881555b4fc1c885d
+SHA1 (patch-libs_filesystem_src_unique_path.cpp) = d062ffdf75b1983e0cb90b7d3a5784479bf8dc99
+SHA1 (patch-tools_build_v2_engine_boehm__gc_include_private_gcconfig.h) = 7da72ce65346872a13df4b58d6f32f7dabf83bed
+SHA1 (patch-tools_build_v2_engine_fileunix.c) = 23cf713e15d6667634cf915511018e3c1a6eeffd
+SHA1 (patch-tools_build_v2_engine_jam.h) = 7f9ee9372b4a3a15c3c9e21afe741db507e971b9
+SHA1 (patch-tools_build_v2_engine_jambase.c) = 53e21d47fd5fffba251af52bd8ce13e5f7569aed
+SHA1 (patch-tools_build_v2_tools_builtin.jam) = 992a1d94d3afa61ec27eaaebe4e8bdb4ba2173e3
+SHA1 (patch-tools_build_v2_tools_gcc.jam) = 7d796efaa7a9f8a954b371ce60f0734102b0ea57

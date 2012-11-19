@@ -1,0 +1,4 @@
+@comment $NetBSD: PLIST,v 1.1.1.1 2004/02/23 17:53:34 minskim Exp $
+bin/tcpick
+man/man8/tcpick.8
+man/man8/tcpick_italian.8

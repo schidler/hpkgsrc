@@ -1,0 +1,4 @@
+@comment $NetBSD$
+lib/pkgconfig/ruby-gstreamer.pc
+${RUBY_VENDORLIB}/gst.rb
+${RUBY_VENDORARCHLIB}/gstreamer.${RUBY_DLEXT}

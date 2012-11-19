@@ -1,0 +1,13 @@
+$NetBSD: patch-ae,v 1.1 2002/05/31 13:01:23 seb Exp $
+
+--- tmac.andoc.orig	2008-02-16 07:46:20.000000000 +0000
++++ tmac.andoc
+@@ -2,7 +2,7 @@
+ .if !\n(.g .ab These macros require groff.
+ .de Dd
+ .rm Dd
+-.do mso tmac.doc
++.do mso tmac.docj
+ \\*(Dd\\
+ ..
+ .de TH

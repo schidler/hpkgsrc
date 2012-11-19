@@ -1,0 +1,10 @@
+@comment $NetBSD: PLIST,v 1.3 2012/01/24 11:49:33 obache Exp $
+bin/archivemail
+${PYSITELIB}/${EGG_FILE}
+man/man1/archivemail.1
+share/archivemail/CHANGELOG
+share/archivemail/FAQ
+share/archivemail/MANIFEST
+share/archivemail/PKG-INFO
+share/archivemail/README
+share/archivemail/TODO

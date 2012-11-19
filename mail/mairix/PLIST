@@ -1,0 +1,4 @@
+@comment $NetBSD$
+bin/mairix
+man/man1/mairix.1
+man/man5/mairixrc.5

@@ -1,0 +1,116 @@
+$NetBSD: patch-xl,v 1.4 2012/04/28 16:56:59 ryoon Exp $
+
+NetBSD ppc xptcall support code. Originally from pkgsrc/www/mozilla.
+
+--- mozilla/xpcom/reflect/xptcall/src/md/unix/xptcinvoke_asm_ppc_netbsd.s.orig	2012-08-25 00:31:35.000000000 +0000
++++ mozilla/xpcom/reflect/xptcall/src/md/unix/xptcinvoke_asm_ppc_netbsd.s
+@@ -20,41 +20,41 @@
+ 		      
+         .section ".text"
+ 	.align 2
+-	.globl XPTC_InvokeByIndex
+-	.type  XPTC_InvokeByIndex,@function
++	.globl NS_InvokeByIndex_P
++	.type  NS_InvokeByIndex_P,@function
+ 
+-#
+-# XPTC_InvokeByIndex(nsISupports* that, PRUint32 methodIndex,
+-#                    PRUint32 paramCount, nsXPTCVariant* params)
+-#
+-
+-XPTC_InvokeByIndex:
+-	stwu    sp,-32(sp)			# setup standard stack frame
+-	mflr    r0				# save LR
+-	stw     r3,8(sp)			# r3 <= that
+-	stw     r4,12(sp)			# r4 <= methodIndex
++//
++// NS_InvokeByIndex_P(nsISupports* that, PRUint32 methodIndex,
++//                    PRUint32 paramCount, nsXPTCVariant* params)
++//
++
++NS_InvokeByIndex_P:
++	stwu    sp,-32(sp)			// setup standard stack frame
++	mflr    r0				// save LR
++	stw     r3,8(sp)			// r3 <= that
++	stw     r4,12(sp)			// r4 <= methodIndex
+ 	stw     r30,16(sp)
+ 	stw     r31,20(sp)
+ 
+-	stw     r0,36(sp)			# store LR backchain
++	stw     r0,36(sp)			// store LR backchain
+ 	mr      r31,sp
+ 
+-	rlwinm  r10,r5,3,0,27			# r10 = (ParamCount * 2 * 4) & ~0x0f
+-	addi    r0,r10,96			# reserve stack for GPR and FPR register save area r0 = r10 + 96
+-	lwz     r9,0(sp)			# r9 = backchain
++	rlwinm  r10,r5,3,0,27			// r10 = (ParamCount * 2 * 4) & ~0x0f
++	addi    r0,r10,96			// reserve stack for GPR and FPR register save area r0 = r10 + 96
++	lwz     r9,0(sp)			// r9 = backchain
+ 	neg     r0,r0
+-	stwux   r9,sp,r0			# reserve stack sapce and save SP backchain
++	stwux   r9,sp,r0			// reserve stack sapce and save SP backchain
+ 	
+-	addi    r3,sp,8				# r3 <= args
+-	mr      r4,r5				# r4 <= paramCount
+-	mr      r5,r6				# r5 <= params
+-	add     r6,r3,r10			# r6 <= gpregs ( == args + r10 )
+-	mr      r30,r6				# store in r30 for use later...
+-	addi    r7,r6,32			# r7 <= fpregs ( == gpregs + 32 )
++	addi    r3,sp,8				// r3 <= args
++	mr      r4,r5				// r4 <= paramCount
++	mr      r5,r6				// r5 <= params
++	add     r6,r3,r10			// r6 <= gpregs ( == args + r10 )
++	mr      r30,r6				// store in r30 for use later...
++	addi    r7,r6,32			// r7 <= fpregs ( == gpregs + 32 )
+ 
+-	bl      invoke_copy_to_stack@local	# (args, paramCount, params, gpregs, fpregs)
++	bl      invoke_copy_to_stack@local	// (args, paramCount, params, gpregs, fpregs)
+ 
+-	lfd     f1,32(r30)			# load FP registers with method parameters
++	lfd     f1,32(r30)			// load FP registers with method parameters
+ 	lfd     f2,40(r30)   
+ 	lfd     f3,48(r30)  
+ 	lfd     f4,56(r30)  
+@@ -63,18 +63,13 @@ XPTC_InvokeByIndex:
+ 	lfd     f7,80(r30)  
+ 	lfd     f8,88(r30)
+ 
+-	lwz     r3,8(r31)			# r3 <= that
+-	lwz     r4,12(r31)			# r4 <= methodIndex
+-	lwz     r5,0(r3)			# r5 <= vtable ( == *that )
+-	slwi    r4,r4,3				# convert to offset ( *= 8 )
+-	addi	r4,r4,8				# skip first two vtable entries
+-	add	r4,r4,r5
+-	lhz	r0,0(r4)			# virtual base offset
+-	extsh	r0,r0
+-	add	r3,r3,r0
+-	lwz     r0,4(r4)			# r0 <= methodpointer ( == vtable + offset )
++	lwz     r3,8(r31)			// r3 <= that
++	lwz     r4,12(r31)			// r4 <= methodIndex
++	lwz     r5,0(r3)			// r5 <= vtable ( == *that )
++	slwi    r4,r4,2				// convert to offset ( *= 4 )
++	lwzx	r0,r4,r5			// r0 <= methodpointer ( == vtable + offset )
+ 
+-        lwz     r4,4(r30)			# load GP regs with method parameters
++        lwz     r4,4(r30)			// load GP regs with method parameters
+ 	lwz     r5,8(r30)   
+ 	lwz     r6,12(r30)  
+ 	lwz     r7,16(r30)  
+@@ -82,13 +77,13 @@ XPTC_InvokeByIndex:
+ 	lwz     r9,24(r30)  
+ 	lwz     r10,28(r30)
+ 
+-	mtlr    r0				# copy methodpointer to LR    
+-	blrl					# call method
++	mtlr    r0				// copy methodpointer to LR    
++	blrl					// call method
+ 	
+-	lwz     r30,16(r31)			# restore r30 & r31
++	lwz     r30,16(r31)			// restore r30 & r31
+ 	lwz     r31,20(r31)
+ 	
+-	lwz     r11,0(sp)			# clean up the stack
++	lwz     r11,0(sp)			// clean up the stack
+ 	lwz     r0,4(r11)
+ 	mtlr    r0
+ 	mr      sp,r11

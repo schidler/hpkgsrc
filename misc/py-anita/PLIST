@@ -1,0 +1,7 @@
+@comment $NetBSD: PLIST,v 1.3 2012/01/28 08:43:05 obache Exp $
+bin/anita
+${PYSITELIB}/${EGG_FILE}
+${PYSITELIB}/anita.py
+${PYSITELIB}/anita.pyc
+${PYSITELIB}/anita.pyo
+man/man1/anita.1

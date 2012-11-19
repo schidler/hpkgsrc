@@ -1,0 +1,95 @@
+$NetBSD: patch-ab,v 1.8 2011/07/19 18:56:46 drochner Exp $
+
+--- build/generic/configure.orig	2011-05-23 10:22:01.046661632 +0000
++++ build/generic/configure
+@@ -4276,7 +4276,7 @@ SHARED_EXTENSION=""
+ STATIC_EXTENSION=""
+ OBJECT_EXTENSION=""
+ case "$target_os" in
+-     *bsd*|linux*|beos|irix*|solaris*)
++     *bsd*|linux*|beos|irix*|solaris*|dragonfly*|*haiku*)
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: .so .a .o" >&5
+ $as_echo ".so .a .o" >&6; }
+ 	STATIC_EXTENSION="a"
+@@ -4328,7 +4328,7 @@ $as_echo "ok" >&6; }
+ 	SPECIFIC_LDFLAGS="-Wl,-soname,libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR) -shared -Wl,--version-script=libxvidcore.ld -lc -lm"
+ 	SPECIFIC_CFLAGS="-fPIC"
+ 	;;
+-     *bsd*|irix*)
++     *bsd*|dragonfly*|irix*)
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: ok" >&5
+ $as_echo "ok" >&6; }
+ 	STATIC_LIB="libxvidcore.\$(STATIC_EXTENSION)"
+@@ -4357,7 +4357,7 @@ $as_echo "dylib options" >&6; }
+ $as_echo "module options" >&6; }
+  	   PRE_SHARED_LIB="libxvidcore.\$(SHARED_EXTENSION)-temp.o"
+ 	   SHARED_LIB="libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR)"
+-	   SPECIFIC_LDFLAGS="-r -keep_private_externs -nostdlib && \$(CC) \$(LDFLAGS) \$(PRE_SHARED_LIB) -o libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR) -bundle -flat_namespace -undefined suppress"
++	   SPECIFIC_LDFLAGS="-r -keep_private_externs -nostdlib && \$(CC) \$(LDFLAGS) \$(PRE_SHARED_LIB) -o libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR) -bundle -flat_namespace -undefined suppress -Wl,-read_only_relocs -Wl,warning"
+ 	fi
+ 	;;
+      beos)
+@@ -4368,6 +4368,14 @@ $as_echo "ok" >&6; }
+ 	SPECIFIC_LDFLAGS="-nostart"
+ 	SPECIFIC_CFLAGS="-fPIC"
+ 	;;
++	*haiku*)
++	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: ok" >&5
++$as_echo "ok" >&6; }
++	STATIC_LIB="libxvidcore.\$(STATIC_EXTENSION)"
++	SHARED_LIB="libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR).\$(API_MINOR)"
++	SPECIFIC_LDFLAGS="-nostart -lroot"
++	SPECIFIC_CFLAGS="-fPIC"
++	;;
+      *)
+         { $as_echo "$as_me:${as_lineno-$LINENO}: result: Unknown Platform (Using default -shared -lc -lm)" >&5
+ $as_echo "Unknown Platform (Using default -shared -lc -lm)" >&6; }
+@@ -4554,7 +4562,7 @@ $as_echo "$as_me: WARNING: nasm version 
+        { $as_echo "$as_me:${as_lineno-$LINENO}: checking for asm object format" >&5
+ $as_echo_n "checking for asm object format... " >&6; }
+        case "$target_os" in
+-           *bsd*|linux*|beos|irix*|solaris*)
++           *bsd*|linux*|beos|irix*|solaris*|dragonfly*|*haiku*)
+                if test "$ARCHITECTURE" = "X86_64" ; then
+                    { $as_echo "$as_me:${as_lineno-$LINENO}: result: elf64" >&5
+ $as_echo "elf64" >&6; }
+@@ -4593,6 +4601,13 @@ $as_echo "macho32" >&6; }
+                PREFIX="-DPREFIX"
+                MARK_FUNCS=""
+                ;;
++           darwin*|rhapsody*)
++               echo "$as_me:$LINENO: result: macho" >&5
++echo "${ECHO_T}macho" >&6
++               MARK_FUNCS=""
++               NASM_FORMAT="macho"
++               PREFIX="-DPREFIX"
++               ;;
+        esac
+ 
+        AS="$chosen_asm_prog"
+@@ -4739,7 +4754,11 @@ if ${ac_cv_lib_pthread_pthread_create+:}
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++if test $target_os = "haiku"; then
++	LIBS="-lroot  $LIBS"
++else
++	LIBS="-lpthread  $LIBS"
++fi	
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -4771,7 +4790,11 @@ fi
+ $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
+ if test "x$ac_cv_lib_pthread_pthread_create" = xyes; then :
+   SPECIFIC_CFLAGS="$SPECIFIC_CFLAGS -DHAVE_PTHREAD"
+-		 SPECIFIC_LDFLAGS="$SPECIFIC_LDFLAGS -lpthread"
++  	if test $target_os = "haiku"; then
++		 SPECIFIC_LDFLAGS="$SPECIFIC_LDFLAGS -lroot"
++	else
++		SPECIFIC_LDFLAGS="$SPECIFIC_LDFLAGS -lpthread"
++	fi		 
+ else
+   { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Pthread not supported. No SMP support" >&5
+ $as_echo "$as_me: WARNING: Pthread not supported. No SMP support" >&2;}

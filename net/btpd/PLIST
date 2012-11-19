@@ -1,0 +1,8 @@
+@comment $NetBSD$
+bin/btcli
+bin/btinfo
+bin/btpd
+man/man1/btcli.1
+man/man1/btinfo.1
+man/man1/btpd.1
+share/doc/btpd/README

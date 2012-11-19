@@ -1,0 +1,14 @@
+$NetBSD: patch-av,v 1.2 2011/06/15 11:45:08 adam Exp $
+
+--- smbd/server.c.orig	2012-06-24 17:21:16.020971520 +0000
++++ smbd/server.c
+@@ -1135,6 +1135,9 @@ extern void build_options(bool screen);
+ 	if (!directory_exist(lp_lockdir()))
+ 		mkdir(lp_lockdir(), 0755);
+ 
++	if (!directory_exist(lp_statedir()))
++		mkdir(lp_statedir(), 0755);
++
+ 	if (is_daemon)
+ 		pidfile_create("smbd");
+ 

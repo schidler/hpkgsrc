@@ -1,0 +1,7 @@
+# $Id: $
+#
+# Please note that this file uses Linux exports(5) syntax, not BSD syntax.
+# See unfsd(8) or exports(5) on a Linux system for more examples.
+
+#/usr/src	0.0.0.0(ro)
+#/insecure	0.0.0.0(rw,no_root_squash)

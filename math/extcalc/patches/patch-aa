@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- CMakeLists.txt.orig	2010-04-05 09:12:04.000000000 +0000
++++ CMakeLists.txt
+@@ -158,7 +158,7 @@ QT4_WRAP_UI(ui_h ${src_ui})
+ 
+ 
+ 
+-SET(CMAKE_INSTALL_PREFIX "/usr/local")
++#SET(CMAKE_INSTALL_PREFIX "/usr/local")
+ SET(SHAREDIR "share/extcalc/data")
+ SET(DOCDIR "share/extcalc/doc")
+ SET(DESKTOPDIR "share/applications")

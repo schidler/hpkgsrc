@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.18 2011/08/09 20:53:15 adam Exp $
+
+SHA1 (libdvdread-4.2.0.tar.bz2) = 431bc92195f27673bfdd2be67ce0f58338da8d3b
+RMD160 (libdvdread-4.2.0.tar.bz2) = 71953f12e834a9d22ff4cf9e25a3949c431174c0
+Size (libdvdread-4.2.0.tar.bz2) = 97469 bytes
+SHA1 (patch-aa) = 37ca134798c7c117edfb827a95567cf4ea2f07c4
+SHA1 (patch-configure.ac) = e88a98777dc5b3893685180c51ea2dd87ec87f47

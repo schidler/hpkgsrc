@@ -1,0 +1,16 @@
+$NetBSD$
+
+--- tools/build/v2/tools/gcc.jam.orig	2012-04-26 03:35:55.046137344 +0000
++++ tools/build/v2/tools/gcc.jam
+@@ -1047,6 +1047,11 @@ rule setup-threading ( targets * : sourc
+                 option = -pthreads ;
+                 libs = rt ;
+             }
++            case haiku :
++            {
++                option = -lroot ;
++                libs = root ;
++            }
+             case beos :
+             {            
+                 # BeOS has no threading options, so do not set anything here.

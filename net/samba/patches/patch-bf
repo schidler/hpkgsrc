@@ -1,0 +1,45 @@
+$NetBSD: patch-bf,v 1.1 2011/10/11 20:30:00 jmcneill Exp $
+
+--- Makefile.in.orig	2012-06-24 17:21:16.050331648 +0000
++++ Makefile.in
+@@ -47,11 +47,11 @@ PICFLAG=@PICFLAG@
+ 
+ EXEEXT=@EXEEXT@
+ AR=@AR@
+-LDSHFLAGS=$(PICFLAG) @LDSHFLAGS@ @RELRO_LDFLAGS@ @LDFLAGS@ -lc @LDSHFLAGS_Z_DEFS@
++LDSHFLAGS=$(PICFLAG) @LDSHFLAGS@ @RELRO_LDFLAGS@ @LDFLAGS@ -lroot @LDSHFLAGS_Z_DEFS@
+ LDSHFLAGS_MODULES=$(PICFLAG) @LDSHFLAGS@ @RELRO_LDFLAGS@ @LDFLAGS@ @LDSHFLAGS_Z_NODEFS@
+ LDFLAGS=@PIE_LDFLAGS@ @RELRO_LDFLAGS@ @LDFLAGS@
+ 
+-WINBIND_NSS_LDSHFLAGS=$(PICFLAG) @WINBIND_NSS_LDSHFLAGS@ @LDFLAGS@ -lc @LDSHFLAGS_Z_DEFS@
++WINBIND_NSS_LDSHFLAGS=$(PICFLAG) @WINBIND_NSS_LDSHFLAGS@ @LDFLAGS@ -lroot @LDSHFLAGS_Z_DEFS@
+ AWK=@AWK@
+ DYNEXP=@DYNEXP@
+ PERL=@PERL@
+@@ -1905,7 +1905,7 @@ bin/smbconftort@EXEEXT@: $(SMBCONFTORT_O
+ 
+ bin/pthreadpooltest@EXEEXT@: $(PTHREADPOOLTEST_OBJ)
+ 	@echo Linking $@
+-	@$(CC) -o $@ $(PTHREADPOOLTEST_OBJ) $(LDFLAGS) -lpthread
++	@$(CC) -o $@ $(PTHREADPOOLTEST_OBJ) $(LDFLAGS) -lroot
+ 
+ bin/masktest@EXEEXT@: $(BINARY_PREREQS) $(MASKTEST_OBJ) @BUILD_POPT@ $(LIBTALLOC) $(LIBTDB) $(LIBWBCLIENT)
+ 	@echo Linking $@
+@@ -2771,7 +2771,7 @@ bin/winbind_krb5_locator.@SHLIBEXT@: $(B
+ bin/pam_winbind.@SHLIBEXT@: $(BINARY_PREREQS) $(PAM_WINBIND_OBJ) $(LIBTALLOC) $(LIBWBCLIENT)
+ 	@echo "Linking shared library $@"
+ 	@$(SHLD) $(LDSHFLAGS) -o $@ $(PAM_WINBIND_OBJ) -lpam @INIPARSERLIBS@ \
+-		$(LIBREPLACE_LIBS) $(LIBTALLOC_LIBS) $(LIBWBCLIENT_LIBS) @SONAMEFLAG@`basename $@`
++		$(LIBS) $(LIBREPLACE_LIBS) $(LIBTALLOC_LIBS) $(LIBWBCLIENT_LIBS) @SONAMEFLAG@`basename $@`
+ 
+ ##########
+ # Plugins:
+@@ -3032,7 +3032,7 @@ bin/aio_fork.@SHLIBEXT@: $(BINARY_PREREQ
+ 
+ bin/aio_pthread.@SHLIBEXT@: $(BINARY_PREREQS) $(VFS_AIO_PTHREAD_OBJ) lib/pthreadpool/pthreadpool.o
+ 	@echo "Building plugin $@"
+-	@$(SHLD_MODULE) $(VFS_AIO_PTHREAD_OBJ) lib/pthreadpool/pthreadpool.o -lpthread
++	@$(SHLD_MODULE) $(VFS_AIO_PTHREAD_OBJ) lib/pthreadpool/pthreadpool.o -lroot
+ 
+ bin/preopen.@SHLIBEXT@: $(BINARY_PREREQS) $(VFS_PREOPEN_OBJ)
+ 	@echo "Building plugin $@"

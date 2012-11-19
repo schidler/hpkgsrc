@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.2 2009/01/27 23:58:21 jmcneill Exp $
+
+SHA1 (MediaInfo_CLI_0.7.51_GNU_FromSource.tar.bz2) = 45cdbdb64fc4bc6d7a38cbdfd20bca296c1dbd6b
+RMD160 (MediaInfo_CLI_0.7.51_GNU_FromSource.tar.bz2) = 2f270373183d2eec108fab429d4baa9a03b5c2f3
+Size (MediaInfo_CLI_0.7.51_GNU_FromSource.tar.bz2) = 1573967 bytes

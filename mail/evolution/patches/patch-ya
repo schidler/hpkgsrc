@@ -1,0 +1,15 @@
+$NetBSD$
+
+--- calendar/gui/e-cal-model.h.orig	2010-04-26 13:13:16.000000000 +0000
++++ calendar/gui/e-cal-model.h
+@@ -152,8 +152,8 @@ struct _ECalModelClass {
+ 
+ 	/* Signals */
+ 	void		(*time_range_changed)	(ECalModel *model,
+-						 time_t start,
+-						 time_t end);
++						 gint64 start,
++						 gint64 end);
+ 	void		(*row_appended)		(ECalModel *model);
+ 	void		(*comps_deleted)	(ECalModel *model,
+ 						 gpointer list);

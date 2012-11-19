@@ -1,0 +1,4 @@
+@comment $NetBSD$
+bin/dvtm
+bin/dvtm-status
+man/man1/dvtm.1

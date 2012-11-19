@@ -1,0 +1,13 @@
+$NetBSD: patch-aa,v 1.2 2005/10/23 20:10:57 rillig Exp $
+
+--- measure.c.orig	2008-09-07 11:02:28.000000000 +0000
++++ measure.c
+@@ -40,7 +40,7 @@
+ double 
+ quantum_frand()
+ {
+-  return (double) rand() / RAND_MAX;
++  return (double) random() / RAND_MAX;
+ }
+ 
+ /* Measure the contents of a quantum register */

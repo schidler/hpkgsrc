@@ -1,0 +1,6 @@
+@comment $NetBSD: PLIST,v 1.2 2011/10/16 04:06:52 obache Exp $
+${PYSITELIB}/_pcapmodule.so
+${PYSITELIB}/pcap.py
+${PYSITELIB}/pcap.pyc
+${PYSITELIB}/pcap.pyo
+${PYSITELIB}/${EGG_FILE}

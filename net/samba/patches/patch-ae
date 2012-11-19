@@ -1,0 +1,15 @@
+$NetBSD: patch-ae,v 1.1.1.1 2010/12/06 17:01:23 adam Exp $
+
+--- auth/pampass.c.orig	2012-06-24 17:21:16.020447232 +0000
++++ auth/pampass.c
+@@ -48,6 +48,10 @@
+ #include <pam/pam_appl.h>
+ #endif
+ 
++#if defined(PAM_AUTHTOK_RECOVERY_ERR) && !defined(PAM_AUTHTOK_RECOVER_ERR)
++#define PAM_AUTHTOK_RECOVER_ERR PAM_AUTHTOK_RECOVERY_ERR
++#endif
++
+ /*
+  * Structure used to communicate between the conversation function
+  * and the server_login/change password functions.

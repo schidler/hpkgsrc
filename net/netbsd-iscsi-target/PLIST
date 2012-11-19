@@ -1,0 +1,4 @@
+@comment $NetBSD$
+bin/iscsi-target
+man/man5/targets.5
+man/man8/iscsi-target.8

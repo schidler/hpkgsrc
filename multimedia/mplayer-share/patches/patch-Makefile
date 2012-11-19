@@ -1,0 +1,12 @@
+$NetBSD$
+
+--- Makefile.orig	2012-05-30 21:21:46.000000000 +0000
++++ Makefile
+@@ -591,6 +591,7 @@ SRCS_MPLAYER-$(PULSE)         += libao2/
+ SRCS_MPLAYER-$(QUARTZ)        += libvo/vo_quartz.c libvo/osx_common.c
+ SRCS_MPLAYER-$(S3FB)          += libvo/vo_s3fb.c
+ SRCS_MPLAYER-$(SDL)           += libao2/ao_sdl.c libvo/vo_sdl.c libvo/sdl_common.c
++SRCS_MPLAYER-$(HAIKU)         += libao2/ao_haiku.cpp libvo/vo_haiku.cpp libvo/haiku_common.cpp
+ SRCS_MPLAYER-$(SGIAUDIO)      += libao2/ao_sgi.c
+ SRCS_MPLAYER-$(SUNAUDIO)      += libao2/ao_sun.c
+ SRCS_MPLAYER-$(SVGA)          += libvo/vo_svga.c

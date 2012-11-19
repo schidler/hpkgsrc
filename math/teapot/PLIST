@@ -1,0 +1,5 @@
+@comment $NetBSD$
+bin/teapot
+man/man1/teapot.1
+share/doc/teapot/COPYING
+share/doc/teapot/README

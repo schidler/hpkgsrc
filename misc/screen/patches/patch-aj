@@ -1,0 +1,58 @@
+$NetBSD: patch-aj,v 1.5 2008/04/04 21:09:16 tonnerre Exp $
+
+Detect getutent correctly on NetBSD with utmpx.
+Include curses header when testing tgetent in order to prevent
+crash on 64-bit architectures.
+
+--- configure.in.orig	2003-06-03 11:58:24.010747904 +0000
++++ configure.in
+@@ -211,6 +211,14 @@ AC_EGREP_CPP(yes,
+ #endif
+ ], LIBS="$LIBS -lsocket -lnsl -lkstat")
+ 
++AC_CHECKING(for Haiku OS)
++AC_EGREP_CPP(yes,
++[#ifdef __HAIKU__)
++  yes
++#endif
++], LIBS="$LIBS -lnetwork -lbsd -lroot")
++AC_DEFINE(BSDWAIT)
++
+ dnl
+ dnl    ****  typedefs ****
+ dnl
+@@ -664,6 +672,8 @@ AC_TRY_LINK(,tgetent((char *)0, (char *)
+ AC_MSG_ERROR(!!! no tgetent - no screen))))))
+ 
+ AC_TRY_RUN([
++#include <curses.h>
++
+ main()
+ {
+  exit(strcmp(tgoto("%p1%d", 0, 1), "1") ? 0 : 1);
+@@ -815,9 +825,16 @@ AC_CHECKING(getutent)
+ AC_TRY_LINK([
+ #include <time.h> /* to get time_t on SCO */
+ #include <sys/types.h>
+-#if defined(SVR4) && !defined(DGUX)
++#include <sys/param.h>
++#if (defined(SVR4) && !defined(DGUX)) \
++ || (defined(__NetBSD_Version__) && (__NetBSD_Version__ >= 106050000)) \
++ || (defined(__DragonFly__) && (__DragonFly_version >= 200902))
+ #include <utmpx.h>
+ #define utmp utmpx
++# if defined(__NetBSD__) || defined(__DragonFly__)
++#  define pututline pututxline
++#  define getutent  getutxent
++# endif
+ #else
+ #include <utmp.h>
+ #endif
+@@ -1209,6 +1226,7 @@ AC_MSG_CHECKING(for vsprintf)
+ AC_TRY_LINK(,[vsprintf(0,0,0);], AC_MSG_RESULT(yes);AC_DEFINE(USEVARARGS), AC_MSG_RESULT(no))
+ 
+ AC_HEADER_DIRENT
++AC_CHECK_HEADERS(sys/stropts.h)
+ 
+ AC_MSG_CHECKING(for setenv)
+ AC_TRY_LINK(,[setenv((char *)0,(char *)0);unsetenv((char *)0);], AC_MSG_RESULT(yes);AC_DEFINE(USESETENV),

@@ -1,0 +1,16 @@
+#!@SH@
+#
+# $NetBSD: INSTALL,v 1.1 2008/11/03 17:04:51 tron Exp $
+
+PKG_HOME="@PKG_HOME@"
+MEDIATOMB_USER="@MEDIATOMB_USER@"
+MEDIATOMB_GROUP="@MEDIATOMB_GROUP@"
+
+case "${STAGE}" in
+PRE-INSTALL)
+    if [ ! -d ${PKG_HOME} ]; then
+        ${MKDIR} -m 0755 ${PKG_HOME}
+        ${CHOWN} ${MEDIATOMB_USER}:${MEDIATOMB_GROUP} ${PKG_HOME}
+    fi
+    ;;
+esac

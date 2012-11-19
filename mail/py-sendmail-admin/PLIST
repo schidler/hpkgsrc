@@ -1,0 +1,4 @@
+@comment $NetBSD: PLIST,v 1.2 2012/01/24 11:10:59 obache Exp $
+bin/mailqs
+bin/rmmq
+${PYSITELIB}/${EGG_FILE}

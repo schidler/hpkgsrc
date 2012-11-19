@@ -1,0 +1,138 @@
+$NetBSD: patch-ac,v 1.26 2011/11/20 04:57:03 markd Exp $
+
+Ensure the correct linker flags are used on Solaris/GCC.
+
+--- configure.orig	Thu Feb 23 23:06:08 2012
++++ configure	Thu Aug  2 13:37:29 2012
+@@ -3946,7 +3946,7 @@
+ 
+ 
+ if test "${want_R_shlib}" = yes; then
+-  LIBR="-L\$(R_HOME)/lib\$(R_ARCH) -lR"
++  LIBR="-Wl,-R${prefix}/lib/R/lib\$(R_ARCH) -L\$(R_HOME)/lib\$(R_ARCH) -lR"
+ else
+   LIBR=
+ fi
+@@ -22869,6 +22869,11 @@
+ 	  done
+ 	  ;;
+ 	-[lLR]*)
++	    case $ac_arg in
++	    -R*)
++		ac_arg="${wl}$ac_arg"
++		;;
++	    esac
+ 	    ac_exists=false
+   for ac_i in $ac_cv_f77_libs; do
+     if test x"$ac_arg" = x"$ac_i"; then
+@@ -23758,6 +23763,7 @@
+ #else
+ # define F77_SYMBOL(x)   x
+ #endif
++int MAIN__ () { return 0; }
+ int main () {
+   exit(0);
+ }
+@@ -23834,6 +23840,9 @@
+ 
+ extern void F77_SYMBOL(cftest)(int *a, int *b, double *x, double *y);
+ 
++int MAIN_ () { return 0; }
++int MAIN__ () { return 0; }
++
+ int main () {
+   int a[3] = {17, 237, 2000000000}, b[2], res = 0;
+   double x[3] = {3.14159265, 123.456789, 2.3e34}, z[3];
+@@ -23929,6 +23938,9 @@
+ 
+ extern void F77_SYMBOL(cftest)(Rcomplex *x);
+ 
++int MAIN_ () { return 0; }
++int MAIN__ () { return 0; }
++
+ int main () {
+     Rcomplex z[3];
+ 
+@@ -26115,7 +26127,7 @@
+       SHLIB_LIBADD="-lcc_dynamic"
+     fi
+     ;;
+-  freebsd*)
++  freebsd* | dragonfly*)
+     main_ldflags="-export-dynamic"
+     shlib_ldflags="-shared"
+     ;;
+@@ -26203,6 +26215,12 @@
+     fcpicflags=
+     ;;
+   netbsd*)
++    fpicflags="-fPIC"
++    case "${host_cpu}" in
++      powerpc*)
++	cpicflags="-fPIC"
++	;;
++    esac
+     if ${CPP} - -dM < /dev/null | grep __ELF__ >/dev/null ; then
+       main_ldflags="-export-dynamic"
+       shlib_ldflags="-shared"
+@@ -26226,16 +26244,17 @@
+   solaris*)
+ ## SPARC has only an 8k global object table, 1024 entries on 64-bit,
+ ## so need PIC not pic.  They are the same on other Solaris platforms.
+-    shlib_ldflags="-G"
+-    shlib_cxxldflags="-G"
+     if test "${GCC}" = yes; then
++      shlib_ldflags="-shared"
++      shlib_cxxldflags="-shared"
+       ld=`${CC} -print-prog-name=ld`
+       ldoutput=`${ld} -v 2>&1 | grep GNU`
+       if test -n "${ldoutput}"; then
+ 	main_ldflags="-Wl,-export-dynamic"
+-	shlib_ldflags="-shared"
+       fi
+     else
++      shlib_ldflags="-G"
++      shlib_cxxldflags="-G"
+       cpicflags="-KPIC"
+       if test "`basename ${CXX}`" = "CC" ; then
+         ## Forte version 7 needs -lCstd: Forte 6 does not.
+@@ -26301,7 +26320,7 @@
+ : ${FPICFLAGS="${fpicflags}"}
+ if test -z "${FPICFLAGS}"; then
+   case "${host_os}" in
+-    aix*|cygwin*|irix*|mingw*|osf*)
++    aix*|cygwin*|irix*|mingw*|osf*|darwin*)
+       ;;
+     *)
+       { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: I could not determine FPICFLAGS." >&5
+@@ -29430,6 +29449,15 @@
+ #endif
+ extern void F77_SYMBOL(test1)(int *iflag);
+ 
++#ifdef F77_DUMMY_MAIN
++
++#  ifdef __cplusplus
++     extern "C"
++#  endif
++   int F77_DUMMY_MAIN() { return 1; }
++
++#endif
++
+ int main () {
+   int iflag;
+   F77_SYMBOL(test1)(&iflag);
+@@ -29497,6 +29525,14 @@
+ #else
+ # define F77_SYMBOL(x)   x
+ #endif
++#ifdef F77_DUMMY_MAIN
++
++#  ifdef __cplusplus
++     extern "C"
++#  endif
++   int F77_DUMMY_MAIN() { return 1; }
++
++#endif
+ void F77_SYMBOL(xerbla)(char *srname, int *info)
+ {}
+ void blas_set () {
