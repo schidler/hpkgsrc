@@ -1,0 +1,8 @@
+@comment $NetBSD$
+bin/file
+include/magic.h
+lib/libmagic.la
+man/man1/file.1
+man/man3/libmagic.3
+man/man5/magic.5
+share/misc/magic.mgc

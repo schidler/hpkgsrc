@@ -1,0 +1,19 @@
+$NetBSD: distinfo,v 1.16 2010/12/23 06:34:50 ryoon Exp $
+
+SHA1 (e2fsprogs-1.41.12.tar.gz) = 62b002fe507b2ddafc24b89532e472fe4b55a14f
+RMD160 (e2fsprogs-1.41.12.tar.gz) = aa7f9a2e350fcab85c72deaaee5fdc2a5e9fb6e7
+Size (e2fsprogs-1.41.12.tar.gz) = 4496194 bytes
+SHA1 (patch-ab) = 8d32c5461eaccafecaf63a77956263333fc0e3aa
+SHA1 (patch-ac) = b5286b4d3e782c8362e4256fb217ba466bc4d0ea
+SHA1 (patch-af) = 9164435439389c5cb56b3c5d0e1716ae106ad1c6
+SHA1 (patch-am) = 35cd51105dbf70a3a8bd928646bb250194a067bb
+SHA1 (patch-an) = 542de57b3bae6d35bd42856b85775e637eca6d63
+SHA1 (patch-ao) = 2313a062100069e6e77e31f8eb7681f704ca32c7
+SHA1 (patch-ap) = 94e719fdae393c5457103f4caaab2f208ab6ec8c
+SHA1 (patch-ar) = 7d959d24a1763bcc617079472bfcd8f1002b0fe5
+SHA1 (patch-as) = 172a4b7a372c32dc26e99e6d90f39c3a7bef8b67
+SHA1 (patch-at) = f83f97f6913077bfc945ca376bc4f8ebfae9bf47
+SHA1 (patch-av) = d902287c9ac725b90da8c3d51f0d4f9eec98ee40
+SHA1 (patch-aw) = f40b6a284ad3f05812ef9974eecfd5721fc43e96
+SHA1 (patch-lib_blkid_devname.c) = 0a7a654017102d1459bb5d7132e3930e514b4c8b
+SHA1 (patch-lib_ext2fs_tdb.c) = dd0a85f2b1c93d42faf8fe85181546e29d85a4e4

@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- daemon/Makefile.in.orig	2010-10-25 22:47:41.000000000 +0000
++++ daemon/Makefile.in
+@@ -428,7 +428,7 @@ desktop_in_files = \
+ 	gnome-keyring-ssh.desktop.in \
+ 	gnome-keyring-gpg.desktop.in
+ 
+-desktopdir = $(sysconfdir)/xdg/autostart
++desktopdir = $(PREFIX)/share/gnome/autostart
+ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+ EXTRA_DIST = \
+ 	$(service_in_files) \

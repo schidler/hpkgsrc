@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- workarounds.c.orig	1996-03-19 15:22:26.007864320 +0000
++++ workarounds.c
+@@ -22,8 +22,6 @@ char    sccsid[] = "@(#) workarounds.c 1
+ #include <syslog.h>
+ #include <string.h>
+ 
+-extern int errno;
+-
+ #include "tcpd.h"
+ 
+  /*

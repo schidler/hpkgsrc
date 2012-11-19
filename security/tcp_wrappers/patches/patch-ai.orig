@@ -1,0 +1,18 @@
+$NetBSD$
+
+--- inetcf.c.orig	1997-02-12 01:13:24.002621440 +0000
++++ inetcf.c
+@@ -12,12 +12,10 @@ static char sccsid[] = "@(#) inetcf.c 1.
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <errno.h>
+ #include <string.h>
+ 
+-extern int errno;
+-extern void exit();
+-
+ #include "tcpd.h"
+ #include "inetcf.h"
+ 

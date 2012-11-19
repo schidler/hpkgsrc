@@ -1,0 +1,37 @@
+$NetBSD$
+
+--- apps/Makefile.orig	2010-12-02 18:26:10.039321600 +0000
++++ apps/Makefile
+@@ -4,6 +4,7 @@
+ 
+ DIR=		apps
+ TOP=		..
++EXAMPLEDIR=	$(INSTALLTOP)/share/examples/openssl
+ CC=		cc
+ INCLUDES=	-I$(TOP) -I../include $(KRB5_INCLUDES)
+ CFLAG=		-g -static
+@@ -109,15 +110,15 @@ install:
+ 	@set -e; for i in $(SCRIPTS); \
+ 	do  \
+ 	(echo installing $$i; \
+-	 cp $$i $(INSTALL_PREFIX)$(OPENSSLDIR)/misc/$$i.new; \
+-	 chmod 755 $(INSTALL_PREFIX)$(OPENSSLDIR)/misc/$$i.new; \
+-	 mv -f $(INSTALL_PREFIX)$(OPENSSLDIR)/misc/$$i.new $(INSTALL_PREFIX)$(OPENSSLDIR)/misc/$$i ); \
+-	 done
+-	@cp openssl.cnf $(INSTALL_PREFIX)$(OPENSSLDIR)/openssl.cnf.new; \
+-	chmod 644 $(INSTALL_PREFIX)$(OPENSSLDIR)/openssl.cnf.new; \
+-	mv -f  $(INSTALL_PREFIX)$(OPENSSLDIR)/openssl.cnf.new $(INSTALL_PREFIX)$(OPENSSLDIR)/openssl.cnf
+-
+-tags:
++	 cp $$i $(INSTALL_PREFIX)$(EXAMPLEDIR)/$$i.new; \
++	 chmod 755 $(INSTALL_PREFIX)$(EXAMPLEDIR)/$$i.new; \
++	 mv -f $(INSTALL_PREFIX)$(EXAMPLEDIR)/$$i.new $(INSTALL_PREFIX)$(EXAMPLEDIR)/$$i ); \
++ 	 done
++	@cp openssl.cnf $(INSTALL_PREFIX)$(EXAMPLEDIR)/openssl.cnf.new; \
++	chmod 644 $(INSTALL_PREFIX)$(EXAMPLEDIR)/openssl.cnf.new; \
++	mv -f  $(INSTALL_PREFIX)$(EXAMPLEDIR)/openssl.cnf.new $(INSTALL_PREFIX)$(EXAMPLEDIR)/openssl.cnf
++ 
++ tags:
+ 	ctags $(SRC)
+ 
+ tests:

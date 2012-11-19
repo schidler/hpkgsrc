@@ -1,0 +1,7 @@
+$NetBSD$
+
+SHA1 (testdisk-6.13.tar.bz2) = b08ace0257e3e437b6fc140360d75807ca4d46ae
+RMD160 (testdisk-6.13.tar.bz2) = 9ff09fdcc53a02240b4e22365193eac14a7d5e13
+Size (testdisk-6.13.tar.bz2) = 560696 bytes
+SHA1 (patch-aa) = e5a8cb54b9dd8288af0fb4fd18884394bc4bb07c
+SHA1 (patch-src_hdaccess.c) = 1ec35cf4054aebf8d57e0400e7d958ab7fb256af

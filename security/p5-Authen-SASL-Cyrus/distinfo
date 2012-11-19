@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.3 2009/02/22 16:06:38 wiz Exp $
+
+SHA1 (Authen-SASL-Cyrus-0.13.tar.gz) = 04e77fb052c5f789697221878f547476c636f570
+RMD160 (Authen-SASL-Cyrus-0.13.tar.gz) = cfbbb278d45a06959990e807c25d19966d57752f
+Size (Authen-SASL-Cyrus-0.13.tar.gz) = 12145 bytes

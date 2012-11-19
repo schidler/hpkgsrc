@@ -1,0 +1,22 @@
+$NetBSD$
+
+--- ../Config.mk.orig	2009-08-06 13:17:07.000000000 +0000
++++ ../Config.mk
+@@ -66,7 +66,7 @@ CFLAGS += -Wall -Wstrict-prototypes
+ 
+ # -Wunused-value makes GCC 4.x too aggressive for my taste: ignoring the
+ # result of any casted expression causes a warning.
+-CFLAGS += -Wno-unused-value
++CFLAGS += -Wno-unused-value -Wno-switch
+ 
+ HOSTCFLAGS += $(call cc-option,$(HOSTCC),-Wdeclaration-after-statement,)
+ CFLAGS     += $(call cc-option,$(CC),-Wdeclaration-after-statement,)
+@@ -90,7 +90,7 @@ QEMU_REMOTE=http://xenbits.xensource.com
+ 
+ # Specify which qemu-dm to use. This may be `ioemu' to use the old
+ # Mercurial in-tree version, or a local directory, or a git URL.
+-# CONFIG_QEMU   ?= ioemu
++CONFIG_QEMU   ?= ioemu
+ # CONFIG_QEMU   ?= ../qemu-xen.git
+ ifeq ($(XEN_TARGET_ARCH),ia64)
+ CONFIG_QEMU   ?= ioemu

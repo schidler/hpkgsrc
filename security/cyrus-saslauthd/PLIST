@@ -1,0 +1,7 @@
+@comment $NetBSD: PLIST,v 1.11 2009/09/24 18:46:26 tnn Exp $
+bin/saslcache
+man/man8/saslauthd.8
+sbin/saslauthd
+sbin/testsaslauthd
+${PLIST.ldap}share/doc/cyrus-saslauthd/LDAP_SASLAUTHD
+share/examples/rc.d/saslauthd

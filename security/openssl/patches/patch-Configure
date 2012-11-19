@@ -1,0 +1,14 @@
+$NetBSD$
+
+--- Configure.orig	2012-03-03 13:48:21.049545216 +0000
++++ Configure
+@@ -582,6 +582,9 @@ my %table=(
+ "uClinux-dist","$ENV{'CC'}:\$(CFLAGS)::-D_REENTRANT::\$(LDFLAGS) \$(LDLIBS):BN_LLONG:::::::::::::::$ENV{'LIBSSL_dlfcn'}:linux-shared:-fPIC:-shared:.so.\$(SHLIB_MAJOR).\$(SHLIB_MINOR):$ENV{'RANLIB'}::",
+ "uClinux-dist64","$ENV{'CC'}:\$(CFLAGS)::-D_REENTRANT::\$(LDFLAGS) \$(LDLIBS):SIXTY_FOUR_BIT_LONG:::::::::::::::$ENV{'LIBSSL_dlfcn'}:linux-shared:-fPIC:-shared:.so.\$(SHLIB_MAJOR).\$(SHLIB_MINOR):$ENV{'RANLIB'}::",
+ 
++##### Haiku
++"haiku-x86",    "gcc:-DL_ENDIAN -O2 -fomit-frame-pointer -Wall::-D_REENTRANT::-lnetwork:BN_LLONG ${x86_gcc_des} ${x86_gcc_opts}:${x86_elf_asm}:dlfcn:haiku-shared:-fPIC::.so.\$(SHLIB_MAJOR).\$(SHLIB_MINOR)",
++
+ );
+ 
+ my @MK1MF_Builds=qw(VC-WIN64I VC-WIN64A

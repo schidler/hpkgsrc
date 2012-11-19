@@ -1,0 +1,21 @@
+$NetBSD$
+
+--- Makefile.shared.orig	2010-08-21 11:36:49.040632320 +0000
++++ Makefile.shared
+@@ -594,12 +594,10 @@ symlink.hpux:
+ symlink.cygwin symlink.alpha-osf1 symlink.tru64 symlink.tru64-rpath symlink.beos:
+ 
+ # Compatibility targets
+-link_o.bsd-gcc-shared link_o.linux-shared link_o.gnu-shared: link_o.gnu
+-link_a.bsd-gcc-shared link_a.linux-shared link_a.gnu-shared: link_a.gnu
+-link_app.bsd-gcc-shared link_app.linux-shared link_app.gnu-shared: link_app.gnu
+-symlink.bsd-gcc-shared symlink.bsd-shared symlink.linux-shared symlink.gnu-shared: symlink.gnu
+-link_o.bsd-shared: link_o.bsd
+-link_a.bsd-shared: link_a.bsd
++link_o.bsd-gcc-shared link_o.linux-shared link_o.gnu-shared link_o.haiku-shared: link_o.gnu
++link_a.bsd-gcc-shared link_a.linux-shared link_a.gnu-shared link_a.haiku-shared: link_a.gnu
++link_app.bsd-gcc-shared link_app.linux-shared link_app.gnu-shared link_app.haiku-shared: link_app.gnu
++symlink.bsd-gcc-shared symlink.bsd-shared symlink.linux-shared symlink.gnu-shared symlink.haiku-shared: symlink.gnu
+ link_app.bsd-shared: link_app.bsd
+ link_o.darwin-shared: link_o.darwin
+ link_a.darwin-shared: link_a.darwin

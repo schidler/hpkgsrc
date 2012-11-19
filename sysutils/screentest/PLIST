@@ -1,0 +1,8 @@
+@comment $NetBSD$
+bin/screentest
+share/doc/screentest/AUTHORS
+share/doc/screentest/ChangeLog
+share/doc/screentest/NEWS
+share/doc/screentest/README
+share/locale/de/LC_MESSAGES/screentest.mo
+share/screentest/screentest.glade

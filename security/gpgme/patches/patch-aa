@@ -1,0 +1,15 @@
+$NetBSD: patch-aa,v 1.9 2011/03/03 11:39:47 adam Exp $
+
+--- src/gpgme-config.in.orig	2009-10-23 13:44:56.000000000 +0000
++++ src/gpgme-config.in
+@@ -35,8 +35,8 @@ libs_pth="@PTH_LDFLAGS@ @PTH_LIBS@"
+ cflags_pth="@PTH_CFLAGS@"
+ 
+ @HAVE_PTHREAD_TRUE@thread_modules="$thread_modules pthread"
+-libs_pthread="-lpthread"
+-cflags_pthread=""
++libs_pthread="@PTHREAD_LIBS@"
++cflags_pthread="@PTHREAD_CFLAGS@"
+ 
+ # Configure glib.
+ libs_glib="@GLIB_LIBS@"

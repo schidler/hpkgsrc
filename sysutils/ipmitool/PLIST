@@ -1,0 +1,10 @@
+@comment $NetBSD: PLIST,v 1.4 2009/06/14 18:16:07 joerg Exp $
+bin/ipmitool
+man/man1/ipmitool.1
+man/man8/ipmievd.8
+sbin/ipmievd
+share/doc/ipmitool/AUTHORS
+share/doc/ipmitool/COPYING
+share/doc/ipmitool/ChangeLog
+share/doc/ipmitool/README
+share/examples/ipmitool/oem_ibm_sel_map

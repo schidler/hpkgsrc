@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- misc/mke2fs.conf.5.in.orig	2009-08-13 01:39:57.045088768 +0000
++++ misc/mke2fs.conf.5.in
+@@ -354,7 +354,7 @@ by
+ on a per-filesystem type basis.
+ .SH FILES
+ .TP
+-.I /etc/mke2fs.conf
++.I @root_sysconfdir@/mke2fs.conf
+ The configuration file for 
+ .BR mke2fs (8).
+ .SH SEE ALSO

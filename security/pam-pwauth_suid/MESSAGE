@@ -1,0 +1,6 @@
+===========================================================================
+$NetBSD: MESSAGE,v 1.1.1.1 2007/01/08 18:39:44 drochner Exp $
+
+A sample pam.d file for xscreensaver can be found in
+${PREFIX}/share/examples/pam-pwauth_suid
+===========================================================================

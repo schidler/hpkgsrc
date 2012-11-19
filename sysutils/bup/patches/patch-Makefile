@@ -1,0 +1,13 @@
+$NetBSD: patch-Makefile,v 1.2 2011/05/31 12:01:18 wiz Exp $
+
+Remove CFLAGS override (set from pkgsrc Makefile).
+
+--- Makefile.orig	2011-06-09 03:24:45.000000000 +0000
++++ Makefile
+@@ -1,5 +1,5 @@
+ OS:=$(shell uname | sed 's/[-_].*//')
+-CFLAGS:=-Wall -O2 -Werror $(PYINCLUDE)
++CFLAGS+=-Wall -O2 -Werror $(PYINCLUDE)
+ SOEXT:=.so
+ 
+ ifeq ($(OS),CYGWIN)
