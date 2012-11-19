@@ -1,0 +1,4 @@
+@comment $NetBSD: PLIST,v 1.2 2006/05/07 01:47:00 chap Exp $
+bin/xpp
+share/doc/xpp/LICENSE
+share/doc/xpp/README

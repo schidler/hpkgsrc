@@ -1,0 +1,19 @@
+# $NetBSD: Makefile.common,v 1.6 2012/08/26 10:06:46 cheusov Exp $
+#
+# used by pkgtools/pkg_online-client/Makefile
+# used by pkgtools/pkg_online-server/Makefile
+
+DISTNAME=	pkg_online-${VERSION}
+MASTER_SITES=	http://mova.org/~cheusov/pub/pkg_online/
+
+VERSION=	0.13.0
+
+HOMEPAGE=	http://mova.org/~cheusov/pub/pkg_online/
+COMMENT=	Client/Server package searcher for pkgsrc
+
+LICENSE=		2-clause-bsd
+
+DISTINFO_FILE=		${.CURDIR}/../../pkgtools/pkg_online-server/distinfo
+PATCHDIR=		${.CURDIR}/../../pkgtools/pkg_online-server/patches
+
+USE_LANGUAGES=		# none

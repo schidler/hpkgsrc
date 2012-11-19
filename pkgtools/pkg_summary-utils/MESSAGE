@@ -1,0 +1,6 @@
+===========================================================================
+$NetBSD: MESSAGE,v 1.2 2011/11/23 02:11:36 minskim Exp $
+If you want to build a source summary (pkg_src_summary)
+using several parallel processes or several machines,
+install parallel/paexec package.
+===========================================================================

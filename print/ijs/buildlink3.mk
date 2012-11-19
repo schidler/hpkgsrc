@@ -1,0 +1,13 @@
+# $NetBSD: buildlink3.mk,v 1.7 2006/07/08 23:11:05 jlam Exp $
+
+BUILDLINK_TREE+=	ijs
+
+.if !defined(IJS_BUILDLINK3_MK)
+IJS_BUILDLINK3_MK:=
+
+BUILDLINK_API_DEPENDS.ijs+=	ijs>=0.34
+BUILDLINK_ABI_DEPENDS.ijs+=	ijs>=0.34nb2
+BUILDLINK_PKGSRCDIR.ijs?=	../../print/ijs
+.endif # IJS_BUILDLINK3_MK
+
+BUILDLINK_TREE+=	-ijs

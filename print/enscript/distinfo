@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.10 2011/02/16 19:19:28 shattered Exp $
+
+SHA1 (enscript-1.6.5.2.tar.gz) = b6d08e72e8e75e7c8a72c75a55c8de3bdebcf22c
+RMD160 (enscript-1.6.5.2.tar.gz) = 065f516bbeec8d2fd5f60b2e869312d7eb1b8a69
+Size (enscript-1.6.5.2.tar.gz) = 1318283 bytes
+SHA1 (patch-ai) = e0f5d63126f1d8c78f01d30f1dee6c890aabae4d

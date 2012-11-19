@@ -1,0 +1,12 @@
+@comment $NetBSD$
+share/texmf-dist/tex/xmltex/passivetex/dummyels.sty
+share/texmf-dist/tex/xmltex/passivetex/fotex.sty
+share/texmf-dist/tex/xmltex/passivetex/fotex.xmt
+share/texmf-dist/tex/xmltex/passivetex/mlnames.sty
+share/texmf-dist/tex/xmltex/passivetex/tei.xmt
+share/texmf-dist/tex/xmltex/passivetex/teiprintslides.xmt
+share/texmf-dist/tex/xmltex/passivetex/teislides.xmt
+share/texmf-dist/tex/xmltex/passivetex/teixml.sty
+share/texmf-dist/tex/xmltex/passivetex/teixmlslides.sty
+share/texmf-dist/tex/xmltex/passivetex/ucharacters.sty
+share/texmf-dist/tex/xmltex/passivetex/unicode.sty
