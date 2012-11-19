@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2012/02/07 11:54:41 obache Exp $
+
+SHA1 (lxml-3.0.1.tgz) = bb7fa04e1a49091151608df347cf12e10e9ed7f1
+RMD160 (lxml-3.0.1.tgz) = 6c4096f35606f65ccfc243a5a65112c3ac460d8e
+Size (lxml-3.0.1.tgz) = 3205224 bytes

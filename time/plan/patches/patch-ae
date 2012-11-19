@@ -1,0 +1,12 @@
+$NetBSD: patch-ae,v 1.2 2006/01/02 22:29:03 joerg Exp $
+
+--- g_dbfile.c.orig	1998-12-24 11:04:41.000000000 +0000
++++ g_dbfile.c
+@@ -6,6 +6,7 @@
+  */
+ 
+ #include <X11/Xos.h>
++#include <errno.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <time.h>

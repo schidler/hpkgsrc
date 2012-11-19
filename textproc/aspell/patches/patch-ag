@@ -1,0 +1,13 @@
+$NetBSD: patch-ag,v 1.2 2004/12/24 02:55:53 wiz Exp $
+
+--- examples/Makefile.in.orig	2006-12-19 11:03:37.000000000 +0000
++++ examples/Makefile.in
+@@ -79,7 +79,7 @@ AUTOCONF = @AUTOCONF@
+ AUTOHEADER = @AUTOHEADER@
+ AUTOMAKE = @AUTOMAKE@
+ AWK = @AWK@
+-CC = @CC@
++CC = @CXX@
+ CCDEPMODE = @CCDEPMODE@
+ CFLAGS = @CFLAGS@
+ CPP = @CPP@

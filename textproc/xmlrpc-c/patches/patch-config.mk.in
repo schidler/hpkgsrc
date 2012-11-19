@@ -1,0 +1,47 @@
+$NetBSD$
+
+Do not use -Bdynamic -G when using GCC on Solaris, it creates non-PIC
+libraries.
+
+--- config.mk.in.orig	2011-03-25 16:58:35.061865984 +0000
++++ config.mk.in
+@@ -187,10 +187,15 @@ ifeq ($(patsubst solaris%,solaris,$(HOST
+   SHLIB_SUFFIX = so
+   shlibfn = $(1:%=%.$(SHLIB_SUFFIX).$(MAJ).$(MIN))
+   shliblefn = $(1:%=%.$(SHLIB_SUFFIX))
+-  # Solaris compiler (Sun C 5.5) can't take multiple ld options as
+-  # -Wl,-a,-b .  Ld sees -a,-b in that case.
+-  LDFLAGS_SHLIB = -Wl,-Bdynamic -Wl,-G -Wl,-h -Wl,$(SONAME)
+-  CFLAGS_SHLIB = -Kpic
++  ifeq ($(C_COMPILER_GNU),yes)
++    LDFLAGS_SHLIB = -shared -Wl,-h -Wl,$(SONAME)
++    CFLAGS_SHLIB = -fPIC
++  else
++    # Solaris compiler (Sun C 5.5) can't take multiple ld options as
++    # -Wl,-a,-b .  Ld sees -a,-b in that case.
++    LDFLAGS_SHLIB = -Wl,-Bdynamic -Wl,-G -Wl,-h -Wl,$(SONAME)
++    CFLAGS_SHLIB = -Kpic
++  endif
+ endif
+ 
+ ifeq ($(patsubst aix%,aix,$(HOST_OS)),aix)
+@@ -268,6 +273,19 @@ ifeq ($(patsubst beos%,beos,$(HOST_OS)),
+   LDFLAGS_SHLIB = -nostart
+ endif
+ 
++ifeq ($(patsubst haiku%,haiku,$(HOST_OS)),haiku)
++  SHARED_LIB_TYPE = unix
++  MUST_BUILD_SHLIB = Y
++  MUST_BUILD_SHLIBLE = Y
++  SHLIB_SUFFIX = so
++  shlibfn = $(1:%=%.$(SHLIB_SUFFIX).$(MAJ).$(MIN))
++  shliblefn = $(1:%=%.$(SHLIB_SUFFIX))
++  LDFLAGS_SHLIB = -shared -Wl,-soname,$(SONAME) $(SHLIB_CLIB)
++  LSOCKET = -lnetwork
++  NEED_WL_RPATH=no
++  NEED_RPATH=no
++endif
++
+ ifeq ($(patsubst darwin%,darwin,$(HOST_OS)),darwin)
+   SHARED_LIB_TYPE = dylib
+   MUST_BUILD_SHLIB = Y

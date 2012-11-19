@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2010/07/17 08:57:34 sno Exp $
+
+SHA1 (Text-CSV-1.21.tar.gz) = bf9e22c52f507db5542bc53cb2228181c1bd7c76
+RMD160 (Text-CSV-1.21.tar.gz) = c8a41b1c52755fd746c35e66ef3a9da8704ab51b
+Size (Text-CSV-1.21.tar.gz) = 58647 bytes

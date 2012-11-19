@@ -1,0 +1,5 @@
+@comment $NetBSD$
+share/texmf-dist/doc/support/makeindex/doc-src.zip
+share/texmf-dist/doc/support/makeindex/ind-src.zip
+share/texmf-dist/doc/support/makeindex/ind.pdf
+share/texmf-dist/doc/support/makeindex/makeindex.pdf

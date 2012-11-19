@@ -1,0 +1,6 @@
+@comment $NetBSD: PLIST,v 1.2 2012/02/07 11:05:01 obache Exp $
+${PYSITELIB}/CaboCha.py
+${PYSITELIB}/CaboCha.pyc
+${PYSITELIB}/CaboCha.pyo
+${PYSITELIB}/_CaboCha.so
+${PYSITELIB}/${EGG_FILE}
