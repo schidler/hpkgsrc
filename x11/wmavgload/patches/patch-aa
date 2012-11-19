@@ -1,0 +1,24 @@
+$NetBSD: patch-aa,v 1.2 2001/06/13 20:15:07 wiz Exp $
+
+--- Imakefile.orig	1998-09-28 22:06:35.000000000 +0000
++++ Imakefile
+@@ -1,8 +1,7 @@
+ /* installation directory is the combination of $(DESTDIR)  and $(BINDIR)*/
+-DESTDIR = /usr/X11R6
+-BINDIR = /bin
++BINDIR = ${PREFIX}/bin
+ 
+-XPMLIB = -L/usr/lib/X11 -L/opt/X11_Contrib/lib/sparc -lXpm -lm  
++XPMLIB = -lXpm -lm  
+ DEPLIBS = $(DEPXLIB) 
+ 
+ /* -lrpcsvc is required on SPARC or HP-UX */
+@@ -10,7 +9,7 @@ LOCAL_LIBRARIES = $(XPMLIB) $(XLIB) /* -
+ 
+ LINTLIBS = $(LINTXLIB)
+ 
+-EXTRA_INCLUDES = -I/opt/X11_Contrib/include
++EXTRA_INCLUDES =
+ 
+ EXTRA_DEFINES = -DMANY_COLORS
+ 

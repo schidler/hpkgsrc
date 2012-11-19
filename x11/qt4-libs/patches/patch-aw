@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- src/network/kernel/qhostinfo_unix.cpp.orig	2012-09-11 01:36:51.032505856 +0000
++++ src/network/kernel/qhostinfo_unix.cpp
+@@ -118,6 +118,8 @@ static void resolveLibrary()
+         if (!local_res_nclose)
+             local_res_ninit = 0;
+     }
++    if (local_res_ninit)
++        local_res_init = 0;
+ #endif
+ }
+ 

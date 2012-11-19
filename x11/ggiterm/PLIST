@@ -1,0 +1,8 @@
+@comment $NetBSD$
+bin/ggiterm
+man/man1/ggiterm.1
+share/doc/ggiterm/README
+share/doc/ggiterm/ggiterm.termcap
+share/doc/ggiterm/ggiterm.terminfo
+share/ggiterm/ggiterm.png
+share/ggiterm/ggiterm.svg

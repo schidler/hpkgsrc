@@ -1,0 +1,10 @@
+#!@SH@
+#
+# $NetBSD: INSTALL,v 1.2 2003/11/05 10:45:29 agc Exp $
+
+case "${STAGE}" in
+POST-INSTALL)
+	${LN} -s ${PKG_PREFIX}/share/examples/privoxy/templates		\
+		 ${PKG_SYSCONFDIR}/.
+	;;
+esac

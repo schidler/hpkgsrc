@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- src/corelib/arch/powerpc/arch.pri.orig	2012-09-11 01:36:50.040632320 +0000
++++ src/corelib/arch/powerpc/arch.pri
+@@ -1,7 +1,7 @@
+ #
+ # PowerPC architecture
+ #
+-!*-g++* {
++netbsd* | !*-g++* {
+     *-64 {
+         SOURCES += $$QT_ARCH_CPP/qatomic64.s
+     } else {

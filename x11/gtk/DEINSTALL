@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $NetBSD: INSTALL,v 1.1 2004/01/18 01:11:40 jlam Exp $
+
+case ${STAGE} in
+DEINSTALL)
+	if [ "${PKG_PREFIX}" != "${LOCALBASE}" ]; then
+		${RM} -f ${LOCALBASE}/share/aclocal/gtk.m4
+	fi
+	;;
+esac

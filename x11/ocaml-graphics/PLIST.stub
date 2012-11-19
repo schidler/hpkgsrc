@@ -1,0 +1,2 @@
+@comment $NetBSD: PLIST.stub,v 1.1 2005/02/04 22:38:59 adrianp Exp $
+lib/ocaml/stublibs/dllgraphics.so

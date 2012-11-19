@@ -1,0 +1,9 @@
+@comment $NetBSD$
+bin/xfstt
+man/man1/xfstt.1
+share/doc/xfstt/FAQ
+share/doc/xfstt/THANKS
+share/doc/xfstt/TODO
+share/examples/rc.d/xfstt
+share/examples/xfstt/font.properties
+@pkgdir lib/X11/fonts/TTF

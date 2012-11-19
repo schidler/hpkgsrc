@@ -1,0 +1,2 @@
+@comment $NetBSD: PLIST,v 1.1.1.1 2007/03/20 15:37:45 joerg Exp $
+lib/xorg/modules/drivers/ark_drv.la

@@ -1,0 +1,14 @@
+$NetBSD: patch-aa,v 1.8 2010/02/16 15:04:56 joerg Exp $
+
+--- apaci/Makefile.tmpl.orig	2008-02-26 08:43:35.000000000 +0000
++++ apaci/Makefile.tmpl
+@@ -94,7 +94,8 @@ distclean: clean
+ 
+ #   FOR STAND-ALONE BUILDING ONLY
+ install:
+-	$(APXS) -i -a -n perl libperl.$(LIBEXT)
++	#@cp libperl.so mod_perl.so
++	#$(APXS) -i -n perl libperl.$(LIBEXT)
+ 
+ depend:
+ 	cp Makefile.tmpl Makefile.tmpl.bak \

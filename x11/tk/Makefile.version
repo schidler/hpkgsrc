@@ -1,0 +1,5 @@
+# $NetBSD: Makefile.version,v 1.8 2008/04/07 15:14:09 bjs Exp $
+
+TK_SONUM=	85
+TK_BASEVER=	8.5
+TK_VERSION=	8.5.12

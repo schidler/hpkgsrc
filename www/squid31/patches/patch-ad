@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- tools/Makefile.in.orig	2010-12-22 05:47:59.000000000 +0000
++++ tools/Makefile.in
+@@ -1008,7 +1008,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-data-local install-man
++install-data-am: install-man
+ 
+ install-dvi: install-dvi-recursive
+ 

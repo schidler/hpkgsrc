@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- tools/designer/src/uitools/uitools.pro.orig	2012-09-11 01:36:54.010485760 +0000
++++ tools/designer/src/uitools/uitools.pro
+@@ -1,7 +1,7 @@
+ TEMPLATE = lib
+ TARGET = QtUiTools
+ QT += xml
+-CONFIG += qt staticlib
++CONFIG += qt dll
+ DESTDIR = ../../../../lib
+ DLLDESTDIR = ../../../../bin
+ 

@@ -1,0 +1,13 @@
+$NetBSD: patch-ah,v 1.1 2009/03/20 17:32:06 hasso Exp $
+
+--- myConfig.orig	2012-01-22 18:50:31.000000000 +0000
++++ myConfig
+@@ -336,7 +336,7 @@ if ($win_arch eq 'x') {
+   #
+   # Prefer 64bit libraries on certain architectures
+   #
+-  unless (defined $xlib and $Config{'archname'} =~ m/x86_64/)
++  if (!defined $xlib and $Config{'archname'} =~ m/x86_64/)
+     {
+       $xlib = &lX11(0, chooseX11(</usr/X11*/lib64>));
+     }

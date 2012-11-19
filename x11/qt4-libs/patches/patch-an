@@ -1,0 +1,28 @@
+$NetBSD$
+
+--- src/corelib/concurrent/qtconcurrentiteratekernel.cpp.orig	2012-09-11 01:36:50.051380224 +0000
++++ src/corelib/concurrent/qtconcurrentiteratekernel.cpp
+@@ -41,7 +41,7 @@
+ 
+ #include "qtconcurrentiteratekernel.h"
+ 
+-#if defined(Q_OS_MAC)
++#if defined(Q_OS_MAC) || defined(__APPLE__)
+ #include <mach/mach.h>
+ #include <mach/mach_time.h>
+ #include <unistd.h>
+@@ -67,7 +67,13 @@ enum {
+     MedianSize = 7
+ };
+ 
+-#if defined(Q_OS_MAC)
++#if defined(Q_OS_HAIKU)
++#include <os/kernel/OS.h>
++static qint64 getticks()
++{
++    return system_time();
++}
++#elif defined(Q_OS_MAC) || defined(__APPLE__)
+ 
+ static qint64 getticks()
+ {

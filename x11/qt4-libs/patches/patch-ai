@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- src/corelib/arch/sparc/arch.pri.orig	2012-09-11 01:36:50.044564480 +0000
++++ src/corelib/arch/sparc/arch.pri
+@@ -1,7 +1,7 @@
+ #
+ # SPARC architecture
+ #
+-*-64* {
++isEqual(QT_HOST_BITSIZE, 64) | *-64* {
+     SOURCES += $$QT_ARCH_CPP/qatomic64.s
+ } 
+ else {

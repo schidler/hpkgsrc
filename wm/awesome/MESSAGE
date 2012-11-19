@@ -1,0 +1,7 @@
+===========================================================================
+$NetBSD: MESSAGE,v 1.2 2007/11/14 20:52:49 rillig Exp $
+
+If you are upgrading from an older version,
+run awesome -k to check your configuration file syntax.
+
+===========================================================================

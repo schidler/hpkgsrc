@@ -1,0 +1,59 @@
+$NetBSD: patch-ad,v 1.12 2011/01/12 07:07:07 adam Exp $
+
+--- src/corelib/global/qglobal.h.orig	2012-09-11 01:36:50.055312384 +0000
++++ src/corelib/global/qglobal.h
+@@ -163,6 +163,7 @@ namespace QT_NAMESPACE {}
+      NETBSD   - NetBSD
+      OPENBSD  - OpenBSD
+      BSDI     - BSD/OS
++     INTERIX  - Interix
+      IRIX     - SGI Irix
+      OSF      - HP Tru64 UNIX
+      SCO      - SCO OpenServer 5
+@@ -176,6 +177,7 @@ namespace QT_NAMESPACE {}
+      LYNX     - LynxOS
+      BSD4     - Any BSD 4.4 system
+      UNIX     - Any UNIX BSD/SYSV system
++	 HAIKU   - Haiku system
+ */
+ 
+ #if defined(__APPLE__) && (defined(__GNUC__) || defined(__xlC__) || defined(__xlc__))
+@@ -229,6 +231,9 @@ namespace QT_NAMESPACE {}
+ #elif defined(__NetBSD__)
+ #  define Q_OS_NETBSD
+ #  define Q_OS_BSD4
++#elif defined(__INTERIX)
++#  define Q_OS_INTERIX
++#  define Q_OS_BSD4
+ #elif defined(__OpenBSD__)
+ #  define Q_OS_OPENBSD
+ #  define Q_OS_BSD4
+@@ -262,6 +267,8 @@ namespace QT_NAMESPACE {}
+ #elif defined(VXWORKS) /* there is no "real" VxWorks define - this has to be set in the mkspec! */
+ #  define Q_OS_VXWORKS
+ #elif defined(__MAKEDEPEND__)
++#elif defined(__HAIKU__)
++#  define Q_OS_HAIKU
+ #else
+ #  error "Qt has not been ported to this OS - talk to qt-bugs@trolltech.com"
+ #endif
+@@ -880,6 +887,8 @@ namespace QT_NAMESPACE {}
+ #  define Q_WS_WIN16
+ #  error "Qt requires Win32 and does not work with Windows 3.x"
+ #elif defined(_WIN32_X11_)
++#elif defined(Q_OS_HAIKU)
++#  define Q_WS_HAIKU
+ #  define Q_WS_X11
+ #elif defined(Q_OS_WIN32)
+ #  define Q_WS_WIN32
+@@ -913,6 +922,10 @@ namespace QT_NAMESPACE {}
+ #  endif
+ #endif
+ 
++#if defined(Q_OS_HAIKU) && defined (Q_WS_X11)
++#undef Q_WS_X11
++#endif
++
+ #if defined(Q_WS_WIN16) || defined(Q_WS_WIN32) || defined(Q_WS_WINCE)
+ #  define Q_WS_WIN
+ #endif

@@ -1,0 +1,7 @@
+# $NetBSD: Makefile.common,v 1.23 2007/10/12 20:13:29 rillig Exp $
+# used by x11/qt3-libs/Makefile.common
+
+QTVERSION=	3.3.8
+
+MAINTAINER?=	pkgsrc-users@NetBSD.org
+HOMEPAGE=	http://www.trolltech.com/products/qt/

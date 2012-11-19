@@ -1,0 +1,5 @@
+@comment $NetBSD$
+include/rep-gtk/rep-gtk.h
+lib/pkgconfig/rep-gtk.pc
+lib/rep/${MACHINE_GNU_PLATFORM}/gui/gtk-2/gtk.la
+lib/rep/${MACHINE_GNU_PLATFORM}/gui/gtk-2/types.la

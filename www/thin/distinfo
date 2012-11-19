@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2011/12/16 12:43:09 taca Exp $
+
+SHA1 (thin-1.4.1.gem) = d74239d2857be9319e5ab3f91ab346bec44ab541
+RMD160 (thin-1.4.1.gem) = d649abd1e9c976a87fd71384f975ea672c9d3fae
+Size (thin-1.4.1.gem) = 54784 bytes

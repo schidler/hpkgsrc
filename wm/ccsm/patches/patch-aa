@@ -1,0 +1,19 @@
+$NetBSD: patch-aa,v 1.1.1.1 2008/05/12 12:08:13 jmcneill Exp $
+
+--- Makefile.orig	2009-11-26 13:36:40.000000000 +0000
++++ Makefile
+@@ -1,11 +1,11 @@
+ all:
+-	@python setup.py build --prefix=${PREFIX}
++	@${PYTHONBIN} setup.py build --prefix=${PREFIX}
+ 
+ install: all
+-	@python setup.py install --prefix=${PREFIX}
++	@${PYTHONBIN} setup.py install --prefix=${PREFIX}
+ 
+ uninstall:
+-	@python setup.py uninstall --prefix=${PREFIX}
++	@${PYTHONBIN} setup.py uninstall --prefix=${PREFIX}
+ 
+ clean:
+ 	rm -rf build/

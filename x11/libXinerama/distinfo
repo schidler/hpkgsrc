@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2010/04/09 08:43:00 tnn Exp $
+
+SHA1 (libXinerama-1.1.2.tar.bz2) = 06a5b636305725ce09f6c3a4d5a15f2f188b5afd
+RMD160 (libXinerama-1.1.2.tar.bz2) = 4b5858c8c8a2c6992ecb3c400ab3a2107e0a5667
+Size (libXinerama-1.1.2.tar.bz2) = 279682 bytes

@@ -1,0 +1,13 @@
+# $NetBSD: buildlink3.mk,v 1.9 2006/07/08 23:11:17 jlam Exp $
+
+BUILDLINK_TREE+=	xosd
+
+.if !defined(XOSD_BUILDLINK3_MK)
+XOSD_BUILDLINK3_MK:=
+
+BUILDLINK_API_DEPENDS.xosd+=	xosd>=2.2.12
+BUILDLINK_ABI_DEPENDS.xosd+=	xosd>=2.2.12nb2
+BUILDLINK_PKGSRCDIR.xosd?=	../../x11/xosd
+.endif # XOSD_BUILDLINK3_MK
+
+BUILDLINK_TREE+=	-xosd

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.2 2005/02/24 14:08:28 wiz Exp $
+
+SHA1 (mod_chroot-0.5.tar.gz) = 42935c37fb163ff519651ddd0b0fd6982a978015
+RMD160 (mod_chroot-0.5.tar.gz) = baba1cac0f05953dac5ab7f483bbc49417eaf8ff
+Size (mod_chroot-0.5.tar.gz) = 15055 bytes
