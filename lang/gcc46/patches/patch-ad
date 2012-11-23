@@ -1,8 +1,54 @@
 $NetBSD: patch-ad,v 1.2 2011/12/22 14:14:22 wiz Exp $
 
---- configure.orig	2011-03-16 18:27:36.000000000 +0000
+--- configure.orig	2011-12-18 10:03:44.065798144 +0000
 +++ configure
-@@ -5269,7 +5269,7 @@ fi
+@@ -2991,6 +2991,9 @@ case "${host}" in
+   *-*-cygwin*)
+     noconfigdirs="$noconfigdirs autoconf automake send-pr rcs guile perl"
+     ;;
++  *-*-haiku*)
++    noconfigdirs="$noconfigdirs tk itcl libgui gdb"
++    ;;
+   *-*-netbsd*)
+     noconfigdirs="$noconfigdirs rcs"
+     ;;
+@@ -3146,6 +3149,9 @@ case "${target}" in
+ 	;;
+     esac
+     ;;
++   *-*-haiku)
++    noconfigdirs="$noconfigdirs target-libiberty"
++    ;;
+   *-*-kaos*)
+     # Remove unsupported stuff on all kaOS configurations.
+     skipdirs="${libgcj} target-libstdc++-v3 target-librx"
+@@ -3602,6 +3608,9 @@ case "${target}" in
+   ip2k-*-*)
+     noconfigdirs="$noconfigdirs target-libstdc++-v3 ${libgcj}"
+     ;;
++  *-*-haiku*)
++    noconfigdirs="$noconfigdirs gdb target-newlib target-libgloss ${libgcj}"
++    ;;
+   *-*-linux* | *-*-gnu* | *-*-k*bsd*-gnu | *-*-kopensolaris*-gnu)
+     noconfigdirs="$noconfigdirs target-newlib target-libgloss"
+     ;;
+@@ -5128,9 +5137,14 @@ $as_echo_n "checking how to compare boot
+ if test "${gcc_cv_prog_cmp_skip+set}" = set; then :
+   $as_echo_n "(cached) " >&6
+ else
++ # comparing object files via cmp doesn't work on haiku (files will seemingly
++  # always differ), so we disassemble both files and compare the results:
++  if uname -o | grep -iq haiku; then
++    gcc_cv_prog_cmp_skip='objdump -Dz $$f1 | tail +6 >tmp-foo1; objdump -Dz $$f2 | tail +6 >tmp-foo2; cmp tmp-foo1 tmp-foo2'
++  else 
++    gcc_cv_prog_cmp_skip='tail +16c $$f1 > tmp-foo1; tail +16c $$f2 > tmp-foo2; cmp tmp-foo1 tmp-foo2'
+    echo abfoo >t1
+   echo cdfoo >t2
+-  gcc_cv_prog_cmp_skip='tail +16c $$f1 > tmp-foo1; tail +16c $$f2 > tmp-foo2; cmp tmp-foo1 tmp-foo2'
+   if cmp t1 t2 2 2 > /dev/null 2>&1; then
+     if cmp t1 t2 1 1 > /dev/null 2>&1; then
+       :
+@@ -5269,7 +5283,7 @@ fi
  
  
  if test "x$with_mpfr" != x; then
@@ -11,7 +57,7 @@ $NetBSD: patch-ad,v 1.2 2011/12/22 14:14:22 wiz Exp $
    gmpinc="-I$with_mpfr/include $gmpinc"
  fi
  if test "x$with_mpfr_include" != x; then
-@@ -5279,9 +5279,11 @@ if test "x$with_mpfr_lib" != x; then
+@@ -5279,9 +5293,11 @@ if test "x$with_mpfr_lib" != x; then
    gmplibs="-L$with_mpfr_lib $gmplibs"
  fi
  if test "x$with_mpfr$with_mpfr_include$with_mpfr_lib" = x && test -d ${srcdir}/mpfr; then

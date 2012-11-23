@@ -1,0 +1,72 @@
+$NetBSD$
+
+--- gcc/configure.orig	2012-11-22 17:57:44.937951232 +0000
++++ gcc/configure
+@@ -599,6 +599,7 @@ ac_includes_default="\
+ #endif"
+ 
+ ac_subst_vars='LTLIBOBJS
++math_library
+ LIBOBJS
+ enable_plugin
+ pluginlibs
+@@ -8612,6 +8613,14 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ # UNSORTED
+ # --------
+ 
++# Configure -lm usage for host tools that need it
++math_library="-lm"
++case $host in
++  *-*-haiku*)
++    # no separate math library needed
++    math_library=
++    ;;
++esac
+ 
+ # These libraries may be used by collect2.
+ # We may need a special search path to get them linked.
+@@ -10779,7 +10788,7 @@ case ${enable_threads} in
+     # default
+     target_thread_file='single'
+     ;;
+-  aix | dce | gnat | irix | posix | posix95 | rtems | \
++  aix | dce | gnat | haiku | irix | posix | posix95 | rtems | \
+   single | solaris | vxworks | win32 | mipssde)
+     target_thread_file=${enable_threads}
+     ;;
+@@ -14566,7 +14575,7 @@ $as_echo_n "checking for $compiler optio
+       esac
+       ;;
+ 
+-    beos* | irix5* | irix6* | nonstopux* | osf3* | osf4* | osf5*)
++    beos* | haiku* | irix5* | irix6* | nonstopux* | osf3* | osf4* | osf5*)
+       # PIC is the default for these OSes.
+       ;;
+ 
+@@ -16691,15 +16700,8 @@ gnu*)
+   ;;
+ 
+ haiku*)
+-  version_type=linux
+-  need_lib_prefix=no
+-  need_version=no
+-  dynamic_linker="$host_os runtime_loader"
+-  library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}${major} ${libname}${shared_ext}'
+-  soname_spec='${libname}${release}${shared_ext}$major'
+-  shlibpath_var=LIBRARY_PATH
+-  shlibpath_overrides_runpath=yes
+-  sys_lib_dlsearch_path_spec='/boot/home/config/lib /boot/common/lib /boot/beos/system/lib'
++  library_names_spec='${libname}${shared_ext}'
++  dynamic_linker="$host_os ld.so"
+   hardcode_into_libs=yes
+   ;;
+ 
+@@ -20358,7 +20360,7 @@ haiku*)
+   soname_spec='${libname}${release}${shared_ext}$major'
+   shlibpath_var=LIBRARY_PATH
+   shlibpath_overrides_runpath=yes
+-  sys_lib_dlsearch_path_spec='/boot/home/config/lib /boot/common/lib /boot/beos/system/lib'
++  sys_lib_dlsearch_path_spec='/boot/home/config/lib /boot/system/lib'
+   hardcode_into_libs=yes
+   ;;
+ 

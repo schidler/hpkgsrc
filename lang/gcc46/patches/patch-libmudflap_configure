@@ -1,0 +1,32 @@
+$NetBSD$
+
+--- libmudflap/configure.orig	2012-11-22 18:23:53.787742720 +0000
++++ libmudflap/configure
+@@ -7654,7 +7654,7 @@ $as_echo_n "checking for $compiler optio
+       esac
+       ;;
+ 
+-    beos* | irix5* | irix6* | nonstopux* | osf3* | osf4* | osf5*)
++    beos* | haiku* | irix5* | irix6* | nonstopux* | osf3* | osf4* | osf5*)
+       # PIC is the default for these OSes.
+       ;;
+ 
+@@ -9779,16 +9779,8 @@ gnu*)
+   ;;
+ 
+ haiku*)
+-  version_type=linux
+-  need_lib_prefix=no
+-  need_version=no
+-  dynamic_linker="$host_os runtime_loader"
+-  library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}${major} ${libname}${shared_ext}'
+-  soname_spec='${libname}${release}${shared_ext}$major'
+-  shlibpath_var=LIBRARY_PATH
+-  shlibpath_overrides_runpath=yes
+-  sys_lib_dlsearch_path_spec='/boot/home/config/lib /boot/common/lib /boot/beos/system/lib'
+-  hardcode_into_libs=yes
++  library_names_spec='${libname}${shared_ext}'
++  dynamic_linker="$host_os ld.so"
+   ;;
+ 
+ hpux9* | hpux10* | hpux11*)

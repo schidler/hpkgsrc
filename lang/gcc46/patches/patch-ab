@@ -2,9 +2,9 @@ $NetBSD: patch-ab,v 1.1.1.1 2011/05/15 00:09:56 wiz Exp $
 
 * Add Dragonfly support.
 
---- libgcc/config.host.orig	2011-03-14 06:06:23.000000000 +0000
+--- libgcc/config.host.orig	2011-11-23 22:15:54.050855936 +0000
 +++ libgcc/config.host
-@@ -159,6 +159,8 @@ case ${host} in
+@@ -150,6 +150,8 @@ case ${host} in
    # machine-specific sections may refine and add to this
    # configuration.
    ;;
@@ -13,7 +13,16 @@ $NetBSD: patch-ab,v 1.1.1.1 2011/05/15 00:09:56 wiz Exp $
  *-*-linux* | frv-*-*linux* | *-*-kfreebsd*-gnu | *-*-knetbsd*-gnu | *-*-gnu*)
    extra_parts="crtbegin.o crtbeginS.o crtbeginT.o crtend.o crtendS.o"
    ;;
-@@ -287,6 +289,10 @@ i[34567]86-*-freebsd*)
+@@ -201,6 +203,8 @@ arm*-*-netbsdelf*)
+ 	;;
+ arm*-*-netbsd*)
+ 	;;
++arm-*-haiku*)
++	;;
+ arm*-*-linux*)			# ARM GNU/Linux with ELF
+ 	;;
+ arm*-*-uclinux*)		# ARM ucLinux
+@@ -278,6 +282,14 @@ i[34567]86-*-freebsd*)
  x86_64-*-freebsd*)
  	tmake_file="${tmake_file} i386/t-freebsd"
  	;;
@@ -21,6 +30,37 @@ $NetBSD: patch-ab,v 1.1.1.1 2011/05/15 00:09:56 wiz Exp $
 +	;;
 +x86_64-*-dragonfly*)
 +	;;
++i[34567]86-*-haiku*)
++	;;
++x86_64-*-haiku*)
++	;;
  i[34567]86-*-netbsdelf*)
  	;;
  i[34567]86-*-netbsd*)
+@@ -375,6 +387,8 @@ m68hc11-*-*|m6811-*-*)
+         ;;
+ m68hc12-*-*|m6812-*-*)
+         ;;
++m68k-*-haiku*)
++	;;		
+ m68k-*-elf*)
+ 	;;
+ m68k*-*-netbsdelf*)
+@@ -410,6 +424,8 @@ mips*-*-linux*)				# Linux MIPS, either 
+ 	;;
+ mips*-*-openbsd*)
+ 	;;
++mips*-*-haiku*)
++	;;	
+ mipsisa32-*-elf* | mipsisa32el-*-elf*)
+ 	;;
+ mipsisa32r2-*-elf* | mipsisa32r2el-*-elf*)
+@@ -457,6 +473,8 @@ powerpc64-*-darwin*)
+ powerpc-*-freebsd*)
+ 	tmake_file="${tmake_file} rs6000/t-ppccomm rs6000/t-freebsd t-softfp"
+ 	;;
++powerpc-*-haiku*)
++	;;	
+ powerpc-*-netbsd*)
+ 	;;
+ powerpc-*-eabispe*)

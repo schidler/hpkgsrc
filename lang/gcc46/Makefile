@@ -80,6 +80,10 @@ MAKE_ENV+=		ac_cv_func_clock_gettime=yes
 .if ${OPSYS} == "Linux"
 CONFIGURE_ARGS+=	--disable-libquadmath --disable-libquadmath-support
 .endif
+.if ${OPSYS} == "Haiku"
+CONFIGURE_ARGS+=	--disable-libstdcxx-pch
+CONFIGURE_ARGS+=	--enable-lto --enable-frame-pointer
+.endif
 
 CONFIGURE_ENV+=		CONFIG_SHELL=${CONFIG_SHELL}
 
@@ -109,6 +113,10 @@ pre-configure:
 	${CP} ${FILESDIR}/dragonfly-spec.h ${WRKSRC}/gcc/config/dragonfly-spec.h
 	${CP} ${FILESDIR}/i386-dragonfly.h ${WRKSRC}/gcc/config/i386/dragonfly.h
 	${CP} ${FILESDIR}/i386-dragonfly64.h ${WRKSRC}/gcc/config/i386/dragonfly64.h
+.endif
+
+.if ${OPSYS} == "Haiku"
+	${CP} ${FILESDIR}/haiku/* ${WRKSRC}/
 .endif
 
 .if ${OPSYS} == "NetBSD"

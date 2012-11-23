@@ -3,7 +3,7 @@ $NetBSD: patch-ak,v 1.1.1.1 2011/05/15 00:09:56 wiz Exp $
 Fix build on NetBSD i386/amd64 after the ansi.h header include protection
 name change.
 
---- gcc/ginclude/stddef.h.orig	2011-01-29 22:15:52.000000000 +0000
+--- gcc/ginclude/stddef.h.orig	2011-01-29 22:15:52.049545216 +0000
 +++ gcc/ginclude/stddef.h
 @@ -53,6 +53,11 @@ see the files COPYING3 and COPYING.RUNTI
     one less case to deal with in the following.  */
@@ -17,3 +17,21 @@ name change.
  #endif
  /* On FreeBSD 5, machine/ansi.h does not exist anymore... */
  #if defined (__FreeBSD__) && (__FreeBSD__ >= 5)
+@@ -167,7 +172,7 @@ typedef __PTRDIFF_TYPE__ ptrdiff_t;
+ /* Define this type if we are doing the whole job,
+    or if we want this type in particular.  */
+ #if defined (_STDDEF_H) || defined (__need_size_t)
+-#ifndef __size_t__	/* BeOS */
++#ifndef __size_t__	/* Haiku */
+ #ifndef __SIZE_T__	/* Cray Unicos/Mk */
+ #ifndef _SIZE_T	/* in case <sys/types.h> has defined it. */
+ #ifndef _SYS_SIZE_T_H
+@@ -184,7 +189,7 @@ typedef __PTRDIFF_TYPE__ ptrdiff_t;
+ #ifndef _GCC_SIZE_T
+ #ifndef _SIZET_
+ #ifndef __size_t
+-#define __size_t__	/* BeOS */
++#define __size_t__	/* Haiku */
+ #define __SIZE_T__	/* Cray Unicos/Mk */
+ #define _SIZE_T
+ #define _SYS_SIZE_T_H
