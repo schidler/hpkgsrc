@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- configure.orig	2012-11-26 07:08:53.000000000 +0000
++++ configure
+@@ -32713,7 +32713,7 @@ _ACEOF
+ 
+ 
+ # Path to ImageMagick lib
+-LIBRARY_PATH="${LIB_DIR}/${LIBRARY_RELATIVE_PATH}"
++LIBRARY_PATH="${LIB_DIR}/${LIBRARY_RELATIVE_PATH}:${LIBRARY_PATH}"
+ DEFINE_LIBRARY_PATH="${LIB_DIR}/${LIBRARY_RELATIVE_PATH}/"
+ case "${build_os}" in
+   mingw* )
