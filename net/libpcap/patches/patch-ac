@@ -1,6 +1,6 @@
 $NetBSD: patch-ac,v 1.6 2011/02/11 12:11:26 adam Exp $
 
---- Makefile.in.orig	2010-04-05 17:54:05.000000000 +0000
+--- Makefile.in.orig	2010-04-05 17:54:05.006029312 +0000
 +++ Makefile.in
 @@ -45,7 +45,7 @@ VPATH = @srcdir@
  #
@@ -168,31 +168,31 @@ $NetBSD: patch-ac,v 1.6 2011/02/11 12:11:26 adam Exp $
 -	ln $(DESTDIR)$(mandir)/man3/pcap_setnonblock.3pcap \
 -		 $(DESTDIR)$(mandir)/man3/pcap_getnonblock.3pcap
 +	rm -f $(DESTDIR)$(mandir)/man3/pcap_datalink_val_to_description.3
-+	ln $(DESTDIR)$(mandir)/man3/pcap_datalink_val_to_name.3 \
++	ln -sf $(DESTDIR)$(mandir)/man3/pcap_datalink_val_to_name.3 \
 +		 $(DESTDIR)$(mandir)/man3/pcap_datalink_val_to_description.3
 +	rm -f $(DESTDIR)$(mandir)/man3/pcap_dump_fopen.3
-+	ln $(DESTDIR)$(mandir)/man3/pcap_dump_open.3 \
++	ln -sf $(DESTDIR)$(mandir)/man3/pcap_dump_open.3 \
 +		 $(DESTDIR)$(mandir)/man3/pcap_dump_fopen.3
 +	rm -f $(DESTDIR)$(mandir)/man3/pcap_perror.3
-+	ln $(DESTDIR)$(mandir)/man3/pcap_geterr.3 \
++	ln -sf $(DESTDIR)$(mandir)/man3/pcap_geterr.3 \
 +		 $(DESTDIR)$(mandir)/man3/pcap_perror.3
 +	rm -f $(DESTDIR)$(mandir)/man3/pcap_sendpacket.3
-+	ln $(DESTDIR)$(mandir)/man3/pcap_inject.3 \
++	ln -sf $(DESTDIR)$(mandir)/man3/pcap_inject.3 \
 +		 $(DESTDIR)$(mandir)/man3/pcap_sendpacket.3
 +	rm -f $(DESTDIR)$(mandir)/man3/pcap_dispatch.3
-+	ln $(DESTDIR)$(mandir)/man3/pcap_loop.3 \
++	ln -sf $(DESTDIR)$(mandir)/man3/pcap_loop.3 \
 +		 $(DESTDIR)$(mandir)/man3/pcap_dispatch.3
 +	rm -f $(DESTDIR)$(mandir)/man3/pcap_minor_version.3
-+	ln $(DESTDIR)$(mandir)/man3/pcap_major_version.3 \
++	ln -sf $(DESTDIR)$(mandir)/man3/pcap_major_version.3 \
 +		 $(DESTDIR)$(mandir)/man3/pcap_minor_version.3
 +	rm -f $(DESTDIR)$(mandir)/man3/pcap_next.3
-+	ln $(DESTDIR)$(mandir)/man3/pcap_next_ex.3 \
++	ln -sf $(DESTDIR)$(mandir)/man3/pcap_next_ex.3 \
 +		 $(DESTDIR)$(mandir)/man3/pcap_next.3
 +	rm -f $(DESTDIR)$(mandir)/man3/pcap_fopen_offline.3
-+	ln $(DESTDIR)$(mandir)/man3/pcap_open_offline.3 \
++	ln -sf $(DESTDIR)$(mandir)/man3/pcap_open_offline.3 \
 +		 $(DESTDIR)$(mandir)/man3/pcap_fopen_offline.3
 +	rm -f $(DESTDIR)$(mandir)/man3/pcap_getnonblock.3
-+	ln $(DESTDIR)$(mandir)/man3/pcap_setnonblock.3 \
++	ln -sf $(DESTDIR)$(mandir)/man3/pcap_setnonblock.3 \
 +		 $(DESTDIR)$(mandir)/man3/pcap_getnonblock.3
  	for i in $(MANFILE); do \
  		$(INSTALL_DATA) `echo $$i | sed 's/.manfile.in/.manfile/'` \
