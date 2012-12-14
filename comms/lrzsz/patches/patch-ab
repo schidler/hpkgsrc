@@ -1,8 +1,8 @@
 $NetBSD$
 
---- configure.orig	Tue Aug 25 19:55:01 1998
-+++ configure	Tue Aug 25 19:55:58 1998
-@@ -4281,7 +4281,7 @@
+--- configure.orig	1998-12-30 07:50:18.056360960 +0000
++++ configure
+@@ -4409,7 +4409,7 @@ fi
  		 USE_INCLUDED_LIBINTL=yes
  		 CATOBJEXT=.cat
  		 INSTOBJEXT=.cat

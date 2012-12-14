@@ -17,7 +17,7 @@ GNU_CONFIGURE=		yes
 .include "../../mk/bsd.prefs.mk"
 
 .if (${OPSYS} == "SunOS" || ${OPSYS} == "Darwin" || ${OPSYS} == "Interix" \
-	|| ${OPSYS} == "Linux")
+	|| ${OPSYS} == "Linux") || ${OPSYS} == "Haiku"
 BROKEN_GETTEXT_DETECTION=yes
 .  include "../../devel/gettext-lib/buildlink3.mk"
 LOCALE_SUFFIX=		mo

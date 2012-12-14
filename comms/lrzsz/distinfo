@@ -3,6 +3,7 @@ $NetBSD: distinfo,v 1.3 2005/02/23 16:05:30 agc Exp $
 SHA1 (lrzsz-0.12.20.tar.gz) = 451e6a1813dfb71a412c973acd1b88b9ee3f28c4
 RMD160 (lrzsz-0.12.20.tar.gz) = 1b1776143afaff8bc7447ce998f9d3a958d51f25
 Size (lrzsz-0.12.20.tar.gz) = 280938 bytes
-SHA1 (patch-aa) = aaf33281da19658906eee6a922397968a200f186
-SHA1 (patch-ab) = 273f343a3e4ca8190ae4ab52483600f7bcf8e404
-SHA1 (patch-ac) = a224a77a6d9581c601a50ebe9153e6ad25c8601b
+SHA1 (patch-aa) = 5d1065b91c5deaccfd40b6205281e4a6b26bb94f
+SHA1 (patch-ab) = c94e3faedcf71da3d405901094a63e563ad56a38
+SHA1 (patch-ac) = 2940f9eef58c86f70081d90a4e33b6ad401d94d6
+SHA1 (patch-src_Makefile.in) = 63f940504a5f30361a716195da6a343805469e71
