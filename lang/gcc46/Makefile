@@ -13,6 +13,7 @@ COMMENT=		GNU Compiler Collection 4.6
 LICENSE=		gnu-gpl-v2 AND gnu-gpl-v3 AND gnu-lgpl-v2 AND gnu-lgpl-v3
 
 USE_TOOLS+=		awk:run bash:run chmod gmake:run makeinfo sed:run
+USE_LANGUAGES=	c++ c
 
 GCC_VERSION=		4.6.3
 
@@ -68,10 +69,10 @@ REPLACE_BASH+= libstdc++-v3/scripts/run_doxygen
 CONFIGURE_ARGS+=	--prefix=${GCC_PREFIX:Q}
 CONFIGURE_ARGS+=	--enable-languages=${LANGS:Q}
 CONFIGURE_ARGS+=	--enable-shared
-CONFIGURE_ARGS+=	--enable-long-long
+#CONFIGURE_ARGS+=	--enable-long-long
 CONFIGURE_ARGS+=	--with-local-prefix=${GCC_PREFIX:Q}
-CONFIGURE_ARGS+=	--enable-libssp
-CONFIGURE_ARGS+=	--enable-threads=posix
+#CONFIGURE_ARGS+=	--enable-libssp
+#CONFIGURE_ARGS+=	--enable-threads=posix
 .if ${OPSYS} == "NetBSD"
 CONFIGURE_ARGS+=	--with-gnu-ld --with-ld=/usr/bin/ld
 CONFIGURE_ARGS+=	--with-gnu-as --with-as=/usr/bin/as
@@ -116,7 +117,7 @@ pre-configure:
 .endif
 
 .if ${OPSYS} == "Haiku"
-	${CP} ${FILESDIR}/haiku/* ${WRKSRC}/
+	${CP} -rf ${FILESDIR}/haiku/* ${WRKSRC}/
 .endif
 
 .if ${OPSYS} == "NetBSD"

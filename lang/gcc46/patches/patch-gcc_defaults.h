@@ -1,6 +1,6 @@
 $NetBSD$
 
---- gcc/defaults.h.orig	2012-11-22 18:10:38.865337344 +0000
+--- gcc/defaults.h.orig	2010-11-29 14:09:41.002097152 +0000
 +++ gcc/defaults.h
 @@ -385,10 +385,13 @@ see the files COPYING3 and COPYING.RUNTI
     at program start-up time.  */

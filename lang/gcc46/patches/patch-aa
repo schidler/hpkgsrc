@@ -6,7 +6,7 @@ $NetBSD: patch-aa,v 1.2 2012/03/14 23:24:54 wiz Exp $
 
 * Add Dragonfly support.
 
---- gcc/config.gcc.orig	2011-07-22 16:44:50.045350912 +0000
+--- gcc/config.gcc.orig	2011-07-22 16:44:50.001572864 +0000
 +++ gcc/config.gcc
 @@ -561,6 +561,33 @@ case ${target} in
    # need_64bit_hwint=yes # system compiler has this for all arch!

@@ -1,6 +1,6 @@
 $NetBSD$
 
---- gcc/crtstuff.c.orig	2012-11-22 18:07:02.645136384 +0000
+--- gcc/crtstuff.c.orig	2010-12-23 12:08:21.053739520 +0000
 +++ gcc/crtstuff.c
 @@ -102,7 +102,9 @@ call_ ## FUNC (void)					\
      && defined(HAVE_LD_EH_FRAME_HDR) \

@@ -4,7 +4,7 @@ Avoid a reference to the wrapped make in the pkgsrc work directory from
 showing up in an installed file.
 See: libjava/contrib/aotcompile.py.in
 
---- libjava/configure.orig	2012-03-01 12:03:46.044302336 +0000
+--- libjava/configure.orig	2012-03-01 12:03:46.064749568 +0000
 +++ libjava/configure
 @@ -24680,7 +24680,7 @@ $as_echo "Python modules dir: ${python_m
  

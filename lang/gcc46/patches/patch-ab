@@ -2,7 +2,7 @@ $NetBSD: patch-ab,v 1.1.1.1 2011/05/15 00:09:56 wiz Exp $
 
 * Add Dragonfly support.
 
---- libgcc/config.host.orig	2011-11-23 22:15:54.050855936 +0000
+--- libgcc/config.host.orig	2011-11-23 22:15:54.006815744 +0000
 +++ libgcc/config.host
 @@ -150,6 +150,8 @@ case ${host} in
    # machine-specific sections may refine and add to this

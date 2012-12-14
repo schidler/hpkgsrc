@@ -87,7 +87,7 @@ MAKE_ENV+=		ac_cv_prog_JAR=no
 .if !empty(PKG_OPTIONS:Mgcc-c++)
 LANGS+=			c++
 USE_TOOLS+=		perl
-CONFIGURE_ARGS+=	--enable-__cxa_atexit
+#CONFIGURE_ARGS+=	--enable-__cxa_atexit
 CONFIGURE_ARGS+=	--with-gxx-include-dir=${GCC_PREFIX}/include/c++/
 .endif
 

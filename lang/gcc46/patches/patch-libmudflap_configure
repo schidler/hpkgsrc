@@ -1,6 +1,6 @@
 $NetBSD$
 
---- libmudflap/configure.orig	2012-11-22 18:23:53.787742720 +0000
+--- libmudflap/configure.orig	2011-11-20 21:24:07.030670848 +0000
 +++ libmudflap/configure
 @@ -7654,7 +7654,7 @@ $as_echo_n "checking for $compiler optio
        esac

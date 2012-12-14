@@ -1,6 +1,6 @@
 $NetBSD$
 
---- libstdc++-v3/libsupc++/tinfo.cc.orig	2012-11-22 18:57:04.505937920 +0000
+--- libstdc++-v3/libsupc++/tinfo.cc.orig	2009-10-30 22:23:59.022806528 +0000
 +++ libstdc++-v3/libsupc++/tinfo.cc
 @@ -32,6 +32,15 @@ std::type_info::
  ~type_info ()

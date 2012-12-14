@@ -1,6 +1,6 @@
 $NetBSD$
 
---- libstdc++-v3/crossconfig.m4.orig	2012-11-22 18:51:30.283639808 +0000
+--- libstdc++-v3/crossconfig.m4.orig	2011-02-04 07:26:57.052428800 +0000
 +++ libstdc++-v3/crossconfig.m4
 @@ -99,6 +99,46 @@ case "${host}" in
        AC_DEFINE(HAVE_ISNANL)

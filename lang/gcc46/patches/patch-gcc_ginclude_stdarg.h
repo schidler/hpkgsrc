@@ -1,6 +1,6 @@
 $NetBSD$
 
---- gcc/ginclude/stdarg.h.orig	2012-11-22 18:13:23.282329088 +0000
+--- gcc/ginclude/stdarg.h.orig	2009-04-09 15:00:19.005767168 +0000
 +++ gcc/ginclude/stdarg.h
 @@ -97,7 +97,7 @@ typedef __gnuc_va_list va_list;
  #ifndef _VA_LIST

@@ -4,7 +4,7 @@ No need to use bash for this small script.
 
 Also -print0 is not portable to solaris and perhaps others.
 
---- libjava/contrib/rebuild-gcj-db.in.orig	2008-07-02 13:17:54.039845888 +0000
+--- libjava/contrib/rebuild-gcj-db.in.orig	2008-07-02 13:17:54.062652416 +0000
 +++ libjava/contrib/rebuild-gcj-db.in
 @@ -1,4 +1,4 @@
 -#!/bin/bash

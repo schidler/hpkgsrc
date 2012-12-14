@@ -1,6 +1,6 @@
 $NetBSD$
 
---- libstdc++-v3/configure.orig	2012-11-22 18:26:57.791937024 +0000
+--- libstdc++-v3/configure.orig	2011-11-20 21:24:07.055574528 +0000
 +++ libstdc++-v3/configure
 @@ -6206,7 +6206,7 @@ aix[4-9]*)
    lt_cv_deplibs_check_method=pass_all

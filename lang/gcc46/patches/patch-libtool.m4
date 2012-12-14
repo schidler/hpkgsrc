@@ -1,6 +1,6 @@
 $NetBSD$
 
---- libtool.m4.orig	2012-11-22 19:12:00.102498304 +0000
+--- libtool.m4.orig	2011-11-20 21:24:07.022282240 +0000
 +++ libtool.m4
 @@ -1709,7 +1709,7 @@ else
    lt_cv_dlopen_libs=

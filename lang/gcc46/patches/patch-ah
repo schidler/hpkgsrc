@@ -3,7 +3,7 @@ $NetBSD: patch-ah,v 1.1.1.1 2011/05/15 00:09:56 wiz Exp $
 On NetBSD the 'cabs' and 'cabsf' functions are are __RENAME so that
 thay have '__c99_' prefixes.
 
---- gcc/fortran/f95-lang.c.orig	2011-04-05 08:13:16.023855104 +0000
+--- gcc/fortran/f95-lang.c.orig	2011-04-05 08:13:16.047185920 +0000
 +++ gcc/fortran/f95-lang.c
 @@ -823,10 +823,17 @@ gfc_init_builtin_functions (void)
  

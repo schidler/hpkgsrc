@@ -3,7 +3,7 @@ $NetBSD: patch-ac,v 1.2 2012/04/17 07:48:13 sbd Exp $
 Add gcc libdir to a programs rpath so that _this gcc's_ support libraries
 are found.
 
---- gcc/Makefile.in.orig	2011-08-20 07:51:09.018612224 +0000
+--- gcc/Makefile.in.orig	2011-08-20 07:51:09.041680896 +0000
 +++ gcc/Makefile.in
 @@ -2190,6 +2190,7 @@ prefix.o: prefix.c $(CONFIG_H) $(SYSTEM_
  # Language-independent files.

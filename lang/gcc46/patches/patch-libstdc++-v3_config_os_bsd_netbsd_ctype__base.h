@@ -1,6 +1,6 @@
 $NetBSD$
 
---- libstdc++-v3/config/os/bsd/netbsd/ctype_base.h.orig	2011-01-30 22:39:36.066846720 +0000
+--- libstdc++-v3/config/os/bsd/netbsd/ctype_base.h.orig	2011-01-30 22:39:36.022544384 +0000
 +++ libstdc++-v3/config/os/bsd/netbsd/ctype_base.h
 @@ -31,8 +31,6 @@
  //   anoncvs@anoncvs.netbsd.org:/cvsroot/basesrc/include/ctype.h

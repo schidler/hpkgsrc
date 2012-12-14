@@ -1,6 +1,6 @@
 $NetBSD$
 
---- config.rpath.orig	2012-11-22 17:37:31.606863360 +0000
+--- config.rpath.orig	2011-02-13 11:45:53.019922944 +0000
 +++ config.rpath
 @@ -161,6 +161,8 @@ if test "$with_gnu_ld" = yes; then
        ;;
