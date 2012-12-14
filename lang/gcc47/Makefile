@@ -35,8 +35,8 @@ GCC_PREFIX=		${PREFIX}/${GCC_SUBPREFIX}
 GNU_CONFIGURE_PREFIX=	${GCC_PREFIX}
 INFO_FILES=		yes
 
-UNLIMIT_RESOURCES+=	datasize
-UNLIMIT_RESOURCES+=	stacksize
+#UNLIMIT_RESOURCES+=	datasize
+#UNLIMIT_RESOURCES+=	stacksize
 
 .include "../../mk/bsd.prefs.mk"
 
@@ -57,8 +57,8 @@ CONFIGURE_ARGS+=	--enable-languages=${LANGS:Q}
 CONFIGURE_ARGS+=	--enable-shared
 CONFIGURE_ARGS+=	--enable-long-long
 CONFIGURE_ARGS+=	--with-local-prefix=${GCC_PREFIX:Q}
-CONFIGURE_ARGS+=	--enable-libssp
-CONFIGURE_ARGS+=	--enable-threads=posix
+#ONFIGURE_ARGS+=	--enable-libssp
+#CONFIGURE_ARGS+=	--enable-threads=posix
 CONFIGURE_ARGS+=	--with-boot-ldflags=${BOOT_LDFLAGS:Q}
 .if ${OPSYS} == "NetBSD"
 CONFIGURE_ARGS+=	--with-gnu-ld --with-ld=/usr/bin/ld
@@ -67,6 +67,10 @@ MAKE_ENV+=		ac_cv_func_clock_gettime=yes
 .endif
 .if ${OPSYS} == "DragonFly"
 CONFIGURE_ARGS+=	--disable-bootstrap
+.endif
+
+.if ${OPSYS} == "Haiku"
+CONFIGURE_ARGS+=	--disable-libstdcxx-pch --enable-frame-pointer
 .endif
 
 .include "options.mk"
@@ -100,6 +104,10 @@ CONFIGURE_ARGS+=	--with-gnu-as --with-as=${PREFIX}/gnu/bin/as
 
 pre-configure:
 	${RUN} cd ${WRKSRC} && ${MKDIR} ${OBJDIR}
+	
+.if ${OPSYS} == "Haiku"
+	${CP} -rf ${FILESDIR}/haiku/* ${WRKSRC}/
+.endif
 
 TEST_TARGET=	-k check || ${TRUE}
 pre-test:
