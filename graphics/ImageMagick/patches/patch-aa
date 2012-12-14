@@ -1,6 +1,6 @@
 $NetBSD$
 
---- tests/validate-colorspace.tap.orig	2012-08-22 17:08:31.000000000 +0000
+--- tests/validate-colorspace.tap.orig	2012-08-22 17:08:31.004980736 +0000
 +++ tests/validate-colorspace.tap
 @@ -17,7 +17,7 @@
  . ${srcdir}/tests/common.shi
