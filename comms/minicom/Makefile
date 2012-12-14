@@ -41,6 +41,8 @@ SUBST_STAGE.minicom=	post-patch
 SUBST_FILES.minicom=	src/rwconf.c
 SUBST_VARS.minicom=	PREFIX GKERMIT_PREFIX LRZSZ_PREFIX
 
+CONFIGURE_ARGS+=	--enable-lock-dir=/tmp
+
 .include "../../converters/libiconv/buildlink3.mk"
 .include "../../devel/gettext-lib/buildlink3.mk"
 .include "../../mk/termcap.buildlink3.mk"
